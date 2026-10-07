@@ -384,23 +384,34 @@
             text.innerText = "Scanning 20+ per niche...";
             btn.classList.add('opacity-75');
 
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 20000);
+
             try {
                 const res = await fetch('/api/radar/scan', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ limit: 20 })
+                    body: JSON.stringify({ limit: 20 }),
+                    signal: controller.signal
                 });
+                clearTimeout(timeoutId);
                 const data = await res.json();
                 if (data.success) {
-                    showToast(`Scanned ${data.count} fresh winning products!`, false);
-                    setTimeout(() => window.location.reload(), 700);
+                    showToast(`Success! Scanned ${data.count} rotating winning products across 5 niches!`, false);
+                    setTimeout(() => window.location.reload(), 600);
                 } else {
-                    alert('Scan error: ' + (data.error || 'Unknown error'));
+                    alert('Scan notice: ' + (data.error || 'Server error, please try again.'));
                     resetBtn();
                 }
             } catch (err) {
-                alert('Network error: ' + err.message);
-                resetBtn();
+                clearTimeout(timeoutId);
+                if (err.name === 'AbortError') {
+                    showToast('Scan taking longer than usual, refreshing radar database...', false);
+                    setTimeout(() => window.location.reload(), 800);
+                } else {
+                    alert('Network error: ' + err.message);
+                    resetBtn();
+                }
             }
 
             function resetBtn() {

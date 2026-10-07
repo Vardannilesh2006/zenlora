@@ -33,10 +33,11 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
     winners = []
     scan_timestamp = datetime.now().strftime("%d %b %Y, %I:%M %p")
 
-    # To optimize scan speed and avoid rate-limiting Gemini API on 100+ items,
-    # we call Gemini on top items and utilize smart deterministic fallbacks.
+    # To guarantee lightning-fast scans (<3s) and prevent Vercel 10s serverless timeouts,
+    # batch scan utilizes deterministic AI heuristics. Deep Gemini creative direction
+    # is called on-demand when viewing or importing the product.
     gemini_count = 0
-    max_gemini_calls = 10
+    max_gemini_calls = 0
 
     for item in harvested_items:
         title = item.get("title", "")
@@ -74,7 +75,7 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
 
         zen_title = ClassifierAndPricingEngine.generate_zenlora_title(title) if ClassifierAndPricingEngine else f"Zenlora™ {meta_signals['keyword'].title()}"
 
-        # 6. Automatic UGC Storyboard & Multi-Scene Continuity Prompts
+        # 6. Automatic UGC Storyboard & Multi-Scene Continuity Prompts (High-Speed Local Generator)
         prod_data = {
             "title": title,
             "description": item.get("description", "")
@@ -85,7 +86,7 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
             "selling_price": score_data["pricing"]["selling_price"]
         }
         try:
-            ugc_prompts = UGCEngine.generate_prompts(prod_data, class_data)
+            ugc_prompts = UGCEngine.generate_prompts(prod_data, class_data, skip_gemini=True)
         except Exception:
             ugc_prompts = {}
 

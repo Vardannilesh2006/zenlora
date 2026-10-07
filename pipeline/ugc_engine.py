@@ -46,7 +46,7 @@ class UGCEngine:
         }
 
     @classmethod
-    def generate_prompts(cls, product_data: dict, classification_data: dict) -> dict:
+    def generate_prompts(cls, product_data: dict, classification_data: dict, skip_gemini: bool = False) -> dict:
         title = product_data.get("title", "")
         clean_title = classification_data.get("zenlora_title", title).replace("Zenlora™", "").strip()
         category = classification_data.get("primary_category", "")
@@ -58,7 +58,7 @@ class UGCEngine:
 
         # 0. AI Creative Direction from Gemini (Style, Lighting, VO, SFX, Camera Movements)
         creative_dir = {}
-        if generate_creative_direction:
+        if generate_creative_direction and not skip_gemini:
             try:
                 creative_dir = generate_creative_direction(clean_title, category, description, price)
             except Exception:
