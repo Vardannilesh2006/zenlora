@@ -193,6 +193,68 @@
             </div>
         </section>
 
+        <!-- Gemini AI Creative Director & Dropshipper Secret Suite -->
+        {% if p.video_style or p.voiceover_script %}
+        <section class="zen-card rounded-2xl p-5 border border-zinc-200 bg-white shadow-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-borderMain pb-3">
+                <div class="flex items-center gap-2">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-textPrimary flex items-center gap-2">
+                        <span>Gemini Creative Director Studio</span>
+                        <span class="text-[9px] px-2 py-0.5 rounded-full bg-zinc-900 text-white font-mono">1% DROPSHIPPER PLAYBOOK</span>
+                    </h3>
+                </div>
+                <span class="text-[11px] text-textMuted font-mono">AI-Generated for High Retention</span>
+            </div>
+
+            <!-- Video Style & Retention Secret -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="p-3.5 rounded-xl bg-zinc-50 border border-borderMain">
+                    <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider block">Recommended Video Style</span>
+                    <p class="text-xs font-bold text-textPrimary mt-1">{{ p.video_style or 'ASMR Problem-Agitate-Solution Transformation' }}</p>
+                </div>
+                <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200">
+                    <span class="text-[10px] font-bold text-amber-900 uppercase tracking-wider block">Dropshipper Hook Retention Secret</span>
+                    <p class="text-xs text-amber-950 font-medium mt-1">{{ p.creator_secret_tip or 'Show immediate action or sensory sound in the first 1.5 seconds to drop bounce rate below 30%.' }}</p>
+                </div>
+            </div>
+
+            <!-- Voiceover Script (Hinglish) -->
+            {% if p.voiceover_script %}
+            <div class="p-4 rounded-xl bg-zinc-50 border border-zinc-200 space-y-2">
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider">High-Converting Hinglish Voiceover (Reels / Shorts)</span>
+                    <button onclick="copyText(`{{ p.voiceover_script }}`)" class="px-2.5 py-1 rounded-md bg-white border border-zinc-300 hover:bg-zinc-100 text-textPrimary text-[11px] font-medium transition">
+                        Copy Voiceover
+                    </button>
+                </div>
+                <p class="text-xs text-textPrimary leading-relaxed font-sans bg-white p-3 rounded-lg border border-borderMain select-all">
+                    "{{ p.voiceover_script }}"
+                </p>
+            </div>
+            {% endif %}
+
+            <!-- Technical Production: SFX, Camera, Lighting -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3 pt-1">
+                <!-- Sound Effects (SFX) -->
+                <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain space-y-1">
+                    <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider block">Time-Coded SFX Audio Cues</span>
+                    <p class="text-[11px] text-textPrimary font-mono leading-relaxed">{{ p.sound_effects or '[0s] Whoosh [3s] Snap [7s] Clean click [10s] Chime' }}</p>
+                </div>
+                <!-- Camera Movements -->
+                <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain space-y-1">
+                    <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider block">Camera Movements & Angles</span>
+                    <p class="text-[11px] text-textPrimary leading-relaxed">{{ p.camera_movements or 'Scene 1: Macro push-in -> Scene 2: Orbital tracking -> Scene 3: Glide-back reveal' }}</p>
+                </div>
+                <!-- Lighting & Tone -->
+                <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain space-y-1">
+                    <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider block">Cinematic Lighting Setup</span>
+                    <p class="text-[11px] text-textPrimary leading-relaxed">{{ p.lighting_setup or '2700K warm rim light, soft 45-degree diffused key, subtle realistic ambient glow' }}</p>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
         <!-- AI Prompt Studio Section -->
         <section class="space-y-4">
             <div class="flex items-center justify-between">
