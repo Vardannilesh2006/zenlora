@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zenlora AI Radar | DeoDap Winning Dropshipping Products</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <link rel="alternate icon" href="/static/favicon.svg">
+    <link rel="apple-touch-icon" href="/static/favicon.svg">
+    <!-- Premium System Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'SFMono-Regular', 'Menlo', 'monospace'],
+                    },
+                    colors: {
+                        canvas: '#F7F8FA',
+                        cardBg: '#FFFFFF',
+                        borderMain: '#E5E7EB',
+                        borderSubtle: '#F0F2F5',
+                        textPrimary: '#111827',
+                        textSecondary: '#4B5563',
+                        textMuted: '#9CA3AF',
+                        brandBlack: '#0A0A0C',
+                        brandHover: '#1F2937',
+                        accentGreen: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F7F8FA;
+            color: #111827;
+            letter-spacing: -0.015em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .zen-canvas {
+            background-color: #F7F8FA;
+            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        .zen-glass {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        .zen-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .zen-card:hover {
+            border-color: #D1D5DB;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+            transform: translateY(-2px);
+        }
+
+        .cat-pill-active {
+            background-color: #111827 !important;
+            color: #FFFFFF !important;
+            border-color: #111827 !important;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
+        }
+
+        /* Pulse animation for scanner */
+        @keyframes radar-pulse {
+            0% { transform: scale(0.95); opacity: 0.8; }
+            50% { transform: scale(1.05); opacity: 1; }
+            100% { transform: scale(0.95); opacity: 0.8; }
+        }
+        .animate-radar {
+            animation: radar-pulse 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased text-sm zen-canvas">
+
+    <!-- Top Sticky Header -->
+    <header class="sticky top-0 z-40 w-full zen-glass">
+        <div class="max-w-[1500px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
+            
+            <!-- Left: Brand Logo & Navigation -->
+            <div class="flex items-center gap-3">
+                <a href="/" class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-brandBlack text-white flex items-center justify-center font-bold text-xs shadow-sm">
+                        Z
+                    </div>
+                    <span class="font-bold text-sm tracking-tight text-textPrimary flex items-center gap-2">
+                        Zenlora
+                        <span class="text-[10px] text-emerald-700 font-semibold px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-200">Radar</span>
+                    </span>
+                </a>
+
+                <!-- App Switcher Nav -->
+                <nav class="flex items-center gap-1 ml-2 pl-3 border-l border-borderMain">
+                    <a href="/" class="px-2.5 py-1 rounded-md text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 transition">
+                        🎨 Studio & Prompts
+                    </a>
+                    <a href="/radar" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-zinc-100 text-textPrimary border border-zinc-200 shadow-xs">
+                        🎯 Winning Radar
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Right: Live Scan DeoDap Button -->
+            <div class="flex items-center gap-2">
+                <button onclick="triggerRadarScan()" id="scanBtn" class="h-8 px-3.5 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-2 transition active:scale-95 shadow-sm">
+                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <span id="scanBtnText">Scan DeoDap Winners</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Container -->
+    <main class="flex-1 max-w-[1500px] w-full mx-auto px-4 sm:px-6 py-6">
+
+        <!-- Hero Header -->
+        <div class="mb-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-accentGreen text-xs font-semibold mb-2">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        Live DeoDap Multi-Signal Intelligence Engine
+                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-extrabold text-textPrimary tracking-tight">
+                        AI Winning Product Discovery
+                    </h1>
+                    <p class="text-textSecondary text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
+                        Wholesale sourcing from DeoDap filtered by ₹60–₹400, validated against Meta Ads competitor scaling, Google Trends India surge, and low COD RTO risk.
+                    </p>
+                </div>
+
+                <!-- Live Metrics Summary -->
+                <div class="flex items-center gap-2 text-xs">
+                    <div class="px-3.5 py-2 rounded-xl bg-white border border-borderMain shadow-xs">
+                        <div class="text-[10px] text-textMuted uppercase font-semibold">Tracked Winners</div>
+                        <div class="text-base font-bold text-textPrimary mt-0.5">{{ total_winners }} Items</div>
+                    </div>
+                    <div class="px-3.5 py-2 rounded-xl bg-white border border-borderMain shadow-xs">
+                        <div class="text-[10px] text-textMuted uppercase font-semibold">Avg Win Score</div>
+                        <div class="text-base font-bold text-textPrimary mt-0.5">{{ avg_score }}/100</div>
+                    </div>
+                    <div class="px-3.5 py-2 rounded-xl bg-emerald-50 border border-emerald-200 shadow-xs">
+                        <div class="text-[10px] text-emerald-700 uppercase font-semibold">Super Winners</div>
+                        <div class="text-base font-bold text-emerald-800 mt-0.5">{{ super_winners }} Hot</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Filter Tabs (Home Decor, Kitchen, Gadgets, Festive, Gifts) -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 border-b border-borderMain no-scrollbar">
+            {% for n in niches %}
+            <a href="/radar?niche={{ n }}" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold transition whitespace-nowrap border {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-borderMain hover:bg-zinc-50 hover:text-textPrimary{% endif %}">
+                {% if n == 'All' %}🌐 All Niches
+                {% elif n == 'Home Decor' %}🏡 Home Decor
+                {% elif n == 'Kitchen' %}🍳 Kitchen & Utility
+                {% elif n == 'Gadgets' %}⚡ Smart Gadgets
+                {% elif n == 'Festive' %}🪔 Festive & Lights
+                {% elif n == 'Gifts' %}🎁 Gifts & Hampers
+                {% else %}{{ n }}{% endif %}
+            </a>
+            {% endfor %}
+        </div>
+
+        <!-- Winners Grid -->
+        {% if winners %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="winnersGrid">
+            {% for w in winners %}
+            <div class="zen-card rounded-2xl p-4 flex flex-col justify-between" id="card-{{ w.handle }}">
+                
+                <div>
+                    <!-- Top Card Bar: Niche Tag, Score Badge & Bestseller Rank -->
+                    <div class="flex items-center justify-between gap-2 mb-3">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-[11px] font-semibold px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-700 border border-zinc-200">
+                                {{ w.niche }}
+                            </span>
+                            <span class="text-[10px] font-medium text-textMuted">
+                                #{{ w.bestseller_rank }} DeoDap
+                            </span>
+                        </div>
+                        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full text-white shadow-xs" style="background-color: {{ w.badge_color }};">
+                            {{ w.badge_text }} · {{ w.winning_score }}/100
+                        </span>
+                    </div>
+
+                    <!-- Product Image & Basic Info -->
+                    <div class="flex gap-3 mb-4">
+                        <div class="w-24 h-24 rounded-xl bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group">
+                            {% if w.image_url %}
+                            <img src="{{ w.image_url }}" alt="{{ w.title }}" class="w-full h-full object-cover transition group-hover:scale-105" loading="lazy">
+                            {% else %}
+                            <div class="w-full h-full flex items-center justify-center text-textMuted text-xs">No image</div>
+                            {% endif %}
+                            <a href="{{ w.deodap_url }}" target="_blank" title="Open DeoDap Product" class="absolute bottom-1 right-1 w-6 h-6 rounded-md bg-white/90 text-textPrimary hover:bg-white flex items-center justify-center shadow-xs">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </a>
+                        </div>
+
+                        <div class="flex-1 min-w-0">
+                            <h3 class="font-bold text-textPrimary text-sm leading-snug line-clamp-2 hover:text-black">
+                                {{ w.zenlora_title }}
+                            </h3>
+                            <p class="text-[11px] text-textMuted truncate mt-0.5">
+                                Source: {{ w.title }}
+                            </p>
+
+                            <!-- Financial Breakdown -->
+                            <div class="mt-2 flex items-baseline gap-2">
+                                <span class="text-lg font-extrabold text-textPrimary">₹{{ w.selling_price }}</span>
+                                <span class="text-xs text-textMuted line-through">₹{{ w.mrp }}</span>
+                                <span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-100">
+                                    +₹{{ w.gross_profit }} profit
+                                </span>
+                            </div>
+                            <div class="text-[10px] text-textSecondary mt-0.5">
+                                DeoDap Cost: <strong>₹{{ w.wholesale_price }}</strong> · Margin: <strong>{{ w.profit_margin_pct }}%</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Multi-Signal Proof Verification Box -->
+                    <div class="bg-zinc-50 rounded-xl p-3 border border-borderMain mb-4 space-y-2 text-xs">
+                        <!-- Meta Ads Proof Link -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-1.5 text-textSecondary font-medium">
+                                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                                Meta Ads Spy:
+                                <strong class="text-textPrimary">{{ w.meta_ads.active_ads }}+ Active Ads</strong>
+                            </div>
+                            <a href="{{ w.meta_ads.ad_library_url }}" target="_blank" class="text-blue-600 hover:text-blue-800 text-[11px] font-semibold flex items-center gap-0.5 hover:underline">
+                                View Ads ↗
+                            </a>
+                        </div>
+
+                        <!-- Google Trends Proof Link -->
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center gap-1.5 text-textSecondary font-medium">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                                Google Trends:
+                                <strong class="text-textPrimary">{{ w.trends.label }} ({{ w.trends.score }}/100)</strong>
+                            </div>
+                            <a href="{{ w.trends.trends_url }}" target="_blank" class="text-emerald-700 hover:text-emerald-900 text-[11px] font-semibold flex items-center gap-0.5 hover:underline">
+                                Explore ↗
+                            </a>
+                        </div>
+
+                        <!-- COD & RTO Safety -->
+                        <div class="flex items-center gap-1.5 text-textSecondary font-medium">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                            COD Safety:
+                            <span class="text-textPrimary">{{ w.rto_verdict }}</span>
+                        </div>
+                    </div>
+
+                    <!-- AI Scoring Bullets -->
+                    <div class="space-y-1.5 mb-4 text-[11px] text-textSecondary">
+                        {% for bullet in w.bullets %}
+                        <div class="flex items-start gap-1.5 leading-snug">
+                            <span>{{ bullet }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Action Button: 1-Click Import to Studio -->
+                <div class="pt-3 border-t border-borderMain">
+                    <button onclick="importWinner('{{ w.handle }}')" id="btn-import-{{ w.handle }}" class="w-full h-9 rounded-xl bg-brandBlack hover:bg-brandHover text-white text-xs font-semibold flex items-center justify-center gap-2 transition active:scale-98 shadow-sm">
+                        <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                        <span>Import to Studio & Generate UGC</span>
+                    </button>
+                </div>
+
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- Empty State -->
+        <div class="zen-card rounded-2xl p-12 text-center max-w-md mx-auto my-12">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-100 border border-zinc-200 text-textSecondary flex items-center justify-center mx-auto mb-4">
+                <svg class="w-6 h-6 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <h3 class="text-base font-bold text-textPrimary">No Winners Scanned Yet</h3>
+            <p class="text-xs text-textSecondary mt-1 mb-6">
+                Click below to start an automated deep scan across DeoDap bestsellers for this niche.
+            </p>
+            <button onclick="triggerRadarScan()" class="h-9 px-4 rounded-xl bg-brandBlack text-white text-xs font-semibold transition hover:bg-brandHover">
+                Run Radar Scan Now
+            </button>
+        </div>
+        {% endif %}
+
+    </main>
+
+    <!-- Success Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-brandBlack text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 border border-zinc-700">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <div class="text-xs font-medium" id="toastMsg">Notification message</div>
+            <a href="/" id="toastAction" class="text-xs font-bold text-emerald-400 hover:underline pl-2 border-l border-zinc-700">Open Studio →</a>
+        </div>
+    </div>
+
+    <!-- Script for Live Operations -->
+    <script>
+        function showToast(msg, showStudioLink = true) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            const toastAction = document.getElementById('toastAction');
+            
+            toastMsg.innerText = msg;
+            toastAction.style.display = showStudioLink ? 'inline' : 'none';
+            
+            toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 4500);
+        }
+
+        async function triggerRadarScan() {
+            const btn = document.getElementById('scanBtn');
+            const text = document.getElementById('scanBtnText');
+            btn.disabled = true;
+            text.innerText = "Scanning DeoDap & Ad Libraries...";
+            btn.classList.add('opacity-75');
+
+            try {
+                const res = await fetch('/api/radar/scan', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ limit: 8 })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(`Scan complete! ${data.count} winning products found.`, false);
+                    setTimeout(() => window.location.reload(), 1000);
+                } else {
+                    alert('Scan error: ' + (data.error || 'Unknown error'));
+                    btn.disabled = false;
+                    text.innerText = "Scan DeoDap Winners";
+                    btn.classList.remove('opacity-75');
+                }
+            } catch (err) {
+                alert('Network error during scan: ' + err.message);
+                btn.disabled = false;
+                text.innerText = "Scan DeoDap Winners";
+                btn.classList.remove('opacity-75');
+            }
+        }
+
+        async function importWinner(handle) {
+            const btn = document.getElementById(`btn-import-${handle}`);
+            const originalHtml = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = `<span class="inline-block animate-spin mr-1.5">⏳</span> Importing & Generating Prompts...`;
+
+            try {
+                const res = await fetch(`/api/radar/import/${handle}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    btn.innerHTML = `✓ Imported to Studio!`;
+                    btn.classList.remove('bg-brandBlack', 'hover:bg-brandHover');
+                    btn.classList.add('bg-emerald-600', 'text-white');
+                    showToast(`'${data.product.extracted.title.slice(0, 30)}...' imported with UGC storyboards!`, true);
+                } else {
+                    alert('Import failed: ' + (data.error || 'Unknown error'));
+                    btn.disabled = false;
+                    btn.innerHTML = originalHtml;
+                }
+            } catch (err) {
+                alert('Import network error: ' + err.message);
+                btn.disabled = false;
+                btn.innerHTML = originalHtml;
+            }
+        }
+    </script>
+</body>
+</html>

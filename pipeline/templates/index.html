@@ -108,8 +108,19 @@
                     </span>
                 </a>
 
+                <!-- App Switcher Nav -->
+                <nav class="flex items-center gap-1 ml-2 pl-3 border-l border-borderMain">
+                    <a href="/" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-zinc-100 text-textPrimary border border-zinc-200 shadow-xs">
+                        🎨 Studio & Prompts
+                    </a>
+                    <a href="/radar" class="px-2.5 py-1 rounded-md text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 transition flex items-center gap-1">
+                        🎯 Winning Radar
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    </a>
+                </nav>
+
                 <!-- Inline Metric Badges -->
-                <div class="hidden md:flex items-center gap-2 pl-3 border-l border-borderMain text-xs">
+                <div class="hidden lg:flex items-center gap-2 pl-3 border-l border-borderMain text-xs">
                     <span class="px-2.5 py-0.5 rounded-full bg-zinc-100 border border-zinc-200 text-textSecondary flex items-center gap-1.5 font-medium">
                         <span class="w-1.5 h-1.5 rounded-full bg-accentGreen"></span>
                         <strong class="text-textPrimary" id="statCount">{{ total_products }}</strong> Products
@@ -125,6 +136,11 @@
 
             <!-- Right: Action Buttons -->
             <div class="flex items-center gap-2">
+                <a href="/radar" class="h-8 px-3 rounded-lg bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 font-semibold text-xs flex items-center gap-1.5 transition active:scale-95 shadow-xs">
+                    <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    <span class="hidden sm:inline">Winning Radar</span>
+                    <span class="sm:hidden">Radar</span>
+                </a>
                 <a href="/api/export-excel" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-1.5 transition active:scale-95 shadow-sm">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     <span class="hidden sm:inline">Export Excel</span>

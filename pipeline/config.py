@@ -10,6 +10,7 @@ if os.environ.get("VERCEL"):
     EXPORTS_DIR = Path("/tmp/exports")
     DATA_DIR = Path("/tmp/data")
     DATABASE_FILE = DATA_DIR / "products_db.json"
+    WINNING_DB_FILE = DATA_DIR / "winning_products.json"
     EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     # Seed /tmp database from bundled repo data if not present
@@ -19,10 +20,17 @@ if os.environ.get("VERCEL"):
             shutil.copy(seed_file, DATABASE_FILE)
         except Exception:
             pass
+    seed_winning = BASE_DIR / "data" / "winning_products.json"
+    if seed_winning.exists() and not WINNING_DB_FILE.exists():
+        try:
+            shutil.copy(seed_winning, WINNING_DB_FILE)
+        except Exception:
+            pass
 else:
     EXPORTS_DIR = BASE_DIR / "exports"
     DATA_DIR = BASE_DIR / "data"
     DATABASE_FILE = DATA_DIR / "products_db.json"
+    WINNING_DB_FILE = DATA_DIR / "winning_products.json"
     EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
