@@ -171,23 +171,21 @@ def harvest_deodap_bestsellers(limit_per_niche: int = 20, min_price: float = 35.
     except Exception as e:
         print(f"[DeoDap Harvester] Quick live fetch bypassed ({e}), using bundled cache.")
 
-    # 2. Enrich from bundled 1,000 DeoDap bestsellers cache
-    cache_file = Path(__file__).resolve().parent.parent.parent / "data" / "deodap_raw_bestsellers_cache.json"
+    # 2. Enrich from bundled DeoDap bestsellers pool (818 categorized winning products)
+    cache_file = Path(__file__).resolve().parent.parent.parent / "data" / "deodap_bestsellers_pool.json"
     if cache_file.exists():
         try:
             with open(cache_file, "r", encoding="utf-8") as f:
-                cached_raw = json.load(f)
+                cached_pool = json.load(f)
             if randomize:
-                random.shuffle(cached_raw)
-            for idx, p in enumerate(cached_raw):
-                handle = p.get("handle")
+                random.shuffle(cached_pool)
+            for idx, item in enumerate(cached_pool):
+                handle = item.get("handle")
                 if handle and handle not in seen_handles:
-                    formatted = _format_deodap_item(p, 1, idx)
-                    if formatted:
-                        seen_handles.add(handle)
-                        raw_candidates.append(formatted)
+                    seen_handles.add(handle)
+                    raw_candidates.append(item)
         except Exception as e:
-            print(f"[DeoDap Harvester] Error loading cache: {e}")
+            print(f"[DeoDap Harvester] Error loading cache pool: {e}")
 
     # 3. Categorize candidates by niche
     niches = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts"]
