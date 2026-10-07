@@ -186,7 +186,11 @@
         {% if winners %}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5" id="winnersGrid">
             {% for w in winners %}
-            <div class="zen-card rounded-xl p-3.5 flex flex-col justify-between group relative" id="card-{{ w.handle }}">
+            <div 
+                class="zen-card rounded-xl p-3.5 flex flex-col justify-between group relative cursor-pointer hover:border-zinc-400 transition" 
+                id="card-{{ w.handle }}"
+                onclick="window.location.href='/product/{{ w.handle }}'"
+            >
                 
                 <div>
                     <!-- Top Status Bar: Niche Tag & Score Badge -->
@@ -201,21 +205,37 @@
 
                     <!-- Product Image & Title Info -->
                     <div class="flex items-start gap-3 mb-3">
-                        <div class="w-20 h-20 rounded-lg bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group/img">
+                        <!-- Thumbnail: Click to open DeoDap -->
+                        <a 
+                            href="{{ w.deodap_url }}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            onclick="event.stopPropagation()"
+                            title="Open DeoDap product page (new tab)"
+                            class="w-20 h-20 rounded-lg bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group/img hover:border-zinc-400 transition block"
+                        >
                             {% if w.image_url %}
                             <img src="{{ w.image_url }}" alt="{{ w.title }}" class="w-full h-full object-cover group-hover/img:scale-105 transition" loading="lazy">
                             {% else %}
                             <div class="w-full h-full flex items-center justify-center text-textMuted text-xs font-mono">Zenlora</div>
                             {% endif %}
-                            <a href="{{ w.deodap_url }}" target="_blank" title="View DeoDap Source" class="absolute bottom-1 right-1 w-5 h-5 rounded bg-white/95 text-textPrimary hover:bg-white flex items-center justify-center shadow-xs border border-zinc-200">
+                            <span class="absolute bottom-1 right-1 w-5 h-5 rounded bg-white/95 text-textPrimary flex items-center justify-center shadow-xs border border-zinc-200">
                                 <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                            </a>
-                        </div>
+                            </span>
+                        </a>
 
                         <div class="flex-1 min-w-0">
-                            <h3 class="text-xs font-bold text-textPrimary leading-snug line-clamp-2 h-8 hover:text-black transition" title="{{ w.zenlora_title }}">
+                            <!-- Product Title: Click to open DeoDap -->
+                            <a 
+                                href="{{ w.deodap_url }}" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                onclick="event.stopPropagation()"
+                                title="Open DeoDap product page (new tab)"
+                                class="text-xs font-bold text-textPrimary leading-snug line-clamp-2 h-8 hover:text-black hover:underline transition block"
+                            >
                                 {{ w.zenlora_title }}
-                            </h3>
+                            </a>
                             <p class="text-[10px] text-textMuted truncate mt-0.5" title="{{ w.title }}">
                                 {{ w.title }}
                             </p>
@@ -241,7 +261,7 @@
                                 <span class="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"></span>
                                 Meta Ads: <strong class="text-textPrimary">{{ w.meta_ads.active_ads }}+ Active</strong>
                             </span>
-                            <a href="{{ w.meta_ads.ad_library_url }}" target="_blank" class="text-blue-600 hover:text-blue-800 text-[10px] font-semibold hover:underline flex-shrink-0">
+                            <a href="{{ w.meta_ads.ad_library_url }}" target="_blank" onclick="event.stopPropagation()" class="text-blue-600 hover:text-blue-800 text-[10px] font-semibold hover:underline flex-shrink-0">
                                 Spy Ads ↗
                             </a>
                         </div>
@@ -252,7 +272,7 @@
                                 <span class="w-1.5 h-1.5 rounded-full bg-rose-500 flex-shrink-0"></span>
                                 Reels: <strong class="text-textPrimary">{{ w.social.views }} Views</strong>
                             </span>
-                            <a href="{{ w.social.instagram_url }}" target="_blank" class="text-rose-600 hover:text-rose-800 text-[10px] font-semibold hover:underline flex-shrink-0">
+                            <a href="{{ w.social.instagram_url }}" target="_blank" onclick="event.stopPropagation()" class="text-rose-600 hover:text-rose-800 text-[10px] font-semibold hover:underline flex-shrink-0">
                                 {{ w.social.primary_hashtag }} ↗
                             </a>
                         </div>
@@ -263,7 +283,7 @@
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
                                 Trends: <strong class="text-textPrimary">{{ w.trends.label }}</strong>
                             </span>
-                            <a href="{{ w.trends.trends_url }}" target="_blank" class="text-emerald-700 hover:text-emerald-900 text-[10px] font-semibold hover:underline flex-shrink-0">
+                            <a href="{{ w.trends.trends_url }}" target="_blank" onclick="event.stopPropagation()" class="text-emerald-700 hover:text-emerald-900 text-[10px] font-semibold hover:underline flex-shrink-0">
                                 Graph ↗
                             </a>
                         </div>
@@ -286,13 +306,22 @@
 
                 </div>
 
-                <!-- Card Bottom Action: 1-Click Import to Studio -->
-                <div class="pt-2.5 border-t border-borderSubtle">
-                    <button onclick="importWinner('{{ w.handle }}')" id="btn-import-{{ w.handle }}" class="w-full h-8 rounded-lg bg-brandBlack hover:bg-brandHover text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition active:scale-95 shadow-sm">
+                <!-- Card Bottom Action: View Details & Prompts + Quick Studio Import -->
+                <div class="pt-2.5 border-t border-borderSubtle flex items-center gap-2">
+                    <div class="flex-1 h-8 rounded-lg bg-zinc-100 group-hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+                        <span>View Details & Prompts</span>
+                        <svg class="w-3.5 h-3.5 text-textSecondary group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                    <button 
+                        onclick="event.stopPropagation(); importWinner('{{ w.handle }}')" 
+                        id="btn-import-{{ w.handle }}" 
+                        title="Import to Studio Catalog"
+                        class="h-8 px-2.5 rounded-lg bg-brandBlack hover:bg-brandHover text-white text-xs font-semibold flex items-center gap-1 transition active:scale-95 shadow-sm flex-shrink-0"
+                    >
                         <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
-                        <span>Import & Generate UGC</span>
+                        <span class="hidden sm:inline text-[11px]">Save</span>
                     </button>
                 </div>
 

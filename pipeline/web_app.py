@@ -91,8 +91,23 @@ def api_radar_import(handle):
 
 @app.route('/product/<handle>')
 def product_detail(handle):
+    # First search Studio DB
     products = ZenloraPipeline.load_db()
     product = next((p for p in products if p.get('handle') == handle), None)
+    
+    # If not in Studio DB, search Winning Radar DB
+    if not product:
+        winners = get_winners()
+        winner = next((w for w in winners if w.get('handle') == handle), None)
+        if winner:
+            product = {
+                **winner,
+                "primary_image": winner.get("image_url", ""),
+                "primary_category": winner.get("niche", "Home Decor & Aesthetic Living"),
+                "content_bucket": winner.get("content_bucket", "Bucket C: Traffic & Sales Drivers (PAS)"),
+                "sku": winner.get("handle", ""),
+            }
+
     if not product:
         return "Product not found", 404
     return render_template('product_detail.html', p=product)

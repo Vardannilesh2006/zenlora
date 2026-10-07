@@ -261,17 +261,24 @@
                             <!-- Top: Thumbnail + Title -->
                             <div class="flex items-start gap-3">
                                 
-                                <!-- Product Image Thumbnail -->
-                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative block group/img">
+                                <!-- Product Image Thumbnail (Click opens DeoDap) -->
+                                <a 
+                                    href="{{ p.deodap_url }}" 
+                                    target="_blank" 
+                                    rel="noopener noreferrer" 
+                                    onclick="event.stopPropagation()"
+                                    title="Open DeoDap product page (new tab)" 
+                                    class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative block group/img hover:border-zinc-400 transition"
+                                >
                                     {% if p.primary_image %}
-                                        <img src="{{ p.primary_image }}" alt="{{ p.zenlora_title }}" class="w-full h-full object-cover">
+                                        <img src="{{ p.primary_image }}" alt="{{ p.zenlora_title }}" class="w-full h-full object-cover group-hover/img:scale-105 transition">
                                     {% else %}
                                         <div class="w-full h-full flex items-center justify-center text-textMuted text-xs font-mono">Zenlora</div>
                                     {% endif %}
                                     <span class="absolute bottom-1 right-1 px-1 py-0.2 rounded text-[8px] bg-white/95 font-mono text-textPrimary font-semibold border border-zinc-200">
                                         {{ p.content_bucket.split(':')[0] }}
                                     </span>
-                                </div>
+                                </a>
 
                                 <!-- Details -->
                                 <div class="flex-1 min-w-0">
@@ -282,10 +289,17 @@
                                         <span class="text-[10px] text-textMuted group-hover:text-textPrimary transition">→</span>
                                     </div>
                                     
-                                    <!-- Product Title -->
-                                    <h4 class="text-xs font-bold text-textPrimary leading-snug line-clamp-2 h-8 mt-0.5 group-hover:text-black transition">
+                                    <!-- Product Title (Click opens DeoDap) -->
+                                    <a 
+                                        href="{{ p.deodap_url }}" 
+                                        target="_blank" 
+                                        rel="noopener noreferrer" 
+                                        onclick="event.stopPropagation()"
+                                        title="Open DeoDap product page (new tab)" 
+                                        class="text-xs font-bold text-textPrimary leading-snug line-clamp-2 h-8 mt-0.5 hover:text-black hover:underline transition block"
+                                    >
                                         {{ p.zenlora_title }}
-                                    </h4>
+                                    </a>
 
                                     {% if p.sku %}
                                         <span class="text-[10px] font-mono text-textMuted mt-1 block truncate">SKU: {{ p.sku }}</span>
