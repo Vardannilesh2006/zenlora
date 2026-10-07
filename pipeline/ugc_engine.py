@@ -69,82 +69,96 @@ class UGCEngine:
         }
 
     @classmethod
-    def _build_storyboard_image_prompt(cls, title: str, category: str, bucket_type: str) -> str:
-        if bucket_type == "conversion":
-            environment = "modern luxury aesthetic Indian modular kitchen with clean quartz countertop, warm under-cabinet ambient lighting, sparkling clean and organized"
-        elif "Beauty" in category or "Grooming" in category:
-            environment = "spa-like luxury aesthetic bathroom with fluted wood vanity, warm backlit mirror, soft cotton towels, morning golden hour sunlight"
-        else:
-            environment = "cozy warm Japandi style living room, soft bouclé sofa, warm evening ambient lamp glow, minimalist oak wooden table"
+    def _build_scene_environment(cls, title: str, category: str, bucket_type: str) -> dict:
+        """
+        Builds a unified visual environment DNA shared between the Storyboard Image
+        and all 3 consecutive video generation scenes.
+        """
+        title_lower = title.lower()
 
+        if "kitchen" in category.lower() or any(w in title_lower for w in ["peeler", "knife", "chopper", "dispenser", "sponge", "sink", "drain", "cleaner", "mop", "wiper", "dish"]):
+            setting = "modern luxury aesthetic Indian modular kitchen with clean white quartz countertops, sleek fluted wooden cabinetry, subtle warm under-cabinet LED strip glow"
+            atmosphere = "sparkling clean, organized luxury interior, cinematic golden ambient highlights, realistic soft shadows"
+            interaction_problem = "a cluttered or messy countertop needing smart organization"
+            interaction_action = f"using {title} smoothly in real-time, instantly slicing, peeling, or organizing with effortless ease"
+            interaction_hero = f"{title} resting elegantly on the clean polished quartz countertop beside fresh culinary accents"
+        elif "beauty" in category.lower() or "grooming" in category.lower() or any(w in title_lower for w in ["roller", "gua sha", "ice", "facial", "massager", "skin", "hair", "brush"]):
+            setting = "spa-like luxury aesthetic bathroom with natural fluted oak vanity, warm backlit circular mirror, folded plush cotton waffle towels"
+            atmosphere = "soft morning golden hour diffusion, gentle water mist, tranquil serene spa aesthetic"
+            interaction_problem = "a tired morning skincare routine needing instant refresh"
+            interaction_action = f"gliding {title} gently across skin with soothing, satisfying natural skincare motion"
+            interaction_hero = f"{title} placed on the warm oak vanity next to delicate dried eucalyptus and glowing ambient candle"
+        elif "festive" in category.lower() or "diwali" in category.lower() or any(w in title_lower for w in ["diya", "fairy", "curtain light", "puja", "festive", "brass"]):
+            setting = "festive modern Indian living room during Diwali twilight, warm terracotta and brass accents, soft marigold floral decor"
+            atmosphere = "magical warm bokeh, flickering soft diya glow, warm 2700K golden festive light"
+            interaction_problem = "a dim living space awaiting festive warmth and celebration"
+            interaction_action = f"switching on or setting up {title}, casting instant breathtaking golden glow across the entire room"
+            interaction_hero = f"{title} glowing brightly as the centerpiece of festive home celebration, creating pure warm festive magic"
+        elif "gadget" in category.lower() or any(w in title_lower for w in ["usb", "rechargeable", "led", "sensor", "digital", "automatic", "smart"]):
+            setting = "minimalist Japandi smart home setup, matte walnut desk, sleek architectural textures, warm diffuse lighting"
+            atmosphere = "modern minimalist aesthetic, tactile premium materials, soft warm-white indirect backlight"
+            interaction_problem = "a dull, manual routine needing a seamless smart upgrade"
+            interaction_action = f"one-touch activating {title}, showing its crisp responsive mechanism and high-tech utility in action"
+            interaction_hero = f"{title} functioning seamlessly as a modern lifestyle essential on the minimalist walnut surface"
+        else:
+            # Home Decor & Aesthetic Living default
+            setting = "warm cozy Japandi-style living room, textured bouclé furniture, smooth oak wooden coffee table, neutral beige limestone wall"
+            atmosphere = "tranquil evening golden hour light, soft linen curtains catching gentle breeze, cozy peaceful atmosphere"
+            interaction_problem = "a plain empty corner in need of warm aesthetic character"
+            interaction_action = f"hands gently placing and styling {title} into place, instantly elevating the room's entire visual warmth"
+            interaction_hero = f"{title} sitting serenely as the aesthetic hero piece, warm ambient light washing softly across its texture"
+
+        return {
+            "setting": setting,
+            "atmosphere": atmosphere,
+            "interaction_problem": interaction_problem,
+            "interaction_action": interaction_action,
+            "interaction_hero": interaction_hero,
+        }
+
+    @classmethod
+    def _build_storyboard_image_prompt(cls, title: str, category: str, bucket_type: str) -> str:
+        env = cls._build_scene_environment(title, category, bucket_type)
         return (
-            f"Commercial aesthetic product photography of {title}, placed in a {environment}. "
+            f"Commercial aesthetic product photography of {title}, placed in a {env['setting']}. "
+            f"{env['atmosphere']}. "
             f"Hyper-realistic, soft natural shadows, 8k resolution, cinematic lighting, ultra-clean commercial look, "
             f"shot on 35mm lens, f/1.8 depth of field --ar 9:16 --v 6.0 --style raw"
         )
 
     @classmethod
     def _build_video_scenes(cls, title: str, category: str, bucket_type: str) -> dict:
+        env = cls._build_scene_environment(title, category, bucket_type)
+        exact_continuity = CONTINUITY_PROMPT.strip()
+
+        # Scene 1: Starting directly from the Storyboard Reference Image (Image-to-Video 0-5s)
+        scene_1 = (
+            f"Starting directly from the reference image: smooth cinematic camera push-in on {title} placed in the {env['setting']}. "
+            f"{env['atmosphere']}. Subtle organic camera movement as hands enter the frame addressing {env['interaction_problem']}. "
+            f"4K, 60fps, photographic depth of field, exact color palette and lighting matching the reference image."
+        )
+
+        # Scene 2: Continuous Demonstration (5-10s) with EXACT verbatim continuity prefix
+        scene_2 = (
+            f"{exact_continuity} "
+            f"Camera holds steady close-up tracking as hands demonstrate {env['interaction_action']}. "
+            f"The environment remains the identical {env['setting']} with matching lighting. "
+            f"Smooth 60fps slow-motion capture, crisp tactile sound cues, completely seamless natural flow without any jump cut."
+        )
+
+        # Scene 3: Satisfying Hero Aftermath (10-15s) with EXACT verbatim continuity prefix
+        scene_3 = (
+            f"{exact_continuity} "
+            f"Camera glides smoothly back into a wide cinematic beauty hero reveal: {env['interaction_hero']}. "
+            f"The same {env['setting']} is now completely transformed, warm ambient lighting softly glowing. "
+            f"Ultra-satisfying aesthetic finish, gentle hypnotic loop back to opening frame."
+        )
+
         if bucket_type == "conversion":
-            # Scene 1: Problem / Before (0-5s)
-            scene_1 = (
-                f"Close-up macro shot opening on the common clutter or problem area, camera slowly panning in. "
-                f"A person's hand reaches in with {title}, placing it neatly into position. "
-                f"Soft cinematic focus pull, warm natural lighting."
-            )
-            # Scene 2: Demonstration (5-10s) with CONTINUITY PROMPT
-            scene_2 = (
-                f"{CONTINUITY_PROMPT} "
-                f"The person demonstrates using {title} effortlessly and smoothly. "
-                f"Instant satisfying result is revealed as the area transforms into a neat, modern setup. "
-                f"Smooth slow-motion 60fps camera tracking right, crisp product details visible."
-            )
-            # Scene 3: Satisfying After / Hero Glow (10-15s) with CONTINUITY PROMPT
-            scene_3 = (
-                f"{CONTINUITY_PROMPT} "
-                f"Camera pulls back into a wide cinematic beauty shot showing the complete transformed space. "
-                f"Warm golden ambient light glows softly in the background. Ultra-satisfying aesthetic finish."
-            )
             audio = "Upbeat Lo-Fi montage beat or trending ASMR clean click audio (Speed 0.8x in CapCut)"
-
         elif bucket_type == "viral_share":
-            # Scene 1: Relatable Hook (0-5s)
-            scene_1 = (
-                f"Eye-level aesthetic shot in a beautifully lit room. "
-                f"Camera slowly pushes in towards {title} arranged in a luxurious gift box / vanity setting. "
-                f"Soft dust particles floating in golden hour sunlight, cozy mood."
-            )
-            # Scene 2: Unboxing / Touch (5-10s) with CONTINUITY PROMPT
-            scene_2 = (
-                f"{CONTINUITY_PROMPT} "
-                f"Hands gently lift {title} up, turning it slightly to reveal the premium textures and finish. "
-                f"Smooth handheld camera motion, beautiful bokeh background."
-            )
-            # Scene 3: Aesthetic Final Frame (10-15s) with CONTINUITY PROMPT
-            scene_3 = (
-                f"{CONTINUITY_PROMPT} "
-                f"Camera glides smoothly to an overhead angle showing {title} completely styled in everyday use. "
-                f"Warm evening lighting, cozy ambient aesthetic vibe."
-            )
             audio = "Trending acoustic guitar / cozy indie aesthetic audio"
-
         else:
-            # Bucket A: Pure Aesthetics
-            scene_1 = (
-                f"Cinematic slow push-in shot of a cozy aesthetic space. "
-                f"{title} is prominently featured under warm glowing ambient light. "
-                f"Minimalist Japandi interior, soft linen textures, evening mood."
-            )
-            scene_2 = (
-                f"{CONTINUITY_PROMPT} "
-                f"Gentle slow-motion camera pan from left to right capturing the subtle reflections and warm glow of {title}. "
-                f"Ultra-peaceful, dreamy cinematic atmosphere, high dynamic range."
-            )
-            scene_3 = (
-                f"{CONTINUITY_PROMPT} "
-                f"Slow zoom out revealing the full cozy corner. Warm lamp light softly fills the frame. "
-                f"Hypnotic, loop-friendly final frame."
-            )
             audio = "Ambient dreamy synth / Lofi rain sound (Loop seamlessly at 7 seconds)"
 
         return {
