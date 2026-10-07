@@ -65,13 +65,15 @@
                 <span>Back to Catalog</span>
             </a>
 
-            <div class="flex items-center gap-2">
-                <a href="{{ p.deodap_url }}" target="_blank" rel="noopener noreferrer" class="h-8 px-3 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center gap-1.5 transition">
-                    <span>Open on DeoDap.com</span>
+            <div class="flex items-center gap-1.5 sm:gap-2">
+                <a href="{{ p.deodap_url }}" target="_blank" rel="noopener noreferrer" class="h-8 px-2.5 sm:px-3 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center gap-1.5 transition">
+                    <span class="hidden sm:inline">Open on DeoDap.com</span>
+                    <span class="sm:hidden">DeoDap</span>
                     <svg class="w-3.5 h-3.5 text-textSecondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
-                <a href="/api/export-excel" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white text-xs font-medium flex items-center gap-1.5 transition">
-                    <span>Export Excel</span>
+                <a href="/api/export-excel" class="h-8 px-2.5 sm:px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white text-xs font-medium flex items-center gap-1.5 transition">
+                    <span class="hidden sm:inline">Export Excel</span>
+                    <span class="sm:hidden">Excel</span>
                 </a>
             </div>
         </div>

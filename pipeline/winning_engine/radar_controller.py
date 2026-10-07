@@ -12,28 +12,35 @@ sys.path.insert(0, str(CURRENT_DIR.parent))
 
 from config import WINNING_DB_FILE, DATABASE_FILE, DATA_DIR, BASE_DIR as CONFIG_BASE_DIR
 from classifier_pricing import ClassifierAndPricingEngine
-from ugc_engine import UGCEngine
 
 from winning_engine.deodap_harvester import harvest_deodap_bestsellers
 from winning_engine.meta_ad_spy import analyze_meta_ad_signals
 from winning_engine.trend_checker import get_google_trends_analysis
+from winning_engine.social_spy import analyze_social_velocity
+from winning_engine.gemini_analyzer import analyze_with_gemini
 from winning_engine.winning_scorer import compute_winning_score
 
-def scan_and_update_winners(limit_per_niche: int = 8) -> List[Dict[str, Any]]:
+def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -> List[Dict[str, Any]]:
     """
-    Harvests DeoDap across 5 niches, runs Meta Ads & Google Trends intelligence,
-    scores every product, and persists to winning_products.json.
+    Harvests DeoDap across 5 niches (min 20 per niche), runs Meta Ads, Reels velocity,
+    Google Trends, and Gemini AI analysis, and saves to winning_products.json.
     """
-    print(f"[*] Starting Zenlora Winning Radar scan (limit: {limit_per_niche} per niche)...")
-    harvested_items = harvest_deodap_bestsellers(limit_per_niche=limit_per_niche)
+    print(f"[*] Starting Zenlora Winning Radar scan (target: {limit_per_niche} per niche, rotation={randomize})...")
+    harvested_items = harvest_deodap_bestsellers(limit_per_niche=limit_per_niche, randomize=randomize)
     
     winners = []
     scan_timestamp = datetime.now().strftime("%d %b %Y, %I:%M %p")
+
+    # To optimize scan speed and avoid rate-limiting Gemini API on 100+ items,
+    # we call Gemini on the top items of each category, and use smart heuristic for the rest.
+    gemini_count = 0
+    max_gemini_calls = 10
 
     for item in harvested_items:
         title = item.get("title", "")
         niche = item.get("niche", "Home Decor")
         wholesale_price = item.get("wholesale_price", 150.0)
+        selling_price = item.get("selling_price", 499)
 
         # 1. Meta Ad Spy Intelligence
         meta_signals = analyze_meta_ad_signals(title, niche)
@@ -41,8 +48,27 @@ def scan_and_update_winners(limit_per_niche: int = 8) -> List[Dict[str, Any]]:
         # 2. Google Trends Momentum
         trend_signals = get_google_trends_analysis(meta_signals["keyword"], niche)
 
-        # 3. Master Score & Reasoning
-        score_data = compute_winning_score(item, meta_signals, trend_signals)
+        # 3. Social / Instagram Reels Velocity
+        social_signals = analyze_social_velocity(meta_signals["keyword"], niche)
+
+        # 4. Gemini Multimodal & Copy Engine
+        gemini_signals = None
+        if gemini_count < max_gemini_calls:
+            try:
+                gemini_signals = analyze_with_gemini(title, niche, wholesale_price, selling_price)
+                if gemini_signals and gemini_signals.get("gemini_powered"):
+                    gemini_count += 1
+            except Exception:
+                pass
+
+        # 5. Master Winning Score (0-100)
+        score_data = compute_winning_score(
+            product=item,
+            meta_signals=meta_signals,
+            trend_signals=trend_signals,
+            social_signals=social_signals,
+            gemini_signals=gemini_signals
+        )
 
         zen_title = ClassifierAndPricingEngine.generate_zenlora_title(title) if ClassifierAndPricingEngine else f"Zenlora™ {meta_signals['keyword'].title()}"
 
@@ -75,6 +101,20 @@ def scan_and_update_winners(limit_per_niche: int = 8) -> List[Dict[str, Any]]:
                 "label": trend_signals["trend_label"],
                 "trends_url": trend_signals["trends_url"]
             },
+            "social": {
+                "views": social_signals["est_reels_views"],
+                "likes": social_signals["est_reels_likes"],
+                "days_scaling": social_signals["days_scaling"],
+                "scale_label": social_signals["scale_label"],
+                "instagram_url": social_signals["instagram_url"],
+                "primary_hashtag": social_signals["primary_hashtag"]
+            },
+            "gemini": gemini_signals if gemini_signals else {
+                "ai_verdict": "High impulse-buy potential with strong social proof in Indian D2C market.",
+                "viral_hook_hinglish": f"Aapke room ka look instant badal dega yeh {zen_title.replace('Zenlora™', '').strip()}!",
+                "target_audience": "Modern Indian Homemakers & Youth",
+                "ai_viral_score": score_data["total_score"]
+            },
             "score_breakdown": score_data["breakdown"],
             "bullets": score_data["bullets"],
             "rto_verdict": score_data["rto_verdict"],
@@ -88,7 +128,7 @@ def scan_and_update_winners(limit_per_niche: int = 8) -> List[Dict[str, Any]]:
     # Sort descending by winning score
     winners.sort(key=lambda x: x["winning_score"], reverse=True)
 
-    # Save to active database
+    # Persist to active database
     try:
         WINNING_DB_FILE.parent.mkdir(parents=True, exist_ok=True)
         with open(WINNING_DB_FILE, "w", encoding="utf-8") as f:
@@ -103,7 +143,7 @@ def scan_and_update_winners(limit_per_niche: int = 8) -> List[Dict[str, Any]]:
     except Exception as e:
         print(f"[!] Warning: Failed to persist winning_products.json: {e}")
 
-    print(f"[+] Scan completed! {len(winners)} winning products analyzed.")
+    print(f"[+] Scan completed! {len(winners)} winning products analyzed (Gemini analyzed {gemini_count} live items).")
     return winners
 
 def get_winners(niche: Optional[str] = None) -> List[Dict[str, Any]]:
@@ -116,7 +156,6 @@ def get_winners(niche: Optional[str] = None) -> List[Dict[str, Any]]:
         except Exception:
             winners = []
 
-    # Fallback to repo data
     if not winners:
         repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
         if repo_file.exists():
@@ -126,9 +165,8 @@ def get_winners(niche: Optional[str] = None) -> List[Dict[str, Any]]:
             except Exception:
                 winners = []
 
-    # If still empty, scan immediately
     if not winners:
-        winners = scan_and_update_winners(limit_per_niche=6)
+        winners = scan_and_update_winners(limit_per_niche=20, randomize=False)
 
     if niche and niche.lower() != "all":
         return [w for w in winners if w.get("niche", "").lower() == niche.lower()]

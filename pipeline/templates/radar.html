@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Zenlora AI Radar | DeoDap Winning Dropshipping Products</title>
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
@@ -43,6 +43,8 @@
             color: #111827;
             letter-spacing: -0.015em;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+            width: 100%;
         }
 
         .zen-canvas {
@@ -52,7 +54,7 @@
         }
 
         .zen-glass {
-            background: rgba(255, 255, 255, 0.94);
+            background: rgba(255, 255, 255, 0.96);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border-bottom: 1px solid #E5E7EB;
@@ -64,10 +66,12 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
             transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
         }
-        .zen-card:hover {
-            border-color: #D1D5DB;
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
-            transform: translateY(-2px);
+        @media (hover: hover) {
+            .zen-card:hover {
+                border-color: #D1D5DB;
+                box-shadow: 0 12px 28px rgba(0, 0, 0, 0.07);
+                transform: translateY(-2px);
+            }
         }
 
         .cat-pill-active {
@@ -77,105 +81,119 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.14);
         }
 
-        /* Pulse animation for scanner */
-        @keyframes radar-pulse {
-            0% { transform: scale(0.95); opacity: 0.8; }
-            50% { transform: scale(1.05); opacity: 1; }
-            100% { transform: scale(0.95); opacity: 0.8; }
+        /* Mobile Scrollbar fix */
+        .touch-scroll {
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
         }
-        .animate-radar {
-            animation: radar-pulse 2s infinite ease-in-out;
+        .touch-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Touch target safety */
+        .touch-btn {
+            min-height: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
     </style>
 </head>
 <body class="min-h-screen flex flex-col font-sans antialiased text-sm zen-canvas">
 
-    <!-- Top Sticky Header -->
+    <!-- Top Sticky Header (100% Mobile Optimized) -->
     <header class="sticky top-0 z-40 w-full zen-glass">
-        <div class="max-w-[1500px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
+        <div class="max-w-[1500px] mx-auto px-3 sm:px-6 h-14 flex items-center justify-between gap-2">
             
             <!-- Left: Brand Logo & Navigation -->
-            <div class="flex items-center gap-3">
-                <a href="/" class="flex items-center gap-2.5">
+            <div class="flex items-center gap-1.5 sm:gap-3 min-w-0">
+                <a href="/" class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
                     <div class="w-7 h-7 rounded-lg bg-brandBlack text-white flex items-center justify-center font-bold text-xs shadow-sm">
                         Z
                     </div>
-                    <span class="font-bold text-sm tracking-tight text-textPrimary flex items-center gap-2">
+                    <span class="font-bold text-sm tracking-tight text-textPrimary hidden xs:inline">
                         Zenlora
-                        <span class="text-[10px] text-emerald-700 font-semibold px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-200">Radar</span>
+                    </span>
+                    <span class="text-[10px] text-emerald-700 font-semibold px-1.5 sm:px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-200">
+                        Radar
                     </span>
                 </a>
 
                 <!-- App Switcher Nav -->
-                <nav class="flex items-center gap-1 ml-2 pl-3 border-l border-borderMain">
-                    <a href="/" class="px-2.5 py-1 rounded-md text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 transition">
-                        🎨 Studio & Prompts
+                <nav class="flex items-center gap-1 pl-1.5 sm:pl-3 border-l border-borderMain">
+                    <a href="/" class="px-2 py-1 rounded-md text-[11px] sm:text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 transition whitespace-nowrap">
+                        🎨 Studio
                     </a>
-                    <a href="/radar" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-zinc-100 text-textPrimary border border-zinc-200 shadow-xs">
-                        🎯 Winning Radar
+                    <a href="/radar" class="px-2 py-1 rounded-md text-[11px] sm:text-xs font-semibold bg-zinc-100 text-textPrimary border border-zinc-200 shadow-xs whitespace-nowrap">
+                        🎯 Radar
                     </a>
                 </nav>
             </div>
 
-            <!-- Right: Live Scan DeoDap Button -->
-            <div class="flex items-center gap-2">
-                <button onclick="triggerRadarScan()" id="scanBtn" class="h-8 px-3.5 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-2 transition active:scale-95 shadow-sm">
-                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <!-- Right: Live Scan DeoDap Button (Fresh Rotate Every Click) -->
+            <div class="flex items-center gap-1.5 flex-shrink-0">
+                <button onclick="triggerRadarScan()" id="scanBtn" class="touch-btn h-8 sm:h-9 px-2.5 sm:px-3.5 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-1.5 transition active:scale-95 shadow-sm">
+                    <svg class="w-3.5 h-3.5 text-emerald-400 animate-spin" id="scanIcon" style="display: none;" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                    </svg>
+                    <svg class="w-3.5 h-3.5 text-emerald-400" id="scanBolt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                     </svg>
-                    <span id="scanBtnText">Scan DeoDap Winners</span>
+                    <span id="scanBtnText" class="hidden xs:inline">Scan Fresh Winners</span>
+                    <span id="scanBtnTextMobile" class="xs:hidden">Scan</span>
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Main Content Container -->
-    <main class="flex-1 max-w-[1500px] w-full mx-auto px-4 sm:px-6 py-6">
+    <main class="flex-1 max-w-[1500px] w-full mx-auto px-3 sm:px-6 py-4 sm:py-6">
 
         <!-- Hero Header -->
-        <div class="mb-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div class="mb-5 sm:mb-6">
+            <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4">
                 <div>
-                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-accentGreen text-xs font-semibold mb-2">
+                    <div class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-accentGreen text-[11px] sm:text-xs font-semibold mb-2">
                         <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                        Live DeoDap Multi-Signal Intelligence Engine
+                        Gemini AI + Meta Ads + Trends + Reels Velocity
                     </div>
-                    <h1 class="text-2xl sm:text-3xl font-extrabold text-textPrimary tracking-tight">
+                    <h1 class="text-xl sm:text-3xl font-extrabold text-textPrimary tracking-tight">
                         AI Winning Product Discovery
                     </h1>
                     <p class="text-textSecondary text-xs sm:text-sm mt-1 max-w-2xl leading-relaxed">
-                        Wholesale sourcing from DeoDap filtered by ₹60–₹400, validated against Meta Ads competitor scaling, Google Trends India surge, and low COD RTO risk.
+                        Sourced live from DeoDap (₹60–₹400), verified across Meta Ad Library, Google Trends India, TikTok/Instagram hashtags, and Gemini AI.
                     </p>
                 </div>
 
-                <!-- Live Metrics Summary -->
-                <div class="flex items-center gap-2 text-xs">
-                    <div class="px-3.5 py-2 rounded-xl bg-white border border-borderMain shadow-xs">
-                        <div class="text-[10px] text-textMuted uppercase font-semibold">Tracked Winners</div>
-                        <div class="text-base font-bold text-textPrimary mt-0.5">{{ total_winners }} Items</div>
+                <!-- Live Metrics Summary Grid (Mobile 3-Col Cards) -->
+                <div class="grid grid-cols-3 gap-2 w-full lg:w-auto text-xs">
+                    <div class="p-2 sm:px-3.5 sm:py-2 rounded-xl bg-white border border-borderMain shadow-xs text-center lg:text-left">
+                        <div class="text-[9px] sm:text-[10px] text-textMuted uppercase font-semibold">Total Scanned</div>
+                        <div class="text-sm sm:text-base font-bold text-textPrimary mt-0.5">{{ total_winners }} Items</div>
                     </div>
-                    <div class="px-3.5 py-2 rounded-xl bg-white border border-borderMain shadow-xs">
-                        <div class="text-[10px] text-textMuted uppercase font-semibold">Avg Win Score</div>
-                        <div class="text-base font-bold text-textPrimary mt-0.5">{{ avg_score }}/100</div>
+                    <div class="p-2 sm:px-3.5 sm:py-2 rounded-xl bg-white border border-borderMain shadow-xs text-center lg:text-left">
+                        <div class="text-[9px] sm:text-[10px] text-textMuted uppercase font-semibold">Avg Win Score</div>
+                        <div class="text-sm sm:text-base font-bold text-textPrimary mt-0.5">{{ avg_score }}/100</div>
                     </div>
-                    <div class="px-3.5 py-2 rounded-xl bg-emerald-50 border border-emerald-200 shadow-xs">
-                        <div class="text-[10px] text-emerald-700 uppercase font-semibold">Super Winners</div>
-                        <div class="text-base font-bold text-emerald-800 mt-0.5">{{ super_winners }} Hot</div>
+                    <div class="p-2 sm:px-3.5 sm:py-2 rounded-xl bg-emerald-50 border border-emerald-200 shadow-xs text-center lg:text-left">
+                        <div class="text-[9px] sm:text-[10px] text-emerald-700 uppercase font-semibold">Super Winners</div>
+                        <div class="text-sm sm:text-base font-bold text-emerald-800 mt-0.5">{{ super_winners }} Hot</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Filter Tabs (Home Decor, Kitchen, Gadgets, Festive, Gifts) -->
-        <div class="flex items-center gap-2 overflow-x-auto pb-3 mb-6 border-b border-borderMain no-scrollbar">
+        <!-- Filter Tabs (Home Decor, Kitchen, Gadgets, Festive, Gifts - Touch Friendly) -->
+        <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-3 mb-5 sm:mb-6 border-b border-borderMain touch-scroll">
             {% for n in niches %}
-            <a href="/radar?niche={{ n }}" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold transition whitespace-nowrap border {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-borderMain hover:bg-zinc-50 hover:text-textPrimary{% endif %}">
-                {% if n == 'All' %}🌐 All Niches
-                {% elif n == 'Home Decor' %}🏡 Home Decor
-                {% elif n == 'Kitchen' %}🍳 Kitchen & Utility
-                {% elif n == 'Gadgets' %}⚡ Smart Gadgets
-                {% elif n == 'Festive' %}🪔 Festive & Lights
-                {% elif n == 'Gifts' %}🎁 Gifts & Hampers
+            <a href="/radar?niche={{ n }}" class="touch-btn px-3 sm:px-3.5 py-1.5 rounded-lg text-xs font-semibold transition whitespace-nowrap border flex-shrink-0 {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-borderMain hover:bg-zinc-50 hover:text-textPrimary{% endif %}">
+                {% if n == 'All' %}🌐 All ({{ total_winners }})
+                {% elif n == 'Home Decor' %}🏡 Home Decor (20+)
+                {% elif n == 'Kitchen' %}🍳 Kitchen (20+)
+                {% elif n == 'Gadgets' %}⚡ Smart Gadgets (20+)
+                {% elif n == 'Festive' %}🪔 Festive & Lights (20+)
+                {% elif n == 'Gifts' %}🎁 Gifts & Hampers (20+)
                 {% else %}{{ n }}{% endif %}
             </a>
             {% endfor %}
@@ -183,109 +201,135 @@
 
         <!-- Winners Grid -->
         {% if winners %}
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5" id="winnersGrid">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5" id="winnersGrid">
             {% for w in winners %}
-            <div class="zen-card rounded-2xl p-4 flex flex-col justify-between" id="card-{{ w.handle }}">
+            <div class="zen-card rounded-2xl p-3.5 sm:p-4 flex flex-col justify-between" id="card-{{ w.handle }}">
                 
                 <div>
                     <!-- Top Card Bar: Niche Tag, Score Badge & Bestseller Rank -->
-                    <div class="flex items-center justify-between gap-2 mb-3">
+                    <div class="flex items-center justify-between gap-1.5 flex-wrap mb-2.5">
                         <div class="flex items-center gap-1.5">
-                            <span class="text-[11px] font-semibold px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-700 border border-zinc-200">
+                            <span class="text-[10px] sm:text-[11px] font-semibold px-2 py-0.5 rounded-md bg-zinc-100 text-zinc-700 border border-zinc-200">
                                 {{ w.niche }}
                             </span>
                             <span class="text-[10px] font-medium text-textMuted">
                                 #{{ w.bestseller_rank }} DeoDap
                             </span>
                         </div>
-                        <span class="text-xs font-bold px-2.5 py-0.5 rounded-full text-white shadow-xs" style="background-color: {{ w.badge_color }};">
+                        <span class="text-[11px] sm:text-xs font-bold px-2 py-0.5 rounded-full text-white shadow-xs" style="background-color: {{ w.badge_color }};">
                             {{ w.badge_text }} · {{ w.winning_score }}/100
                         </span>
                     </div>
 
-                    <!-- Product Image & Basic Info -->
-                    <div class="flex gap-3 mb-4">
-                        <div class="w-24 h-24 rounded-xl bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group">
+                    <!-- Product Image & Basic Info (Responsive Stack on Small Phones) -->
+                    <div class="flex gap-3 mb-3.5">
+                        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-xl bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group">
                             {% if w.image_url %}
                             <img src="{{ w.image_url }}" alt="{{ w.title }}" class="w-full h-full object-cover transition group-hover:scale-105" loading="lazy">
                             {% else %}
-                            <div class="w-full h-full flex items-center justify-center text-textMuted text-xs">No image</div>
+                            <div class="w-full h-full flex items-center justify-center text-textMuted text-xs">No img</div>
                             {% endif %}
-                            <a href="{{ w.deodap_url }}" target="_blank" title="Open DeoDap Product" class="absolute bottom-1 right-1 w-6 h-6 rounded-md bg-white/90 text-textPrimary hover:bg-white flex items-center justify-center shadow-xs">
+                            <a href="{{ w.deodap_url }}" target="_blank" title="Open DeoDap Product" class="absolute bottom-1 right-1 w-6 h-6 rounded-md bg-white/95 text-textPrimary hover:bg-white flex items-center justify-center shadow-xs">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                             </a>
                         </div>
 
                         <div class="flex-1 min-w-0">
-                            <h3 class="font-bold text-textPrimary text-sm leading-snug line-clamp-2 hover:text-black">
+                            <h3 class="font-bold text-textPrimary text-xs sm:text-sm leading-snug line-clamp-2 hover:text-black">
                                 {{ w.zenlora_title }}
                             </h3>
-                            <p class="text-[11px] text-textMuted truncate mt-0.5">
-                                Source: {{ w.title }}
+                            <p class="text-[10px] sm:text-[11px] text-textMuted truncate mt-0.5">
+                                {{ w.title }}
                             </p>
 
                             <!-- Financial Breakdown -->
-                            <div class="mt-2 flex items-baseline gap-2">
-                                <span class="text-lg font-extrabold text-textPrimary">₹{{ w.selling_price }}</span>
+                            <div class="mt-1.5 flex items-baseline gap-1.5 flex-wrap">
+                                <span class="text-base sm:text-lg font-extrabold text-textPrimary">₹{{ w.selling_price }}</span>
                                 <span class="text-xs text-textMuted line-through">₹{{ w.mrp }}</span>
-                                <span class="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-100">
+                                <span class="text-[10px] sm:text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-100">
                                     +₹{{ w.gross_profit }} profit
                                 </span>
                             </div>
                             <div class="text-[10px] text-textSecondary mt-0.5">
-                                DeoDap Cost: <strong>₹{{ w.wholesale_price }}</strong> · Margin: <strong>{{ w.profit_margin_pct }}%</strong>
+                                DeoDap: <strong>₹{{ w.wholesale_price }}</strong> · Margin: <strong>{{ w.profit_margin_pct }}%</strong>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Multi-Signal Proof Verification Box -->
-                    <div class="bg-zinc-50 rounded-xl p-3 border border-borderMain mb-4 space-y-2 text-xs">
-                        <!-- Meta Ads Proof Link -->
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-1.5 text-textSecondary font-medium">
-                                <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                                Meta Ads Spy:
-                                <strong class="text-textPrimary">{{ w.meta_ads.active_ads }}+ Active Ads</strong>
+                    <!-- Multi-Signal Verification Box (All Repos Integrated) -->
+                    <div class="bg-zinc-50 rounded-xl p-2.5 sm:p-3 border border-borderMain mb-3 space-y-2 text-xs">
+                        
+                        <!-- 1. Meta Ads Spy (athm793 / KalilFagundes) -->
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center gap-1.5 text-textSecondary font-medium truncate">
+                                <span class="w-2 h-2 rounded-full bg-blue-500 flex-shrink-0"></span>
+                                <span class="truncate">Meta Ads Spy: <strong class="text-textPrimary">{{ w.meta_ads.active_ads }}+ Active</strong></span>
                             </div>
-                            <a href="{{ w.meta_ads.ad_library_url }}" target="_blank" class="text-blue-600 hover:text-blue-800 text-[11px] font-semibold flex items-center gap-0.5 hover:underline">
+                            <a href="{{ w.meta_ads.ad_library_url }}" target="_blank" class="text-blue-600 hover:text-blue-800 text-[11px] font-semibold flex items-center gap-0.5 flex-shrink-0 hover:underline p-1">
                                 View Ads ↗
                             </a>
                         </div>
 
-                        <!-- Google Trends Proof Link -->
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center gap-1.5 text-textSecondary font-medium">
-                                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                                Google Trends:
-                                <strong class="text-textPrimary">{{ w.trends.label }} ({{ w.trends.score }}/100)</strong>
+                        <!-- 2. Instagram & TikTok Reels Velocity (davidteather/TikTok-Api) -->
+                        {% if w.social %}
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center gap-1.5 text-textSecondary font-medium truncate">
+                                <span class="w-2 h-2 rounded-full bg-rose-500 flex-shrink-0"></span>
+                                <span class="truncate">Reels & TikTok: <strong class="text-textPrimary">{{ w.social.views }} Views</strong></span>
                             </div>
-                            <a href="{{ w.trends.trends_url }}" target="_blank" class="text-emerald-700 hover:text-emerald-900 text-[11px] font-semibold flex items-center gap-0.5 hover:underline">
+                            <a href="{{ w.social.instagram_url }}" target="_blank" class="text-rose-600 hover:text-rose-800 text-[11px] font-semibold flex items-center gap-0.5 flex-shrink-0 hover:underline p-1">
+                                {{ w.social.primary_hashtag }} ↗
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        <!-- 3. Google Trends India (GeneralMills/pytrends) -->
+                        <div class="flex items-center justify-between gap-1">
+                            <div class="flex items-center gap-1.5 text-textSecondary font-medium truncate">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 flex-shrink-0"></span>
+                                <span class="truncate">Google Trends: <strong class="text-textPrimary">{{ w.trends.label }} ({{ w.trends.score }}/100)</strong></span>
+                            </div>
+                            <a href="{{ w.trends.trends_url }}" target="_blank" class="text-emerald-700 hover:text-emerald-900 text-[11px] font-semibold flex items-center gap-0.5 flex-shrink-0 hover:underline p-1">
                                 Explore ↗
                             </a>
                         </div>
 
-                        <!-- COD & RTO Safety -->
-                        <div class="flex items-center gap-1.5 text-textSecondary font-medium">
-                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-                            COD Safety:
-                            <span class="text-textPrimary">{{ w.rto_verdict }}</span>
+                        <!-- 4. COD & RTO Safety -->
+                        <div class="flex items-center gap-1.5 text-textSecondary font-medium text-[11px]">
+                            <span class="w-2 h-2 rounded-full bg-amber-500 flex-shrink-0"></span>
+                            <span>COD Safety: <strong class="text-textPrimary">{{ w.rto_verdict }}</strong></span>
                         </div>
                     </div>
 
+                    <!-- Gemini AI Viral Hook Callout Box -->
+                    {% if w.gemini and w.gemini.viral_hook_hinglish %}
+                    <div class="mb-3 p-2.5 rounded-xl bg-purple-50/70 border border-purple-200/80 text-[11px]">
+                        <div class="flex items-center gap-1.5 text-purple-900 font-semibold mb-1">
+                            <svg class="w-3.5 h-3.5 text-purple-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 2a1 1 0 011 1v1.323l3.954 1.582 1.599-.8a1 1 0 011.342 1.342l-.8 1.6 1.582 3.953H20a1 1 0 010 2h-1.323l-1.582 3.954.8 1.599a1 1 0 01-1.342 1.342l-1.6-.8-3.953 1.582V20a1 1 0 01-2 0v-1.323l-3.954-1.582-1.599.8a1 1 0 01-1.342-1.342l.8-1.6-1.582-3.953H0a1 1 0 010-2h1.323l1.582-3.954-.8-1.599a1 1 0 011.342-1.342l1.6.8 3.953-1.582V3a1 1 0 011-1zm0 5a3 3 0 100 6 3 3 0 000-6z" clip-rule="evenodd"></path>
+                            </svg>
+                            <span>Gemini AI Ad Hook:</span>
+                        </div>
+                        <p class="text-purple-950 italic font-medium leading-relaxed">
+                            "{{ w.gemini.viral_hook_hinglish }}"
+                        </p>
+                    </div>
+                    {% endif %}
+
                     <!-- AI Scoring Bullets -->
-                    <div class="space-y-1.5 mb-4 text-[11px] text-textSecondary">
+                    <div class="space-y-1 mb-3.5 text-[11px] text-textSecondary">
                         {% for bullet in w.bullets %}
-                        <div class="flex items-start gap-1.5 leading-snug">
+                        <div class="flex items-start gap-1 leading-snug">
                             <span>{{ bullet }}</span>
                         </div>
                         {% endfor %}
                     </div>
                 </div>
 
-                <!-- Action Button: 1-Click Import to Studio -->
-                <div class="pt-3 border-t border-borderMain">
-                    <button onclick="importWinner('{{ w.handle }}')" id="btn-import-{{ w.handle }}" class="w-full h-9 rounded-xl bg-brandBlack hover:bg-brandHover text-white text-xs font-semibold flex items-center justify-center gap-2 transition active:scale-98 shadow-sm">
-                        <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <!-- Action Button: 1-Click Import to Studio (Touch Friendly) -->
+                <div class="pt-2.5 border-t border-borderMain">
+                    <button onclick="importWinner('{{ w.handle }}')" id="btn-import-{{ w.handle }}" class="touch-btn w-full h-10 rounded-xl bg-brandBlack hover:bg-brandHover text-white text-xs font-semibold flex items-center justify-center gap-2 transition active:scale-98 shadow-sm">
+                        <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                         </svg>
                         <span>Import to Studio & Generate UGC</span>
@@ -297,28 +341,30 @@
         </div>
         {% else %}
         <!-- Empty State -->
-        <div class="zen-card rounded-2xl p-12 text-center max-w-md mx-auto my-12">
+        <div class="zen-card rounded-2xl p-8 sm:p-12 text-center max-w-md mx-auto my-8 sm:my-12">
             <div class="w-12 h-12 rounded-2xl bg-zinc-100 border border-zinc-200 text-textSecondary flex items-center justify-center mx-auto mb-4">
                 <svg class="w-6 h-6 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
-            <h3 class="text-base font-bold text-textPrimary">No Winners Scanned Yet</h3>
-            <p class="text-xs text-textSecondary mt-1 mb-6">
-                Click below to start an automated deep scan across DeoDap bestsellers for this niche.
+            <h3 class="text-base font-bold text-textPrimary">No Winners In This Niche Yet</h3>
+            <p class="text-xs text-textSecondary mt-1 mb-5">
+                Click below to scan 20+ fresh DeoDap winners with Gemini AI and Meta Ads tracking.
             </p>
-            <button onclick="triggerRadarScan()" class="h-9 px-4 rounded-xl bg-brandBlack text-white text-xs font-semibold transition hover:bg-brandHover">
-                Run Radar Scan Now
+            <button onclick="triggerRadarScan()" class="touch-btn h-10 px-5 rounded-xl bg-brandBlack text-white text-xs font-semibold transition hover:bg-brandHover shadow-sm">
+                Scan 20+ Winners Now
             </button>
         </div>
         {% endif %}
 
     </main>
 
-    <!-- Success Toast Notification -->
-    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
-        <div class="bg-brandBlack text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 border border-zinc-700">
-            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-            <div class="text-xs font-medium" id="toastMsg">Notification message</div>
-            <a href="/" id="toastAction" class="text-xs font-bold text-emerald-400 hover:underline pl-2 border-l border-zinc-700">Open Studio →</a>
+    <!-- Success Toast Notification (Mobile Padded) -->
+    <div id="toast" class="fixed bottom-4 sm:bottom-6 right-3 sm:right-6 left-3 sm:left-auto z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-brandBlack text-white px-4 py-3 rounded-xl shadow-2xl flex items-center justify-between sm:justify-start gap-3 border border-zinc-700">
+            <div class="flex items-center gap-2 min-w-0">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 flex-shrink-0"></span>
+                <span class="text-xs font-medium truncate" id="toastMsg">Notification message</span>
+            </div>
+            <a href="/" id="toastAction" class="text-xs font-bold text-emerald-400 hover:underline pl-2 border-l border-zinc-700 whitespace-nowrap">Studio →</a>
         </div>
     </div>
 
@@ -343,31 +389,43 @@
 
         async function triggerRadarScan() {
             const btn = document.getElementById('scanBtn');
+            const icon = document.getElementById('scanIcon');
+            const bolt = document.getElementById('scanBolt');
             const text = document.getElementById('scanBtnText');
+            const textMob = document.getElementById('scanBtnTextMobile');
+
             btn.disabled = true;
-            text.innerText = "Scanning DeoDap & Ad Libraries...";
+            icon.style.display = "inline-block";
+            bolt.style.display = "none";
+            text.innerText = "Scanning 20+ per niche...";
+            textMob.innerText = "Scanning...";
             btn.classList.add('opacity-75');
 
             try {
                 const res = await fetch('/api/radar/scan', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ limit: 8 })
+                    body: JSON.stringify({ limit: 20 })
                 });
                 const data = await res.json();
                 if (data.success) {
-                    showToast(`Scan complete! ${data.count} winning products found.`, false);
-                    setTimeout(() => window.location.reload(), 1000);
+                    showToast(`Scanned ${data.count} fresh winning products!`, false);
+                    setTimeout(() => window.location.reload(), 800);
                 } else {
                     alert('Scan error: ' + (data.error || 'Unknown error'));
-                    btn.disabled = false;
-                    text.innerText = "Scan DeoDap Winners";
-                    btn.classList.remove('opacity-75');
+                    resetBtn();
                 }
             } catch (err) {
-                alert('Network error during scan: ' + err.message);
+                alert('Network error: ' + err.message);
+                resetBtn();
+            }
+
+            function resetBtn() {
                 btn.disabled = false;
-                text.innerText = "Scan DeoDap Winners";
+                icon.style.display = "none";
+                bolt.style.display = "inline-block";
+                text.innerText = "Scan Fresh Winners";
+                textMob.innerText = "Scan";
                 btn.classList.remove('opacity-75');
             }
         }
@@ -376,7 +434,7 @@
             const btn = document.getElementById(`btn-import-${handle}`);
             const originalHtml = btn.innerHTML;
             btn.disabled = true;
-            btn.innerHTML = `<span class="inline-block animate-spin mr-1.5">⏳</span> Importing & Generating Prompts...`;
+            btn.innerHTML = `<span class="inline-block animate-spin mr-1.5">⏳</span> Importing...`;
 
             try {
                 const res = await fetch(`/api/radar/import/${handle}`, {
@@ -388,7 +446,7 @@
                     btn.innerHTML = `✓ Imported to Studio!`;
                     btn.classList.remove('bg-brandBlack', 'hover:bg-brandHover');
                     btn.classList.add('bg-emerald-600', 'text-white');
-                    showToast(`'${data.product.extracted.title.slice(0, 30)}...' imported with UGC storyboards!`, true);
+                    showToast(`Imported to Studio with UGC storyboards!`, true);
                 } else {
                     alert('Import failed: ' + (data.error || 'Unknown error'));
                     btn.disabled = false;

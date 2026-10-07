@@ -94,27 +94,29 @@
 
     <!-- Top Sticky Header -->
     <header class="sticky top-0 z-40 w-full zen-glass">
-        <div class="max-w-[1500px] mx-auto px-3 sm:px-6 h-14 flex items-center justify-between gap-3">
+        <div class="max-w-[1500px] mx-auto px-2.5 sm:px-6 h-14 flex items-center justify-between gap-1.5 sm:gap-3">
             
             <!-- Left: Brand Logo & Title -->
-            <div class="flex items-center gap-3">
-                <a href="/" class="flex items-center gap-2.5">
+            <div class="flex items-center gap-1.5 sm:gap-3 min-w-0">
+                <a href="/" class="flex items-center gap-1.5 sm:gap-2.5 flex-shrink-0">
                     <div class="w-7 h-7 rounded-lg bg-brandBlack text-white flex items-center justify-center font-bold text-xs shadow-sm">
                         Z
                     </div>
-                    <span class="font-bold text-sm tracking-tight text-textPrimary flex items-center gap-2">
+                    <span class="font-bold text-sm tracking-tight text-textPrimary hidden xs:inline">
                         Zenlora
-                        <span class="text-[10px] text-textSecondary font-medium px-2 py-0.5 rounded-md bg-zinc-100 border border-zinc-200">Studio</span>
+                    </span>
+                    <span class="text-[10px] text-textSecondary font-medium px-1.5 sm:px-2 py-0.5 rounded-md bg-zinc-100 border border-zinc-200">
+                        Studio
                     </span>
                 </a>
 
                 <!-- App Switcher Nav -->
-                <nav class="flex items-center gap-1 ml-2 pl-3 border-l border-borderMain">
-                    <a href="/" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-zinc-100 text-textPrimary border border-zinc-200 shadow-xs">
-                        🎨 Studio & Prompts
+                <nav class="flex items-center gap-1 pl-1.5 sm:pl-3 border-l border-borderMain">
+                    <a href="/" class="px-2 py-1 rounded-md text-[11px] sm:text-xs font-semibold bg-zinc-100 text-textPrimary border border-zinc-200 shadow-xs whitespace-nowrap">
+                        🎨 Studio
                     </a>
-                    <a href="/radar" class="px-2.5 py-1 rounded-md text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 transition flex items-center gap-1">
-                        🎯 Winning Radar
+                    <a href="/radar" class="px-2 py-1 rounded-md text-[11px] sm:text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 transition flex items-center gap-1 whitespace-nowrap">
+                        🎯 Radar
                         <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
                     </a>
                 </nav>
@@ -135,23 +137,18 @@
             </div>
 
             <!-- Right: Action Buttons -->
-            <div class="flex items-center gap-2">
-                <a href="/radar" class="h-8 px-3 rounded-lg bg-emerald-50 hover:bg-emerald-100 border border-emerald-200 text-emerald-800 font-semibold text-xs flex items-center gap-1.5 transition active:scale-95 shadow-xs">
-                    <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                    <span class="hidden sm:inline">Winning Radar</span>
-                    <span class="sm:hidden">Radar</span>
-                </a>
-                <a href="/api/export-excel" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-1.5 transition active:scale-95 shadow-sm">
-                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+            <div class="flex items-center gap-1 sm:gap-2 flex-shrink-0">
+                <a href="/api/export-excel" class="h-8 px-2 sm:px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-1 transition active:scale-95 shadow-sm">
+                    <svg class="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     <span class="hidden sm:inline">Export Excel</span>
                     <span class="sm:hidden">Excel</span>
                 </a>
-                <button onclick="openBatchModal()" class="h-8 px-3 rounded-lg bg-white hover:bg-zinc-50 border border-borderMain text-textPrimary text-xs font-medium flex items-center gap-1.5 transition">
-                    <svg class="w-3.5 h-3.5 text-textSecondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                <button onclick="openBatchModal()" class="h-8 px-2 sm:px-3 rounded-lg bg-white hover:bg-zinc-50 border border-borderMain text-textPrimary text-xs font-medium flex items-center gap-1 transition">
+                    <svg class="w-3.5 h-3.5 text-textSecondary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
                     <span class="hidden sm:inline">Bulk Paste</span>
                     <span class="sm:hidden">Bulk</span>
                 </button>
-                <button onclick="clearAllProducts()" title="Clear Database" class="h-8 px-2.5 rounded-lg bg-white hover:bg-red-50 hover:text-red-600 text-textMuted border border-borderMain text-xs transition">
+                <button onclick="clearAllProducts()" title="Clear Database" class="h-8 px-2 sm:px-2.5 rounded-lg bg-white hover:bg-red-50 hover:text-red-600 text-textMuted border border-borderMain text-xs transition">
                     <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                 </button>
             </div>

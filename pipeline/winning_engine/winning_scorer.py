@@ -1,17 +1,23 @@
 import os
 import sys
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
-# Add parent directory to path to import classifier_pricing
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 try:
     from classifier_pricing import ClassifierAndPricingEngine
 except ImportError:
     ClassifierAndPricingEngine = None
 
-def compute_winning_score(product: Dict[str, Any], meta_signals: Dict[str, Any], trend_signals: Dict[str, Any]) -> Dict[str, Any]:
+def compute_winning_score(
+    product: Dict[str, Any],
+    meta_signals: Dict[str, Any],
+    trend_signals: Dict[str, Any],
+    social_signals: Optional[Dict[str, Any]] = None,
+    gemini_signals: Optional[Dict[str, Any]] = None
+) -> Dict[str, Any]:
     """
-    Computes the Zenlora 0-100 Winning Score (ZWI), badges, and actionable bullet reasoning.
+    Computes the Zenlora 0-100 Winning Score (ZWI), badges, and actionable bullet reasoning
+    combining Meta Ads, Google Trends, Reels velocity, and Gemini AI analysis.
     """
     wholesale_price = float(product.get("wholesale_price", 150))
     niche = product.get("niche", "Home Decor")
@@ -66,26 +72,28 @@ def compute_winning_score(product: Dict[str, Any], meta_signals: Dict[str, Any],
 
     # 4. COD & RTO Safety Score (Max 15)
     fragile_triggers = ["glass", "ceramic", "mirror", "fragile", "heavy", "porcelain"]
-    safe_triggers = ["led", "silicone", "organizer", "dispenser", "abs", "plastic", "cutter", "peeler", "mat", "light", "bottle", "rack"]
+    safe_triggers = ["led", "silicone", "organizer", "dispenser", "abs", "plastic", "cutter", "peeler", "mat", "light", "bottle", "rack", "tool", "box"]
     
     is_fragile = any(f in title_lower for f in fragile_triggers)
     is_safe = any(s in title_lower for s in safe_triggers)
 
     if is_fragile:
         rto_score = 8
-        rto_verdict = "Medium Risk (Fragile Material - Pack Well)"
+        rto_verdict = "Medium Risk (Fragile - Pack Safely)"
     elif is_safe:
         rto_score = 15
-        rto_verdict = "Low RTO Risk (Durable, Lightweight Packaging)"
+        rto_verdict = "Low RTO Risk (Durable & Lightweight)"
     else:
         rto_score = 12
         rto_verdict = "Standard COD Safety"
 
     # 5. Aesthetic & Reel Appeal (Max 10)
-    visual_triggers = ["lamp", "light", "rgb", "crystal", "sunset", "glow", "aesthetic", "mini", "portable", "automatic", "360", "wireless", "touch", "sensor"]
-    visual_matches = sum(1 for v in visual_triggers if v in title_lower)
-    
-    aesthetic_score = min(10, 6 + (visual_matches * 2))
+    if gemini_signals and "ai_viral_score" in gemini_signals:
+        aesthetic_score = min(10, round(gemini_signals["ai_viral_score"] / 10.0))
+    else:
+        visual_triggers = ["lamp", "light", "rgb", "crystal", "sunset", "glow", "aesthetic", "mini", "portable", "automatic", "360", "wireless", "touch", "sensor"]
+        visual_matches = sum(1 for v in visual_triggers if v in title_lower)
+        aesthetic_score = min(10, 6 + (visual_matches * 2))
 
     # Total Score Calculation
     total_score = min(99, margin_score + scale_score + trend_score_pts + rto_score + aesthetic_score)
@@ -106,11 +114,20 @@ def compute_winning_score(product: Dict[str, Any], meta_signals: Dict[str, Any],
 
     # Actionable Bullet Points
     bullets: List[str] = [
-        f"💰 ₹{int(gross_profit)} Net Profit: High {pricing['profit_margin_pct']}% markup at ₹{pricing['selling_price']} retail (Cost: ₹{int(wholesale_price)}).",
+        f"💰 ₹{int(gross_profit)} Net Profit: High {pricing['profit_margin_pct']}% margin at ₹{pricing['selling_price']} retail (Cost: ₹{int(wholesale_price)}).",
         f"🎯 Ad Proof: {meta_signals.get('scale_verdict', 'Active')} with ~{active_ads} active competitor ads.",
-        f"📈 Trend Demand: {trend_signals.get('trend_status', 'Rising')} in India ({niche} niche).",
-        f"🛡️ Return Safety: {rto_verdict}."
+        f"📈 Trend Demand: {trend_signals.get('trend_status', 'Rising')} in India ({niche} niche)."
     ]
+
+    # Add Social Velocity Bullet
+    if social_signals:
+        bullets.append(f"📱 Reels Velocity: ~{social_signals.get('est_reels_views', '1.5M')} views on {social_signals.get('primary_hashtag', '#amazonfinds')} ({social_signals.get('scale_label', 'Active')}).")
+
+    # Add Gemini AI Hook Bullet
+    if gemini_signals and gemini_signals.get("viral_hook_hinglish"):
+        bullets.append(f"🎬 AI Reel Hook: \"{gemini_signals.get('viral_hook_hinglish')}\"")
+    else:
+        bullets.append(f"🛡️ Return Safety: {rto_verdict}.")
 
     return {
         "total_score": total_score,
