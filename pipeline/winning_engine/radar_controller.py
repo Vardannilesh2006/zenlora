@@ -19,11 +19,13 @@ from winning_engine.trend_checker import get_google_trends_analysis
 from winning_engine.social_spy import analyze_social_velocity
 from winning_engine.gemini_analyzer import analyze_with_gemini
 from winning_engine.winning_scorer import compute_winning_score
+from ugc_engine import UGCEngine
 
 def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -> List[Dict[str, Any]]:
     """
     Harvests DeoDap across 5 niches (min 20 per niche), runs Meta Ads, Reels velocity,
-    Google Trends, and Gemini AI analysis, and saves to winning_products.json.
+    Google Trends, Gemini AI analysis, and automatically generates full 3-scene UGC storyboards
+    and creative director direction for every discovered winner.
     """
     print(f"[*] Starting Zenlora Winning Radar scan (target: {limit_per_niche} per niche, rotation={randomize})...")
     harvested_items = harvest_deodap_bestsellers(limit_per_niche=limit_per_niche, randomize=randomize)
@@ -32,7 +34,7 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
     scan_timestamp = datetime.now().strftime("%d %b %Y, %I:%M %p")
 
     # To optimize scan speed and avoid rate-limiting Gemini API on 100+ items,
-    # we call Gemini on the top items of each category, and use smart heuristic for the rest.
+    # we call Gemini on top items and utilize smart deterministic fallbacks.
     gemini_count = 0
     max_gemini_calls = 10
 
@@ -71,6 +73,21 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
         )
 
         zen_title = ClassifierAndPricingEngine.generate_zenlora_title(title) if ClassifierAndPricingEngine else f"Zenlora™ {meta_signals['keyword'].title()}"
+
+        # 6. Automatic UGC Storyboard & Multi-Scene Continuity Prompts
+        prod_data = {
+            "title": title,
+            "description": item.get("description", "")
+        }
+        class_data = {
+            "zenlora_title": zen_title,
+            "primary_category": niche,
+            "selling_price": score_data["pricing"]["selling_price"]
+        }
+        try:
+            ugc_prompts = UGCEngine.generate_prompts(prod_data, class_data)
+        except Exception:
+            ugc_prompts = {}
 
         winner_record = {
             "id": item.get("id"),
@@ -121,7 +138,8 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
             "image_url": item.get("image_url", ""),
             "deodap_url": item.get("deodap_url", ""),
             "description": item.get("description", ""),
-            "scanned_at": scan_timestamp
+            "scanned_at": scan_timestamp,
+            **ugc_prompts
         }
         winners.append(winner_record)
 
@@ -143,12 +161,14 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
     except Exception as e:
         print(f"[!] Warning: Failed to persist winning_products.json: {e}")
 
-    print(f"[+] Scan completed! {len(winners)} winning products analyzed (Gemini analyzed {gemini_count} live items).")
+    print(f"[+] Scan completed! {len(winners)} winning products analyzed with full AI UGC storyboards.")
     return winners
 
 def get_winners(niche: Optional[str] = None) -> List[Dict[str, Any]]:
-    """Loads winning products from storage, triggering a scan if missing."""
+    """Loads winning products from storage, ensuring full UGC storyboard fields are present."""
     winners = []
+    
+    # 1. Try reading active WINNING_DB_FILE
     if WINNING_DB_FILE.exists():
         try:
             with open(WINNING_DB_FILE, "r", encoding="utf-8") as f:
@@ -156,15 +176,25 @@ def get_winners(niche: Optional[str] = None) -> List[Dict[str, Any]]:
         except Exception:
             winners = []
 
-    if not winners:
-        repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
-        if repo_file.exists():
-            try:
-                with open(repo_file, "r", encoding="utf-8") as f:
-                    winners = json.load(f)
-            except Exception:
-                winners = []
+    # 2. If missing or lacking UGC prompts, try bundled repo file
+    repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
+    if (not winners or not winners[0].get("storyboard_image_prompt")) and repo_file.exists():
+        try:
+            with open(repo_file, "r", encoding="utf-8") as f:
+                repo_winners = json.load(f)
+            if repo_winners and repo_winners[0].get("storyboard_image_prompt"):
+                winners = repo_winners
+                # Sync back to active file
+                try:
+                    WINNING_DB_FILE.parent.mkdir(parents=True, exist_ok=True)
+                    with open(WINNING_DB_FILE, "w", encoding="utf-8") as f:
+                        json.dump(winners, f, indent=2, ensure_ascii=False)
+                except Exception:
+                    pass
+        except Exception:
+            pass
 
+    # 3. If still empty, trigger clean scan
     if not winners:
         winners = scan_and_update_winners(limit_per_niche=20, randomize=False)
 

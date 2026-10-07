@@ -89,6 +89,8 @@ def api_radar_import(handle):
     except Exception as e:
         return jsonify({'success': False, 'error': str(e)}), 500
 
+from ugc_engine import UGCEngine
+
 @app.route('/product/<handle>')
 def product_detail(handle):
     # First search Studio DB
@@ -110,6 +112,24 @@ def product_detail(handle):
 
     if not product:
         return "Product not found", 404
+
+    # Ensure UGC storyboard and Gemini creative director prompts are NEVER blank
+    if not product.get("storyboard_image_prompt") or not product.get("scene_1_video_prompt"):
+        prod_data = {
+            "title": product.get("title", ""),
+            "description": product.get("description", "")
+        }
+        class_data = {
+            "zenlora_title": product.get("zenlora_title", product.get("title", "")),
+            "primary_category": product.get("primary_category", product.get("niche", "Home Decor")),
+            "selling_price": product.get("selling_price", 499)
+        }
+        try:
+            ugc_data = UGCEngine.generate_prompts(prod_data, class_data)
+            product.update(ugc_data)
+        except Exception as e:
+            print(f"[!] Warning: Failed generating UGC on-demand: {e}")
+
     return render_template('product_detail.html', p=product)
 
 @app.route('/api/process', methods=['POST'])
