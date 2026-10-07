@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{ p.zenlora_title }} | Zenlora Product Studio</title>
+    <!-- Favicon: Clean Emerald & Gold Luxury Squircle (No Black) -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <link rel="alternate icon" href="/static/favicon.svg">
+    <link rel="apple-touch-icon" href="/static/favicon.svg">
+    <!-- System Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        canvas: '#F7F8FA',
+                        borderMain: '#E5E7EB',
+                        textPrimary: '#111827',
+                        textSecondary: '#4B5563',
+                        textMuted: '#9CA3AF',
+                        brandBlack: '#0A0A0C',
+                        brandHover: '#1F2937',
+                        accentGreen: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F7F8FA;
+            color: #111827;
+            letter-spacing: -0.015em;
+            -webkit-font-smoothing: antialiased;
+        }
+        .zen-glass {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid #E5E7EB;
+        }
+        .zen-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased text-sm bg-canvas pb-16">
+
+    <!-- Top Sticky Header -->
+    <header class="sticky top-0 z-40 w-full zen-glass">
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
+            <a href="/" class="flex items-center gap-2 text-xs font-semibold text-textSecondary hover:text-textPrimary transition">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                <span>Back to Catalog</span>
+            </a>
+
+            <div class="flex items-center gap-2">
+                <a href="{{ p.deodap_url }}" target="_blank" rel="noopener noreferrer" class="h-8 px-3 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center gap-1.5 transition">
+                    <span>Open on DeoDap.com</span>
+                    <svg class="w-3.5 h-3.5 text-textSecondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+                <a href="/api/export-excel" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white text-xs font-medium flex items-center gap-1.5 transition">
+                    <span>Export Excel</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-[1200px] w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
+
+        <!-- Master Product Card (Clicking Image OR Title opens DeoDap in New Tab) -->
+        <section class="zen-card rounded-2xl p-5 sm:p-7">
+            <div class="flex flex-col md:flex-row items-start gap-6">
+                
+                <!-- Product Image: Click to open DeoDap in new tab -->
+                <a 
+                    href="{{ p.deodap_url }}" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    title="Click to view full product details on DeoDap.com (new tab)"
+                    class="w-full md:w-56 h-56 rounded-xl bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group block shadow-xs"
+                >
+                    {% if p.primary_image %}
+                        <img src="{{ p.primary_image }}" alt="{{ p.zenlora_title }}" class="w-full h-full object-cover group-hover:scale-102 transition duration-300">
+                    {% else %}
+                        <div class="w-full h-full flex items-center justify-center text-textMuted font-mono">Zenlora</div>
+                    {% endif %}
+                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold gap-1.5">
+                        <span>Open on DeoDap</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </div>
+                </a>
+
+                <!-- Product Details -->
+                <div class="flex-1 min-w-0 space-y-4">
+                    
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200">
+                            {{ p.primary_category }}
+                        </span>
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200">
+                            {{ p.content_bucket }}
+                        </span>
+                        {% if p.sku %}
+                            <span class="text-xs font-mono text-textMuted px-2 py-0.5">SKU: {{ p.sku }}</span>
+                        {% endif %}
+                    </div>
+
+                    <!-- Product Title: Click to open DeoDap in new tab -->
+                    <div>
+                        <a 
+                            href="{{ p.deodap_url }}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            title="Click to view product on DeoDap.com (new tab)"
+                            class="text-xl sm:text-2xl font-bold text-textPrimary leading-tight hover:underline flex items-start gap-2 group"
+                        >
+                            <span>{{ p.zenlora_title }}</span>
+                            <svg class="w-5 h-5 text-textMuted group-hover:text-textPrimary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <p class="text-xs text-textSecondary mt-1">Source: DeoDap Wholesale (Click title or image above to open original listing)</p>
+                    </div>
+
+                    <!-- Pricing & Margin Breakdown Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                        <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain">
+                            <span class="text-[10px] font-medium text-textMuted block uppercase">DeoDap Cost</span>
+                            <span class="text-lg font-bold font-mono text-textSecondary mt-0.5 block">₹{{ p.wholesale_price }}</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain">
+                            <span class="text-[10px] font-medium text-textMuted block uppercase">Zenlora Price</span>
+                            <span class="text-lg font-bold font-mono text-textPrimary mt-0.5 block">₹{{ p.selling_price }}</span>
+                            <span class="text-[10px] text-textMuted line-through">₹{{ p.mrp }}</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+                            <span class="text-[10px] font-bold text-emerald-800 block uppercase">Net Profit Margin</span>
+                            <span class="text-lg font-bold font-mono text-emerald-900 mt-0.5 block">+₹{{ p.gross_profit }}</span>
+                            <span class="text-[10px] text-emerald-700 font-semibold">{{ p.profit_margin_pct }}% margin</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain">
+                            <span class="text-[10px] font-medium text-textMuted block uppercase">Delivery Setup</span>
+                            <span class="text-sm font-semibold text-textPrimary mt-1 block">Free Delivery</span>
+                            <span class="text-[10px] text-textMuted">₹60 buffer absorbed</span>
+                        </div>
+                    </div>
+
+                    <!-- Direct Action Link Button -->
+                    <div class="pt-1">
+                        <a 
+                            href="{{ p.deodap_url }}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-zinc-900 hover:bg-black text-white text-xs font-semibold transition"
+                        >
+                            <span>Open Original Product Page on DeoDap.com</span>
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Viral Hook & Audio Recommendation -->
+        <section class="zen-card rounded-2xl p-5 bg-zinc-100 border border-zinc-200">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-textSecondary">ON-SCREEN VIRAL HOOK (0-3s)</span>
+                    <h3 class="text-base sm:text-lg font-bold text-textPrimary mt-0.5">"{{ p.on_screen_hook_text }}"</h3>
+                </div>
+                <div class="sm:text-right">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-textSecondary">AUDIO VIBE</span>
+                    <p class="text-xs font-semibold text-textPrimary mt-0.5">{{ p.audio_recommendation }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Prompt Studio Section -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-textPrimary">AI Prompt Studio</h3>
+                <span class="text-xs text-textMuted">Click 'Copy' on any card to use in AI tools</span>
+            </div>
+
+            <!-- Storyboard Base Image Prompt -->
+            <div class="zen-card rounded-2xl p-5">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-borderMain">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary">Storyboard Base Image (Midjourney / Ideogram)</h4>
+                        <span class="text-[11px] text-textMuted font-mono">Aspect Ratio: --ar 9:16 vertical</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.storyboard_image_prompt }}`)" class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary font-semibold text-xs transition">
+                        Copy Prompt
+                    </button>
+                </div>
+                <p class="text-xs text-textSecondary font-mono leading-relaxed select-all">{{ p.storyboard_image_prompt }}</p>
+            </div>
+
+            <!-- Scene 1 Video Prompt -->
+            <div class="zen-card rounded-2xl p-5">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-borderMain">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary">Scene 1 Video Prompt (0-5s Kling / Runway / Luma)</h4>
+                        <span class="text-[11px] text-textMuted">Opening hook action</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.scene_1_video_prompt }}`)" class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary font-semibold text-xs transition">
+                        Copy Prompt
+                    </button>
+                </div>
+                <p class="text-xs text-textSecondary font-mono leading-relaxed select-all">{{ p.scene_1_video_prompt }}</p>
+            </div>
+
+            <!-- Scene 2 Video Prompt (Continuity Injected) -->
+            <div class="zen-card rounded-2xl p-5 bg-zinc-50 border border-zinc-300">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-200">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary flex items-center gap-2">
+                            Scene 2 Video Prompt (5-10s)
+                            <span class="text-[9px] px-2 py-0.5 rounded-full bg-zinc-200 text-textPrimary font-bold">Continuity Injected</span>
+                        </h4>
+                        <span class="text-[11px] text-textSecondary">Prepend seamless continuity prompt for identical characters & environment</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.scene_2_video_prompt }}`)" class="px-3 py-1.5 rounded-lg bg-white border border-zinc-200 hover:bg-zinc-100 text-textPrimary font-semibold text-xs transition">
+                        Copy Prompt
+                    </button>
+                </div>
+                <p class="text-xs text-textSecondary font-mono leading-relaxed select-all">{{ p.scene_2_video_prompt }}</p>
+            </div>
+
+            <!-- Scene 3 Video Prompt (Continuity Injected) -->
+            <div class="zen-card rounded-2xl p-5 bg-zinc-50 border border-zinc-300">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-zinc-200">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary flex items-center gap-2">
+                            Scene 3 Video Prompt (10-15s)
+                            <span class="text-[9px] px-2 py-0.5 rounded-full bg-zinc-200 text-textPrimary font-bold">Continuity Injected</span>
+                        </h4>
+                        <span class="text-[11px] text-textSecondary">Final satisfying reveal and loop conclusion</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.scene_3_video_prompt }}`)" class="px-3 py-1.5 rounded-lg bg-white border border-zinc-200 hover:bg-zinc-100 text-textPrimary font-semibold text-xs transition">
+                        Copy Prompt
+                    </button>
+                </div>
+                <p class="text-xs text-textSecondary font-mono leading-relaxed select-all">{{ p.scene_3_video_prompt }}</p>
+            </div>
+
+            <!-- Full Instagram Caption -->
+            <div class="zen-card rounded-2xl p-5">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-borderMain">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary">Instagram Caption & ManyChat CTA</h4>
+                        <span class="text-[11px] text-textMuted">Trigger Keyword: '{{ p.cta_keyword }}'</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.instagram_caption }}`)" class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary font-semibold text-xs transition">
+                        Copy Caption
+                    </button>
+                </div>
+                <pre class="text-xs text-textSecondary font-sans whitespace-pre-wrap leading-relaxed select-all">{{ p.instagram_caption }}</pre>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-brandBlack text-white px-3.5 py-2 rounded-xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-200 z-50 flex items-center gap-2 text-xs font-medium pointer-events-none">
+        <svg class="w-3.5 h-3.5 text-accentGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span id="toastMsg">Copied</span>
+    </div>
+
+    <script>
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2000);
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Copied to Clipboard');
+            });
+        }
+    </script>
+</body>
+</html>

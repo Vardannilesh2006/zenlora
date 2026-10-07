@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <!-- Crisp White & Pearl Squircle -->
+    <linearGradient id="sqBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F4F5F7" />
+    </linearGradient>
+    
+    <!-- Vibrant Emerald Jade Gradient -->
+    <linearGradient id="zenGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34D399" />
+      <stop offset="45%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Warm Amber Gold Accent -->
+    <linearGradient id="zenAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FBBF24" />
+      <stop offset="100%" stop-color="#F59E0B" />
+    </linearGradient>
+    
+    <!-- Micro Silver Border for crisp contrast on all tabs -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#E5E7EB" />
+      <stop offset="100%" stop-color="#D1D5DB" />
+    </linearGradient>
+  </defs>
+
+  <!-- Clean Pearl Squircle -->
+  <rect x="2" y="2" width="60" height="60" rx="16" fill="url(#sqBg)" stroke="url(#borderGrad)" stroke-width="2" />
+
+  <!-- Geometric Minimalist Monogram 'Z' -->
+  <path d="M19 21.5 H45 L22 42.5 H45" 
+        fill="none" 
+        stroke="url(#zenGreen)" 
+        stroke-width="5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" />
+
+  <!-- Radiant Gold Sun / Accent Dot -->
+  <circle cx="44" cy="21.5" r="2.8" fill="url(#zenAccent)" />
+</svg>

@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zenlora Studio | Sourcing & UGC Prompt Engine</title>
+    <!-- Favicon: Clean Emerald & Gold Luxury Squircle (No Black) -->
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <link rel="alternate icon" href="/static/favicon.svg">
+    <link rel="apple-touch-icon" href="/static/favicon.svg">
+    <!-- Premium System Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'SFMono-Regular', 'Menlo', 'monospace'],
+                    },
+                    colors: {
+                        canvas: '#F7F8FA',
+                        cardBg: '#FFFFFF',
+                        borderMain: '#E5E7EB',
+                        borderSubtle: '#F0F2F5',
+                        textPrimary: '#111827',
+                        textSecondary: '#4B5563',
+                        textMuted: '#9CA3AF',
+                        brandBlack: '#0A0A0C',
+                        brandHover: '#1F2937',
+                        accentGreen: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F7F8FA;
+            color: #111827;
+            letter-spacing: -0.015em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Clean Architectural Canvas */
+        .zen-canvas {
+            background-color: #F7F8FA;
+            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Apple Clean Glass */
+        .zen-glass {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        /* Premium White Cards with Micro Border */
+        .zen-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .zen-card:hover {
+            border-color: #D1D5DB;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            transform: translateY(-1px);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .cat-pill-active {
+            background-color: #111827 !important;
+            color: #FFFFFF !important;
+            border-color: #111827 !important;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans antialiased text-sm zen-canvas">
+
+    <!-- Top Sticky Header -->
+    <header class="sticky top-0 z-40 w-full zen-glass">
+        <div class="max-w-[1500px] mx-auto px-3 sm:px-6 h-14 flex items-center justify-between gap-3">
+            
+            <!-- Left: Brand Logo & Title -->
+            <div class="flex items-center gap-3">
+                <a href="/" class="flex items-center gap-2.5">
+                    <div class="w-7 h-7 rounded-lg bg-brandBlack text-white flex items-center justify-center font-bold text-xs shadow-sm">
+                        Z
+                    </div>
+                    <span class="font-bold text-sm tracking-tight text-textPrimary flex items-center gap-2">
+                        Zenlora
+                        <span class="text-[10px] text-textSecondary font-medium px-2 py-0.5 rounded-md bg-zinc-100 border border-zinc-200">Studio</span>
+                    </span>
+                </a>
+
+                <!-- Inline Metric Badges -->
+                <div class="hidden md:flex items-center gap-2 pl-3 border-l border-borderMain text-xs">
+                    <span class="px-2.5 py-0.5 rounded-full bg-zinc-100 border border-zinc-200 text-textSecondary flex items-center gap-1.5 font-medium">
+                        <span class="w-1.5 h-1.5 rounded-full bg-accentGreen"></span>
+                        <strong class="text-textPrimary" id="statCount">{{ total_products }}</strong> Products
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-zinc-100 border border-zinc-200 text-textSecondary flex items-center gap-1.5 font-medium">
+                        Avg Margin <strong class="text-textPrimary">{{ avg_margin }}%</strong>
+                    </span>
+                    <span class="px-2.5 py-0.5 rounded-full bg-emerald-50 border border-emerald-200 text-accentGreen flex items-center gap-1.5 font-medium">
+                        Profit <strong class="text-emerald-800">₹{{ total_profit }}</strong>
+                    </span>
+                </div>
+            </div>
+
+            <!-- Right: Action Buttons -->
+            <div class="flex items-center gap-2">
+                <a href="/api/export-excel" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-1.5 transition active:scale-95 shadow-sm">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span class="hidden sm:inline">Export Excel</span>
+                    <span class="sm:hidden">Excel</span>
+                </a>
+                <button onclick="openBatchModal()" class="h-8 px-3 rounded-lg bg-white hover:bg-zinc-50 border border-borderMain text-textPrimary text-xs font-medium flex items-center gap-1.5 transition">
+                    <svg class="w-3.5 h-3.5 text-textSecondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+                    <span class="hidden sm:inline">Bulk Paste</span>
+                    <span class="sm:hidden">Bulk</span>
+                </button>
+                <button onclick="clearAllProducts()" title="Clear Database" class="h-8 px-2.5 rounded-lg bg-white hover:bg-red-50 hover:text-red-600 text-textMuted border border-borderMain text-xs transition">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Compact Sourcing & Search Bar (Above-The-Fold Zero Scroll) -->
+    <div class="border-b border-borderMain bg-white py-3 px-3 sm:px-6">
+        <div class="max-w-[1500px] mx-auto flex flex-col md:flex-row items-stretch md:items-center justify-between gap-2.5">
+            
+            <!-- Quick Link Ingestion Form -->
+            <form id="urlForm" onsubmit="handleSingleSubmit(event)" class="flex-1 max-w-2xl flex items-center gap-2">
+                <div class="relative flex-1">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-textMuted">
+                        <svg class="w-4 h-4 text-textSecondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"></path></svg>
+                    </div>
+                    <input 
+                        type="url" 
+                        id="deodapUrl" 
+                        required 
+                        placeholder="Drop DeoDap product URL (e.g. https://deodap.in/products/item)..."
+                        class="w-full h-9 bg-zinc-50 border border-borderMain rounded-lg pl-9 pr-3 text-xs text-textPrimary placeholder-textMuted focus:outline-none focus:bg-white focus:border-textPrimary transition"
+                    >
+                </div>
+                <button 
+                    type="submit" 
+                    id="submitBtn"
+                    class="h-9 px-4 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-2 transition active:scale-95 whitespace-nowrap"
+                >
+                    <span id="btnText">Analyze</span>
+                    <svg id="btnSpinner" class="hidden animate-spin w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Search & Filter Bar -->
+            <div class="relative w-full md:w-64">
+                <div class="absolute inset-y-0 left-0 pl-2.5 flex items-center pointer-events-none text-textMuted">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    oninput="filterProducts()" 
+                    placeholder="Search by title or SKU..."
+                    class="w-full h-9 bg-zinc-50 border border-borderMain rounded-lg pl-8 pr-3 text-xs text-textPrimary placeholder-textMuted focus:outline-none focus:bg-white focus:border-textPrimary transition"
+                >
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Category Filter Bar (Smooth Horizontal Scroll on Mobile) -->
+    <div class="border-b border-borderMain bg-white px-3 sm:px-6 py-2">
+        <div class="max-w-[1500px] mx-auto flex items-center justify-between gap-3">
+            
+            <!-- Category Pills (Touch-Friendly) -->
+            <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-0.5 flex-1" id="categoryPills">
+                <button onclick="setCategoryFilter('all')" data-cat="all" class="cat-pill cat-pill-active flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border border-transparent transition">
+                    All (<span id="count-all">{{ products|length }}</span>)
+                </button>
+                <button onclick="setCategoryFilter('Home Decor')" data-cat="Home Decor" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
+                    Home Decor
+                </button>
+                <button onclick="setCategoryFilter('Kitchen')" data-cat="Kitchen" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
+                    Kitchen Hacks
+                </button>
+                <button onclick="setCategoryFilter('Gadget')" data-cat="Gadget" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
+                    Smart Gadgets
+                </button>
+                <button onclick="setCategoryFilter('Beauty')" data-cat="Beauty" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
+                    Beauty & Care
+                </button>
+                <button onclick="setCategoryFilter('Festive')" data-cat="Festive" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
+                    Festive Gifting
+                </button>
+            </div>
+
+            <!-- View Toggle -->
+            <div class="hidden sm:flex items-center gap-1 bg-zinc-100 p-0.5 rounded-lg border border-borderMain flex-shrink-0">
+                <button onclick="setViewMode('grid')" id="viewGridBtn" class="p-1 rounded bg-white text-textPrimary shadow-xs" title="Grid View">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                </button>
+                <button onclick="setViewMode('table')" id="viewTableBtn" class="p-1 rounded text-textMuted hover:text-textPrimary" title="Table View">
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Main Content Area: Products Grid & Table -->
+    <main class="flex-1 max-w-[1500px] w-full mx-auto px-3 sm:px-6 py-5">
+        
+        <!-- Products Grid Container -->
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5">
+            {% if products %}
+                {% for p in products %}
+                    <div 
+                        class="product-card zen-card rounded-xl p-3.5 flex flex-col justify-between group relative cursor-pointer hover:border-zinc-400 transition"
+                        onclick="window.location.href='/product/{{ p.handle }}'"
+                        data-handle="{{ p.handle }}"
+                        data-category="{{ p.primary_category }}"
+                        data-title="{{ p.zenlora_title|lower }}"
+                        data-sku="{{ p.sku|lower }}"
+                    >
+                        <div>
+                            <!-- Top: Thumbnail + Title -->
+                            <div class="flex items-start gap-3">
+                                
+                                <!-- Product Image Thumbnail -->
+                                <div class="w-16 h-16 sm:w-20 sm:h-20 rounded-lg bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative block group/img">
+                                    {% if p.primary_image %}
+                                        <img src="{{ p.primary_image }}" alt="{{ p.zenlora_title }}" class="w-full h-full object-cover">
+                                    {% else %}
+                                        <div class="w-full h-full flex items-center justify-center text-textMuted text-xs font-mono">Zenlora</div>
+                                    {% endif %}
+                                    <span class="absolute bottom-1 right-1 px-1 py-0.2 rounded text-[8px] bg-white/95 font-mono text-textPrimary font-semibold border border-zinc-200">
+                                        {{ p.content_bucket.split(':')[0] }}
+                                    </span>
+                                </div>
+
+                                <!-- Details -->
+                                <div class="flex-1 min-w-0">
+                                    <div class="flex items-center justify-between gap-1">
+                                        <span class="text-[10px] font-semibold text-textSecondary uppercase tracking-wider block truncate">
+                                            {{ p.primary_category }}
+                                        </span>
+                                        <span class="text-[10px] text-textMuted group-hover:text-textPrimary transition">→</span>
+                                    </div>
+                                    
+                                    <!-- Product Title -->
+                                    <h4 class="text-xs font-bold text-textPrimary leading-snug line-clamp-2 mt-0.5 group-hover:text-black transition">
+                                        {{ p.zenlora_title }}
+                                    </h4>
+
+                                    {% if p.sku %}
+                                        <span class="text-[10px] font-mono text-textMuted mt-1 block truncate">SKU: {{ p.sku }}</span>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <!-- Pricing Bar -->
+                            <div class="mt-3 pt-2.5 border-t border-borderSubtle flex items-center justify-between text-xs">
+                                <div>
+                                    <span class="text-[10px] text-textMuted block">DeoDap Cost</span>
+                                    <span class="font-mono text-textSecondary font-semibold">₹{{ p.wholesale_price }}</span>
+                                </div>
+                                <div>
+                                    <span class="text-[10px] text-textMuted block">Zenlora Price</span>
+                                    <span class="font-mono text-textPrimary font-bold">₹{{ p.selling_price }}</span>
+                                    <span class="text-[10px] text-textMuted line-through">₹{{ p.mrp }}</span>
+                                </div>
+                                <div class="text-right bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-md">
+                                    <span class="text-[9px] text-emerald-700 font-semibold block">Net Margin</span>
+                                    <span class="font-mono text-emerald-800 font-bold">+₹{{ p.gross_profit }}</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Action: Open Product Details & Prompts Page -->
+                        <div class="mt-3 pt-2 border-t border-borderSubtle flex items-center justify-between">
+                            <div class="w-full py-1.5 px-3 rounded-lg bg-zinc-100 group-hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+                                <span>View Details & Prompts</span>
+                                <svg class="w-3.5 h-3.5 text-textSecondary group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </div>
+                            <button 
+                                onclick="deleteProduct(event, '{{ p.handle }}')" 
+                                title="Remove item" 
+                                class="text-textMuted hover:text-red-600 p-1.5 ml-1.5 rounded transition"
+                            >
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            </button>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+
+        <!-- Compact Table View -->
+        <div id="productsTable" class="hidden zen-card rounded-xl overflow-x-auto">
+            <table class="w-full text-left text-xs min-w-[700px]">
+                <thead class="bg-zinc-50 border-b border-borderMain text-textSecondary text-[11px] uppercase tracking-wider font-semibold">
+                    <tr>
+                        <th class="p-3 pl-4">Product</th>
+                        <th class="p-3">Category</th>
+                        <th class="p-3">Bucket</th>
+                        <th class="p-3 text-right">Cost</th>
+                        <th class="p-3 text-right">Selling Price</th>
+                        <th class="p-3 text-right">Net Profit</th>
+                        <th class="p-3 text-center">Hook (0-3s)</th>
+                        <th class="p-3 pr-4 text-right">Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-borderSubtle">
+                    {% for p in products %}
+                    <tr onclick="window.location.href='/product/{{ p.handle }}'" class="hover:bg-zinc-50/80 transition cursor-pointer">
+                        <td class="p-3 pl-4 flex items-center gap-2.5">
+                            <img src="{{ p.primary_image }}" class="w-9 h-9 rounded object-cover bg-zinc-100 border border-borderMain flex-shrink-0" alt="">
+                            <div class="min-w-0">
+                                <span class="text-textPrimary font-semibold block truncate max-w-xs hover:underline">
+                                    {{ p.zenlora_title }}
+                                </span>
+                                <span class="text-[10px] text-textMuted font-mono">SKU: {{ p.sku }}</span>
+                            </div>
+                        </td>
+                        <td class="p-3 text-textSecondary font-medium">{{ p.primary_category }}</td>
+                        <td class="p-3">
+                            <span class="px-2 py-0.5 rounded text-[10px] bg-zinc-100 border border-zinc-200 text-textSecondary font-medium">
+                                {{ p.content_bucket.split(':')[0] }}
+                            </span>
+                        </td>
+                        <td class="p-3 text-right font-mono text-textSecondary">₹{{ p.wholesale_price }}</td>
+                        <td class="p-3 text-right font-mono font-bold text-textPrimary">₹{{ p.selling_price }}</td>
+                        <td class="p-3 text-right font-mono text-emerald-700 font-bold">+₹{{ p.gross_profit }} ({{ p.profit_margin_pct }}%)</td>
+                        <td class="p-3 text-center text-textSecondary max-w-xs truncate">"{{ p.on_screen_hook_text }}"</td>
+                        <td class="p-3 pr-4 text-right">
+                            <span class="px-2.5 py-1 rounded bg-brandBlack text-white font-medium text-[11px] inline-block">
+                                View Details
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Empty State -->
+        <div id="emptyState" class="{% if products %}hidden{% endif %} zen-card rounded-2xl p-12 text-center max-w-md mx-auto my-8 border border-dashed border-zinc-300">
+            <div class="w-10 h-10 rounded-xl bg-zinc-100 flex items-center justify-center mx-auto text-textSecondary mb-3">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+            </div>
+            <h4 class="text-sm font-bold text-textPrimary">No products in pipeline yet</h4>
+            <p class="text-xs text-textSecondary mt-1">Paste a DeoDap product URL above to analyze margins and generate multi-scene video prompts.</p>
+        </div>
+
+    </main>
+
+    <!-- Slide-Over Inspector Drawer (Clean Light Mode) -->
+    <div id="inspectorBackdrop" onclick="closeInspector()" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 hidden transition-opacity"></div>
+    <aside id="inspectorDrawer" class="fixed top-0 right-0 h-full w-full sm:max-w-xl bg-white z-50 border-l border-borderMain transform translate-x-full transition-transform duration-300 ease-in-out flex flex-col shadow-2xl">
+        
+        <!-- Drawer Header -->
+        <div class="h-14 px-5 border-b border-borderMain flex items-center justify-between bg-zinc-50">
+            <div class="flex items-center gap-2">
+                <span class="text-xs font-bold uppercase tracking-wider text-textPrimary" id="drawerCategory">CATEGORY</span>
+                <span class="text-[10px] px-2 py-0.5 rounded bg-zinc-200 text-textSecondary font-semibold" id="drawerBucket">BUCKET</span>
+            </div>
+            <button onclick="closeInspector()" class="w-8 h-8 rounded-lg bg-zinc-100 hover:bg-zinc-200 flex items-center justify-center text-textSecondary hover:text-textPrimary transition" title="Close Drawer">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+
+        <!-- Drawer Content -->
+        <div class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-4">
+            
+            <div class="p-3.5 rounded-xl bg-zinc-50 border border-borderMain">
+                <div class="flex items-start gap-3.5">
+                    <img id="drawerImage" class="w-20 h-20 rounded-lg object-cover bg-white border border-borderMain flex-shrink-0" src="" alt="">
+                    <div class="flex-1 min-w-0">
+                        <span class="text-xs sm:text-sm font-bold text-textPrimary leading-snug block" id="drawerTitle">Product Title</span>
+                        <div class="mt-2 flex flex-wrap items-center gap-2.5 text-xs">
+                            <div>
+                                <span class="text-[10px] text-textMuted">DeoDap Cost:</span>
+                                <span class="font-mono text-textSecondary font-semibold" id="drawerWholesale">₹0</span>
+                            </div>
+                            <div>
+                                <span class="text-[10px] text-textMuted">Zenlora Price:</span>
+                                <span class="font-mono text-textPrimary font-bold" id="drawerSelling">₹0</span>
+                            </div>
+                            <div class="bg-emerald-50 px-2 py-0.5 rounded">
+                                <span class="text-[10px] text-emerald-700 font-bold" id="drawerMargin">+₹0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- On-Screen Hook Box (Neutral Charcoal Accent) -->
+            <div class="p-3.5 rounded-xl bg-zinc-100 border border-zinc-200 text-xs">
+                <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider block">VIRAL REEL HOOK (0-3s)</span>
+                <p class="text-xs sm:text-sm font-bold text-textPrimary mt-0.5" id="drawerHook">"Hook text"</p>
+                <div class="mt-1.5 text-[11px] text-textSecondary flex items-center gap-1">
+                    <span>Audio Vibe:</span>
+                    <strong class="text-textPrimary" id="drawerAudio">Lofi Ambient Beat</strong>
+                </div>
+            </div>
+
+            <!-- Prompt Studio Section -->
+            <div class="space-y-3">
+                <div class="flex items-center justify-between pt-1">
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-textPrimary">AI Prompt Studio</h4>
+                    <span class="text-[11px] text-textMuted">1-Click Copy</span>
+                </div>
+
+                <!-- Storyboard Image Prompt -->
+                <div class="p-3.5 rounded-xl bg-white border border-borderMain">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-borderSubtle">
+                        <span class="text-xs font-semibold text-textPrimary">
+                            Storyboard Base Image (Midjourney / Ideogram) <span class="text-[10px] font-mono text-textMuted">--ar 9:16</span>
+                        </span>
+                        <button onclick="copyDrawerPrompt('storyboard')" class="text-xs font-semibold text-textPrimary hover:underline px-2 py-0.5 rounded bg-zinc-100">
+                            Copy Prompt
+                        </button>
+                    </div>
+                    <p class="text-xs text-textSecondary font-mono leading-relaxed select-all" id="drawerStoryboardText"></p>
+                </div>
+
+                <!-- Scene 1 Prompt -->
+                <div class="p-3.5 rounded-xl bg-white border border-borderMain">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-borderSubtle">
+                        <span class="text-xs font-semibold text-textPrimary">
+                            Scene 1 Video Prompt (0-5s Kling / Runway)
+                        </span>
+                        <button onclick="copyDrawerPrompt('scene1')" class="text-xs font-semibold text-textPrimary hover:underline px-2 py-0.5 rounded bg-zinc-100">
+                            Copy
+                        </button>
+                    </div>
+                    <p class="text-xs text-textSecondary font-mono leading-relaxed select-all" id="drawerScene1Text"></p>
+                </div>
+
+                <!-- Scene 2 Prompt (Continuity Injected) -->
+                <div class="p-3.5 rounded-xl bg-zinc-50 border border-zinc-300">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-zinc-200">
+                        <span class="text-xs font-bold text-textPrimary flex items-center gap-1.5">
+                            Scene 2 Prompt (5-10s)
+                            <span class="text-[9px] px-1.5 py-0.2 rounded bg-zinc-200 text-textPrimary font-semibold">Continuity Injected</span>
+                        </span>
+                        <button onclick="copyDrawerPrompt('scene2')" class="text-xs font-semibold text-textPrimary hover:underline px-2 py-0.5 rounded bg-white border border-zinc-200">
+                            Copy
+                        </button>
+                    </div>
+                    <p class="text-xs text-textSecondary font-mono leading-relaxed select-all" id="drawerScene2Text"></p>
+                </div>
+
+                <!-- Scene 3 Prompt (Continuity Injected) -->
+                <div class="p-3.5 rounded-xl bg-zinc-50 border border-zinc-300">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-zinc-200">
+                        <span class="text-xs font-bold text-textPrimary flex items-center gap-1.5">
+                            Scene 3 Prompt (10-15s)
+                            <span class="text-[9px] px-1.5 py-0.2 rounded bg-zinc-200 text-textPrimary font-semibold">Continuity Injected</span>
+                        </span>
+                        <button onclick="copyDrawerPrompt('scene3')" class="text-xs font-semibold text-textPrimary hover:underline px-2 py-0.5 rounded bg-white border border-zinc-200">
+                            Copy
+                        </button>
+                    </div>
+                    <p class="text-xs text-textSecondary font-mono leading-relaxed select-all" id="drawerScene3Text"></p>
+                </div>
+
+                <!-- Caption -->
+                <div class="p-3.5 rounded-xl bg-white border border-borderMain">
+                    <div class="flex items-center justify-between pb-2 mb-2 border-b border-borderSubtle">
+                        <span class="text-xs font-semibold text-textPrimary">
+                            Instagram Caption & CTA
+                        </span>
+                        <button onclick="copyDrawerPrompt('caption')" class="text-xs font-semibold text-textPrimary hover:underline px-2 py-0.5 rounded bg-zinc-100">
+                            Copy Caption
+                        </button>
+                    </div>
+                    <pre class="text-xs text-textSecondary font-sans whitespace-pre-wrap leading-relaxed select-all" id="drawerCaptionText"></pre>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Drawer Footer -->
+        <div class="p-3.5 border-t border-borderMain bg-zinc-50 flex items-center justify-between text-xs">
+            <span class="font-semibold text-textSecondary">Product Studio Drawer</span>
+            <button onclick="closeInspector()" class="px-4 py-2 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium">
+                Done
+            </button>
+        </div>
+
+    </aside>
+
+    <!-- Bulk Paste Modal -->
+    <div id="batchModal" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 flex items-center justify-center p-3 sm:p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-5 sm:p-6 shadow-2xl relative border border-borderMain">
+            <h3 class="text-sm font-bold text-textPrimary">Bulk DeoDap Product Ingestion</h3>
+            <p class="text-xs text-textSecondary mt-0.5">Paste multiple DeoDap product URLs below (one per line):</p>
+            
+            <textarea 
+                id="batchUrlsInput" 
+                rows="6" 
+                placeholder="https://deodap.in/products/item-1&#10;https://deodap.in/products/item-2"
+                class="w-full mt-3 bg-zinc-50 border border-borderMain rounded-xl p-3 text-xs text-textPrimary placeholder-textMuted focus:outline-none focus:bg-white focus:border-textPrimary font-mono"
+            ></textarea>
+
+            <div class="mt-4 flex justify-end gap-2 text-xs">
+                <button onclick="closeBatchModal()" class="px-3.5 py-2 rounded-lg text-textSecondary hover:bg-zinc-100 font-medium">Cancel</button>
+                <button onclick="submitBatch()" id="batchSubmitBtn" class="bg-brandBlack hover:bg-brandHover text-white font-medium px-4 py-2 rounded-lg">
+                    Process All
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Clean Floating Toast -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-brandBlack text-white px-3.5 py-2 rounded-xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-200 z-50 flex items-center gap-2 text-xs font-medium pointer-events-none">
+        <svg class="w-3.5 h-3.5 text-accentGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span id="toastMsg">Copied</span>
+    </div>
+
+    <script>
+        let productsData = {{ products|tojson|safe if products else '[]' }};
+        let currentFilter = 'all';
+        let currentView = 'grid';
+        let selectedProduct = null;
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2000);
+        }
+
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Copied to Clipboard');
+            });
+        }
+
+        function copyDrawerPrompt(type) {
+            if (!selectedProduct) return;
+            let text = '';
+            if (type === 'storyboard') text = selectedProduct.storyboard_image_prompt;
+            else if (type === 'scene1') text = selectedProduct.scene_1_video_prompt;
+            else if (type === 'scene2') text = selectedProduct.scene_2_video_prompt;
+            else if (type === 'scene3') text = selectedProduct.scene_3_video_prompt;
+            else if (type === 'caption') text = selectedProduct.instagram_caption;
+            copyText(text);
+        }
+
+        function inspectProduct(handle) {
+            const p = productsData.find(item => item.handle === handle);
+            if (!p) return;
+            selectedProduct = p;
+
+            document.getElementById('drawerCategory').innerText = p.primary_category;
+            document.getElementById('drawerBucket').innerText = p.content_bucket.split(':')[0];
+            document.getElementById('drawerImage').src = p.primary_image || '';
+            document.getElementById('drawerTitle').innerText = p.zenlora_title;
+            document.getElementById('drawerWholesale').innerText = '₹' + p.wholesale_price;
+            document.getElementById('drawerSelling').innerText = '₹' + p.selling_price;
+            document.getElementById('drawerMargin').innerText = '+₹' + p.gross_profit + ' (' + p.profit_margin_pct + '%)';
+            document.getElementById('drawerHook').innerText = '"' + p.on_screen_hook_text + '"';
+            document.getElementById('drawerAudio').innerText = p.audio_recommendation;
+            document.getElementById('drawerStoryboardText').innerText = p.storyboard_image_prompt;
+            document.getElementById('drawerScene1Text').innerText = p.scene_1_video_prompt;
+            document.getElementById('drawerScene2Text').innerText = p.scene_2_video_prompt;
+            document.getElementById('drawerScene3Text').innerText = p.scene_3_video_prompt;
+            document.getElementById('drawerCaptionText').innerText = p.instagram_caption;
+
+            // Open Drawer
+            document.getElementById('inspectorBackdrop').classList.remove('hidden');
+            document.getElementById('inspectorDrawer').classList.remove('translate-x-full');
+        }
+
+        function closeInspector() {
+            document.getElementById('inspectorDrawer').classList.add('translate-x-full');
+            document.getElementById('inspectorBackdrop').classList.add('hidden');
+            selectedProduct = null;
+        }
+
+        function setCategoryFilter(cat) {
+            currentFilter = cat;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                if (btn.getAttribute('data-cat') === cat) {
+                    btn.classList.add('cat-pill-active');
+                    btn.classList.remove('text-textSecondary');
+                } else {
+                    btn.classList.remove('cat-pill-active');
+                    btn.classList.add('text-textSecondary');
+                }
+            });
+            filterProducts();
+        }
+
+        function filterProducts() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.product-card');
+
+            cards.forEach(card => {
+                const cardCat = card.getAttribute('data-category').toLowerCase();
+                const cardTitle = card.getAttribute('data-title');
+                const cardSku = card.getAttribute('data-sku');
+
+                const matchesCat = (currentFilter === 'all') || cardCat.includes(currentFilter.toLowerCase());
+                const matchesQuery = !query || cardTitle.includes(query) || cardSku.includes(query);
+
+                card.style.display = (matchesCat && matchesQuery) ? 'flex' : 'none';
+            });
+
+            const rows = document.querySelectorAll('#productsTable tbody tr');
+            rows.forEach(row => {
+                const text = row.innerText.toLowerCase();
+                const matchesCat = (currentFilter === 'all') || text.includes(currentFilter.toLowerCase());
+                const matchesQuery = !query || text.includes(query);
+                row.style.display = (matchesCat && matchesQuery) ? '' : 'none';
+            });
+        }
+
+        function setViewMode(mode) {
+            currentView = mode;
+            const grid = document.getElementById('productsGrid');
+            const table = document.getElementById('productsTable');
+            const gridBtn = document.getElementById('viewGridBtn');
+            const tableBtn = document.getElementById('viewTableBtn');
+
+            if (mode === 'grid') {
+                grid.classList.remove('hidden');
+                table.classList.add('hidden');
+                gridBtn.classList.add('bg-white', 'text-textPrimary', 'shadow-xs');
+                gridBtn.classList.remove('text-textMuted');
+                tableBtn.classList.remove('bg-white', 'text-textPrimary', 'shadow-xs');
+                tableBtn.classList.add('text-textMuted');
+            } else {
+                grid.classList.add('hidden');
+                table.classList.remove('hidden');
+                tableBtn.classList.add('bg-white', 'text-textPrimary', 'shadow-xs');
+                tableBtn.classList.remove('text-textMuted');
+                gridBtn.classList.remove('bg-white', 'text-textPrimary', 'shadow-xs');
+                gridBtn.classList.add('text-textMuted');
+            }
+        }
+
+        async function handleSingleSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('deodapUrl');
+            const url = input.value.trim();
+            if (!url) return;
+
+            const btnText = document.getElementById('btnText');
+            const btnSpinner = document.getElementById('btnSpinner');
+            btnText.innerText = 'Analyzing...';
+            btnSpinner.classList.remove('hidden');
+
+            try {
+                const res = await fetch('/api/process', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ url })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast('Product Added');
+                    input.value = '';
+                    window.location.reload();
+                } else {
+                    alert('Error: ' + (data.error || 'Failed to process URL'));
+                }
+            } catch (err) {
+                alert('Network Error: ' + err.message);
+            } finally {
+                btnText.innerText = 'Analyze';
+                btnSpinner.classList.add('hidden');
+            }
+        }
+
+        function openBatchModal() { document.getElementById('batchModal').classList.remove('hidden'); }
+        function closeBatchModal() { document.getElementById('batchModal').classList.add('hidden'); }
+
+        async function submitBatch() {
+            const raw = document.getElementById('batchUrlsInput').value.trim();
+            if (!raw) return;
+
+            const btn = document.getElementById('batchSubmitBtn');
+            btn.innerText = 'Processing...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch('/api/process-batch', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ urls: raw })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(`Processed ${data.processed_count} Products!`);
+                    closeBatchModal();
+                    window.location.reload();
+                } else {
+                    alert('Batch error: ' + (data.error || 'Failed'));
+                }
+            } catch (err) {
+                alert('Network error: ' + err.message);
+            } finally {
+                btn.innerText = 'Process All';
+                btn.disabled = false;
+            }
+        }
+
+        async function deleteProduct(event, handle) {
+            if (event) event.stopPropagation();
+            if (!confirm('Remove this product?')) return;
+            try {
+                const res = await fetch(`/api/products/${handle}`, { method: 'DELETE' });
+                const data = await res.json();
+                if (data.success) {
+                    showToast('Product Removed');
+                    window.location.reload();
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+
+        async function clearAllProducts() {
+            if (!confirm('Clear all products?')) return;
+            try {
+                const res = await fetch('/api/clear', { method: 'POST' });
+                const data = await res.json();
+                if (data.success) {
+                    window.location.reload();
+                }
+            } catch (err) {
+                alert('Error: ' + err.message);
+            }
+        }
+    </script>
+</body>
+</html>
