@@ -19,6 +19,9 @@ app.jinja_env.auto_reload = True
 
 @app.route('/favicon.ico')
 def favicon():
+    ico_path = PIPELINE_DIR / "static" / "favicon.ico"
+    if ico_path.exists():
+        return send_file(ico_path, mimetype='image/x-icon')
     return send_file(PIPELINE_DIR / "static" / "favicon.svg", mimetype='image/svg+xml')
 
 @app.route('/')
