@@ -86,9 +86,11 @@ class ZenloraPipeline:
 
     @classmethod
     def delete_product(cls, handle: str) -> bool:
-        """Deletes a product by its handle."""
+        """Deletes a product by its handle or URL."""
+        handle = (handle or "").strip()
+        normalized = handle.lower().split("/products/")[-1].split("?")[0].split("#")[0].rstrip("/") if handle else ""
         db = cls.load_db()
-        filtered = [p for p in db if p.get("handle") != handle]
+        filtered = [p for p in db if str(p.get("handle") or "").lower() != normalized]
         if len(filtered) != len(db):
             cls.save_db(filtered)
             return True

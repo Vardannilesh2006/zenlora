@@ -78,7 +78,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "in Rechargeable Camping Fan with LED",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 2199,
+          "url": "https://www.amazon.in/s?k=in+Rechargeable+Camping+Fan+with+LED",
+          "badge": "Market Avg: ₹2199"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 1999,
+          "url": "https://www.flipkart.com/search?q=in+Rechargeable+Camping+Fan+with+LED",
+          "badge": "Avg: ₹1999"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 1099,
+          "url": "https://www.meesho.com/search?q=in+Rechargeable+Camping+Fan+with+LED",
+          "badge": "Low-end: ₹1099"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 2599,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Rechargeable+Camping+Fan+with+LED",
+          "badge": "Meta Ads Avg: ₹2599"
+        }
+      },
+      "suggested_price": 1999,
+      "net_profit": 1254.0,
+      "profit_margin_pct": 62.7,
+      "saving_vs_amazon": 200,
+      "discount_pct": 9,
+      "strategy_insight": "Amazon pe ₹2199 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹1254 net profit per order milega (62.7% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Rechargeable+Camping+Fan+with+LED"
+    },
+    "suggested_price": 1999,
+    "strategy_insight": "Amazon pe ₹2199 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹1254 net profit per order milega (62.7% margin)."
   },
   {
     "id": 10775030366518,
@@ -159,7 +197,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "In Solar Rechargeable Camping Fan with",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 2199,
+          "url": "https://www.amazon.in/s?k=In+Solar+Rechargeable+Camping+Fan+with",
+          "badge": "Market Avg: ₹2199"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 1999,
+          "url": "https://www.flipkart.com/search?q=In+Solar+Rechargeable+Camping+Fan+with",
+          "badge": "Avg: ₹1999"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 1119,
+          "url": "https://www.meesho.com/search?q=In+Solar+Rechargeable+Camping+Fan+with",
+          "badge": "Low-end: ₹1119"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 2599,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Solar+Rechargeable+Camping+Fan+with",
+          "badge": "Meta Ads Avg: ₹2599"
+        }
+      },
+      "suggested_price": 1999,
+      "net_profit": 1240.0,
+      "profit_margin_pct": 62.0,
+      "saving_vs_amazon": 200,
+      "discount_pct": 9,
+      "strategy_insight": "Amazon pe ₹2199 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹1240 net profit per order milega (62.0% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Solar+Rechargeable+Camping+Fan+with"
+    },
+    "suggested_price": 1999,
+    "strategy_insight": "Amazon pe ₹2199 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹1240 net profit per order milega (62.0% margin)."
   },
   {
     "id": 10192185196854,
@@ -240,7 +316,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Analog Wall Clock",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 1199,
+          "url": "https://www.amazon.in/s?k=Analog+Wall+Clock",
+          "badge": "Market Avg: ₹1199"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 799,
+          "url": "https://www.flipkart.com/search?q=Analog+Wall+Clock",
+          "badge": "Avg: ₹799"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 499,
+          "url": "https://www.meesho.com/search?q=Analog+Wall+Clock",
+          "badge": "Low-end: ₹499"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 1199,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Analog+Wall+Clock",
+          "badge": "Meta Ads Avg: ₹1199"
+        }
+      },
+      "suggested_price": 999,
+      "net_profit": 639.0,
+      "profit_margin_pct": 64.0,
+      "saving_vs_amazon": 200,
+      "discount_pct": 17,
+      "strategy_insight": "Amazon pe ₹1199 me list hai. Aap ₹999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹639 net profit per order milega (64.0% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Analog+Wall+Clock"
+    },
+    "suggested_price": 999,
+    "strategy_insight": "Amazon pe ₹1199 me list hai. Aap ₹999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹639 net profit per order milega (64.0% margin)."
   },
   {
     "id": 10349011763510,
@@ -321,7 +435,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 899,
+          "url": "https://www.amazon.in/s?k=3",
+          "badge": "Market Avg: ₹899"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 699,
+          "url": "https://www.flipkart.com/search?q=3",
+          "badge": "Avg: ₹699"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 429,
+          "url": "https://www.meesho.com/search?q=3",
+          "badge": "Low-end: ₹429"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 1199,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3",
+          "badge": "Meta Ads Avg: ₹1199"
+        }
+      },
+      "suggested_price": 799,
+      "net_profit": 481.0,
+      "profit_margin_pct": 60.2,
+      "saving_vs_amazon": 100,
+      "discount_pct": 11,
+      "strategy_insight": "Amazon pe ₹899 me list hai. Aap ₹799 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹481 net profit per order milega (60.2% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
+    },
+    "suggested_price": 799,
+    "strategy_insight": "Amazon pe ₹899 me list hai. Aap ₹799 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹481 net profit per order milega (60.2% margin)."
   },
   {
     "id": 10621239984438,
@@ -402,7 +554,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Layer Foldable Shoe Rack",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 649,
+          "url": "https://www.amazon.in/s?k=Layer+Foldable+Shoe+Rack",
+          "badge": "Market Avg: ₹649"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 499,
+          "url": "https://www.flipkart.com/search?q=Layer+Foldable+Shoe+Rack",
+          "badge": "Avg: ₹499"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 319,
+          "url": "https://www.meesho.com/search?q=Layer+Foldable+Shoe+Rack",
+          "badge": "Low-end: ₹319"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 749,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Layer+Foldable+Shoe+Rack",
+          "badge": "Meta Ads Avg: ₹749"
+        }
+      },
+      "suggested_price": 599,
+      "net_profit": 357.0,
+      "profit_margin_pct": 59.6,
+      "saving_vs_amazon": 50,
+      "discount_pct": 8,
+      "strategy_insight": "Market price ₹649 hai. Optimal D2C pricing ₹599 rakho. Absorbed shipping ke baad ₹357 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Layer+Foldable+Shoe+Rack"
+    },
+    "suggested_price": 599,
+    "strategy_insight": "Market price ₹649 hai. Optimal D2C pricing ₹599 rakho. Absorbed shipping ke baad ₹357 clean margin bachta hai."
   },
   {
     "id": 10798039302454,
@@ -483,7 +673,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Pair Assorted Gold",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 699,
+          "url": "https://www.amazon.in/s?k=Pair+Assorted+Gold",
+          "badge": "Market Avg: ₹699"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 549,
+          "url": "https://www.flipkart.com/search?q=Pair+Assorted+Gold",
+          "badge": "Avg: ₹549"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 349,
+          "url": "https://www.meesho.com/search?q=Pair+Assorted+Gold",
+          "badge": "Low-end: ₹349"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 899,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Pair+Assorted+Gold",
+          "badge": "Meta Ads Avg: ₹899"
+        }
+      },
+      "suggested_price": 649,
+      "net_profit": 388.0,
+      "profit_margin_pct": 59.8,
+      "saving_vs_amazon": 50,
+      "discount_pct": 7,
+      "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹388 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Pair+Assorted+Gold"
+    },
+    "suggested_price": 649,
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹388 clean margin bachta hai."
   },
   {
     "id": 9530626670902,
@@ -564,7 +792,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Crystal Ball Lamp",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=3D+Crystal+Ball+Lamp",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=3D+Crystal+Ball+Lamp",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 189,
+          "url": "https://www.meesho.com/search?q=3D+Crystal+Ball+Lamp",
+          "badge": "Low-end: ₹189"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Ball+Lamp",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 190.0,
+      "profit_margin_pct": 54.4,
+      "saving_vs_amazon": 50,
+      "discount_pct": 13,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Ball+Lamp"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
   },
   {
     "id": 10201059655990,
@@ -645,7 +911,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "500ML Stainless Steel Water Bottle",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 799,
+          "url": "https://www.amazon.in/s?k=500ML+Stainless+Steel+Water+Bottle",
+          "badge": "Market Avg: ₹799"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 649,
+          "url": "https://www.flipkart.com/search?q=500ML+Stainless+Steel+Water+Bottle",
+          "badge": "Avg: ₹649"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 399,
+          "url": "https://www.meesho.com/search?q=500ML+Stainless+Steel+Water+Bottle",
+          "badge": "Low-end: ₹399"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 999,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=500ML+Stainless+Steel+Water+Bottle",
+          "badge": "Meta Ads Avg: ₹999"
+        }
+      },
+      "suggested_price": 749,
+      "net_profit": 455.0,
+      "profit_margin_pct": 60.7,
+      "saving_vs_amazon": 50,
+      "discount_pct": 6,
+      "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹455 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=500ML+Stainless+Steel+Water+Bottle"
+    },
+    "suggested_price": 749,
+    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹455 clean margin bachta hai."
   },
   {
     "id": 10284761809206,
@@ -726,7 +1030,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 1999,
+          "url": "https://www.amazon.in/s?k=3",
+          "badge": "Market Avg: ₹1999"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 1299,
+          "url": "https://www.flipkart.com/search?q=3",
+          "badge": "Avg: ₹1299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 789,
+          "url": "https://www.meesho.com/search?q=3",
+          "badge": "Low-end: ₹789"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 1999,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3",
+          "badge": "Meta Ads Avg: ₹1999"
+        }
+      },
+      "suggested_price": 1999,
+      "net_profit": 1452.0,
+      "profit_margin_pct": 72.6,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹1999 hai. Optimal D2C pricing ₹1999 rakho. Absorbed shipping ke baad ₹1452 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
+    },
+    "suggested_price": 1999,
+    "strategy_insight": "Market price ₹1999 hai. Optimal D2C pricing ₹1999 rakho. Absorbed shipping ke baad ₹1452 clean margin bachta hai."
   },
   {
     "id": 10820487708982,
@@ -807,7 +1149,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 1499,
+          "url": "https://www.amazon.in/s?k=Antique+Gold",
+          "badge": "Market Avg: ₹1499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 1199,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold",
+          "badge": "Avg: ₹1199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 719,
+          "url": "https://www.meesho.com/search?q=Antique+Gold",
+          "badge": "Low-end: ₹719"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 1999,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold",
+          "badge": "Meta Ads Avg: ₹1999"
+        }
+      },
+      "suggested_price": 1299,
+      "net_profit": 799.0,
+      "profit_margin_pct": 61.5,
+      "saving_vs_amazon": 200,
+      "discount_pct": 13,
+      "strategy_insight": "Amazon pe ₹1499 me list hai. Aap ₹1299 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹799 net profit per order milega (61.5% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold"
+    },
+    "suggested_price": 1299,
+    "strategy_insight": "Amazon pe ₹1499 me list hai. Aap ₹1299 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹799 net profit per order milega (61.5% margin)."
   },
   {
     "id": 10360574673206,
@@ -888,7 +1268,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Animal Cartoon Pull",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 899,
+          "url": "https://www.amazon.in/s?k=Animal+Cartoon+Pull",
+          "badge": "Market Avg: ₹899"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 699,
+          "url": "https://www.flipkart.com/search?q=Animal+Cartoon+Pull",
+          "badge": "Avg: ₹699"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 419,
+          "url": "https://www.meesho.com/search?q=Animal+Cartoon+Pull",
+          "badge": "Low-end: ₹419"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 999,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Animal+Cartoon+Pull",
+          "badge": "Meta Ads Avg: ₹999"
+        }
+      },
+      "suggested_price": 799,
+      "net_profit": 490.0,
+      "profit_margin_pct": 61.3,
+      "saving_vs_amazon": 100,
+      "discount_pct": 11,
+      "strategy_insight": "Amazon pe ₹899 me list hai. Aap ₹799 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹490 net profit per order milega (61.3% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Animal+Cartoon+Pull"
+    },
+    "suggested_price": 799,
+    "strategy_insight": "Amazon pe ₹899 me list hai. Aap ₹799 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹490 net profit per order milega (61.3% margin)."
   },
   {
     "id": 10842229309750,
@@ -969,7 +1387,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Piece Hand Tool Kit with Carry",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 1999,
+          "url": "https://www.amazon.in/s?k=Piece+Hand+Tool+Kit+with+Carry",
+          "badge": "Market Avg: ₹1999"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 1999,
+          "url": "https://www.flipkart.com/search?q=Piece+Hand+Tool+Kit+with+Carry",
+          "badge": "Avg: ₹1999"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 959,
+          "url": "https://www.meesho.com/search?q=Piece+Hand+Tool+Kit+with+Carry",
+          "badge": "Low-end: ₹959"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 2199,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Piece+Hand+Tool+Kit+with+Carry",
+          "badge": "Meta Ads Avg: ₹2199"
+        }
+      },
+      "suggested_price": 1999,
+      "net_profit": 1339.0,
+      "profit_margin_pct": 67.0,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹1999 hai. Optimal D2C pricing ₹1999 rakho. Absorbed shipping ke baad ₹1339 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Piece+Hand+Tool+Kit+with+Carry"
+    },
+    "suggested_price": 1999,
+    "strategy_insight": "Market price ₹1999 hai. Optimal D2C pricing ₹1999 rakho. Absorbed shipping ke baad ₹1339 clean margin bachta hai."
   },
   {
     "id": 15407318958390,
@@ -1050,7 +1506,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "33W PD QC Dual Port USB",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 2099,
+          "url": "https://www.amazon.in/s?k=33W+PD+QC+Dual+Port+USB",
+          "badge": "Market Avg: ₹2099"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 1999,
+          "url": "https://www.flipkart.com/search?q=33W+PD+QC+Dual+Port+USB",
+          "badge": "Avg: ₹1999"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 1029,
+          "url": "https://www.meesho.com/search?q=33W+PD+QC+Dual+Port+USB",
+          "badge": "Low-end: ₹1029"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 2399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=33W+PD+QC+Dual+Port+USB",
+          "badge": "Meta Ads Avg: ₹2399"
+        }
+      },
+      "suggested_price": 1999,
+      "net_profit": 1298.0,
+      "profit_margin_pct": 64.9,
+      "saving_vs_amazon": 100,
+      "discount_pct": 5,
+      "strategy_insight": "Amazon pe ₹2099 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹1298 net profit per order milega (64.9% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=33W+PD+QC+Dual+Port+USB"
+    },
+    "suggested_price": 1999,
+    "strategy_insight": "Amazon pe ₹2099 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹1298 net profit per order milega (64.9% margin)."
   },
   {
     "id": 15407319056694,
@@ -1131,7 +1625,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "20W Dual Port USB",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 1299,
+          "url": "https://www.amazon.in/s?k=20W+Dual+Port+USB",
+          "badge": "Market Avg: ₹1299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 999,
+          "url": "https://www.flipkart.com/search?q=20W+Dual+Port+USB",
+          "badge": "Avg: ₹999"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 609,
+          "url": "https://www.meesho.com/search?q=20W+Dual+Port+USB",
+          "badge": "Low-end: ₹609"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 1499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=20W+Dual+Port+USB",
+          "badge": "Meta Ads Avg: ₹1499"
+        }
+      },
+      "suggested_price": 1199,
+      "net_profit": 771.0,
+      "profit_margin_pct": 64.3,
+      "saving_vs_amazon": 100,
+      "discount_pct": 8,
+      "strategy_insight": "Amazon pe ₹1299 me list hai. Aap ₹1199 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹771 net profit per order milega (64.3% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=20W+Dual+Port+USB"
+    },
+    "suggested_price": 1199,
+    "strategy_insight": "Amazon pe ₹1299 me list hai. Aap ₹1199 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹771 net profit per order milega (64.3% margin)."
   },
   {
     "id": 10823950827830,
@@ -1212,7 +1744,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Ad stone micro gold panjo and",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 899,
+          "url": "https://www.amazon.in/s?k=Ad+stone+micro+gold+panjo+and",
+          "badge": "Market Avg: ₹899"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 749,
+          "url": "https://www.flipkart.com/search?q=Ad+stone+micro+gold+panjo+and",
+          "badge": "Avg: ₹749"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 449,
+          "url": "https://www.meesho.com/search?q=Ad+stone+micro+gold+panjo+and",
+          "badge": "Low-end: ₹449"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 1199,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Ad+stone+micro+gold+panjo+and",
+          "badge": "Meta Ads Avg: ₹1199"
+        }
+      },
+      "suggested_price": 899,
+      "net_profit": 574.0,
+      "profit_margin_pct": 63.8,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹899 hai. Optimal D2C pricing ₹899 rakho. Absorbed shipping ke baad ₹574 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Ad+stone+micro+gold+panjo+and"
+    },
+    "suggested_price": 899,
+    "strategy_insight": "Market price ₹899 hai. Optimal D2C pricing ₹899 rakho. Absorbed shipping ke baad ₹574 clean margin bachta hai."
   },
   {
     "id": 10790923534646,
@@ -1293,7 +1863,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Crystal Adiyogi LED Night Lamp",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=3D+Crystal+Adiyogi+LED+Night+Lamp",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=3D+Crystal+Adiyogi+LED+Night+Lamp",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 209,
+          "url": "https://www.meesho.com/search?q=3D+Crystal+Adiyogi+LED+Night+Lamp",
+          "badge": "Low-end: ₹209"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Adiyogi+LED+Night+Lamp",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 227.0,
+      "profit_margin_pct": 56.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Adiyogi+LED+Night+Lamp"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai."
   },
   {
     "id": 10790923567414,
@@ -1374,7 +1982,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Crystal Dolphin Moon LED Night",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=3D+Crystal+Dolphin+Moon+LED+Night",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=3D+Crystal+Dolphin+Moon+LED+Night",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 209,
+          "url": "https://www.meesho.com/search?q=3D+Crystal+Dolphin+Moon+LED+Night",
+          "badge": "Low-end: ₹209"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Dolphin+Moon+LED+Night",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 227.0,
+      "profit_margin_pct": 56.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Dolphin+Moon+LED+Night"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai."
   },
   {
     "id": 10144060571958,
@@ -1455,7 +2101,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Mode LED Fog Light",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=Mode+LED+Fog+Light",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=Mode+LED+Fog+Light",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 209,
+          "url": "https://www.meesho.com/search?q=Mode+LED+Fog+Light",
+          "badge": "Low-end: ₹209"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Mode+LED+Fog+Light",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 226.0,
+      "profit_margin_pct": 56.6,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹226 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Mode+LED+Fog+Light"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹226 clean margin bachta hai."
   },
   {
     "id": 10866766545206,
@@ -1536,7 +2220,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Hanuman LED Frame Light for",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=3D+Hanuman+LED+Frame+Light+for",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=3D+Hanuman+LED+Frame+Light+for",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 229,
+          "url": "https://www.meesho.com/search?q=3D+Hanuman+LED+Frame+Light+for",
+          "badge": "Low-end: ₹229"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 549,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Hanuman+LED+Frame+Light+for",
+          "badge": "Meta Ads Avg: ₹549"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 264.0,
+      "profit_margin_pct": 58.8,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Hanuman+LED+Frame+Light+for"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai."
   },
   {
     "id": 10123277107510,
@@ -1617,7 +2339,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "LED String Lights, Battery Operated Waterproof",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=LED+String+Lights%2C+Battery+Operated+Waterproof",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=LED+String+Lights%2C+Battery+Operated+Waterproof",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 189,
+          "url": "https://www.meesho.com/search?q=LED+String+Lights%2C+Battery+Operated+Waterproof",
+          "badge": "Low-end: ₹189"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=LED+String+Lights%2C+Battery+Operated+Waterproof",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 190.0,
+      "profit_margin_pct": 54.4,
+      "saving_vs_amazon": 50,
+      "discount_pct": 13,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=LED+String+Lights%2C+Battery+Operated+Waterproof"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
   },
   {
     "id": 8587845140790,
@@ -1698,7 +2458,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Absorbent Bath Mat",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=Absorbent+Bath+Mat",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=Absorbent+Bath+Mat",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 229,
+          "url": "https://www.meesho.com/search?q=Absorbent+Bath+Mat",
+          "badge": "Low-end: ₹229"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 549,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Absorbent+Bath+Mat",
+          "badge": "Meta Ads Avg: ₹549"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 266.0,
+      "profit_margin_pct": 59.2,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹266 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Absorbent+Bath+Mat"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹266 clean margin bachta hai."
   },
   {
     "id": 8431905374518,
@@ -1779,7 +2577,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Airtight Storage Jars",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 1199,
+          "url": "https://www.amazon.in/s?k=Airtight+Storage+Jars",
+          "badge": "Market Avg: ₹1199"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 799,
+          "url": "https://www.flipkart.com/search?q=Airtight+Storage+Jars",
+          "badge": "Avg: ₹799"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 499,
+          "url": "https://www.meesho.com/search?q=Airtight+Storage+Jars",
+          "badge": "Low-end: ₹499"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 1199,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Airtight+Storage+Jars",
+          "badge": "Meta Ads Avg: ₹1199"
+        }
+      },
+      "suggested_price": 999,
+      "net_profit": 637.0,
+      "profit_margin_pct": 63.8,
+      "saving_vs_amazon": 200,
+      "discount_pct": 17,
+      "strategy_insight": "Amazon pe ₹1199 me list hai. Aap ₹999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹637 net profit per order milega (63.8% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Airtight+Storage+Jars"
+    },
+    "suggested_price": 999,
+    "strategy_insight": "Amazon pe ₹1199 me list hai. Aap ₹999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹637 net profit per order milega (63.8% margin)."
   },
   {
     "id": 9527251042614,
@@ -1860,7 +2696,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "65",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 999,
+          "url": "https://www.amazon.in/s?k=65",
+          "badge": "Market Avg: ₹999"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 799,
+          "url": "https://www.flipkart.com/search?q=65",
+          "badge": "Avg: ₹799"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 499,
+          "url": "https://www.meesho.com/search?q=65",
+          "badge": "Low-end: ₹499"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 1199,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=65",
+          "badge": "Meta Ads Avg: ₹1199"
+        }
+      },
+      "suggested_price": 899,
+      "net_profit": 540.0,
+      "profit_margin_pct": 60.1,
+      "saving_vs_amazon": 100,
+      "discount_pct": 10,
+      "strategy_insight": "Amazon pe ₹999 me list hai. Aap ₹899 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹540 net profit per order milega (60.1% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=65"
+    },
+    "suggested_price": 899,
+    "strategy_insight": "Amazon pe ₹999 me list hai. Aap ₹899 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹540 net profit per order milega (60.1% margin)."
   },
   {
     "id": 10623128142134,
@@ -1941,7 +2815,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "2",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 799,
+          "url": "https://www.amazon.in/s?k=2",
+          "badge": "Market Avg: ₹799"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 649,
+          "url": "https://www.flipkart.com/search?q=2",
+          "badge": "Avg: ₹649"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 389,
+          "url": "https://www.meesho.com/search?q=2",
+          "badge": "Low-end: ₹389"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 999,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=2",
+          "badge": "Meta Ads Avg: ₹999"
+        }
+      },
+      "suggested_price": 749,
+      "net_profit": 457.0,
+      "profit_margin_pct": 61.0,
+      "saving_vs_amazon": 50,
+      "discount_pct": 6,
+      "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹457 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
+    },
+    "suggested_price": 749,
+    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹457 clean margin bachta hai."
   },
   {
     "id": 10866767954230,
@@ -2022,7 +2934,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Ganesha LED Lamp with Wooden",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=3D+Ganesha+LED+Lamp+with+Wooden",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=3D+Ganesha+LED+Lamp+with+Wooden",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 159,
+          "url": "https://www.meesho.com/search?q=3D+Ganesha+LED+Lamp+with+Wooden",
+          "badge": "Low-end: ₹159"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Ganesha+LED+Lamp+with+Wooden",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 260.0,
+      "profit_margin_pct": 65.2,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Ganesha+LED+Lamp+with+Wooden"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai."
   },
   {
     "id": 9534943920438,
@@ -2103,7 +3053,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Illusion Night Light",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 249,
+          "url": "https://www.amazon.in/s?k=3D+Illusion+Night+Light",
+          "badge": "Market Avg: ₹249"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=3D+Illusion+Night+Light",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 119,
+          "url": "https://www.meesho.com/search?q=3D+Illusion+Night+Light",
+          "badge": "Low-end: ₹119"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 299,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Illusion+Night+Light",
+          "badge": "Meta Ads Avg: ₹299"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 232.0,
+      "profit_margin_pct": 66.5,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹232 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Illusion+Night+Light"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹232 clean margin bachta hai."
   },
   {
     "id": 10605848101174,
@@ -2184,7 +3172,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Crystal Lakshmi Ball LED Night",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=3D+Crystal+Lakshmi+Ball+LED+Night",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=3D+Crystal+Lakshmi+Ball+LED+Night",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 189,
+          "url": "https://www.meesho.com/search?q=3D+Crystal+Lakshmi+Ball+LED+Night",
+          "badge": "Low-end: ₹189"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Lakshmi+Ball+LED+Night",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 186.0,
+      "profit_margin_pct": 53.3,
+      "saving_vs_amazon": 50,
+      "discount_pct": 13,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹186 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Lakshmi+Ball+LED+Night"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹186 clean margin bachta hai."
   },
   {
     "id": 15401056600374,
@@ -2265,7 +3291,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "4",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 649,
+          "url": "https://www.amazon.in/s?k=4",
+          "badge": "Market Avg: ₹649"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 499,
+          "url": "https://www.flipkart.com/search?q=4",
+          "badge": "Avg: ₹499"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 309,
+          "url": "https://www.meesho.com/search?q=4",
+          "badge": "Low-end: ₹309"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 749,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=4",
+          "badge": "Meta Ads Avg: ₹749"
+        }
+      },
+      "suggested_price": 599,
+      "net_profit": 360.0,
+      "profit_margin_pct": 60.1,
+      "saving_vs_amazon": 50,
+      "discount_pct": 8,
+      "strategy_insight": "Market price ₹649 hai. Optimal D2C pricing ₹599 rakho. Absorbed shipping ke baad ₹360 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
+    },
+    "suggested_price": 599,
+    "strategy_insight": "Market price ₹649 hai. Optimal D2C pricing ₹599 rakho. Absorbed shipping ke baad ₹360 clean margin bachta hai."
   },
   {
     "id": 10716815458614,
@@ -2346,7 +3410,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "68W Fast Wall Charger",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 799,
+          "url": "https://www.amazon.in/s?k=68W+Fast+Wall+Charger",
+          "badge": "Market Avg: ₹799"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 649,
+          "url": "https://www.flipkart.com/search?q=68W+Fast+Wall+Charger",
+          "badge": "Avg: ₹649"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 399,
+          "url": "https://www.meesho.com/search?q=68W+Fast+Wall+Charger",
+          "badge": "Low-end: ₹399"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 999,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=68W+Fast+Wall+Charger",
+          "badge": "Meta Ads Avg: ₹999"
+        }
+      },
+      "suggested_price": 749,
+      "net_profit": 456.0,
+      "profit_margin_pct": 60.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 6,
+      "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹456 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=68W+Fast+Wall+Charger"
+    },
+    "suggested_price": 749,
+    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹456 clean margin bachta hai."
   },
   {
     "id": 10818413134134,
@@ -2427,7 +3529,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold Floral Necklace Set with",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 699,
+          "url": "https://www.amazon.in/s?k=Antique+Gold+Floral+Necklace+Set+with",
+          "badge": "Market Avg: ₹699"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 549,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold+Floral+Necklace+Set+with",
+          "badge": "Avg: ₹549"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 339,
+          "url": "https://www.meesho.com/search?q=Antique+Gold+Floral+Necklace+Set+with",
+          "badge": "Low-end: ₹339"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 899,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Floral+Necklace+Set+with",
+          "badge": "Meta Ads Avg: ₹899"
+        }
+      },
+      "suggested_price": 649,
+      "net_profit": 389.0,
+      "profit_margin_pct": 59.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 7,
+      "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹389 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Floral+Necklace+Set+with"
+    },
+    "suggested_price": 649,
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹389 clean margin bachta hai."
   },
   {
     "id": 10394898268470,
@@ -2508,7 +3648,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Space Round Carpet",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 699,
+          "url": "https://www.amazon.in/s?k=3D+Space+Round+Carpet",
+          "badge": "Market Avg: ₹699"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 549,
+          "url": "https://www.flipkart.com/search?q=3D+Space+Round+Carpet",
+          "badge": "Avg: ₹549"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 339,
+          "url": "https://www.meesho.com/search?q=3D+Space+Round+Carpet",
+          "badge": "Low-end: ₹339"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 899,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Space+Round+Carpet",
+          "badge": "Meta Ads Avg: ₹899"
+        }
+      },
+      "suggested_price": 649,
+      "net_profit": 390.0,
+      "profit_margin_pct": 60.1,
+      "saving_vs_amazon": 50,
+      "discount_pct": 7,
+      "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Space+Round+Carpet"
+    },
+    "suggested_price": 649,
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai."
   },
   {
     "id": 10288017703222,
@@ -2589,7 +3767,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "4x4 Magic Speed Cube",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 599,
+          "url": "https://www.amazon.in/s?k=4x4+Magic+Speed+Cube",
+          "badge": "Market Avg: ₹599"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 499,
+          "url": "https://www.flipkart.com/search?q=4x4+Magic+Speed+Cube",
+          "badge": "Avg: ₹499"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 299,
+          "url": "https://www.meesho.com/search?q=4x4+Magic+Speed+Cube",
+          "badge": "Low-end: ₹299"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 699,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=4x4+Magic+Speed+Cube",
+          "badge": "Meta Ads Avg: ₹699"
+        }
+      },
+      "suggested_price": 549,
+      "net_profit": 320.0,
+      "profit_margin_pct": 58.3,
+      "saving_vs_amazon": 50,
+      "discount_pct": 8,
+      "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹320 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4x4+Magic+Speed+Cube"
+    },
+    "suggested_price": 549,
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹320 clean margin bachta hai."
   },
   {
     "id": 10038944104758,
@@ -2670,7 +3886,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Airtight Stainless Steel Containers",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 699,
+          "url": "https://www.amazon.in/s?k=Airtight+Stainless+Steel+Containers",
+          "badge": "Market Avg: ₹699"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 549,
+          "url": "https://www.flipkart.com/search?q=Airtight+Stainless+Steel+Containers",
+          "badge": "Avg: ₹549"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 339,
+          "url": "https://www.meesho.com/search?q=Airtight+Stainless+Steel+Containers",
+          "badge": "Low-end: ₹339"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 799,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Airtight+Stainless+Steel+Containers",
+          "badge": "Meta Ads Avg: ₹799"
+        }
+      },
+      "suggested_price": 649,
+      "net_profit": 395.0,
+      "profit_margin_pct": 60.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 7,
+      "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹395 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Airtight+Stainless+Steel+Containers"
+    },
+    "suggested_price": 649,
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹395 clean margin bachta hai."
   },
   {
     "id": 10824147894582,
@@ -2751,7 +4005,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Layer Zipper Stationery Pouch Pencil Case",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 699,
+          "url": "https://www.amazon.in/s?k=Layer+Zipper+Stationery+Pouch+Pencil+Case",
+          "badge": "Market Avg: ₹699"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 549,
+          "url": "https://www.flipkart.com/search?q=Layer+Zipper+Stationery+Pouch+Pencil+Case",
+          "badge": "Avg: ₹549"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 339,
+          "url": "https://www.meesho.com/search?q=Layer+Zipper+Stationery+Pouch+Pencil+Case",
+          "badge": "Low-end: ₹339"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 899,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Layer+Zipper+Stationery+Pouch+Pencil+Case",
+          "badge": "Meta Ads Avg: ₹899"
+        }
+      },
+      "suggested_price": 649,
+      "net_profit": 390.0,
+      "profit_margin_pct": 60.1,
+      "saving_vs_amazon": 50,
+      "discount_pct": 7,
+      "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Layer+Zipper+Stationery+Pouch+Pencil+Case"
+    },
+    "suggested_price": 649,
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai."
   },
   {
     "id": 10561662124342,
@@ -2832,7 +4124,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "ML Protein Shaker Bottle",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 299,
+          "url": "https://www.amazon.in/s?k=ML+Protein+Shaker+Bottle",
+          "badge": "Market Avg: ₹299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=ML+Protein+Shaker+Bottle",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 149,
+          "url": "https://www.meesho.com/search?q=ML+Protein+Shaker+Bottle",
+          "badge": "Low-end: ₹149"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 349,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Protein+Shaker+Bottle",
+          "badge": "Meta Ads Avg: ₹349"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 268.0,
+      "profit_margin_pct": 67.2,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹268 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Protein+Shaker+Bottle"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹268 clean margin bachta hai."
   },
   {
     "id": 10723370959158,
@@ -2913,7 +4243,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Analog Wrist Watch",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 799,
+          "url": "https://www.amazon.in/s?k=Analog+Wrist+Watch",
+          "badge": "Market Avg: ₹799"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 599,
+          "url": "https://www.flipkart.com/search?q=Analog+Wrist+Watch",
+          "badge": "Avg: ₹599"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 379,
+          "url": "https://www.meesho.com/search?q=Analog+Wrist+Watch",
+          "badge": "Low-end: ₹379"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 899,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Analog+Wrist+Watch",
+          "badge": "Meta Ads Avg: ₹899"
+        }
+      },
+      "suggested_price": 699,
+      "net_profit": 416.0,
+      "profit_margin_pct": 59.5,
+      "saving_vs_amazon": 100,
+      "discount_pct": 13,
+      "strategy_insight": "Amazon pe ₹799 me list hai. Aap ₹699 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹416 net profit per order milega (59.5% margin).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Analog+Wrist+Watch"
+    },
+    "suggested_price": 699,
+    "strategy_insight": "Amazon pe ₹799 me list hai. Aap ₹699 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹416 net profit per order milega (59.5% margin)."
   },
   {
     "id": 8426238312758,
@@ -2994,7 +4362,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "12x12 Inch Photo Frame",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 599,
+          "url": "https://www.amazon.in/s?k=12x12+Inch+Photo+Frame",
+          "badge": "Market Avg: ₹599"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 499,
+          "url": "https://www.flipkart.com/search?q=12x12+Inch+Photo+Frame",
+          "badge": "Avg: ₹499"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 289,
+          "url": "https://www.meesho.com/search?q=12x12+Inch+Photo+Frame",
+          "badge": "Low-end: ₹289"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 699,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=12x12+Inch+Photo+Frame",
+          "badge": "Meta Ads Avg: ₹699"
+        }
+      },
+      "suggested_price": 549,
+      "net_profit": 323.0,
+      "profit_margin_pct": 58.8,
+      "saving_vs_amazon": 50,
+      "discount_pct": 8,
+      "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹323 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=12x12+Inch+Photo+Frame"
+    },
+    "suggested_price": 549,
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹323 clean margin bachta hai."
   },
   {
     "id": 10760785658166,
@@ -3075,7 +4481,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "in Multi Purpose Cleaning Brush with",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 549,
+          "url": "https://www.amazon.in/s?k=in+Multi+Purpose+Cleaning+Brush+with",
+          "badge": "Market Avg: ₹549"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=in+Multi+Purpose+Cleaning+Brush+with",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 249,
+          "url": "https://www.meesho.com/search?q=in+Multi+Purpose+Cleaning+Brush+with",
+          "badge": "Low-end: ₹249"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 599,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Multi+Purpose+Cleaning+Brush+with",
+          "badge": "Meta Ads Avg: ₹599"
+        }
+      },
+      "suggested_price": 499,
+      "net_profit": 299.0,
+      "profit_margin_pct": 59.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 9,
+      "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹299 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Multi+Purpose+Cleaning+Brush+with"
+    },
+    "suggested_price": 499,
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹299 clean margin bachta hai."
   },
   {
     "id": 8431965372726,
@@ -3156,7 +4600,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adjustable Drawer Organizer",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Adjustable+Drawer+Organizer",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Adjustable+Drawer+Organizer",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=Adjustable+Drawer+Organizer",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Drawer+Organizer",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 203.0,
+      "profit_margin_pct": 58.2,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹203 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Drawer+Organizer"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹203 clean margin bachta hai."
   },
   {
     "id": 10842552205622,
@@ -3237,7 +4719,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Alphabet Number Clay Mould Cutter Set",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=Alphabet+Number+Clay+Mould+Cutter+Set",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=Alphabet+Number+Clay+Mould+Cutter+Set",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 229,
+          "url": "https://www.meesho.com/search?q=Alphabet+Number+Clay+Mould+Cutter+Set",
+          "badge": "Low-end: ₹229"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 599,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Number+Clay+Mould+Cutter+Set",
+          "badge": "Meta Ads Avg: ₹599"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 260.0,
+      "profit_margin_pct": 57.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Number+Clay+Mould+Cutter+Set"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai."
   },
   {
     "id": 10199404937526,
@@ -3318,7 +4838,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=3",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=3",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 239,
+          "url": "https://www.meesho.com/search?q=3",
+          "badge": "Low-end: ₹239"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 599,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3",
+          "badge": "Meta Ads Avg: ₹599"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 259.0,
+      "profit_margin_pct": 57.7,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹259 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹259 clean margin bachta hai."
   },
   {
     "id": 10822514344246,
@@ -3399,7 +4957,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adjustable Posture Support Belt for Upper",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=Adjustable+Posture+Support+Belt+for+Upper",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=Adjustable+Posture+Support+Belt+for+Upper",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 229,
+          "url": "https://www.meesho.com/search?q=Adjustable+Posture+Support+Belt+for+Upper",
+          "badge": "Low-end: ₹229"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 599,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Posture+Support+Belt+for+Upper",
+          "badge": "Meta Ads Avg: ₹599"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 260.0,
+      "profit_margin_pct": 57.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Posture+Support+Belt+for+Upper"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai."
   },
   {
     "id": 8431913402678,
@@ -3480,7 +5076,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "18",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=18",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=18",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 239,
+          "url": "https://www.meesho.com/search?q=18",
+          "badge": "Low-end: ₹239"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 599,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=18",
+          "badge": "Meta Ads Avg: ₹599"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 255.0,
+      "profit_margin_pct": 56.8,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹255 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=18"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹255 clean margin bachta hai."
   },
   {
     "id": 10817562050870,
@@ -3561,7 +5195,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold Metallic Mesh Poochi Cuff",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=Antique+Gold+Metallic+Mesh+Poochi+Cuff",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold+Metallic+Mesh+Poochi+Cuff",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 239,
+          "url": "https://www.meesho.com/search?q=Antique+Gold+Metallic+Mesh+Poochi+Cuff",
+          "badge": "Low-end: ₹239"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 599,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Metallic+Mesh+Poochi+Cuff",
+          "badge": "Meta Ads Avg: ₹599"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 259.0,
+      "profit_margin_pct": 57.7,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹259 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Metallic+Mesh+Poochi+Cuff"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹259 clean margin bachta hai."
   },
   {
     "id": 10206070341942,
@@ -3642,7 +5314,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "6Pc Kitchen Knife Set",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 699,
+          "url": "https://www.amazon.in/s?k=6Pc+Kitchen+Knife+Set",
+          "badge": "Market Avg: ₹699"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 549,
+          "url": "https://www.flipkart.com/search?q=6Pc+Kitchen+Knife+Set",
+          "badge": "Avg: ₹549"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 339,
+          "url": "https://www.meesho.com/search?q=6Pc+Kitchen+Knife+Set",
+          "badge": "Low-end: ₹339"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 899,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=6Pc+Kitchen+Knife+Set",
+          "badge": "Meta Ads Avg: ₹899"
+        }
+      },
+      "suggested_price": 649,
+      "net_profit": 390.0,
+      "profit_margin_pct": 60.1,
+      "saving_vs_amazon": 50,
+      "discount_pct": 7,
+      "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=6Pc+Kitchen+Knife+Set"
+    },
+    "suggested_price": 649,
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai."
   },
   {
     "id": 10405964022070,
@@ -3723,7 +5433,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "in Gardening Hand Tool Set",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 599,
+          "url": "https://www.amazon.in/s?k=in+Gardening+Hand+Tool+Set",
+          "badge": "Market Avg: ₹599"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 499,
+          "url": "https://www.flipkart.com/search?q=in+Gardening+Hand+Tool+Set",
+          "badge": "Avg: ₹499"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 289,
+          "url": "https://www.meesho.com/search?q=in+Gardening+Hand+Tool+Set",
+          "badge": "Low-end: ₹289"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 699,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Gardening+Hand+Tool+Set",
+          "badge": "Meta Ads Avg: ₹699"
+        }
+      },
+      "suggested_price": 549,
+      "net_profit": 324.0,
+      "profit_margin_pct": 59.0,
+      "saving_vs_amazon": 50,
+      "discount_pct": 8,
+      "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹324 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Gardening+Hand+Tool+Set"
+    },
+    "suggested_price": 549,
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹324 clean margin bachta hai."
   },
   {
     "id": 10785683669302,
@@ -3804,7 +5552,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Moving Sand Art Round Frame",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 599,
+          "url": "https://www.amazon.in/s?k=3D+Moving+Sand+Art+Round+Frame",
+          "badge": "Market Avg: ₹599"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 499,
+          "url": "https://www.flipkart.com/search?q=3D+Moving+Sand+Art+Round+Frame",
+          "badge": "Avg: ₹499"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 289,
+          "url": "https://www.meesho.com/search?q=3D+Moving+Sand+Art+Round+Frame",
+          "badge": "Low-end: ₹289"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 699,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Moving+Sand+Art+Round+Frame",
+          "badge": "Meta Ads Avg: ₹699"
+        }
+      },
+      "suggested_price": 549,
+      "net_profit": 324.0,
+      "profit_margin_pct": 59.0,
+      "saving_vs_amazon": 50,
+      "discount_pct": 8,
+      "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹324 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Moving+Sand+Art+Round+Frame"
+    },
+    "suggested_price": 549,
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹324 clean margin bachta hai."
   },
   {
     "id": 10539924816182,
@@ -3885,7 +5671,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "5",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=5",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=5",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 219,
+          "url": "https://www.meesho.com/search?q=5",
+          "badge": "Low-end: ₹219"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 549,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=5",
+          "badge": "Meta Ads Avg: ₹549"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 219.0,
+      "profit_margin_pct": 54.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹219 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=5"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹219 clean margin bachta hai."
   },
   {
     "id": 10411851383094,
@@ -3966,7 +5790,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adjustable Knee Support Brace",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 599,
+          "url": "https://www.amazon.in/s?k=Adjustable+Knee+Support+Brace",
+          "badge": "Market Avg: ₹599"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 499,
+          "url": "https://www.flipkart.com/search?q=Adjustable+Knee+Support+Brace",
+          "badge": "Avg: ₹499"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 289,
+          "url": "https://www.meesho.com/search?q=Adjustable+Knee+Support+Brace",
+          "badge": "Low-end: ₹289"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 699,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Knee+Support+Brace",
+          "badge": "Meta Ads Avg: ₹699"
+        }
+      },
+      "suggested_price": 549,
+      "net_profit": 322.0,
+      "profit_margin_pct": 58.7,
+      "saving_vs_amazon": 50,
+      "discount_pct": 8,
+      "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹322 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Knee+Support+Brace"
+    },
+    "suggested_price": 549,
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹322 clean margin bachta hai."
   },
   {
     "id": 10613294268726,
@@ -4047,7 +5909,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Air Freshener Spray, Long Lasting Arabian",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Air+Freshener+Spray%2C+Long+Lasting+Arabian",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=Air+Freshener+Spray%2C+Long+Lasting+Arabian",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 159,
+          "url": "https://www.meesho.com/search?q=Air+Freshener+Spray%2C+Long+Lasting+Arabian",
+          "badge": "Low-end: ₹159"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Air+Freshener+Spray%2C+Long+Lasting+Arabian",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 258.0,
+      "profit_margin_pct": 64.7,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹258 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Air+Freshener+Spray%2C+Long+Lasting+Arabian"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹258 clean margin bachta hai."
   },
   {
     "id": 10847432671542,
@@ -4128,7 +6028,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Alphabet Word Puzzle Cards with Lowercase",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 549,
+          "url": "https://www.amazon.in/s?k=Alphabet+Word+Puzzle+Cards+with+Lowercase",
+          "badge": "Market Avg: ₹549"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 449,
+          "url": "https://www.flipkart.com/search?q=Alphabet+Word+Puzzle+Cards+with+Lowercase",
+          "badge": "Avg: ₹449"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 269,
+          "url": "https://www.meesho.com/search?q=Alphabet+Word+Puzzle+Cards+with+Lowercase",
+          "badge": "Low-end: ₹269"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 649,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Word+Puzzle+Cards+with+Lowercase",
+          "badge": "Meta Ads Avg: ₹649"
+        }
+      },
+      "suggested_price": 499,
+      "net_profit": 290.0,
+      "profit_margin_pct": 58.1,
+      "saving_vs_amazon": 50,
+      "discount_pct": 9,
+      "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹290 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Word+Puzzle+Cards+with+Lowercase"
+    },
+    "suggested_price": 499,
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹290 clean margin bachta hai."
   },
   {
     "id": 10842509902134,
@@ -4209,7 +6147,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Pc Multipurpose Precision Screwdriver Hand Tool",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=Pc+Multipurpose+Precision+Screwdriver+Hand+Tool",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Pc+Multipurpose+Precision+Screwdriver+Hand+Tool",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 189,
+          "url": "https://www.meesho.com/search?q=Pc+Multipurpose+Precision+Screwdriver+Hand+Tool",
+          "badge": "Low-end: ₹189"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Pc+Multipurpose+Precision+Screwdriver+Hand+Tool",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 190.0,
+      "profit_margin_pct": 54.4,
+      "saving_vs_amazon": 50,
+      "discount_pct": 13,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Pc+Multipurpose+Precision+Screwdriver+Hand+Tool"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
   },
   {
     "id": 10852616044854,
@@ -4290,7 +6266,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D EVA Unicorn Assembly Craft Puzzle",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 549,
+          "url": "https://www.amazon.in/s?k=3D+EVA+Unicorn+Assembly+Craft+Puzzle",
+          "badge": "Market Avg: ₹549"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 449,
+          "url": "https://www.flipkart.com/search?q=3D+EVA+Unicorn+Assembly+Craft+Puzzle",
+          "badge": "Avg: ₹449"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 269,
+          "url": "https://www.meesho.com/search?q=3D+EVA+Unicorn+Assembly+Craft+Puzzle",
+          "badge": "Low-end: ₹269"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 649,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+EVA+Unicorn+Assembly+Craft+Puzzle",
+          "badge": "Meta Ads Avg: ₹649"
+        }
+      },
+      "suggested_price": 499,
+      "net_profit": 290.0,
+      "profit_margin_pct": 58.1,
+      "saving_vs_amazon": 50,
+      "discount_pct": 9,
+      "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹290 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+EVA+Unicorn+Assembly+Craft+Puzzle"
+    },
+    "suggested_price": 499,
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹290 clean margin bachta hai."
   },
   {
     "id": 10852191732022,
@@ -4371,7 +6385,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Alphabet and Number Magnet Set for",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=Alphabet+and+Number+Magnet+Set+for",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=Alphabet+and+Number+Magnet+Set+for",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 229,
+          "url": "https://www.meesho.com/search?q=Alphabet+and+Number+Magnet+Set+for",
+          "badge": "Low-end: ₹229"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 549,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+and+Number+Magnet+Set+for",
+          "badge": "Meta Ads Avg: ₹549"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 264.0,
+      "profit_margin_pct": 58.8,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+and+Number+Magnet+Set+for"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai."
   },
   {
     "id": 10413897285942,
@@ -4452,7 +6504,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Foam Wallpaper Panels",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=3D+Foam+Wallpaper+Panels",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=3D+Foam+Wallpaper+Panels",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=3D+Foam+Wallpaper+Panels",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Foam+Wallpaper+Panels",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 202.0,
+      "profit_margin_pct": 57.9,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹202 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Foam+Wallpaper+Panels"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹202 clean margin bachta hai."
   },
   {
     "id": 10821820449078,
@@ -4533,7 +6623,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adjustable Gym Hand Gripper for Wrist",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Adjustable+Gym+Hand+Gripper+for+Wrist",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Adjustable+Gym+Hand+Gripper+for+Wrist",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=Adjustable+Gym+Hand+Gripper+for+Wrist",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Gym+Hand+Gripper+for+Wrist",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 201.0,
+      "profit_margin_pct": 57.6,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹201 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Gym+Hand+Gripper+for+Wrist"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹201 clean margin bachta hai."
   },
   {
     "id": 10694296731958,
@@ -4614,7 +6742,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "18W USB Fast Charger",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 549,
+          "url": "https://www.amazon.in/s?k=18W+USB+Fast+Charger",
+          "badge": "Market Avg: ₹549"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 449,
+          "url": "https://www.flipkart.com/search?q=18W+USB+Fast+Charger",
+          "badge": "Avg: ₹449"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 269,
+          "url": "https://www.meesho.com/search?q=18W+USB+Fast+Charger",
+          "badge": "Low-end: ₹269"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 649,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=18W+USB+Fast+Charger",
+          "badge": "Meta Ads Avg: ₹649"
+        }
+      },
+      "suggested_price": 499,
+      "net_profit": 286.0,
+      "profit_margin_pct": 57.3,
+      "saving_vs_amazon": 50,
+      "discount_pct": 9,
+      "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹286 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=18W+USB+Fast+Charger"
+    },
+    "suggested_price": 499,
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹286 clean margin bachta hai."
   },
   {
     "id": 10840908202294,
@@ -4695,7 +6861,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold Lakshmi Jhumka Earrings with",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Antique+Gold+Lakshmi+Jhumka+Earrings+with",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold+Lakshmi+Jhumka+Earrings+with",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=Antique+Gold+Lakshmi+Jhumka+Earrings+with",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Lakshmi+Jhumka+Earrings+with",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 254.0,
+      "profit_margin_pct": 63.7,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Lakshmi+Jhumka+Earrings+with"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai."
   },
   {
     "id": 10569105441078,
@@ -4776,7 +6980,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold Jhumka Earrings",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=Antique+Gold+Jhumka+Earrings",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold+Jhumka+Earrings",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 189,
+          "url": "https://www.meesho.com/search?q=Antique+Gold+Jhumka+Earrings",
+          "badge": "Low-end: ₹189"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Jhumka+Earrings",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 190.0,
+      "profit_margin_pct": 54.4,
+      "saving_vs_amazon": 50,
+      "discount_pct": 13,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Jhumka+Earrings"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
   },
   {
     "id": 9831476560182,
@@ -4857,7 +7099,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adiyogi Shiva Backflow Incense Holder",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 499,
+          "url": "https://www.amazon.in/s?k=Adiyogi+Shiva+Backflow+Incense+Holder",
+          "badge": "Market Avg: ₹499"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 399,
+          "url": "https://www.flipkart.com/search?q=Adiyogi+Shiva+Backflow+Incense+Holder",
+          "badge": "Avg: ₹399"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 229,
+          "url": "https://www.meesho.com/search?q=Adiyogi+Shiva+Backflow+Incense+Holder",
+          "badge": "Low-end: ₹229"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 549,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adiyogi+Shiva+Backflow+Incense+Holder",
+          "badge": "Meta Ads Avg: ₹549"
+        }
+      },
+      "suggested_price": 449,
+      "net_profit": 264.0,
+      "profit_margin_pct": 58.8,
+      "saving_vs_amazon": 50,
+      "discount_pct": 10,
+      "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adiyogi+Shiva+Backflow+Incense+Holder"
+    },
+    "suggested_price": 449,
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai."
   },
   {
     "id": 10110618632502,
@@ -4938,7 +7218,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "American Diamond Floral Necklace Set",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=American+Diamond+Floral+Necklace+Set",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=American+Diamond+Floral+Necklace+Set",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 209,
+          "url": "https://www.meesho.com/search?q=American+Diamond+Floral+Necklace+Set",
+          "badge": "Low-end: ₹209"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Floral+Necklace+Set",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 228.0,
+      "profit_margin_pct": 57.1,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹228 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Floral+Necklace+Set"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹228 clean margin bachta hai."
   },
   {
     "id": 10546429985078,
@@ -5019,7 +7337,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "AD Floral Bracelet",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=AD+Floral+Bracelet",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=AD+Floral+Bracelet",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 189,
+          "url": "https://www.meesho.com/search?q=AD+Floral+Bracelet",
+          "badge": "Low-end: ₹189"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=AD+Floral+Bracelet",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 188.0,
+      "profit_margin_pct": 53.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 13,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹188 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=AD+Floral+Bracelet"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹188 clean margin bachta hai."
   },
   {
     "id": 9499278868790,
@@ -5100,7 +7456,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "8",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 549,
+          "url": "https://www.amazon.in/s?k=8",
+          "badge": "Market Avg: ₹549"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 449,
+          "url": "https://www.flipkart.com/search?q=8",
+          "badge": "Avg: ₹449"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 269,
+          "url": "https://www.meesho.com/search?q=8",
+          "badge": "Low-end: ₹269"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 649,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=8",
+          "badge": "Meta Ads Avg: ₹649"
+        }
+      },
+      "suggested_price": 499,
+      "net_profit": 285.0,
+      "profit_margin_pct": 57.1,
+      "saving_vs_amazon": 50,
+      "discount_pct": 9,
+      "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹285 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=8"
+    },
+    "suggested_price": 499,
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹285 clean margin bachta hai."
   },
   {
     "id": 10719287509302,
@@ -5181,7 +7575,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Handmade Dome Earrings",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=Antique+Handmade+Dome+Earrings",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=Antique+Handmade+Dome+Earrings",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 209,
+          "url": "https://www.meesho.com/search?q=Antique+Handmade+Dome+Earrings",
+          "badge": "Low-end: ₹209"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Handmade+Dome+Earrings",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 227.0,
+      "profit_margin_pct": 56.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Handmade+Dome+Earrings"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai."
   },
   {
     "id": 10664384659766,
@@ -5262,7 +7694,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold Pearl Jhumka Earrings",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=Antique+Gold+Pearl+Jhumka+Earrings",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold+Pearl+Jhumka+Earrings",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 209,
+          "url": "https://www.meesho.com/search?q=Antique+Gold+Pearl+Jhumka+Earrings",
+          "badge": "Low-end: ₹209"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Pearl+Jhumka+Earrings",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 227.0,
+      "profit_margin_pct": 56.9,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Pearl+Jhumka+Earrings"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai."
   },
   {
     "id": 10840908103990,
@@ -5343,7 +7813,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold Temple Jhumka Earrings with",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Antique+Gold+Temple+Jhumka+Earrings+with",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold+Temple+Jhumka+Earrings+with",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=Antique+Gold+Temple+Jhumka+Earrings+with",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Temple+Jhumka+Earrings+with",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 200.0,
+      "profit_margin_pct": 57.3,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹200 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Temple+Jhumka+Earrings+with"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹200 clean margin bachta hai."
   },
   {
     "id": 10584167252278,
@@ -5424,7 +7932,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3D Lord Ganesha Acrylic LED Night",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 299,
+          "url": "https://www.amazon.in/s?k=3D+Lord+Ganesha+Acrylic+LED+Night",
+          "badge": "Market Avg: ₹299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=3D+Lord+Ganesha+Acrylic+LED+Night",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 149,
+          "url": "https://www.meesho.com/search?q=3D+Lord+Ganesha+Acrylic+LED+Night",
+          "badge": "Low-end: ₹149"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Lord+Ganesha+Acrylic+LED+Night",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 267.0,
+      "profit_margin_pct": 66.9,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹267 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Lord+Ganesha+Acrylic+LED+Night"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹267 clean margin bachta hai."
   },
   {
     "id": 10055148634422,
@@ -5505,7 +8051,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adult Paint by Number Kit",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Adult+Paint+by+Number+Kit",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Adult+Paint+by+Number+Kit",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=Adult+Paint+by+Number+Kit",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adult+Paint+by+Number+Kit",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 254.0,
+      "profit_margin_pct": 63.7,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adult+Paint+by+Number+Kit"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai."
   },
   {
     "id": 10860468338998,
@@ -5586,7 +8170,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "4",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=4",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=4",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 149,
+          "url": "https://www.meesho.com/search?q=4",
+          "badge": "Low-end: ₹149"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=4",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 263.0,
+      "profit_margin_pct": 65.9,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹263 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹263 clean margin bachta hai."
   },
   {
     "id": 8426220192054,
@@ -5667,7 +8289,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "4",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 299,
+          "url": "https://www.amazon.in/s?k=4",
+          "badge": "Market Avg: ₹299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=4",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 119,
+          "url": "https://www.meesho.com/search?q=4",
+          "badge": "Low-end: ₹119"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 299,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=4",
+          "badge": "Meta Ads Avg: ₹299"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 231.0,
+      "profit_margin_pct": 66.2,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹231 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹231 clean margin bachta hai."
   },
   {
     "id": 10622263853366,
@@ -5748,7 +8408,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "in Manicure Pedicure Nail Care Kit",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=in+Manicure+Pedicure+Nail+Care+Kit",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=in+Manicure+Pedicure+Nail+Care+Kit",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 219,
+          "url": "https://www.meesho.com/search?q=in+Manicure+Pedicure+Nail+Care+Kit",
+          "badge": "Low-end: ₹219"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 549,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+Pedicure+Nail+Care+Kit",
+          "badge": "Meta Ads Avg: ₹549"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 221.0,
+      "profit_margin_pct": 55.4,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹221 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+Pedicure+Nail+Care+Kit"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹221 clean margin bachta hai."
   },
   {
     "id": 10622259953974,
@@ -5829,7 +8527,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "In Pedicure Manicure Kit",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=In+Pedicure+Manicure+Kit",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=In+Pedicure+Manicure+Kit",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 209,
+          "url": "https://www.meesho.com/search?q=In+Pedicure+Manicure+Kit",
+          "badge": "Low-end: ₹209"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 549,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Pedicure+Manicure+Kit",
+          "badge": "Meta Ads Avg: ₹549"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 225.0,
+      "profit_margin_pct": 56.4,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹225 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Pedicure+Manicure+Kit"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹225 clean margin bachta hai."
   },
   {
     "id": 8761383518518,
@@ -5910,7 +8646,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "12W LED Bulb",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 299,
+          "url": "https://www.amazon.in/s?k=12W+LED+Bulb",
+          "badge": "Market Avg: ₹299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=12W+LED+Bulb",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 139,
+          "url": "https://www.meesho.com/search?q=12W+LED+Bulb",
+          "badge": "Low-end: ₹139"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 349,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=12W+LED+Bulb",
+          "badge": "Meta Ads Avg: ₹349"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 223.0,
+      "profit_margin_pct": 63.9,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹223 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=12W+LED+Bulb"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹223 clean margin bachta hai."
   },
   {
     "id": 9521100849462,
@@ -5991,7 +8765,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "2",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=2",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=2",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 159,
+          "url": "https://www.meesho.com/search?q=2",
+          "badge": "Low-end: ₹159"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=2",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 257.0,
+      "profit_margin_pct": 64.4,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹257 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹257 clean margin bachta hai."
   },
   {
     "id": 9753034883382,
@@ -6072,7 +8884,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adjustable Mobile Stand",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Adjustable+Mobile+Stand",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=Adjustable+Mobile+Stand",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 159,
+          "url": "https://www.meesho.com/search?q=Adjustable+Mobile+Stand",
+          "badge": "Low-end: ₹159"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Mobile+Stand",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 261.0,
+      "profit_margin_pct": 65.4,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹261 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Mobile+Stand"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹261 clean margin bachta hai."
   },
   {
     "id": 10546429919542,
@@ -6153,7 +9003,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "AD Floral Bracelet",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=AD+Floral+Bracelet",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=AD+Floral+Bracelet",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 199,
+          "url": "https://www.meesho.com/search?q=AD+Floral+Bracelet",
+          "badge": "Low-end: ₹199"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=AD+Floral+Bracelet",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 234.0,
+      "profit_margin_pct": 58.6,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹234 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=AD+Floral+Bracelet"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹234 clean margin bachta hai."
   },
   {
     "id": 10563314188598,
@@ -6234,7 +9122,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "American Diamond Bracelet",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=American+Diamond+Bracelet",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=American+Diamond+Bracelet",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 199,
+          "url": "https://www.meesho.com/search?q=American+Diamond+Bracelet",
+          "badge": "Low-end: ₹199"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 499,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Bracelet",
+          "badge": "Meta Ads Avg: ₹499"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 234.0,
+      "profit_margin_pct": 58.6,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹234 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Bracelet"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹234 clean margin bachta hai."
   },
   {
     "id": 10820494360886,
@@ -6315,7 +9241,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold Double Layer Jhumka Earrings",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Antique+Gold+Double+Layer+Jhumka+Earrings",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold+Double+Layer+Jhumka+Earrings",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 149,
+          "url": "https://www.meesho.com/search?q=Antique+Gold+Double+Layer+Jhumka+Earrings",
+          "badge": "Low-end: ₹149"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Double+Layer+Jhumka+Earrings",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 262.0,
+      "profit_margin_pct": 65.7,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹262 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Double+Layer+Jhumka+Earrings"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹262 clean margin bachta hai."
   },
   {
     "id": 9974832333110,
@@ -6396,7 +9360,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "2",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=2",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=2",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=2",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=2",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 254.0,
+      "profit_margin_pct": 63.7,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai."
   },
   {
     "id": 8426806378806,
@@ -6477,7 +9479,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "4",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=4",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=4",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 189,
+          "url": "https://www.meesho.com/search?q=4",
+          "badge": "Low-end: ₹189"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=4",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 191.0,
+      "profit_margin_pct": 54.7,
+      "saving_vs_amazon": 50,
+      "discount_pct": 13,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹191 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹191 clean margin bachta hai."
   },
   {
     "id": 9852358459702,
@@ -6558,7 +9598,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "3",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 299,
+          "url": "https://www.amazon.in/s?k=3",
+          "badge": "Market Avg: ₹299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=3",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 129,
+          "url": "https://www.meesho.com/search?q=3",
+          "badge": "Low-end: ₹129"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 349,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=3",
+          "badge": "Meta Ads Avg: ₹349"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 230.0,
+      "profit_margin_pct": 65.9,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹230 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹230 clean margin bachta hai."
   },
   {
     "id": 10642510610742,
@@ -6639,7 +9717,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Anti Slip Safety Tape",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Anti+Slip+Safety+Tape",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Anti+Slip+Safety+Tape",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 159,
+          "url": "https://www.meesho.com/search?q=Anti+Slip+Safety+Tape",
+          "badge": "Low-end: ₹159"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Anti+Slip+Safety+Tape",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 257.0,
+      "profit_margin_pct": 64.4,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹257 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Anti+Slip+Safety+Tape"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹257 clean margin bachta hai."
   },
   {
     "id": 10788074586422,
@@ -6720,7 +9836,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Anime Warrior Figure Key Holder Wall",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Anime+Warrior+Figure+Key+Holder+Wall",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=Anime+Warrior+Figure+Key+Holder+Wall",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 159,
+          "url": "https://www.meesho.com/search?q=Anime+Warrior+Figure+Key+Holder+Wall",
+          "badge": "Low-end: ₹159"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Anime+Warrior+Figure+Key+Holder+Wall",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 260.0,
+      "profit_margin_pct": 65.2,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Anime+Warrior+Figure+Key+Holder+Wall"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai."
   },
   {
     "id": 10840908136758,
@@ -6801,7 +9955,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Antique Gold Goddess Temple Jhumka Earrings",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 299,
+          "url": "https://www.amazon.in/s?k=Antique+Gold+Goddess+Temple+Jhumka+Earrings",
+          "badge": "Market Avg: ₹299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=Antique+Gold+Goddess+Temple+Jhumka+Earrings",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 139,
+          "url": "https://www.meesho.com/search?q=Antique+Gold+Goddess+Temple+Jhumka+Earrings",
+          "badge": "Low-end: ₹139"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 349,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Goddess+Temple+Jhumka+Earrings",
+          "badge": "Meta Ads Avg: ₹349"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 222.0,
+      "profit_margin_pct": 63.6,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹222 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Goddess+Temple+Jhumka+Earrings"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹222 clean margin bachta hai."
   },
   {
     "id": 10825881616694,
@@ -6882,7 +10074,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Pair Fashion Stud Earrings Set",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Pair+Fashion+Stud+Earrings+Set",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Pair+Fashion+Stud+Earrings+Set",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=Pair+Fashion+Stud+Earrings+Set",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Pair+Fashion+Stud+Earrings+Set",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 200.0,
+      "profit_margin_pct": 57.3,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹200 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Pair+Fashion+Stud+Earrings+Set"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹200 clean margin bachta hai."
   },
   {
     "id": 10689046970678,
@@ -6963,7 +10193,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "American Diamond Bracelet",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=American+Diamond+Bracelet",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=American+Diamond+Bracelet",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 159,
+          "url": "https://www.meesho.com/search?q=American+Diamond+Bracelet",
+          "badge": "Low-end: ₹159"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Bracelet",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 258.0,
+      "profit_margin_pct": 64.7,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹258 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Bracelet"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹258 clean margin bachta hai."
   },
   {
     "id": 10193883988278,
@@ -7044,7 +10312,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Alphabet Flash Cards Set",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Alphabet+Flash+Cards+Set",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=Alphabet+Flash+Cards+Set",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 149,
+          "url": "https://www.meesho.com/search?q=Alphabet+Flash+Cards+Set",
+          "badge": "Low-end: ₹149"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 399,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Flash+Cards+Set",
+          "badge": "Meta Ads Avg: ₹399"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 262.0,
+      "profit_margin_pct": 65.7,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹262 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Flash+Cards+Set"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹262 clean margin bachta hai."
   },
   {
     "id": 10528925057334,
@@ -7125,7 +10431,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "5",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 249,
+          "url": "https://www.amazon.in/s?k=5",
+          "badge": "Market Avg: ₹249"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=5",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 99,
+          "url": "https://www.meesho.com/search?q=5",
+          "badge": "Low-end: ₹99"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 299,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=5",
+          "badge": "Meta Ads Avg: ₹299"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 244.0,
+      "profit_margin_pct": 69.9,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹244 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=5"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹244 clean margin bachta hai."
   },
   {
     "id": 8426273276214,
@@ -7206,7 +10550,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adhesive Wall Hooks",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 249,
+          "url": "https://www.amazon.in/s?k=Adhesive+Wall+Hooks",
+          "badge": "Market Avg: ₹249"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=Adhesive+Wall+Hooks",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 99,
+          "url": "https://www.meesho.com/search?q=Adhesive+Wall+Hooks",
+          "badge": "Low-end: ₹99"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 249,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adhesive+Wall+Hooks",
+          "badge": "Meta Ads Avg: ₹249"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 246.0,
+      "profit_margin_pct": 70.5,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹246 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adhesive+Wall+Hooks"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹246 clean margin bachta hai."
   },
   {
     "id": 10348396806454,
@@ -7287,7 +10669,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Aloe Vera Body Lotion",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 249,
+          "url": "https://www.amazon.in/s?k=Aloe+Vera+Body+Lotion",
+          "badge": "Market Avg: ₹249"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=Aloe+Vera+Body+Lotion",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 109,
+          "url": "https://www.meesho.com/search?q=Aloe+Vera+Body+Lotion",
+          "badge": "Low-end: ₹109"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 299,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Aloe+Vera+Body+Lotion",
+          "badge": "Meta Ads Avg: ₹299"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 242.0,
+      "profit_margin_pct": 69.3,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹242 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Aloe+Vera+Body+Lotion"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹242 clean margin bachta hai."
   },
   {
     "id": 10784464339254,
@@ -7368,7 +10788,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "12",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 299,
+          "url": "https://www.amazon.in/s?k=12",
+          "badge": "Market Avg: ₹299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=12",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 129,
+          "url": "https://www.meesho.com/search?q=12",
+          "badge": "Low-end: ₹129"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 349,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=12",
+          "badge": "Meta Ads Avg: ₹349"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 230.0,
+      "profit_margin_pct": 65.9,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹230 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=12"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹230 clean margin bachta hai."
   },
   {
     "id": 10852862361910,
@@ -7449,7 +10907,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adjustable Kids Knee Protection Pads for",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 399,
+          "url": "https://www.amazon.in/s?k=Adjustable+Kids+Knee+Protection+Pads+for",
+          "badge": "Market Avg: ₹399"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Adjustable+Kids+Knee+Protection+Pads+for",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 189,
+          "url": "https://www.meesho.com/search?q=Adjustable+Kids+Knee+Protection+Pads+for",
+          "badge": "Low-end: ₹189"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Kids+Knee+Protection+Pads+for",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 190.0,
+      "profit_margin_pct": 54.4,
+      "saving_vs_amazon": 50,
+      "discount_pct": 13,
+      "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Kids+Knee+Protection+Pads+for"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
   },
   {
     "id": 10844004712758,
@@ -7530,7 +11026,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "ML Glass Tumbler Cup with Handle,",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 449,
+          "url": "https://www.amazon.in/s?k=ML+Glass+Tumbler+Cup+with+Handle%2C",
+          "badge": "Market Avg: ₹449"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 349,
+          "url": "https://www.flipkart.com/search?q=ML+Glass+Tumbler+Cup+with+Handle%2C",
+          "badge": "Avg: ₹349"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 219,
+          "url": "https://www.meesho.com/search?q=ML+Glass+Tumbler+Cup+with+Handle%2C",
+          "badge": "Low-end: ₹219"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 549,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Glass+Tumbler+Cup+with+Handle%2C",
+          "badge": "Meta Ads Avg: ₹549"
+        }
+      },
+      "suggested_price": 399,
+      "net_profit": 218.0,
+      "profit_margin_pct": 54.6,
+      "saving_vs_amazon": 50,
+      "discount_pct": 11,
+      "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹218 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Glass+Tumbler+Cup+with+Handle%2C"
+    },
+    "suggested_price": 399,
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹218 clean margin bachta hai."
   },
   {
     "id": 10805522891062,
@@ -7611,7 +11145,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Adjustable Toe Ring Set For Women",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 249,
+          "url": "https://www.amazon.in/s?k=Adjustable+Toe+Ring+Set+For+Women",
+          "badge": "Market Avg: ₹249"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=Adjustable+Toe+Ring+Set+For+Women",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 109,
+          "url": "https://www.meesho.com/search?q=Adjustable+Toe+Ring+Set+For+Women",
+          "badge": "Low-end: ₹109"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 299,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Toe+Ring+Set+For+Women",
+          "badge": "Meta Ads Avg: ₹299"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 240.0,
+      "profit_margin_pct": 68.8,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹240 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Toe+Ring+Set+For+Women"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹240 clean margin bachta hai."
   },
   {
     "id": 10104370233654,
@@ -7692,7 +11264,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "in Manicure Tool Kit",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 299,
+          "url": "https://www.amazon.in/s?k=in+Manicure+Tool+Kit",
+          "badge": "Market Avg: ₹299"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 249,
+          "url": "https://www.flipkart.com/search?q=in+Manicure+Tool+Kit",
+          "badge": "Avg: ₹249"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 139,
+          "url": "https://www.meesho.com/search?q=in+Manicure+Tool+Kit",
+          "badge": "Low-end: ₹139"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 349,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+Tool+Kit",
+          "badge": "Meta Ads Avg: ₹349"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 220.0,
+      "profit_margin_pct": 63.0,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹220 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+Tool+Kit"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹220 clean margin bachta hai."
   },
   {
     "id": 10797183631670,
@@ -7773,7 +11383,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Degree Rotating Multi Arm Hanger Hook",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=Degree+Rotating+Multi+Arm+Hanger+Hook",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=Degree+Rotating+Multi+Arm+Hanger+Hook",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=Degree+Rotating+Multi+Arm+Hanger+Hook",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Degree+Rotating+Multi+Arm+Hanger+Hook",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 199.0,
+      "profit_margin_pct": 57.0,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹199 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Degree+Rotating+Multi+Arm+Hanger+Hook"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹199 clean margin bachta hai."
   },
   {
     "id": 9747165086006,
@@ -7854,7 +11502,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "Agarbatti Sticks",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 249,
+          "url": "https://www.amazon.in/s?k=Agarbatti+Sticks",
+          "badge": "Market Avg: ₹249"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=Agarbatti+Sticks",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 119,
+          "url": "https://www.meesho.com/search?q=Agarbatti+Sticks",
+          "badge": "Low-end: ₹119"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 299,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=Agarbatti+Sticks",
+          "badge": "Meta Ads Avg: ₹299"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 235.0,
+      "profit_margin_pct": 67.3,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹235 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Agarbatti+Sticks"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹235 clean margin bachta hai."
   },
   {
     "id": 10529157873974,
@@ -7935,7 +11621,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "24K Gold Plated Red Rose",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 249,
+          "url": "https://www.amazon.in/s?k=24K+Gold+Plated+Red+Rose",
+          "badge": "Market Avg: ₹249"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=24K+Gold+Plated+Red+Rose",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 119,
+          "url": "https://www.meesho.com/search?q=24K+Gold+Plated+Red+Rose",
+          "badge": "Low-end: ₹119"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 299,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=24K+Gold+Plated+Red+Rose",
+          "badge": "Meta Ads Avg: ₹299"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 235.0,
+      "profit_margin_pct": 67.3,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹235 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=24K+Gold+Plated+Red+Rose"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹235 clean margin bachta hai."
   },
   {
     "id": 10623105073462,
@@ -8016,7 +11740,45 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "In Nail Care Kit",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 199,
+          "url": "https://www.amazon.in/s?k=In+Nail+Care+Kit",
+          "badge": "Market Avg: ₹199"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 199,
+          "url": "https://www.flipkart.com/search?q=In+Nail+Care+Kit",
+          "badge": "Avg: ₹199"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 99,
+          "url": "https://www.meesho.com/search?q=In+Nail+Care+Kit",
+          "badge": "Low-end: ₹99"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 249,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Nail+Care+Kit",
+          "badge": "Meta Ads Avg: ₹249"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 250.0,
+      "profit_margin_pct": 71.6,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹199 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹250 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Nail+Care+Kit"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹199 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹250 clean margin bachta hai."
   },
   {
     "id": 10784304890166,
@@ -8097,6 +11859,44 @@
     "camera_movements": "",
     "lighting_setup": "",
     "creator_secret_tip": "",
-    "ai_creative_powered": false
+    "ai_creative_powered": false,
+    "competitor_pricing": {
+      "search_keyword": "ML Glass Travel Water Bottle with",
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon India",
+          "price": 349,
+          "url": "https://www.amazon.in/s?k=ML+Glass+Travel+Water+Bottle+with",
+          "badge": "Market Avg: ₹349"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price": 299,
+          "url": "https://www.flipkart.com/search?q=ML+Glass+Travel+Water+Bottle+with",
+          "badge": "Avg: ₹299"
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price": 169,
+          "url": "https://www.meesho.com/search?q=ML+Glass+Travel+Water+Bottle+with",
+          "badge": "Low-end: ₹169"
+        },
+        "competitor_d2c": {
+          "name": "Competitor D2C Stores",
+          "price": 449,
+          "url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Glass+Travel+Water+Bottle+with",
+          "badge": "Meta Ads Avg: ₹449"
+        }
+      },
+      "suggested_price": 349,
+      "net_profit": 199.0,
+      "profit_margin_pct": 57.0,
+      "saving_vs_amazon": 0,
+      "discount_pct": 25,
+      "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹199 clean margin bachta hai.",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Glass+Travel+Water+Bottle+with"
+    },
+    "suggested_price": 349,
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹199 clean margin bachta hai."
   }
 ]

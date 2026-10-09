@@ -294,6 +294,41 @@
                         </div>
                     </div>
 
+                    <!-- Competitor Marketplace Intelligence & Suggested Price Box -->
+                    {% if w.competitor_pricing %}
+                    <div class="bg-amber-50/60 rounded-lg p-2 border border-amber-200 mb-2.5 text-[11px]">
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-[10px] font-bold text-amber-950 uppercase tracking-wide flex items-center gap-1">
+                                <span>🏷️ Market Prices</span>
+                            </span>
+                            <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-600 text-white">
+                                Suggest: ₹{{ w.suggested_price }}
+                            </span>
+                        </div>
+                        
+                        <!-- Market Chips with Real Deep Search Links -->
+                        <div class="grid grid-cols-3 gap-1 mb-1.5 font-mono text-[10px]">
+                            <a href="{{ w.competitor_pricing.marketplaces.amazon.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Search on Amazon India">
+                                <span class="text-[8px] text-textMuted block">Amazon</span>
+                                <span class="font-bold text-amber-950 text-[10px]">₹{{ w.competitor_pricing.marketplaces.amazon.price }} ↗</span>
+                            </a>
+                            <a href="{{ w.competitor_pricing.marketplaces.flipkart.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Search on Flipkart">
+                                <span class="text-[8px] text-textMuted block">Flipkart</span>
+                                <span class="font-bold text-blue-900 text-[10px]">₹{{ w.competitor_pricing.marketplaces.flipkart.price }} ↗</span>
+                            </a>
+                            <a href="{{ w.competitor_pricing.marketplaces.meesho.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Search on Meesho">
+                                <span class="text-[8px] text-textMuted block">Meesho</span>
+                                <span class="font-bold text-rose-800 text-[10px]">₹{{ w.competitor_pricing.marketplaces.meesho.price }} ↗</span>
+                            </a>
+                        </div>
+
+                        <!-- Actionable Arbitrage Verdict -->
+                        <div class="text-[10px] text-amber-900 leading-tight">
+                            💡 <strong>Suggested:</strong> Sell at <strong>₹{{ w.suggested_price }}</strong> (Net profit: <strong>+₹{{ w.competitor_pricing.net_profit }}</strong>).
+                        </div>
+                    </div>
+                    {% endif %}
+
                     <!-- Consistent Gemini AI Reel Hook Box -->
                     <div class="p-2 rounded-lg bg-zinc-50 border border-borderSubtle text-[11px] mb-3 min-h-[56px] flex flex-col justify-center">
                         <div class="text-[10px] text-textMuted uppercase font-semibold flex items-center gap-1 mb-0.5">

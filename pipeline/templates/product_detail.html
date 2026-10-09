@@ -179,6 +179,122 @@
             </div>
         </section>
 
+        <!-- Competitor Marketplace Intelligence & Suggested Price Arbitrage -->
+        {% if p.competitor_pricing %}
+        <section class="zen-card rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-amber-50/70 via-white to-orange-50/40 border border-amber-200 shadow-xs">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 mb-5">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-amber-900 bg-amber-100/90 px-2.5 py-0.5 rounded-full border border-amber-300">
+                        🏷️ Live Marketplace Intelligence & Arbitrage
+                    </span>
+                    <h3 class="text-base sm:text-lg font-bold text-textPrimary mt-1.5 flex items-center gap-2">
+                        Marketplace Price Comparison & Recommended Sell Price
+                    </h3>
+                </div>
+                <div class="flex items-center gap-2.5 bg-white px-3.5 py-2 rounded-xl border border-amber-200 shadow-2xs">
+                    <span class="text-xs text-textSecondary font-medium">Recommended D2C Price:</span>
+                    <span class="font-mono text-xl font-extrabold text-emerald-800">
+                        ₹{{ p.competitor_pricing.suggested_price }}
+                    </span>
+                </div>
+            </div>
+
+            <!-- Marketplace Comparison 4-Card Grid -->
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-4">
+                <!-- Meesho -->
+                <div class="p-3.5 rounded-xl bg-white border border-borderMain shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-textSecondary font-semibold">
+                            <span>Meesho (Reseller)</span>
+                            <span class="text-[10px] text-rose-700 bg-rose-50 px-1.5 py-0.2 rounded font-mono">Unbranded</span>
+                        </div>
+                        <div class="font-mono text-xl font-bold text-textPrimary mt-1.5">
+                            ₹{{ p.competitor_pricing.marketplaces.meesho.price }}
+                        </div>
+                        <p class="text-[10px] text-textMuted mt-0.5">Wholesale + reseller cut</p>
+                    </div>
+                    <a href="{{ p.competitor_pricing.marketplaces.meesho.url }}" target="_blank" rel="noopener noreferrer" class="mt-3 text-xs font-semibold text-rose-700 hover:text-rose-900 flex items-center gap-1 hover:underline">
+                        <span>Search Meesho</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Flipkart -->
+                <div class="p-3.5 rounded-xl bg-white border border-borderMain shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-textSecondary font-semibold">
+                            <span>Flipkart</span>
+                            <span class="text-[10px] text-blue-700 bg-blue-50 px-1.5 py-0.2 rounded font-mono">Marketplace</span>
+                        </div>
+                        <div class="font-mono text-xl font-bold text-textPrimary mt-1.5">
+                            ₹{{ p.competitor_pricing.marketplaces.flipkart.price }}
+                        </div>
+                        <p class="text-[10px] text-textMuted mt-0.5">Listing + commission</p>
+                    </div>
+                    <a href="{{ p.competitor_pricing.marketplaces.flipkart.url }}" target="_blank" rel="noopener noreferrer" class="mt-3 text-xs font-semibold text-blue-700 hover:text-blue-900 flex items-center gap-1 hover:underline">
+                        <span>Search Flipkart</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Amazon India -->
+                <div class="p-3.5 rounded-xl bg-white border border-amber-300 shadow-xs flex flex-col justify-between ring-1 ring-amber-300/70">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-textSecondary font-semibold">
+                            <span>Amazon India</span>
+                            <span class="text-[10px] text-amber-900 bg-amber-100 px-1.5 py-0.2 rounded font-mono font-bold">Benchmark</span>
+                        </div>
+                        <div class="font-mono text-xl font-bold text-amber-950 mt-1.5">
+                            ₹{{ p.competitor_pricing.marketplaces.amazon.price }}
+                        </div>
+                        <p class="text-[10px] text-textMuted mt-0.5">Prime listing + FBA fees</p>
+                    </div>
+                    <a href="{{ p.competitor_pricing.marketplaces.amazon.url }}" target="_blank" rel="noopener noreferrer" class="mt-3 text-xs font-semibold text-amber-800 hover:text-amber-950 flex items-center gap-1 hover:underline">
+                        <span>Search Amazon ↗</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <!-- Competitor D2C Stores -->
+                <div class="p-3.5 rounded-xl bg-white border border-borderMain shadow-xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between text-xs text-textSecondary font-semibold">
+                            <span>Competitor D2C</span>
+                            <span class="text-[10px] text-purple-700 bg-purple-50 px-1.5 py-0.2 rounded font-mono">Meta Ads</span>
+                        </div>
+                        <div class="font-mono text-xl font-bold text-purple-950 mt-1.5">
+                            ₹{{ p.competitor_pricing.marketplaces.competitor_d2c.price }}
+                        </div>
+                        <p class="text-[10px] text-textMuted mt-0.5">Shopify stores on Reels</p>
+                    </div>
+                    <a href="{{ p.competitor_pricing.google_shopping_url }}" target="_blank" rel="noopener noreferrer" class="mt-3 text-xs font-semibold text-purple-700 hover:text-purple-900 flex items-center gap-1 hover:underline">
+                        <span>Google Shopping</span>
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Strategic Pricing Arbitrage Summary -->
+            <div class="p-4 rounded-xl bg-white/95 border border-amber-200">
+                <div class="flex items-start gap-3">
+                    <span class="text-xl">💡</span>
+                    <div class="space-y-1.5">
+                        <h4 class="text-xs font-bold uppercase tracking-wider text-amber-950">Recommended Pricing & Positioning Strategy</h4>
+                        <p class="text-xs text-textPrimary leading-relaxed">
+                            {{ p.competitor_pricing.strategy_insight }}
+                        </p>
+                        <div class="pt-1 flex flex-wrap items-center gap-4 text-xs font-mono text-textSecondary">
+                            <span>• Sourcing: <strong>₹{{ p.wholesale_price }}</strong></span>
+                            <span>• Shipping Buffer: <strong>₹60</strong></span>
+                            <span>• Suggested Sell: <strong class="text-emerald-800">₹{{ p.competitor_pricing.suggested_price }}</strong></span>
+                            <span>• Net Profit Per Order: <strong class="text-emerald-800">+₹{{ p.competitor_pricing.net_profit }}</strong> ({{ p.competitor_pricing.profit_margin_pct }}% margin)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endif %}
+
         <!-- Viral Hook & Audio Recommendation -->
         <section class="zen-card rounded-2xl p-5 bg-zinc-100 border border-zinc-200">
             <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">

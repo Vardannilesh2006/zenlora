@@ -9,7 +9,14 @@ class ClassifierAndPricingEngine:
 
     @classmethod
     def classify(cls, title: str, description: str, tags: list, product_type: str) -> dict:
-        combined_text = f"{title} {description} {' '.join(tags)} {product_type}".lower()
+        if tags is None:
+            tag_list = []
+        elif isinstance(tags, str):
+            tag_list = [tag.strip() for tag in re.split(r"[,|;]+", tags) if tag.strip()]
+        else:
+            tag_list = [str(tag).strip() for tag in tags if str(tag).strip()]
+
+        combined_text = f"{title} {description} {' '.join(tag_list)} {product_type}".lower()
 
         scores = {}
         for category, keywords in CATEGORIES.items():

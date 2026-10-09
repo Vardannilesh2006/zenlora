@@ -12,6 +12,7 @@ sys.path.insert(0, str(CURRENT_DIR.parent))
 
 from config import WINNING_DB_FILE, DATABASE_FILE, DATA_DIR, BASE_DIR as CONFIG_BASE_DIR
 from classifier_pricing import ClassifierAndPricingEngine
+from deodap_extractor import DeoDapExtractor
 
 from winning_engine.deodap_harvester import harvest_deodap_bestsellers
 from winning_engine.meta_ad_spy import analyze_meta_ad_signals
@@ -19,6 +20,7 @@ from winning_engine.trend_checker import get_google_trends_analysis
 from winning_engine.social_spy import analyze_social_velocity
 from winning_engine.gemini_analyzer import analyze_with_gemini
 from winning_engine.winning_scorer import compute_winning_score
+from winning_engine.competitor_pricing import get_competitor_price_intelligence
 from ugc_engine import UGCEngine
 
 def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -> List[Dict[str, Any]]:
@@ -74,6 +76,12 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
         )
 
         zen_title = ClassifierAndPricingEngine.generate_zenlora_title(title) if ClassifierAndPricingEngine else f"Zenlora™ {meta_signals['keyword'].title()}"
+
+        # 5b. Competitor Marketplace Price Discovery & Arbitrage
+        try:
+            competitor_intel = get_competitor_price_intelligence(title, wholesale_price, niche)
+        except Exception:
+            competitor_intel = {}
 
         # 6. Automatic UGC Storyboard & Multi-Scene Continuity Prompts (High-Speed Local Generator)
         prod_data = {
@@ -140,6 +148,9 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
             "deodap_url": item.get("deodap_url", ""),
             "description": item.get("description", ""),
             "scanned_at": scan_timestamp,
+            "competitor_pricing": competitor_intel,
+            "suggested_price": competitor_intel.get("suggested_price", score_data["pricing"]["selling_price"]),
+            "strategy_insight": competitor_intel.get("strategy_insight", ""),
             **ugc_prompts
         }
         winners.append(winner_record)
@@ -195,12 +206,34 @@ def get_winners(niche: Optional[str] = None) -> List[Dict[str, Any]]:
         except Exception:
             pass
 
-    # 3. If still empty, trigger clean scan
-    if not winners:
-        winners = scan_and_update_winners(limit_per_niche=20, randomize=False)
+    # 4. Ensure every product has competitor pricing & arbitrage insights
+    needs_save = False
+    for w in winners:
+        if not w.get("competitor_pricing"):
+            try:
+                cp = get_competitor_price_intelligence(
+                    w.get("title", ""),
+                    float(w.get("wholesale_price", 120.0)),
+                    w.get("niche", "Home Decor")
+                )
+                w["competitor_pricing"] = cp
+                w["suggested_price"] = cp.get("suggested_price", w.get("selling_price", 499))
+                w["strategy_insight"] = cp.get("strategy_insight", "")
+                needs_save = True
+            except Exception:
+                pass
 
-    if niche and niche.lower() != "all":
-        return [w for w in winners if w.get("niche", "").lower() == niche.lower()]
+    if needs_save:
+        try:
+            WINNING_DB_FILE.parent.mkdir(parents=True, exist_ok=True)
+            with open(WINNING_DB_FILE, "w", encoding="utf-8") as f:
+                json.dump(winners, f, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+
+    if niche and str(niche).strip().lower() != "all":
+        target_niche = str(niche).strip().lower()
+        return [w for w in winners if str(w.get("niche", "")).strip().lower() == target_niche]
     return winners
 
 def import_to_studio(handle: str) -> Dict[str, Any]:
@@ -208,13 +241,21 @@ def import_to_studio(handle: str) -> Dict[str, Any]:
     Imports a discovered winning product directly into the Zenlora Studio database,
     generating full 3-scene UGC storyboard prompts and retail pricing.
     """
+    normalized_handle = DeoDapExtractor.clean_handle(handle)
     all_winners = get_winners()
-    target = next((w for w in all_winners if w["handle"] == handle), None)
+    target = next(
+        (
+            w for w in all_winners
+            if str(w.get("handle") or "").lower() == normalized_handle.lower()
+            or str(w.get("deodap_url") or "").lower() == f"https://deodap.in/products/{normalized_handle}".lower()
+        ),
+        None,
+    )
     if not target:
         raise ValueError(f"Product handle '{handle}' not found in winning radar.")
 
     from pipeline_controller import ZenloraPipeline
-    deodap_url = target.get("deodap_url") or f"https://deodap.in/products/{handle}"
+    deodap_url = target.get("deodap_url") or f"https://deodap.in/products/{normalized_handle}"
     
     full_record = ZenloraPipeline.process_url(deodap_url)
     return full_record

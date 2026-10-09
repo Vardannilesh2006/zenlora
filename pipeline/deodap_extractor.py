@@ -28,7 +28,7 @@ class DeoDapExtractor:
         # If it's a full URL
         if "/products/" in clean_url:
             parts = clean_url.split("/products/")
-            return parts[-1].strip()
+            return parts[-1].strip().replace(" ", "-").lower()
 
         # If already a handle
         return clean_url.replace(" ", "-").lower()
