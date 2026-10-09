@@ -17,6 +17,10 @@ app.config['TEMPLATES_AUTO_RELOAD'] = True
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
 app.jinja_env.auto_reload = True
 
+@app.route('/favicon.ico')
+def favicon():
+    return send_file(PIPELINE_DIR / "static" / "favicon.svg", mimetype='image/svg+xml')
+
 @app.route('/')
 def index():
     products = ZenloraPipeline.load_db()
