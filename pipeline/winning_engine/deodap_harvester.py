@@ -2,7 +2,7 @@ import re
 import urllib.request
 import json
 import random
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
 # Target Niche Categories & Keywords
 NICHE_RULES = {
@@ -87,7 +87,11 @@ def _format_deodap_item(p: Dict[str, Any], current_page: int, idx: int) -> Optio
     title = p.get("title", "").strip()
     tags = p.get("tags", "")
     if isinstance(tags, list):
-        tags = ", ".join(tags)
+        tags = ", ".join(str(tag).strip() for tag in tags if str(tag).strip())
+    elif tags is None:
+        tags = ""
+    elif not isinstance(tags, str):
+        tags = str(tags)
     body_html = p.get("body_html", "") or ""
     niche = classify_niche(title, tags, body_html)
 
