@@ -223,6 +223,17 @@ def get_winners(niche: Optional[str] = None) -> List[Dict[str, Any]]:
             except Exception:
                 pass
 
+        if not w.get("rto_killer"):
+            try:
+                from rto_killer import RTOKillerEngine
+                w["rto_killer"] = RTOKillerEngine.generate_rto_killer_data(
+                    w.get("zenlora_title", w.get("title", "")),
+                    w.get("selling_price", 499)
+                )
+                needs_save = True
+            except Exception:
+                pass
+
     if needs_save:
         try:
             WINNING_DB_FILE.parent.mkdir(parents=True, exist_ok=True)

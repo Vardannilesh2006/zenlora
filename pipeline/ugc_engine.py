@@ -13,6 +13,15 @@ except ImportError:
     except Exception:
         generate_creative_direction = None
 
+try:
+    from rto_killer import RTOKillerEngine
+except ImportError:
+    try:
+        sys.path.append(str(Path(__file__).resolve().parent))
+        from rto_killer import RTOKillerEngine
+    except Exception:
+        RTOKillerEngine = None
+
 class UGCEngine:
     """Generates viral UGC storyboard image prompts and multi-scene video prompts with continuity and Gemini AI creative intelligence."""
 
@@ -74,6 +83,14 @@ class UGCEngine:
         hook_text = cls._build_hook_text(clean_title, category, bucket_type, price)
         caption_data = cls._build_caption_and_cta(clean_title, bucket_type, price)
 
+        # 4. RTO Killer Protocol (UPI Arbitrage + WhatsApp Dual-Action Confirmation)
+        rto_killer_data = {}
+        if RTOKillerEngine:
+            try:
+                rto_killer_data = RTOKillerEngine.generate_rto_killer_data(clean_title, price)
+            except Exception:
+                rto_killer_data = {}
+
         return {
             "content_bucket": bucket_info["bucket"],
             "bucket_strategy": bucket_info["strategy"],
@@ -86,6 +103,8 @@ class UGCEngine:
             "audio_recommendation": scenes["audio"],
             "instagram_caption": caption_data["caption"],
             "cta_keyword": caption_data["keyword"],
+            # RTO Killer Protocol
+            "rto_killer": rto_killer_data,
             # Gemini Creative Direction Highlights
             "video_style": creative_dir.get("video_style", "Trending D2C Viral Reel"),
             "voiceover_script": creative_dir.get("voiceover_script", ""),

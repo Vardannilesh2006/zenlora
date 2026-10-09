@@ -145,6 +145,17 @@ def product_detail(handle):
         except Exception as e:
             print(f"[!] Warning: Failed generating competitor pricing on-demand: {e}")
 
+    # Ensure RTO Killer protocol data is present
+    if not product.get("rto_killer"):
+        try:
+            from rto_killer import RTOKillerEngine
+            product["rto_killer"] = RTOKillerEngine.generate_rto_killer_data(
+                product.get("zenlora_title", product.get("title", "")),
+                product.get("selling_price", 499)
+            )
+        except Exception as e:
+            print(f"[!] Warning: Failed generating RTO Killer data on-demand: {e}")
+
     return render_template('product_detail.html', p=product)
 
 @app.route('/api/process', methods=['POST'])

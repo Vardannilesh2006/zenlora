@@ -454,6 +454,107 @@
                 <pre class="text-xs text-textSecondary font-sans whitespace-pre-wrap leading-relaxed select-all">{{ p.instagram_caption }}</pre>
             </div>
 
+            <!-- 🛡️ RTO Killer Toolkit & Dual-Action WhatsApp Confirmation Flow -->
+            {% if p.rto_killer %}
+            <div class="zen-card rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-rose-50/40 via-white to-emerald-50/30 border border-rose-200/80 shadow-xs space-y-5">
+                <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-rose-100 pb-3">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-7 h-7 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                            🛡️
+                        </span>
+                        <div>
+                            <h3 class="text-xs sm:text-sm font-bold text-textPrimary flex items-center gap-2">
+                                <span>RTO Killer Protocol</span>
+                                <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 font-bold border border-rose-200">
+                                    ZERO-RTO SHIELD
+                                </span>
+                            </h3>
+                            <p class="text-[11px] text-textSecondary">
+                                Convert 40%+ COD orders into prepaid & require mandatory customer button tap before dispatch.
+                            </p>
+                        </div>
+                    </div>
+                    <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
+                        Target RTO: &lt; 8%
+                    </span>
+                </div>
+
+                <!-- 2-Column Strategy Setup -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                    <!-- Column 1: Checkout Pricing Arbitrage Setup -->
+                    <div class="p-4 rounded-xl bg-white border border-borderMain space-y-3 shadow-2xs">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-bold text-textMuted uppercase tracking-wider">
+                                1. Checkout Pricing Hook
+                            </span>
+                            <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
+                                Instant ₹{{ p.rto_killer.savings }} UPI Off
+                            </span>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-2 text-center font-mono">
+                            <div class="p-2.5 rounded-lg bg-zinc-50 border border-zinc-200">
+                                <span class="text-[10px] text-textMuted block">Standard COD</span>
+                                <span class="text-base font-bold text-textPrimary">₹{{ p.rto_killer.cod_price }}</span>
+                            </div>
+                            <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-300 ring-1 ring-emerald-300">
+                                <span class="text-[10px] text-emerald-800 font-semibold block">Pay UPI / GPay</span>
+                                <span class="text-base font-extrabold text-emerald-900">₹{{ p.rto_killer.upi_price }}</span>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1">
+                            <div class="flex items-center justify-between text-[11px]">
+                                <span class="font-semibold text-textSecondary">Shopify/Store Checkout Copy:</span>
+                                <button onclick="copyText(`{{ p.rto_killer.checkout_copy }}`)" class="text-emerald-700 hover:text-emerald-900 text-[10px] font-bold hover:underline">
+                                    Copy Copy
+                                </button>
+                            </div>
+                            <p class="text-[11px] text-textPrimary font-mono p-2.5 rounded-lg bg-zinc-50 border border-zinc-200 leading-snug select-all">
+                                {{ p.rto_killer.checkout_copy }}
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: WhatsApp Post-Order Dual-Action Confirmation Bot -->
+                    <div class="p-4 rounded-xl bg-white border border-borderMain space-y-3 shadow-2xs">
+                        <div class="flex items-center justify-between">
+                            <span class="text-[10px] font-bold text-textMuted uppercase tracking-wider">
+                                2. WhatsApp Post-Order Bot Flow (60s)
+                            </span>
+                            <button onclick="copyText(`{{ p.rto_killer.whatsapp_message }}`)" class="text-rose-700 hover:text-rose-900 text-[10px] font-bold hover:underline">
+                                Copy Bot Message
+                            </button>
+                        </div>
+
+                        <div class="p-2.5 rounded-lg bg-zinc-50 border border-zinc-200 font-sans text-xs text-textSecondary leading-relaxed whitespace-pre-wrap select-all max-h-32 overflow-y-auto">
+{{ p.rto_killer.whatsapp_message }}
+                        </div>
+
+                        <!-- 2 Interactive Action Buttons Preview -->
+                        <div class="space-y-1.5 pt-1">
+                            <span class="text-[10px] font-semibold text-textMuted block uppercase">Interactive WhatsApp Buttons:</span>
+                            <div class="p-2 rounded-lg bg-emerald-600 text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-2xs">
+                                <span>{{ p.rto_killer.button_1_upi }}</span>
+                            </div>
+                            <div class="p-2 rounded-lg bg-zinc-100 border border-zinc-300 text-textPrimary font-semibold text-xs flex items-center justify-center gap-1.5">
+                                <span>{{ p.rto_killer.button_2_cod }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Backend Confirmation Guardrail Notice -->
+                <div class="p-3 rounded-xl bg-rose-50/80 border border-rose-200 text-rose-950 text-xs flex items-start gap-2.5">
+                    <span class="text-base flex-shrink-0">🔒</span>
+                    <div class="leading-relaxed">
+                        <strong>RTO Killer Backend Guardrail:</strong>
+                        Customer jab tak <em>"No, I Continue with Cash on Delivery"</em> par tap na kare ya <em>"Pay via UPI"</em> na kare, order status <strong>ON-HOLD</strong> rahega. No dispatch without customer active confirmation.
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
         </section>
 
     </main>

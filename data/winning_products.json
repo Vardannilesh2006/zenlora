@@ -116,7 +116,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Rechargeable+Camping+Fan+with+LED"
     },
     "suggested_price": 1999,
-    "strategy_insight": "Amazon pe ₹2199 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹1254 net profit per order milega (62.7% margin)."
+    "strategy_insight": "Amazon pe ₹2199 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹1254 net profit per order milega (62.7% margin).",
+    "rto_killer": {
+      "cod_price": 1999,
+      "upi_price": 1949,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1949 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1999",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3 In 1 Rechargeable Camping Fan With Led*\n💵 Total: *₹1999 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1949)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1949 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10775030366518,
@@ -235,7 +246,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Solar+Rechargeable+Camping+Fan+with"
     },
     "suggested_price": 1999,
-    "strategy_insight": "Amazon pe ₹2199 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹1240 net profit per order milega (62.0% margin)."
+    "strategy_insight": "Amazon pe ₹2199 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹1240 net profit per order milega (62.0% margin).",
+    "rto_killer": {
+      "cod_price": 1999,
+      "upi_price": 1949,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1949 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1999",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *2 In 1 Solar Rechargeable Camping Fan With*\n💵 Total: *₹1999 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1949)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1949 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10192185196854,
@@ -354,7 +376,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Analog+Wall+Clock"
     },
     "suggested_price": 999,
-    "strategy_insight": "Amazon pe ₹1199 me list hai. Aap ₹999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹639 net profit per order milega (64.0% margin)."
+    "strategy_insight": "Amazon pe ₹1199 me list hai. Aap ₹999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹639 net profit per order milega (64.0% margin).",
+    "rto_killer": {
+      "cod_price": 1199,
+      "upi_price": 1149,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1149 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1199",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Analog Wall Clock – Stylish Modern Design For*\n💵 Total: *₹1199 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1149)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1149 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10349011763510,
@@ -473,7 +506,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
     },
     "suggested_price": 799,
-    "strategy_insight": "Amazon pe ₹899 me list hai. Aap ₹799 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹481 net profit per order milega (60.2% margin)."
+    "strategy_insight": "Amazon pe ₹899 me list hai. Aap ₹799 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹481 net profit per order milega (60.2% margin).",
+    "rto_killer": {
+      "cod_price": 899,
+      "upi_price": 849,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹849 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹899",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3-In-1 Humidifier Lamp – Led Light & Mosquito*\n💵 Total: *₹899 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹849)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹849 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10621239984438,
@@ -592,7 +636,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Layer+Foldable+Shoe+Rack"
     },
     "suggested_price": 599,
-    "strategy_insight": "Market price ₹649 hai. Optimal D2C pricing ₹599 rakho. Absorbed shipping ke baad ₹357 clean margin bachta hai."
+    "strategy_insight": "Market price ₹649 hai. Optimal D2C pricing ₹599 rakho. Absorbed shipping ke baad ₹357 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 699,
+      "upi_price": 649,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹649 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹699",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *4 Layer Foldable Shoe Rack – Space-Saving Storage*\n💵 Total: *₹699 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹649)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹649 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10798039302454,
@@ -711,7 +766,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Pair+Assorted+Gold"
     },
     "suggested_price": 649,
-    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹388 clean margin bachta hai."
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹388 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 799,
+      "upi_price": 749,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹749 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹799",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *4 Pair Assorted Gold-Tone Earrings Set With Black*\n💵 Total: *₹799 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹749)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹749 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9530626670902,
@@ -830,7 +896,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Ball+Lamp"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Crystal Ball Lamp – Unique Home Decor*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10201059655990,
@@ -949,7 +1026,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=500ML+Stainless+Steel+Water+Bottle"
     },
     "suggested_price": 749,
-    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹455 clean margin bachta hai."
+    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹455 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 899,
+      "upi_price": 849,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹849 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹899",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *500Ml Stainless Steel Water Bottle – Leak-Proof, Durable*\n💵 Total: *₹899 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹849)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹849 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10284761809206,
@@ -1068,7 +1156,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
     },
     "suggested_price": 1999,
-    "strategy_insight": "Market price ₹1999 hai. Optimal D2C pricing ₹1999 rakho. Absorbed shipping ke baad ₹1452 clean margin bachta hai."
+    "strategy_insight": "Market price ₹1999 hai. Optimal D2C pricing ₹1999 rakho. Absorbed shipping ke baad ₹1452 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 1999,
+      "upi_price": 1949,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1949 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1999",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3-Tier Storage Organizer Rack – Compact & Versatile*\n💵 Total: *₹1999 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1949)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1949 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10820487708982,
@@ -1187,7 +1286,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold"
     },
     "suggested_price": 1299,
-    "strategy_insight": "Amazon pe ₹1499 me list hai. Aap ₹1299 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹799 net profit per order milega (61.5% margin)."
+    "strategy_insight": "Amazon pe ₹1499 me list hai. Aap ₹1299 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹799 net profit per order milega (61.5% margin).",
+    "rto_killer": {
+      "cod_price": 1499,
+      "upi_price": 1449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold-Plated Peacock Design Ethnic Bracelet Watch*\n💵 Total: *₹1499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10360574673206,
@@ -1306,7 +1416,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Animal+Cartoon+Pull"
     },
     "suggested_price": 799,
-    "strategy_insight": "Amazon pe ₹899 me list hai. Aap ₹799 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹490 net profit per order milega (61.3% margin)."
+    "strategy_insight": "Amazon pe ₹899 me list hai. Aap ₹799 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹490 net profit per order milega (61.3% margin).",
+    "rto_killer": {
+      "cod_price": 899,
+      "upi_price": 849,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹849 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹899",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Animal Cartoon Pull-Back Toy Car Set – 4*\n💵 Total: *₹899 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹849)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹849 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10842229309750,
@@ -1425,7 +1546,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Piece+Hand+Tool+Kit+with+Carry"
     },
     "suggested_price": 1999,
-    "strategy_insight": "Market price ₹1999 hai. Optimal D2C pricing ₹1999 rakho. Absorbed shipping ke baad ₹1339 clean margin bachta hai."
+    "strategy_insight": "Market price ₹1999 hai. Optimal D2C pricing ₹1999 rakho. Absorbed shipping ke baad ₹1339 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 1999,
+      "upi_price": 1949,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1949 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1999",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *16 Piece Hand Tool Kit With Carry Case*\n💵 Total: *₹1999 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1949)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1949 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 15407318958390,
@@ -1544,7 +1676,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=33W+PD+QC+Dual+Port+USB"
     },
     "suggested_price": 1999,
-    "strategy_insight": "Amazon pe ₹2099 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹1298 net profit per order milega (64.9% margin)."
+    "strategy_insight": "Amazon pe ₹2099 me list hai. Aap ₹1999 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹1298 net profit per order milega (64.9% margin).",
+    "rto_killer": {
+      "cod_price": 1999,
+      "upi_price": 1949,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1949 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1999",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *33W Pd Qc Dual Port Usb-A And Usb-C*\n💵 Total: *₹1999 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1949)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1949 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 15407319056694,
@@ -1663,7 +1806,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=20W+Dual+Port+USB"
     },
     "suggested_price": 1199,
-    "strategy_insight": "Amazon pe ₹1299 me list hai. Aap ₹1199 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹771 net profit per order milega (64.3% margin)."
+    "strategy_insight": "Amazon pe ₹1299 me list hai. Aap ₹1199 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹771 net profit per order milega (64.3% margin).",
+    "rto_killer": {
+      "cod_price": 1299,
+      "upi_price": 1249,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1249 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1299",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *20W Dual Port Usb-A And Usb-C Fast Charging*\n💵 Total: *₹1299 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1249)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1249 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10823950827830,
@@ -1782,7 +1936,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Ad+stone+micro+gold+panjo+and"
     },
     "suggested_price": 899,
-    "strategy_insight": "Market price ₹899 hai. Optimal D2C pricing ₹899 rakho. Absorbed shipping ke baad ₹574 clean margin bachta hai."
+    "strategy_insight": "Market price ₹899 hai. Optimal D2C pricing ₹899 rakho. Absorbed shipping ke baad ₹574 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 999,
+      "upi_price": 949,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹949 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹999",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Ad Stone Micro Gold Panjo And Ring And*\n💵 Total: *₹999 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹949)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹949 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10790923534646,
@@ -1901,7 +2066,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Adiyogi+LED+Night+Lamp"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Crystal Adiyogi Led Night Lamp With Wooden*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10790923567414,
@@ -2020,7 +2196,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Dolphin+Moon+LED+Night"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Crystal Dolphin Moon Led Night Lamp With*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10144060571958,
@@ -2139,7 +2326,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Mode+LED+Fog+Light"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹226 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹226 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3 Mode Led Fog Light – Ultra Mini*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10866766545206,
@@ -2258,7 +2456,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Hanuman+LED+Frame+Light+for"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Hanuman Led Frame Light For Home Decor*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10123277107510,
@@ -2377,7 +2586,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=LED+String+Lights%2C+Battery+Operated+Waterproof"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *10 Led String Lights, Battery Operated & Waterproof*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8587845140790,
@@ -2496,7 +2716,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Absorbent+Bath+Mat"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹266 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹266 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Absorbent Bath Mat – Quick-Dry Anti-Slip Floral Design*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8431905374518,
@@ -2615,7 +2846,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Airtight+Storage+Jars"
     },
     "suggested_price": 999,
-    "strategy_insight": "Amazon pe ₹1199 me list hai. Aap ₹999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹637 net profit per order milega (63.8% margin)."
+    "strategy_insight": "Amazon pe ₹1199 me list hai. Aap ₹999 me sell karo with Free COD. Customer ko ₹200 direct bachat dikhegi aur aapko ₹637 net profit per order milega (63.8% margin).",
+    "rto_killer": {
+      "cod_price": 1199,
+      "upi_price": 1149,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1149 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1199",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Airtight Storage Jars – Matka Shape, 900Ml |*\n💵 Total: *₹1199 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1149)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1149 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9527251042614,
@@ -2734,7 +2976,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=65"
     },
     "suggested_price": 899,
-    "strategy_insight": "Amazon pe ₹999 me list hai. Aap ₹899 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹540 net profit per order milega (60.1% margin)."
+    "strategy_insight": "Amazon pe ₹999 me list hai. Aap ₹899 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹540 net profit per order milega (60.1% margin).",
+    "rto_killer": {
+      "cod_price": 1199,
+      "upi_price": 1149,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹1149 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹1199",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *65-Inch Tv Dust Cover – Antistatic Screen Protector*\n💵 Total: *₹1199 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹1149)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹1149 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10623128142134,
@@ -2853,7 +3106,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 749,
-    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹457 clean margin bachta hai."
+    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹457 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 899,
+      "upi_price": 849,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹849 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹899",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *2-In-1 Pen & Keychain Set – Elegant Gift*\n💵 Total: *₹899 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹849)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹849 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10866767954230,
@@ -2972,7 +3236,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Ganesha+LED+Lamp+with+Wooden"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Ganesha Led Lamp With Wooden Base For*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9534943920438,
@@ -3091,7 +3366,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Illusion+Night+Light"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹232 clean margin bachta hai."
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹232 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Illusion Night Light – Energy-Saving Led Lamp*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10605848101174,
@@ -3210,7 +3496,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Lakshmi+Ball+LED+Night"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹186 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹186 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Crystal Lakshmi Ball Led Night Lamp –*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 15401056600374,
@@ -3329,7 +3626,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
     },
     "suggested_price": 599,
-    "strategy_insight": "Market price ₹649 hai. Optimal D2C pricing ₹599 rakho. Absorbed shipping ke baad ₹360 clean margin bachta hai."
+    "strategy_insight": "Market price ₹649 hai. Optimal D2C pricing ₹599 rakho. Absorbed shipping ke baad ₹360 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 699,
+      "upi_price": 649,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹649 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹699",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *4-Port Usb 3.0 Hub, Plug & Play High-Speed*\n💵 Total: *₹699 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹649)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹649 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10716815458614,
@@ -3448,7 +3756,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=68W+Fast+Wall+Charger"
     },
     "suggested_price": 749,
-    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹456 clean margin bachta hai."
+    "strategy_insight": "Market price ₹799 hai. Optimal D2C pricing ₹749 rakho. Absorbed shipping ke baad ₹456 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 899,
+      "upi_price": 849,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹849 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹899",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *68W Fast Wall Charger – Rapid Charging For*\n💵 Total: *₹899 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹849)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹849 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10818413134134,
@@ -3567,7 +3886,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Floral+Necklace+Set+with"
     },
     "suggested_price": 649,
-    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹389 clean margin bachta hai."
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹389 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 799,
+      "upi_price": 749,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹749 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹799",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold Floral Necklace Set With Ruby Green*\n💵 Total: *₹799 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹749)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹749 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10394898268470,
@@ -3686,7 +4016,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Space+Round+Carpet"
     },
     "suggested_price": 649,
-    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai."
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 699,
+      "upi_price": 649,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹649 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹699",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Space Round Carpet – Non-Slip Optical Illusion*\n💵 Total: *₹699 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹649)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹649 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10288017703222,
@@ -3805,7 +4146,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4x4+Magic+Speed+Cube"
     },
     "suggested_price": 549,
-    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹320 clean margin bachta hai."
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹320 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 699,
+      "upi_price": 649,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹649 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹699",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *4X4 Magic Speed Cube – Smooth Rotating Brain*\n💵 Total: *₹699 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹649)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹649 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10038944104758,
@@ -3924,7 +4276,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Airtight+Stainless+Steel+Containers"
     },
     "suggested_price": 649,
-    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹395 clean margin bachta hai."
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹395 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 699,
+      "upi_price": 649,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹649 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹699",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Airtight Stainless Steel Containers – See-Through Lid, 500Ml*\n💵 Total: *₹699 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹649)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹649 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10824147894582,
@@ -4043,7 +4406,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Layer+Zipper+Stationery+Pouch+Pencil+Case"
     },
     "suggested_price": 649,
-    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai."
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 699,
+      "upi_price": 649,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹649 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹699",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *4 Layer Zipper Stationery Pouch Pencil Case With*\n💵 Total: *₹699 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹649)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹649 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10561662124342,
@@ -4162,7 +4536,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Protein+Shaker+Bottle"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹268 clean margin bachta hai."
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹268 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 299,
+      "upi_price": 249,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹249 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹299",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *700 Ml Protein Shaker Bottle – Leak-Resistant, Portable*\n💵 Total: *₹299 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹249)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹249 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10723370959158,
@@ -4281,7 +4666,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Analog+Wrist+Watch"
     },
     "suggested_price": 699,
-    "strategy_insight": "Amazon pe ₹799 me list hai. Aap ₹699 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹416 net profit per order milega (59.5% margin)."
+    "strategy_insight": "Amazon pe ₹799 me list hai. Aap ₹699 me sell karo with Free COD. Customer ko ₹100 direct bachat dikhegi aur aapko ₹416 net profit per order milega (59.5% margin).",
+    "rto_killer": {
+      "cod_price": 799,
+      "upi_price": 749,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹749 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹799",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Analog Wrist Watch – Classic Style With Comfortable*\n💵 Total: *₹799 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹749)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹749 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8426238312758,
@@ -4400,7 +4796,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=12x12+Inch+Photo+Frame"
     },
     "suggested_price": 549,
-    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹323 clean margin bachta hai."
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹323 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 599,
+      "upi_price": 549,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹549 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹599",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *12X12 Inch Photo Frame – Wooden Desktop Display*\n💵 Total: *₹599 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹549)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹549 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10760785658166,
@@ -4519,7 +4926,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Multi+Purpose+Cleaning+Brush+with"
     },
     "suggested_price": 499,
-    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹299 clean margin bachta hai."
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹299 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 549,
+      "upi_price": 499,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹499 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹549",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3 In 1 Multi Purpose Cleaning Brush With*\n💵 Total: *₹549 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹499)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹499 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8431965372726,
@@ -4638,7 +5056,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Drawer+Organizer"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹203 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹203 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adjustable Drawer Organizer – Multipurpose Storage Solution 6*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10842552205622,
@@ -4757,7 +5186,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Number+Clay+Mould+Cutter+Set"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Alphabet Number Clay Mould Cutter Set For Kids*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10199404937526,
@@ -4876,7 +5316,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹259 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹259 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3-Tier Craft Storage Box – 18 Adjustable Compartments*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10822514344246,
@@ -4995,7 +5446,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Posture+Support+Belt+for+Upper"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adjustable Posture Support Belt For Upper Back And*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8431913402678,
@@ -5114,7 +5576,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=18"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹255 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹255 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *18-Clip Cloth Drying Hanger – Round Plastic For*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10817562050870,
@@ -5233,7 +5706,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Metallic+Mesh+Poochi+Cuff"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹259 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹259 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold Metallic Mesh Poochi Cuff With Adjustable*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10206070341942,
@@ -5352,7 +5836,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=6Pc+Kitchen+Knife+Set"
     },
     "suggested_price": 649,
-    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai."
+    "strategy_insight": "Market price ₹699 hai. Optimal D2C pricing ₹649 rakho. Absorbed shipping ke baad ₹390 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 699,
+      "upi_price": 649,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹649 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹699",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *6Pc Kitchen Knife Set – Professional Corrugated Stainless*\n💵 Total: *₹699 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹649)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹649 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10405964022070,
@@ -5471,7 +5966,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Gardening+Hand+Tool+Set"
     },
     "suggested_price": 549,
-    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹324 clean margin bachta hai."
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹324 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 599,
+      "upi_price": 549,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹549 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹599",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *5 In 1 Gardening Hand Tool Set –*\n💵 Total: *₹599 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹549)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹549 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10785683669302,
@@ -5590,7 +6096,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Moving+Sand+Art+Round+Frame"
     },
     "suggested_price": 549,
-    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹324 clean margin bachta hai."
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹324 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 599,
+      "upi_price": 549,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹549 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹599",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Moving Sand Art Round Frame With Stand*\n💵 Total: *₹599 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹549)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹549 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10539924816182,
@@ -5709,7 +6226,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=5"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹219 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹219 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *5-In-1 Small Hammer With Interchangeable Screwdriver Tips –*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10411851383094,
@@ -5828,7 +6356,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Knee+Support+Brace"
     },
     "suggested_price": 549,
-    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹322 clean margin bachta hai."
+    "strategy_insight": "Market price ₹599 hai. Optimal D2C pricing ₹549 rakho. Absorbed shipping ke baad ₹322 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 599,
+      "upi_price": 549,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹549 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹599",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adjustable Knee Support Brace – Comfortable Patella Hole*\n💵 Total: *₹599 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹549)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹549 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10613294268726,
@@ -5947,7 +6486,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Air+Freshener+Spray%2C+Long+Lasting+Arabian"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹258 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹258 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Air Freshener Spray, Long Lasting Arabian Breeze Fragrance*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10847432671542,
@@ -6066,7 +6616,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Word+Puzzle+Cards+with+Lowercase"
     },
     "suggested_price": 499,
-    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹290 clean margin bachta hai."
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹290 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 549,
+      "upi_price": 499,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹499 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹549",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Alphabet Word Puzzle Cards With Lowercase Letters For*\n💵 Total: *₹549 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹499)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹499 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10842509902134,
@@ -6185,7 +6746,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Pc+Multipurpose+Precision+Screwdriver+Hand+Tool"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *18 Pc Multipurpose Precision Screwdriver Hand Tool Kit*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10852616044854,
@@ -6304,7 +6876,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+EVA+Unicorn+Assembly+Craft+Puzzle"
     },
     "suggested_price": 499,
-    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹290 clean margin bachta hai."
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹290 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 549,
+      "upi_price": 499,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹499 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹549",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Eva Unicorn Assembly Craft Puzzle Kit With*\n💵 Total: *₹549 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹499)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹499 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10852191732022,
@@ -6423,7 +7006,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+and+Number+Magnet+Set+for"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Alphabet And Number Magnet Set For Letter Learning*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10413897285942,
@@ -6542,7 +7136,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Foam+Wallpaper+Panels"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹202 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹202 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Foam Wallpaper Panels – White Floral Embossed*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10821820449078,
@@ -6661,7 +7266,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Gym+Hand+Gripper+for+Wrist"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹201 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹201 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adjustable Gym Hand Gripper For Wrist Forearm And*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10694296731958,
@@ -6780,7 +7396,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=18W+USB+Fast+Charger"
     },
     "suggested_price": 499,
-    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹286 clean margin bachta hai."
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹286 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 599,
+      "upi_price": 549,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹549 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹599",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *18W Usb Fast Charger – Compact & Reliable*\n💵 Total: *₹599 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹549)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹549 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10840908202294,
@@ -6899,7 +7526,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Lakshmi+Jhumka+Earrings+with"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold Lakshmi Jhumka Earrings With Peacock Design,*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10569105441078,
@@ -7018,7 +7656,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Jhumka+Earrings"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold Jhumka Earrings – Elegant Pearl Cluster*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9831476560182,
@@ -7137,7 +7786,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adiyogi+Shiva+Backflow+Incense+Holder"
     },
     "suggested_price": 449,
-    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai."
+    "strategy_insight": "Market price ₹499 hai. Optimal D2C pricing ₹449 rakho. Absorbed shipping ke baad ₹264 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 499,
+      "upi_price": 449,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹449 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹499",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adiyogi Shiva Backflow Incense Holder – Serene Smoke*\n💵 Total: *₹499 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹449)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹449 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10110618632502,
@@ -7256,7 +7916,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Floral+Necklace+Set"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹228 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹228 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *American Diamond Floral Necklace Set – Elegant Rhodium*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10546429985078,
@@ -7375,7 +8046,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=AD+Floral+Bracelet"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹188 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹188 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Ad Floral Bracelet – Party Wear American Diamond*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9499278868790,
@@ -7494,7 +8176,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=8"
     },
     "suggested_price": 499,
-    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹285 clean margin bachta hai."
+    "strategy_insight": "Market price ₹549 hai. Optimal D2C pricing ₹499 rakho. Absorbed shipping ke baad ₹285 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 599,
+      "upi_price": 549,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹549 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹599",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *8-In-1 Screwdriver Set – Precision Mobile Repair Tool*\n💵 Total: *₹599 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹549)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹549 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10719287509302,
@@ -7613,7 +8306,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Handmade+Dome+Earrings"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Handmade Dome Earrings – Traditional Boho Tribal*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10664384659766,
@@ -7732,7 +8436,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Pearl+Jhumka+Earrings"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹227 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold Pearl Jhumka Earrings – Traditional Charm*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10840908103990,
@@ -7851,7 +8566,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Temple+Jhumka+Earrings+with"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹200 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹200 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold Temple Jhumka Earrings With Ruby &*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10584167252278,
@@ -7970,7 +8696,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Lord+Ganesha+Acrylic+LED+Night"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹267 clean margin bachta hai."
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹267 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 299,
+      "upi_price": 249,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹249 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹299",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3D Lord Ganesha Acrylic Led Night Lamp –*\n💵 Total: *₹299 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹249)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹249 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10055148634422,
@@ -8089,7 +8826,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adult+Paint+by+Number+Kit"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adult Paint By Number Kit – 2 Set*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10860468338998,
@@ -8208,7 +8956,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹263 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹263 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *4-Piece Self-Adhesive Wall Mount Hooks For Keys, Towels,*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8426220192054,
@@ -8327,7 +9086,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹231 clean margin bachta hai."
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹231 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *4-In-1 Portable Pill Cutter & Crusher With Smart*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10622263853366,
@@ -8446,7 +9216,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+Pedicure+Nail+Care+Kit"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹221 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹221 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *11 In 1 Manicure Pedicure Nail Care Kit*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10622259953974,
@@ -8565,7 +9346,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Pedicure+Manicure+Kit"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹225 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹225 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *7 In 1 Pedicure Manicure Kit – Complete*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8761383518518,
@@ -8684,7 +9476,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=12W+LED+Bulb"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹223 clean margin bachta hai."
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹223 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 299,
+      "upi_price": 249,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹249 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹299",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *12W Led Bulb – Bright & Energy-Saving Cool*\n💵 Total: *₹299 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹249)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹249 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9521100849462,
@@ -8803,7 +9606,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹257 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹257 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *2-In-1 Knife Peeler – Stainless Steel & Portable*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9753034883382,
@@ -8922,7 +9736,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Mobile+Stand"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹261 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹261 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adjustable Mobile Stand – Ergonomic Foldable Holder |*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10546429919542,
@@ -9041,7 +9866,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=AD+Floral+Bracelet"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹234 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹234 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Ad Floral Bracelet – Elegant Designer American Diamond*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10563314188598,
@@ -9160,7 +9996,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Bracelet"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹234 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹234 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *American Diamond Bracelet – Elegant Floral Design Sparkle*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10820494360886,
@@ -9279,7 +10126,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Double+Layer+Jhumka+Earrings"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹262 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹262 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold Double Layer Jhumka Earrings For Women*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9974832333110,
@@ -9398,7 +10256,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹254 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *2-In-1 Soap Dispenser – Built-In Scrub Holder &*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8426806378806,
@@ -9517,7 +10386,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹191 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹191 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *4-In-1 Glass Soap Dish With Stand – Modern*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9852358459702,
@@ -9636,7 +10516,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹230 clean margin bachta hai."
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹230 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *3-In-1 Soap Dispenser – Kitchen Sink Caddy &*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10642510610742,
@@ -9755,7 +10646,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Anti+Slip+Safety+Tape"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹257 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹257 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Anti Slip Safety Tape – High Grip, Durable*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10788074586422,
@@ -9874,7 +10776,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Anime+Warrior+Figure+Key+Holder+Wall"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹260 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Anime Warrior Figure Key Holder Wall Mounted 3D*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10840908136758,
@@ -9993,7 +10906,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Gold+Goddess+Temple+Jhumka+Earrings"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹222 clean margin bachta hai."
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹222 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 299,
+      "upi_price": 249,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹249 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹299",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Antique Gold Goddess Temple Jhumka Earrings With Multi*\n💵 Total: *₹299 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹249)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹249 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10825881616694,
@@ -10112,7 +11036,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Pair+Fashion+Stud+Earrings+Set"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹200 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹200 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *12 Pair Fashion Stud Earrings Set – Diverse*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10689046970678,
@@ -10231,7 +11166,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=American+Diamond+Bracelet"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹258 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹258 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *American Diamond Bracelet – Gold Finish For Women*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10193883988278,
@@ -10350,7 +11296,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Flash+Cards+Set"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹262 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹262 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Alphabet Flash Cards Set – 32 Durable Early*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10528925057334,
@@ -10469,7 +11426,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=5"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹244 clean margin bachta hai."
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹244 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *5-In-1 Compact Travel Grooming Kit – Portable Personal*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 8426273276214,
@@ -10588,7 +11556,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adhesive+Wall+Hooks"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹246 clean margin bachta hai."
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹246 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 199,
+      "upi_price": 199,
+      "savings": 0,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹0 Instantly + Free Mystery Gift worth ₹199) | COD: ₹199",
+      "checkout_badge": "Save ₹0 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adhesive Wall Hooks – Heavy Duty No-Drill |*\n💵 Total: *₹199 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹0 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10348396806454,
@@ -10707,7 +11686,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Aloe+Vera+Body+Lotion"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹242 clean margin bachta hai."
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹242 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Aloe Vera Body Lotion – Deep Nourishing 24-Hour*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10784464339254,
@@ -10826,7 +11816,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=12"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹230 clean margin bachta hai."
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹230 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *12-Pair Gold & Pearl Stud Earring Set –*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10852862361910,
@@ -10945,7 +11946,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Kids+Knee+Protection+Pads+for"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai."
+    "strategy_insight": "Market price ₹399 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹190 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 399,
+      "upi_price": 349,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹349 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹399",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adjustable Kids Knee Protection Pads For Cycling Skating*\n💵 Total: *₹399 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹349)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹349 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10844004712758,
@@ -11064,7 +12076,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Glass+Tumbler+Cup+with+Handle%2C"
     },
     "suggested_price": 399,
-    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹218 clean margin bachta hai."
+    "strategy_insight": "Market price ₹449 hai. Optimal D2C pricing ₹399 rakho. Absorbed shipping ke baad ₹218 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 449,
+      "upi_price": 399,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹399 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹449",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *900 Ml Glass Tumbler Cup With Handle, Lid*\n💵 Total: *₹449 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹399)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹399 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10805522891062,
@@ -11183,7 +12206,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Toe+Ring+Set+For+Women"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹240 clean margin bachta hai."
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹240 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Adjustable Toe Ring Set For Women – 6*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10104370233654,
@@ -11302,7 +12336,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+Tool+Kit"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹220 clean margin bachta hai."
+    "strategy_insight": "Market price ₹299 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹220 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 299,
+      "upi_price": 249,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹249 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹299",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *7 In 1 Manicure Tool Kit – Professional*\n💵 Total: *₹299 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹249)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹249 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10797183631670,
@@ -11421,7 +12466,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Degree+Rotating+Multi+Arm+Hanger+Hook"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹199 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹199 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *360 Degree Rotating Multi Arm Hanger Hook For*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 9747165086006,
@@ -11540,7 +12596,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Agarbatti+Sticks"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹235 clean margin bachta hai."
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹235 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *Agarbatti Sticks – Mixed Floral Fragrance, 90 Gm*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10529157873974,
@@ -11659,7 +12726,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=24K+Gold+Plated+Red+Rose"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹235 clean margin bachta hai."
+    "strategy_insight": "Market price ₹249 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹235 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 249,
+      "upi_price": 199,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹249",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *24K Gold Plated Red Rose – Elegant Eternal*\n💵 Total: *₹249 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10623105073462,
@@ -11778,7 +12856,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Nail+Care+Kit"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹199 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹250 clean margin bachta hai."
+    "strategy_insight": "Market price ₹199 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹250 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 199,
+      "upi_price": 199,
+      "savings": 0,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹199 (Save ₹0 Instantly + Free Mystery Gift worth ₹199) | COD: ₹199",
+      "checkout_badge": "Save ₹0 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *6 In 1 Nail Care Kit – Complete*\n💵 Total: *₹199 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹0 Discount* (Pay only ₹199)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹199 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   },
   {
     "id": 10784304890166,
@@ -11897,6 +12986,17 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Glass+Travel+Water+Bottle+with"
     },
     "suggested_price": 349,
-    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹199 clean margin bachta hai."
+    "strategy_insight": "Market price ₹349 hai. Optimal D2C pricing ₹349 rakho. Absorbed shipping ke baad ₹199 clean margin bachta hai.",
+    "rto_killer": {
+      "cod_price": 349,
+      "upi_price": 299,
+      "savings": 50,
+      "checkout_copy": "⚡ Pay via UPI / GPay: ₹299 (Save ₹50 Instantly + Free Mystery Gift worth ₹199) | COD: ₹349",
+      "checkout_badge": "Save ₹50 with UPI",
+      "whatsapp_message": "Namaste [Customer Name]! 👋\n\nAapka Zenlora order receive ho gaya hai:\n📦 Product: *400 Ml Glass Travel Water Bottle With Silicone*\n💵 Total: *₹349 (Cash on Delivery)*\n\n🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\nAgar aap abhi UPI/GPay se pay karte hain:\n✅ *Instant ₹50 Discount* (Pay only ₹299)\n✅ *FREE Mystery Gift* (worth ₹199)\n✅ *Express Priority Shipping* (Delivered 2 days faster)\n\nKripya niche diye gaye 2 options me se ek select karein:",
+      "button_1_upi": "💳 Pay ₹299 via UPI (Claim Free Gift)",
+      "button_2_cod": "📦 No, I Continue with Cash on Delivery",
+      "backend_rule": "⚠️ RTO Killer Protocol: Jab tak customer WhatsApp par 'Continue with Cash on Delivery' click karke confirm na kare ya UPI se pay na kare, tab tak order 'PENDING VERIFICATION' rahega. Fake ya timepass orders dispatch se pehle hi filter ho jayenge."
+    }
   }
 ]
