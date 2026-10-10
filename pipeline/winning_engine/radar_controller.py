@@ -179,32 +179,23 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
 def get_winners(niche: Optional[str] = None) -> List[Dict[str, Any]]:
     """Loads winning products from storage, ensuring full UGC storyboard fields are present."""
     winners = []
+    repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
     
-    # 1. Try reading active WINNING_DB_FILE
-    if WINNING_DB_FILE.exists():
+    # 1. Prefer bundled repo file (direct source of truth from Git commits)
+    if repo_file.exists():
+        try:
+            with open(repo_file, "r", encoding="utf-8") as f:
+                winners = json.load(f)
+        except Exception:
+            winners = []
+
+    # 2. Fallback to active WINNING_DB_FILE (e.g. /tmp if scan was triggered live in session)
+    if not winners and WINNING_DB_FILE.exists():
         try:
             with open(WINNING_DB_FILE, "r", encoding="utf-8") as f:
                 winners = json.load(f)
         except Exception:
             winners = []
-
-    # 2. If missing or lacking UGC prompts, try bundled repo file
-    repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
-    if (not winners or not winners[0].get("storyboard_image_prompt")) and repo_file.exists():
-        try:
-            with open(repo_file, "r", encoding="utf-8") as f:
-                repo_winners = json.load(f)
-            if repo_winners and repo_winners[0].get("storyboard_image_prompt"):
-                winners = repo_winners
-                # Sync back to active file
-                try:
-                    WINNING_DB_FILE.parent.mkdir(parents=True, exist_ok=True)
-                    with open(WINNING_DB_FILE, "w", encoding="utf-8") as f:
-                        json.dump(winners, f, indent=2, ensure_ascii=False)
-                except Exception:
-                    pass
-        except Exception:
-            pass
 
     # 4. Ensure every product has competitor pricing & arbitrage insights
     needs_save = False
