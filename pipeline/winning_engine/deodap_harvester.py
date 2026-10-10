@@ -4,13 +4,27 @@ import json
 import random
 from typing import List, Dict, Any, Optional
 
+# Strictly Excluded from Festive (High RTO Wearable / Artificial Jewelry)
+EXCLUDED_JEWELRY = [
+    "earring", "earrings", "necklace", "jhumka", "jhumki", "bracelet", "bracelets",
+    "bangle", "bangles", "ring", "rings", "toe ring", "anklet", "jewel", "jewellery",
+    "jewelry", "choker", "pendant", "chain", "mangalsutra", "kundan", "cuff",
+    "poochi", "stud combo", "assorted gold", "hasali", "temple jewellery",
+    "kada", "payal", "har", "mala", "bichiya", "ear ring", "neck piece"
+]
+
+def is_jewelry_item(title: str, tags: str = "", description: str = "") -> bool:
+    combined = f"{title} {tags} {description}".lower()
+    title_lower = title.lower()
+    return any(re.search(r'\b' + re.escape(j) + r'\b', combined) or (j in title_lower) for j in EXCLUDED_JEWELRY)
+
 # Target Niche Categories & Keywords
 NICHE_RULES = {
     "Home Decor": [
         "decor", "vase", "lamp", "candle", "diffuser", "frame", "clock",
         "painting", "ambient", "sunset lamp", "statue", "planter", "pot", "rug", "cushion",
-        "aesthetic", "table lamp", "crystal lamp", "moon lamp", "galaxy", "wall decor", "curtain",
-        "humidifier", "tapestry", "led bulb", "fairy", "night light", "showpiece", "mirror", "artificial flower"
+        "aesthetic", "table lamp", "wall decor", "curtain", "humidifier", "tapestry", "led bulb",
+        "showpiece", "mirror", "artificial flower"
     ],
     "Kitchen": [
         "kitchen", "chopper", "dispenser", "cleaner", "scrub", "wiper", "mop", "organizer",
@@ -27,7 +41,13 @@ NICHE_RULES = {
     "Festive": [
         "diwali", "festive", "diya", "fairy light", "curtain light", "puja", "pooja",
         "string light", "led diya", "festival", "rangoli", "brass diya", "mandir",
-        "havan", "incense", "agarbatti", "dhoop", "toran", "marigold", "celebration"
+        "havan", "incense", "agarbatti", "dhoop", "toran", "marigold", "celebration",
+        "smoke fountain", "crystal lamp", "3d crystal", "crystal ball", "moon lamp",
+        "ganesha", "ganesh", "shiva", "shiv ji", "shivji", "adiyogi", "mahadev", "buddha",
+        "lakshmi", "radha krishna", "brass idol", "swastik", "shubh labh", "backflow",
+        "waterfall incense", "ambient lamp", "message board lamp", "dry fruit box",
+        "dry fruit serving", "pooja decor", "pooja lamp", "brass peacock", "panchmukhi",
+        "elephant dry fruit", "crystal led", "crystal night lamp", "acrylic led", "crystal table lamp"
     ],
     "Gifts": [
         "gift set", "hamper", "couple gift", "custom gift", "luxury gift", "scented candle",
@@ -36,12 +56,18 @@ NICHE_RULES = {
     ]
 }
 
-def classify_niche(title: str, tags: str, description: str) -> str:
+def classify_niche(title: str, tags: str = "", description: str = "") -> str:
     combined = f"{title} {tags} {description}".lower()
     title_lower = title.lower()
 
+    # Absolute Exclusion: Zero Jewelry in Festive
+    is_jewelry = is_jewelry_item(title, tags, description)
+
     scores = {}
     for niche, keywords in NICHE_RULES.items():
+        if niche == "Festive" and is_jewelry:
+            scores[niche] = -9999
+            continue
         score = 0
         for kw in keywords:
             pattern = r'\b' + re.escape(kw) + r'\b'
@@ -62,7 +88,7 @@ def classify_niche(title: str, tags: str, description: str) -> str:
         return "Home Decor"
     if any(k in title_lower for k in ["kitchen", "chopper", "bottle", "organizer", "rack", "cutter", "peeler", "cook"]):
         return "Kitchen"
-    if any(k in title_lower for k in ["diwali", "diya", "festive", "fairy", "puja", "mandir"]):
+    if not is_jewelry and any(k in title_lower for k in ["diwali", "diya", "festive", "fairy", "puja", "mandir", "crystal", "fountain", "incense"]):
         return "Festive"
     if any(k in title_lower for k in ["gift", "hamper", "combo", "box", "set"]):
         return "Gifts"
@@ -187,6 +213,12 @@ def harvest_deodap_bestsellers(limit_per_niche: int = 20, min_price: float = 35.
                 handle = item.get("handle")
                 if handle and handle not in seen_handles:
                     seen_handles.add(handle)
+                    # Re-classify niche to enforce negative jewelry filters & latest festive rules
+                    item["niche"] = classify_niche(
+                        item.get("title", ""),
+                        item.get("tags", ""),
+                        item.get("description", "")
+                    )
                     raw_candidates.append(item)
         except Exception as e:
             print(f"[DeoDap Harvester] Error loading cache pool: {e}")
@@ -212,10 +244,18 @@ def harvest_deodap_bestsellers(limit_per_niche: int = 20, min_price: float = 35.
         # Take up to limit_per_niche
         chosen = pool[:limit_per_niche]
         
-        # If pool was somehow short, borrow high-converting items from largest pool
+        # If pool was somehow short, borrow high-converting items from largest pool (never jewelry for Festive)
         if len(chosen) < limit_per_niche:
             deficit = limit_per_niche - len(chosen)
-            fallback_pool = [x for x in raw_candidates if x not in chosen and x not in selected_items]
+            if n == "Festive":
+                fallback_pool = [
+                    x for x in raw_candidates
+                    if x not in chosen and x not in selected_items
+                    and not is_jewelry_item(x.get("title", ""), x.get("tags", ""), x.get("description", ""))
+                    and any(k in x.get("title", "").lower() for k in ["lamp", "light", "candle", "statue", "idol", "fountain", "diffuser", "frame", "decor"])
+                ]
+            else:
+                fallback_pool = [x for x in raw_candidates if x not in chosen and x not in selected_items]
             if fallback_pool:
                 for fb in fallback_pool[:deficit]:
                     fb_copy = dict(fb)

@@ -69,7 +69,8 @@ CATEGORIES = {
     ],
     "Diwali & Festive Gifting Specials": [
         "diwali", "festive", "diya", "lights", "gift", "hamper", "fairy", "star",
-        "curtain light", "decoration", "puja", "festive gift", "brass"
+        "curtain light", "decoration", "puja", "pooja", "festive gift", "brass",
+        "crystal lamp", "3d crystal", "smoke fountain", "ambient light", "shiva", "ganesha"
     ]
 }
 
