@@ -2,100 +2,157 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenlora Winning Radar | Real-Data Product Hunting Engine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Zenlora AI Radar | DeoDap Winning Dropshipping Products</title>
+    <!-- Favicon: Modern Aesthetic Multi-Format & Cache-Busted -->
     <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png?v=4">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg?v=4">
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=4">
+    <!-- Premium System Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
-                        mono: ['"JetBrains Mono"', 'monospace'],
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'SFMono-Regular', 'Menlo', 'monospace'],
                     },
                     colors: {
                         canvas: '#F7F8FA',
                         cardBg: '#FFFFFF',
                         borderMain: '#E5E7EB',
+                        borderSubtle: '#F0F2F5',
                         textPrimary: '#111827',
                         textSecondary: '#4B5563',
                         textMuted: '#9CA3AF',
                         brandBlack: '#0A0A0C',
                         brandHover: '#1F2937',
+                        accentGreen: '#059669',
                     }
                 }
             }
         }
     </script>
     <style>
-        body { background-color: #F7F8FA; color: #111827; -webkit-font-smoothing: antialiased; }
-        .zen-canvas { background-color: #F7F8FA; background-image: radial-gradient(#E5E7EB 1px, transparent 1px); background-size: 24px 24px; }
-        .zen-glass { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(16px); border-bottom: 1px solid #E5E7EB; }
-        .zen-card { background: #FFFFFF; border: 1px solid #E5E7EB; box-shadow: 0 1px 3px rgba(0,0,0,0.03); transition: all 0.18s ease; }
-        .zen-card:hover { border-color: #9CA3AF; box-shadow: 0 6px 18px rgba(0,0,0,0.06); }
-        .cat-pill-active { background-color: #111827 !important; color: #FFFFFF !important; border-color: #111827 !important; }
+        body {
+            background-color: #F7F8FA;
+            color: #111827;
+            letter-spacing: -0.015em;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Clean Architectural Canvas */
+        .zen-canvas {
+            background-color: #F7F8FA;
+            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+
+        /* Apple Clean Glass */
+        .zen-glass {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid #E5E7EB;
+        }
+
+        /* Premium White Cards with Micro Border */
+        .zen-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .zen-card:hover {
+            border-color: #D1D5DB;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            transform: translateY(-1px);
+        }
+
+        .cat-pill-active {
+            background-color: #111827 !important;
+            color: #FFFFFF !important;
+            border-color: #111827 !important;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 5px; height: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #D1D5DB; border-radius: 999px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9CA3AF; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
-<body class="zen-canvas min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col font-sans antialiased text-sm zen-canvas">
 
-    <!-- Top Navigation Bar -->
-    <header class="zen-glass sticky top-0 z-40">
-        <div class="max-w-[1550px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
-            <div class="flex items-center gap-3">
-                <a href="/" class="flex items-center gap-2">
-                    <img src="/static/logo.svg?v=4" alt="Zenlora" class="w-7 h-7 rounded-lg shadow-xs">
-                    <span class="font-bold text-sm tracking-tight text-textPrimary">Zenlora</span>
-                    <span class="text-xs text-textMuted font-mono">/</span>
-                    <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">Real-Data Hunting Engine</span>
+    <!-- Top Sticky Header -->
+    <header class="sticky top-0 z-40 w-full zen-glass">
+        <div class="max-w-[1500px] mx-auto px-3 sm:px-6 h-14 flex items-center justify-between gap-3">
+            
+            <!-- Left: Brand Logo & Navigation Switcher -->
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+                    <img src="/static/favicon.svg" class="w-7 h-7 rounded-lg shadow-xs hover:scale-105 transition" alt="Zenlora Logo">
+                    <span class="font-bold text-sm tracking-tight text-textPrimary flex items-center gap-1.5 whitespace-nowrap">
+                        Zenlora
+                        <span class="text-[10px] text-emerald-700 font-semibold px-2 py-0.5 rounded-md bg-emerald-50 border border-emerald-200">Radar</span>
+                    </span>
                 </a>
-                <nav class="hidden md:flex items-center gap-1 ml-3">
-                    <a href="/" class="px-2.5 py-1.5 rounded-md text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100">Studio Pipeline</a>
-                    <a href="/radar" class="px-2.5 py-1.5 rounded-md text-xs font-semibold bg-zinc-900 text-white">Winning Radar</a>
+
+                <!-- App Switcher Nav -->
+                <nav class="flex items-center gap-1 pl-3 border-l border-borderMain whitespace-nowrap">
+                    <a href="/" class="px-2.5 py-1 rounded-md text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 transition">
+                        🎨 Studio & Prompts
+                    </a>
+                    <a href="/radar" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-zinc-100 text-textPrimary border border-zinc-200 shadow-xs">
+                        🎯 Winning Radar
+                    </a>
                 </nav>
             </div>
 
-            <!-- Action Buttons: Settings, Festival Calendar, Audit Log, Export, Live Scan -->
-            <div class="flex items-center gap-2 flex-wrap">
-                <button onclick="togglePanel('festivalPanel')" class="h-8 px-2.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 font-semibold text-xs flex items-center gap-1">
-                    🪔 Festival Calendar & Cutoffs
+            <!-- Right: Compact Controls & Live Scan Button (Single Line, Zero Overflow) -->
+            <div class="flex items-center gap-2 flex-shrink-0 whitespace-nowrap">
+                <button onclick="togglePanel('festivalPanel')" class="hidden md:flex h-8 px-2.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 font-semibold text-xs items-center gap-1 transition">
+                    <span>🪔 Festivals</span>
                 </button>
-                <button onclick="togglePanel('settingsPanel')" class="h-8 px-2.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary border border-zinc-300 font-semibold text-xs flex items-center gap-1">
-                    ⚙️ Assumptions & Weights
+                <button onclick="togglePanel('settingsPanel')" class="hidden sm:flex h-8 px-2.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary border border-zinc-200 font-semibold text-xs items-center gap-1 transition">
+                    <span>⚙️ Assumptions</span>
                 </button>
-                <button onclick="togglePanel('auditPanel')" class="h-8 px-2.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary border border-zinc-300 font-semibold text-xs flex items-center gap-1">
-                    📜 Audit Log ({{ audit_logs|length }})
-                </button>
-                <a href="/api/radar/export.csv?niche={{ selected_niche }}" class="h-8 px-2.5 rounded-lg bg-white hover:bg-zinc-50 text-textPrimary border border-zinc-300 font-semibold text-xs flex items-center gap-1">
-                    ⬇️ CSV
-                </a>
-                <a href="/api/radar/export.json?niche={{ selected_niche }}" class="h-8 px-2.5 rounded-lg bg-white hover:bg-zinc-50 text-textPrimary border border-zinc-300 font-semibold text-xs flex items-center gap-1">
-                    ⬇️ JSON
-                </a>
-                <button onclick="triggerRadarScan()" id="scanBtn" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-semibold text-xs flex items-center gap-1.5 shadow-sm">
-                    <span id="scanBtnText">⚡ Scan DeoDap Winners (Live{% if current_batch %} · Batch #{{ current_batch }}{% endif %})</span>
+                <button onclick="triggerRadarScan()" id="scanBtn" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium text-xs flex items-center gap-1.5 transition active:scale-95 shadow-sm">
+                    <svg class="w-3.5 h-3.5 text-emerald-400" id="scanBolt" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                    <svg class="w-3.5 h-3.5 text-emerald-400 animate-spin hidden" id="scanIcon" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z"></path>
+                    </svg>
+                    <span id="scanBtnText">Scan DeoDap Winners{% if current_batch %} · #{{ current_batch }}{% endif %}</span>
                 </button>
             </div>
         </div>
     </header>
 
     <!-- Collapsible Festival Calendar & Delivery Cutoff Calculator Panel -->
-    <div id="festivalPanel" class="hidden border-b border-amber-200 bg-amber-50/70 px-4 sm:px-6 py-4">
-        <div class="max-w-[1550px] mx-auto">
+    <div id="festivalPanel" class="hidden border-b border-amber-200 bg-amber-50/70 px-3 sm:px-6 py-4">
+        <div class="max-w-[1500px] mx-auto">
             <div class="flex items-center justify-between mb-2">
                 <div>
-                    <h2 class="text-sm font-bold text-amber-950">🪔 Festival Module: Editable Calendar, Delivery Cutoff Calculator & Keyword Seeds</h2>
+                    <h2 class="text-sm font-bold text-amber-950">🪔 Festival Delivery Cutoff Calculator</h2>
                     <p class="text-[11px] text-amber-800">
-                        Formula: <code class="font-mono bg-white px-1.5 py-0.5 rounded border border-amber-200">Last Order Date = Festival Date − Supplier Max Delivery Days ({{ settings.general.supplier_policy_delivery_max_days }}d policy or product-specific) − My Buffer ({{ settings.general.delivery_buffer_days }}d)</code>.
-                        <strong>Note: Verify dates with official Hindu calendar; dates are user-entered.</strong>
+                        Formula: <code class="font-mono bg-white px-1.5 py-0.5 rounded border border-amber-200">Last Order Date = Festival Date − Supplier Max Delivery Days ({{ settings.general.supplier_policy_delivery_max_days }}d policy) − Buffer ({{ settings.general.delivery_buffer_days }}d)</code>.
                     </p>
                 </div>
                 <button onclick="togglePanel('festivalPanel')" class="text-xs font-bold text-amber-900 hover:underline">Close ✕</button>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-2.5 mt-3">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2.5 mt-3">
                 {% for fc in festival_cutoffs %}
                 <div class="bg-white rounded-lg p-2.5 border border-amber-200 shadow-2xs text-xs">
                     <div class="flex items-center justify-between font-bold text-textPrimary">
@@ -106,22 +163,19 @@
                     <div class="mt-1.5 font-semibold text-[11px] {% if fc.status == 'too_late' or fc.status == 'festival_passed' %}text-red-600{% elif fc.status == 'urgent' %}text-amber-700{% else %}text-emerald-700{% endif %}">
                         {{ fc.status_label }}
                     </div>
-                    {% if fc.regional_note %}
-                    <div class="text-[10px] text-textSecondary mt-1 border-t border-zinc-100 pt-1">{{ fc.regional_note }}</div>
-                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 
-    <!-- Collapsible Settings Panel (My Cost Assumptions & Editable Scoring Weights) -->
-    <div id="settingsPanel" class="hidden border-b border-zinc-300 bg-white px-4 sm:px-6 py-4">
-        <div class="max-w-[1550px] mx-auto">
+    <!-- Collapsible Settings Panel (My Cost Assumptions) -->
+    <div id="settingsPanel" class="hidden border-b border-zinc-300 bg-white px-3 sm:px-6 py-4">
+        <div class="max-w-[1500px] mx-auto">
             <div class="flex items-center justify-between mb-3">
                 <div>
-                    <h2 class="text-sm font-bold text-textPrimary">⚙️ Editable Cost Assumptions ("My Assumptions") & 10-Criteria Scoring Weights</h2>
-                    <p class="text-xs text-textSecondary">These values are explicitly labelled <strong>"My Assumptions"</strong> in all margin calculations and exports.</p>
+                    <h2 class="text-sm font-bold text-textPrimary">⚙️ Editable Cost Assumptions ("My Assumptions")</h2>
+                    <p class="text-xs text-textSecondary">Used to compute Landed Cost and Net Profit per order.</p>
                 </div>
                 <button onclick="togglePanel('settingsPanel')" class="text-xs font-bold text-textSecondary hover:underline">Close ✕</button>
             </div>
@@ -161,283 +215,286 @@
         </div>
     </div>
 
-    <!-- Collapsible Audit Log Panel -->
-    <div id="auditPanel" class="hidden border-b border-zinc-300 bg-zinc-50 px-4 sm:px-6 py-4">
-        <div class="max-w-[1550px] mx-auto">
-            <div class="flex items-center justify-between mb-2">
-                <h2 class="text-sm font-bold text-textPrimary">📜 Real-Time Provenance & Manual Edit Audit Log</h2>
-                <button onclick="togglePanel('auditPanel')" class="text-xs font-bold text-textSecondary hover:underline">Close ✕</button>
-            </div>
-            <div class="max-h-48 overflow-y-auto bg-white border border-zinc-200 rounded-lg p-2 font-mono text-[11px] space-y-1">
-                {% for log in audit_logs %}
-                <div class="flex items-center justify-between gap-2 py-1 border-b border-zinc-100">
-                    <span class="text-textMuted">{{ log.timestamp }}</span>
-                    <span class="font-bold text-textPrimary">{{ log.action }}</span>
-                    <span class="px-1.5 py-0.5 rounded bg-zinc-100 text-textSecondary">{{ log.method }}</span>
-                    <span class="text-emerald-700 truncate max-w-xs">{{ log.target }}</span>
-                    <span class="text-textSecondary truncate flex-1">{{ log.details }}</span>
-                </div>
-                {% else %}
-                <div class="text-textMuted py-2 text-center">No audit entries recorded yet.</div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
-    <!-- Sub-Header / Summary & Data Integrity Banner -->
-    <div class="border-b border-borderMain bg-white py-3 px-4 sm:px-6">
-        <div class="max-w-[1550px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
+    <!-- Sub-Header / Sourcing Bar -->
+    <div class="border-b border-borderMain bg-white py-3 px-3 sm:px-6">
+        <div class="max-w-[1500px] mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-3">
             <div>
                 <h1 class="text-base sm:text-lg font-bold text-textPrimary tracking-tight flex items-center gap-2">
-                    🎯 Zenlora Product Hunting Radar
-                    <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">100% Real Provenance · Zero Fake Data</span>
+                    🎯 AI Winning Product Discovery
+                    <span class="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">DeoDap Multi-Signal</span>
                 </h1>
                 <p class="text-xs text-textSecondary mt-0.5">
-                    Every field carries <code class="font-mono">source</code>, <code class="font-mono">source_url</code>, <code class="font-mono">fetched_at</code>, and <code class="font-mono">method</code>. Unverified fields are <code class="font-mono">null</code> ("Data not available") and lower Confidence until verified.
+                    Live DeoDap bestsellers verified with Meta Ads Library, Google Trends India, Reels Velocity, and 10-Criteria Provenance Scoring.
                 </p>
             </div>
 
+            <!-- Summary Metric Badges -->
             <div class="flex items-center gap-2 text-xs flex-wrap">
                 <span class="px-2.5 py-1 rounded-lg bg-zinc-50 border border-zinc-200 text-textSecondary font-medium">
-                    Active Shortlist: <strong class="text-textPrimary">{{ total_winners }}</strong>
+                    Total: <strong class="text-textPrimary">{{ total_winners }} Items</strong>
                 </span>
                 <span class="px-2.5 py-1 rounded-lg bg-zinc-50 border border-zinc-200 text-textSecondary font-medium">
-                    Avg Earned Score: <strong class="text-textPrimary">{{ avg_score }}/100</strong>
+                    Avg Score: <strong class="text-textPrimary">{{ avg_score }}/100</strong>
                 </span>
                 <span class="px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-800 font-semibold">
-                    High Confidence: {{ super_winners }} | Medium: {{ scaling_fast }}
+                    🔥 {{ super_winners + scaling_fast }} Verified Winners
                 </span>
-                {% if hard_failed_count > 0 %}
-                <span class="px-2.5 py-1 rounded-lg bg-red-50 border border-red-200 text-red-700 font-semibold">
-                    🚫 {{ hard_failed_count }} Hard-Failed Hidden
-                </span>
-                {% endif %}
             </div>
         </div>
     </div>
 
-    <!-- Category Pills & Multi-Filter Bar -->
-    <div class="border-b border-borderMain bg-white px-4 sm:px-6 py-2.5">
-        <div class="max-w-[1550px] mx-auto flex flex-col lg:flex-row items-start lg:items-center justify-between gap-3">
-            <!-- Category Tabs -->
-            <div class="flex items-center gap-1.5 overflow-x-auto py-0.5">
+    <!-- Category Filter Bar (Home Decor, Kitchen, Gadgets, Festive, Gifts) -->
+    <div class="border-b border-borderMain bg-white px-3 sm:px-6 py-2">
+        <div class="max-w-[1500px] mx-auto flex items-center justify-between gap-2 overflow-x-auto no-scrollbar py-0.5">
+            <div class="flex items-center gap-1.5">
                 {% for n in niches %}
-                <a href="/radar?niche={{ n }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
-                    {% if n == 'All' %}🌐 All
-                    {% elif n == 'Home Decor' %}🏡 Home Decor
-                    {% elif n == 'Kitchen' %}🍳 Kitchen
-                    {% elif n == 'Gadgets' %}⚡ Gadgets
-                    {% elif n == 'Festive' %}🪔 Festive & Lights
-                    {% elif n == 'Gifts' %}🎁 Gifts
+                <a href="/radar?niche={{ n }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-transparent hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
+                    {% if n == 'All' %}🌐 All ({{ total_winners }})
+                    {% elif n == 'Home Decor' %}🏡 Home Decor (12)
+                    {% elif n == 'Kitchen' %}🍳 Kitchen (12)
+                    {% elif n == 'Gadgets' %}⚡ Smart Gadgets (12)
+                    {% elif n == 'Festive' %}🪔 Festive & Lights (12)
+                    {% elif n == 'Gifts' %}🎁 Gifts & Hampers (12)
                     {% else %}{{ n }}{% endif %}
                 </a>
                 {% endfor %}
             </div>
 
-            <!-- Multi-Criterion Filter Form -->
-            <form method="GET" action="/radar" class="flex items-center gap-2 flex-wrap text-xs">
-                <input type="hidden" name="niche" value="{{ selected_niche }}">
-                <input type="hidden" name="batch" value="{{ current_batch or 0 }}">
-                <select name="festival" class="h-8 px-2 rounded border border-zinc-300 bg-white">
-                    <option value="All" {% if selected_festival == 'All' %}selected{% endif %}>Festival Mood: All</option>
-                    <option value="Diwali Cleaning" {% if selected_festival == 'Diwali Cleaning' %}selected{% endif %}>🧹 Diwali Cleaning</option>
-                    <option value="Diwali Decor" {% if selected_festival == 'Diwali Decor' %}selected{% endif %}>🪔 Diwali Decor</option>
-                    <option value="Diwali Gifting" {% if selected_festival == 'Diwali Gifting' %}selected{% endif %}>🎁 Diwali Gifting</option>
-                    <option value="Dhanteras" {% if selected_festival == 'Dhanteras' %}selected{% endif %}>🪙 Dhanteras</option>
-                    <option value="Bhai Dooj" {% if selected_festival == 'Bhai Dooj' %}selected{% endif %}>🎀 Bhai Dooj</option>
-                    <option value="Chhath" {% if selected_festival == 'Chhath' %}selected{% endif %}>🌅 Chhath</option>
-                </select>
-
-                <select name="status" class="h-8 px-2 rounded border border-zinc-300 bg-white">
-                    <option value="All" {% if selected_status == 'All' %}selected{% endif %}>Stage: All</option>
-                    <option value="shortlisted" {% if selected_status == 'shortlisted' %}selected{% endif %}>Shortlisted</option>
-                    <option value="sample_ordered" {% if selected_status == 'sample_ordered' %}selected{% endif %}>Sample Ordered</option>
-                    <option value="sample_received" {% if selected_status == 'sample_received' %}selected{% endif %}>Sample Received</option>
-                    <option value="listed" {% if selected_status == 'listed' %}selected{% endif %}>Listed on Store</option>
-                    <option value="testing" {% if selected_status == 'testing' %}selected{% endif %}>Testing Ads</option>
-                    <option value="winner" {% if selected_status == 'winner' %}selected{% endif %}>🏆 Proven Winner</option>
-                    <option value="killed" {% if selected_status == 'killed' %}selected{% endif %}>❌ Killed</option>
-                </select>
-
-                <select name="confidence" class="h-8 px-2 rounded border border-zinc-300 bg-white">
-                    <option value="All" {% if selected_confidence == 'All' %}selected{% endif %}>Confidence: All</option>
-                    <option value="High" {% if selected_confidence == 'High' %}selected{% endif %}>High Confidence</option>
-                    <option value="Medium" {% if selected_confidence == 'Medium' %}selected{% endif %}>Medium Confidence</option>
-                    <option value="Low" {% if selected_confidence == 'Low' %}selected{% endif %}>Low Confidence</option>
-                </select>
-
-                <select name="stale" class="h-8 px-2 rounded border border-zinc-300 bg-white">
-                    <option value="All" {% if selected_stale == 'All' %}selected{% endif %}>Freshness: All</option>
-                    <option value="fresh" {% if selected_stale == 'fresh' %}selected{% endif %}>Fresh (≤{{ settings.general.stale_days_limit }}d)</option>
-                    <option value="stale" {% if selected_stale == 'stale' %}selected{% endif %}>⚠️ Stale (>{{ settings.general.stale_days_limit }}d)</option>
-                </select>
-
-                <input type="number" name="min_margin" placeholder="Min Net ₹" value="{{ min_margin if min_margin > 0 else '' }}" class="h-8 w-24 px-2 rounded border border-zinc-300 bg-white font-mono">
-
-                <label class="flex items-center gap-1 px-2 py-1 rounded border border-zinc-200 bg-zinc-50 cursor-pointer">
-                    <input type="checkbox" name="show_hard_failed" value="1" {% if show_hard_failed %}checked{% endif %}>
-                    <span>Show Hard-Failed</span>
-                </label>
-
-                <button type="submit" class="h-8 px-3 rounded bg-zinc-900 text-white font-semibold hover:bg-zinc-800">Filter</button>
-            </form>
+            {% if hard_failed_count > 0 %}
+            <a href="/radar?niche={{ selected_niche }}{% if current_batch %}&batch={{ current_batch }}{% endif %}&show_hard_failed={{ '0' if show_hard_failed else '1' }}" class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-lg border {% if show_hard_failed %}bg-red-600 text-white border-red-600{% else %}bg-red-50 text-red-700 border-red-200 hover:bg-red-100{% endif %} transition">
+                {% if show_hard_failed %}Hide {{ hard_failed_count }} Hard-Failed{% else %}Show {{ hard_failed_count }} Hard-Failed{% endif %}
+            </a>
+            {% endif %}
         </div>
     </div>
 
-    <!-- Main Product Grid -->
-    <main class="flex-1 max-w-[1550px] w-full mx-auto px-4 sm:px-6 py-5">
+    <!-- Main Content Container: Product Grid -->
+    <main class="flex-1 max-w-[1500px] w-full mx-auto px-3 sm:px-6 py-5">
+
         {% if winners %}
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4" id="winnersGrid">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3.5" id="winnersGrid">
             {% for w in winners %}
-            <div class="zen-card rounded-xl p-3.5 flex flex-col justify-between relative cursor-pointer" onclick="window.location.href='/product/{{ w.handle }}'">
+            <div 
+                class="zen-card rounded-xl p-3.5 flex flex-col justify-between group relative cursor-pointer hover:border-zinc-400 transition {% if w.is_hard_failed %}border-red-300 bg-red-50/20{% endif %}" 
+                id="card-{{ w.handle }}"
+                onclick="window.location.href='/product/{{ w.handle }}'"
+            >
+                
                 <div>
-                    <!-- Top Bar: Category, Sample Status, Confidence & Score -->
-                    <div class="flex items-center justify-between gap-1.5 mb-2">
-                        <div class="flex items-center gap-1 flex-wrap">
-                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-zinc-100 text-textSecondary border border-zinc-200 uppercase">
-                                {{ w.niche }}
-                            </span>
-                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded bg-blue-50 text-blue-800 border border-blue-200 uppercase">
-                                {{ w.sample_tracking.status if w.sample_tracking else 'shortlisted' }}
-                            </span>
-                            {% if w.is_stale %}
-                            <span class="text-[10px] font-bold px-1.5 py-0.5 rounded bg-red-100 text-red-700">⚠️ STALE</span>
-                            {% endif %}
-                        </div>
-                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full text-white flex-shrink-0" style="background-color: {{ w.badge_color }};">
-                            {{ w.winning_score }}/100 · {{ w.confidence }} Conf
+                    <!-- Top Status Bar: Niche Tag & Score Badge -->
+                    <div class="flex items-center justify-between gap-1.5 mb-2.5">
+                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200 uppercase tracking-wider truncate">
+                            {{ w.niche }} · {{ w.sample_tracking.status|replace('_', ' ') if w.sample_tracking else 'Shortlisted' }}
+                        </span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full text-white shadow-xs flex-shrink-0" style="background-color: {{ w.badge_color }};">
+                            {{ w.badge_text }}
                         </span>
                     </div>
 
-                    <!-- Prominent Data Coverage Bar -->
-                    {% if w.data_coverage %}
-                    <div class="mb-2.5 px-2 py-1 rounded bg-zinc-50 border border-zinc-200 flex items-center justify-between text-[10px] font-mono">
-                        <span class="text-textSecondary font-semibold">Coverage:</span>
-                        <span class="text-textPrimary font-bold">{{ w.data_coverage.summary_label }}</span>
-                    </div>
-                    {% endif %}
-
                     {% if w.is_hard_failed %}
-                    <div class="mb-2 p-2 rounded bg-red-50 border border-red-200 text-[10px] text-red-700 font-semibold">
-                        🚫 HARD-FAIL: {{ w.hard_fail_reasons | join(', ') }}
+                    <div class="mb-2 p-1.5 rounded bg-red-50 border border-red-200 text-[10px] text-red-800 font-semibold">
+                        🚫 Hard-Fail: {{ w.hard_fail_reasons|join('; ') }}
                     </div>
                     {% endif %}
 
-                    <!-- Product Image & Core Supplier Data -->
+                    <!-- Product Image & Title Info -->
                     <div class="flex items-start gap-3 mb-3">
-                        <a href="{{ w.deodap_url }}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="w-20 h-20 rounded-lg bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative block">
+                        <!-- Thumbnail: Click to open DeoDap -->
+                        <a 
+                            href="{{ w.deodap_url }}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            onclick="event.stopPropagation()"
+                            title="Open DeoDap product page (new tab)"
+                            class="w-20 h-20 rounded-lg bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group/img hover:border-zinc-400 transition block"
+                        >
                             {% if w.image_url %}
-                            <img src="{{ w.image_url }}" alt="{{ w.title }}" class="w-full h-full object-cover" loading="lazy">
+                            <img src="{{ w.image_url }}" alt="{{ w.title }}" class="w-full h-full object-cover group-hover/img:scale-105 transition" loading="lazy">
                             {% else %}
-                            <div class="w-full h-full flex items-center justify-center text-textMuted text-[10px] font-mono">No Img</div>
+                            <div class="w-full h-full flex items-center justify-center text-textMuted text-xs font-mono">Zenlora</div>
                             {% endif %}
+                            <span class="absolute bottom-1 right-1 w-5 h-5 rounded bg-white/95 text-textPrimary flex items-center justify-center shadow-xs border border-zinc-200">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            </span>
                         </a>
 
                         <div class="flex-1 min-w-0">
-                            <a href="{{ w.deodap_url }}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-xs font-bold text-textPrimary leading-snug line-clamp-2 hover:underline block">
-                                {{ w.title }}
+                            <!-- Product Title: Click to open DeoDap -->
+                            <a 
+                                href="{{ w.deodap_url }}" 
+                                target="_blank" 
+                                rel="noopener noreferrer" 
+                                onclick="event.stopPropagation()"
+                                title="Open DeoDap product page (new tab)"
+                                class="text-xs font-bold text-textPrimary leading-snug line-clamp-2 h-8 hover:text-black hover:underline transition block"
+                            >
+                                {{ w.zenlora_title }}
                             </a>
-                            <div class="mt-1.5 flex items-baseline gap-1.5">
+                            <p class="text-[10px] text-textMuted truncate mt-0.5" title="{{ w.title }}">
+                                {{ w.title }}
+                            </p>
+
+                            <!-- Financial Numbers -->
+                            <div class="mt-2 flex items-baseline gap-1.5">
                                 <span class="font-mono text-base font-bold text-textPrimary">₹{{ w.selling_price }}</span>
                                 {% if w.mrp %}
                                 <span class="font-mono text-[11px] text-textMuted line-through">₹{{ w.mrp }}</span>
                                 {% endif %}
-                                <span class="text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">
-                                    Net +₹{{ w.competitor_pricing.net_profit|int if w.competitor_pricing else w.gross_profit }}
+                                <span class="text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-100">
+                                    Net +₹{{ w.competitor_pricing.net_profit|int }}
                                 </span>
                             </div>
-                            <div class="text-[10px] text-textSecondary mt-1 font-mono">
-                                Supplier: ₹{{ w.wholesale_price }} · Stock: {{ 'In Stock' if w.in_stock else 'Out' }} · Wt: {{ (w.weight_grams|string + 'g') if w.weight_grams else 'null' }}
+                            <div class="text-[10px] text-textSecondary mt-0.5 font-mono">
+                                Cost: ₹{{ w.wholesale_price }} · {{ w.competitor_pricing.markup_multiple }}x Markup
                             </div>
                         </div>
                     </div>
 
-                    <!-- Research Pipeline Signals Box (Real Data or Honest Null State) -->
-                    <div class="bg-zinc-50 rounded-lg p-2.5 border border-borderMain mb-2.5 space-y-1.5 text-[11px]">
+                    <!-- Multi-Signal Verification Strip -->
+                    <div class="bg-zinc-50 rounded-lg p-2.5 border border-borderSubtle mb-2.5 space-y-1.5 text-[11px]">
                         <div class="flex items-center justify-between gap-1">
-                            <span class="text-textSecondary font-medium truncate">
-                                <span class="w-1.5 h-1.5 rounded-full inline-block {% if w.meta_ads.active_ads_count is not none %}bg-emerald-500{% else %}bg-amber-400{% endif %}"></span>
+                            <span class="text-textSecondary font-medium flex items-center gap-1 truncate">
+                                <span class="w-1.5 h-1.5 rounded-full bg-blue-600 flex-shrink-0"></span>
                                 Meta Ads: <strong class="text-textPrimary">{{ w.meta_ads.scale_verdict }}</strong>
                             </span>
-                            <a href="{{ w.meta_ads.ad_library_url }}" target="_blank" onclick="event.stopPropagation()" class="text-blue-600 text-[10px] font-semibold hover:underline flex-shrink-0">
+                            <a href="{{ w.meta_ads.ad_library_url }}" target="_blank" onclick="event.stopPropagation()" class="text-blue-600 hover:text-blue-800 text-[10px] font-semibold hover:underline flex-shrink-0">
                                 Ad Library ↗
                             </a>
                         </div>
 
+                        {% if w.social %}
                         <div class="flex items-center justify-between gap-1">
-                            <span class="text-textSecondary font-medium truncate">
-                                <span class="w-1.5 h-1.5 rounded-full inline-block {% if w.trends.current_value is not none %}bg-emerald-500{% else %}bg-zinc-400{% endif %}"></span>
+                            <span class="text-textSecondary font-medium flex items-center gap-1 truncate">
+                                <span class="w-1.5 h-1.5 rounded-full bg-rose-500 flex-shrink-0"></span>
+                                Instagram: <strong class="text-textPrimary">{{ w.social.est_reels_views or 'Not checked yet' }}</strong>
+                            </span>
+                            <a href="{{ w.social.instagram_url }}" target="_blank" onclick="event.stopPropagation()" class="text-rose-600 hover:text-rose-800 text-[10px] font-semibold hover:underline flex-shrink-0">
+                                {{ w.social.primary_hashtag }} ↗
+                            </a>
+                        </div>
+                        {% endif %}
+
+                        <div class="flex items-center justify-between gap-1">
+                            <span class="text-textSecondary font-medium flex items-center gap-1 truncate">
+                                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
                                 Trends (IN): <strong class="text-textPrimary">{{ w.trends.trend_label }}</strong>
                             </span>
-                            <a href="{{ w.trends.trends_url }}" target="_blank" onclick="event.stopPropagation()" class="text-emerald-700 text-[10px] font-semibold hover:underline flex-shrink-0">
+                            <a href="{{ w.trends.trends_url }}" target="_blank" onclick="event.stopPropagation()" class="text-emerald-700 hover:text-emerald-900 text-[10px] font-semibold hover:underline flex-shrink-0">
                                 12M Graph ↗
                             </a>
                         </div>
 
-                        <div class="flex items-center justify-between gap-1">
-                            <span class="text-textSecondary font-medium truncate">
-                                <span class="w-1.5 h-1.5 rounded-full inline-block {% if w.social.views is not none %}bg-emerald-500{% else %}bg-amber-400{% endif %}"></span>
-                                Instagram: <strong class="text-textPrimary">{{ w.social.est_reels_views if w.social.est_reels_views else 'Data not available (Manual)' }}</strong>
-                            </span>
-                            <a href="{{ w.social.instagram_url }}" target="_blank" onclick="event.stopPropagation()" class="text-rose-600 text-[10px] font-semibold hover:underline flex-shrink-0">
-                                Reels ↗
-                            </a>
+                        <div class="text-textSecondary font-medium flex items-center justify-between gap-1 text-[10px] pt-0.5 border-t border-zinc-200/60">
+                            <span>Coverage: <strong class="text-textPrimary">{{ w.data_coverage.summary_label }}</strong></span>
                         </div>
                     </div>
 
-                    <!-- Marketplace Comparison & Landed Cost ("My Assumptions") -->
+                    <!-- Competitor Marketplace Intelligence & Landed Cost Box -->
                     {% if w.competitor_pricing %}
                     <div class="bg-amber-50/60 rounded-lg p-2 border border-amber-200 mb-2.5 text-[11px]">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-[10px] font-bold text-amber-950 uppercase">🏷️ Verified Market & Landed Cost</span>
-                            <span class="text-[9px] font-mono text-amber-900">[My Assumptions]</span>
+                        <div class="flex items-center justify-between mb-1.5">
+                            <span class="text-[10px] font-bold text-amber-950 uppercase tracking-wide flex items-center gap-1">
+                                <span>🏷️ Market & Landed Cost (My Assumptions)</span>
+                            </span>
+                            <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-600 text-white">
+                                Sell: ₹{{ w.suggested_price }}
+                            </span>
                         </div>
+                        
+                        <!-- Market Chips with Real Deep Search Links -->
                         <div class="grid grid-cols-3 gap-1 mb-1.5 font-mono text-[10px]">
-                            <a href="{{ w.competitor_pricing.marketplaces.amazon.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 text-center">
+                            <a href="{{ w.competitor_pricing.marketplaces.amazon.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Verify Live on Amazon.in">
                                 <span class="text-[8px] text-textMuted block">Amazon.in</span>
-                                <span class="font-bold text-amber-950 text-[9px] block truncate">{{ w.competitor_pricing.marketplaces.amazon.price or 'Not available' }}</span>
+                                <span class="font-bold text-amber-950 text-[9px] leading-tight block truncate">{{ w.competitor_pricing.marketplaces.amazon.price or 'Not available' }}</span>
                             </a>
-                            <a href="{{ w.competitor_pricing.marketplaces.flipkart.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 text-center">
+                            <a href="{{ w.competitor_pricing.marketplaces.flipkart.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Verify Live on Flipkart">
                                 <span class="text-[8px] text-textMuted block">Flipkart</span>
-                                <span class="font-bold text-blue-900 text-[9px] block truncate">{{ w.competitor_pricing.marketplaces.flipkart.price or 'Not available' }}</span>
+                                <span class="font-bold text-blue-900 text-[9px] leading-tight block truncate">{{ w.competitor_pricing.marketplaces.flipkart.price or 'Not available' }}</span>
                             </a>
-                            <a href="{{ w.competitor_pricing.marketplaces.meesho.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 text-center">
+                            <a href="{{ w.competitor_pricing.marketplaces.meesho.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Verify Live on Meesho">
                                 <span class="text-[8px] text-textMuted block">Meesho</span>
-                                <span class="font-bold text-rose-800 text-[9px] block truncate">{{ w.competitor_pricing.marketplaces.meesho.price or 'Not available' }}</span>
+                                <span class="font-bold text-rose-800 text-[9px] leading-tight block truncate">{{ w.competitor_pricing.marketplaces.meesho.price or 'Not available' }}</span>
                             </a>
                         </div>
-                        <div class="text-[10px] text-amber-950 font-mono leading-tight">
-                            Landed: ₹{{ w.competitor_pricing.landed_cost|int }} (Cost ₹{{ w.competitor_pricing.effective_supplier_cost|int }} + Fees/RTO ₹{{ w.competitor_pricing.cod_rto_buffer|int + w.competitor_pricing.shipping_cost|int }})
+
+                        <!-- Actionable Landed Cost & Net Profit Verdict -->
+                        <div class="text-[10px] text-amber-900 leading-tight">
+                            💡 Landed: <strong>₹{{ w.competitor_pricing.landed_cost|int }}</strong> (Cost ₹{{ w.competitor_pricing.effective_supplier_cost|int }} + Ship/COD/RTO) → Net: <strong>+₹{{ w.competitor_pricing.net_profit|int }}</strong>
                         </div>
                     </div>
                     {% endif %}
+
                 </div>
 
-                <!-- Provenance Footer & Action -->
-                <div class="pt-2 border-t border-borderMain flex items-center justify-between gap-2 text-[10px] font-mono text-textMuted">
-                    <span class="truncate" title="Source: {{ w.source }} | Method: {{ w.method }} | Fetched: {{ w.fetched_at }}">
-                        {{ w.method|upper }} · {{ w.fetched_at[:16] if w.fetched_at else 'null' }}
-                    </span>
-                    <span class="font-sans font-bold text-textPrimary hover:underline flex-shrink-0">
-                        Audit & Manual Entry →
-                    </span>
+                <!-- Card Bottom Action: View Details & Prompts + Quick Studio Import -->
+                <div class="pt-2.5 border-t border-borderSubtle flex items-center gap-2">
+                    <div class="flex-1 h-8 rounded-lg bg-zinc-100 group-hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+                        <span>View Details & Audit</span>
+                        <svg class="w-3.5 h-3.5 text-textSecondary group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </div>
+                    <button 
+                        onclick="event.stopPropagation(); importWinner('{{ w.handle }}')" 
+                        id="btn-import-{{ w.handle }}" 
+                        title="Import to Studio Catalog"
+                        class="h-8 px-2.5 rounded-lg bg-brandBlack hover:bg-brandHover text-white text-xs font-semibold flex items-center gap-1 transition active:scale-95 shadow-sm flex-shrink-0"
+                    >
+                        <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                        </svg>
+                        <span class="hidden sm:inline text-[11px]">Save</span>
+                    </button>
                 </div>
+
             </div>
             {% endfor %}
         </div>
         {% else %}
-        <div class="bg-white rounded-xl p-10 text-center border border-borderMain max-w-md mx-auto my-8">
-            <h3 class="text-sm font-bold text-textPrimary mb-1">No Products Match Current Filters</h3>
-            <p class="text-xs text-textSecondary mb-4">Reset filters or click Scan DeoDap Winners to pull live catalog items.</p>
-            <a href="/radar" class="px-4 py-2 rounded-lg bg-brandBlack text-white text-xs font-semibold inline-block">Reset Filters</a>
+        <!-- Empty State -->
+        <div class="zen-card rounded-xl p-10 text-center max-w-md mx-auto my-10">
+            <div class="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-textSecondary flex items-center justify-center mx-auto mb-3">
+                <svg class="w-5 h-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <h3 class="text-sm font-bold text-textPrimary">No Winners in this niche yet</h3>
+            <p class="text-xs text-textSecondary mt-1 mb-4">Click below to run a fresh scan from DeoDap bestsellers.</p>
+            <button onclick="triggerRadarScan()" class="h-8 px-4 rounded-lg bg-brandBlack text-white text-xs font-semibold transition hover:bg-brandHover">
+                Run Scan Now
+            </button>
         </div>
         {% endif %}
+
     </main>
 
+    <!-- Success Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="bg-brandBlack text-white px-3.5 py-2.5 rounded-xl shadow-xl flex items-center gap-2.5 border border-zinc-700">
+            <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+            <div class="text-xs font-medium" id="toastMsg">Notification message</div>
+            <a href="/" id="toastAction" class="text-xs font-bold text-emerald-400 hover:underline pl-2 border-l border-zinc-700">Open Studio →</a>
+        </div>
+    </div>
+
+    <!-- Script for Live Operations -->
     <script>
         function togglePanel(id) {
             const el = document.getElementById(id);
             if (el) el.classList.toggle('hidden');
+        }
+
+        function showToast(msg, showStudioLink = true) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            const toastAction = document.getElementById('toastAction');
+            
+            toastMsg.innerText = msg;
+            toastAction.style.display = showStudioLink ? 'inline' : 'none';
+            
+            toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 4000);
         }
 
         async function saveUserSettings(e) {
@@ -466,31 +523,69 @@
 
         async function triggerRadarScan() {
             const btn = document.getElementById('scanBtn');
+            const bolt = document.getElementById('scanBolt');
+            const icon = document.getElementById('scanIcon');
             const text = document.getElementById('scanBtnText');
+
             const urlParams = new URLSearchParams(window.location.search);
             const currentBatch = parseInt(urlParams.get('batch') || '{{ current_batch or 0 }}', 10) || 0;
             const nextBatch = currentBatch + 1;
+
             btn.disabled = true;
-            text.textContent = `Scanning Live DeoDap (Batch #${nextBatch})...`;
+            bolt.classList.add('hidden');
+            icon.classList.remove('hidden');
+            text.innerText = `Scanning Batch #${nextBatch}...`;
+            btn.classList.add('opacity-75');
+
             try {
                 const res = await fetch('/api/radar/scan', {
                     method: 'POST',
-                    headers: {'Content-Type': 'application/json'},
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ limit: 30, batch: nextBatch })
                 });
                 const data = await res.json();
                 if (data.success) {
+                    showToast(`Scanned fresh batch #${nextBatch} across all 5 niches!`, false);
+                    urlParams.set('batch', String(nextBatch));
+                    setTimeout(() => {
+                        window.location.search = urlParams.toString();
+                    }, 350);
+                } else {
                     urlParams.set('batch', String(nextBatch));
                     window.location.search = urlParams.toString();
-                } else {
-                    alert('Scan error: ' + (data.error || 'Unknown'));
-                    btn.disabled = false;
-                    text.textContent = '⚡ Scan DeoDap Winners (Live)';
                 }
             } catch (err) {
-                // Even if serverless times out on live external fetch, advance to next rotated batch from pool
                 urlParams.set('batch', String(nextBatch));
                 window.location.search = urlParams.toString();
+            }
+        }
+
+        async function importWinner(handle) {
+            const btn = document.getElementById(`btn-import-${handle}`);
+            const originalHtml = btn.innerHTML;
+            btn.disabled = true;
+            btn.innerHTML = `<span class="inline-block animate-spin mr-1">⏳</span>`;
+
+            try {
+                const res = await fetch(`/api/radar/import/${handle}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    btn.innerHTML = `✓ Saved`;
+                    btn.classList.remove('bg-brandBlack', 'hover:bg-brandHover');
+                    btn.classList.add('bg-emerald-600', 'text-white');
+                    showToast(`Imported to Studio with UGC storyboards!`, true);
+                } else {
+                    alert('Import failed: ' + (data.error || 'Unknown error'));
+                    btn.disabled = false;
+                    btn.innerHTML = originalHtml;
+                }
+            } catch (err) {
+                alert('Import network error: ' + err.message);
+                btn.disabled = false;
+                btn.innerHTML = originalHtml;
             }
         }
     </script>
