@@ -253,15 +253,15 @@
                         </div>
                     </div>
 
-                    <!-- Multi-Signal Verification Box -->
+                    <!-- Multi-Signal Verification Box (100% Transparent Live Links) -->
                     <div class="bg-zinc-50 rounded-lg p-2.5 border border-borderMain mb-2.5 space-y-1.5 text-[11px]">
                         <div class="flex items-center justify-between gap-1">
                             <span class="text-textSecondary font-medium flex items-center gap-1 truncate">
                                 <span class="w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"></span>
-                                Meta Ads: <strong class="text-textPrimary">{{ w.meta_ads.active_ads }}+ Active</strong>
+                                Meta Ads (IN): <strong class="text-textPrimary">Verify 30+ Day Ads</strong>
                             </span>
                             <a href="{{ w.meta_ads.ad_library_url }}" target="_blank" onclick="event.stopPropagation()" class="text-blue-600 hover:text-blue-800 text-[10px] font-semibold hover:underline flex-shrink-0">
-                                Spy Ads ↗
+                                Ad Library ↗
                             </a>
                         </div>
 
@@ -269,7 +269,7 @@
                         <div class="flex items-center justify-between gap-1">
                             <span class="text-textSecondary font-medium flex items-center gap-1 truncate">
                                 <span class="w-1.5 h-1.5 rounded-full bg-rose-500 flex-shrink-0"></span>
-                                Reels: <strong class="text-textPrimary">{{ w.social.views }} Views</strong>
+                                Mood: <strong class="text-textPrimary">{{ w.social.views }}</strong>
                             </span>
                             <a href="{{ w.social.instagram_url }}" target="_blank" onclick="event.stopPropagation()" class="text-rose-600 hover:text-rose-800 text-[10px] font-semibold hover:underline flex-shrink-0">
                                 {{ w.social.primary_hashtag }} ↗
@@ -280,50 +280,50 @@
                         <div class="flex items-center justify-between gap-1">
                             <span class="text-textSecondary font-medium flex items-center gap-1 truncate">
                                 <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 flex-shrink-0"></span>
-                                Trends: <strong class="text-textPrimary">{{ w.trends.label }}</strong>
+                                Seasonality: <strong class="text-textPrimary">{{ w.trends.label }}</strong>
                             </span>
                             <a href="{{ w.trends.trends_url }}" target="_blank" onclick="event.stopPropagation()" class="text-emerald-700 hover:text-emerald-900 text-[10px] font-semibold hover:underline flex-shrink-0">
-                                Graph ↗
+                                12M Graph ↗
                             </a>
                         </div>
 
                         <div class="text-textSecondary font-medium flex items-center gap-1 text-[10px]">
                             <span class="w-1.5 h-1.5 rounded-full bg-amber-500 flex-shrink-0"></span>
-                            COD Safety: <span class="text-textPrimary">{{ w.rto_verdict }}</span>
+                            Checklist: <span class="text-textPrimary font-semibold">{{ w.rto_verdict }}</span>
                         </div>
                     </div>
 
-                    <!-- Competitor Marketplace Intelligence & Suggested Price Box -->
+                    <!-- Competitor Marketplace Intelligence & Landed Cost Box -->
                     {% if w.competitor_pricing %}
                     <div class="bg-amber-50/60 rounded-lg p-2 border border-amber-200 mb-2.5 text-[11px]">
                         <div class="flex items-center justify-between mb-1.5">
                             <span class="text-[10px] font-bold text-amber-950 uppercase tracking-wide flex items-center gap-1">
-                                <span>🏷️ Market Prices</span>
+                                <span>🏷️ Verified Market & Landed Cost</span>
                             </span>
                             <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-600 text-white">
-                                Suggest: ₹{{ w.suggested_price }}
+                                Sell: ₹{{ w.suggested_price }}
                             </span>
                         </div>
                         
-                        <!-- Market Chips with Real Deep Search Links -->
+                        <!-- Market Chips with Real Deep Search Links & Verified Ranges -->
                         <div class="grid grid-cols-3 gap-1 mb-1.5 font-mono text-[10px]">
-                            <a href="{{ w.competitor_pricing.marketplaces.amazon.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Search on Amazon India">
-                                <span class="text-[8px] text-textMuted block">Amazon</span>
-                                <span class="font-bold text-amber-950 text-[10px]">₹{{ w.competitor_pricing.marketplaces.amazon.price }} ↗</span>
+                            <a href="{{ w.competitor_pricing.marketplaces.amazon.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Verify Live on Amazon.in">
+                                <span class="text-[8px] text-textMuted block">Amazon.in</span>
+                                <span class="font-bold text-amber-950 text-[9px] leading-tight block truncate">{{ w.competitor_pricing.marketplaces.amazon.price }}</span>
                             </a>
-                            <a href="{{ w.competitor_pricing.marketplaces.flipkart.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Search on Flipkart">
+                            <a href="{{ w.competitor_pricing.marketplaces.flipkart.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Verify Live on Flipkart">
                                 <span class="text-[8px] text-textMuted block">Flipkart</span>
-                                <span class="font-bold text-blue-900 text-[10px]">₹{{ w.competitor_pricing.marketplaces.flipkart.price }} ↗</span>
+                                <span class="font-bold text-blue-900 text-[9px] leading-tight block truncate">{{ w.competitor_pricing.marketplaces.flipkart.price }}</span>
                             </a>
-                            <a href="{{ w.competitor_pricing.marketplaces.meesho.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Search on Meesho">
+                            <a href="{{ w.competitor_pricing.marketplaces.meesho.url }}" target="_blank" onclick="event.stopPropagation()" class="p-1 rounded bg-white border border-amber-200 hover:border-amber-400 text-center text-textPrimary hover:text-black transition" title="Verify Live on Meesho">
                                 <span class="text-[8px] text-textMuted block">Meesho</span>
-                                <span class="font-bold text-rose-800 text-[10px]">₹{{ w.competitor_pricing.marketplaces.meesho.price }} ↗</span>
+                                <span class="font-bold text-rose-800 text-[9px] leading-tight block truncate">{{ w.competitor_pricing.marketplaces.meesho.price }}</span>
                             </a>
                         </div>
 
-                        <!-- Actionable Arbitrage Verdict -->
+                        <!-- Actionable Landed Cost & Net Profit Verdict -->
                         <div class="text-[10px] text-amber-900 leading-tight">
-                            💡 <strong>Suggested:</strong> Sell at <strong>₹{{ w.suggested_price }}</strong> (Net profit: <strong>+₹{{ w.competitor_pricing.net_profit }}</strong>).
+                            💡 Landed: <strong>₹{{ w.competitor_pricing.landed_cost if w.competitor_pricing.landed_cost else (w.wholesale_price + 110) }}</strong> (incl. Ship+COD) → Net: <strong>+₹{{ w.competitor_pricing.net_profit }}</strong>
                         </div>
                     </div>
                     {% endif %}

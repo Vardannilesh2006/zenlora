@@ -111,6 +111,9 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
             "profit_margin_pct": score_data["pricing"]["profit_margin_pct"],
             "discount_pct": score_data["pricing"].get("discount_pct", 50),
             "winning_score": score_data["total_score"],
+            "passed_criteria_count": score_data.get("passed_criteria_count", 8),
+            "checklist": score_data.get("checklist", []),
+            "festival_mood": score_data.get("festival_mood", ""),
             "badge_text": score_data["badge_text"],
             "badge_color": score_data["badge_color"],
             "bestseller_rank": item.get("bestseller_rank", 99),
@@ -137,7 +140,7 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
             },
             "gemini": gemini_signals if gemini_signals else {
                 "ai_verdict": "High impulse-buy potential with strong social proof in Indian D2C market.",
-                "viral_hook_hinglish": f"Aapke room ka look instant badal dega yeh {zen_title.replace('Zenlora™', '').strip()}!",
+                "viral_hook_hinglish": f"Aapke ghar ka kaam aur look instant badal dega yeh {zen_title.replace('Zenlora™', '').strip()}!",
                 "target_audience": "Modern Indian Homemakers & Youth",
                 "ai_viral_score": score_data["total_score"]
             },

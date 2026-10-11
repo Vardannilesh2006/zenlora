@@ -4,13 +4,15 @@ import json
 import random
 from typing import List, Dict, Any, Optional
 
-# Strictly Excluded from Festive (High RTO Wearable / Artificial Jewelry)
+# Strictly Excluded from Festive (High RTO Wearable / Artificial Jewelry / Fragile Glass / Breakables)
 EXCLUDED_JEWELRY = [
     "earring", "earrings", "necklace", "jhumka", "jhumki", "bracelet", "bracelets",
     "bangle", "bangles", "ring", "rings", "toe ring", "anklet", "jewel", "jewellery",
     "jewelry", "choker", "pendant", "chain", "mangalsutra", "kundan", "cuff",
     "poochi", "stud combo", "assorted gold", "hasali", "temple jewellery",
-    "kada", "payal", "har", "mala", "bichiya", "ear ring", "neck piece"
+    "kada", "payal", "har", "mala", "bichiya", "ear ring", "neck piece",
+    "crystal ball", "glass jar", "glass jars", "ceramic", "terracotta", "clay", "porcelain",
+    "wall art"
 ]
 
 def is_jewelry_item(title: str, tags: str = "", description: str = "") -> bool:
@@ -39,15 +41,15 @@ NICHE_RULES = {
         "vacuum", "tripod", "selfie", "speaker", "lighter", "multitool", "keychain tool"
     ],
     "Festive": [
-        "diwali", "festive", "diya", "fairy light", "curtain light", "puja", "pooja",
-        "string light", "led diya", "festival", "rangoli", "brass diya", "mandir",
-        "havan", "incense", "agarbatti", "dhoop", "toran", "marigold", "celebration",
-        "smoke fountain", "crystal lamp", "3d crystal", "crystal ball", "moon lamp",
-        "ganesha", "ganesh", "shiva", "shiv ji", "shivji", "adiyogi", "mahadev", "buddha",
-        "lakshmi", "radha krishna", "brass idol", "swastik", "shubh labh", "backflow",
-        "waterfall incense", "ambient lamp", "message board lamp", "dry fruit box",
-        "dry fruit serving", "pooja decor", "pooja lamp", "brass peacock", "panchmukhi",
-        "elephant dry fruit", "crystal led", "crystal night lamp", "acrylic led", "crystal table lamp"
+        "water sensor led diya", "flameless decorative diya", "rangoli stencil", "kapoor dani",
+        "camphor diffuser", "led string light", "shubh labh", "flower 5-step decorative diya",
+        "decorative pooja thali", "pooja thali", "kalash pooja chowki", "adiyogi shiva backflow",
+        "3d lord ganesha acrylic", "3d ganesha acrylic", "3d ganesha led", "acrylic swastik",
+        "100-inch", "microfiber fan duster", "5 in 1 electric cleaning brush",
+        "floor cleaning brush with water scraper", "rotating floor cleaning brush",
+        "drain cleaner tool", "4 compartment dry fruit box", "5 compartment petal shape",
+        "revolving dry fruit box", "compact travel grooming kit", "diwali", "festive", "diya",
+        "toran", "pooja", "puja", "rangoli", "kalash", "incense", "dhoop"
     ],
     "Gifts": [
         "gift set", "hamper", "couple gift", "custom gift", "luxury gift", "scented candle",
@@ -60,12 +62,12 @@ def classify_niche(title: str, tags: str = "", description: str = "") -> str:
     combined = f"{title} {tags} {description}".lower()
     title_lower = title.lower()
 
-    # Absolute Exclusion: Zero Jewelry in Festive
-    is_jewelry = is_jewelry_item(title, tags, description)
+    # Absolute Exclusion: Zero Jewelry or Fragile Glass Crystal Balls in Festive
+    is_banned_festive = is_jewelry_item(title, tags, description)
 
     scores = {}
     for niche, keywords in NICHE_RULES.items():
-        if niche == "Festive" and is_jewelry:
+        if niche == "Festive" and is_banned_festive:
             scores[niche] = -9999
             continue
         score = 0
@@ -74,7 +76,7 @@ def classify_niche(title: str, tags: str = "", description: str = "") -> str:
             matches = len(re.findall(pattern, combined))
             if matches > 0:
                 if re.search(r'\b' + re.escape(kw) + r'\b', title_lower):
-                    score += matches * 4  # Strong title match priority
+                    score += matches * 6  # Strong title match priority
                 else:
                     score += matches
         scores[niche] = score
@@ -88,7 +90,7 @@ def classify_niche(title: str, tags: str = "", description: str = "") -> str:
         return "Home Decor"
     if any(k in title_lower for k in ["kitchen", "chopper", "bottle", "organizer", "rack", "cutter", "peeler", "cook"]):
         return "Kitchen"
-    if not is_jewelry and any(k in title_lower for k in ["diwali", "diya", "festive", "fairy", "puja", "mandir", "crystal", "fountain", "incense"]):
+    if not is_banned_festive and any(k in title_lower for k in ["diwali", "diya", "festive", "fairy", "puja", "mandir", "rangoli", "kalash", "thali"]):
         return "Festive"
     if any(k in title_lower for k in ["gift", "hamper", "combo", "box", "set"]):
         return "Gifts"
@@ -107,7 +109,7 @@ def _format_deodap_item(p: Dict[str, Any], current_page: int, idx: int) -> Optio
     except (ValueError, TypeError):
         return None
 
-    if wholesale_cost < 35.0 or wholesale_cost > 700.0:
+    if wholesale_cost < 35.0 or wholesale_cost > 245.0:
         return None
 
     title = p.get("title", "").strip()
@@ -126,7 +128,7 @@ def _format_deodap_item(p: Dict[str, Any], current_page: int, idx: int) -> Optio
     grams = variant.get("grams", 350) or 350
 
     buffer_cost = wholesale_cost + 60.0
-    raw_selling = buffer_cost * 3.2
+    raw_selling = buffer_cost * 3.0
     if raw_selling < 249:
         selling_price = 249
     elif raw_selling < 349:
@@ -135,14 +137,12 @@ def _format_deodap_item(p: Dict[str, Any], current_page: int, idx: int) -> Optio
         selling_price = 399
     elif raw_selling < 549:
         selling_price = 499
+    elif raw_selling < 649:
+        selling_price = 599
     elif raw_selling < 749:
         selling_price = 699
-    elif raw_selling < 949:
-        selling_price = 899
-    elif raw_selling < 1299:
-        selling_price = 1199
     else:
-        selling_price = round(raw_selling / 50) * 50 - 1
+        selling_price = 799
 
     gross_profit = round(selling_price - wholesale_cost - 60.0, 1)
     margin_pct = round((gross_profit / selling_price) * 100, 1) if selling_price > 0 else 0
@@ -167,15 +167,12 @@ def _format_deodap_item(p: Dict[str, Any], current_page: int, idx: int) -> Optio
         "description": body_html[:350] if body_html else ""
     }
 
-def harvest_deodap_bestsellers(limit_per_niche: int = 20, min_price: float = 35.0, max_price: float = 650.0, randomize: bool = True) -> List[Dict[str, Any]]:
+def harvest_deodap_bestsellers(limit_per_niche: int = 20, min_price: float = 35.0, max_price: float = 245.0, randomize: bool = True) -> List[Dict[str, Any]]:
     """
     Harvests top bestsellers from DeoDap across 5 niches (Home Decor, Kitchen, Gadgets, Festive, Gifts).
-    Guarantees at least limit_per_niche (e.g. 20) products per niche (100 total).
-    
-    Architecture:
-    1. Quick live fetch of 1 page from DeoDap with a tight 3.5s timeout.
-    2. Blends with bundled rich cache (1,000 DeoDap bestsellers) to ensure zero timeouts and guaranteed 20+ items per niche.
-    3. Randomizes / shuffles candidate pool on every call so scans always yield fresh rotating winners.
+    Enforces the 10-Point Dropshipping Checklist:
+    - Wholesale cost <= ₹245 so Selling Price stays strictly within ₹199–₹799 impulse range.
+    - Zero fragile glass / crystal balls / jewelry in Festive.
     """
     from pathlib import Path
     headers = {
@@ -185,7 +182,32 @@ def harvest_deodap_bestsellers(limit_per_niche: int = 20, min_price: float = 35.
     raw_candidates: List[Dict[str, Any]] = []
     seen_handles = set()
 
-    # 1. Quick live DeoDap attempt (1 page with randomized offset for fresh variety)
+    # 1. Load from bundled verified DeoDap bestsellers pool first
+    cache_file = Path(__file__).resolve().parent.parent.parent / "data" / "deodap_bestsellers_pool.json"
+    if cache_file.exists():
+        try:
+            with open(cache_file, "r", encoding="utf-8") as f:
+                cached_pool = json.load(f)
+            if randomize:
+                random.shuffle(cached_pool)
+            for idx, item in enumerate(cached_pool):
+                handle = item.get("handle")
+                cost = float(item.get("wholesale_cost") or item.get("wholesale_price") or 100.0)
+                if handle and handle not in seen_handles and 35.0 <= cost <= 245.0:
+                    seen_handles.add(handle)
+                    if item.get("niche") == "Festive" and not is_jewelry_item(item.get("title", ""), item.get("tags", ""), item.get("description", "")):
+                        item["niche"] = "Festive"
+                    else:
+                        item["niche"] = classify_niche(
+                            item.get("title", ""),
+                            item.get("tags", ""),
+                            item.get("description", "")
+                        )
+                    raw_candidates.append(item)
+        except Exception as e:
+            print(f"[DeoDap Harvester] Error loading cache pool: {e}")
+
+    # 2. Optional live DeoDap supplement
     start_page = random.randint(1, 3) if randomize else 1
     url = f"https://deodap.in/collections/all/products.json?limit=250&page={start_page}&sort_by=best-selling"
     try:
@@ -200,28 +222,6 @@ def harvest_deodap_bestsellers(limit_per_niche: int = 20, min_price: float = 35.
                     raw_candidates.append(formatted)
     except Exception as e:
         print(f"[DeoDap Harvester] Quick live fetch bypassed ({e}), using bundled cache.")
-
-    # 2. Enrich from bundled DeoDap bestsellers pool (818 categorized winning products)
-    cache_file = Path(__file__).resolve().parent.parent.parent / "data" / "deodap_bestsellers_pool.json"
-    if cache_file.exists():
-        try:
-            with open(cache_file, "r", encoding="utf-8") as f:
-                cached_pool = json.load(f)
-            if randomize:
-                random.shuffle(cached_pool)
-            for idx, item in enumerate(cached_pool):
-                handle = item.get("handle")
-                if handle and handle not in seen_handles:
-                    seen_handles.add(handle)
-                    # Re-classify niche to enforce negative jewelry filters & latest festive rules
-                    item["niche"] = classify_niche(
-                        item.get("title", ""),
-                        item.get("tags", ""),
-                        item.get("description", "")
-                    )
-                    raw_candidates.append(item)
-        except Exception as e:
-            print(f"[DeoDap Harvester] Error loading cache pool: {e}")
 
     # 3. Categorize candidates by niche
     niches = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts"]

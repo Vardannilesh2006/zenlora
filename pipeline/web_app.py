@@ -137,20 +137,32 @@ def product_detail(handle):
         except Exception as e:
             print(f"[!] Warning: Failed generating UGC on-demand: {e}")
 
-    # Ensure competitor pricing intelligence is present
-    if not product.get("competitor_pricing"):
+    # Always ensure fresh real competitor pricing intelligence (zero fake guessed prices)
+    try:
+        from winning_engine.competitor_pricing import get_competitor_price_intelligence
+        cp = get_competitor_price_intelligence(
+            product.get("title", ""),
+            float(product.get("wholesale_price", 120.0)),
+            product.get("primary_category", product.get("niche", "Home Decor"))
+        )
+        product["competitor_pricing"] = cp
+        product["suggested_price"] = cp.get("suggested_price", product.get("selling_price", 499))
+        product["strategy_insight"] = cp.get("strategy_insight", "")
+    except Exception as e:
+        print(f"[!] Warning: Failed generating competitor pricing on-demand: {e}")
+
+    # Ensure 10-Point Checklist Scorecard is present
+    if not product.get("checklist"):
         try:
-            from winning_engine.competitor_pricing import get_competitor_price_intelligence
-            cp = get_competitor_price_intelligence(
-                product.get("title", ""),
-                float(product.get("wholesale_price", 120.0)),
-                product.get("primary_category", product.get("niche", "Home Decor"))
-            )
-            product["competitor_pricing"] = cp
-            product["suggested_price"] = cp.get("suggested_price", product.get("selling_price", 499))
-            product["strategy_insight"] = cp.get("strategy_insight", "")
+            from winning_engine.winning_scorer import compute_winning_score
+            from winning_engine.social_spy import analyze_social_velocity
+            soc = analyze_social_velocity(product.get("title", ""), product.get("niche", "Festive"))
+            sc = compute_winning_score(product, {}, {}, soc)
+            product["checklist"] = sc.get("checklist", [])
+            product["passed_criteria_count"] = sc.get("passed_criteria_count", 8)
+            product["festival_mood"] = sc.get("festival_mood", "")
         except Exception as e:
-            print(f"[!] Warning: Failed generating competitor pricing on-demand: {e}")
+            print(f"[!] Warning: Failed generating checklist on-demand: {e}")
 
     # Ensure RTO Killer protocol data is present
     if not product.get("rto_killer"):
