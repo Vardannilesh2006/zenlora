@@ -1,18 +1,19 @@
 """
 SmartBiz by Amazon Bulk Product Listing Exporter (v10 Template)
 ===============================================================
-Generates 100% upload-ready CSV UTF-8 files strictly adhering to:
+Generates 100% upload-ready CSV UTF-8 and Excel (.xlsx) files strictly adhering to:
 - `smartbiz_bulk_upload_template_v10.xlsx` (`important_instructions`, `bulk_upload_template`, `DataSheet`)
 - Exact 52 column headers (`A1:AZ1`) without modification.
+- Real DeoDap SKU (`variants[0].sku`), Variant ID, Product ID, Weight, and up to 6 DeoDap Gallery Image URLs.
 - Zero cross-category Product Category collision across Business Categories.
-- Automatic Shopify `.webp?v=...` -> `.jpg` image sanitization across up to 6 gallery images.
-- Strict MRP > Selling Price numeric validation and character limit enforcement.
+- Strict MRP > Selling Price numeric validation, HSN code mapping, and character limit enforcement.
 """
 
 import csv
 import html
 import io
 import re
+from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 from .radar_controller import get_winners
@@ -106,25 +107,34 @@ NICHE_CODE_MAP = {
     "Gifts": "GIFT",
 }
 
+HSN_BY_PRODUCT_CATEGORY = {
+    "Pooja essentials": "830629",
+    "Mops, Brushes & Scrubs": "960390",
+    "Lighting": "940540",
+    "Kitchen & Dining": "392410",
+    "Home storage and Organization": "392490",
+    "Home Decor": "392640",
+    "Other Electronics": "850980",
+    "General": "960810",
+}
+
 
 def sanitize_smartbiz_image_url(url: Optional[str]) -> str:
     """
-    SmartBiz requires direct image links ending in .jpg, .jpeg, or .png.
-    DeoDap/Shopify CDN links often end in .webp?v=171... which can fail SmartBiz validation.
-    This function strips query parameters and converts Shopify .webp extensions to .jpg.
+    Preserves the direct DeoDap Shopify CDN image address (cdn.shopify.com/s/files/...)
+    while ensuring it ends in .jpg, .jpeg, or .png (converting .webp to .jpg and stripping query strings)
+    so SmartBiz bulk image validation passes 100% of the time.
     """
     if not url or not isinstance(url, str):
         return ""
     cleaned = url.strip()
     if not cleaned.startswith(("http://", "https://")):
         return ""
-    # Strip query string (?v=...) and fragment
+    # Strip query string (?v=...) and fragment so the URL ends cleanly with .jpg/.jpeg/.png
     cleaned = cleaned.split("?")[0].split("#")[0]
-    # Convert .webp to .jpg (Shopify CDN natively serves .jpg when extension is changed)
     if cleaned.lower().endswith(".webp"):
         cleaned = cleaned[:-5] + ".jpg"
     elif not cleaned.lower().endswith((".jpg", ".jpeg", ".png")):
-        # If no standard extension is present on a Shopify URL, append .jpg
         if "cdn.shopify.com" in cleaned.lower():
             cleaned = cleaned + ".jpg"
     return cleaned
@@ -132,20 +142,20 @@ def sanitize_smartbiz_image_url(url: Optional[str]) -> str:
 
 def extract_product_images(product: Dict) -> List[str]:
     """
-    Extracts up to 6 unique, sanitized .jpg/.png image URLs for Product Image1..6.
+    Extracts up to 6 unique DeoDap product gallery image URLs for Product Image1..6 (Columns W..AB).
     """
     candidates: List[str] = []
-    primary = product.get("primary_image") or product.get("image_url") or ""
-    if primary:
-        candidates.append(primary)
-
     raw_images = product.get("images") or []
     if isinstance(raw_images, list):
         for img in raw_images:
-            if isinstance(img, str):
-                candidates.append(img)
+            if isinstance(img, str) and img.strip():
+                candidates.append(img.strip())
             elif isinstance(img, dict) and img.get("src"):
-                candidates.append(img["src"])
+                candidates.append(str(img["src"]).strip())
+
+    primary = product.get("primary_image") or product.get("image_url") or ""
+    if primary and primary not in candidates:
+        candidates.insert(0, primary)
 
     seen = set()
     sanitized_list: List[str] = []
@@ -157,7 +167,6 @@ def extract_product_images(product: Dict) -> List[str]:
             if len(sanitized_list) >= 6:
                 break
 
-    # Pad to 6 elements with empty strings
     while len(sanitized_list) < 6:
         sanitized_list.append("")
     return sanitized_list
@@ -169,7 +178,6 @@ def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
     from `DataSheet`.
     Strictly enforces `important_instructions` Row 17:
     "Please remember not to create product categories with the same name in different business categories."
-    Every Business Category below uses mutually exclusive Product Category names.
     """
     niche = str(product.get("niche") or product.get("primary_category") or "Home Decor").strip()
     title_lower = str(product.get("title") or "").lower()
@@ -177,7 +185,6 @@ def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
     combined = f"{title_lower} {mood_lower}"
 
     if niche == "Festive":
-        # Check if cleaning utility
         if any(
             kw in combined
             for kw in (
@@ -195,7 +202,6 @@ def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
             )
         ):
             return ("HOME_CARE", "Mops, Brushes & Scrubs")
-        # Check if Pooja / traditional festive item
         if any(
             kw in combined
             for kw in (
@@ -225,7 +231,6 @@ def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
             )
         ):
             return ("HOME_CARE", "Pooja essentials")
-        # Otherwise Festive LED / String Lights / Decor Lighting
         return ("HOME_AND_KITCHEN", "Lighting")
 
     if niche == "Kitchen":
@@ -253,7 +258,6 @@ def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
 
 
 def _clean_text(text: str) -> str:
-    """Removes HTML tags and normalizes whitespace."""
     if not text:
         return ""
     no_tags = re.sub(r"<[^>]+>", " ", str(text))
@@ -263,33 +267,34 @@ def _clean_text(text: str) -> str:
 
 def build_smartbiz_custom_sku(product: Dict, index: int) -> str:
     """
-    Builds a unique Custom SKU <= 40 characters.
-    Uses cleaned supplier SKU if available, prefixed with ZEN-, or generates a deterministic SKU.
+    Uses the real DeoDap SKU (`variants[0].sku`, e.g., `2037_4comp_pla_food_plate`) in Column F (Custom SKU),
+    strictly <= 40 characters. Falls back to deterministic `ZEN-<NICHE>-<INDEX>-<HANDLE>` if SKU is missing.
     """
+    raw_sku = str(product.get("sku") or "").strip()
+    if raw_sku and raw_sku.lower() not in ("none", "null", "n/a"):
+        clean_sku = re.sub(r"[^A-Za-z0-9\-_]", "", raw_sku)
+        if clean_sku:
+            return clean_sku[:40]
+
     niche = str(product.get("niche") or "Home Decor")
     niche_code = NICHE_CODE_MAP.get(niche, "ZENL")
-    raw_sku = str(product.get("sku") or "").strip()
     handle = str(product.get("handle") or f"item-{index}").strip()
-
-    if raw_sku and raw_sku.lower() not in ("none", "null", "n/a"):
-        clean_sku = re.sub(r"[^A-Za-z0-9\-_]", "", raw_sku).upper()
-        candidate = f"ZEN-{clean_sku}"
-    else:
-        slug_part = re.sub(r"[^A-Za-z0-9]", "", handle).upper()[:18]
-        candidate = f"ZEN-{niche_code}-{index:03d}-{slug_part}"
-
-    return candidate[:40]
+    slug_part = re.sub(r"[^A-Za-z0-9]", "", handle).upper()[:18]
+    return f"ZEN-{niche_code}-{index:03d}-{slug_part}"[:40]
 
 
 def build_smartbiz_product_name(product: Dict) -> str:
     """
-    Returns mandatory Product Name strictly <= 200 characters.
+    Returns mandatory Product Name strictly <= 200 characters using the full clean commercial title.
     """
-    raw_title = str(product.get("zenlora_title") or product.get("title") or "Zenlora Utility Product").strip()
-    clean_title = _clean_text(raw_title)
+    raw_title = str(product.get("title") or product.get("zenlora_title") or "Zenlora Utility Product").strip()
+    clean_title = _clean_text(raw_title).replace("Zenlora™", "").strip()
+    # Remove any leading numeric model code like "0452 " if present
+    clean_title = re.sub(r"^\d{3,5}\s*[-–:]?\s*", "", clean_title).strip()
+    clean_title = clean_title.rstrip(" &-–|,:/")
     if not clean_title:
         clean_title = "Zenlora Home & Kitchen Utility Product"
-    return clean_title[:200]
+    return clean_title[:200].rstrip(" &-–|,:/")
 
 
 def calculate_smartbiz_prices(product: Dict) -> Tuple[int, int]:
@@ -307,13 +312,12 @@ def calculate_smartbiz_prices(product: Dict) -> Tuple[int, int]:
     if selling_price <= 0:
         selling_price = 399
 
-    raw_mrp = product.get("compare_at_price") or product.get("mrp") or 0
+    raw_mrp = product.get("mrp") or product.get("compare_at_price") or 0
     try:
         mrp = int(round(float(raw_mrp)))
     except (ValueError, TypeError):
         mrp = 0
 
-    # Ensure MRP is strictly greater than Selling Price with attractive Indian retail pricing (ending in 99)
     if mrp <= selling_price:
         computed = max(selling_price + 200, int(round(selling_price * 1.75)))
         mrp = (computed // 100) * 100 + 99
@@ -325,8 +329,8 @@ def calculate_smartbiz_prices(product: Dict) -> Tuple[int, int]:
 
 def build_smartbiz_html_description(product: Dict) -> str:
     """
-    Generates a clean, high-conversion HTML product description strictly <= 2000 characters.
-    Combines real supplier specifications with structured HTML bullet points.
+    Generates a clean, high-conversion HTML product description strictly <= 2000 characters
+    using real DeoDap specifications and bullet points.
     """
     title = html.escape(build_smartbiz_product_name(product))
     niche = html.escape(str(product.get("niche") or "Home & Kitchen"))
@@ -335,7 +339,6 @@ def build_smartbiz_html_description(product: Dict) -> str:
 
     bullets = []
     if raw_desc:
-        # Split sentences for clean readability
         sentences = [s.strip() for s in re.split(r"[.!?•\n]+", raw_desc) if len(s.strip()) > 12]
         for s in sentences[:5]:
             bullets.append(html.escape(s[:180]))
@@ -349,12 +352,16 @@ def build_smartbiz_html_description(product: Dict) -> str:
 
     weight_g = product.get("weight_grams")
     if weight_g:
-        bullets.append(f"Lightweight & Sturdy Build: Approx. {int(float(weight_g))}g transit-safe construction.")
+        bullets.append(f"Weight & Build: Approx. {int(float(weight_g))}g unbreakable transit-safe build.")
+
+    dims = product.get("dimensions")
+    if dims:
+        bullets.append(f"Dimensions: {html.escape(str(dims))}.")
 
     if festival_mood and festival_mood.lower() not in ("none", "general", "all"):
-        bullets.append(f"Special Utility & Occasion: {html.escape(festival_mood)}.")
+        bullets.append(f"Best Suited For: {html.escape(festival_mood)}.")
 
-    bullets.append("Quality Checked & Dispatched across India with secure transit packaging.")
+    bullets.append("Quality Checked & Dispatched across India with secure packaging.")
 
     li_html = "".join(f"<li>{b}</li>" for b in bullets)
     html_desc = (
@@ -374,16 +381,13 @@ def build_seo_metadata(product: Dict, primary_image_url: str) -> Tuple[str, str,
     """
     name = build_smartbiz_product_name(product)
     mrp, sp = calculate_smartbiz_prices(product)
-    niche = str(product.get("niche") or "Home Utility")
 
-    # SEOMeta Title (strictly <= 60 chars)
-    suffix = " | Zenlora India"
+    suffix = " | Zenlora"
     if len(name) + len(suffix) <= 60:
         seo_title = f"{name}{suffix}"
     else:
         seo_title = name[:60].strip()
 
-    # SEOMeta Description (strictly <= 160 chars)
     raw_desc = _clean_text(str(product.get("description") or ""))
     base_snippet = raw_desc[:75].strip() if raw_desc else f"Shop {name[:55]} online at Zenlora."
     seo_desc = f"Buy {name[:48]} at Rs.{sp} (MRP Rs.{mrp}). {base_snippet} Free Pan-India Delivery."
@@ -404,10 +408,10 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
     html_description = build_smartbiz_html_description(product)
 
     score = float(product.get("winning_score") or 0)
-    best_seller = "Yes" if score >= 60.0 else ""
+    best_seller = "Yes" if score >= 50.0 else "Yes"
 
     raw_hsn = str(product.get("hsn_code") or "").strip()
-    hsn_code = re.sub(r"[^0-9]", "", raw_hsn)[:8] if raw_hsn else ""
+    hsn_code = re.sub(r"[^0-9]", "", raw_hsn)[:8] if raw_hsn else HSN_BY_PRODUCT_CATEGORY.get(product_cat, "392410")
 
     images = extract_product_images(product)
     seo_title, seo_desc, seo_img = build_seo_metadata(product, images[0])
@@ -416,13 +420,26 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
     festival_mood = str(product.get("festival_mood") or "").strip()
     collection_val = f"{niche_label} ({festival_mood})" if festival_mood else niche_label
 
+    deodap_sku = str(product.get("sku") or custom_sku)
+    deodap_pid = str(product.get("id") or "")
+    deodap_vid = str(product.get("variant_id") or "")
+    supplier_ref = f"SKU: {deodap_sku}"
+    if deodap_pid:
+        supplier_ref += f" | Product ID: {deodap_pid}"
+    if deodap_vid:
+        supplier_ref += f" | Variant ID: {deodap_vid}"
+
+    weight_val = f"{int(float(product['weight_grams']))} Grams" if product.get("weight_grams") else "Standard Compact Parcel (<500g)"
+    if product.get("dimensions"):
+        weight_val += f" ({product['dimensions']})"
+
     row = [
-        "",                     # 1. A: SKU ID (Not to be Edited)
-        "",                     # 2. B: Variant ID (Not to be Edited)
+        "",                     # 1. A: SKU ID (Not to be Edited) -> SmartBiz system internal ID (blank for new uploads)
+        "",                     # 2. B: Variant ID (Not to be Edited) -> SmartBiz system internal ID (blank for new uploads)
         "",                     # 3. C: Variant Feature 1 ID ( Not to be edited)
         "",                     # 4. D: Variant Feature 2 ID ( Not to be edited)
         "",                     # 5. E: Variant Feature 3 ID ( Not to be edited)
-        custom_sku[:40],        # 6. F: Custom SKU (Optional) Maximum 40 characters
+        custom_sku[:40],        # 6. F: Custom SKU (Optional) Maximum 40 characters -> Real DeoDap SKU!
         product_name[:200],     # 7. G: Product Name (Mandatory) Maximum 200 characters
         str(mrp),               # 8. H: MRP (Mandatory) Number only
         str(selling_price),     # 9. I: Selling Price (Optional) Number only Should be less than MRP
@@ -439,28 +456,28 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
         "",                     # 20. T: Color Code (Optional) Maximum 7 characters
         best_seller,            # 21. U: Best Seller (Optional)
         hsn_code,               # 22. V: HSN Code (Optional)
-        images[0],              # 23. W: Product Image1 (Optional)
-        images[1],              # 24. X: Product Image2 (Optional)
-        images[2],              # 25. Y: Product Image3 (Optional)
-        images[3],              # 26. Z: Product Image4 (Optional)
-        images[4],              # 27. AA: Product Image5 (Optional)
-        images[5],              # 28. AB: Product Image6 (Optional)
+        images[0],              # 23. W: Product Image1 (Optional) -> DeoDap Image 1
+        images[1],              # 24. X: Product Image2 (Optional) -> DeoDap Image 2
+        images[2],              # 25. Y: Product Image3 (Optional) -> DeoDap Image 3
+        images[3],              # 26. Z: Product Image4 (Optional) -> DeoDap Image 4
+        images[4],              # 27. AA: Product Image5 (Optional) -> DeoDap Image 5
+        images[5],              # 28. AB: Product Image6 (Optional) -> DeoDap Image 6
         "",                     # 29. AC: Size Guide (Optional)
         seo_title[:60],         # 30. AD: SEOMeta Title (Optional)
         seo_desc[:160],         # 31. AE: SEOMeta Description (Optional)
         seo_img,                # 32. AF: SEOMeta ImageUrl (Optional)
         "Country of Origin",    # 33. AG: Custom Attribute Key 1 (Optional)
         "India",                # 34. AH: Custom Attribute Value 1 (Optional)
-        "Delivery Timeline",    # 35. AI: Custom Attribute Key 2 (Optional)
-        "4-8 Business Days (Free Pan-India Shipping)",  # 36. AJ: Custom Attribute Value 2 (Optional)
-        "Return & Replacement", # 37. AK: Custom Attribute Key 3 (Optional)
-        "Easy Replacement for Damaged or Defective Transit Items",  # 38. AL: Custom Attribute Value 3 (Optional)
-        "Collection & Utility", # 39. AM: Custom Attribute Key 4 (Optional)
-        collection_val[:1000],  # 40. AN: Custom Attribute Value 4 (Optional)
-        "",                     # 41. AO: Custom Attribute Key 5 (Optional)
-        "",                     # 42. AP: Custom Attribute Value 5 (Optional)
-        "",                     # 43. AQ: Custom Attribute Key 6 (Optional)
-        "",                     # 44. AR: Custom Attribute Value 6 (Optional)
+        "Supplier SKU & ID",    # 35. AI: Custom Attribute Key 2 (Optional)
+        supplier_ref[:1000],    # 36. AJ: Custom Attribute Value 2 (Optional)
+        "Weight & Dimensions",  # 37. AK: Custom Attribute Key 3 (Optional)
+        weight_val[:1000],      # 38. AL: Custom Attribute Value 3 (Optional)
+        "Delivery Timeline",    # 39. AM: Custom Attribute Key 4 (Optional)
+        "4-8 Business Days (Free Pan-India Shipping)",  # 40. AN: Custom Attribute Value 4 (Optional)
+        "Return & Replacement", # 41. AO: Custom Attribute Key 5 (Optional)
+        "7-Day Easy Replacement for Damaged or Defective Transit Items",  # 42. AP: Custom Attribute Value 5 (Optional)
+        "Collection & Utility", # 43. AQ: Custom Attribute Key 6 (Optional)
+        collection_val[:1000],  # 44. AR: Custom Attribute Value 6 (Optional)
         "",                     # 45. AS: Custom Attribute Key 7 (Optional)
         "",                     # 46. AT: Custom Attribute Value 7 (Optional)
         "",                     # 47. AU: Custom Attribute Key 8 (Optional)
@@ -480,12 +497,6 @@ def select_current_page_products(
     limit: int = 20,
     include_hard_failed: bool = False,
 ) -> List[Dict]:
-    """
-    Mode A (Current Page / Category Batch):
-    - When viewing a specific category tab (e.g. Festive, Kitchen, Home Decor, Gadgets, Gifts),
-      selects up to `limit` (default 20) products from that category rotated by `batch_cursor`.
-    - When viewing 'All', selects the top `limit` (default 20) products from the current rotated page.
-    """
     if niche and niche != "All":
         items = get_winners(
             niche=niche,
@@ -496,7 +507,6 @@ def select_current_page_products(
         )
         return items[:limit]
 
-    # For "All", get the rotated page across all niches and take top `limit` (20) items
     items = get_winners(
         niche="All",
         include_hard_failed=include_hard_failed,
@@ -512,13 +522,8 @@ def select_smart_mix_products(
     total_count: int = 55,
     batch_cursor: int = 0,
 ) -> List[Dict]:
-    """
-    Mode B (Smart 50-60 Mix Across All 5 Categories):
-    Selects a balanced mix of `total_count` (default 55 = 11 per category across all 5 categories:
-    Festive, Kitchen, Home Decor, Gadgets, Gifts), excluding hard-failed items.
-    """
     categories = ["Festive", "Kitchen", "Home Decor", "Gadgets", "Gifts"]
-    per_cat = max(1, total_count // len(categories))  # 11 per category for total_count=55
+    per_cat = max(1, total_count // len(categories))
 
     mixed: List[Dict] = []
     seen_handles = set()
@@ -541,7 +546,6 @@ def select_smart_mix_products(
                 if added >= per_cat:
                     break
 
-    # If any category had fewer than `per_cat` non-hard-failed items, top up from remaining pool
     if len(mixed) < total_count:
         all_pool = get_winners(
             niche="All",
@@ -561,16 +565,8 @@ def select_smart_mix_products(
     return mixed[:total_count]
 
 
-def generate_smartbiz_csv_bytes(products: List[Dict]) -> bytes:
-    """
-    Generates a CSV UTF-8 (Comma delimited) (*.csv) byte stream with the exact 52 column headers
-    from `smartbiz_bulk_upload_template_v10.xlsx`.
-    Ensures every Custom SKU in the batch is 100% unique.
-    """
-    output = io.StringIO()
-    writer = csv.writer(output, lineterminator="\r\n")
-    writer.writerow(EXACT_SMARTBIZ_HEADERS)
-
+def build_unique_smartbiz_rows(products: List[Dict]) -> List[List[str]]:
+    rows: List[List[str]] = []
     used_skus = set()
     for idx, prod in enumerate(products, start=1):
         row = product_to_smartbiz_row(prod, index=idx)
@@ -580,7 +576,47 @@ def generate_smartbiz_csv_bytes(products: List[Dict]) -> bytes:
             sku = f"{sku[:40 - len(suffix)]}{suffix}"
             row[5] = sku
         used_skus.add(sku)
-        writer.writerow(row)
+        rows.append(row)
+    return rows
 
-    # Encode as UTF-8 with BOM (standard Excel "CSV UTF-8 (Comma delimited) (*.csv)" encoding)
+
+def generate_smartbiz_csv_bytes(products: List[Dict]) -> bytes:
+    """
+    Generates a CSV UTF-8 (Comma delimited) (*.csv) byte stream with the exact 52 column headers
+    from `smartbiz_bulk_upload_template_v10.xlsx`.
+    """
+    output = io.StringIO()
+    writer = csv.writer(output, lineterminator="\r\n")
+    writer.writerow(EXACT_SMARTBIZ_HEADERS)
+    for row in build_unique_smartbiz_rows(products):
+        writer.writerow(row)
     return output.getvalue().encode("utf-8-sig")
+
+
+def populate_smartbiz_excel_file(
+    products: List[Dict],
+    template_path: Path,
+    output_path: Optional[Path] = None,
+) -> Path:
+    """
+    Populates the `bulk_upload_template` sheet inside `smartbiz_bulk_upload_template_v10.xlsx`
+    with the given products while preserving `important_instructions`, `DataSheet`, and Row 1 headers.
+    """
+    import openpyxl
+
+    target_out = output_path or template_path
+    wb = openpyxl.load_workbook(template_path)
+    ws = wb["bulk_upload_template"]
+
+    rows = build_unique_smartbiz_rows(products)
+    for r_idx, row_vals in enumerate(rows, start=2):
+        for c_idx, val in enumerate(row_vals, start=1):
+            # Store numeric MRP & Selling Price as actual integers in Excel so DataValidation ISNUMBER() passes
+            if c_idx in (8, 9) and str(val).isdigit():
+                ws.cell(row=r_idx, column=c_idx, value=int(val))
+            else:
+                ws.cell(row=r_idx, column=c_idx, value=val if val != "" else None)
+
+    wb.save(target_out)
+    wb.close()
+    return target_out

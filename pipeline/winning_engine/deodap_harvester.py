@@ -198,8 +198,15 @@ def _format_deodap_item(p: Dict[str, Any], current_page: int, idx: int, source_u
     dimensions = _extract_dimensions(f"{title} {clean_desc}")
     deliv_min, deliv_max = _extract_delivery_days(clean_desc)
 
+    raw_compare = variant.get("compare_at_price")
+    try:
+        compare_at_price = float(raw_compare) if raw_compare is not None and float(raw_compare) > 0 else None
+    except (ValueError, TypeError):
+        compare_at_price = None
+
     return {
         "id": p.get("id"),
+        "variant_id": variant.get("id"),
         "handle": handle,
         "title": title,
         "deodap_url": f"https://www.deodap.in/products/{handle}",
@@ -209,9 +216,10 @@ def _format_deodap_item(p: Dict[str, Any], current_page: int, idx: int, source_u
         "method": "api",
         "primary_image": primary_image,
         "image_url": primary_image,
-        "images": images[:4],
+        "images": images[:6],
         "wholesale_cost": wholesale_cost,
         "wholesale_price": wholesale_cost,
+        "compare_at_price": compare_at_price,
         "in_stock": bool(in_stock) if in_stock is not None else None,
         "niche": niche,
         "weight_grams": weight_grams,
@@ -220,8 +228,9 @@ def _format_deodap_item(p: Dict[str, Any], current_page: int, idx: int, source_u
         "delivery_max_days": deliv_max,
         "bestseller_rank": (current_page - 1) * 250 + idx + 1,
         "sku": variant.get("sku") or None,
+        "barcode": variant.get("barcode") or None,
         "tags": tags,
-        "description": clean_desc[:400] if clean_desc else ""
+        "description": clean_desc[:800] if clean_desc else ""
     }
 
 

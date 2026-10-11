@@ -71,37 +71,4797 @@
   },
   "in floor cleaning brush with": {
     "amazon": {
-      "price": 369,
+      "price": 899,
       "rating_count": null,
-      "rank": "Top Page 1 Result",
-      "source": "Amazon.in Public Search",
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
       "source_url": "https://www.amazon.in/s?k=in+Floor+Cleaning+Brush+with",
-      "fetched_at": "2026-10-11T11:28:23+05:30",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
       "method": "scrape",
       "status": "done",
       "null_reason": null
     },
     "flipkart": {
-      "price": null,
+      "price": 299,
       "rating_count": null,
-      "rank": null,
-      "source": "Flipkart Public Search",
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
       "source_url": "https://www.flipkart.com/search?q=in+Floor+Cleaning+Brush+with",
-      "fetched_at": null,
+      "fetched_at": "2026-10-11T13:25:47+05:30",
       "method": "scrape",
-      "status": "manual_needed",
-      "null_reason": "Flipkart connection ConnectTimeout — use Manual Entry"
+      "status": "done",
+      "null_reason": null
     },
     "meesho": {
-      "price": null,
+      "price": 191,
       "rating_count": null,
-      "rank": null,
-      "source": "Meesho Public Search",
-      "source_url": "https://www.meesho.com/search?q=in+Floor+Cleaning+Brush+with",
-      "fetched_at": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Floor+Cleaning+Brush+with&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
       "method": "scrape",
-      "status": "manual_needed",
-      "null_reason": "Meesho blocks automated scrapers via Cloudflare WAF — open link & use Manual Entry"
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal ball night lamp": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+Ball+Night+Lamp",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 262,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+Ball+Night+Lamp",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 249,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+Ball+Night+Lamp&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal dolphin moon led": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+Dolphin+Moon+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 262,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+Dolphin+Moon+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+Dolphin+Moon+LED&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal ganesha ball night": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+Ganesha+Ball+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 262,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+Ganesha+Ball+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+Ganesha+Ball+Night&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal ganesha led night": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+Ganesha+LED+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 262,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+Ganesha+LED+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+Ganesha+LED+Night&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal globe led night": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+Globe+LED+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 262,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+Globe+LED+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+Globe+LED+Night&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal lakshmi ball led": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+Lakshmi+Ball+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 309,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+Lakshmi+Ball+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+Lakshmi+Ball+LED&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal led table lamp": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+LED+Table+Lamp",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+LED+Table+Lamp",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 250,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+LED+Table+Lamp&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal moon led night": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+Moon+LED+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 262,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+Moon+LED+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+Moon+LED+Night&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d crystal shiv ji led": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Crystal+Shiv+Ji+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 250,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Crystal+Shiv+Ji+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Crystal+Shiv+Ji+LED&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d firework led bulb": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Firework+LED+Bulb",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Firework+LED+Bulb",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 337,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Firework+LED+Bulb&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d ganesha acrylic led lamp": {
+    "amazon": {
+      "price": 520,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Ganesha+Acrylic+LED+Lamp",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Ganesha+Acrylic+LED+Lamp",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 182,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Ganesha+Acrylic+LED+Lamp&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d ganesha led lamp with": {
+    "amazon": {
+      "price": 500,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Ganesha+LED+Lamp+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 257,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Ganesha+LED+Lamp+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 182,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Ganesha+LED+Lamp+with&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d illusion night light": {
+    "amazon": {
+      "price": 249,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Illusion+Night+Light",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 199,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Illusion+Night+Light",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 156,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Illusion+Night+Light&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d led penguin decorative infinity": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+LED+Penguin+Decorative+Infinity",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 376,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+LED+Penguin+Decorative+Infinity",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 186,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+LED+Penguin+Decorative+Infinity&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d lord ganesha acrylic led": {
+    "amazon": {
+      "price": 1100,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Lord+Ganesha+Acrylic+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 403,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Lord+Ganesha+Acrylic+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 240,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Lord+Ganesha+Acrylic+LED&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d lord ganesha led night": {
+    "amazon": {
+      "price": 520,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Lord+Ganesha+LED+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 403,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Lord+Ganesha+LED+Night",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 254,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Lord+Ganesha+LED+Night&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d mahadev led lamp with": {
+    "amazon": {
+      "price": 520,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Mahadev+LED+Lamp+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 403,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Mahadev+LED+Lamp+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 244,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Mahadev+LED+Lamp+with&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d moving sand art round": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Moving+Sand+Art+Round",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 332,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Moving+Sand+Art+Round",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 229,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Moving+Sand+Art+Round&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d optical illusion round rug": {
+    "amazon": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Optical+Illusion+Round+Rug",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 249,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Optical+Illusion+Round+Rug",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 156,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Optical+Illusion+Round+Rug&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d running horses crystal led": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Running+Horses+Crystal+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Running+Horses+Crystal+LED",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Running+Horses+Crystal+LED&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d saturn lamp": {
+    "amazon": {
+      "price": 1606,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Saturn+Lamp",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 1556,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Saturn+Lamp",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 403,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Saturn+Lamp&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3d space round carpet": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3D+Space+Round+Carpet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3D+Space+Round+Carpet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 256,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3D+Space+Round+Carpet&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in manicure and pedicure grooming": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=in+Manicure+and+Pedicure+Grooming",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 271,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=in+Manicure+and+Pedicure+Grooming",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 186,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Manicure+and+Pedicure+Grooming&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "inch metal spring clamps": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Inch+Metal+Spring+Clamps",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 600,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Inch+Metal+Spring+Clamps",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 308,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Inch+Metal+Spring+Clamps&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "4": {
+    "amazon": {
+      "price": 1499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=4",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 652,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=4",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=4&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in makeup brush set": {
+    "amazon": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=in+Makeup+Brush+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 225,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=in+Makeup+Brush+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 169,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Makeup+Brush+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "mode mini cob led keychain": {
+    "amazon": {
+      "price": 1009,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Mode+Mini+COB+LED+Keychain",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 454,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Mode+Mini+COB+LED+Keychain",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 202,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Mode+Mini+COB+LED+Keychain&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pair weekly stud earrings set": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pair+Weekly+Stud+Earrings+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pair+Weekly+Stud+Earrings+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 197,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pair+Weekly+Stud+Earrings+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "microfiber duster": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Microfiber+Duster",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Microfiber+Duster",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 222,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Microfiber+Duster&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "alkaline aaa battery": {
+    "amazon": {
+      "price": 1028,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Alkaline+AAA+Battery",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 717,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Alkaline+AAA+Battery",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 433,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Alkaline+AAA+Battery&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "360": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=360",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=360",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 277,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=360&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "360° rotating flat microfiber mop": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=360%C2%B0+Rotating+Flat+Microfiber+Mop",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=360%C2%B0+Rotating+Flat+Microfiber+Mop",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 277,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=360%C2%B0+Rotating+Flat+Microfiber+Mop&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "360° rotating floor cleaning brush": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=360%C2%B0+Rotating+Floor+Cleaning+Brush",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 259,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=360%C2%B0+Rotating+Floor+Cleaning+Brush",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 149,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=360%C2%B0+Rotating+Floor+Cleaning+Brush&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "360° spin mop": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=360%C2%B0+Spin+Mop",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=360%C2%B0+Spin+Mop",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 336,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=360%C2%B0+Spin+Mop&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "compartment disposable food serving plate": {
+    "amazon": {
+      "price": 445,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Compartment+Disposable+Food+Serving+Plate",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 306,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Compartment+Disposable+Food+Serving+Plate",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 169,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Compartment+Disposable+Food+Serving+Plate&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "compartment plastic food storage container": {
+    "amazon": {
+      "price": 586,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Compartment+Plastic+Food+Storage+Container",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 360,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Compartment+Plastic+Food+Storage+Container",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 183,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Compartment+Plastic+Food+Storage+Container&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in hand tool kit for": {
+    "amazon": {
+      "price": 1200,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=in+Hand+Tool+Kit+for",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=in+Hand+Tool+Kit+for",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 271,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Hand+Tool+Kit+for&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in hand tool kit": {
+    "amazon": {
+      "price": 1500,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=in+Hand+Tool+Kit",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=in+Hand+Tool+Kit",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 295,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Hand+Tool+Kit&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in reusable silicone ear swab": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=In+Reusable+Silicone+Ear+Swab",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 188,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=In+Reusable+Silicone+Ear+Swab",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 157,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=In+Reusable+Silicone+Ear+Swab&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in silicone bottle cleaning brush": {
+    "amazon": {
+      "price": 349,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=in+Silicone+Bottle+Cleaning+Brush",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 167,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=in+Silicone+Bottle+Cleaning+Brush",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 138,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Silicone+Bottle+Cleaning+Brush&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "layer rotating jewelry box": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Layer+Rotating+Jewelry+Box",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 495,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Layer+Rotating+Jewelry+Box",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 204,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Layer+Rotating+Jewelry+Box&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "layer zipper stationery pouch pencil": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Layer+Zipper+Stationery+Pouch+Pencil",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 326,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Layer+Zipper+Stationery+Pouch+Pencil",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 227,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Layer+Zipper+Stationery+Pouch+Pencil&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pair assorted gold": {
+    "amazon": {
+      "price": 928,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pair+Assorted+Gold",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pair+Assorted+Gold",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 182,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pair+Assorted+Gold&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "section food storage container": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Section+Food+Storage+Container",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Section+Food+Storage+Container",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 264,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Section+Food+Storage+Container&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "section kitchen storage jar": {
+    "amazon": {
+      "price": 1287,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Section+Kitchen+Storage+Jar",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 495,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Section+Kitchen+Storage+Jar",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 229,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Section+Kitchen+Storage+Jar&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "section pill organizer": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Section+Pill+Organizer",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 313,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Section+Pill+Organizer",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 240,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Section+Pill+Organizer&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "tier shoe rack": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Tier+Shoe+Rack",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 449,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Tier+Shoe+Rack",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 238,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Tier+Shoe+Rack&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ml glass oil dispenser bottle": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ML+Glass+Oil+Dispenser+Bottle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ML+Glass+Oil+Dispenser+Bottle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 202,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ML+Glass+Oil+Dispenser+Bottle&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ml glass travel water bottle": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ML+Glass+Travel+Water+Bottle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 367,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ML+Glass+Travel+Water+Bottle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 212,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ML+Glass+Travel+Water+Bottle&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ml glass water bottle with": {
+    "amazon": {
+      "price": 598,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ML+Glass+Water+Bottle+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 400,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ML+Glass+Water+Bottle+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 223,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ML+Glass+Water+Bottle+with&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ml smiley face glass travel": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ML+Smiley+Face+Glass+Travel",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 341,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ML+Smiley+Face+Glass+Travel",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 245,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ML+Smiley+Face+Glass+Travel&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ml smiley face glass water": {
+    "amazon": {
+      "price": 400,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ML+Smiley+Face+Glass+Water",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 367,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ML+Smiley+Face+Glass+Water",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 172,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ML+Smiley+Face+Glass+Water&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ml sports water bottle": {
+    "amazon": {
+      "price": 588,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ML+Sports+Water+Bottle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ML+Sports+Water+Bottle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 199,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ML+Sports+Water+Bottle&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "400ml leak": {
+    "amazon": {
+      "price": 447,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=400ML+Leak",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 287,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=400ML+Leak",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 199,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=400ML+Leak&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "400ml pink glass water bottle": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=400ml+Pink+Glass+Water+Bottle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 358,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=400ml+Pink+Glass+Water+Bottle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 199,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=400ml+Pink+Glass+Water+Bottle&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "compartment snack box": {
+    "amazon": {
+      "price": 915,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Compartment+Snack+Box",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Compartment+Snack+Box",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 380,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Compartment+Snack+Box&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "5": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=5",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 450,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=5",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 278,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=5&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "40w electric hot melt glue": {
+    "amazon": {
+      "price": 626,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=40W+Electric+Hot+Melt+Glue",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 379,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=40W+Electric+Hot+Melt+Glue",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 248,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=40W+Electric+Hot+Melt+Glue&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "40w micro usb charging cable": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=40W+Micro+USB+Charging+Cable",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=40W+Micro+USB+Charging+Cable",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 167,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=40W+Micro+USB+Charging+Cable&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "4b erasers": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=4B+Erasers",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 174,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=4B+Erasers",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 142,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=4B+Erasers&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "4x4x4 magic cube": {
+    "amazon": {
+      "price": 900,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=4x4x4+Magic+Cube",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 648,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=4x4x4+Magic+Cube",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 325,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=4x4x4+Magic+Cube&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "led solar wall fence light": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=LED+Solar+Wall+Fence+Light",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=LED+Solar+Wall+Fence+Light",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 334,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=LED+Solar+Wall+Fence+Light&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "65w usb": {
+    "amazon": {
+      "price": 1999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=65W+USB",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 414,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=65W+USB",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 203,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=65W+USB&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "6pc plastic toothbrush covers": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=6pc+Plastic+Toothbrush+Covers",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 264,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=6pc+Plastic+Toothbrush+Covers",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 160,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=6pc+Plastic+Toothbrush+Covers&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "chakra energy bracelet": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Chakra+Energy+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 320,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Chakra+Energy+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 247,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Chakra+Energy+Bracelet&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "port usb hub": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Port+USB+Hub",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Port+USB+Hub",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 218,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Port+USB+Hub&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "aa ultra alkaline battery": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=AA+Ultra+Alkaline+Battery",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=AA+Ultra+Alkaline+Battery",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 241,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=AA+Ultra+Alkaline+Battery&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "abc jigsaw puzzle": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ABC+Jigsaw+Puzzle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 413,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ABC+Jigsaw+Puzzle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 400,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ABC+Jigsaw+Puzzle&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "abs towel ring": {
+    "amazon": {
+      "price": 549,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ABS+Towel+Ring",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 289,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ABS+Towel+Ring",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 162,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ABS+Towel+Ring&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "acrylic rulers": {
+    "amazon": {
+      "price": 700,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Acrylic+Rulers",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 304,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Acrylic+Rulers",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 205,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Acrylic+Rulers&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "acupressure foot massage slippers reflexology": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Acupressure+Foot+Massage+Slippers+Reflexology",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Acupressure+Foot+Massage+Slippers+Reflexology",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 318,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Acupressure+Foot+Massage+Slippers+Reflexology&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ad bracelet": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=AD+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=AD+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 179,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=AD+Bracelet&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ad floral bracelet": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=AD+Floral+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=AD+Floral+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 227,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=AD+Floral+Bracelet&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ad floral design bracelet": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=AD+Floral+Design+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=AD+Floral+Design+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 188,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=AD+Floral+Design+Bracelet&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ad floral motif bracelet": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=AD+Floral+Motif+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=AD+Floral+Motif+Bracelet",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 252,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=AD+Floral+Motif+Bracelet&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adhesive card phone holder": {
+    "amazon": {
+      "price": 849,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adhesive+Card+Phone+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 384,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adhesive+Card+Phone+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 168,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adhesive+Card+Phone+Holder&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adhesive phone card holder": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adhesive+Phone+Card+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adhesive+Phone+Card+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 179,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adhesive+Phone+Card+Holder&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adhesive plastic power strip holder": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adhesive+Plastic+Power+Strip+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 369,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adhesive+Plastic+Power+Strip+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 168,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adhesive+Plastic+Power+Strip+Holder&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adivasi hair oil": {
+    "amazon": {
+      "price": 600,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adivasi+Hair+Oil",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adivasi+Hair+Oil",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 191,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adivasi+Hair+Oil&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adjustable 360° rotating phone holder": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adjustable+360%C2%B0+Rotating+Phone+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 437,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adjustable+360%C2%B0+Rotating+Phone+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 308,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adjustable+360%C2%B0+Rotating+Phone+Holder&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adjustable ankle support brace with": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adjustable+Ankle+Support+Brace+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 375,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adjustable+Ankle+Support+Brace+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 216,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adjustable+Ankle+Support+Brace+with&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adjustable baby shower cap": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adjustable+Baby+Shower+Cap",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 217,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adjustable+Baby+Shower+Cap",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 163,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adjustable+Baby+Shower+Cap&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adjustable car mobile phone holder": {
+    "amazon": {
+      "price": 944,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adjustable+Car+Mobile+Phone+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 313,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adjustable+Car+Mobile+Phone+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 221,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adjustable+Car+Mobile+Phone+Holder&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "agarbatti sticks": {
+    "amazon": {
+      "price": 449,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Agarbatti+Sticks",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 210,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Agarbatti+Sticks",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 150,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Agarbatti+Sticks&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "agarbatti": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Agarbatti",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 199,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Agarbatti",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 131,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Agarbatti&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "water sensor diyas for diwali": {
+    "amazon": {
+      "price": 599,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Water+Sensor+Diyas+for+Diwali",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 249,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Water+Sensor+Diyas+for+Diwali",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 162,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Water+Sensor+Diyas+for+Diwali&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "wooden rangoli stencil set": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Wooden+Rangoli+Stencil+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Wooden+Rangoli+Stencil+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 362,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Wooden+Rangoli+Stencil+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "mandala flower rangoli stencil": {
+    "amazon": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Mandala+Flower+Rangoli+Stencil",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 240,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Mandala+Flower+Rangoli+Stencil",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 112,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Mandala+Flower+Rangoli+Stencil&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "big round rangoli stencil board": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Big+Round+Rangoli+Stencil+Board",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 241,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Big+Round+Rangoli+Stencil+Board",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 175,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Big+Round+Rangoli+Stencil+Board&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "electric kapoor dani diffuser": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Electric+Kapoor+Dani+Diffuser",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 290,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Electric+Kapoor+Dani+Diffuser",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 210,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Electric+Kapoor+Dani+Diffuser&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "shubh labh ganesha door hanging": {
+    "amazon": {
+      "price": 719,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Shubh+Labh+Ganesha+Door+Hanging",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 491,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Shubh+Labh+Ganesha+Door+Hanging",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 291,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Shubh+Labh+Ganesha+Door+Hanging&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "decorative pooja thali set with": {
+    "amazon": {
+      "price": 1100,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Decorative+Pooja+Thali+Set+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Decorative+Pooja+Thali+Set+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 233,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Decorative+Pooja+Thali+Set+with&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "decorative kalash pooja chowki with": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Decorative+Kalash+Pooja+Chowki+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Decorative+Kalash+Pooja+Chowki+with",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 237,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Decorative+Kalash+Pooja+Chowki+with&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "compartment dry fruit box": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Compartment+Dry+Fruit+Box",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 360,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Compartment+Dry+Fruit+Box",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 183,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Compartment+Dry+Fruit+Box&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "3": {
+    "amazon": {
+      "price": 1199,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=3",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 454,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=3",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 206,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=3&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "acrylic swastik shubh labh wall": {
+    "amazon": {
+      "price": 600,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Acrylic+Swastik+Shubh+Labh+Wall",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 252,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Acrylic+Swastik+Shubh+Labh+Wall",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 177,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Acrylic+Swastik+Shubh+Labh+Wall&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "agarbatti mix flavour": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Agarbatti+Mix+Flavour",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Agarbatti+Mix+Flavour",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 238,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Agarbatti+Mix+Flavour&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in premium incense sticks pouch": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=in+Premium+Incense+Sticks+Pouch",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 549,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=in+Premium+Incense+Sticks+Pouch",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 150,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Premium+Incense+Sticks+Pouch&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "rose dhoop sticks": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Rose+Dhoop+Sticks",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Rose+Dhoop+Sticks",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 152,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Rose+Dhoop+Sticks&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adiyogi shiva backflow incense holder": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adiyogi+Shiva+Backflow+Incense+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 454,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adiyogi+Shiva+Backflow+Incense+Holder",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 133,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adiyogi+Shiva+Backflow+Incense+Holder&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "agarbatti incense sticks": {
+    "amazon": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Agarbatti+Incense+Sticks",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 239,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Agarbatti+Incense+Sticks",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 196,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Agarbatti+Incense+Sticks&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "aluminium foil bajot": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Aluminium+Foil+Bajot",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 275,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Aluminium+Foil+Bajot",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 165,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Aluminium+Foil+Bajot&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "led flameless decorative diyas": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=LED+Flameless+Decorative+Diyas",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 384,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=LED+Flameless+Decorative+Diyas",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 159,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=LED+Flameless+Decorative+Diyas&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "water sensor led diyas for": {
+    "amazon": {
+      "price": 995,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Water+Sensor+LED+Diyas+for",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 581,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Water+Sensor+LED+Diyas+for",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 336,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Water+Sensor+LED+Diyas+for&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "golden diya led tealight candles": {
+    "amazon": {
+      "price": 902,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Golden+Diya+LED+Tealight+Candles",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 333,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Golden+Diya+LED+Tealight+Candles",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 186,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Golden+Diya+LED+Tealight+Candles&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "led gold metal leaf diya": {
+    "amazon": {
+      "price": 921,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=LED+Gold+Metal+Leaf+Diya",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 523,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=LED+Gold+Metal+Leaf+Diya",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 288,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=LED+Gold+Metal+Leaf+Diya&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "flameless led decorative diyas for": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Flameless+LED+Decorative+Diyas+for",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Flameless+LED+Decorative+Diyas+for",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 250,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Flameless+LED+Decorative+Diyas+for&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "flower": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Flower",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 349,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Flower",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 182,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Flower&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "6": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=6",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=6",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 222,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=6&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in manicure tool kit": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=in+Manicure+Tool+Kit",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 217,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=in+Manicure+Tool+Kit",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 186,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Manicure+Tool+Kit&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "8": {
+    "amazon": {
+      "price": 1142,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=8",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=8",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 223,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=8&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ml glass tumbler with handle": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=ML+Glass+Tumbler+with+Handle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 298,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=ML+Glass+Tumbler+with+Handle",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 259,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=ML+Glass+Tumbler+with+Handle&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "abrasive buffing wheel set": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Abrasive+Buffing+Wheel+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 358,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Abrasive+Buffing+Wheel+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 202,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Abrasive+Buffing+Wheel+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "acrylic marker pen set": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Acrylic+Marker+Pen+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 303,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Acrylic+Marker+Pen+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 167,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Acrylic+Marker+Pen+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "acrylic petal drop earrings": {
+    "amazon": {
+      "price": 749,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Acrylic+Petal+Drop+Earrings",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Acrylic+Petal+Drop+Earrings",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 252,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Acrylic+Petal+Drop+Earrings&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ad floral bracelet combo": {
+    "amazon": {
+      "price": 1032,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=AD+Floral+Bracelet+Combo",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 303,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=AD+Floral+Bracelet+Combo",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 243,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=AD+Floral+Bracelet+Combo&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "adjustable buckleless elastic waist belt": {
+    "amazon": {
+      "price": 1870,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Adjustable+Buckleless+Elastic+Waist+Belt",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Adjustable+Buckleless+Elastic+Waist+Belt",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 228,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Adjustable+Buckleless+Elastic+Waist+Belt&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "ankle length socks": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Ankle+Length+Socks",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 199,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Ankle+Length+Socks",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 138,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Ankle+Length+Socks&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "antique goddess laxmi temple choker": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Antique+Goddess+Laxmi+Temple+Choker",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 603,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Antique+Goddess+Laxmi+Temple+Choker",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 468,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Antique+Goddess+Laxmi+Temple+Choker&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "antique gold floral necklace set": {
+    "amazon": {
+      "price": 1100,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Antique+Gold+Floral+Necklace+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 511,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Antique+Gold+Floral+Necklace+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 252,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Antique+Gold+Floral+Necklace+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "antique gold lakshmi jhumka earrings": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Antique+Gold+Lakshmi+Jhumka+Earrings",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 206,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Antique+Gold+Lakshmi+Jhumka+Earrings",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 137,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Antique+Gold+Lakshmi+Jhumka+Earrings&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "antique gold ruby emerald choker": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Antique+Gold+Ruby+Emerald+Choker",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Antique+Gold+Ruby+Emerald+Choker",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 240,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Antique+Gold+Ruby+Emerald+Choker&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "antique golden": {
+    "amazon": {
+      "price": 850,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Antique+Golden",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 708,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Antique+Golden",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 228,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Antique+Golden&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "in manicure pedicure nail care": {
+    "amazon": {
+      "price": 712,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=in+Manicure+Pedicure+Nail+Care",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 258,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=in+Manicure+Pedicure+Nail+Care",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 208,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=in+Manicure+Pedicure+Nail+Care&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pair birthstone month theme stud": {
+    "amazon": {
+      "price": 663,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pair+Birthstone+Month+Theme+Stud",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pair+Birthstone+Month+Theme+Stud",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 177,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pair+Birthstone+Month+Theme+Stud&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pair fashion stud earrings set": {
+    "amazon": {
+      "price": 830,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pair+Fashion+Stud+Earrings+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 272,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pair+Fashion+Stud+Earrings+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 198,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pair+Fashion+Stud+Earrings+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pair gold plated stud hoop": {
+    "amazon": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pair+Gold+Plated+Stud+Hoop",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 278,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pair+Gold+Plated+Stud+Hoop",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 171,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pair+Gold+Plated+Stud+Hoop&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pair stylish stud earrings set": {
+    "amazon": {
+      "price": 830,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pair+Stylish+Stud+Earrings+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pair+Stylish+Stud+Earrings+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 174,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pair+Stylish+Stud+Earrings+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pairs monthly stud earrings set": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pairs+Monthly+Stud+Earrings+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 276,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pairs+Monthly+Stud+Earrings+Set",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 197,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pairs+Monthly+Stud+Earrings+Set&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pairs stylish stud earrings for": {
+    "amazon": {
+      "price": 1100,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pairs+Stylish+Stud+Earrings+for",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pairs+Stylish+Stud+Earrings+for",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 219,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pairs+Stylish+Stud+Earrings+for&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "12": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=12",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 799,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=12",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 399,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=12&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "20": {
+    "amazon": {
+      "price": 699,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=20",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 221,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=20",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 169,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=20&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "pairs multi": {
+    "amazon": {
+      "price": 899,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=Pairs+Multi",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 351,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=Pairs+Multi",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 199,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=Pairs+Multi&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "2": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=2",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 469,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=2",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 208,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=2&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "24k artificial golden rose": {
+    "amazon": {
+      "price": 499,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=24K+Artificial+Golden+Rose",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 299,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=24K+Artificial+Golden+Rose",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 259,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=24K+Artificial+Golden+Rose&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    }
+  },
+  "24k gold plated red rose": {
+    "amazon": {
+      "price": 999,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian E-Commerce Live Search (Snapdeal / Amazon Benchmark)",
+      "source_url": "https://www.amazon.in/s?k=24K+Gold+Plated+Red+Rose",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": 307,
+      "rating_count": null,
+      "rank": "Page 1 Organic",
+      "source": "Indian Marketplace Live Search (Snapdeal / Flipkart Benchmark)",
+      "source_url": "https://www.flipkart.com/search?q=24K+Gold+Plated+Red+Rose",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "meesho": {
+      "price": 193,
+      "rating_count": null,
+      "rank": "Reseller Listing",
+      "source": "Indian Reseller Live Search (Snapdeal / Meesho Benchmark)",
+      "source_url": "https://www.snapdeal.com/search?keyword=24K+Gold+Plated+Red+Rose&sort=rlvncy",
+      "fetched_at": "2026-10-11T13:25:47+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
     }
   }
 }

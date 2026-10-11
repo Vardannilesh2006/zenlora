@@ -167,8 +167,15 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
 
     fetched_at = item.get("fetched_at") or now_iso()
 
+    primary_img = item.get("image_url") or item.get("primary_image") or ""
+    raw_imgs = item.get("images") or ([primary_img] if primary_img else [])
+
     return {
         "id": item.get("id"),
+        "variant_id": item.get("variant_id"),
+        "sku": item.get("sku"),
+        "barcode": item.get("barcode"),
+        "compare_at_price": item.get("compare_at_price"),
         "handle": handle,
         "title": title,
         "zenlora_title": zen_title,
@@ -217,7 +224,8 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
         "score_breakdown": score_data["breakdown"],
         "bullets": score_data["bullets"],
         "rto_verdict": score_data["rto_verdict"],
-        "image_url": item.get("image_url") or item.get("primary_image") or "",
+        "image_url": primary_img,
+        "images": raw_imgs[:6],
         "deodap_url": item.get("deodap_url") or f"https://www.deodap.in/products/{handle}",
         "description": item.get("description", ""),
         "scanned_at": fetched_at,
