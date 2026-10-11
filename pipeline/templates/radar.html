@@ -260,11 +260,27 @@
                 {% endfor %}
             </div>
 
-            {% if hard_failed_count > 0 %}
-            <a href="/radar?niche={{ selected_niche }}{% if current_batch %}&batch={{ current_batch }}{% endif %}&show_hard_failed={{ '0' if show_hard_failed else '1' }}" class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1 rounded-lg border {% if show_hard_failed %}bg-red-600 text-white border-red-600{% else %}bg-red-50 text-red-700 border-red-200 hover:bg-red-100{% endif %} transition">
-                {% if show_hard_failed %}Hide {{ hard_failed_count }} Hard-Failed{% else %}Show {{ hard_failed_count }} Hard-Failed{% endif %}
-            </a>
-            {% endif %}
+            <div class="flex items-center gap-1.5 flex-shrink-0">
+                <a 
+                    href="/api/radar/smartbiz.csv?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20"
+                    title="Download SmartBiz v10 CSV UTF-8 for current category/page (~20 products)"
+                    class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition flex items-center gap-1"
+                >
+                    <span>📦 SmartBiz Page CSV ({% if selected_niche == 'All' %}Top 20{% else %}{{ selected_niche }} · 20{% endif %})</span>
+                </a>
+                <a 
+                    href="/api/radar/smartbiz.csv?mode=mix&batch={{ current_batch }}&count=55"
+                    title="Download SmartBiz v10 CSV UTF-8 with 55 mixed winning products across all 5 categories"
+                    class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-zinc-900 text-white border border-zinc-900 hover:bg-zinc-800 transition flex items-center gap-1 shadow-2xs"
+                >
+                    <span>🚀 SmartBiz Mix 55 CSV</span>
+                </a>
+                {% if hard_failed_count > 0 %}
+                <a href="/radar?niche={{ selected_niche }}{% if current_batch %}&batch={{ current_batch }}{% endif %}&show_hard_failed={{ '0' if show_hard_failed else '1' }}" class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg border {% if show_hard_failed %}bg-red-600 text-white border-red-600{% else %}bg-red-50 text-red-700 border-red-200 hover:bg-red-100{% endif %} transition">
+                    {% if show_hard_failed %}Hide {{ hard_failed_count }} Hard-Failed{% else %}Show {{ hard_failed_count }} Hard-Failed{% endif %}
+                </a>
+                {% endif %}
+            </div>
         </div>
     </div>
 

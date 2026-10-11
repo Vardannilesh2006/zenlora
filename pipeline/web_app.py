@@ -27,6 +27,11 @@ from winning_engine.data_models import (
 from winning_engine.trend_checker import get_google_trends_analysis
 from winning_engine.competitor_pricing import get_competitor_price_intelligence
 from winning_engine.gemini_analyzer import analyze_with_gemini
+from winning_engine.smartbiz_exporter import (
+    generate_smartbiz_csv_bytes,
+    select_current_page_products,
+    select_smart_mix_products,
+)
 from ugc_engine import UGCEngine
 
 app = Flask(
@@ -240,6 +245,36 @@ def export_radar_csv():
         mimetype="text/csv",
         headers={"Content-Disposition": "attachment;filename=zenlora_shortlist_provenance.csv"},
     )
+
+
+@app.route("/api/radar/smartbiz.csv", methods=["GET"])
+def export_smartbiz_csv():
+    mode = request.args.get("mode", "page").strip().lower()
+    niche = request.args.get("niche", "All").strip()
+    batch_cursor = int(request.args.get("batch", 0) or 0)
+
+    if mode == "mix":
+        total_count = int(request.args.get("count", 55) or 55)
+        products = select_smart_mix_products(total_count=total_count, batch_cursor=batch_cursor)
+        filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_batch{batch_cursor}.csv"
+    else:
+        limit = int(request.args.get("limit", 20) or 20)
+        products = select_current_page_products(
+            niche=niche,
+            batch_cursor=batch_cursor,
+            limit=limit,
+            include_hard_failed=False,
+        )
+        safe_niche = niche.lower().replace(" ", "_")
+        filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_batch{batch_cursor}.csv"
+
+    csv_bytes = generate_smartbiz_csv_bytes(products)
+    return Response(
+        csv_bytes,
+        mimetype="text/csv; charset=utf-8",
+        headers={"Content-Disposition": f"attachment; filename={filename}"},
+    )
+
 
 
 @app.route("/api/settings", methods=["GET", "POST"])
