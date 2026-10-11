@@ -89,13 +89,54 @@ def extract_clean_product_name(title: str) -> str:
     return " ".join(words[:5]) if words else clean[:35]
 
 
-def snap_to_impulse_price(target: float, max_cap: int = 799) -> int:
-    """Snaps target price into psychological points within ideal range."""
-    points = [199, 249, 299, 349, 399, 449, 499, 549, 599, 649, 699, 749, 799, 899, 999]
+def snap_to_impulse_price(target: float, max_cap: int = 599) -> int:
+    """Snaps target price into fine-grained Indian psychological price points ending in 9."""
+    points = [
+        139, 149, 159, 169, 179, 189, 199, 209, 219, 229, 239, 249,
+        259, 269, 279, 289, 299, 319, 329, 349, 369, 379, 399, 429, 449, 479, 499, 549, 599
+    ]
     for pt in points:
         if pt >= target:
             return min(pt, max_cap) if target <= max_cap else pt
     return int(round(target))
+
+
+def classify_pricing_tier(title: str, niche: str = "Home Decor") -> Dict[str, Any]:
+    """
+    Classifies a product into 1 of 3 Perceived-Value & Local-Availability Pricing Tiers:
+    - Tier 3 (High-Wow & Hard-to-Find Locally): +₹85 to ₹110 over Meesho / ₹85+ profit floor.
+    - Tier 2 (Problem-Solver Utility): +₹70 to ₹85 over Meesho / ₹70+ profit floor.
+    - Tier 1 (Standard / Easy-to-Find Locally): +₹60 to ₹75 over Meesho / ₹60-₹80 profit target.
+    """
+    t = f"{title} {niche}".lower()
+    high_wow_keywords = (
+        "sensor", "electric", "rechargeable", "automatic", "3d", "acrylic", "projection",
+        "crystal", "fountain", "backflow", "humidifier", "diffuser", "massager", "vacuum",
+        "neon", "wireless", "digital", "bluetooth", "hamper", "gift set", "5 in 1", "in 1",
+        "revolving", "rotating", "projector", "smart", "curtain light", "water sensor"
+    )
+    problem_solver_keywords = (
+        "organizer", "dispens", "chopper", "slicer", "cleaner", "brush", "mop", "scrub",
+        "scraper", "duster", "drain", "rack", "foldable", "silicone", "multitool",
+        "stencil", "thali", "kalash", "kapoor", "camphor", "peeler", "cutter", "sprayer"
+    )
+    if any(k in t for k in high_wow_keywords):
+        return {
+            "tier": "Tier 3: High-Wow & Hard-to-Find Locally",
+            "meesho_delta": 90,
+            "min_profit_target": 80,
+        }
+    if any(k in t for k in problem_solver_keywords):
+        return {
+            "tier": "Tier 2: Problem-Solver Utility",
+            "meesho_delta": 72,
+            "min_profit_target": 68,
+        }
+    return {
+        "tier": "Tier 1: Standard Local-Market Utility (Safe Low Margin)",
+        "meesho_delta": 65,
+        "min_profit_target": 60,
+    }
 
 
 def scrape_live_marketplace_prices(keyword: str, use_playwright: bool = True) -> Dict[str, Any]:
@@ -306,14 +347,13 @@ def get_competitor_price_intelligence(
     assumptions = settings.get("cost_assumptions", {})
     stale_days = int(settings.get("general", {}).get("stale_days_limit", 7))
 
-    shipping_cost = float(assumptions.get("shipping_cost", 65.0))
-    cod_fee = float(assumptions.get("cod_fee", 20.0))
-    packaging_cost = float(assumptions.get("packaging_cost", 10.0))
-    expected_rto_loss = float(assumptions.get("expected_rto_loss", 25.0))
-    min_net_profit = float(assumptions.get("min_net_profit", 150.0))
-    min_markup = float(assumptions.get("min_markup_multiple", 2.5))
-    target_markup = float(assumptions.get("target_markup_multiple", 3.0))
-    ideal_max = int(assumptions.get("ideal_price_max", 799))
+    shipping_cost = float(assumptions.get("shipping_cost", 60.0))
+    cod_fee = float(assumptions.get("cod_fee", 0.0))
+    packaging_cost = float(assumptions.get("packaging_cost", 0.0))
+    expected_rto_loss = float(assumptions.get("expected_rto_loss", 15.0))
+    min_net_profit = float(assumptions.get("min_net_profit", 60.0))
+    min_markup = float(assumptions.get("min_markup_multiple", 1.8))
+    ideal_max = int(assumptions.get("ideal_price_max", 599))
 
     clean_keyword = extract_clean_product_name(title)
     encoded_kw = urllib.parse.quote_plus(clean_keyword)
@@ -325,34 +365,12 @@ def get_competitor_price_intelligence(
     google_shopping_url = f"https://www.google.com/search?tbm=shop&gl=in&q={encoded_kw}"
 
     unit_cost = float(wholesale_price) if wholesale_price and wholesale_price > 0 else 0.0
+    bundle_qty = 1
+    effective_cost = round(unit_cost, 2)
+    bundle_rule_triggered = "Rule #1: Single Unit Smart Tiered Pricing (Combo Eligible at Checkout)"
+    bundle_label = f"Single Unit (Supplier Cost: ₹{effective_cost:.0f})"
 
-    # Rule-based bundle check for low-cost items
-    if 0 < unit_cost <= 65:
-        bundle_qty = 2
-        effective_cost = round(unit_cost * 2, 2)
-        bundle_rule_triggered = "Rule #1: Unit supplier cost <= ₹65 -> Auto 2-Pack Same-SKU Combo"
-        bundle_label = f"Combo Pack of 2 (₹{unit_cost:.0f} × 2 = ₹{effective_cost:.0f})"
-    else:
-        bundle_qty = 1
-        effective_cost = round(unit_cost, 2)
-        bundle_rule_triggered = "Rule #2: Single SKU + Complementary Category Add-On Eligible"
-        bundle_label = f"Single Unit (Supplier Cost: ₹{effective_cost:.0f})"
-
-    # Landed Cost = Supplier Cost + Shipping + COD Fee + Packaging + Expected RTO Loss ("My Assumptions")
-    total_fees_and_rto = round(shipping_cost + cod_fee + packaging_cost + expected_rto_loss, 2)
-    landed_cost = round(effective_cost + total_fees_and_rto, 2)
-
-    # Target selling price based on user's markup & minimum net profit assumptions
-    raw_target = max(effective_cost * target_markup, landed_cost + min_net_profit)
-    suggested_sell_price = snap_to_impulse_price(raw_target, max_cap=ideal_max)
-
-    net_profit = round(suggested_sell_price - landed_cost, 2)
-    gross_profit_after_ship = round(suggested_sell_price - effective_cost - shipping_cost, 2)
-    profit_margin_pct = round((net_profit / suggested_sell_price) * 100, 1) if suggested_sell_price > 0 else 0.0
-    markup_multiple = round(suggested_sell_price / effective_cost, 2) if effective_cost > 0 else 0.0
-    passes_2_5x_rule = markup_multiple >= min_markup and net_profit >= min_net_profit
-
-    # Check cache and manual entries for real marketplace prices
+    # Check cache and manual entries for real marketplace prices FIRST so we can anchor to Meesho
     cache = _load_market_cache()
     if fetch_live:
         scraped = scrape_live_marketplace_prices(clean_keyword)
@@ -363,7 +381,6 @@ def get_competitor_price_intelligence(
     manual_mkt = manual_all.get("marketplace_prices", {})
 
     def _build_mkt_entry(key: str, display_name: str, default_url: str, manual_field: str) -> Dict[str, Any]:
-        # 1. Manual entry takes priority if user verified it
         if manual_mkt and manual_mkt.get(manual_field) is not None:
             try:
                 val = float(manual_mkt[manual_field])
@@ -385,7 +402,6 @@ def get_competitor_price_intelligence(
             except (ValueError, TypeError):
                 pass
 
-        # 2. Real scraped cache entry
         sc = scraped.get(key, {})
         if sc and sc.get("price") is not None:
             val = float(sc["price"])
@@ -407,7 +423,6 @@ def get_competitor_price_intelligence(
                 "null_reason": None
             }
 
-        # 3. Honest Null State (Rule #3: Never guess or interpolate)
         reason = sc.get("null_reason") if sc else "Data not available: Not fetched yet (Click 'Fetch Live Prices' or enter manually)"
         return {
             "name": display_name,
@@ -431,6 +446,38 @@ def get_competitor_price_intelligence(
     fk_entry = _build_mkt_entry("flipkart", "Flipkart", flipkart_url, "flipkart_price")
     msh_entry = _build_mkt_entry("meesho", "Meesho", meesho_url, "meesho_price")
 
+    # Landed Cost = Supplier Cost + Shipping + COD Fee + Packaging + Expected RTO Loss ("My Assumptions")
+    total_fees_and_rto = round(shipping_cost + cod_fee + packaging_cost + expected_rto_loss, 2)
+    landed_cost = round(effective_cost + total_fees_and_rto, 2)
+
+    # 3-Tier Perceived-Value & Meesho-Anchored Smart Pricing
+    tier_info = classify_pricing_tier(title, niche)
+    meesho_delta = float(tier_info["meesho_delta"])
+    tier_min_profit = max(float(tier_info["min_profit_target"]), min_net_profit)
+    no_loss_floor = max(landed_cost + tier_min_profit, effective_cost * min_markup)
+
+    msh_val = msh_entry["price_numeric"]
+    amz_val = amz_entry["price_numeric"]
+
+    if msh_val is not None and msh_val > 0:
+        meesho_anchored = msh_val + meesho_delta
+        # Cap excessive Meesho outliers while respecting the no-loss safety floor
+        raw_target = max(no_loss_floor, min(meesho_anchored, no_loss_floor + 50))
+        if amz_val is not None and amz_val > no_loss_floor + 20:
+            raw_target = min(raw_target, amz_val - 20)
+    else:
+        raw_target = no_loss_floor
+
+    suggested_sell_price = snap_to_impulse_price(raw_target, max_cap=ideal_max)
+    if suggested_sell_price < no_loss_floor:
+        suggested_sell_price = int(round(no_loss_floor // 10) * 10 + 9)
+
+    net_profit = round(suggested_sell_price - landed_cost, 2)
+    gross_profit_after_ship = round(suggested_sell_price - effective_cost - shipping_cost, 2)
+    profit_margin_pct = round((gross_profit_after_ship / suggested_sell_price) * 100, 1) if suggested_sell_price > 0 else 0.0
+    markup_multiple = round(suggested_sell_price / effective_cost, 2) if effective_cost > 0 else 0.0
+    passes_2_5x_rule = markup_multiple >= min_markup and net_profit >= min_net_profit
+
     real_prices = [
         e["price_numeric"] for e in (amz_entry, fk_entry, msh_entry)
         if e["price_numeric"] is not None
@@ -452,11 +499,11 @@ def get_competitor_price_intelligence(
         comparison_verdict = "Data not available (Fetch or enter Amazon/Flipkart/Meesho prices to compare)"
 
     strategy_text = (
-        f"[My Assumptions] Landed Cost = Supplier ₹{effective_cost:.0f} ({bundle_label}) + "
+        f"[{tier_info['tier']}] Landed Cost = Supplier ₹{effective_cost:.0f} + "
         f"Shipping ₹{shipping_cost:.0f} + COD Fee ₹{cod_fee:.0f} + Packaging ₹{packaging_cost:.0f} + "
         f"Expected RTO Loss ₹{expected_rto_loss:.0f} = ₹{landed_cost:.0f}. "
         f"Selling Price: ₹{suggested_sell_price} ({markup_multiple}x supplier cost) -> "
-        f"Net Profit: ₹{net_profit:.0f}/order."
+        f"Net Profit: ₹{net_profit:.0f}/order (Pure Margin after Ship: ₹{gross_profit_after_ship:.0f})."
     )
 
     return {

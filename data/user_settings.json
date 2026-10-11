@@ -1,15 +1,15 @@
 {
   "cost_assumptions": {
     "_label": "My Assumptions (User-configurable inputs, not external facts)",
-    "shipping_cost": 65.0,
-    "cod_fee": 20.0,
-    "packaging_cost": 10.0,
-    "expected_rto_loss": 25.0,
-    "min_net_profit": 150.0,
-    "min_markup_multiple": 2.5,
-    "target_markup_multiple": 3.0,
-    "ideal_price_min": 199,
-    "ideal_price_max": 799
+    "shipping_cost": 60.0,
+    "cod_fee": 0.0,
+    "packaging_cost": 0.0,
+    "expected_rto_loss": 15.0,
+    "min_net_profit": 60.0,
+    "min_markup_multiple": 1.8,
+    "target_markup_multiple": 2.2,
+    "ideal_price_min": 169,
+    "ideal_price_max": 599
   },
   "general": {
     "stale_days_limit": 7,
