@@ -1,0 +1,158 @@
+{
+  "12x12 inch photo": {
+    "keyword": "12x12 inch photo",
+    "pytrends": {
+      "value": null,
+      "current_value": null,
+      "baseline_avg": null,
+      "current_to_baseline_ratio": null,
+      "peak_month": null,
+      "peak_value": null,
+      "peak_to_baseline_ratio": null,
+      "festival_window_oct_nov_avg": null,
+      "status": "unavailable",
+      "source": "Google Trends India (pytrends)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=12x12%20inch%20photo",
+      "fetched_at": "2026-10-11T11:26:45+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": "Insufficient search volume on Google Trends India for '12x12 inch photo'"
+    },
+    "autosuggest": {
+      "value": [
+        "12x12 inch photo frame",
+        "12x12 inch photo print",
+        "12x12 inch photo",
+        "12x12 inch photo album",
+        "12x12 inch photo book",
+        "12x12 digital photo frame",
+        "12x12 inch picture frame",
+        "12x12 inch picture"
+      ],
+      "count": 10,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=12x12%20inch%20photo",
+      "fetched_at": "2026-10-11T11:26:48+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": null,
+      "videos": null,
+      "status": "unavailable",
+      "source": "YouTube Data API v3",
+      "source_url": "https://www.youtube.com/results?search_query=12x12%20inch%20photo+review+india",
+      "fetched_at": null,
+      "method": "api",
+      "is_stale": false,
+      "null_reason": "Data not available: YOUTUBE_API_KEY not configured in .env"
+    },
+    "fetched_at": "2026-10-11T11:26:49+05:30"
+  },
+  "folding hair brush": {
+    "keyword": "folding hair brush",
+    "pytrends": {
+      "value": null,
+      "current_value": null,
+      "baseline_avg": null,
+      "current_to_baseline_ratio": null,
+      "peak_month": null,
+      "peak_value": null,
+      "peak_to_baseline_ratio": null,
+      "festival_window_oct_nov_avg": null,
+      "status": "unavailable",
+      "source": "Google Trends India (pytrends)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=folding%20hair%20brush",
+      "fetched_at": "2026-10-11T11:27:00+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": "Insufficient search volume on Google Trends India for 'folding hair brush'"
+    },
+    "autosuggest": {
+      "value": [
+        "folding hair brush",
+        "folding hair brush with mirror",
+        "folding hair brush for men",
+        "folding hair brush amazon",
+        "folding hair brush with mirror target",
+        "folding hair brush near me",
+        "folding hair brush nearby",
+        "folding hair brush for handbag"
+      ],
+      "count": 10,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=folding%20hair%20brush",
+      "fetched_at": "2026-10-11T11:27:03+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": null,
+      "videos": null,
+      "status": "unavailable",
+      "source": "YouTube Data API v3",
+      "source_url": "https://www.youtube.com/results?search_query=folding%20hair%20brush+review+india",
+      "fetched_at": null,
+      "method": "api",
+      "is_stale": false,
+      "null_reason": "Data not available: YOUTUBE_API_KEY not configured in .env"
+    },
+    "fetched_at": "2026-10-11T11:27:03+05:30"
+  },
+  "floor cleaning brush": {
+    "keyword": "floor cleaning brush",
+    "pytrends": {
+      "value": 75,
+      "current_value": 75,
+      "baseline_avg": 33.33,
+      "current_to_baseline_ratio": 2.25,
+      "peak_month": "Feb 2026",
+      "peak_value": 100,
+      "peak_to_baseline_ratio": 3.0,
+      "festival_window_oct_nov_avg": 35.7,
+      "status": "done",
+      "source": "Google Trends India (pytrends)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=floor%20cleaning%20brush",
+      "fetched_at": "2026-10-11T11:28:19+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "floor cleaning brush",
+        "floor cleaning brush with long handle",
+        "floor cleaning brush with handle",
+        "floor cleaning brush electric",
+        "floor cleaning brush for bathroom",
+        "floor cleaning brush for drill machine",
+        "floor cleaning brush machine",
+        "floor cleaning brush with wiper"
+      ],
+      "count": 10,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=floor%20cleaning%20brush",
+      "fetched_at": "2026-10-11T11:28:22+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": null,
+      "videos": null,
+      "status": "unavailable",
+      "source": "YouTube Data API v3",
+      "source_url": "https://www.youtube.com/results?search_query=floor%20cleaning%20brush+review+india",
+      "fetched_at": null,
+      "method": "api",
+      "is_stale": false,
+      "null_reason": "Data not available: YOUTUBE_API_KEY not configured in .env"
+    },
+    "fetched_at": "2026-10-11T11:28:23+05:30"
+  }
+}

@@ -1,0 +1,236 @@
+{
+  "cost_assumptions": {
+    "_label": "My Assumptions (User-configurable inputs, not external facts)",
+    "shipping_cost": 65.0,
+    "cod_fee": 20.0,
+    "packaging_cost": 10.0,
+    "expected_rto_loss": 25.0,
+    "min_net_profit": 150.0,
+    "min_markup_multiple": 2.5,
+    "target_markup_multiple": 3.0,
+    "ideal_price_min": 199,
+    "ideal_price_max": 799
+  },
+  "general": {
+    "stale_days_limit": 7,
+    "delivery_buffer_days": 3,
+    "supplier_policy_delivery_min_days": 4,
+    "supplier_policy_delivery_max_days": 8,
+    "supplier_policy_source_url": "https://deodap.in/policies/shipping-policy"
+  },
+  "scoring_weights": {
+    "c1_pain_or_wow": 12,
+    "c2_demo_3_sec": 12,
+    "c3_price_band": 10,
+    "c4_margin": 15,
+    "c5_size_weight_fragility": 10,
+    "c6_returns_risk": 10,
+    "c7_local_availability": 10,
+    "c8_brand_trademark_risk": 7,
+    "c9_supplier_reliability": 7,
+    "c10_bundle_potential": 7
+  },
+  "festivals": [
+    {
+      "id": "navratri",
+      "name": "Navratri",
+      "date": "2026-10-11",
+      "confirmed_by_user": false,
+      "verify_note": "Verify date with calendar (User seed date)",
+      "regional_note": "Pan-India (Peak in Gujarat, Maharashtra, North India)"
+    },
+    {
+      "id": "dussehra",
+      "name": "Dussehra",
+      "date": "2026-10-20",
+      "confirmed_by_user": false,
+      "verify_note": "Verify date with calendar (User seed date)",
+      "regional_note": "Pan-India"
+    },
+    {
+      "id": "dhanteras",
+      "name": "Dhanteras",
+      "date": "2026-11-06",
+      "confirmed_by_user": false,
+      "verify_note": "Verify date with calendar (User seed date)",
+      "regional_note": "Pan-India auspicious buying peak"
+    },
+    {
+      "id": "diwali",
+      "name": "Diwali",
+      "date": "2026-11-08",
+      "confirmed_by_user": false,
+      "verify_note": "Verify date with calendar (User seed date)",
+      "regional_note": "Pan-India largest festive peak"
+    },
+    {
+      "id": "bhai_dooj",
+      "name": "Bhai Dooj",
+      "date": "2026-11-11",
+      "confirmed_by_user": false,
+      "verify_note": "Verify date with calendar (User seed date)",
+      "regional_note": "Pan-India sibling gifting"
+    },
+    {
+      "id": "chhath",
+      "name": "Chhath Puja",
+      "date": "2026-11-15",
+      "confirmed_by_user": false,
+      "verify_note": "Verify date with calendar (User seed date)",
+      "regional_note": "High demand in Bihar, UP, Jharkhand — verify supplier stock before listing"
+    }
+  ],
+  "festival_keyword_seeds": {
+    "_label": "Starting Keyword Seeds (User ideas for catalog filtering, not demand data)",
+    "Diwali Cleaning": [
+      "corner brush",
+      "spin mop",
+      "microfiber",
+      "scrub brush",
+      "drain tool",
+      "fan duster",
+      "wiper",
+      "cleaning brush",
+      "lint roller"
+    ],
+    "Diwali Decor": [
+      "led string light",
+      "led diya",
+      "water sensor",
+      "rangoli stencil",
+      "toran",
+      "tealight holder",
+      "kapoor dani",
+      "camphor diffuser",
+      "shubh labh",
+      "acrylic lamp"
+    ],
+    "Diwali Gifting": [
+      "scented candle",
+      "aroma diffuser",
+      "gift combo",
+      "dry fruit box",
+      "gift set"
+    ],
+    "Dhanteras": [
+      "pooja thali",
+      "steel utensil",
+      "brass",
+      "kalash",
+      "copper bottle",
+      "chowki"
+    ],
+    "Bhai Dooj": [
+      "grooming kit",
+      "gift box",
+      "manicure set",
+      "wallet combo"
+    ],
+    "Chhath": [
+      "soop",
+      "daura",
+      "pooja",
+      "kalash",
+      "diya"
+    ]
+  },
+  "restricted_rules": {
+    "firecrackers_patakhe": [
+      "firecracker",
+      "patakha",
+      "patakhe",
+      "cracker",
+      "sparkler",
+      "anar",
+      "chakri"
+    ],
+    "food_items_fssai": [
+      "edible",
+      "chocolate",
+      "sweet",
+      "namkeen",
+      "masala",
+      "spices",
+      "tea leaves",
+      "food item"
+    ],
+    "health_claims": [
+      "cure",
+      "diabetes",
+      "blood pressure",
+      "weight loss pill",
+      " slimming oil",
+      "medical claim"
+    ],
+    "gold_silver_hallmark": [
+      "pure gold",
+      "pure silver",
+      "999 silver",
+      "24k gold",
+      "hallmark",
+      "1 gram gold",
+      "gold forming"
+    ],
+    "fragile_idols_glass": [
+      "crystal ball",
+      "glass jar",
+      "glass cup",
+      "ceramic",
+      "terracotta",
+      "clay",
+      "porcelain",
+      "fragile idol"
+    ]
+  },
+  "returns_risk_rules": {
+    "clothing_shoes_sizing": [
+      "shirt",
+      "t-shirt",
+      "kurti",
+      "saree",
+      "lehenga",
+      "dress",
+      "jeans",
+      "trouser",
+      "shoe",
+      "sneaker",
+      "slipper",
+      "sandal",
+      "heels",
+      "bangle",
+      "ring",
+      "anklet",
+      "necklace",
+      "earring",
+      "jhumka",
+      "choker",
+      "mangalsutra",
+      "bracelet"
+    ],
+    "unsafe_electronics": [
+      "220v uncertified",
+      "high voltage heater",
+      "immersion rod"
+    ]
+  },
+  "brand_trademark_list": [
+    "nike",
+    "adidas",
+    "puma",
+    "apple",
+    "iphone",
+    "airpods",
+    "samsung",
+    "gucci",
+    "rolex",
+    "louis vuitton",
+    "disney",
+    "marvel",
+    "avengers",
+    "sony",
+    "dyson",
+    "boat",
+    "jbl",
+    "zara"
+  ]
+}

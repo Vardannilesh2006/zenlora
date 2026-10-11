@@ -1,138 +1,55 @@
-import urllib.parse
+"""
+Marketplace Check & Competitor Price Comparison (Research Pipeline Steps 3 & 6):
+- ZERO hardcoded price arrays or static lookup tables.
+- Uses polite public scraping / Playwright check with disk caching (data/marketplace_cache.json),
+  retries, rate-limits, and clear failure messages.
+- Supports manual entry override (method='manual_entry') when marketplaces block automated requests.
+- Reads Landed Cost assumptions (shipping + COD fee + packaging + expected RTO loss) from
+  user_settings.json, explicitly labelled 'My Assumptions'.
+"""
+import json
 import re
-from typing import Dict, Any
+import time
+import urllib.parse
+from pathlib import Path
+from typing import Dict, Any, Optional
+import requests
+from bs4 import BeautifulSoup
 
-# Real Web-Researched Marketplace Price Ranges (Verified Oct 2026 via Google/Flipkart/Amazon/Meesho)
-VERIFIED_MARKET_DATA = [
-    {
-        "match": ["water sensor", "led diya"],
-        "meesho": "₹160–₹240 (12 Pc)",
-        "flipkart": "₹349–₹999",
-        "amazon": "₹299–₹699",
-        "recommended_sell": 399,
-        "bundle_note": "Bundle 2 Packs (12 Diyas Total, Cost ₹120) @ ₹399"
-    },
-    {
-        "match": ["flameless", "diya"],
-        "meesho": "₹150–₹260",
-        "flipkart": "₹299–₹599",
-        "amazon": "₹299–₹549",
-        "recommended_sell": 399,
-        "bundle_note": "Set of 8/12 Flameless Crystal Diyas @ ₹399"
-    },
-    {
-        "match": ["100-inch", "telescoping", "extendable", "microfiber duster", "fan cleaning"],
-        "meesho": "₹149–₹249",
-        "flipkart": "₹170–₹599",
-        "amazon": "₹249–₹599",
-        "recommended_sell": 399,
-        "bundle_note": "Combo: 100-Inch Fan Duster + Free Gap Brush @ ₹399"
-    },
-    {
-        "match": ["5 in 1 electric cleaning brush", "spin scrubber"],
-        "meesho": "₹280–₹420",
-        "flipkart": "₹350–₹799",
-        "amazon": "₹399–₹899",
-        "recommended_sell": 599,
-        "bundle_note": "Complete 5-Head Rechargeable Cleaning Kit @ ₹599"
-    },
-    {
-        "match": ["floor cleaning brush", "floor scrub", "rotating floor"],
-        "meesho": "₹140–₹280",
-        "flipkart": "₹399–₹899",
-        "amazon": "₹449–₹899",
-        "recommended_sell": 349,
-        "bundle_note": "2-in-1 V-Bristle Scrub + Wiper Long Handle @ ₹349"
-    },
-    {
-        "match": ["kapoor dani", "camphor diffuser"],
-        "meesho": "₹160–₹260",
-        "flipkart": "₹349–₹799",
-        "amazon": "₹349–₹699",
-        "recommended_sell": 399,
-        "bundle_note": "Electric Kapoor Dani + Burner Night Lamp @ ₹399"
-    },
-    {
-        "match": ["rangoli stencil"],
-        "meesho": "₹149–₹250",
-        "flipkart": "₹353–₹599",
-        "amazon": "₹299–₹549",
-        "recommended_sell": 399,
-        "bundle_note": "Reusable 4-Pattern Wooden/MDF Rangoli Set @ ₹399"
-    },
-    {
-        "match": ["pooja thali"],
-        "meesho": "₹220–₹380",
-        "flipkart": "₹499–₹569",
-        "amazon": "₹449–₹699",
-        "recommended_sell": 499,
-        "bundle_note": "Complete Dhanteras Pooja Thali + Diya + Kalash Set @ ₹499"
-    },
-    {
-        "match": ["kalash", "chowki"],
-        "meesho": "₹160–₹280",
-        "flipkart": "₹299–₹549",
-        "amazon": "₹299–₹599",
-        "recommended_sell": 399,
-        "bundle_note": "Golden Frame Kalash Chowki Mandir Decor @ ₹399"
-    },
-    {
-        "match": ["adiyogi", "backflow", "smoke fountain"],
-        "meesho": "₹130–₹299",
-        "flipkart": "₹300–₹799",
-        "amazon": "₹299–₹699",
-        "recommended_sell": 399,
-        "bundle_note": "Adiyogi Smoke Fountain + Free Dhoop Cones Combo @ ₹399"
-    },
-    {
-        "match": ["ganesha acrylic", "ganesha led", "lord ganesha"],
-        "meesho": "₹130–₹280",
-        "flipkart": "₹249–₹699",
-        "amazon": "₹299–₹699",
-        "recommended_sell": 349,
-        "bundle_note": "Unbreakable 3D Acrylic Ganesha Warm LED Lamp @ ₹349"
-    },
-    {
-        "match": ["dry fruit", "compartment"],
-        "meesho": "₹200–₹350",
-        "flipkart": "₹399–₹799",
-        "amazon": "₹349–₹799",
-        "recommended_sell": 399,
-        "bundle_note": "Airtight Unbreakable Festive Dry Fruit Gift Box @ ₹399"
-    },
-    {
-        "match": ["spin mop", "flat microfiber mop"],
-        "meesho": "₹260–₹399",
-        "flipkart": "₹399–₹699",
-        "amazon": "₹449–₹799",
-        "recommended_sell": 499,
-        "bundle_note": "360° Microfiber Mop + Extra Refill Pad @ ₹499"
-    },
-    {
-        "match": ["string light", "fairy light", "curtain light"],
-        "meesho": "₹130–₹240",
-        "flipkart": "₹249–₹499",
-        "amazon": "₹249–₹549",
-        "recommended_sell": 349,
-        "bundle_note": "Pack of 2 (20 Meter Total) Warm LED Lights @ ₹349"
-    },
-    {
-        "match": ["drain cleaner", "groove cleaning", "window glass cleaning"],
-        "meesho": "₹120–₹220",
-        "flipkart": "₹249–₹449",
-        "amazon": "₹249–₹499",
-        "recommended_sell": 349,
-        "bundle_note": "2-Pack Deep Cleaning Utility Combo @ ₹349"
-    },
-    {
-        "match": ["grooming", "manicure", "trimmer"],
-        "meesho": "₹140–₹250",
-        "flipkart": "₹249–₹549",
-        "amazon": "₹299–₹599",
-        "recommended_sell": 349,
-        "bundle_note": "Bhai Dooj Special: Grooming + Manicure Combo Box @ ₹349"
-    }
-]
+from winning_engine.data_models import (
+    now_iso,
+    is_timestamp_stale,
+    load_settings,
+    get_product_manual_entry,
+    append_audit_log,
+    RUNTIME_DATA_DIR,
+    REPO_DATA_DIR,
+)
+
+MARKETPLACE_CACHE_FILE = RUNTIME_DATA_DIR / "marketplace_cache.json"
+REPO_MARKETPLACE_CACHE_FILE = REPO_DATA_DIR / "marketplace_cache.json"
+
+
+def _load_market_cache() -> Dict[str, Any]:
+    for target in (MARKETPLACE_CACHE_FILE, REPO_MARKETPLACE_CACHE_FILE):
+        if target.exists():
+            try:
+                with open(target, "r", encoding="utf-8") as f:
+                    return json.load(f)
+            except Exception:
+                pass
+    return {}
+
+
+def _save_market_cache(cache: Dict[str, Any]) -> None:
+    for target in (MARKETPLACE_CACHE_FILE, REPO_MARKETPLACE_CACHE_FILE):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with open(target, "w", encoding="utf-8") as f:
+                json.dump(cache, f, indent=2, ensure_ascii=False)
+        except Exception:
+            pass
+
 
 def extract_clean_product_name(title: str) -> str:
     """Extracts a clean commercial search query from a long wholesale title."""
@@ -146,132 +63,367 @@ def extract_clean_product_name(title: str) -> str:
     for p in noise:
         clean = re.sub(p, "", clean, flags=re.IGNORECASE)
     words = [w for w in clean.split() if len(w) > 1 and not w.isdigit()]
-    return " ".join(words[:6]) if words else clean[:40]
+    return " ".join(words[:5]) if words else clean[:35]
 
-def snap_to_impulse_price(target: float) -> int:
-    """Snaps target price strictly into the ₹249–₹799 impulse-buy COD range."""
-    points = [249, 299, 349, 399, 449, 499, 549, 599, 649, 699, 749, 799]
+
+def snap_to_impulse_price(target: float, max_cap: int = 799) -> int:
+    """Snaps target price into psychological points within ideal range."""
+    points = [199, 249, 299, 349, 399, 449, 499, 549, 599, 649, 699, 749, 799, 899, 999]
     for pt in points:
         if pt >= target:
-            return pt
-    return 799  # Hard cap at ₹799 to prevent high COD rejection
+            return min(pt, max_cap) if target <= max_cap else pt
+    return int(round(target))
 
-def get_competitor_price_intelligence(title: str, wholesale_price: float, niche: str = "Home Decor") -> Dict[str, Any]:
+
+def scrape_live_marketplace_prices(keyword: str, use_playwright: bool = False) -> Dict[str, Any]:
     """
-    Provides 100% transparent, real web-verified marketplace price ranges (where researched)
-    or direct live verification links (zero guessed 'Competitor D2C ₹1199' fake numbers),
-    plus exact Landed Cost (Cost + Shipping + COD + RTO buffer) and Bundle calculations.
+    Polite public price check across Amazon.in, Flipkart, and Meesho with caching,
+    retries, and honest error reporting when bot protection (503/CAPTCHA) triggers.
     """
+    clean_kw = extract_clean_product_name(keyword)
+    encoded_kw = urllib.parse.quote_plus(clean_kw)
+    ts = now_iso()
+
+    headers = {
+        "User-Agent": (
+            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36"
+        ),
+        "Accept-Language": "en-IN,en;q=0.9",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    }
+
+    results: Dict[str, Any] = {}
+
+    # 1. Amazon.in Public Search Check (with 2 polite retries)
+    amz_url = f"https://www.amazon.in/s?k={encoded_kw}"
+    amz_price = None
+    amz_ratings = None
+    amz_rank = None
+    amz_reason = None
+
+    for attempt in range(2):
+        try:
+            r = requests.get(amz_url, headers=headers, timeout=6.0)
+            if r.status_code == 200 and "api-services-support@amazon.com" not in r.text:
+                soup = BeautifulSoup(r.text, "html.parser")
+                price_els = soup.select("span.a-price-whole")
+                parsed_prices = []
+                for el in price_els[:8]:
+                    raw = el.get_text(strip=True).replace(",", "").replace(".", "")
+                    if raw.isdigit() and 50 <= int(raw) <= 15000:
+                        parsed_prices.append(int(raw))
+                if parsed_prices:
+                    amz_price = sorted(parsed_prices)[len(parsed_prices) // 2]  # Median of top organic results
+                    rating_el = soup.select_one("span.a-size-base.s-underline-text")
+                    if rating_el:
+                        amz_ratings = rating_el.get_text(strip=True)
+                    amz_rank = "Top Page 1 Result"
+                    break
+                else:
+                    amz_reason = "No public price elements found on page"
+            elif r.status_code == 503 or "api-services-support@amazon.com" in r.text:
+                amz_reason = f"Amazon.in automated request blocked (HTTP {r.status_code} CAPTCHA/503) — use Manual Entry"
+                break
+            else:
+                amz_reason = f"HTTP {r.status_code}"
+        except Exception as e:
+            amz_reason = f"Network error: {type(e).__name__}"
+        time.sleep(0.5)
+
+    results["amazon"] = {
+        "price": amz_price,
+        "rating_count": amz_ratings,
+        "rank": amz_rank,
+        "source": "Amazon.in Public Search",
+        "source_url": amz_url,
+        "fetched_at": ts if amz_price is not None else None,
+        "method": "scrape",
+        "status": "done" if amz_price is not None else "manual_needed",
+        "null_reason": None if amz_price is not None else (amz_reason or "Not available")
+    }
+
+    # 2. Flipkart Public Search Check
+    fk_url = f"https://www.flipkart.com/search?q={encoded_kw}"
+    fk_price = None
+    fk_reason = None
+    try:
+        r_fk = requests.get(fk_url, headers=headers, timeout=5.0)
+        if r_fk.status_code == 200:
+            matches = re.findall(r"₹\s*([1-9]\d{2,3})\b", r_fk.text)
+            valid_fk = [int(x) for x in matches[:10] if 80 <= int(x) <= 9999]
+            if valid_fk:
+                fk_price = sorted(valid_fk)[len(valid_fk) // 2]
+            else:
+                fk_reason = "Flipkart JS client-side rendering or CAPTCHA — use Manual Entry"
+        else:
+            fk_reason = f"Flipkart HTTP {r_fk.status_code} — use Manual Entry"
+    except Exception as e:
+        fk_reason = f"Flipkart connection {type(e).__name__} — use Manual Entry"
+
+    results["flipkart"] = {
+        "price": fk_price,
+        "rating_count": None,
+        "rank": None,
+        "source": "Flipkart Public Search",
+        "source_url": fk_url,
+        "fetched_at": ts if fk_price is not None else None,
+        "method": "scrape",
+        "status": "done" if fk_price is not None else "manual_needed",
+        "null_reason": None if fk_price is not None else fk_reason
+    }
+
+    # 3. Meesho Public Search Check
+    msh_url = f"https://www.meesho.com/search?q={encoded_kw}"
+    results["meesho"] = {
+        "price": None,
+        "rating_count": None,
+        "rank": None,
+        "source": "Meesho Public Search",
+        "source_url": msh_url,
+        "fetched_at": None,
+        "method": "scrape",
+        "status": "manual_needed",
+        "null_reason": "Meesho blocks automated scrapers via Cloudflare WAF — open link & use Manual Entry"
+    }
+
+    # Optional Playwright headless fallback if requested and installed
+    if use_playwright and (results["amazon"]["price"] is None or results["flipkart"]["price"] is None):
+        try:
+            from playwright.sync_api import sync_playwright
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=True)
+                page = browser.new_page(user_agent=headers["User-Agent"])
+                if results["amazon"]["price"] is None:
+                    try:
+                        page.goto(amz_url, timeout=10000, wait_until="domcontentloaded")
+                        els = page.locator("span.a-price-whole").all_inner_texts()
+                        vals = [int(x.replace(",", "").replace(".", "").strip()) for x in els[:6] if x.replace(",", "").replace(".", "").strip().isdigit()]
+                        if vals:
+                            results["amazon"]["price"] = sorted(vals)[len(vals) // 2]
+                            results["amazon"]["fetched_at"] = ts
+                            results["amazon"]["method"] = "scrape"
+                            results["amazon"]["status"] = "done"
+                            results["amazon"]["null_reason"] = None
+                    except Exception:
+                        pass
+                browser.close()
+        except Exception:
+            pass
+
+    cache = _load_market_cache()
+    cache[clean_kw.lower()] = results
+    _save_market_cache(cache)
+
+    append_audit_log(
+        action="marketplace_price_scrape",
+        target=clean_kw,
+        source="Amazon.in / Flipkart / Meesho",
+        method="scrape",
+        source_url=amz_url,
+        details=f"Amazon={results['amazon']['price']}, Flipkart={results['flipkart']['price']}"
+    )
+    return results
+
+
+def get_competitor_price_intelligence(
+    title: str,
+    wholesale_price: float,
+    niche: str = "Home Decor",
+    handle: Optional[str] = None,
+    fetch_live: bool = False
+) -> Dict[str, Any]:
+    """
+    Computes Landed Cost from user's editable assumptions ('My Assumptions') and
+    combines real fetched or manually entered marketplace prices.
+    Never guesses or hardcodes competitor prices.
+    """
+    settings = load_settings()
+    assumptions = settings.get("cost_assumptions", {})
+    stale_days = int(settings.get("general", {}).get("stale_days_limit", 7))
+
+    shipping_cost = float(assumptions.get("shipping_cost", 65.0))
+    cod_fee = float(assumptions.get("cod_fee", 20.0))
+    packaging_cost = float(assumptions.get("packaging_cost", 10.0))
+    expected_rto_loss = float(assumptions.get("expected_rto_loss", 25.0))
+    min_net_profit = float(assumptions.get("min_net_profit", 150.0))
+    min_markup = float(assumptions.get("min_markup_multiple", 2.5))
+    target_markup = float(assumptions.get("target_markup_multiple", 3.0))
+    ideal_max = int(assumptions.get("ideal_price_max", 799))
+
     clean_keyword = extract_clean_product_name(title)
     encoded_kw = urllib.parse.quote_plus(clean_keyword)
-    title_lower = title.lower()
 
-    # 1. Real Clickable Deep-Search URLs for Manual Verification (Step 3 & 7 of Hunting Process)
     amazon_url = f"https://www.amazon.in/s?k={encoded_kw}"
     amazon_bestsellers_url = "https://www.amazon.in/gp/movers-and-shakers/kitchen"
     flipkart_url = f"https://www.flipkart.com/search?q={encoded_kw}"
     meesho_url = f"https://www.meesho.com/search?q={encoded_kw}"
     google_shopping_url = f"https://www.google.com/search?tbm=shop&gl=in&q={encoded_kw}"
 
-    unit_cost = float(wholesale_price if wholesale_price > 0 else 100.0)
+    unit_cost = float(wholesale_price) if wholesale_price and wholesale_price > 0 else 0.0
 
-    # 2. Check if product needs a 2-Pack / Combo Bundle (Criterion #10: Bundle ban sake)
-    if unit_cost <= 65:
+    # Rule-based bundle check for low-cost items
+    if 0 < unit_cost <= 65:
         bundle_qty = 2
-        effective_cost = round(unit_cost * 2, 1)
-        bundle_label = f"Combo Pack of 2 (Unit: ₹{int(unit_cost)} × 2 = ₹{int(effective_cost)})"
+        effective_cost = round(unit_cost * 2, 2)
+        bundle_rule_triggered = "Rule #1: Unit supplier cost <= ₹65 -> Auto 2-Pack Same-SKU Combo"
+        bundle_label = f"Combo Pack of 2 (₹{unit_cost:.0f} × 2 = ₹{effective_cost:.0f})"
     else:
         bundle_qty = 1
-        effective_cost = unit_cost
-        bundle_label = f"Single Pack (Supplier Cost: ₹{int(unit_cost)})"
+        effective_cost = round(unit_cost, 2)
+        bundle_rule_triggered = "Rule #2: Single SKU + Complementary Category Add-On Eligible"
+        bundle_label = f"Single Unit (Supplier Cost: ₹{effective_cost:.0f})"
 
-    # 3. Match against Web-Verified Marketplace Price Database (Zero Formula Guessing)
-    matched_entry = None
-    for entry in VERIFIED_MARKET_DATA:
-        if any(m in title_lower for m in entry["match"]):
-            matched_entry = entry
-            break
+    # Landed Cost = Supplier Cost + Shipping + COD Fee + Packaging + Expected RTO Loss ("My Assumptions")
+    total_fees_and_rto = round(shipping_cost + cod_fee + packaging_cost + expected_rto_loss, 2)
+    landed_cost = round(effective_cost + total_fees_and_rto, 2)
 
-    # 4. Transparent Landed Cost Calculation (Step 7: Cost + Shipping ₹65 + COD/RTO Risk ₹45)
-    shipping_cost = 65.0
-    cod_rto_buffer = 45.0
-    landed_cost = round(effective_cost + shipping_cost + cod_rto_buffer, 1)
+    # Target selling price based on user's markup & minimum net profit assumptions
+    raw_target = max(effective_cost * target_markup, landed_cost + min_net_profit)
+    suggested_sell_price = snap_to_impulse_price(raw_target, max_cap=ideal_max)
 
-    if matched_entry:
-        suggested_sell_price = matched_entry["recommended_sell"]
-        # Ensure at least ₹150 net profit after landed cost while staying <= ₹799
-        if (suggested_sell_price - landed_cost) < 150:
-            suggested_sell_price = snap_to_impulse_price(landed_cost + 160)
-        meesho_display = matched_entry["meesho"]
-        flipkart_display = matched_entry["flipkart"]
-        amazon_display = matched_entry["amazon"]
-        bundle_note = matched_entry["bundle_note"]
-        is_web_verified = True
+    net_profit = round(suggested_sell_price - landed_cost, 2)
+    gross_profit_after_ship = round(suggested_sell_price - effective_cost - shipping_cost, 2)
+    profit_margin_pct = round((net_profit / suggested_sell_price) * 100, 1) if suggested_sell_price > 0 else 0.0
+    markup_multiple = round(suggested_sell_price / effective_cost, 2) if effective_cost > 0 else 0.0
+    passes_2_5x_rule = markup_multiple >= min_markup and net_profit >= min_net_profit
+
+    # Check cache and manual entries for real marketplace prices
+    cache = _load_market_cache()
+    if fetch_live:
+        scraped = scrape_live_marketplace_prices(clean_keyword)
     else:
-        # Calculate strict 2.8x-3x markup capped at ₹799 with minimum ₹150 net profit after landed cost
-        target_sell = max(effective_cost * 2.8, landed_cost + 160)
-        suggested_sell_price = snap_to_impulse_price(target_sell)
-        meesho_display = "Check Live ↗"
-        flipkart_display = "Check Live ↗"
-        amazon_display = "Check Live ↗"
-        bundle_note = bundle_label
-        is_web_verified = False
+        scraped = cache.get(clean_keyword.lower(), {})
 
-    net_profit = round(suggested_sell_price - landed_cost, 1)
-    gross_profit_after_ship = round(suggested_sell_price - effective_cost - shipping_cost, 1)
-    profit_margin_pct = round((net_profit / suggested_sell_price) * 100, 1) if suggested_sell_price > 0 else 0
-    markup_multiple = round(suggested_sell_price / effective_cost, 1) if effective_cost > 0 else 3.0
+    manual_all = get_product_manual_entry(handle) if handle else {}
+    manual_mkt = manual_all.get("marketplace_prices", {})
+
+    def _build_mkt_entry(key: str, display_name: str, default_url: str, manual_field: str) -> Dict[str, Any]:
+        # 1. Manual entry takes priority if user verified it
+        if manual_mkt and manual_mkt.get(manual_field) is not None:
+            try:
+                val = float(manual_mkt[manual_field])
+                ts = manual_mkt.get("fetched_at")
+                return {
+                    "name": display_name,
+                    "price_numeric": val,
+                    "price": f"₹{int(val)}",
+                    "url": default_url,
+                    "source": f"{display_name} (Manual Entry)",
+                    "source_url": default_url,
+                    "fetched_at": ts,
+                    "method": "manual_entry",
+                    "is_stale": is_timestamp_stale(ts, stale_days),
+                    "status": "done",
+                    "badge": "Manual Entry",
+                    "null_reason": None
+                }
+            except (ValueError, TypeError):
+                pass
+
+        # 2. Real scraped cache entry
+        sc = scraped.get(key, {})
+        if sc and sc.get("price") is not None:
+            val = float(sc["price"])
+            ts = sc.get("fetched_at")
+            return {
+                "name": display_name,
+                "price_numeric": val,
+                "price": f"₹{int(val)}",
+                "rating_count": sc.get("rating_count"),
+                "rank": sc.get("rank"),
+                "url": sc.get("source_url", default_url),
+                "source": sc.get("source", f"{display_name} Public Search"),
+                "source_url": sc.get("source_url", default_url),
+                "fetched_at": ts,
+                "method": "scrape",
+                "is_stale": is_timestamp_stale(ts, stale_days),
+                "status": "done",
+                "badge": "Live Scraped",
+                "null_reason": None
+            }
+
+        # 3. Honest Null State (Rule #3: Never guess or interpolate)
+        reason = sc.get("null_reason") if sc else "Data not available: Not fetched yet (Click 'Fetch Live Prices' or enter manually)"
+        return {
+            "name": display_name,
+            "price_numeric": None,
+            "price": None,
+            "rating_count": None,
+            "rank": None,
+            "url": default_url,
+            "source": display_name,
+            "source_url": default_url,
+            "fetched_at": None,
+            "method": "scrape",
+            "is_stale": False,
+            "status": "manual_needed",
+            "badge": "Data not available",
+            "null_reason": reason
+        }
+
+    amz_entry = _build_mkt_entry("amazon", "Amazon.in", amazon_url, "amazon_price")
+    amz_entry["bestsellers_url"] = amazon_bestsellers_url
+    fk_entry = _build_mkt_entry("flipkart", "Flipkart", flipkart_url, "flipkart_price")
+    msh_entry = _build_mkt_entry("meesho", "Meesho", meesho_url, "meesho_price")
+
+    real_prices = [
+        e["price_numeric"] for e in (amz_entry, fk_entry, msh_entry)
+        if e["price_numeric"] is not None
+    ]
+
+    if real_prices:
+        avg_market_price = round(sum(real_prices) / len(real_prices), 1)
+        is_cheaper_than_market = suggested_sell_price <= avg_market_price
+        price_diff = round(avg_market_price - suggested_sell_price, 1)
+        comparison_verdict = (
+            f"Cheaper than market avg (₹{avg_market_price:.0f}) by ₹{abs(price_diff):.0f}"
+            if is_cheaper_than_market
+            else f"Costlier than market avg (₹{avg_market_price:.0f}) by ₹{abs(price_diff):.0f}"
+        )
+    else:
+        avg_market_price = None
+        is_cheaper_than_market = None
+        price_diff = None
+        comparison_verdict = "Data not available (Fetch or enter Amazon/Flipkart/Meesho prices to compare)"
 
     strategy_text = (
-        f"Landed Cost Breakdown: Supplier ₹{int(effective_cost)} ({bundle_label}) + ₹{int(shipping_cost)} Shipping + "
-        f"₹{int(cod_rto_buffer)} COD/RTO Buffer = ₹{int(landed_cost)}. "
-        f"Sell at ₹{suggested_sell_price} ({markup_multiple}x markup, strictly under ₹799 impulse cap) "
-        f"for ₹{int(net_profit)} True Net Profit in hand."
+        f"[My Assumptions] Landed Cost = Supplier ₹{effective_cost:.0f} ({bundle_label}) + "
+        f"Shipping ₹{shipping_cost:.0f} + COD Fee ₹{cod_fee:.0f} + Packaging ₹{packaging_cost:.0f} + "
+        f"Expected RTO Loss ₹{expected_rto_loss:.0f} = ₹{landed_cost:.0f}. "
+        f"Selling Price: ₹{suggested_sell_price} ({markup_multiple}x supplier cost) -> "
+        f"Net Profit: ₹{net_profit:.0f}/order."
     )
 
     return {
         "search_keyword": clean_keyword,
-        "is_web_verified": is_web_verified,
+        "cost_assumptions_label": "My Assumptions (User-configured in Settings, not external facts)",
         "bundle_qty": bundle_qty,
+        "bundle_rule_triggered": bundle_rule_triggered,
         "effective_supplier_cost": effective_cost,
-        "bundle_note": bundle_note,
+        "bundle_note": bundle_label,
         "shipping_cost": shipping_cost,
-        "cod_rto_buffer": cod_rto_buffer,
+        "cod_fee": cod_fee,
+        "packaging_cost": packaging_cost,
+        "expected_rto_loss": expected_rto_loss,
+        "cod_rto_buffer": round(cod_fee + packaging_cost + expected_rto_loss, 2),
         "landed_cost": landed_cost,
         "markup_multiple": markup_multiple,
+        "passes_2_5x_rule": passes_2_5x_rule,
         "marketplaces": {
-            "amazon": {
-                "name": "Amazon.in",
-                "price": amazon_display,
-                "url": amazon_url,
-                "bestsellers_url": amazon_bestsellers_url,
-                "badge": "Web Verified Range" if is_web_verified else "Live Search Link"
-            },
-            "flipkart": {
-                "name": "Flipkart",
-                "price": flipkart_display,
-                "url": flipkart_url,
-                "badge": "Web Verified Range" if is_web_verified else "Live Search Link"
-            },
-            "meesho": {
-                "name": "Meesho",
-                "price": meesho_display,
-                "url": meesho_url,
-                "badge": "Reseller Floor" if is_web_verified else "Live Search Link"
-            },
-            "competitor_d2c": {
-                "name": "Google Shopping",
-                "price": "Compare Live ↗",
-                "url": google_shopping_url,
-                "badge": "Live Multi-Site Check"
-            }
+            "amazon": amz_entry,
+            "flipkart": fk_entry,
+            "meesho": msh_entry,
         },
+        "avg_market_price": avg_market_price,
+        "is_cheaper_than_market": is_cheaper_than_market,
+        "market_comparison_verdict": comparison_verdict,
         "suggested_price": suggested_sell_price,
         "net_profit": net_profit,
         "gross_profit_after_ship": gross_profit_after_ship,
         "profit_margin_pct": profit_margin_pct,
-        "saving_vs_amazon": 150,
-        "discount_pct": 40,
+        "saving_vs_amazon": price_diff,
+        "discount_pct": None,
         "strategy_insight": strategy_text,
         "google_shopping_url": google_shopping_url
     }

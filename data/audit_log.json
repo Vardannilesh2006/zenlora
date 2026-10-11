@@ -1,0 +1,47 @@
+[
+  {
+    "timestamp": "2026-10-11T11:28:35+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "in Floor Cleaning Brush with",
+    "source": "Amazon.in / Flipkart / Meesho",
+    "source_url": "https://www.amazon.in/s?k=in+Floor+Cleaning+Brush+with",
+    "method": "scrape",
+    "details": "Amazon=369, Flipkart=None"
+  },
+  {
+    "timestamp": "2026-10-11T11:28:22+05:30",
+    "action": "google_trends_fetch",
+    "target": "floor cleaning brush",
+    "source": "Google Trends India (pytrends)",
+    "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=floor%20cleaning%20brush",
+    "method": "api",
+    "details": "Peak: Feb 2026 (100), Current: 75, Baseline: 33.33, Ratio: 2.25x"
+  },
+  {
+    "timestamp": "2026-10-11T11:27:29+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "in Folding Hair Brush with",
+    "source": "Amazon.in / Flipkart / Meesho",
+    "source_url": "https://www.amazon.in/s?k=in+Folding+Hair+Brush+with",
+    "method": "scrape",
+    "details": "Amazon=None, Flipkart=None"
+  },
+  {
+    "timestamp": "2026-10-11T11:27:00+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "12x12 Inch Photo Frame",
+    "source": "Amazon.in / Flipkart / Meesho",
+    "source_url": "https://www.amazon.in/s?k=12x12+Inch+Photo+Frame",
+    "method": "scrape",
+    "details": "Amazon=None, Flipkart=None"
+  },
+  {
+    "timestamp": "2026-10-11T11:26:44+05:30",
+    "action": "deodap_live_ingest",
+    "target": "233 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=1",
+    "method": "api",
+    "details": "Fetched 233 live in-stock items across 6 API requests."
+  }
+]

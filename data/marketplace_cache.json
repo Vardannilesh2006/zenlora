@@ -1,0 +1,107 @@
+{
+  "12x12 inch photo frame": {
+    "amazon": {
+      "price": null,
+      "rating_count": null,
+      "rank": null,
+      "source": "Amazon.in Public Search",
+      "source_url": "https://www.amazon.in/s?k=12x12+Inch+Photo+Frame",
+      "fetched_at": null,
+      "method": "scrape",
+      "status": "manual_needed",
+      "null_reason": "Amazon.in automated request blocked (HTTP 503 CAPTCHA/503) — use Manual Entry"
+    },
+    "flipkart": {
+      "price": null,
+      "rating_count": null,
+      "rank": null,
+      "source": "Flipkart Public Search",
+      "source_url": "https://www.flipkart.com/search?q=12x12+Inch+Photo+Frame",
+      "fetched_at": null,
+      "method": "scrape",
+      "status": "manual_needed",
+      "null_reason": "Flipkart connection ConnectTimeout — use Manual Entry"
+    },
+    "meesho": {
+      "price": null,
+      "rating_count": null,
+      "rank": null,
+      "source": "Meesho Public Search",
+      "source_url": "https://www.meesho.com/search?q=12x12+Inch+Photo+Frame",
+      "fetched_at": null,
+      "method": "scrape",
+      "status": "manual_needed",
+      "null_reason": "Meesho blocks automated scrapers via Cloudflare WAF — open link & use Manual Entry"
+    }
+  },
+  "in folding hair brush with": {
+    "amazon": {
+      "price": null,
+      "rating_count": null,
+      "rank": null,
+      "source": "Amazon.in Public Search",
+      "source_url": "https://www.amazon.in/s?k=in+Folding+Hair+Brush+with",
+      "fetched_at": null,
+      "method": "scrape",
+      "status": "manual_needed",
+      "null_reason": "Amazon.in automated request blocked (HTTP 503 CAPTCHA/503) — use Manual Entry"
+    },
+    "flipkart": {
+      "price": null,
+      "rating_count": null,
+      "rank": null,
+      "source": "Flipkart Public Search",
+      "source_url": "https://www.flipkart.com/search?q=in+Folding+Hair+Brush+with",
+      "fetched_at": null,
+      "method": "scrape",
+      "status": "manual_needed",
+      "null_reason": "Flipkart connection ConnectTimeout — use Manual Entry"
+    },
+    "meesho": {
+      "price": null,
+      "rating_count": null,
+      "rank": null,
+      "source": "Meesho Public Search",
+      "source_url": "https://www.meesho.com/search?q=in+Folding+Hair+Brush+with",
+      "fetched_at": null,
+      "method": "scrape",
+      "status": "manual_needed",
+      "null_reason": "Meesho blocks automated scrapers via Cloudflare WAF — open link & use Manual Entry"
+    }
+  },
+  "in floor cleaning brush with": {
+    "amazon": {
+      "price": 369,
+      "rating_count": null,
+      "rank": "Top Page 1 Result",
+      "source": "Amazon.in Public Search",
+      "source_url": "https://www.amazon.in/s?k=in+Floor+Cleaning+Brush+with",
+      "fetched_at": "2026-10-11T11:28:23+05:30",
+      "method": "scrape",
+      "status": "done",
+      "null_reason": null
+    },
+    "flipkart": {
+      "price": null,
+      "rating_count": null,
+      "rank": null,
+      "source": "Flipkart Public Search",
+      "source_url": "https://www.flipkart.com/search?q=in+Floor+Cleaning+Brush+with",
+      "fetched_at": null,
+      "method": "scrape",
+      "status": "manual_needed",
+      "null_reason": "Flipkart connection ConnectTimeout — use Manual Entry"
+    },
+    "meesho": {
+      "price": null,
+      "rating_count": null,
+      "rank": null,
+      "source": "Meesho Public Search",
+      "source_url": "https://www.meesho.com/search?q=in+Floor+Cleaning+Brush+with",
+      "fetched_at": null,
+      "method": "scrape",
+      "status": "manual_needed",
+      "null_reason": "Meesho blocks automated scrapers via Cloudflare WAF — open link & use Manual Entry"
+    }
+  }
+}
