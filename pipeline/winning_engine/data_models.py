@@ -217,20 +217,28 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
 }
 
 
+_SETTINGS_CACHE: Dict[str, Any] = {"mtime": 0.0, "data": None}
+_MANUAL_CACHE: Dict[str, Any] = {"mtime": 0.0, "data": None}
+
+
 def load_settings() -> Dict[str, Any]:
-    """Loads user settings from disk, initializing defaults if needed."""
+    """Loads user settings from disk (with fast mtime cache), initializing defaults if needed."""
     for target in (SETTINGS_FILE, REPO_SETTINGS_FILE):
         if target.exists():
             try:
+                mtime = target.stat().st_mtime
+                if _SETTINGS_CACHE["data"] is not None and _SETTINGS_CACHE["mtime"] == mtime:
+                    return _SETTINGS_CACHE["data"]
                 with open(target, "r", encoding="utf-8") as f:
                     saved = json.load(f)
-                # Merge top-level keys with defaults
                 merged = json.loads(json.dumps(DEFAULT_SETTINGS))
                 for k, v in saved.items():
                     if isinstance(v, dict) and isinstance(merged.get(k), dict):
                         merged[k].update(v)
                     else:
                         merged[k] = v
+                _SETTINGS_CACHE["mtime"] = mtime
+                _SETTINGS_CACHE["data"] = merged
                 return merged
             except Exception:
                 pass
@@ -245,6 +253,8 @@ def save_settings(new_settings: Dict[str, Any], log_change: bool = True) -> Dict
             target.parent.mkdir(parents=True, exist_ok=True)
             with open(target, "w", encoding="utf-8") as f:
                 json.dump(new_settings, f, indent=2, ensure_ascii=False)
+            _SETTINGS_CACHE["mtime"] = target.stat().st_mtime
+            _SETTINGS_CACHE["data"] = new_settings
         except Exception:
             pass
     if log_change:
@@ -287,10 +297,13 @@ def calculate_festival_cutoffs(
         if supplier_max_days is None:
             results.append({
                 **fest,
+                "festival_date": fest_date_str,
                 "days_until_festival": days_until_festival,
                 "supplier_max_days_used": None,
                 "buffer_days": buffer_days,
                 "last_order_date": None,
+                "days_until_cutoff": None,
+                "can_deliver_in_time": False,
                 "status": "unknown_delivery_time",
                 "status_label": "Delivery cutoff unknown (Supplier max delivery days not set)"
             })
@@ -315,11 +328,14 @@ def calculate_festival_cutoffs(
 
             results.append({
                 **fest,
+                "festival_date": fest_date_str,
                 "days_until_festival": days_until_festival,
                 "supplier_max_days_used": int(supplier_max_days),
                 "buffer_days": buffer_days,
                 "last_order_date": cutoff_date.isoformat(),
                 "days_left_to_order": days_left_to_order,
+                "days_until_cutoff": days_left_to_order,
+                "can_deliver_in_time": status in ("on_time", "urgent"),
                 "status": status,
                 "status_label": status_label
             })
@@ -327,12 +343,18 @@ def calculate_festival_cutoffs(
 
 
 def load_manual_entries() -> Dict[str, Dict[str, Any]]:
-    """Loads all user manual entries (ratings, Meta ads, Instagram, marketplace prices, sample & test results)."""
+    """Loads all user manual entries (with fast mtime cache)."""
     for target in (MANUAL_ENTRIES_FILE, REPO_MANUAL_ENTRIES_FILE):
         if target.exists():
             try:
+                mtime = target.stat().st_mtime
+                if _MANUAL_CACHE["data"] is not None and _MANUAL_CACHE["mtime"] == mtime:
+                    return _MANUAL_CACHE["data"]
                 with open(target, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                    data = json.load(f)
+                _MANUAL_CACHE["mtime"] = mtime
+                _MANUAL_CACHE["data"] = data
+                return data
             except Exception:
                 pass
     return {}
@@ -347,15 +369,8 @@ def get_product_manual_entry(handle: str) -> Dict[str, Any]:
 def save_product_manual_entry(handle: str, section: str, payload: Dict[str, Any]) -> Dict[str, Any]:
     """
     Saves a manual entry section for a product handle and records an audit log entry.
-    Valid sections:
-      - 'ratings' (pain_wow_rating 1-5, demo_3s_rating 1-5, demo_checklist)
-      - 'meta_ads' (active_ads_count, longest_running_days, distinct_creatives_count, advertisers_count, notes, date_checked)
-      - 'instagram' (reel_link, views, saves_shares, price_link_comments_count, date_checked)
-      - 'marketplace_prices' (amazon_price, flipkart_price, meesho_price, supplier_min_days, supplier_max_days)
-      - 'sample_tracking' (status, quality_rating, photo_urls, notes)
-      - 'test_results' (visits, add_to_carts, orders, cod_confirmed_pct, rto_pct, ad_spend, revenue)
     """
-    entries = load_manual_entries()
+    entries = dict(load_manual_entries())
     if handle not in entries:
         entries[handle] = {}
 
@@ -373,6 +388,8 @@ def save_product_manual_entry(handle: str, section: str, payload: Dict[str, Any]
             target.parent.mkdir(parents=True, exist_ok=True)
             with open(target, "w", encoding="utf-8") as f:
                 json.dump(entries, f, indent=2, ensure_ascii=False)
+            _MANUAL_CACHE["mtime"] = target.stat().st_mtime
+            _MANUAL_CACHE["data"] = entries
         except Exception:
             pass
 

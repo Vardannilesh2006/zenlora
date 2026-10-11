@@ -41,12 +41,21 @@ def _get_youtube_api_key() -> str:
     return ""
 
 
+_TRENDS_MEM_CACHE: Dict[str, Any] = {"mtime": 0.0, "data": None}
+
+
 def _load_trends_cache() -> Dict[str, Any]:
     for target in (TRENDS_CACHE_FILE, REPO_TRENDS_CACHE_FILE):
         if target.exists():
             try:
+                mtime = target.stat().st_mtime
+                if _TRENDS_MEM_CACHE["data"] is not None and _TRENDS_MEM_CACHE["mtime"] == mtime:
+                    return _TRENDS_MEM_CACHE["data"]
                 with open(target, "r", encoding="utf-8") as f:
-                    return json.load(f)
+                    data = json.load(f)
+                _TRENDS_MEM_CACHE["mtime"] = mtime
+                _TRENDS_MEM_CACHE["data"] = data
+                return data
             except Exception:
                 pass
     return {}
@@ -58,6 +67,8 @@ def _save_trends_cache(cache: Dict[str, Any]) -> None:
             target.parent.mkdir(parents=True, exist_ok=True)
             with open(target, "w", encoding="utf-8") as f:
                 json.dump(cache, f, indent=2, ensure_ascii=False)
+            _TRENDS_MEM_CACHE["mtime"] = target.stat().st_mtime
+            _TRENDS_MEM_CACHE["data"] = cache
         except Exception:
             pass
 

@@ -153,16 +153,13 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
         fetch_live=False
     )
 
-    prod_data = {"title": title, "description": item.get("description", "")}
-    class_data = {
-        "zenlora_title": zen_title,
-        "primary_category": niche,
-        "selling_price": score_data["pricing"]["selling_price"]
-    }
-    try:
-        ugc_prompts = UGCEngine.generate_prompts(prod_data, class_data, skip_gemini=True)
-    except Exception:
-        ugc_prompts = {}
+    ugc_prompts = {}
+    if item.get("storyboard_image_prompt"):
+        ugc_prompts = {
+            k: item[k]
+            for k in ("storyboard_image_prompt", "scene_1_video_prompt", "scene_2_video_prompt", "scene_3_video_prompt", "voiceover_script")
+            if k in item
+        }
 
     pipeline_steps = _build_pipeline_steps_status(
         item, trend_signals, competitor_intel, meta_signals, social_signals, score_data
@@ -231,16 +228,26 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
     }
 
 
-def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -> List[Dict[str, Any]]:
+def scan_and_update_winners(
+    limit_per_niche: int = 30,
+    randomize: bool = True,
+    batch_cursor: Optional[int] = None
+) -> List[Dict[str, Any]]:
     """
     Pulls fresh live DeoDap products across all 5 niches, evaluates all 10 criteria
-    with transparent provenance metadata, and persists the updated shortlist.
+    with transparent provenance metadata, and persists the updated shortlist pool.
     """
-    print(f"[*] Starting Zenlora Winning Radar live scan (limit_per_niche={limit_per_niche}, rotate={randomize})...")
-    harvested_items = harvest_deodap_bestsellers(limit_per_niche=limit_per_niche, randomize=randomize)
+    pool_limit = max(limit_per_niche, 30)
+    print(f"[*] Starting Zenlora Winning Radar live scan (pool_limit={pool_limit}, rotate={randomize}, batch={batch_cursor})...")
+    harvested_items = harvest_deodap_bestsellers(
+        limit_per_niche=pool_limit,
+        randomize=randomize,
+        batch_cursor=batch_cursor
+    )
 
     winners = [enrich_winner_record(item, catalog_pool=harvested_items) for item in harvested_items]
-    winners.sort(key=lambda x: (not x.get("is_hard_failed", False), x.get("winning_score", 0)), reverse=True)
+    if not randomize:
+        winners.sort(key=lambda x: (not x.get("is_hard_failed", False), x.get("winning_score", 0)), reverse=True)
 
     # Persist to both runtime WINNING_DB_FILE and repo winning_products.json
     repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
@@ -259,16 +266,17 @@ def scan_and_update_winners(limit_per_niche: int = 20, randomize: bool = True) -
 def get_winners(
     niche: Optional[str] = None,
     include_hard_failed: bool = False,
-    refresh_dynamic: bool = True
+    refresh_dynamic: bool = True,
+    batch_cursor: int = 0,
+    per_niche_display: int = 12
 ) -> List[Dict[str, Any]]:
     """
     Loads winning products from storage, dynamically applying any updated manual entries
-    or user settings so scores and confidence levels are always current.
+    or user settings, and rotates the displayed slice per niche when batch_cursor > 0.
     """
     winners = []
     repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
 
-    # Check which file is newer (so live scans on Vercel /tmp or local immediately reflect)
     candidates = []
     if WINNING_DB_FILE.exists():
         candidates.append(WINNING_DB_FILE)
@@ -286,12 +294,63 @@ def get_winners(
             continue
 
     if refresh_dynamic and winners:
-        refreshed = [enrich_winner_record(w, catalog_pool=winners) for w in winners]
-        refreshed.sort(key=lambda x: (not x.get("is_hard_failed", False), x.get("winning_score", 0)), reverse=True)
-        winners = refreshed
+        winners = [enrich_winner_record(w, catalog_pool=winners) for w in winners]
 
     if not include_hard_failed:
         winners = [w for w in winners if not w.get("is_hard_failed", False)]
+
+    # Group by niche to apply batch_cursor rotation and per_niche_display slicing
+    if per_niche_display and per_niche_display > 0:
+        niches_order = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts"]
+        by_niche: Dict[str, List[Dict[str, Any]]] = {n: [] for n in niches_order}
+        for w in winners:
+            wn = w.get("niche", "Gadgets")
+            if wn in by_niche:
+                by_niche[wn].append(w)
+            else:
+                by_niche.setdefault(wn, []).append(w)
+
+        sliced_all: List[Dict[str, Any]] = []
+        b_idx = max(0, int(batch_cursor or 0))
+
+        for n_name, n_items in by_niche.items():
+            if not n_items:
+                continue
+            # Sort base niche pool deterministically by (not hard_failed, score, handle)
+            n_items_sorted = sorted(
+                n_items,
+                key=lambda x: (not x.get("is_hard_failed", False), x.get("winning_score", 0), x.get("handle", "")),
+                reverse=True
+            )
+            if b_idx > 0 and len(n_items_sorted) > 1:
+                shift = (b_idx * 6) % len(n_items_sorted)
+                rotated_niche = n_items_sorted[shift:] + n_items_sorted[:shift]
+            else:
+                rotated_niche = n_items_sorted
+            sliced_all.extend(rotated_niche[:per_niche_display])
+
+        # Interleave niches for 'All' tab when batch_cursor > 0 so top row immediately changes across all categories
+        if not niche or str(niche).strip().lower() == "all":
+            if b_idx == 0:
+                sliced_all.sort(key=lambda x: (not x.get("is_hard_failed", False), x.get("winning_score", 0)), reverse=True)
+            else:
+                interleaved: List[Dict[str, Any]] = []
+                niche_buckets = [
+                    [x for x in sliced_all if x.get("niche") == n_key]
+                    for n_key in niches_order
+                ]
+                # Rotate bucket order by batch_cursor too
+                b_shift = b_idx % len(niche_buckets)
+                niche_buckets = niche_buckets[b_shift:] + niche_buckets[:b_shift]
+                for i in range(per_niche_display):
+                    for bucket in niche_buckets:
+                        if i < len(bucket):
+                            interleaved.append(bucket[i])
+                sliced_all = interleaved
+            return sliced_all
+
+        target_niche = str(niche).strip().lower()
+        return [w for w in sliced_all if str(w.get("niche", "")).strip().lower() == target_niche]
 
     if niche and str(niche).strip().lower() != "all":
         target_niche = str(niche).strip().lower()
@@ -302,7 +361,7 @@ def get_winners(
 def import_to_studio(handle: str) -> Dict[str, Any]:
     """Imports a discovered winning product directly into the Zenlora Studio database."""
     normalized_handle = DeoDapExtractor.clean_handle(handle)
-    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=False)
+    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=False, per_niche_display=0)
     target = next(
         (
             w for w in all_winners

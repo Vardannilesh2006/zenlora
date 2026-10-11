@@ -77,9 +77,10 @@ def radar():
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
     show_hard_failed = request.args.get("show_hard_failed", "0") == "1"
+    batch_cursor = int(request.args.get("batch", 0) or 0)
 
-    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True)
-    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True)
+    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=12)
+    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=12)
 
     # Apply dashboard filters
     if festival_filter != "All":
@@ -140,6 +141,7 @@ def radar():
         settings=settings,
         festival_cutoffs=festival_cutoffs,
         audit_logs=audit_logs,
+        current_batch=batch_cursor,
     )
 
 
@@ -147,10 +149,12 @@ def radar():
 def api_radar_scan():
     try:
         data = request.get_json(silent=True) or {}
-        limit = int(data.get("limit", 20))
-        winners = scan_and_update_winners(limit_per_niche=limit, randomize=True)
+        limit = int(data.get("limit", 30))
+        batch_cursor = int(data.get("batch", 1) or 1)
+        winners = scan_and_update_winners(limit_per_niche=limit, randomize=True, batch_cursor=batch_cursor)
         return jsonify({
             "success": True,
+            "batch": batch_cursor,
             "count": len(winners),
             "winners": winners,
         })
@@ -162,14 +166,15 @@ def api_radar_scan():
 def api_radar_products():
     niche = request.args.get("niche", "All")
     show_hard_failed = request.args.get("show_hard_failed", "0") == "1"
-    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed)
+    batch_cursor = int(request.args.get("batch", 0) or 0)
+    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, batch_cursor=batch_cursor, per_niche_display=12)
     return jsonify(winners)
 
 
 @app.route("/api/radar/export.json", methods=["GET"])
 def export_radar_json():
     niche = request.args.get("niche", "All")
-    winners = get_winners(niche=niche, include_hard_failed=True)
+    winners = get_winners(niche=niche, include_hard_failed=True, per_niche_display=0)
     payload = {
         "exported_at": winners[0].get("scanned_at") if winners else None,
         "count": len(winners),
@@ -186,7 +191,7 @@ def export_radar_json():
 @app.route("/api/radar/export.csv", methods=["GET"])
 def export_radar_csv():
     niche = request.args.get("niche", "All")
-    winners = get_winners(niche=niche, include_hard_failed=True)
+    winners = get_winners(niche=niche, include_hard_failed=True, per_niche_display=0)
     output = io.StringIO()
     writer = csv.writer(output)
     writer.writerow([
@@ -277,7 +282,7 @@ def api_save_manual_entry(handle):
 @app.route("/api/product/<handle>/fetch-demand", methods=["POST"])
 def api_fetch_live_demand(handle):
     try:
-        winners = get_winners(include_hard_failed=True, refresh_dynamic=False)
+        winners = get_winners(include_hard_failed=True, refresh_dynamic=False, per_niche_display=0)
         prod = next((w for w in winners if w.get("handle") == handle), None)
         kw = prod.get("meta_ads", {}).get("keyword") if prod else handle.replace("-", " ")
         niche = prod.get("niche", "Festive") if prod else "Festive"
@@ -290,7 +295,7 @@ def api_fetch_live_demand(handle):
 @app.route("/api/product/<handle>/fetch-prices", methods=["POST"])
 def api_fetch_live_prices(handle):
     try:
-        winners = get_winners(include_hard_failed=True, refresh_dynamic=False)
+        winners = get_winners(include_hard_failed=True, refresh_dynamic=False, per_niche_display=0)
         prod = next((w for w in winners if w.get("handle") == handle), None)
         title = prod.get("title", handle) if prod else handle
         cost = float(prod.get("wholesale_price", 100.0)) if prod else 100.0
@@ -304,7 +309,7 @@ def api_fetch_live_prices(handle):
 @app.route("/api/product/<handle>/ai-opinion", methods=["POST"])
 def api_fetch_ai_opinion(handle):
     try:
-        winners = get_winners(include_hard_failed=True, refresh_dynamic=False)
+        winners = get_winners(include_hard_failed=True, refresh_dynamic=False, per_niche_display=0)
         prod = next((w for w in winners if w.get("handle") == handle), None)
         if not prod:
             return jsonify({"success": False, "error": "Product not found"}), 404
@@ -335,7 +340,7 @@ def api_radar_import(handle):
 
 @app.route("/product/<handle>")
 def product_detail(handle):
-    winners = get_winners(include_hard_failed=True, refresh_dynamic=True)
+    winners = get_winners(include_hard_failed=True, refresh_dynamic=True, per_niche_display=0)
     product = next((w for w in winners if w.get("handle") == handle), None)
 
     if not product:

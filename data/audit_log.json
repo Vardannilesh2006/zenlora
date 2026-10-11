@@ -1,5 +1,32 @@
 [
   {
+    "timestamp": "2026-10-11T11:48:08+05:30",
+    "action": "deodap_live_ingest",
+    "target": "250 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=2",
+    "method": "api",
+    "details": "Fetched 250 live in-stock items across 6 API requests."
+  },
+  {
+    "timestamp": "2026-10-11T11:37:41+05:30",
+    "action": "deodap_live_ingest",
+    "target": "249 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=3",
+    "method": "api",
+    "details": "Fetched 249 live in-stock items across 6 API requests."
+  },
+  {
+    "timestamp": "2026-10-11T11:37:27+05:30",
+    "action": "deodap_live_ingest",
+    "target": "251 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=2",
+    "method": "api",
+    "details": "Fetched 251 live in-stock items across 6 API requests."
+  },
+  {
     "timestamp": "2026-10-11T11:28:35+05:30",
     "action": "marketplace_price_scrape",
     "target": "in Floor Cleaning Brush with",

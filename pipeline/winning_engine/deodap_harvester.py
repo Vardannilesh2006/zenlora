@@ -245,10 +245,11 @@ def _save_scan_state(state: Dict[str, Any]) -> None:
 
 
 def harvest_deodap_bestsellers(
-    limit_per_niche: int = 20,
+    limit_per_niche: int = 30,
     min_price: float = 25.0,
     max_price: float = 245.0,
-    randomize: bool = True
+    randomize: bool = True,
+    batch_cursor: Optional[int] = None
 ) -> List[Dict[str, Any]]:
     """
     Pulls fresh, real product data from DeoDap's official Shopify JSON endpoints
@@ -256,6 +257,8 @@ def harvest_deodap_bestsellers(
     Each scan rotates across live catalog pages and keyword seeds so clicking
     'Scan DeoDap Winners' returns fresh data across every category and 'All'.
     """
+    import os
+    is_vercel = bool(os.environ.get("VERCEL"))
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
         "Accept": "application/json"
@@ -263,8 +266,12 @@ def harvest_deodap_bestsellers(
 
     settings = load_settings()
     state = _load_scan_state()
-    page_cursor = int(state.get("page_cursor", 1))
-    seed_cursor = int(state.get("seed_cursor", 0))
+    if batch_cursor is not None:
+        page_cursor = (int(batch_cursor) % 6) + 1
+        seed_cursor = int(batch_cursor) * 3
+    else:
+        page_cursor = int(state.get("page_cursor", 1))
+        seed_cursor = int(state.get("seed_cursor", 0))
     last_shown_handles = set(state.get("last_shown_handles", []))
 
     fetched_at = now_iso()
@@ -272,12 +279,12 @@ def harvest_deodap_bestsellers(
     seen_handles = set()
     live_sources_fetched = 0
 
-    # 1. Live Fetch from DeoDap Collections API (rotating pages 1..6)
-    pages_to_fetch = [page_cursor, (page_cursor % 6) + 1]
+    # 1. Live Fetch from DeoDap Collections API (1 page on Vercel to stay <3s, 2 pages locally)
+    pages_to_fetch = [page_cursor] if is_vercel else [page_cursor, (page_cursor % 6) + 1]
     for pg in pages_to_fetch:
         url = f"https://www.deodap.in/collections/all/products.json?limit=250&page={pg}&sort_by=best-selling"
         try:
-            resp = requests.get(url, headers=headers, timeout=4.5)
+            resp = requests.get(url, headers=headers, timeout=2.8 if is_vercel else 4.0)
             if resp.status_code == 200:
                 prods = resp.json().get("products", [])
                 live_sources_fetched += 1
@@ -296,16 +303,16 @@ def harvest_deodap_bestsellers(
         if k.startswith("_") or not isinstance(kw_list, list):
             continue
         all_seeds.extend(kw_list)
-    # Also add core category seeds so all 5 niches get fresh live items
     all_seeds.extend(["table lamp", "kitchen chopper", "oil sprayer", "mini fan", "gift box", "humidifier"])
 
     if all_seeds:
-        selected_seeds = [all_seeds[(seed_cursor + i) % len(all_seeds)] for i in range(4)]
+        seed_count = 2 if is_vercel else 4
+        selected_seeds = [all_seeds[(seed_cursor + i) % len(all_seeds)] for i in range(seed_count)]
         for kw in selected_seeds:
             q_enc = urllib.parse.quote(kw)
             sug_url = f"https://www.deodap.in/search/suggest.json?q={q_enc}&resources[type]=product&resources[limit]=10"
             try:
-                r_sug = requests.get(sug_url, headers=headers, timeout=3.0)
+                r_sug = requests.get(sug_url, headers=headers, timeout=2.0 if is_vercel else 3.0)
                 if r_sug.status_code == 200:
                     s_prods = r_sug.json().get("resources", {}).get("results", {}).get("products", [])
                     live_sources_fetched += 1
@@ -380,7 +387,6 @@ def harvest_deodap_bestsellers(
                     continue
                 if not (min_price <= c <= max_price):
                     continue
-                # Ensure honest null instead of old 350g fallback if weight wasn't verified
                 raw_w = item.get("weight_grams")
                 if raw_w == 350 and "fetched_at" not in item:
                     item["weight_grams"] = None
@@ -402,11 +408,9 @@ def harvest_deodap_bestsellers(
         except Exception as e:
             print(f"[DeoDap Harvester] Cache read warning: {e}")
 
-    # Combine: freshly fetched live items FIRST, then cached items
     all_candidates = live_items + cached_items
 
-    # Save updated pool back to cache so newly discovered live items persist with real timestamps
-    if live_items:
+    if live_items and not is_vercel:
         try:
             with open(cache_file, "w", encoding="utf-8") as f:
                 json.dump(all_candidates[:600], f, indent=2, ensure_ascii=False)
@@ -428,14 +432,13 @@ def harvest_deodap_bestsellers(
 
     for n in niches:
         pool = by_niche[n]
-        if randomize and last_shown_handles:
-            # Prioritize items NOT shown in the immediately previous scan
-            unseen = [x for x in pool if x.get("handle") not in last_shown_handles]
-            seen_before = [x for x in pool if x.get("handle") in last_shown_handles]
-            # Rotate seen_before by page_cursor offset so order shifts deterministically
-            if seen_before:
-                shift = (page_cursor * 5) % len(seen_before)
-                seen_before = seen_before[shift:] + seen_before[:shift]
+        if not pool:
+            continue
+        if randomize:
+            shift = ((page_cursor - 1) * 6) % len(pool)
+            rotated = pool[shift:] + pool[:shift]
+            unseen = [x for x in rotated if x.get("handle") not in last_shown_handles]
+            seen_before = [x for x in rotated if x.get("handle") in last_shown_handles]
             ordered_pool = unseen + seen_before
         else:
             ordered_pool = pool
@@ -444,11 +447,10 @@ def harvest_deodap_bestsellers(
         selected_items.extend(chosen)
         newly_shown_handles.extend(x.get("handle") for x in chosen if x.get("handle"))
 
-    # Advance scan state cursors for next click
     _save_scan_state({
         "page_cursor": (page_cursor % 6) + 1,
-        "seed_cursor": (seed_cursor + 4) % max(1, len(all_seeds)),
-        "last_shown_handles": newly_shown_handles,
+        "seed_cursor": (seed_cursor + 3) % max(1, len(all_seeds)),
+        "last_shown_handles": newly_shown_handles[:60],
         "last_scan_at": fetched_at
     })
 

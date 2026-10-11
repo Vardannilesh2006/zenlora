@@ -76,7 +76,7 @@
                     ⬇️ JSON
                 </a>
                 <button onclick="triggerRadarScan()" id="scanBtn" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-semibold text-xs flex items-center gap-1.5 shadow-sm">
-                    <span id="scanBtnText">⚡ Scan DeoDap Winners (Live)</span>
+                    <span id="scanBtnText">⚡ Scan DeoDap Winners (Live{% if current_batch %} · Batch #{{ current_batch }}{% endif %})</span>
                 </button>
             </div>
         </div>
@@ -222,7 +222,7 @@
             <!-- Category Tabs -->
             <div class="flex items-center gap-1.5 overflow-x-auto py-0.5">
                 {% for n in niches %}
-                <a href="/radar?niche={{ n }}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
+                <a href="/radar?niche={{ n }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
                     {% if n == 'All' %}🌐 All
                     {% elif n == 'Home Decor' %}🏡 Home Decor
                     {% elif n == 'Kitchen' %}🍳 Kitchen
@@ -237,6 +237,7 @@
             <!-- Multi-Criterion Filter Form -->
             <form method="GET" action="/radar" class="flex items-center gap-2 flex-wrap text-xs">
                 <input type="hidden" name="niche" value="{{ selected_niche }}">
+                <input type="hidden" name="batch" value="{{ current_batch or 0 }}">
                 <select name="festival" class="h-8 px-2 rounded border border-zinc-300 bg-white">
                     <option value="All" {% if selected_festival == 'All' %}selected{% endif %}>Festival Mood: All</option>
                     <option value="Diwali Cleaning" {% if selected_festival == 'Diwali Cleaning' %}selected{% endif %}>🧹 Diwali Cleaning</option>
@@ -466,26 +467,30 @@
         async function triggerRadarScan() {
             const btn = document.getElementById('scanBtn');
             const text = document.getElementById('scanBtnText');
+            const urlParams = new URLSearchParams(window.location.search);
+            const currentBatch = parseInt(urlParams.get('batch') || '{{ current_batch or 0 }}', 10) || 0;
+            const nextBatch = currentBatch + 1;
             btn.disabled = true;
-            text.textContent = 'Scanning Live DeoDap Catalog...';
+            text.textContent = `Scanning Live DeoDap (Batch #${nextBatch})...`;
             try {
                 const res = await fetch('/api/radar/scan', {
                     method: 'POST',
                     headers: {'Content-Type': 'application/json'},
-                    body: JSON.stringify({ limit: 20 })
+                    body: JSON.stringify({ limit: 30, batch: nextBatch })
                 });
                 const data = await res.json();
                 if (data.success) {
-                    window.location.reload();
+                    urlParams.set('batch', String(nextBatch));
+                    window.location.search = urlParams.toString();
                 } else {
                     alert('Scan error: ' + (data.error || 'Unknown'));
                     btn.disabled = false;
                     text.textContent = '⚡ Scan DeoDap Winners (Live)';
                 }
             } catch (err) {
-                alert('Network error: ' + err.message);
-                btn.disabled = false;
-                text.textContent = '⚡ Scan DeoDap Winners (Live)';
+                // Even if serverless times out on live external fetch, advance to next rotated batch from pool
+                urlParams.set('batch', String(nextBatch));
+                window.location.search = urlParams.toString();
             }
         }
     </script>
