@@ -14,7 +14,10 @@ import urllib.parse
 from pathlib import Path
 from typing import Dict, Any, Optional
 import requests
-from bs4 import BeautifulSoup
+try:
+    from bs4 import BeautifulSoup
+except ImportError:
+    BeautifulSoup = None
 
 from winning_engine.data_models import (
     now_iso,

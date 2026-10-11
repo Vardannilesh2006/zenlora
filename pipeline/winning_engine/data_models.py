@@ -14,12 +14,13 @@ BASE_DIR = CURRENT_DIR.parent.parent
 
 if os.environ.get("VERCEL"):
     RUNTIME_DATA_DIR = Path("/tmp/data")
+    RUNTIME_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    REPO_DATA_DIR = BASE_DIR / "data"
 else:
     RUNTIME_DATA_DIR = BASE_DIR / "data"
-
-RUNTIME_DATA_DIR.mkdir(parents=True, exist_ok=True)
-REPO_DATA_DIR = BASE_DIR / "data"
-REPO_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    RUNTIME_DATA_DIR.mkdir(parents=True, exist_ok=True)
+    REPO_DATA_DIR = BASE_DIR / "data"
+    REPO_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 SETTINGS_FILE = RUNTIME_DATA_DIR / "user_settings.json"
 REPO_SETTINGS_FILE = REPO_DATA_DIR / "user_settings.json"
