@@ -2,857 +2,431 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zenlora Radar | {{ p.title }} (Real Data Provenance)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>{{ p.zenlora_title }} | Zenlora Studio</title>
+    <!-- Favicon: Modern Aesthetic Multi-Format & Cache-Busted -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon.png?v=4">
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg?v=4">
+    <link rel="apple-touch-icon" href="/static/apple-touch-icon.png?v=4">
+    <!-- System Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', '"SF Pro Display"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        canvas: '#F7F8FA',
+                        borderMain: '#E5E7EB',
+                        textPrimary: '#111827',
+                        textSecondary: '#4B5563',
+                        textMuted: '#9CA3AF',
+                        brandBlack: '#0A0A0C',
+                        brandHover: '#1F2937',
+                        accentGreen: '#059669',
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --surface-2: #f1f5f9;
-            --text: #0f172a;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --accent: #059669;
-            --gold: #d97706;
-            --danger: #dc2626;
-            --blue: #2563eb;
-            --purple: #7c3aed;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            color: var(--text);
-            padding: 1.5rem 2rem;
-            max-width: 1440px;
-            margin: 0 auto;
+            background-color: #F7F8FA;
+            color: #111827;
+            letter-spacing: -0.015em;
+            -webkit-font-smoothing: antialiased;
         }
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
-            flex-wrap: wrap;
-            gap: 1rem;
+        .zen-canvas {
+            background-color: #F7F8FA;
+            background-image: radial-gradient(#E5E7EB 1px, transparent 1px);
+            background-size: 24px 24px;
         }
-        .back-btn {
-            color: var(--text);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 600;
-            background: var(--surface);
-            padding: 0.6rem 1.1rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            font-size: 0.85rem;
+        .zen-glass {
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid #E5E7EB;
         }
-        .action-bar {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-        .btn {
-            padding: 0.6rem 1rem;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 0.82rem;
-            cursor: pointer;
-            border: 1px solid var(--border);
-            background: var(--surface);
-            color: var(--text);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-        .btn-primary { background: var(--accent); color: white; border: none; }
-        .btn-blue { background: var(--blue); color: white; border: none; }
-        .btn-purple { background: var(--purple); color: white; border: none; }
-
-        /* 8-Step Pipeline Tracker */
-        .pipeline-steps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 0.6rem;
-            margin-bottom: 1.5rem;
-        }
-        .step-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 0.75rem;
-            font-size: 0.78rem;
-        }
-        .step-card.done { border-left: 4px solid var(--accent); background: #f0fdf4; }
-        .step-card.manual_needed { border-left: 4px solid var(--gold); background: #fffbeb; }
-        .step-card.unavailable { border-left: 4px solid #94a3b8; }
-        .step-num { font-weight: 800; color: var(--text-muted); font-size: 0.7rem; text-transform: uppercase; }
-        .step-label { font-weight: 700; margin: 0.2rem 0; color: var(--text); }
-        .step-status {
-            display: inline-block;
-            padding: 0.12rem 0.45rem;
-            border-radius: 4px;
-            font-size: 0.68rem;
-            font-weight: 700;
-            text-transform: uppercase;
-        }
-        .status-done { background: #dcfce7; color: #166534; }
-        .status-manual_needed { background: #fef3c7; color: #92400e; }
-        .status-unavailable { background: #e2e8f0; color: #475569; }
-
-        .layout-grid {
-            display: grid;
-            grid-template-columns: 390px 1fr;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        @media (max-width: 1024px) {
-            .layout-grid { grid-template-columns: 1fr; }
-        }
-        .panel {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
-            margin-bottom: 1.25rem;
-        }
-        .panel-title {
-            font-size: 1rem;
-            font-weight: 800;
-            margin-bottom: 0.9rem;
-            padding-bottom: 0.6rem;
-            border-bottom: 1px solid var(--border);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .product-img {
-            width: 100%;
-            height: 280px;
-            object-fit: contain;
-            background: #f8fafc;
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            margin-bottom: 1rem;
-        }
-        .badge {
-            display: inline-block;
-            padding: 0.25rem 0.6rem;
-            border-radius: 6px;
-            font-size: 0.75rem;
-            font-weight: 700;
-        }
-        .badge-green { background: #dcfce7; color: #166534; }
-        .badge-yellow { background: #fef3c7; color: #92400e; }
-        .badge-red { background: #fee2e2; color: #991b1b; }
-        .badge-blue { background: #dbeafe; color: #1e40af; }
-        .badge-purple { background: #f3e8ff; color: #6b21a8; }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.82rem;
-        }
-        th, td {
-            padding: 0.65rem 0.6rem;
-            border-bottom: 1px solid var(--border);
-            text-align: left;
-            vertical-align: top;
-        }
-        th {
-            background: var(--surface-2);
-            font-weight: 700;
-            color: var(--text-muted);
-            font-size: 0.72rem;
-            text-transform: uppercase;
-        }
-        .prov-meta {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            margin-top: 0.2rem;
-            line-height: 1.35;
-        }
-        .prov-meta code {
-            background: #f1f5f9;
-            padding: 0.1rem 0.3rem;
-            border-radius: 4px;
-            font-size: 0.68rem;
-        }
-        .null-val {
-            color: #94a3b8;
-            font-style: italic;
-        }
-        .forms-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-            gap: 1.25rem;
-        }
-        .form-group {
-            margin-bottom: 0.65rem;
-        }
-        .form-group label {
-            display: block;
-            font-size: 0.76rem;
-            font-weight: 600;
-            color: var(--text-muted);
-            margin-bottom: 0.2rem;
-        }
-        .form-group input, .form-group select, .form-group textarea {
-            width: 100%;
-            padding: 0.45rem 0.6rem;
-            border: 1px solid var(--border);
-            border-radius: 6px;
-            font-size: 0.82rem;
-            font-family: inherit;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 0.6rem;
-        }
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #0f172a;
-            color: white;
-            padding: 0.85rem 1.25rem;
-            border-radius: 10px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            display: none;
-            z-index: 9999;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        .zen-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02), 0 4px 12px rgba(0, 0, 0, 0.03);
         }
     </style>
 </head>
-<body>
+<body class="min-h-screen flex flex-col font-sans antialiased text-sm zen-canvas pb-16">
 
-    <div class="header">
-        <a href="/radar" class="back-btn">&larr; Back to Radar Dashboard</a>
-        <div class="action-bar">
-            <button class="btn btn-blue" onclick="fetchLiveDemand()" id="btnDemand">📈 Fetch Live Google Trends & Suggest (India)</button>
-            <button class="btn btn-primary" onclick="fetchLivePrices()" id="btnPrices">🛒 Scrape Live Amazon/Flipkart/Meesho Prices</button>
-            <button class="btn btn-purple" onclick="fetchAiOpinion()" id="btnAi">🤖 Generate AI Opinion (Gemini)</button>
-            <a href="{{ p.deodap_url }}" target="_blank" class="btn">🔗 Open Supplier Page (DeoDap)</a>
+    <!-- Top Sticky Header -->
+    <header class="sticky top-0 z-40 w-full zen-glass">
+        <div class="max-w-[1200px] mx-auto px-4 sm:px-6 h-14 flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3">
+                <a href="/radar" class="flex items-center gap-1.5 text-xs font-semibold text-textPrimary hover:text-emerald-700 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                    <span>Back to Winning Radar</span>
+                </a>
+                <span class="text-zinc-300">|</span>
+                <a href="/" class="text-xs font-medium text-textSecondary hover:text-textPrimary transition">
+                    🎨 Studio Catalog
+                </a>
+            </div>
+
+            <div class="flex items-center gap-1.5 sm:gap-2">
+                <a href="{{ p.deodap_url }}" target="_blank" rel="noopener noreferrer" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-xs">
+                    <span>Open on DeoDap.com</span>
+                    <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <!-- 8-Step Research Pipeline Bar -->
-    <div class="pipeline-steps">
-        {% for step in p.pipeline_steps %}
-        <div class="step-card {{ step.status }}">
-            <div class="step-num">Step {{ step.step }}</div>
-            <div class="step-label">{{ step.name }}</div>
-            <span class="step-status status-{{ step.status }}">{{ step.status | replace('_', ' ') }}</span>
-            <div class="prov-meta" style="margin-top:0.35rem;">{{ step.detail }}</div>
-        </div>
-        {% endfor %}
-    </div>
+    <main class="max-w-[1200px] w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
 
-    {% if p.is_hard_failed %}
-    <div class="panel" style="border-color: var(--danger); background: #fef2f2;">
-        <div style="color: var(--danger); font-weight: 800; font-size: 0.95rem;">
-            🚫 HARD-FAIL FILTER TRIGGERED — Hidden from default shortlist
-        </div>
-        <div style="font-size: 0.85rem; color: #991b1b; margin-top: 0.35rem;">
-            Reasons: {{ p.hard_fail_reasons | join(' | ') }}
-        </div>
-    </div>
-    {% endif %}
+        <!-- Master Product Card (Clicking Image OR Title opens DeoDap in New Tab) -->
+        <section class="zen-card rounded-2xl p-5 sm:p-7">
+            <div class="flex flex-col md:flex-row items-start gap-6">
+                
+                <!-- Product Image: Click to open DeoDap in new tab -->
+                <a 
+                    href="{{ p.deodap_url }}" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    title="Click to view full product details on DeoDap.com (new tab)"
+                    class="w-full md:w-56 h-56 rounded-xl bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group block shadow-xs"
+                >
+                    {% if p.primary_image %}
+                        <img src="{{ p.primary_image }}" alt="{{ p.zenlora_title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                    {% else %}
+                        <div class="w-full h-full flex items-center justify-center text-textMuted font-mono">Zenlora</div>
+                    {% endif %}
+                    <div class="absolute inset-0 bg-black/35 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white text-xs font-semibold gap-1.5">
+                        <span>Open on DeoDap</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </div>
+                </a>
 
-    <div class="layout-grid">
-        <!-- Left Column: Product Overview + Margin + Festival Cutoff -->
-        <div>
-            <div class="panel">
-                <img src="{{ p.image_url or p.primary_image }}" alt="{{ p.title }}" class="product-img">
-                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-                    <span class="badge badge-blue">{{ p.niche }}</span>
-                    <span class="badge badge-green">Handle: {{ p.handle | truncate(28) }}</span>
-                </div>
-                <h1 style="font-size: 1.2rem; font-weight: 800; line-height: 1.35; margin-bottom: 0.75rem;">{{ p.title }}</h1>
+                <!-- Product Details -->
+                <div class="flex-1 min-w-0 space-y-4">
+                    
+                    <div class="flex flex-wrap items-center gap-2">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200">
+                            {{ p.primary_category }}
+                        </span>
+                        {% if p.content_bucket %}
+                        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200">
+                            {{ p.content_bucket }}
+                        </span>
+                        {% endif %}
+                        {% if p.badge_text %}
+                        <span class="text-xs font-bold px-2.5 py-1 rounded-full text-white" style="background-color: {{ p.badge_color or '#059669' }};">
+                            {{ p.badge_text }}
+                        </span>
+                        {% endif %}
+                        {% if p.sku %}
+                            <span class="text-xs font-mono text-textMuted px-2 py-0.5">SKU: {{ p.sku }}</span>
+                        {% endif %}
+                    </div>
 
-                <!-- Score & Confidence Summary -->
-                <div style="background: var(--surface-2); padding: 0.9rem; border-radius: 10px; margin-bottom: 1rem;">
-                    <div style="display:flex; justify-content:space-between; align-items:center;">
-                        <div>
-                            <div style="font-size:0.72rem; color:var(--text-muted); font-weight:700; text-transform:uppercase;">Transparent Score</div>
-                            <div style="font-size:1.8rem; font-weight:800; color:var(--accent);">{{ p.winning_score }} <span style="font-size:0.9rem; color:var(--text-muted);">/ 100</span></div>
+                    <!-- Product Title: Click to open DeoDap in new tab -->
+                    <div>
+                        <a 
+                            href="{{ p.deodap_url }}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            title="Click to view product on DeoDap.com (new tab)"
+                            class="text-xl sm:text-2xl font-bold text-textPrimary leading-tight hover:underline flex items-start gap-2 group"
+                        >
+                            <span>{{ p.zenlora_title }}</span>
+                            <svg class="w-5 h-5 text-textMuted group-hover:text-textPrimary flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        <p class="text-xs text-textSecondary mt-1">Source: DeoDap Wholesale (Click title, image, or button below to open original product page)</p>
+                    </div>
+
+                    <!-- Pricing & Margin Breakdown Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+                        <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain">
+                            <span class="text-[10px] font-medium text-textMuted block uppercase">DeoDap Cost</span>
+                            <span class="text-lg font-bold font-mono text-textSecondary mt-0.5 block">₹{{ p.wholesale_price }}</span>
                         </div>
-                        <div style="text-align:right;">
-                            <span class="badge {% if p.confidence == 'High' %}badge-green{% elif p.confidence == 'Medium' %}badge-yellow{% else %}badge-red{% endif %}">
-                                Confidence: {{ p.confidence }} ({{ p.verified_score_pct }}%)
+                        <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain">
+                            <span class="text-[10px] font-medium text-textMuted block uppercase">Zenlora Price</span>
+                            <span class="text-lg font-bold font-mono text-textPrimary mt-0.5 block">₹{{ p.selling_price }}</span>
+                            <span class="text-[10px] text-textMuted line-through">₹{{ p.mrp }}</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200">
+                            <span class="text-[10px] font-bold text-emerald-800 block uppercase">Net Profit Margin</span>
+                            <span class="text-lg font-bold font-mono text-emerald-900 mt-0.5 block">+₹{{ p.gross_profit }}</span>
+                            <span class="text-[10px] text-emerald-700 font-semibold">{{ p.profit_margin_pct }}% margin</span>
+                        </div>
+                        <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain">
+                            <span class="text-[10px] font-medium text-textMuted block uppercase">Stock & Shipping</span>
+                            <span class="text-sm font-semibold text-emerald-800 mt-1 block">{% if p.in_stock is sameas false %}Out of Stock{% else %}In Stock · Free Ship{% endif %}</span>
+                            <span class="text-[10px] text-textMuted">4–8 Days Delivery</span>
+                        </div>
+                    </div>
+
+                    <!-- Direct Action Link Button -->
+                    <div class="pt-1 flex flex-wrap items-center gap-2.5">
+                        <a 
+                            href="{{ p.deodap_url }}" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-zinc-900 hover:bg-black text-white text-xs font-semibold transition shadow-xs"
+                        >
+                            <span>Open Original Product Page on DeoDap.com</span>
+                            <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                        </a>
+                        {% if p.festival_mood %}
+                        <span class="px-3 py-2 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold">
+                            🪔 {{ p.festival_mood }}
+                        </span>
+                        {% endif %}
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Viral Hook & Audio Recommendation -->
+        <section class="zen-card rounded-2xl p-5 bg-zinc-100 border border-zinc-200">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div>
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-textSecondary">ON-SCREEN VIRAL HOOK (0-3s)</span>
+                    <h3 class="text-base sm:text-lg font-bold text-textPrimary mt-0.5">"{{ p.on_screen_hook_text }}"</h3>
+                </div>
+                <div class="sm:text-right">
+                    <span class="text-[10px] font-bold uppercase tracking-wider text-textSecondary">AUDIO VIBE</span>
+                    <p class="text-xs font-semibold text-textPrimary mt-0.5">{{ p.audio_recommendation }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Prompt Studio Section (Storyboard Image + Scene 1, 2, 3 Seamless Video Prompts + Caption) -->
+        <section class="space-y-4">
+            <div class="flex items-center justify-between">
+                <h3 class="text-sm font-bold uppercase tracking-wider text-textPrimary">🎬 AI Prompt Studio (Storyboard & Seamless UGC Video)</h3>
+                <span class="text-xs text-textMuted">Click 'Copy Prompt' on any card to paste into Midjourney / NanoBanana / Kling / Runway</span>
+            </div>
+
+            <!-- 1. Storyboard Base Image Prompt -->
+            <div class="zen-card rounded-2xl p-5">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-borderMain">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary">1. Storyboard Base Image Prompt (Midjourney / NanoBanana / Ideogram)</h4>
+                        <span class="text-[11px] text-textMuted font-mono">Aspect Ratio: --ar 9:16 vertical reference frame</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.storyboard_image_prompt }}`)" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-black text-white font-semibold text-xs transition">
+                        Copy Prompt
+                    </button>
+                </div>
+                <p class="text-xs text-textSecondary font-mono leading-relaxed select-all">{{ p.storyboard_image_prompt }}</p>
+            </div>
+
+            <!-- 2. Scene 1 Video Prompt -->
+            <div class="zen-card rounded-2xl p-5">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-borderMain">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary">2. Scene 1 Video Prompt (0–5s · Kling / Runway / Luma)</h4>
+                        <span class="text-[11px] text-textMuted">Starts directly from the Storyboard Reference Image (Opening 3-second visual hook)</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.scene_1_video_prompt }}`)" class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary font-semibold text-xs transition">
+                        Copy Prompt
+                    </button>
+                </div>
+                <p class="text-xs text-textSecondary font-mono leading-relaxed select-all">{{ p.scene_1_video_prompt }}</p>
+            </div>
+
+            <!-- 3. Scene 2 Video Prompt (Seamless Continuity Skill Injected) -->
+            <div class="zen-card rounded-2xl p-5 bg-emerald-50/40 border border-emerald-200">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-emerald-200/80">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary flex items-center gap-2">
+                            <span>3. Scene 2 Video Prompt (5–10s · Live Demo)</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 font-bold border border-emerald-300">Seamless Continuity Skill</span>
+                        </h4>
+                        <span class="text-[11px] text-textSecondary">Prepended with seamless continuation prompt for identical characters, lighting & environment</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.scene_2_video_prompt }}`)" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-300 hover:bg-emerald-50 text-emerald-950 font-semibold text-xs transition">
+                        Copy Prompt
+                    </button>
+                </div>
+                <p class="text-xs text-textPrimary font-mono leading-relaxed select-all">{{ p.scene_2_video_prompt }}</p>
+            </div>
+
+            <!-- 4. Scene 3 Video Prompt (Seamless Continuity Skill Injected) -->
+            <div class="zen-card rounded-2xl p-5 bg-emerald-50/40 border border-emerald-200">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-emerald-200/80">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary flex items-center gap-2">
+                            <span>4. Scene 3 Video Prompt (10–15s · Hero Reveal)</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-900 font-bold border border-emerald-300">Seamless Continuity Skill</span>
+                        </h4>
+                        <span class="text-[11px] text-textSecondary">Seamless final reveal & loop conclusion from Scene 2 last frame</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.scene_3_video_prompt }}`)" class="px-3 py-1.5 rounded-lg bg-white border border-emerald-300 hover:bg-emerald-50 text-emerald-950 font-semibold text-xs transition">
+                        Copy Prompt
+                    </button>
+                </div>
+                <p class="text-xs text-textPrimary font-mono leading-relaxed select-all">{{ p.scene_3_video_prompt }}</p>
+            </div>
+
+            <!-- 5. Full Instagram Caption & ManyChat CTA -->
+            <div class="zen-card rounded-2xl p-5">
+                <div class="flex items-center justify-between pb-3 mb-3 border-b border-borderMain">
+                    <div>
+                        <h4 class="text-xs font-bold text-textPrimary">5. Instagram Caption & ManyChat CTA</h4>
+                        <span class="text-[11px] text-textMuted">Trigger Keyword: '{{ p.cta_keyword }}'</span>
+                    </div>
+                    <button onclick="copyText(`{{ p.instagram_caption }}`)" class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary font-semibold text-xs transition">
+                        Copy Caption
+                    </button>
+                </div>
+                <pre class="text-xs text-textSecondary font-sans whitespace-pre-wrap leading-relaxed select-all">{{ p.instagram_caption }}</pre>
+            </div>
+        </section>
+
+        <!-- Creative Director Production Notes -->
+        <section class="zen-card rounded-2xl p-5 border border-zinc-200 bg-white shadow-sm space-y-4">
+            <div class="flex items-center justify-between border-b border-borderMain pb-3">
+                <div class="flex items-center gap-2">
+                    <span class="flex h-2 w-2 rounded-full bg-emerald-500"></span>
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-textPrimary">
+                        Creative Production & Camera Setup
+                    </h3>
+                </div>
+                <span class="text-[11px] text-textMuted font-mono">{{ p.estimated_video_duration or '10-15s Reel' }}</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain space-y-1">
+                    <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider block">Time-Coded SFX Audio Cues</span>
+                    <p class="text-[11px] text-textPrimary font-mono leading-relaxed">{{ p.sound_effects or '[0s] Whoosh [3s] Snap [7s] Clean click [10s] Chime' }}</p>
+                </div>
+                <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain space-y-1">
+                    <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider block">Camera Movements & Angles</span>
+                    <p class="text-[11px] text-textPrimary leading-relaxed">{{ p.camera_movements or 'Scene 1: Macro push-in -> Scene 2: Orbital tracking -> Scene 3: Glide-back reveal' }}</p>
+                </div>
+                <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain space-y-1">
+                    <span class="text-[10px] font-bold text-textSecondary uppercase tracking-wider block">Cinematic Lighting Setup</span>
+                    <p class="text-[11px] text-textPrimary leading-relaxed">{{ p.lighting_setup or '2700K warm rim light, soft 45-degree diffused key, subtle realistic ambient glow' }}</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 🛡️ RTO Killer Toolkit & Dual-Action WhatsApp Confirmation Flow -->
+        {% if p.rto_killer %}
+        <section class="zen-card rounded-2xl p-5 sm:p-6 bg-gradient-to-br from-rose-50/40 via-white to-emerald-50/30 border border-rose-200/80 shadow-xs space-y-5">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-rose-100 pb-3">
+                <div class="flex items-center gap-2.5">
+                    <span class="w-7 h-7 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                        🛡️
+                    </span>
+                    <div>
+                        <h3 class="text-xs sm:text-sm font-bold text-textPrimary flex items-center gap-2">
+                            <span>RTO Killer Protocol</span>
+                            <span class="text-[9px] font-mono px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 font-bold border border-rose-200">
+                                ZERO-RTO SHIELD
                             </span>
-                            <div style="font-size:0.75rem; font-weight:700; margin-top:0.3rem; color:var(--text);">
-                                {{ p.data_coverage.summary_label }}
-                            </div>
+                        </h3>
+                        <p class="text-[11px] text-textSecondary">
+                            Convert 40%+ COD orders into prepaid & require mandatory customer confirmation before dispatch.
+                        </p>
+                    </div>
+                </div>
+                <span class="text-[10px] font-mono text-emerald-800 bg-emerald-100 px-2.5 py-1 rounded-md font-semibold border border-emerald-200">
+                    Target RTO: &lt; 8%
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                <div class="p-4 rounded-xl bg-white border border-borderMain space-y-3 shadow-2xs">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-textMuted uppercase tracking-wider">
+                            1. Checkout Pricing Hook
+                        </span>
+                        <span class="text-[9px] font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200">
+                            Instant ₹{{ p.rto_killer.savings }} UPI Off
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 text-center font-mono">
+                        <div class="p-2.5 rounded-lg bg-zinc-50 border border-zinc-200">
+                            <span class="text-[10px] text-textMuted block">Standard COD</span>
+                            <span class="text-base font-bold text-textPrimary">₹{{ p.rto_killer.cod_price }}</span>
+                        </div>
+                        <div class="p-2.5 rounded-lg bg-emerald-50 border border-emerald-300 ring-1 ring-emerald-300">
+                            <span class="text-[10px] text-emerald-800 font-semibold block">Pay UPI / GPay</span>
+                            <span class="text-base font-extrabold text-emerald-900">₹{{ p.rto_killer.upi_price }}</span>
                         </div>
                     </div>
-                    <div class="prov-meta" style="margin-top:0.5rem;">
-                        <strong>Formula:</strong> <code>{{ p.formula_explanation }}</code>
-                    </div>
-                </div>
 
-                <!-- Supplier & Provenance Metadata -->
-                <div style="font-size:0.8rem; line-height:1.6;">
-                    <div><strong>Supplier Cost:</strong> ₹{{ p.wholesale_price }} <span class="prov-meta">(source: <code>{{ p.source }}</code> | method: <code>{{ p.method }}</code>)</span></div>
-                    <div><strong>Target Selling Price:</strong> ₹{{ p.selling_price }}</div>
-                    <div><strong>In Stock (Supplier):</strong> {{ 'Yes' if p.in_stock else 'No' }}</div>
-                    <div><strong>Supplier Weight:</strong>
-                        {% if p.weight_grams is not none %}
-                            {{ p.weight_grams }}g
-                        {% else %}
-                            <span class="null-val">Data not available (DeoDap product JSON returned 0/null grams)</span>
-                        {% endif %}
-                    </div>
-                    <div><strong>Supplier Dimensions:</strong>
-                        {% if p.dimensions is not none %}
-                            {{ p.dimensions }}
-                        {% else %}
-                            <span class="null-val">Data not available (Not listed on supplier product JSON)</span>
-                        {% endif %}
-                    </div>
-                    <div><strong>Delivery Days Source:</strong> {{ p.delivery_days_source }}</div>
-                    <div><strong>Fetched At:</strong> <code>{{ p.fetched_at }}</code> {% if p.is_stale %}<span class="badge badge-red">STALE (&gt;7 days)</span>{% endif %}</div>
-                </div>
-            </div>
-
-            <!-- Landed Cost Breakdown (Labelled My Assumptions) -->
-            <div class="panel">
-                <div class="panel-title">
-                    <span>💰 Landed Cost & Margin Breakdown</span>
-                    <span class="badge badge-yellow">My Assumptions</span>
-                </div>
-                <table>
-                    <tr><td>Supplier Product Cost (DeoDap Live API)</td><td><strong>₹{{ p.competitor_pricing.effective_supplier_cost }}</strong></td></tr>
-                    <tr><td>Shipping Assumption (My Assumptions)</td><td>₹{{ p.competitor_pricing.shipping_cost }}</td></tr>
-                    <tr><td>COD Fee Assumption (My Assumptions)</td><td>₹{{ p.competitor_pricing.cod_fee }}</td></tr>
-                    <tr><td>Packaging Cost Assumption (My Assumptions)</td><td>₹{{ p.competitor_pricing.packaging_cost }}</td></tr>
-                    <tr><td>Expected RTO Loss (My Assumptions)</td><td>₹{{ p.competitor_pricing.expected_rto_loss }}</td></tr>
-                    <tr style="background:var(--surface-2);"><td><strong>Total Landed Cost</strong></td><td><strong>₹{{ p.competitor_pricing.landed_cost }}</strong></td></tr>
-                    <tr><td>Target Selling Price</td><td><strong>₹{{ p.selling_price }}</strong> ({{ p.competitor_pricing.markup_multiple }}x supplier cost)</td></tr>
-                    <tr><td>2.5x–3x Markup Rule Check</td><td>{% if p.competitor_pricing.passes_2_5x_rule %}<span class="badge badge-green">PASS ({{ p.competitor_pricing.markup_multiple }}x)</span>{% else %}<span class="badge badge-red">FAIL ({{ p.competitor_pricing.markup_multiple }}x)</span>{% endif %}</td></tr>
-                    <tr style="background:#f0fdf4;"><td><strong>Net Profit Per Order (Before Ads)</strong></td><td><strong style="color:var(--accent); font-size:1rem;">₹{{ p.competitor_pricing.net_profit }}</strong></td></tr>
-                </table>
-            </div>
-
-            <!-- Festival Delivery Cutoff Calculator -->
-            <div class="panel">
-                <div class="panel-title">
-                    <span>🪔 Festival Delivery Cutoffs</span>
-                    <span class="prov-meta">{{ p.delivery_days_source }}</span>
-                </div>
-                <table>
-                    <thead>
-                        <tr><th>Festival</th><th>Date</th><th>Last Order Cutoff</th><th>Status</th></tr>
-                    </thead>
-                    <tbody>
-                        {% for f in p.festival_cutoffs %}
-                        <tr>
-                            <td><strong>{{ f.name }}</strong><div class="prov-meta">{{ f.verify_note }}</div></td>
-                            <td>{{ f.festival_date }}</td>
-                            <td><code>{{ f.last_order_date }}</code></td>
-                            <td>
-                                {% if f.can_deliver_in_time %}
-                                    <span class="badge badge-green">{{ f.days_until_cutoff }}d left</span>
-                                {% else %}
-                                    <span class="badge badge-red">Window Closed</span>
-                                {% endif %}
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Right Column: 10-Criteria Transparent Scoring + Demand + AI Opinion + Manual Entry Forms -->
-        <div>
-            <!-- 10-Criteria Transparent Breakdown -->
-            <div class="panel">
-                <div class="panel-title">
-                    <span>⚖️ 10-Criteria Transparent Scoring & Provenance</span>
-                    <span class="badge badge-blue">Missing inputs are NEVER scored as zero</span>
-                </div>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Criterion</th>
-                            <th>Status / Value</th>
-                            <th>Earned / Weight</th>
-                            <th>Provenance (Source, URL, Timestamp, Method)</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for c in p.checklist %}
-                        <tr>
-                            <td><strong>{{ c.id }}</strong></td>
-                            <td>
-                                <strong>{{ c.name }}</strong>
-                                <div class="prov-meta">{{ c.detail }}</div>
-                                {% if c.ai_opinion_suggestion %}
-                                    <div class="prov-meta" style="color:var(--purple); font-weight:600;">{{ c.ai_opinion_suggestion }}</div>
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if c.status != 'missing' and c.value is not none %}
-                                    <span class="badge {% if c.passed %}badge-green{% elif c.passed is sameas false %}badge-red{% else %}badge-blue{% endif %}">{{ c.value }}</span>
-                                {% else %}
-                                    <span class="null-val">Data not available</span>
-                                    <div class="prov-meta">{{ c.null_reason }}</div>
-                                {% endif %}
-                            </td>
-                            <td>
-                                {% if c.earned_points is not none %}
-                                    <strong>{{ c.earned_points }}</strong> / {{ c.weight }}
-                                {% else %}
-                                    <span class="null-val">null / {{ c.weight }}</span>
-                                {% endif %}
-                            </td>
-                            <td>
-                                <div class="prov-meta">
-                                    <strong>Source:</strong> {{ c.source }}<br>
-                                    <strong>Method:</strong> <code>{{ c.method }}</code> ({{ c.status }})
-                                    {% if c.is_stale %}<span class="badge badge-red">STALE</span>{% endif %}<br>
-                                    {% if c.fetched_at %}<strong>Fetched:</strong> <code>{{ c.fetched_at }}</code><br>{% endif %}
-                                    {% if c.source_url %}<strong>Ref:</strong> <code>{{ c.source_url | truncate(65) }}</code>{% endif %}
-                                </div>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-
-            <!-- Demand & Marketplace Signals Detail -->
-            <div class="panel">
-                <div class="panel-title">
-                    <span>📊 Real Demand, Marketplace & Social Signals</span>
-                    <span class="prov-meta">Every value shows real provenance or honest null</span>
-                </div>
-                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:1rem; font-size:0.82rem;">
-                    <div style="background:var(--surface-2); padding:0.85rem; border-radius:8px;">
-                        <strong>Google Trends India (12M, geo=IN)</strong>
-                        <div class="prov-meta">Query: <code>{{ p.trends.keyword }}</code> — <a href="{{ p.trends.trends_url }}" target="_blank">Open Google Trends</a></div>
-                        {% if p.trends.current_value is not none %}
-                            <div style="margin-top:0.4rem;">
-                                Current Interest: <strong>{{ p.trends.current_value }}/100</strong><br>
-                                12M Baseline Avg: <strong>{{ p.trends.baseline_avg }}</strong> | Peak Month: <strong>{{ p.trends.peak_month }} ({{ p.trends.peak_value }})</strong><br>
-                                Current vs Baseline: <strong>{{ p.trends.current_to_baseline_ratio }}x</strong> | Oct–Nov Festive Avg: <strong>{{ p.trends.festival_window_oct_nov_avg }}</strong>
-                            </div>
-                            <div class="prov-meta">Fetched: {{ p.trends.fetched_at }} ({{ p.trends.method }})</div>
-                        {% else %}
-                            <div class="null-val" style="margin-top:0.4rem;">Data not available: {{ p.trends.null_reason }}</div>
-                        {% endif %}
-
-                        <hr style="margin:0.6rem 0; border:none; border-top:1px solid var(--border);">
-                        <strong>Google Autosuggest India (gl=in)</strong>
-                        {% if p.trends.autosuggest and p.trends.autosuggest.count is not none %}
-                            <div>Count: <strong>{{ p.trends.autosuggest.count }}</strong> suggestions</div>
-                            <div class="prov-meta">{{ p.trends.autosuggest.value | join(', ') }}</div>
-                        {% else %}
-                            <div class="null-val">Data not available ({{ p.trends.autosuggest.null_reason if p.trends.autosuggest else 'Click Fetch Live Demand above' }})</div>
-                        {% endif %}
-                    </div>
-
-                    <div style="background:var(--surface-2); padding:0.85rem; border-radius:8px;">
-                        <strong>Marketplace Competitor Prices</strong>
-                        {% set mkt = p.competitor_pricing.marketplaces %}
-                        <div style="margin-top:0.4rem;">
-                            <div><strong>Amazon.in:</strong>
-                                {% if mkt.amazon.price_numeric is not none %}
-                                    {{ mkt.amazon.price }}
-                                    <span class="prov-meta">[{{ mkt.amazon.method }} @ {{ mkt.amazon.fetched_at }}]</span>
-                                {% else %}
-                                    <span class="null-val">Data not available ({{ mkt.amazon.null_reason }})</span>
-                                {% endif %}
-                                — <a href="{{ mkt.amazon.url }}" target="_blank">Search Link</a>
-                            </div>
-                            <div style="margin-top:0.25rem;"><strong>Flipkart:</strong>
-                                {% if mkt.flipkart.price_numeric is not none %}
-                                    {{ mkt.flipkart.price }}
-                                    <span class="prov-meta">[{{ mkt.flipkart.method }} @ {{ mkt.flipkart.fetched_at }}]</span>
-                                {% else %}
-                                    <span class="null-val">Data not available ({{ mkt.flipkart.null_reason }})</span>
-                                {% endif %}
-                                — <a href="{{ mkt.flipkart.url }}" target="_blank">Search Link</a>
-                            </div>
-                            <div style="margin-top:0.25rem;"><strong>Meesho:</strong>
-                                {% if mkt.meesho.price_numeric is not none %}
-                                    {{ mkt.meesho.price }}
-                                    <span class="prov-meta">[{{ mkt.meesho.method }} @ {{ mkt.meesho.fetched_at }}]</span>
-                                {% else %}
-                                    <span class="null-val">Data not available ({{ mkt.meesho.null_reason }})</span>
-                                {% endif %}
-                                — <a href="{{ mkt.meesho.url }}" target="_blank">Search Link</a>
-                            </div>
+                    <div class="space-y-1">
+                        <div class="flex items-center justify-between text-[11px]">
+                            <span class="font-semibold text-textSecondary">Store Checkout Copy:</span>
+                            <button onclick="copyText(`{{ p.rto_killer.checkout_copy }}`)" class="text-emerald-700 hover:text-emerald-900 text-[10px] font-bold hover:underline">
+                                Copy Copy
+                            </button>
                         </div>
-                        <hr style="margin:0.6rem 0; border:none; border-top:1px solid var(--border);">
-                        <strong>Meta Ads & Instagram Status</strong>
-                        <div class="prov-meta" style="margin-top:0.25rem;">
-                            <strong>Meta Ad Library:</strong> {{ p.meta_ads.scale_verdict }} (<a href="{{ p.meta_ads.ad_library_url }}" target="_blank">Verify India Ads</a>)<br>
-                            <strong>Instagram Reels:</strong> {{ p.social.est_reels_views or p.social.null_reason }}
+                        <p class="text-[11px] text-textPrimary font-mono p-2.5 rounded-lg bg-zinc-50 border border-zinc-200 leading-snug select-all">
+                            {{ p.rto_killer.checkout_copy }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="p-4 rounded-xl bg-white border border-borderMain space-y-3 shadow-2xs">
+                    <div class="flex items-center justify-between">
+                        <span class="text-[10px] font-bold text-textMuted uppercase tracking-wider">
+                            2. WhatsApp Post-Order Bot Flow (60s)
+                        </span>
+                        <button onclick="copyText(`{{ p.rto_killer.whatsapp_message }}`)" class="text-rose-700 hover:text-rose-900 text-[10px] font-bold hover:underline">
+                            Copy Bot Message
+                        </button>
+                    </div>
+
+                    <div class="p-2.5 rounded-lg bg-zinc-50 border border-zinc-200 font-sans text-xs text-textSecondary leading-relaxed whitespace-pre-wrap select-all max-h-32 overflow-y-auto">{{ p.rto_killer.whatsapp_message }}</div>
+
+                    <div class="space-y-1.5 pt-1">
+                        <span class="text-[10px] font-semibold text-textMuted block uppercase">Interactive WhatsApp Buttons:</span>
+                        <div class="p-2 rounded-lg bg-emerald-600 text-white font-semibold text-xs flex items-center justify-center gap-1.5 shadow-2xs">
+                            <span>{{ p.rto_killer.button_1_upi }}</span>
+                        </div>
+                        <div class="p-2 rounded-lg bg-zinc-100 border border-zinc-300 text-textPrimary font-semibold text-xs flex items-center justify-center gap-1.5">
+                            <span>{{ p.rto_killer.button_2_cod }}</span>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
+        {% endif %}
 
-            <!-- AI Opinion Box (Strictly Labelled AI Opinion, Never Data) -->
-            <div class="panel" style="border-color: #ddd6fe; background: #faf5ff;">
-                <div class="panel-title" style="border-color:#ddd6fe;">
-                    <span>🤖 AI Classification & Ad Copy Suggestion</span>
-                    <span class="badge badge-purple">{{ p.gemini.label if p.gemini else 'AI opinion (not data)' }}</span>
-                </div>
-                {% if p.gemini and p.gemini.ai_verdict %}
-                    <div style="font-size:0.83rem; line-height:1.55;">
-                        <div><strong>AI Opinion Pain/Wow Suggestion (1–5):</strong> {{ p.gemini.suggested_pain_wow_rating_1_to_5 or 'N/A' }} / 5</div>
-                        <div style="margin-top:0.35rem;"><strong>AI Verdict:</strong> {{ p.gemini.ai_verdict }}</div>
-                        <div style="margin-top:0.35rem;"><strong>Suggested Hinglish Hook:</strong> {{ p.gemini.viral_hook_hinglish }}</div>
-                        <div style="margin-top:0.35rem;"><strong>Target Audience:</strong> {{ p.gemini.target_audience }}</div>
-                        <div class="prov-meta" style="margin-top:0.4rem;">Source: {{ p.gemini.source }} | Fetched: {{ p.gemini.fetched_at }} | Method: <code>ai_opinion</code> (Never used as numeric score data)</div>
-                    </div>
-                {% else %}
-                    <div class="null-val" style="font-size:0.83rem;">
-                        {{ p.gemini.null_reason if p.gemini else 'AI opinion not generated yet. Click "Generate AI Opinion (Gemini)" above if GEMINI_API_KEY is configured.' }}
-                    </div>
-                {% endif %}
-            </div>
+    </main>
 
-            <!-- Interactive Manual Entry Forms (Steps 1, 2, 3, 4, 5, 7, 8) -->
-            <div class="forms-grid" id="manual-entry">
-                <!-- Form 1: Manual Criterion 1 & 2 Ratings -->
-                <div class="panel">
-                    <div class="panel-title">
-                        <span>✍️ Criterion 1 & 2: My Manual Ratings</span>
-                        <span class="badge badge-blue">method: manual_entry</span>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Pain Point / Wow Rating (1–5)</label>
-                            <input type="number" id="pain_rating" min="1" max="5" step="1" value="{{ p.checklist[0].raw_value if p.checklist and p.checklist[0].raw_value is not none else '' }}" placeholder="1 to 5">
-                        </div>
-                        <div class="form-group">
-                            <label>3-Second Visual Demo Rating (1–5)</label>
-                            <input type="number" id="demo_rating" min="1" max="5" step="1" value="{{ p.checklist[1].raw_value if p.checklist and p.checklist[1].raw_value is not none else '' }}" placeholder="1 to 5">
-                        </div>
-                    </div>
-                    {% set dchk = p.checklist[1].demo_checklist if p.checklist and p.checklist|length > 1 and p.checklist[1].demo_checklist else {} %}
-                    <div class="form-group" style="display:flex; gap:0.8rem; flex-wrap:wrap; margin:0.4rem 0;">
-                        <label><input type="checkbox" id="chk_visual" {% if dchk.get('shows_result_visually') %}checked{% endif %}> Shows result visually</label>
-                        <label><input type="checkbox" id="chk_ba" {% if dchk.get('before_after') %}checked{% endif %}> Clear before/after</label>
-                        <label><input type="checkbox" id="chk_noexp" {% if dchk.get('no_explanation_needed') %}checked{% endif %}> No explanation needed</label>
-                    </div>
-                    <button class="btn btn-primary" onclick="saveRatings()">Save Manual Ratings & Re-Score</button>
-                </div>
-
-                <!-- Form 2: Step 4 Meta Ad Library Validation -->
-                <div class="panel">
-                    <div class="panel-title">
-                        <span>📢 Step 4: Meta Ad Library Log</span>
-                        <a href="{{ p.meta_ads.ad_library_url }}" target="_blank" style="font-size:0.75rem; color:var(--blue);">Open India Ad Library &rarr;</a>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Active Ad Count</label>
-                            <input type="number" id="meta_active_ads" value="{{ p.meta_ads.active_ads_count if p.meta_ads.active_ads_count is not none else '' }}" placeholder="e.g. 12">
-                        </div>
-                        <div class="form-group">
-                            <label>Longest Running Ad (Days)</label>
-                            <input type="number" id="meta_longest_days" value="{{ p.meta_ads.longest_running_days if p.meta_ads.longest_running_days is not none else '' }}" placeholder="e.g. 35">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Distinct Creatives Count</label>
-                            <input type="number" id="meta_creatives" value="{{ p.meta_ads.distinct_creatives if p.meta_ads.distinct_creatives is not none else '' }}" placeholder="e.g. 6">
-                        </div>
-                        <div class="form-group">
-                            <label>Advertiser Page Names</label>
-                            <input type="text" id="meta_advertisers" value="{{ p.meta_ads.sample_advertiser_names | join(', ') if p.meta_ads.sample_advertiser_names else '' }}" placeholder="Page names">
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" onclick="saveMetaAds()">Save Meta Ad Library Check</button>
-                </div>
-
-                <!-- Form 3: Step 5 Instagram Validation -->
-                <div class="panel">
-                    <div class="panel-title">
-                        <span>📸 Step 5: Instagram Reels Validation</span>
-                        <span class="badge badge-yellow">{{ p.social.status }}</span>
-                    </div>
-                    <div class="form-group">
-                        <label>Reel URL</label>
-                        <input type="url" id="ig_reel_url" value="{{ p.social.reel_link or '' }}" placeholder="https://www.instagram.com/reel/...">
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Views Count</label>
-                            <input type="number" id="ig_views" value="{{ p.social.views if p.social.views is not none else '' }}" placeholder="e.g. 125000">
-                        </div>
-                        <div class="form-group">
-                            <label>"price?" / "link?" Comments</label>
-                            <input type="number" id="ig_intent_comments" value="{{ p.social.buying_intent_comments if p.social.buying_intent_comments is not none else '' }}" placeholder="e.g. 42">
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" onclick="saveInstagram()">Save Instagram Metrics</button>
-                </div>
-
-                <!-- Form 4: Step 3/6 Manual Marketplace Price & Delivery Days Override -->
-                <div class="panel">
-                    <div class="panel-title">
-                        <span>🏷️ Step 3 & 6: Manual Price & Delivery Log</span>
-                        <span class="badge badge-blue">Fallback if scraper blocked</span>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Amazon.in Price (₹)</label>
-                            <input type="number" id="mp_amazon" value="{{ p.competitor_pricing.marketplaces.amazon.price if p.competitor_pricing.marketplaces.amazon.price is not none else '' }}">
-                        </div>
-                        <div class="form-group">
-                            <label>Flipkart Price (₹)</label>
-                            <input type="number" id="mp_flipkart" value="{{ p.competitor_pricing.marketplaces.flipkart.price if p.competitor_pricing.marketplaces.flipkart.price is not none else '' }}">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Meesho Price (₹)</label>
-                            <input type="number" id="mp_meesho" value="{{ p.competitor_pricing.marketplaces.meesho.price if p.competitor_pricing.marketplaces.meesho.price is not none else '' }}">
-                        </div>
-                        <div class="form-group">
-                            <label>Supplier Delivery Max Days</label>
-                            <input type="number" id="mp_del_max" value="{{ p.delivery_max_days if p.delivery_max_days is not none else '' }}" placeholder="e.g. 7">
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" onclick="saveMarketplaceManual()">Save Prices & Delivery Days</button>
-                </div>
-
-                <!-- Form 5: Step 7 Sample Tracking -->
-                <div class="panel">
-                    <div class="panel-title">
-                        <span>📦 Step 7: Physical Sample & Lifecycle Stage</span>
-                        <span class="badge badge-green">{{ p.sample_tracking.status }}</span>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Lifecycle Stage</label>
-                            <select id="sample_status">
-                                {% for st in ['shortlisted', 'sample_ordered', 'sample_received', 'listed', 'testing', 'winner', 'killed'] %}
-                                <option value="{{ st }}" {% if p.sample_tracking.status == st %}selected{% endif %}>{{ st | upper }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>Sample Quality Rating (1–5)</label>
-                            <input type="number" id="sample_quality" min="1" max="5" value="{{ p.sample_tracking.quality_rating or '' }}" placeholder="1 to 5">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Sample Quality Notes</label>
-                        <input type="text" id="sample_notes" value="{{ p.sample_tracking.notes or '' }}" placeholder="Build quality, packaging, real weight">
-                    </div>
-                    <button class="btn btn-primary" onclick="saveSampleTracking()">Update Sample Stage</button>
-                </div>
-
-                <!-- Form 6: Step 8 Store Test Results -->
-                <div class="panel">
-                    <div class="panel-title">
-                        <span>🧪 Step 8: Store Test Results & Real Profit</span>
-                        {% if p.test_results and p.test_results.real_net_profit_total is not none %}
-                            <span class="badge {% if p.test_results.real_net_profit_total >= 0 %}badge-green{% else %}badge-red{% endif %}">
-                                Real Net Profit: ₹{{ p.test_results.real_net_profit_total }}
-                            </span>
-                        {% endif %}
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Store Visits</label>
-                            <input type="number" id="tr_visits" value="{{ p.test_results.visits if p.test_results and p.test_results.visits is not none else '' }}">
-                        </div>
-                        <div class="form-group">
-                            <label>Add to Carts</label>
-                            <input type="number" id="tr_atc" value="{{ p.test_results.add_to_carts if p.test_results and p.test_results.add_to_carts is not none else '' }}">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Orders Received</label>
-                            <input type="number" id="tr_orders" value="{{ p.test_results.orders if p.test_results and p.test_results.orders is not none else '' }}">
-                        </div>
-                        <div class="form-group">
-                            <label>COD Confirmed %</label>
-                            <input type="number" id="tr_cod_pct" value="{{ p.test_results.cod_confirmed_pct if p.test_results and p.test_results.cod_confirmed_pct is not none else '' }}">
-                        </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label>Actual RTO %</label>
-                            <input type="number" id="tr_rto_pct" value="{{ p.test_results.rto_pct if p.test_results and p.test_results.rto_pct is not none else '' }}">
-                        </div>
-                        <div class="form-group">
-                            <label>Total Ad Spend (₹)</label>
-                            <input type="number" id="tr_spend" value="{{ p.test_results.ad_spend if p.test_results and p.test_results.ad_spend is not none else '' }}">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Total Revenue Collected (₹)</label>
-                        <input type="number" id="tr_revenue" value="{{ p.test_results.revenue if p.test_results and p.test_results.revenue is not none else '' }}">
-                    </div>
-                    <button class="btn btn-primary" onclick="saveTestResults()">Save Store Test Results</button>
-                </div>
-            </div>
-        </div>
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 bg-brandBlack text-white px-3.5 py-2 rounded-xl shadow-xl transform translate-y-20 opacity-0 transition-all duration-200 z-50 flex items-center gap-2 text-xs font-medium pointer-events-none">
+        <svg class="w-3.5 h-3.5 text-accentGreen" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+        <span id="toastMsg">Copied to Clipboard</span>
     </div>
-
-    <div id="toast" class="toast">Saved! Reloading provenance...</div>
 
     <script>
-        const productHandle = "{{ p.handle }}";
-
         function showToast(msg) {
-            const t = document.getElementById('toast');
-            t.textContent = msg;
-            t.style.display = 'block';
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMsg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2000);
         }
 
-        async function postManualEntry(section, payload) {
-            showToast("Saving manual entry & recalculating score...");
-            const res = await fetch(`/api/product/${productHandle}/manual`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ section, payload })
+        function copyText(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Copied to Clipboard');
             });
-            const data = await res.json();
-            if (data.success) {
-                window.location.reload();
-            } else {
-                alert("Error: " + (data.error || "Failed to save"));
-            }
-        }
-
-        function saveRatings() {
-            const pain = document.getElementById('pain_rating').value;
-            const demo = document.getElementById('demo_rating').value;
-            postManualEntry('ratings', {
-                pain_wow_rating: pain ? parseInt(pain) : null,
-                demo_3s_rating: demo ? parseInt(demo) : null,
-                demo_checklist: {
-                    shows_result_visually: document.getElementById('chk_visual').checked,
-                    before_after: document.getElementById('chk_ba').checked,
-                    no_explanation_needed: document.getElementById('chk_noexp').checked
-                }
-            });
-        }
-
-        function saveMetaAds() {
-            const active = document.getElementById('meta_active_ads').value;
-            const days = document.getElementById('meta_longest_days').value;
-            const creatives = document.getElementById('meta_creatives').value;
-            const adv = document.getElementById('meta_advertisers').value;
-            postManualEntry('meta_ads', {
-                active_ads_count: active !== '' ? parseInt(active) : null,
-                longest_running_days: days !== '' ? parseInt(days) : null,
-                distinct_creatives: creatives !== '' ? parseInt(creatives) : null,
-                sample_advertiser_names: adv ? adv.split(',').map(s => s.trim()).filter(Boolean) : []
-            });
-        }
-
-        function saveInstagram() {
-            const views = document.getElementById('ig_views').value;
-            const comments = document.getElementById('ig_intent_comments').value;
-            postManualEntry('instagram', {
-                reel_link: document.getElementById('ig_reel_url').value,
-                views: views !== '' ? parseInt(views) : null,
-                buying_intent_comments: comments !== '' ? parseInt(comments) : null
-            });
-        }
-
-        function saveMarketplaceManual() {
-            const amz = document.getElementById('mp_amazon').value;
-            const flp = document.getElementById('mp_flipkart').value;
-            const msh = document.getElementById('mp_meesho').value;
-            const dmax = document.getElementById('mp_del_max').value;
-            postManualEntry('marketplace_prices', {
-                amazon_price: amz !== '' ? parseFloat(amz) : null,
-                flipkart_price: flp !== '' ? parseFloat(flp) : null,
-                meesho_price: msh !== '' ? parseFloat(msh) : null,
-                delivery_max_days: dmax !== '' ? parseInt(dmax) : null
-            });
-        }
-
-        function saveSampleTracking() {
-            const q = document.getElementById('sample_quality').value;
-            postManualEntry('sample_tracking', {
-                status: document.getElementById('sample_status').value,
-                quality_rating: q !== '' ? parseInt(q) : null,
-                notes: document.getElementById('sample_notes').value
-            });
-        }
-
-        function saveTestResults() {
-            const v = document.getElementById('tr_visits').value;
-            const atc = document.getElementById('tr_atc').value;
-            const o = document.getElementById('tr_orders').value;
-            const cod = document.getElementById('tr_cod_pct').value;
-            const rto = document.getElementById('tr_rto_pct').value;
-            const spend = document.getElementById('tr_spend').value;
-            const rev = document.getElementById('tr_revenue').value;
-            postManualEntry('test_results', {
-                visits: v !== '' ? parseInt(v) : null,
-                add_to_carts: atc !== '' ? parseInt(atc) : null,
-                orders: o !== '' ? parseInt(o) : null,
-                cod_confirmed_pct: cod !== '' ? parseFloat(cod) : null,
-                rto_pct: rto !== '' ? parseFloat(rto) : null,
-                ad_spend: spend !== '' ? parseFloat(spend) : null,
-                revenue: rev !== '' ? parseFloat(rev) : null
-            });
-        }
-
-        async function fetchLiveDemand() {
-            const btn = document.getElementById('btnDemand');
-            btn.disabled = true;
-            btn.textContent = "⏳ Fetching live pytrends & Google Suggest...";
-            const res = await fetch(`/api/product/${productHandle}/fetch-demand`, { method: 'POST' });
-            const data = await res.json();
-            if (data.success) {
-                window.location.reload();
-            } else {
-                alert("Demand fetch error: " + (data.error || "Unknown"));
-                btn.disabled = false;
-            }
-        }
-
-        async function fetchLivePrices() {
-            const btn = document.getElementById('btnPrices');
-            btn.disabled = true;
-            btn.textContent = "⏳ Scraping live Amazon/Flipkart/Meesho...";
-            const res = await fetch(`/api/product/${productHandle}/fetch-prices`, { method: 'POST' });
-            const data = await res.json();
-            if (data.success) {
-                window.location.reload();
-            } else {
-                alert("Price scrape error: " + (data.error || "Unknown"));
-                btn.disabled = false;
-            }
-        }
-
-        async function fetchAiOpinion() {
-            const btn = document.getElementById('btnAi');
-            btn.disabled = true;
-            btn.textContent = "⏳ Calling Gemini API...";
-            const res = await fetch(`/api/product/${productHandle}/ai-opinion`, { method: 'POST' });
-            const data = await res.json();
-            if (data.success) {
-                window.location.reload();
-            } else {
-                alert("AI opinion error: " + (data.error || "Unknown"));
-                btn.disabled = false;
-            }
         }
     </script>
 </body>

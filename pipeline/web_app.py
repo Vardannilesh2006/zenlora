@@ -387,15 +387,44 @@ def product_detail(handle):
     if not product:
         return "Product not found", 404
 
-    if not product.get("storyboard_image_prompt") or not product.get("scene_1_video_prompt"):
+    product["zenlora_title"] = product.get("zenlora_title") or product.get("title", "")
+    product["primary_image"] = product.get("primary_image") or product.get("image_url", "")
+    product["primary_category"] = product.get("primary_category") or product.get("niche", "Home Decor")
+    product["deodap_url"] = product.get("deodap_url") or product.get("source_url", "https://deodap.in")
+
+    sp = float(product.get("selling_price") or 399)
+    cost = float(product.get("wholesale_price") or 100)
+    cp = product.get("competitor_pricing") or {}
+    net_prof = cp.get("net_profit") if cp.get("net_profit") is not None else round(sp - cost - 60, 0)
+    product["gross_profit"] = product.get("gross_profit") or int(round(float(net_prof)))
+    product["profit_margin_pct"] = (
+        product.get("profit_margin_pct")
+        or cp.get("profit_margin_pct")
+        or (round(( float(product["gross_profit"]) / sp ) * 100, 1) if sp > 0 else 50)
+    )
+    raw_mrp = product.get("mrp") or product.get("compare_at_price") or 0
+    try:
+        mrp_val = int(round(float(raw_mrp)))
+    except (ValueError, TypeError):
+        mrp_val = 0
+    if mrp_val <= sp:
+        mrp_val = (max(int(sp) + 200, int(sp * 1.75)) // 100) * 100 + 99
+    product["mrp"] = mrp_val
+
+    if (
+        not product.get("storyboard_image_prompt")
+        or not product.get("scene_1_video_prompt")
+        or not product.get("scene_2_video_prompt")
+        or not product.get("scene_3_video_prompt")
+    ):
         prod_data = {
             "title": product.get("title", ""),
             "description": product.get("description", ""),
         }
         class_data = {
-            "zenlora_title": product.get("zenlora_title", product.get("title", "")),
-            "primary_category": product.get("primary_category", product.get("niche", "Home Decor")),
-            "selling_price": product.get("selling_price", 399),
+            "zenlora_title": product["zenlora_title"],
+            "primary_category": product["primary_category"],
+            "selling_price": int(round(sp)),
         }
         try:
             ugc_data = UGCEngine.generate_prompts(prod_data, class_data, skip_gemini=True)
@@ -403,10 +432,7 @@ def product_detail(handle):
         except Exception:
             pass
 
-    product["primary_image"] = product.get("primary_image") or product.get("image_url", "")
-    product["primary_category"] = product.get("primary_category") or product.get("niche", "Home Decor")
     settings = load_settings()
-
     return render_template("product_detail.html", p=product, settings=settings)
 
 
