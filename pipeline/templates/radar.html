@@ -160,8 +160,8 @@
                     </p>
                 </div>
                 <div class="flex items-center gap-2 flex-wrap">
-                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
-                        📊 Page Excel (.xlsx)
+                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
+                        📊 Page Excel (.xlsx · 24)
                     </a>
                     <a href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition">
                         📊 Mix 55 Excel (.xlsx)
@@ -338,11 +338,11 @@
                 {% for n in niches %}
                 <a href="/radar?niche={{ n }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-zinc-200/80 hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
                     {% if n == 'All' %}🌐 All ({{ total_winners }})
-                    {% elif n == 'Home Decor' %}🏡 Home Decor (12)
-                    {% elif n == 'Kitchen' %}🍳 Kitchen (12)
-                    {% elif n == 'Gadgets' %}⚡ Smart Gadgets (12)
-                    {% elif n == 'Festive' %}🪔 Festive & Lights (12)
-                    {% elif n == 'Gifts' %}🎁 Gifts & Hampers (12)
+                    {% elif n == 'Home Decor' %}🏡 Home Decor ({{ niche_counts.get('Home Decor', 24) if niche_counts else 24 }})
+                    {% elif n == 'Kitchen' %}🍳 Kitchen ({{ niche_counts.get('Kitchen', 24) if niche_counts else 24 }})
+                    {% elif n == 'Gadgets' %}⚡ Smart Gadgets ({{ niche_counts.get('Gadgets', 24) if niche_counts else 24 }})
+                    {% elif n == 'Festive' %}🪔 Festive & Lights ({{ niche_counts.get('Festive', 24) if niche_counts else 24 }})
+                    {% elif n == 'Gifts' %}🎁 Gifts & Hampers ({{ niche_counts.get('Gifts', 24) if niche_counts else 24 }})
                     {% else %}{{ n }}{% endif %}
                 </a>
                 {% endfor %}
@@ -357,12 +357,12 @@
                     <span id="vaultToolbarText">🛡️ Preset &amp; Vault ({{ export_ledger.total_blocked_products if export_ledger else 90 }} Blocked)</span>
                 </button>
                 <a 
-                    href="/api/radar/smartbiz.csv?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
+                    href="/api/radar/smartbiz.csv?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
                     onclick="return downloadUniqueSmartBizFile(event, this.href)"
                     title="Download 100% Unique SmartBiz v10 CSV UTF-8 (Zero-Repeat Vault Protected)"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition flex items-center gap-1.5 whitespace-nowrap"
                 >
-                    <span>📦 SmartBiz Page CSV ({% if selected_niche == 'All' %}Top 20{% else %}{{ selected_niche }} · 20{% endif %})</span>
+                    <span>📦 SmartBiz Page CSV ({% if selected_niche == 'All' %}Top 24{% else %}{{ selected_niche }} · {{ niche_counts.get(selected_niche, 24) if niche_counts else 24 }}{% endif %})</span>
                 </a>
                 <a 
                     href="/api/radar/smartbiz.csv?mode=mix&batch={{ current_batch }}&count=55"

@@ -92,8 +92,8 @@ def radar():
     show_hard_failed = request.args.get("show_hard_failed", "0") == "1"
     batch_cursor = int(request.args.get("batch", 0) or 0)
 
-    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=12)
-    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=12)
+    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
+    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
 
     # Apply dashboard filters
     if festival_filter != "All":
@@ -129,6 +129,11 @@ def radar():
     med_conf_count = sum(1 for w in active_winners if w.get("confidence") == "Medium")
 
     niches = ["All", "Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts"]
+    niche_counts = {
+        n: sum(1 for w in active_winners if w.get("niche") == n)
+        for n in niches
+        if n != "All"
+    }
     settings = load_settings()
     policy_max = int(settings.get("general", {}).get("supplier_policy_delivery_max_days", 8))
     festival_cutoffs = calculate_festival_cutoffs(policy_max, settings)
@@ -150,6 +155,7 @@ def radar():
         show_hard_failed=show_hard_failed,
         hard_failed_count=hard_failed_count,
         niches=niches,
+        niche_counts=niche_counts,
         total_winners=total_winners,
         avg_score=avg_score,
         super_winners=high_conf_count,
@@ -195,7 +201,7 @@ def api_radar_products():
     niche = request.args.get("niche", "All")
     show_hard_failed = request.args.get("show_hard_failed", "0") == "1"
     batch_cursor = int(request.args.get("batch", 0) or 0)
-    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, batch_cursor=batch_cursor, per_niche_display=12)
+    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, batch_cursor=batch_cursor, per_niche_display=24)
     return jsonify(winners)
 
 

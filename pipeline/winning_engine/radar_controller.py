@@ -338,7 +338,7 @@ def scan_and_update_winners(
 def auto_refill_unexported_winners(
     existing_winners: List[Dict[str, Any]],
     exclusion_sets,
-    min_needed_total: int = 80,
+    min_needed_total: int = 130,
 ) -> List[Dict[str, Any]]:
     """
     If the number of unexported winners falls below `min_needed_total`, automatically crawls
@@ -413,7 +413,7 @@ def get_winners(
     include_hard_failed: bool = False,
     refresh_dynamic: bool = True,
     batch_cursor: int = 0,
-    per_niche_display: int = 12,
+    per_niche_display: int = 24,
     exclude_exported: bool = True,
     extra_excluded_keys: Optional[List[str]] = None,
     auto_refill: bool = False,
