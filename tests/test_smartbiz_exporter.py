@@ -189,3 +189,81 @@ def test_zero_repeat_vault_across_multiple_csv_exports():
         # Cleanly restore ledger to the 90 store baseline items after test
         client.post("/api/radar/export-ledger", json={"action": "reset", "keep_store_baseline": True})
 
+
+def test_scan_deodap_winners_and_repeated_csv_exports_zero_repeats(monkeypatch):
+    """
+    Verifies that clicking 'Scan DeoDap Winners' (/api/radar/scan) repeatedly followed by
+    generating SmartBiz CSV files NEVER repeats a product, preserves the unexported pool,
+    and applies the SmartBiz v10 Store Preset to every row.
+    """
+    import winning_engine.deodap_harvester as dh
+
+    class _DummyResponse:
+        status_code = 200
+
+        def json(self):
+            return {"products": [], "resources": {"results": {"products": []}}}
+
+    monkeypatch.setattr(dh.requests, "get", lambda *a, **kw: _DummyResponse())
+
+    client = app.test_client()
+    client.post("/api/radar/export-ledger", json={"action": "reset", "keep_store_baseline": True})
+
+    exported_skus = set()
+    exported_handles = set()
+    exported_titles = set()
+
+    try:
+        for cycle in range(1, 3):
+            # 1. Click 'Scan DeoDap Winners'
+            scan_res = client.post(
+                "/api/radar/scan",
+                json={
+                    "limit": 15,
+                    "batch": cycle,
+                    "excluded_keys": list(exported_skus | exported_handles),
+                },
+            )
+            assert scan_res.status_code == 200
+            scan_data = scan_res.get_json()
+            assert scan_data["success"] is True
+            assert scan_data["count"] >= 200  # Pool is preserved/merged, never shrunk!
+
+            # Verify none of the already exported SKUs or handles are in the scanned pool
+            for w in scan_data["winners"]:
+                w_sku = str(w.get("sku") or "").strip().lower()
+                w_handle = str(w.get("handle") or "").strip().lower()
+                assert w_sku not in exported_skus
+                assert w_handle not in exported_handles
+
+            # 2. Generate SmartBiz CSV after scan
+            csv_res = client.post(
+                f"/api/radar/smartbiz.csv?mode=page&niche=All&batch={cycle}&limit=20",
+                json={"excluded_keys": list(exported_skus | exported_handles)},
+            )
+            assert csv_res.status_code == 200
+            rows = list(csv.reader(io.StringIO(csv_res.data.decode("utf-8-sig"))))[1:]
+            assert len(rows) == 20
+
+            new_handles = [
+                h.strip().lower()
+                for h in (csv_res.headers.get("X-Zenlora-Exported-Handles") or "").split(",")
+                if h.strip()
+            ]
+            exported_handles.update(new_handles)
+
+            for r in rows:
+                # Preset checks: A-E blank, J = GENERAL, MRP > Selling Price
+                assert r[0] == "" and r[4] == ""
+                assert r[9] == "GENERAL"
+                assert int(r[7]) > int(r[8])
+
+                sku = r[5].strip().lower()
+                title = r[6].strip().lower()
+                assert sku not in exported_skus, f"Cycle {cycle} repeated SKU {sku}!"
+                assert title not in exported_titles, f"Cycle {cycle} repeated title {title}!"
+                exported_skus.add(sku)
+                exported_titles.add(title)
+    finally:
+        client.post("/api/radar/export-ledger", json={"action": "reset", "keep_store_baseline": True})
+

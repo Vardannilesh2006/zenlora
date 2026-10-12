@@ -169,11 +169,21 @@ def api_radar_scan():
         data = request.get_json(silent=True) or {}
         limit = int(data.get("limit", 30))
         batch_cursor = int(data.get("batch", 1) or 1)
-        winners = scan_and_update_winners(limit_per_niche=limit, randomize=True, batch_cursor=batch_cursor)
+        excluded_keys = data.get("excluded_keys", [])
+        if not isinstance(excluded_keys, list):
+            excluded_keys = []
+        winners = scan_and_update_winners(
+            limit_per_niche=limit,
+            randomize=True,
+            batch_cursor=batch_cursor,
+            extra_excluded_keys=excluded_keys,
+        )
+        ledger = load_export_ledger()
         return jsonify({
             "success": True,
             "batch": batch_cursor,
             "count": len(winners),
+            "blocked_total": ledger.get("total_blocked_products", 0),
             "winners": winners,
         })
     except Exception as e:

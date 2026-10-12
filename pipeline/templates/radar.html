@@ -650,18 +650,19 @@
             btn.disabled = true;
             bolt.classList.add('hidden');
             icon.classList.remove('hidden');
-            text.innerText = `Scanning Batch #${nextBatch}...`;
+            text.innerText = `Scanning Batch #${nextBatch} (0 Repeats)...`;
             btn.classList.add('opacity-75');
 
             try {
+                const browserKeys = getBrowserVaultKeys();
                 const res = await fetch('/api/radar/scan', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ limit: 30, batch: nextBatch })
+                    body: JSON.stringify({ limit: 30, batch: nextBatch, excluded_keys: browserKeys })
                 });
                 const data = await res.json();
                 if (data.success) {
-                    showToast(`Scanned fresh batch #${nextBatch} across all 5 niches!`, false);
+                    showToast(`Scanned fresh batch #${nextBatch} across all 5 niches (Zero-Repeat Vault active)!`, false);
                     urlParams.set('batch', String(nextBatch));
                     setTimeout(() => {
                         window.location.search = urlParams.toString();
@@ -725,6 +726,26 @@
                 localStorage.setItem(VAULT_STORAGE_KEY, JSON.stringify(Array.from(current)));
             } catch (e) {}
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const browserKeys = new Set(getBrowserVaultKeys().map(k => String(k).toLowerCase()));
+            if (browserKeys.size === 0) return;
+            let removedAny = false;
+            document.querySelectorAll('[id^="card-"]').forEach(card => {
+                const handle = card.id.replace(/^card-/, '').toLowerCase();
+                if (browserKeys.has(handle)) {
+                    card.remove();
+                    removedAny = true;
+                }
+            });
+            if (removedAny) {
+                fetch('/api/radar/export-ledger', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ excluded_keys: Array.from(browserKeys) })
+                }).catch(() => {});
+            }
+        });
 
         function downloadUniqueSmartBizFile(event, url) {
             if (event) event.preventDefault();

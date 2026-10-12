@@ -258,25 +258,54 @@ def harvest_deodap_bestsellers(
     min_price: float = 25.0,
     max_price: float = 245.0,
     randomize: bool = True,
-    batch_cursor: Optional[int] = None
+    batch_cursor: Optional[int] = None,
+    extra_excluded_keys: Optional[List[str]] = None,
 ) -> List[Dict[str, Any]]:
     """
     Pulls fresh, real product data from DeoDap's official Shopify JSON endpoints
     with full timestamps and provenance metadata.
-    Each scan rotates across live catalog pages and keyword seeds so clicking
-    'Scan DeoDap Winners' returns fresh data across every category and 'All'.
+    Each scan rotates across all 20 live catalog pages and strictly filters out
+    any product in the 4-Key Zero-Repeat Export Vault.
     """
     import os
+    from winning_engine.export_ledger import (
+        build_exclusion_sets,
+        extract_product_fingerprints,
+        is_product_already_exported,
+    )
+
     is_vercel = bool(os.environ.get("VERCEL"))
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
         "Accept": "application/json"
     }
 
+    excl_sets = build_exclusion_sets(extra_excluded_keys)
+    seen_skus = set(excl_sets[0])
+    seen_handles = set(excl_sets[1])
+    seen_vids = set(excl_sets[2])
+    seen_tfps = set(excl_sets[3])
+
+    def _can_accept(candidate: Dict[str, Any]) -> bool:
+        if not candidate or candidate.get("in_stock") is False:
+            return False
+        if is_product_already_exported(candidate, (seen_skus, seen_handles, seen_vids, seen_tfps)):
+            return False
+        fp = extract_product_fingerprints(candidate)
+        if fp["sku"]:
+            seen_skus.add(fp["sku"])
+        if fp["handle"]:
+            seen_handles.add(fp["handle"])
+        if fp["variant_id"]:
+            seen_vids.add(fp["variant_id"])
+        if fp["title_fp"]:
+            seen_tfps.add(fp["title_fp"])
+        return True
+
     settings = load_settings()
     state = _load_scan_state()
-    if batch_cursor is not None:
-        page_cursor = (int(batch_cursor) % 6) + 1
+    if batch_cursor is not None and int(batch_cursor) > 0:
+        page_cursor = ((int(batch_cursor) - 1) % 20) + 1
         seed_cursor = int(batch_cursor) * 3
     else:
         page_cursor = int(state.get("page_cursor", 1))
@@ -285,11 +314,10 @@ def harvest_deodap_bestsellers(
 
     fetched_at = now_iso()
     live_items: List[Dict[str, Any]] = []
-    seen_handles = set()
     live_sources_fetched = 0
 
-    # 1. Live Fetch from DeoDap Collections API (1 page on Vercel to stay <3s, 2 pages locally)
-    pages_to_fetch = [page_cursor] if is_vercel else [page_cursor, (page_cursor % 6) + 1]
+    # 1. Live Fetch from DeoDap Collections API across 20 pages (1 page on Vercel to stay <3s, 2 pages locally)
+    pages_to_fetch = [page_cursor] if is_vercel else [page_cursor, (page_cursor % 20) + 1]
     for pg in pages_to_fetch:
         url = f"https://www.deodap.in/collections/all/products.json?limit=250&page={pg}&sort_by=best-selling"
         try:
@@ -299,8 +327,7 @@ def harvest_deodap_bestsellers(
                 live_sources_fetched += 1
                 for idx, p in enumerate(prods):
                     item = _format_deodap_item(p, pg, idx, url, fetched_at)
-                    if item and item["handle"] not in seen_handles and item.get("in_stock") is not False:
-                        seen_handles.add(item["handle"])
+                    if item and _can_accept(item):
                         live_items.append(item)
         except Exception as e:
             print(f"[DeoDap Harvester] Live page {pg} error: {e}")
@@ -327,7 +354,7 @@ def harvest_deodap_bestsellers(
                     live_sources_fetched += 1
                     for idx, sp in enumerate(s_prods):
                         handle = sp.get("handle")
-                        if not handle or handle in seen_handles:
+                        if not handle:
                             continue
                         try:
                             cost = float(sp.get("price", 0))
@@ -340,8 +367,7 @@ def harvest_deodap_bestsellers(
                         niche = classify_niche(title, "", body)
                         if is_jewelry_item(title, "", body) and niche == "Festive":
                             continue
-                        seen_handles.add(handle)
-                        live_items.append({
+                        sug_candidate = {
                             "id": sp.get("id"),
                             "handle": handle,
                             "title": title,
@@ -365,7 +391,9 @@ def harvest_deodap_bestsellers(
                             "sku": handle,
                             "tags": kw,
                             "description": re.sub(r"<[^>]+>", " ", body)[:350]
-                        })
+                        }
+                        if _can_accept(sug_candidate):
+                            live_items.append(sug_candidate)
             except Exception:
                 continue
 
@@ -376,7 +404,7 @@ def harvest_deodap_bestsellers(
             source="DeoDap Shopify API",
             method="api",
             source_url=f"https://www.deodap.in/collections/all/products.json?page={page_cursor}",
-            details=f"Fetched {len(live_items)} live in-stock items across {live_sources_fetched} API requests."
+            details=f"Fetched {len(live_items)} live in-stock unexported items across {live_sources_fetched} API requests."
         )
 
     # 3. Merge with previously cached real DeoDap pool (preserving each item's real fetched_at timestamp)
@@ -388,7 +416,7 @@ def harvest_deodap_bestsellers(
                 raw_pool = json.load(f)
             for item in raw_pool:
                 h = item.get("handle")
-                if not h or h in seen_handles:
+                if not h:
                     continue
                 try:
                     c = float(item.get("wholesale_cost") or item.get("wholesale_price") or 0)
@@ -412,8 +440,8 @@ def harvest_deodap_bestsellers(
                     item["niche"] = "Festive"
                 else:
                     item["niche"] = classify_niche(item.get("title", ""), item.get("tags", ""), item.get("description", ""))
-                seen_handles.add(h)
-                cached_items.append(item)
+                if _can_accept(item):
+                    cached_items.append(item)
         except Exception as e:
             print(f"[DeoDap Harvester] Cache read warning: {e}")
 
@@ -422,7 +450,7 @@ def harvest_deodap_bestsellers(
     if live_items and not is_vercel:
         try:
             with open(cache_file, "w", encoding="utf-8") as f:
-                json.dump(all_candidates[:600], f, indent=2, ensure_ascii=False)
+                json.dump(all_candidates[:800], f, indent=2, ensure_ascii=False)
         except Exception:
             pass
 
@@ -457,7 +485,7 @@ def harvest_deodap_bestsellers(
         newly_shown_handles.extend(x.get("handle") for x in chosen if x.get("handle"))
 
     _save_scan_state({
-        "page_cursor": (page_cursor % 6) + 1,
+        "page_cursor": (page_cursor % 20) + 1,
         "seed_cursor": (seed_cursor + 3) % max(1, len(all_seeds)),
         "last_shown_handles": newly_shown_handles[:60],
         "last_scan_at": fetched_at

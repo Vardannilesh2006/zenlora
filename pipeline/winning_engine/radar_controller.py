@@ -245,37 +245,94 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
 def scan_and_update_winners(
     limit_per_niche: int = 30,
     randomize: bool = True,
-    batch_cursor: Optional[int] = None
+    batch_cursor: Optional[int] = None,
+    extra_excluded_keys: Optional[List[str]] = None,
 ) -> List[Dict[str, Any]]:
     """
-    Pulls fresh live DeoDap products across all 5 niches, evaluates all 10 criteria
-    with transparent provenance metadata, filters out any hard-failed items, and persists the shortlist pool.
+    Pulls fresh live DeoDap products across all 5 niches, enforces the 4-Key Zero-Repeat
+    Export Vault (server ledger + browser localStorage keys), evaluates all 10 criteria
+    with transparent provenance metadata, filters out hard-failed items, and merges
+    newly scanned unexported winners with the existing unexported pool.
     """
+    from winning_engine.export_ledger import (
+        build_exclusion_sets,
+        extract_product_fingerprints,
+        is_product_already_exported,
+        record_exported_products,
+    )
+
+    if extra_excluded_keys:
+        record_exported_products([], source_label="browser_scan_sync", extra_client_keys=extra_excluded_keys)
+
+    excl_sets = build_exclusion_sets(extra_excluded_keys)
+
+    # Load existing unexported pool so scanning expands/rotates the pool instead of shrinking it
+    repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
+    existing_pool: List[Dict[str, Any]] = []
+    for src_file in (WINNING_DB_FILE, repo_file):
+        if src_file.exists():
+            try:
+                with open(src_file, "r", encoding="utf-8") as f:
+                    loaded = json.load(f)
+                if isinstance(loaded, list) and len(loaded) > len(existing_pool):
+                    existing_pool = loaded
+            except Exception:
+                continue
+
     pool_limit = max(limit_per_niche, 30)
     print(f"[*] Starting Zenlora Winning Radar live scan (pool_limit={pool_limit}, rotate={randomize}, batch={batch_cursor})...")
     harvested_items = harvest_deodap_bestsellers(
         limit_per_niche=pool_limit,
         randomize=randomize,
-        batch_cursor=batch_cursor
+        batch_cursor=batch_cursor,
+        extra_excluded_keys=extra_excluded_keys,
     )
 
-    winners = [enrich_winner_record(item, catalog_pool=harvested_items) for item in harvested_items]
-    winners = [w for w in winners if not w.get("is_hard_failed", False)]
+    newly_scanned = [enrich_winner_record(item, catalog_pool=harvested_items) for item in harvested_items]
+    newly_scanned = [
+        w for w in newly_scanned
+        if not w.get("is_hard_failed", False) and not is_product_already_exported(w, excl_sets)
+    ]
     if not randomize:
-        winners.sort(key=lambda x: (x.get("winning_score", 0), x.get("verified_score_pct", 0)), reverse=True)
+        newly_scanned.sort(key=lambda x: (x.get("winning_score", 0), x.get("verified_score_pct", 0)), reverse=True)
 
-    # Persist to both runtime WINNING_DB_FILE and repo winning_products.json
-    repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
+    # Merge newly_scanned at the front + existing unexported items, deduplicating by all 4 keys
+    seen_skus = set(excl_sets[0])
+    seen_handles = set(excl_sets[1])
+    seen_vids = set(excl_sets[2])
+    seen_tfps = set(excl_sets[3])
+    merged_winners: List[Dict[str, Any]] = []
+
+    for candidate in newly_scanned + existing_pool:
+        if candidate.get("is_hard_failed", False):
+            continue
+        if is_product_already_exported(candidate, (seen_skus, seen_handles, seen_vids, seen_tfps)):
+            continue
+        fp = extract_product_fingerprints(candidate)
+        if fp["sku"]:
+            seen_skus.add(fp["sku"])
+        if fp["handle"]:
+            seen_handles.add(fp["handle"])
+        if fp["variant_id"]:
+            seen_vids.add(fp["variant_id"])
+        if fp["title_fp"]:
+            seen_tfps.add(fp["title_fp"])
+        merged_winners.append(candidate)
+
+    # Persist full unexported merged pool to both runtime WINNING_DB_FILE and repo winning_products.json
     for target in (WINNING_DB_FILE, repo_file):
         try:
             target.parent.mkdir(parents=True, exist_ok=True)
             with open(target, "w", encoding="utf-8") as f:
-                json.dump(winners, f, indent=2, ensure_ascii=False)
+                json.dump(merged_winners, f, indent=2, ensure_ascii=False)
         except Exception as e:
             print(f"[!] Warning saving {target}: {e}")
 
-    print(f"[+] Scan completed! {len(winners)} verified high-confidence products saved.")
-    return winners
+    print(
+        f"[+] Scan completed! {len(newly_scanned)} fresh batch items + "
+        f"{len(merged_winners)} total verified unexported products in pool."
+    )
+    return merged_winners
 
 
 def auto_refill_unexported_winners(
