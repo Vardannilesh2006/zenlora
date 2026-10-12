@@ -438,10 +438,12 @@ def get_winners(
     exclude_exported: bool = True,
     extra_excluded_keys: Optional[List[str]] = None,
     auto_refill: bool = False,
+    wukusy_only: bool = False,
 ) -> List[Dict[str, Any]]:
     """
     Loads winning products from storage, filters out any product already in the 4-Key Zero-Repeat Export Vault
-    when `exclude_exported=True`, enforces strict category purity + High/Medium confidence,
+    when `exclude_exported=True`, optionally filters strictly to Wukusy wholesaler active SKUs when `wukusy_only=True`,
+    enforces strict category purity + High/Medium confidence,
     and rotates the displayed slice per niche when batch_cursor > 0.
     """
     from winning_engine.export_ledger import (
@@ -472,6 +474,15 @@ def get_winners(
     if refresh_dynamic and winners:
         winners = [enrich_winner_record(w, catalog_pool=winners) for w in winners]
 
+    from winning_engine.wukusy_vault import is_sku_in_wukusy, get_wukusy_sku_set
+
+    wukusy_set = get_wukusy_sku_set()
+    for w in winners:
+        w["wukusy_available"] = is_sku_in_wukusy(w.get("sku"), wukusy_set)
+
+    if wukusy_only and wukusy_set:
+        winners = [w for w in winners if w.get("wukusy_available")]
+
     if not include_hard_failed:
         winners = [
             w for w in winners
@@ -484,11 +495,14 @@ def get_winners(
         excl_sets = build_exclusion_sets(extra_excluded_keys)
         unexported = [w for w in winners if not is_product_already_exported(w, excl_sets)]
 
-        # Auto-refill from deeper DeoDap pages if unexported pool is running low
+        # Auto-refill from deeper DeoDap pages if unexported pool is running low (disabled when wukusy_only is True so we only pick from user synced catalog)
         target_min = max(per_niche_display * 5 if per_niche_display else 60, 65)
-        if auto_refill and len(unexported) < target_min:
+        if auto_refill and not wukusy_only and len(unexported) < target_min:
             winners = auto_refill_unexported_winners(winners, excl_sets, min_needed_total=target_min)
             unexported = [w for w in winners if not is_product_already_exported(w, excl_sets)]
+
+        if wukusy_only and wukusy_set:
+            unexported = [w for w in unexported if is_sku_in_wukusy(w.get("sku"), wukusy_set)]
 
         # Also deduplicate by 4-key fingerprint within the active candidate list so two SKUs with identical titles never appear together
         deduped: List[Dict[str, Any]] = []

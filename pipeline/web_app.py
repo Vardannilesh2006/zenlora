@@ -100,10 +100,15 @@ def radar():
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
     show_hard_failed = request.args.get("show_hard_failed", "0") == "1"
+    wukusy_filter = request.args.get("wukusy", "0") == "1"
     batch_cursor = int(request.args.get("batch", 0) or 0)
 
-    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
-    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
+    from winning_engine.wukusy_vault import load_wukusy_vault
+
+    wukusy_vault_data = load_wukusy_vault()
+
+    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24, wukusy_only=wukusy_filter)
+    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24, wukusy_only=wukusy_filter)
 
     # Attach SEO title and description for each winner card
     for w in winners:
@@ -183,6 +188,8 @@ def radar():
         current_batch=batch_cursor,
         smartbiz_preset=smartbiz_preset,
         export_ledger=export_ledger,
+        wukusy_filter=wukusy_filter,
+        wukusy_vault_data=wukusy_vault_data,
     )
 
 
@@ -298,6 +305,34 @@ def api_smartbiz_preset():
     return jsonify(load_smartbiz_preset())
 
 
+@app.route("/api/wukusy/sync", methods=["POST"])
+def api_wukusy_sync():
+    try:
+        from winning_engine.wukusy_vault import sync_wukusy_skus
+        data = request.get_json(silent=True) or {}
+        skus = data.get("skus", [])
+        if not isinstance(skus, list):
+            skus = [s.strip() for s in str(skus).split("\n") if s.strip()]
+        res = sync_wukusy_skus(skus, merge=bool(data.get("merge", True)))
+        return jsonify(res)
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
+@app.route("/api/wukusy/vault", methods=["GET", "POST"])
+def api_wukusy_vault():
+    try:
+        from winning_engine.wukusy_vault import load_wukusy_vault, reset_wukusy_vault
+        if request.method == "POST":
+            data = request.get_json(silent=True) or {}
+            if data.get("action") == "reset":
+                reset_wukusy_vault()
+                return jsonify({"success": True, "vault": load_wukusy_vault()})
+        return jsonify(load_wukusy_vault())
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
 @app.route("/api/radar/export-ledger", methods=["GET", "POST"])
 def api_export_ledger():
     if request.method == "GET":
@@ -361,6 +396,7 @@ def export_smartbiz_csv():
     min_margin = float(request.args.get("min_margin", 0) or 0)
     confidence = request.args.get("confidence", "All").strip()
     commit_flag = request.args.get("commit", "1") != "0"
+    wukusy_only = request.args.get("wukusy", "0") == "1"
     extra_keys = _extract_client_excluded_keys()
 
     if mode == "mix":
@@ -371,6 +407,7 @@ def export_smartbiz_csv():
             exclude_exported=True,
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
+            wukusy_only=wukusy_only,
         )
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
@@ -387,6 +424,7 @@ def export_smartbiz_csv():
             exclude_exported=True,
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
+            wukusy_only=wukusy_only,
         )
         safe_niche = niche.lower().replace(" ", "_")
         ledger = load_export_ledger()
@@ -409,6 +447,7 @@ def export_smartbiz_xlsx():
     min_margin = float(request.args.get("min_margin", 0) or 0)
     confidence = request.args.get("confidence", "All").strip()
     commit_flag = request.args.get("commit", "1") != "0"
+    wukusy_only = request.args.get("wukusy", "0") == "1"
     extra_keys = _extract_client_excluded_keys()
 
     if mode == "mix":
@@ -419,6 +458,7 @@ def export_smartbiz_xlsx():
             exclude_exported=True,
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
+            wukusy_only=wukusy_only,
         )
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
@@ -435,6 +475,7 @@ def export_smartbiz_xlsx():
             exclude_exported=True,
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
+            wukusy_only=wukusy_only,
         )
         safe_niche = niche.lower().replace(" ", "_")
         ledger = load_export_ledger()

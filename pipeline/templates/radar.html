@@ -202,7 +202,7 @@
                 </div>
             </div>
 
-            <!-- Preset Column Mapping & Zero-Repeat Vault Controls -->
+            <!-- Preset Column Mapping, Zero-Repeat Vault & Wukusy Wholesaler Sync -->
             <div class="bg-white rounded-lg p-2.5 border border-emerald-200 text-[11px] text-textSecondary flex flex-wrap items-center justify-between gap-2">
                 <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
                     <span><strong class="text-textPrimary">Cols A–E:</strong> Blank (New Only)</span>
@@ -211,11 +211,12 @@
                     <span>•</span>
                     <span><strong class="text-textPrimary">Col J:</strong> <code class="font-mono bg-zinc-100 px-1 rounded">GENERAL</code></span>
                     <span>•</span>
-                    <span><strong class="text-textPrimary">Cols W–AB:</strong> Up to 6 <code class="font-mono bg-zinc-100 px-1 rounded">.jpg</code> URLs</span>
-                    <span>•</span>
-                    <span><strong class="text-emerald-800">4-Key Deduplication:</strong> SKU + Handle + Variant ID + Core Title</span>
+                    <span><strong class="text-emerald-800">Wukusy Wholesaler:</strong> <span class="font-bold text-indigo-700" id="wukusyVaultCountText">{{ wukusy_vault_data.total_active_skus if wukusy_vault_data else 0 }} Active SKUs</span></span>
                 </div>
-                <div class="flex items-center gap-2 flex-shrink-0">
+                <div class="flex items-center gap-2 flex-shrink-0 flex-wrap">
+                    <button type="button" onclick="openWukusyModal()" class="px-2.5 py-1 rounded bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-[10px] transition shadow-2xs flex items-center gap-1">
+                        <span>🔗 Wukusy Sync Tool</span>
+                    </button>
                     <label class="cursor-pointer px-2.5 py-1 rounded bg-zinc-100 hover:bg-zinc-200 text-textPrimary border border-zinc-300 font-semibold text-[10px] transition">
                         📤 Sync Store Sheet (.xlsx/.csv)
                         <input type="file" accept=".xlsx,.csv" class="hidden" onchange="uploadStoreSheetToVault(this)">
@@ -349,6 +350,13 @@
             </div>
 
             <div class="flex items-center gap-2 flex-shrink-0 flex-wrap">
+                <a
+                    href="/radar?niche={{ selected_niche }}{% if not wukusy_filter %}&wukusy=1{% endif %}{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                    title="Toggle: Filter strictly to products in stock on your Wukusy wholesaler"
+                    class="flex-shrink-0 text-[11px] font-bold px-2.5 py-1.5 rounded-lg border transition flex items-center gap-1.5 whitespace-nowrap shadow-2xs {% if wukusy_filter %}bg-indigo-600 text-white border-indigo-700{% else %}bg-white text-indigo-700 border-indigo-300 hover:bg-indigo-50{% endif %}"
+                >
+                    <span>{% if wukusy_filter %}✅ Wukusy Only (ACTIVE){% else %}🟢 Filter Wukusy Only{% endif %}</span>
+                </a>
                 <button
                     onclick="togglePanel('smartbizPresetPanel')"
                     title="Inspect Saved SmartBiz v10 Store Preset & Zero-Repeat Export Vault"
@@ -357,7 +365,7 @@
                     <span id="vaultToolbarText">🛡️ Preset &amp; Vault ({{ export_ledger.total_blocked_products if export_ledger else 90 }} Blocked)</span>
                 </button>
                 <a 
-                    href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
+                    href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}{% if wukusy_filter %}&wukusy=1{% endif %}"
                     onclick="return downloadUniqueSmartBizFile(event, this.href)"
                     title="Download 100% Upload-Ready SmartBiz Excel (.xlsx) with Worksheet bulk_upload_template (Zero-Repeat Vault Protected)"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition flex items-center gap-1.5 whitespace-nowrap shadow-xs"
@@ -365,7 +373,7 @@
                     <span>📊 SmartBiz Page Excel (.xlsx · {% if selected_niche == 'All' %}Top 24{% else %}{{ selected_niche }} · {{ niche_counts.get(selected_niche, 24) if niche_counts else 24 }}{% endif %})</span>
                 </a>
                 <a 
-                    href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55"
+                    href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55{% if wukusy_filter %}&wukusy=1{% endif %}"
                     onclick="return downloadUniqueSmartBizFile(event, this.href)"
                     title="Download 100% Upload-Ready SmartBiz Excel (.xlsx) with 55 mixed winning products (Zero-Repeat Vault Protected)"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-zinc-900 text-white border border-zinc-900 hover:bg-zinc-800 transition flex items-center gap-1.5 shadow-2xs whitespace-nowrap"
@@ -407,6 +415,11 @@
                             <span class="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200 uppercase tracking-wider truncate">
                                 {{ w.niche }} · {{ w.sample_tracking.status|replace('_', ' ') if w.sample_tracking else 'Shortlisted' }}
                             </span>
+                            {% if w.wukusy_available %}
+                            <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-300 uppercase tracking-wide flex-shrink-0" title="Verified Available in Wukusy Wholesaler Catalog">
+                                🟢 Wukusy
+                            </span>
+                            {% endif %}
                         </div>
                         <span class="text-[10px] font-bold px-2 py-0.5 rounded-full text-white shadow-xs flex-shrink-0" style="background-color: {{ w.badge_color }};">
                             {{ w.badge_text }}
@@ -622,6 +635,75 @@
             <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
             <div class="text-xs font-medium" id="toastMsg">Notification message</div>
             <a href="/" id="toastAction" class="text-xs font-bold text-emerald-400 hover:underline pl-2 border-l border-zinc-700">Open Studio →</a>
+        </div>
+    </div>
+
+    <!-- Wukusy Wholesaler Sync Modal -->
+    <div id="wukusyModal" class="fixed inset-0 bg-black/50 backdrop-blur-xs z-50 flex items-center justify-center p-3 sm:p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-5 sm:p-6 shadow-2xl relative border border-zinc-200">
+            <div class="flex items-center justify-between pb-3 border-b border-zinc-100">
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                        W
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold text-textPrimary">Wukusy Wholesaler SKU Sync Tool</h3>
+                        <p class="text-[11px] text-textSecondary">Sync active Wukusy catalog SKUs so only guaranteed in-stock items are exported to SmartBiz.</p>
+                    </div>
+                </div>
+                <button onclick="closeWukusyModal()" class="w-7 h-7 rounded-lg bg-zinc-100 hover:bg-zinc-200 flex items-center justify-center text-textSecondary text-xs">✕</button>
+            </div>
+
+            <!-- Method 1: Browser Bookmarklet (Fastest & 100% Private) -->
+            <div class="mt-4 p-3.5 rounded-xl bg-indigo-50/70 border border-indigo-200">
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-xs font-bold text-indigo-950 flex items-center gap-1.5">
+                        <span>⚡ Option A: 1-Click Browser Bookmarklet</span>
+                    </span>
+                    <span class="text-[9px] font-bold px-1.5 py-0.5 rounded bg-indigo-200 text-indigo-900">Recommended</span>
+                </div>
+                <p class="text-[11px] text-indigo-900 leading-relaxed mb-2">
+                    Drag this button to your Bookmarks Bar. When logged into <strong>wukusy.app</strong>, simply click it to instantly beam all product SKUs into Zenlora with zero manual typing:
+                </p>
+                <div class="flex items-center gap-2">
+                    <a 
+                        id="wukusyBookmarkletLink"
+                        href="javascript:(function(){let skus=new Set();document.querySelectorAll('*').forEach(el=>{let t=(el.innerText||'').trim();if(t&&t.length>=4&&t.length<=40&&/^[a-zA-Z0-9_-]+$/.test(t)){if(!t.includes(' ')&&!t.includes('\n')){skus.add(t);}}});let arr=Array.from(skus);if(arr.length===0){alert('No SKUs found on page. Please open product list or catalog table.');return;}fetch('http://localhost:5000/api/wukusy/sync',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({skus:arr})}).then(r=>r.json()).then(d=>{alert('✅ Zenlora Synced! '+d.added_count+' new Wukusy SKUs added (Total: '+d.total_active_skus+')');}).catch(e=>{alert('⚠️ Zenlora local server not reachable on localhost:5000: '+e);});})();" 
+                        class="px-3.5 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-xs cursor-move flex items-center gap-1.5 select-none"
+                        onclick="event.preventDefault(); alert('📌 Drag and drop this button into your browser Bookmarks Bar (Ctrl+Shift+B), then click it while viewing wukusy.app!');"
+                    >
+                        <span>🔗 Zenlora Wukusy Sync</span>
+                    </a>
+                    <span class="text-[10px] text-indigo-800">← Drag to Bookmarks Bar</span>
+                </div>
+            </div>
+
+            <!-- Method 2: Direct Paste SKUs or JSON -->
+            <div class="mt-3.5">
+                <label for="wukusyPasteInput" class="text-xs font-bold text-textPrimary flex items-center justify-between">
+                    <span>📋 Option B: Paste Wukusy SKUs directly</span>
+                    <span class="text-[10px] text-textMuted">One per line or comma-separated</span>
+                </label>
+                <textarea 
+                    id="wukusyPasteInput" 
+                    rows="4" 
+                    placeholder="whl205_79558_heart_photo_frame&#10;12748_led_apple_night_light_1pc&#10;1743_deer_head_hanger"
+                    class="w-full mt-1.5 bg-zinc-50 border border-borderMain rounded-xl p-2.5 text-xs text-textPrimary placeholder-textMuted focus:outline-none focus:bg-white focus:border-indigo-600 font-mono"
+                ></textarea>
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="mt-4 pt-3 border-t border-zinc-100 flex items-center justify-between text-xs">
+                <button type="button" onclick="resetWukusyVaultFromModal()" class="text-rose-700 hover:underline text-[11px] font-semibold">
+                    🗑️ Clear Wukusy SKUs
+                </button>
+                <div class="flex items-center gap-2">
+                    <button type="button" onclick="closeWukusyModal()" class="px-3 py-1.5 rounded-lg text-textSecondary hover:bg-zinc-100 font-medium">Cancel</button>
+                    <button type="button" onclick="submitWukusyPaste()" id="btnSubmitWukusyPaste" class="px-4 py-1.5 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-semibold">
+                        Save SKUs to Vault
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -931,22 +1013,69 @@
             }
         }
 
-        async function resetExportVault() {
-            if (!confirm('Reset CSV test exports while keeping your 90 existing SmartBiz store products protected?')) return;
+        function openWukusyModal() {
+            const m = document.getElementById('wukusyModal');
+            if (m) m.classList.remove('hidden');
+        }
+
+        function closeWukusyModal() {
+            const m = document.getElementById('wukusyModal');
+            if (m) m.classList.add('hidden');
+        }
+
+        async function submitWukusyPaste() {
+            const raw = (document.getElementById('wukusyPasteInput') || {}).value || '';
+            const skus = raw.split(/[\n,;]+/).map(s => s.trim()).filter(Boolean);
+            if (skus.length === 0) {
+                alert('Please enter or paste at least one valid Wukusy SKU.');
+                return;
+            }
+            const btn = document.getElementById('btnSubmitWukusyPaste');
+            const orig = btn ? btn.innerText : '';
+            if (btn) {
+                btn.disabled = true;
+                btn.innerText = 'Syncing...';
+            }
             try {
-                localStorage.removeItem(VAULT_STORAGE_KEY);
-                const res = await fetch('/api/radar/export-ledger', {
+                const res = await fetch('/api/wukusy/sync', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ action: 'reset', keep_store_baseline: true })
+                    body: JSON.stringify({ skus: skus, merge: true })
                 });
                 const data = await res.json();
                 if (data.success) {
-                    showToast(`Reset complete! ${data.ledger.total_blocked_products} live store products remain protected.`, false);
+                    showToast(`Synced ${data.added_count} new SKUs into Wukusy Vault! Total Active: ${data.total_active_skus}`, false);
+                    closeWukusyModal();
+                    setTimeout(() => window.location.reload(), 800);
+                } else {
+                    alert('Sync error: ' + (data.error || 'Failed'));
+                }
+            } catch (err) {
+                alert('Network error: ' + err.message);
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.innerText = orig;
+                }
+            }
+        }
+
+        async function resetWukusyVaultFromModal() {
+            if (!confirm('Clear all synced Wukusy wholesaler SKUs?')) return;
+            try {
+                const res = await fetch('/api/wukusy/vault', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'reset' })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast('Wukusy wholesaler SKU vault cleared!', false);
+                    closeWukusyModal();
                     setTimeout(() => window.location.reload(), 700);
                 }
-            } catch (e) {
-                alert('Reset failed: ' + e.message);
+            } catch (err) {
+                alert('Error: ' + err.message);
             }
         }
     </script>

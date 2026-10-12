@@ -445,6 +445,62 @@ def test_smartbiz_excel_worksheet_bulk_upload_template_and_structure():
     wb_mix.close()
 
 
+def test_wukusy_wholesaler_vault_sync_and_export_filtering(monkeypatch):
+    """
+    Verifies that Wukusy wholesaler SKUs can be synced, checked, and strictly filtered
+    during radar display and SmartBiz Excel/CSV export.
+    """
+    from pipeline.winning_engine.wukusy_vault import (
+        sync_wukusy_skus,
+        load_wukusy_vault,
+        is_sku_in_wukusy,
+        reset_wukusy_vault,
+    )
+    from pipeline.winning_engine.radar_controller import get_winners
+    from pipeline.web_app import app
+
+    client = app.test_client()
+
+    # 1. Reset vault initially
+    reset_wukusy_vault()
+    assert load_wukusy_vault()["total_active_skus"] == 0
+
+    # 2. Pick 2 real SKUs from winning_products
+    all_unfiltered = get_winners(include_hard_failed=False, refresh_dynamic=False, per_niche_display=0)
+    target_skus = [w["sku"] for w in all_unfiltered if w.get("sku")][:3]
+    assert len(target_skus) >= 3
+
+    # 3. Sync target SKUs via API
+    res_sync = client.post("/api/wukusy/sync", json={"skus": target_skus})
+    assert res_sync.status_code == 200
+    data_sync = res_sync.get_json()
+    assert data_sync["success"] is True
+    assert data_sync["total_active_skus"] == len(target_skus)
+
+    # 4. Check membership function
+    for s in target_skus:
+        assert is_sku_in_wukusy(s) is True
+    assert is_sku_in_wukusy("NON_EXISTENT_DUMMY_SKU_9999") is False
+
+    # 5. Check radar view filtering when wukusy_only=True
+    wukusy_winners = get_winners(wukusy_only=True, include_hard_failed=False, per_niche_display=0)
+    assert len(wukusy_winners) <= len(target_skus)
+    for w in wukusy_winners:
+        assert is_sku_in_wukusy(w.get("sku")) is True
+
+    # 6. Check Excel export respects wukusy=1 query param
+    res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=All&wukusy=1&commit=0")
+    assert res_xlsx.status_code == 200
+    import openpyxl
+    wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data))
+    ws = wb["bulk_upload_template"]
+    exported_skus = [ws.cell(r, 6).value for r in range(2, ws.max_row + 1)]
+    for exp_sku in exported_skus:
+        assert is_sku_in_wukusy(exp_sku) is True
+    wb.close()
+
+
+
 
 
 

@@ -506,6 +506,7 @@ def select_current_page_products(
     exclude_exported: bool = True,
     extra_excluded_keys: Optional[List[str]] = None,
     commit_to_ledger: bool = False,
+    wukusy_only: bool = False,
 ) -> List[Dict]:
     from .export_ledger import extract_product_fingerprints, record_exported_products
 
@@ -519,6 +520,7 @@ def select_current_page_products(
             exclude_exported=exclude_exported,
             extra_excluded_keys=extra_excluded_keys,
             auto_refill=exclude_exported,
+            wukusy_only=wukusy_only,
         )
         # Strictly enforce that every item belongs to the requested category
         items = [w for w in items if str(w.get("niche", "")).strip().lower() == niche.strip().lower()]
@@ -532,6 +534,7 @@ def select_current_page_products(
             exclude_exported=exclude_exported,
             extra_excluded_keys=extra_excluded_keys,
             auto_refill=exclude_exported,
+            wukusy_only=wukusy_only,
         )
         items = sorted(items, key=lambda x: float(x.get("winning_score") or 0), reverse=True)
 
@@ -577,6 +580,7 @@ def select_smart_mix_products(
     exclude_exported: bool = True,
     extra_excluded_keys: Optional[List[str]] = None,
     commit_to_ledger: bool = False,
+    wukusy_only: bool = False,
 ) -> List[Dict]:
     from .export_ledger import extract_product_fingerprints, record_exported_products
 
@@ -598,6 +602,7 @@ def select_smart_mix_products(
             exclude_exported=exclude_exported,
             extra_excluded_keys=extra_excluded_keys,
             auto_refill=exclude_exported,
+            wukusy_only=wukusy_only,
         )
         added = 0
         for item in cat_items:
