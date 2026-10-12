@@ -528,24 +528,114 @@ def api_radar_import(handle):
         return jsonify({"success": False, "error": str(e)}), 500
 
 
+def _find_any_product_by_handle(handle: str):
+    """Finds a product by handle across Studio Catalog DB, Winning Radar Pool, or live DeoDap API."""
+    from deodap_extractor import DeoDapExtractor
+
+    clean_h = DeoDapExtractor.clean_handle(handle)
+    winners = get_winners(
+        include_hard_failed=True,
+        refresh_dynamic=True,
+        per_niche_display=0,
+        exclude_exported=False,
+    )
+
+    # 1. Check Studio Catalog DB first (for manually added DeoDap URLs & saved items)
+    studio_products = ZenloraPipeline.load_db()
+    studio_p = next(
+        (p for p in studio_products if DeoDapExtractor.clean_handle(p.get("handle", "")) == clean_h),
+        None,
+    )
+    radar_p = next(
+        (w for w in winners if DeoDapExtractor.clean_handle(w.get("handle", "")) == clean_h),
+        None,
+    )
+
+    if studio_p and radar_p:
+        merged = {**radar_p, **studio_p}
+        merged_imgs = DeoDapExtractor._dedupe_image_urls(
+            (studio_p.get("images") or []) + (radar_p.get("images") or [])
+        )
+        if merged_imgs:
+            merged["images"] = merged_imgs
+        return merged
+    if studio_p:
+        enriched = enrich_winner_record(studio_p, catalog_pool=winners)
+        return {**enriched, **studio_p, "images": studio_p.get("images") or enriched.get("images") or []}
+    if radar_p:
+        return radar_p
+
+    # 3. Live DeoDap fallback for any valid DeoDap handle
+    try:
+        fetched = DeoDapExtractor.fetch_product(clean_h)
+        if fetched and fetched.get("success"):
+            return enrich_winner_record(fetched, catalog_pool=winners)
+    except Exception:
+        pass
+    return None
+
+
+@app.route("/api/product/<handle>/images.zip", methods=["GET"])
+def download_product_images_zip(handle):
+    """
+    One-click ZIP download of ALL images used on the DeoDap product page for `handle`.
+    Works for every product in both Studio & Prompts and Winning Radar, naming the .zip
+    file and each image inside it after the Product Title.
+    """
+    import urllib.parse
+    from deodap_extractor import DeoDapExtractor
+
+    product = _find_any_product_by_handle(handle)
+    try:
+        zip_bytes, zip_filename, img_count = DeoDapExtractor.build_product_images_zip(
+            handle, fallback_product=product
+        )
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+    if not zip_bytes or img_count == 0:
+        return jsonify({"success": False, "error": "No product images found for this item"}), 404
+
+    utf8_filename = urllib.parse.quote(zip_filename)
+    return Response(
+        zip_bytes,
+        mimetype="application/zip",
+        headers={
+            "Content-Disposition": f"attachment; filename=\"{zip_filename}\"; filename*=UTF-8''{utf8_filename}",
+            "X-Zenlora-Image-Count": str(img_count),
+            "X-Zenlora-Zip-Filename": zip_filename,
+            "Cache-Control": "no-store",
+        },
+    )
+
+
 @app.route("/product/<handle>")
 def product_detail(handle):
-    winners = get_winners(include_hard_failed=True, refresh_dynamic=True, per_niche_display=0)
-    product = next((w for w in winners if w.get("handle") == handle), None)
+    from deodap_extractor import DeoDapExtractor
 
-    if not product:
-        products = ZenloraPipeline.load_db()
-        studio_p = next((p for p in products if p.get("handle") == handle), None)
-        if studio_p:
-            product = enrich_winner_record(studio_p, catalog_pool=winners)
-
+    product = _find_any_product_by_handle(handle)
     if not product:
         return "Product not found", 404
 
     product["zenlora_title"] = product.get("zenlora_title") or product.get("title", "")
     product["primary_image"] = product.get("primary_image") or product.get("image_url", "")
     product["primary_category"] = product.get("primary_category") or product.get("niche", "Home Decor")
-    product["deodap_url"] = product.get("deodap_url") or product.get("source_url", "https://deodap.in")
+    product["deodap_url"] = product.get("deodap_url") or product.get("source_url", f"https://www.deodap.in/products/{handle}")
+
+    # Resolve full DeoDap gallery images so the product page displays all images used on DeoDap
+    existing_imgs = list(product.get("images") or [])
+    if product["primary_image"] and product["primary_image"] not in existing_imgs:
+        existing_imgs.insert(0, product["primary_image"])
+    if len(existing_imgs) <= 1:
+        try:
+            resolved_imgs, _ = DeoDapExtractor.resolve_all_product_images(handle, fallback_product=product)
+            if resolved_imgs:
+                existing_imgs = resolved_imgs
+        except Exception:
+            pass
+    product["images"] = DeoDapExtractor._dedupe_image_urls(existing_imgs)
+    if product["images"] and not product["primary_image"]:
+        product["primary_image"] = product["images"][0]
 
     sp = float(product.get("selling_price") or 399)
     cost = float(product.get("wholesale_price") or 100)
@@ -587,6 +677,7 @@ def product_detail(handle):
         except Exception:
             pass
 
+    product["zip_filename"] = f"{DeoDapExtractor.sanitize_title_for_filename(product.get('title') or product.get('zenlora_title'))}.zip"
     settings = load_settings()
     return render_template("product_detail.html", p=product, settings=settings)
 

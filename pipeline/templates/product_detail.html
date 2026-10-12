@@ -78,8 +78,18 @@
             </div>
 
             <div class="flex items-center gap-1.5 sm:gap-2">
+                <a 
+                    href="/api/product/{{ p.handle }}/images.zip" 
+                    onclick="return downloadProductImagesZip(event, '{{ p.handle }}', this)"
+                    title="Download all DeoDap product images in one ZIP file named '{{ p.zip_filename }}'"
+                    class="h-8 px-3 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-xs"
+                >
+                    <svg class="w-3.5 h-3.5 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span>Download All Images (.ZIP)</span>
+                </a>
                 <a href="{{ p.deodap_url }}" target="_blank" rel="noopener noreferrer" class="h-8 px-3 rounded-lg bg-brandBlack hover:bg-brandHover text-white text-xs font-semibold flex items-center gap-1.5 transition shadow-xs">
-                    <span>Open on DeoDap.com</span>
+                    <span class="hidden sm:inline">Open on DeoDap.com</span>
+                    <span class="sm:hidden">DeoDap</span>
                     <svg class="w-3.5 h-3.5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
                 </a>
             </div>
@@ -101,7 +111,7 @@
                     class="w-full md:w-56 h-56 rounded-xl bg-zinc-100 border border-borderMain overflow-hidden flex-shrink-0 relative group block shadow-xs"
                 >
                     {% if p.primary_image %}
-                        <img src="{{ p.primary_image }}" alt="{{ p.zenlora_title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
+                        <img id="mainProductHeroImage" src="{{ p.primary_image }}" alt="{{ p.zenlora_title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300">
                     {% else %}
                         <div class="w-full h-full flex items-center justify-center text-textMuted font-mono">Zenlora</div>
                     {% endif %}
@@ -171,8 +181,16 @@
                         </div>
                     </div>
 
-                    <!-- Direct Action Link Button -->
+                    <!-- Direct Action Link Buttons (One-Click DeoDap ZIP + Open DeoDap Page) -->
                     <div class="pt-1 flex flex-wrap items-center gap-2.5">
+                        <a 
+                            href="/api/product/{{ p.handle }}/images.zip" 
+                            onclick="return downloadProductImagesZip(event, '{{ p.handle }}', this)"
+                            class="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-semibold transition shadow-xs"
+                        >
+                            <svg class="w-4 h-4 text-white flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            <span>📦 Download All {{ p.images|length if p.images else 1 }} DeoDap Images (.ZIP)</span>
+                        </a>
                         <a 
                             href="{{ p.deodap_url }}" 
                             target="_blank" 
@@ -191,6 +209,44 @@
 
                 </div>
             </div>
+
+            <!-- Complete DeoDap Product Image Gallery & 1-Click ZIP Bar -->
+            {% if p.images %}
+            <div class="mt-6 pt-5 border-t border-borderMain">
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h3 class="text-xs font-bold uppercase tracking-wider text-textPrimary">
+                            🖼️ All DeoDap Product Images ({{ p.images|length }} Photos)
+                        </h3>
+                        <span class="text-[11px] font-mono text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded">
+                            ZIP File: {{ p.zip_filename }}
+                        </span>
+                    </div>
+                    <a 
+                        href="/api/product/{{ p.handle }}/images.zip" 
+                        onclick="return downloadProductImagesZip(event, '{{ p.handle }}', this)"
+                        class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-300 text-xs font-bold transition self-start sm:self-auto"
+                    >
+                        <svg class="w-3.5 h-3.5 text-emerald-700" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                        <span>1-Click Download ZIP ({{ p.images|length }} Images)</span>
+                    </a>
+                </div>
+                <div class="grid grid-cols-3 sm:grid-cols-6 md:grid-cols-8 gap-2.5">
+                    {% for img_url in p.images %}
+                    <div 
+                        onclick="selectGalleryImage('{{ img_url }}', this)"
+                        class="gallery-thumb group relative aspect-square rounded-xl bg-zinc-50 border {% if loop.first %}border-emerald-600 ring-2 ring-emerald-500/30{% else %}border-borderMain hover:border-zinc-400{% endif %} overflow-hidden cursor-pointer transition"
+                        title="Image #{{ loop.index }} — Click to preview"
+                    >
+                        <img src="{{ img_url }}" alt="{{ p.zenlora_title }} #{{ loop.index }}" class="w-full h-full object-cover group-hover:scale-105 transition">
+                        <span class="absolute top-1 left-1 px-1.5 py-0.2 rounded bg-black/70 text-white font-mono text-[9px] font-bold">
+                            #{{ loop.index }}
+                        </span>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
         </section>
 
         <!-- Viral Hook & Audio Recommendation -->
@@ -427,6 +483,59 @@
             navigator.clipboard.writeText(text).then(() => {
                 showToast('Copied to Clipboard');
             });
+        }
+
+        function selectGalleryImage(src, thumbEl) {
+            const hero = document.getElementById('mainProductHeroImage');
+            if (hero && src) {
+                hero.src = src;
+            }
+            document.querySelectorAll('.gallery-thumb').forEach(el => {
+                el.classList.remove('border-emerald-600', 'ring-2', 'ring-emerald-500/30');
+                el.classList.add('border-borderMain');
+            });
+            if (thumbEl) {
+                thumbEl.classList.remove('border-borderMain');
+                thumbEl.classList.add('border-emerald-600', 'ring-2', 'ring-emerald-500/30');
+            }
+        }
+
+        function downloadProductImagesZip(event, handle, btn) {
+            if (event) event.preventDefault();
+            const origHtml = btn ? btn.innerHTML : '';
+            if (btn) {
+                btn.style.pointerEvents = 'none';
+                btn.classList.add('opacity-75');
+                btn.innerHTML = `<span>⏳ Packaging ZIP...</span>`;
+            }
+
+            fetch(`/api/product/${handle}/images.zip`)
+                .then(async (res) => {
+                    if (!res.ok) throw new Error('ZIP download failed (' + res.status + ')');
+                    const zipName = res.headers.get('X-Zenlora-Zip-Filename') || '{{ p.zip_filename }}';
+                    const imgCount = res.headers.get('X-Zenlora-Image-Count') || '';
+                    const blob = await res.blob();
+                    const blobUrl = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = blobUrl;
+                    a.download = zipName;
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                    setTimeout(() => URL.revokeObjectURL(blobUrl), 2500);
+                    showToast(`Downloaded ${imgCount ? imgCount + ' images in ' : ''}${zipName}!`);
+                })
+                .catch((err) => {
+                    window.location.href = `/api/product/${handle}/images.zip`;
+                })
+                .finally(() => {
+                    if (btn) {
+                        btn.style.pointerEvents = '';
+                        btn.classList.remove('opacity-75');
+                        btn.innerHTML = origHtml;
+                    }
+                });
+            return false;
         }
     </script>
 </body>

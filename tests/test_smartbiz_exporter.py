@@ -312,3 +312,73 @@ def test_category_purity_and_exact_smartbiz_product_category():
             assert r[10] not in ("Home Improvement", "Home & Kitchen")
 
 
+def test_one_click_product_images_zip_download(monkeypatch):
+    """
+    Verifies:
+    1. Clicking any product on Studio Catalog (/) or Winning Radar (/radar) opens /product/<handle>
+       with the 1-Click 'Download All DeoDap Images (.ZIP)' button and full image gallery.
+    2. /api/product/<handle>/images.zip packages all DeoDap product images into a .zip file
+       named after the product title (<Product_Title>.zip) with inner files named <Product_Title>_01.jpg, etc.
+    """
+    import zipfile
+    from pipeline.deodap_extractor import DeoDapExtractor, sanitize_title_for_filename
+    from pipeline.web_app import app
+
+    fake_img_bytes = b"\xff\xd8\xff\xe0\x00\x10JFIF\x00\x01\x01\x00\x00\x01\x00\x01\x00\x00\xff\xd9"
+
+    def fake_resolve(handle, fallback_product=None):
+        title = (fallback_product or {}).get("title") or (fallback_product or {}).get("zenlora_title") or "Crystal Rose Diamond Table Lamp"
+        return (
+            [
+                "https://cdn.shopify.com/s/files/1/deodap/img1.jpg",
+                "https://cdn.shopify.com/s/files/1/deodap/img2.jpg",
+                "https://cdn.shopify.com/s/files/1/deodap/img3.png",
+            ],
+            title,
+        )
+
+    def fake_download(idx_and_url):
+        idx, url = idx_and_url
+        ext = ".png" if url.endswith(".png") else ".jpg"
+        return idx, ext, fake_img_bytes
+
+    monkeypatch.setattr(DeoDapExtractor, "resolve_all_product_images", staticmethod(fake_resolve))
+    monkeypatch.setattr(DeoDapExtractor, "_download_single_image", staticmethod(fake_download))
+
+    client = app.test_client()
+    from pipeline.winning_engine.radar_controller import get_winners
+    from pipeline.web_app import _find_any_product_by_handle
+    sample = get_winners(niche="Festive", per_niche_display=24, refresh_dynamic=False)[0]
+    handle = sample["handle"]
+    resolved_prod = _find_any_product_by_handle(handle)
+    prod_title = (resolved_prod or {}).get("title") or (resolved_prod or {}).get("zenlora_title") or sample["title"]
+    expected_safe_title = sanitize_title_for_filename(prod_title)
+
+    # 1. Verify Product Detail Page (/product/<handle>) renders the 1-Click ZIP button & gallery
+    detail_res = client.get(f"/product/{handle}")
+    assert detail_res.status_code == 200
+    html_text = detail_res.data.decode("utf-8")
+    assert f"/api/product/{handle}/images.zip" in html_text
+    assert "Download All Images (.ZIP)" in html_text
+    assert "All DeoDap Product Images" in html_text
+
+    # 2. Verify 1-Click ZIP endpoint (/api/product/<handle>/images.zip)
+    zip_res = client.get(f"/api/product/{handle}/images.zip")
+    assert zip_res.status_code == 200
+    assert zip_res.mimetype == "application/zip"
+    disp = zip_res.headers.get("Content-Disposition", "")
+    assert f"{expected_safe_title}.zip" in disp
+    assert zip_res.headers.get("X-Zenlora-Image-Count") == "3"
+
+    with zipfile.ZipFile(io.BytesIO(zip_res.data), "r") as zf:
+        names = zf.namelist()
+        assert len(names) == 3
+        assert names[0] == f"{expected_safe_title}_01.jpg"
+        assert names[1] == f"{expected_safe_title}_02.jpg"
+        assert names[2] == f"{expected_safe_title}_03.png"
+        for name in names:
+            assert zf.read(name) == fake_img_bytes
+
+
+
+

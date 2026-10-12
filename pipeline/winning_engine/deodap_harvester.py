@@ -430,7 +430,7 @@ def _format_deodap_item(
         "method": "api",
         "primary_image": primary_image,
         "image_url": primary_image,
-        "images": images[:6],
+        "images": images,
         "wholesale_cost": wholesale_cost,
         "wholesale_price": wholesale_cost,
         "compare_at_price": compare_at_price,

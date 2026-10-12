@@ -542,12 +542,19 @@
 
                 </div>
 
-                <!-- Card Bottom Action: View Details & Prompts + Quick Studio Import -->
-                <div class="pt-2.5 border-t border-borderSubtle flex items-center gap-2">
+                <!-- Card Bottom Action: View Details & Prompts + 1-Click Images ZIP + Quick Studio Import -->
+                <div class="pt-2.5 border-t border-borderSubtle flex items-center gap-1.5">
                     <div class="flex-1 h-8 rounded-lg bg-zinc-100 group-hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center justify-center gap-1.5 transition">
                         <span>View Details & Audit</span>
                         <svg class="w-3.5 h-3.5 text-textSecondary group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                     </div>
+                    <button 
+                        onclick="downloadProductZip(event, '{{ w.handle }}', this)" 
+                        title="1-Click Download All DeoDap Product Images (.ZIP named after Product Title)"
+                        class="h-8 px-2 rounded-lg bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 text-[11px] font-bold flex items-center gap-1 transition active:scale-95 flex-shrink-0"
+                    >
+                        <span>📦 ZIP</span>
+                    </button>
                     <button 
                         onclick="event.stopPropagation(); importWinner('{{ w.handle }}')" 
                         id="btn-import-{{ w.handle }}" 
@@ -838,6 +845,46 @@
                 }
             } catch (e) {
                 alert('Upload failed: ' + e.message);
+            }
+        }
+
+        async function downloadProductZip(event, handle, btn) {
+            if (event) event.stopPropagation();
+            if (!handle) return;
+            const origHtml = btn ? btn.innerHTML : '';
+            if (btn) {
+                btn.disabled = true;
+                btn.classList.add('opacity-75');
+                btn.innerHTML = '<span>⏳...</span>';
+            }
+            showToast('Packaging all DeoDap product images into ZIP...', false);
+            try {
+                const res = await fetch(`/api/product/${encodeURIComponent(handle)}/images.zip`);
+                if (!res.ok) throw new Error('ZIP failed (' + res.status + ')');
+                const disp = res.headers.get('Content-Disposition') || '';
+                const imgCount = res.headers.get('X-Zenlora-Image-Count') || '';
+                let filename = res.headers.get('X-Zenlora-Zip-Filename') || `${handle}.zip`;
+                const match = disp.match(/filename=([^;]+)/i);
+                if (match && match[1]) filename = match[1].trim().replace(/^["']|["']$/g, '');
+
+                const blob = await res.blob();
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                setTimeout(() => URL.revokeObjectURL(url), 2500);
+                showToast(`Downloaded ${filename}${imgCount ? ' (' + imgCount + ' photos)' : ''}!`, false);
+            } catch (err) {
+                alert('Error downloading ZIP: ' + err.message);
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-75');
+                    btn.innerHTML = origHtml;
+                }
             }
         }
 

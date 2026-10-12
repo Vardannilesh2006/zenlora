@@ -1,74 +1,866 @@
 [
   {
-    "timestamp": "2026-10-11T11:48:08+05:30",
+    "timestamp": "2026-10-12T12:09:10+05:30",
     "action": "deodap_live_ingest",
-    "target": "250 products",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 10 collection requests."
+  },
+  {
+    "timestamp": "2026-10-12T12:09:07+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 10 collection requests."
+  },
+  {
+    "timestamp": "2026-10-12T12:00:10+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 10 collection requests."
+  },
+  {
+    "timestamp": "2026-10-12T12:00:02+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 10 collection requests."
+  },
+  {
+    "timestamp": "2026-10-12T11:41:19+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 10 collection requests."
+  },
+  {
+    "timestamp": "2026-10-12T11:41:17+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 10 collection requests."
+  },
+  {
+    "timestamp": "2026-10-12T11:35:45+05:30",
+    "action": "deodap_live_ingest",
+    "target": "672 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 672 pure category-verified items across 33 collection requests."
+  },
+  {
+    "timestamp": "2026-10-12T11:29:05+05:30",
+    "action": "deodap_live_ingest",
+    "target": "422 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 422 pure category-verified items across 10 collection requests."
+  },
+  {
+    "timestamp": "2026-10-12T11:00:24+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
     "source": "DeoDap Shopify API",
     "source_url": "https://www.deodap.in/collections/all/products.json?page=2",
     "method": "api",
-    "details": "Fetched 250 live in-stock items across 6 API requests."
+    "details": "Fetched 0 live in-stock unexported items across 6 API requests."
   },
   {
-    "timestamp": "2026-10-11T11:37:41+05:30",
+    "timestamp": "2026-10-12T11:00:21+05:30",
     "action": "deodap_live_ingest",
-    "target": "249 products",
-    "source": "DeoDap Shopify API",
-    "source_url": "https://www.deodap.in/collections/all/products.json?page=3",
-    "method": "api",
-    "details": "Fetched 249 live in-stock items across 6 API requests."
-  },
-  {
-    "timestamp": "2026-10-11T11:37:27+05:30",
-    "action": "deodap_live_ingest",
-    "target": "251 products",
-    "source": "DeoDap Shopify API",
-    "source_url": "https://www.deodap.in/collections/all/products.json?page=2",
-    "method": "api",
-    "details": "Fetched 251 live in-stock items across 6 API requests."
-  },
-  {
-    "timestamp": "2026-10-11T11:28:35+05:30",
-    "action": "marketplace_price_scrape",
-    "target": "in Floor Cleaning Brush with",
-    "source": "Amazon.in / Flipkart / Meesho",
-    "source_url": "https://www.amazon.in/s?k=in+Floor+Cleaning+Brush+with",
-    "method": "scrape",
-    "details": "Amazon=369, Flipkart=None"
-  },
-  {
-    "timestamp": "2026-10-11T11:28:22+05:30",
-    "action": "google_trends_fetch",
-    "target": "floor cleaning brush",
-    "source": "Google Trends India (pytrends)",
-    "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=floor%20cleaning%20brush",
-    "method": "api",
-    "details": "Peak: Feb 2026 (100), Current: 75, Baseline: 33.33, Ratio: 2.25x"
-  },
-  {
-    "timestamp": "2026-10-11T11:27:29+05:30",
-    "action": "marketplace_price_scrape",
-    "target": "in Folding Hair Brush with",
-    "source": "Amazon.in / Flipkart / Meesho",
-    "source_url": "https://www.amazon.in/s?k=in+Folding+Hair+Brush+with",
-    "method": "scrape",
-    "details": "Amazon=None, Flipkart=None"
-  },
-  {
-    "timestamp": "2026-10-11T11:27:00+05:30",
-    "action": "marketplace_price_scrape",
-    "target": "12x12 Inch Photo Frame",
-    "source": "Amazon.in / Flipkart / Meesho",
-    "source_url": "https://www.amazon.in/s?k=12x12+Inch+Photo+Frame",
-    "method": "scrape",
-    "details": "Amazon=None, Flipkart=None"
-  },
-  {
-    "timestamp": "2026-10-11T11:26:44+05:30",
-    "action": "deodap_live_ingest",
-    "target": "233 products",
+    "target": "0 products",
     "source": "DeoDap Shopify API",
     "source_url": "https://www.deodap.in/collections/all/products.json?page=1",
     "method": "api",
-    "details": "Fetched 233 live in-stock items across 6 API requests."
+    "details": "Fetched 0 live in-stock unexported items across 6 API requests."
+  },
+  {
+    "timestamp": "2026-10-12T10:53:26+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=2",
+    "method": "api",
+    "details": "Fetched 0 live in-stock unexported items across 6 API requests."
+  },
+  {
+    "timestamp": "2026-10-12T10:53:24+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=1",
+    "method": "api",
+    "details": "Fetched 0 live in-stock unexported items across 6 API requests."
+  },
+  {
+    "timestamp": "2026-10-12T10:52:28+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=1",
+    "method": "api",
+    "details": "Fetched 0 live in-stock unexported items across 6 API requests."
+  },
+  {
+    "timestamp": "2026-10-12T10:51:41+05:30",
+    "action": "deodap_live_ingest",
+    "target": "229 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=1",
+    "method": "api",
+    "details": "Fetched 229 live in-stock unexported items across 6 API requests."
+  },
+  {
+    "timestamp": "2026-10-12T10:51:01+05:30",
+    "action": "deodap_live_ingest",
+    "target": "105 products",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/all/products.json?page=1",
+    "method": "api",
+    "details": "Fetched 105 live in-stock unexported items across 3 API requests."
+  },
+  {
+    "timestamp": "2026-10-12T09:18:36+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Assorted Chocolaty Dryfruits",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Assorted+Chocolaty+Dryfruits",
+    "method": "scrape",
+    "details": "Amazon=818, Flipkart=525, Reseller=486"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:34+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Assorted Chocolaty Dryfruits",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Assorted+Chocolaty+Dryfruits",
+    "method": "scrape",
+    "details": "Amazon=1399, Flipkart=525, Reseller=486"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:32+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Assorted Chocolate Box",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Assorted+Chocolate+Box",
+    "method": "scrape",
+    "details": "Amazon=858, Flipkart=500, Reseller=380"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:32+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Assorted Choco Dates Premium Soft",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Assorted+Choco+Dates+Premium+Soft",
+    "method": "scrape",
+    "details": "Amazon=930, Flipkart=500, Reseller=418"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:31+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Artificial Golden Rose",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Artificial+Golden+Rose",
+    "method": "scrape",
+    "details": "Amazon=542, Flipkart=164, Reseller=257"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:31+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Apple Shape Paper Soap for",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Apple+Shape+Paper+Soap+for",
+    "method": "scrape",
+    "details": "Amazon=499, Flipkart=121, Reseller=239"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:30+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Apex Office Mug ML with",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Apex+Office+Mug+ML+with",
+    "method": "scrape",
+    "details": "Amazon=598, Flipkart=237, Reseller=175"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:29+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Apex Cozy Coffee Mug ML",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Apex+Cozy+Coffee+Mug+ML",
+    "method": "scrape",
+    "details": "Amazon=755, Flipkart=268, Reseller=187"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:29+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Apex Compact Coffee Mug ML",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Apex+Compact+Coffee+Mug+ML",
+    "method": "scrape",
+    "details": "Amazon=499, Flipkart=324, Reseller=187"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:28+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Apex Cat Mug",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Apex+Cat+Mug",
+    "method": "scrape",
+    "details": "Amazon=499, Flipkart=295, Reseller=172"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:24+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Alphabet Word Puzzle Cards Learning",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Alphabet+Word+Puzzle+Cards+Learning",
+    "method": "scrape",
+    "details": "Amazon=449, Flipkart=1000, Reseller=300"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:23+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Adjustable Kids Knee Protection Pads",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Adjustable+Kids+Knee+Protection+Pads",
+    "method": "scrape",
+    "details": "Amazon=289, Flipkart=1000, Reseller=271"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:23+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Ankle Length Socks",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Ankle+Length+Socks",
+    "method": "scrape",
+    "details": "Amazon=599, Flipkart=300, Reseller=138"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:22+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Analog Wrist Watch",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Analog+Wrist+Watch",
+    "method": "scrape",
+    "details": "Amazon=1500, Flipkart=593, Reseller=282"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:22+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Adjustable Travel Waist Bag",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Adjustable+Travel+Waist+Bag",
+    "method": "scrape",
+    "details": "Amazon=1372, Flipkart=1000, Reseller=187"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:21+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Adjustable Kids Elbow Protection Pads",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Adjustable+Kids+Elbow+Protection+Pads",
+    "method": "scrape",
+    "details": "Amazon=727, Flipkart=132, Reseller=271"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:19+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Adjustable Safety Goggles",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Adjustable+Safety+Goggles",
+    "method": "scrape",
+    "details": "Amazon=1199, Flipkart=165, Reseller=263"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:19+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Adjustable Buckleless Elastic Waist Belt",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Adjustable+Buckleless+Elastic+Waist+Belt",
+    "method": "scrape",
+    "details": "Amazon=1870, Flipkart=172, Reseller=228"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:14+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Abrasive Buffing Wheel Set",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Abrasive+Buffing+Wheel+Set",
+    "method": "scrape",
+    "details": "Amazon=699, Flipkart=290, Reseller=187"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:13+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "8",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=8",
+    "method": "scrape",
+    "details": "Amazon=1142, Flipkart=999, Reseller=499"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:13+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Digit Combination Padlock Resettable Number",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Digit+Combination+Padlock+Resettable+Number",
+    "method": "scrape",
+    "details": "Amazon=426, Flipkart=171, Reseller=308"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:11+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "in Manicure Tool Kit",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=in+Manicure+Tool+Kit",
+    "method": "scrape",
+    "details": "Amazon=799, Flipkart=164, Reseller=194"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:11+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "6",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=6",
+    "method": "scrape",
+    "details": "Amazon=1142, Flipkart=298, Reseller=392"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:10+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "in Gardening Hand Tool Set",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=in+Gardening+Hand+Tool+Set",
+    "method": "scrape",
+    "details": "Amazon=699, Flipkart=202, Reseller=226"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:10+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "3D EVA Unicorn Assembly Craft",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=3D+EVA+Unicorn+Assembly+Craft",
+    "method": "scrape",
+    "details": "Amazon=849, Flipkart=237, Reseller=286"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:06+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "3D Erasers for Kids",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=3D+Erasers+for+Kids",
+    "method": "scrape",
+    "details": "Amazon=799, Flipkart=162, Reseller=289"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:05+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "3",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=3",
+    "method": "scrape",
+    "details": "Amazon=2999, Flipkart=1000, Reseller=305"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:03+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "24K Gold Foil Rose",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=24K+Gold+Foil+Rose",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=202, Reseller=210"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:02+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "in Manicure Pedicure Nail Care",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=in+Manicure+Pedicure+Nail+Care",
+    "method": "scrape",
+    "details": "Amazon=799, Flipkart=206, Reseller=217"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:02+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Choco Magic Filled Chocolate",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Choco+Magic+Filled+Chocolate",
+    "method": "scrape",
+    "details": "Amazon=399, Flipkart=500, Reseller=249"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:01+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Choco Magic Assorted Chocolate Balls",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Choco+Magic+Assorted+Chocolate+Balls",
+    "method": "scrape",
+    "details": "Amazon=445, Flipkart=500, Reseller=265"
+  },
+  {
+    "timestamp": "2026-10-12T09:18:01+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Cheese Tomato Soya Mini Premium",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Cheese+Tomato+Soya+Mini+Premium",
+    "method": "scrape",
+    "details": "Amazon=599, Flipkart=669, Reseller=189"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:58+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Cheese Makhana Premium Roasted Crunchy",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Cheese+Makhana+Premium+Roasted+Crunchy",
+    "method": "scrape",
+    "details": "Amazon=578, Flipkart=500, Reseller=268"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:56+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Chandan Herbal Incense Sticks with",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Chandan+Herbal+Incense+Sticks+with",
+    "method": "scrape",
+    "details": "Amazon=600, Flipkart=167, Reseller=141"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:55+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Chandan Dhoop Sticks Jar for",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Chandan+Dhoop+Sticks+Jar+for",
+    "method": "scrape",
+    "details": "Amazon=660, Flipkart=149, Reseller=180"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:54+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Chandan Dhoop Sticks for Puja,",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Chandan+Dhoop+Sticks+for+Puja%2C",
+    "method": "scrape",
+    "details": "Amazon=660, Flipkart=125, Reseller=140"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:54+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Cartoon Stationery Set for Kids",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Cartoon+Stationery+Set+for+Kids",
+    "method": "scrape",
+    "details": "Amazon=1348, Flipkart=229, Reseller=499"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:51+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Butterscotch Chocolate Nuts",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Butterscotch+Chocolate+Nuts",
+    "method": "scrape",
+    "details": "Amazon=399, Flipkart=500, Reseller=235"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:51+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Blueberry Almond Chocolate",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Blueberry+Almond+Chocolate",
+    "method": "scrape",
+    "details": "Amazon=599, Flipkart=503, Reseller=335"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:51+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Blue Pearl Premium Agarbatti for",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Blue+Pearl+Premium+Agarbatti+for",
+    "method": "scrape",
+    "details": "Amazon=512, Flipkart=219, Reseller=249"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:49+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Big Round Rangoli Stencil Board",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Big+Round+Rangoli+Stencil+Board",
+    "method": "scrape",
+    "details": "Amazon=599, Flipkart=169, Reseller=219"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:47+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Bela Ke Phool Incense Sticks",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Bela+Ke+Phool+Incense+Sticks",
+    "method": "scrape",
+    "details": "Amazon=549, Flipkart=180, Reseller=140"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:46+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Bal Gopal Jhula",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Bal+Gopal+Jhula",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=297, Reseller=389"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:44+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Baby Shape Sorter Toy with",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Baby+Shape+Sorter+Toy+with",
+    "method": "scrape",
+    "details": "Amazon=800, Flipkart=1000, Reseller=273"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:44+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Aroma Premium Incense Sticks for",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Aroma+Premium+Incense+Sticks+for",
+    "method": "scrape",
+    "details": "Amazon=298, Flipkart=179, Reseller=133"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:42+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Auspicious Shubh Labh Swastik Lakshmi",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Auspicious+Shubh+Labh+Swastik+Lakshmi",
+    "method": "scrape",
+    "details": "Amazon=799, Flipkart=162, Reseller=191"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:41+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Apple LED Tealight Candles",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Apple+LED+Tealight+Candles",
+    "method": "scrape",
+    "details": "Amazon=699, Flipkart=317, Reseller=212"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:41+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Assorted Chocolate Box",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Assorted+Chocolate+Box",
+    "method": "scrape",
+    "details": "Amazon=858, Flipkart=500, Reseller=380"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:40+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Antique Style Golden LED Tealight",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Antique+Style+Golden+LED+Tealight",
+    "method": "scrape",
+    "details": "Amazon=799, Flipkart=219, Reseller=237"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:38+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Agarbatti",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Agarbatti",
+    "method": "scrape",
+    "details": "Amazon=284, Flipkart=134, Reseller=131"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:37+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Aluminium Foil Bajot",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Aluminium+Foil+Bajot",
+    "method": "scrape",
+    "details": "Amazon=416, Flipkart=268, Reseller=175"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:35+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Agarbatti Sticks",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Agarbatti+Sticks",
+    "method": "scrape",
+    "details": "Amazon=816, Flipkart=150, Reseller=157"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:32+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Agarbatti Sticks",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Agarbatti+Sticks",
+    "method": "scrape",
+    "details": "Amazon=449, Flipkart=150, Reseller=153"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:31+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Adiyogi Shiva Backflow Incense Holder",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Adiyogi+Shiva+Backflow+Incense+Holder",
+    "method": "scrape",
+    "details": "Amazon=699, Flipkart=138, Reseller=146"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:31+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Agarbatti Incense Sticks",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Agarbatti+Incense+Sticks",
+    "method": "scrape",
+    "details": "Amazon=816, Flipkart=158, Reseller=153"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:30+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Rose Dhoop Sticks",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Rose+Dhoop+Sticks",
+    "method": "scrape",
+    "details": "Amazon=499, Flipkart=246, Reseller=201"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:30+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "in Premium Incense Sticks Pouch",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=in+Premium+Incense+Sticks+Pouch",
+    "method": "scrape",
+    "details": "Amazon=852, Flipkart=90, Reseller=195"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:29+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Compartment Petal Shape Storage Box",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Compartment+Petal+Shape+Storage+Box",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=225, Reseller=297"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:26+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "A4 File Folder",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=A4+File+Folder",
+    "method": "scrape",
+    "details": "Amazon=699, Flipkart=500, Reseller=261"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:26+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "in Floor Cleaning Brush with",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=in+Floor+Cleaning+Brush+with",
+    "method": "scrape",
+    "details": "Amazon=899, Flipkart=172, Reseller=176"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:23+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "8",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=8",
+    "method": "scrape",
+    "details": "Amazon=1142, Flipkart=314, Reseller=499"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:21+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "ML Glass Tumbler Cup with",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=ML+Glass+Tumbler+Cup+with",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=269, Reseller=218"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:21+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "A4 Document Folder",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=A4+Document+Folder",
+    "method": "scrape",
+    "details": "Amazon=722, Flipkart=500, Reseller=318"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:21+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "A4 Document Folder",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=A4+Document+Folder",
+    "method": "scrape",
+    "details": "Amazon=722, Flipkart=500, Reseller=318"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:20+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "ml Travel Tumbler with Straw",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=ml+Travel+Tumbler+with+Straw",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=617, Reseller=223"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:20+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "CM Gym Stability Ball for",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=CM+Gym+Stability+Ball+for",
+    "method": "scrape",
+    "details": "Amazon=745, Flipkart=476, Reseller=538"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:17+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "6pc Plastic Toothbrush Covers",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=6pc+Plastic+Toothbrush+Covers",
+    "method": "scrape",
+    "details": "Amazon=699, Flipkart=129, Reseller=160"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:16+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Port USB Hub",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Port+USB+Hub",
+    "method": "scrape",
+    "details": "Amazon=599, Flipkart=1000, Reseller=199"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:12+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "4",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=4",
+    "method": "scrape",
+    "details": "Amazon=1999, Flipkart=204, Reseller=222"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:12+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "LED Solar Wall Fence Light",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=LED+Solar+Wall+Fence+Light",
+    "method": "scrape",
+    "details": "Amazon=1211, Flipkart=298, Reseller=361"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:11+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "4",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=4",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=204, Reseller=222"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:11+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "4",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=4",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=204, Reseller=222"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:11+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "4x4x4 Magic Cube",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=4x4x4+Magic+Cube",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=257, Reseller=295"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:10+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "4B Erasers",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=4B+Erasers",
+    "method": "scrape",
+    "details": "Amazon=599, Flipkart=160, Reseller=161"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:08+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "In USB 3.0 Hub With",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=In+USB+3.0+Hub+With",
+    "method": "scrape",
+    "details": "Amazon=699, Flipkart=1000, Reseller=226"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:07+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "3x3 Stickerless Speed Cube",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=3x3+Stickerless+Speed+Cube",
+    "method": "scrape",
+    "details": "Amazon=499, Flipkart=188, Reseller=177"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:03+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "3D Roller Face Massager",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=3D+Roller+Face+Massager",
+    "method": "scrape",
+    "details": "Amazon=999, Flipkart=500, Reseller=287"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:02+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "Degree Rotating Car Phone Holder",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=Degree+Rotating+Car+Phone+Holder",
+    "method": "scrape",
+    "details": "Amazon=530, Flipkart=1000, Reseller=213"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:01+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "3",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=3",
+    "method": "scrape",
+    "details": "Amazon=698, Flipkart=1000, Reseller=454"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:01+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "In Precision Screwdriver Set Multi",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=In+Precision+Screwdriver+Set+Multi",
+    "method": "scrape",
+    "details": "Amazon=1498, Flipkart=249, Reseller=178"
+  },
+  {
+    "timestamp": "2026-10-12T09:17:00+05:30",
+    "action": "marketplace_price_scrape",
+    "target": "3",
+    "source": "Amazon.in / Flipkart / Snapdeal-Meesho",
+    "source_url": "https://www.amazon.in/s?k=3",
+    "method": "scrape",
+    "details": "Amazon=2199, Flipkart=1000, Reseller=454"
   }
 ]

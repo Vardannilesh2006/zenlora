@@ -245,7 +245,7 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
         "bullets": score_data["bullets"],
         "rto_verdict": score_data["rto_verdict"],
         "image_url": primary_img,
-        "images": raw_imgs[:6],
+        "images": raw_imgs,
         "deodap_url": item.get("deodap_url") or f"https://www.deodap.in/products/{handle}",
         "description": item.get("description", ""),
         "scanned_at": fetched_at,

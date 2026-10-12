@@ -324,16 +324,25 @@
                             </div>
                         </div>
 
-                        <!-- Card Action: Open Product Details & Prompts Page -->
-                        <div class="mt-3 pt-2 border-t border-borderSubtle flex items-center justify-between">
-                            <div class="w-full py-1.5 px-3 rounded-lg bg-zinc-100 group-hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center justify-center gap-1.5 transition">
+                        <!-- Card Action: Open Product Details & Prompts Page + 1-Click ZIP -->
+                        <div class="mt-3 pt-2 border-t border-borderSubtle flex items-center justify-between gap-1.5">
+                            <div class="flex-1 py-1.5 px-2.5 rounded-lg bg-zinc-100 group-hover:bg-zinc-200 text-textPrimary text-xs font-semibold flex items-center justify-center gap-1 transition">
                                 <span>View Details & Prompts</span>
                                 <svg class="w-3.5 h-3.5 text-textSecondary group-hover:translate-x-0.5 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                             </div>
+                            <a 
+                                href="/api/product/{{ p.handle }}/images.zip" 
+                                onclick="return downloadProductZip(event, '{{ p.handle }}', this)" 
+                                title="1-Click Download All DeoDap Images (.ZIP)" 
+                                class="py-1.5 px-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 text-white text-[11px] font-semibold flex items-center gap-1 transition flex-shrink-0"
+                            >
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                <span>ZIP</span>
+                            </a>
                             <button 
                                 onclick="deleteProduct(event, '{{ p.handle }}')" 
                                 title="Remove item" 
-                                class="text-textMuted hover:text-red-600 p-1.5 ml-1.5 rounded transition"
+                                class="text-textMuted hover:text-red-600 p-1.5 rounded transition flex-shrink-0"
                             >
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
                             </button>
@@ -381,7 +390,10 @@
                         <td class="p-3 text-right font-mono font-bold text-textPrimary">₹{{ p.selling_price }}</td>
                         <td class="p-3 text-right font-mono text-emerald-700 font-bold">+₹{{ p.gross_profit }} ({{ p.profit_margin_pct }}%)</td>
                         <td class="p-3 text-center text-textSecondary max-w-xs truncate">"{{ p.on_screen_hook_text }}"</td>
-                        <td class="p-3 pr-4 text-right">
+                        <td class="p-3 pr-4 text-right space-x-1 whitespace-nowrap">
+                            <a href="/api/product/{{ p.handle }}/images.zip" onclick="return downloadProductZip(event, '{{ p.handle }}', this)" class="px-2 py-1 rounded bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-[11px] inline-block">
+                                📦 ZIP
+                            </a>
                             <span class="px-2.5 py-1 rounded bg-brandBlack text-white font-medium text-[11px] inline-block">
                                 View Details
                             </span>
@@ -532,8 +544,10 @@
         </div>
 
         <!-- Drawer Footer -->
-        <div class="p-3.5 border-t border-borderMain bg-zinc-50 flex items-center justify-between text-xs">
-            <span class="font-semibold text-textSecondary">Product Studio Drawer</span>
+        <div class="p-3.5 border-t border-borderMain bg-zinc-50 flex items-center justify-between text-xs gap-2">
+            <button onclick="if (selectedProduct) downloadProductZip(event, selectedProduct.handle, this)" class="px-3 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold flex items-center gap-1.5 transition shadow-xs">
+                <span>📦 Download All DeoDap Images (.ZIP)</span>
+            </button>
             <button onclick="closeInspector()" class="px-4 py-2 rounded-lg bg-brandBlack hover:bg-brandHover text-white font-medium">
                 Done
             </button>
@@ -581,7 +595,47 @@
             toast.classList.remove('translate-y-20', 'opacity-0');
             setTimeout(() => {
                 toast.classList.add('translate-y-20', 'opacity-0');
-            }, 2000);
+            }, 2500);
+        }
+
+        async function downloadProductZip(event, handle, btn) {
+            if (event) event.stopPropagation();
+            if (!handle) return;
+            const origHtml = btn ? btn.innerHTML : '';
+            if (btn) {
+                btn.disabled = true;
+                btn.classList.add('opacity-75');
+                btn.innerHTML = '<span>⏳ ZIP...</span>';
+            }
+            showToast('Packaging all DeoDap product images into ZIP...');
+            try {
+                const res = await fetch(`/api/product/${encodeURIComponent(handle)}/images.zip`);
+                if (!res.ok) throw new Error('ZIP failed (' + res.status + ')');
+                const disp = res.headers.get('Content-Disposition') || '';
+                const imgCount = res.headers.get('X-Zenlora-Image-Count') || '';
+                let filename = res.headers.get('X-Zenlora-Zip-Filename') || `${handle}.zip`;
+                const match = disp.match(/filename=([^;]+)/i);
+                if (match && match[1]) filename = match[1].trim().replace(/^["']|["']$/g, '');
+
+                const blob = await res.blob();
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                setTimeout(() => URL.revokeObjectURL(url), 2500);
+                showToast(`Downloaded ${filename}${imgCount ? ' (' + imgCount + ' photos)' : ''}!`);
+            } catch (err) {
+                alert('Error downloading ZIP: ' + err.message);
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-75');
+                    btn.innerHTML = origHtml;
+                }
+            }
         }
 
         function copyText(text) {
