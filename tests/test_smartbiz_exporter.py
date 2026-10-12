@@ -551,3 +551,49 @@ def test_under_50_deodap_price_preset_and_filter():
         sp_val = int(ws.cell(r_idx, 9).value)
         assert 179 <= sp_val <= 185, f"Row {r_idx} Selling Price {sp_val} not in 179..185"
     wb.close()
+
+
+def test_199_299_collection_page_and_smartbiz_excel_export():
+    """
+    Verifies:
+    1. Dedicated '/radar?niche=199-299' collection page renders 24 winning products strictly
+       with Selling Price between ₹199 and ₹299.
+    2. '/radar?cost_filter=199_299' filter also filters products to ₹199–₹299.
+    3. Exporting SmartBiz Page Excel (.xlsx) from '/radar?niche=199-299' outputs 24 rows
+       with Selling Price in ₹199–₹299, Column J = 'GENERAL', and Column K (Product Category) = '199-299'.
+    """
+    import openpyxl
+    from pipeline.winning_engine.radar_controller import get_winners
+
+    winners_199_299 = get_winners(niche="199-299", per_niche_display=24, exclude_exported=True, refresh_dynamic=True)
+    assert len(winners_199_299) == 24
+    for w in winners_199_299:
+        sp = int(w.get("selling_price") or 0)
+        assert 199 <= sp <= 299, f"Expected 199..299 for {w.get('handle')}, got {sp}"
+        assert w.get("smartbiz_preset", {}).get("product_category") == "199-299"
+
+    client = app.test_client()
+
+    # Check dedicated /radar?niche=199-299 page
+    res_page = client.get("/radar?niche=199-299")
+    assert res_page.status_code == 200
+    html_page = res_page.data.decode("utf-8")
+    assert html_page.count('id="card-') == 24
+    assert "🔥 199-299 (24)" in html_page
+    assert "199-299 ·" in html_page
+
+    # Check SmartBiz Excel export for 199-299 collection
+    res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=199-299&limit=24&commit=0")
+    assert res_xlsx.status_code == 200
+    wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data), data_only=True)
+    ws = wb["bulk_upload_template"]
+    assert ws.max_row == 25  # 1 header + 24 items
+    for r_idx in range(2, 26):
+        mrp_val = int(ws.cell(r_idx, 8).value)
+        sp_val = int(ws.cell(r_idx, 9).value)
+        assert 199 <= sp_val <= 299, f"Row {r_idx} Selling Price {sp_val} not in 199..299"
+        assert mrp_val > sp_val
+        assert ws.cell(r_idx, 10).value == "GENERAL"
+        assert ws.cell(r_idx, 11).value == "199-299"
+    wb.close()
+

@@ -110,11 +110,23 @@ def radar():
         winners = [w for w in raw_pool if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
         if niche != "All":
             winners = winners[:24]
+    elif cost_filter.lower() in ("199_299", "199-299"):
+        raw_pool = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=0)
+        winners = [
+            w for w in raw_pool
+            if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
+        ]
+        if niche != "All":
+            winners = winners[:24]
     else:
         winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
 
     full_unexported_pool = get_winners(niche="All", include_hard_failed=False, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=0)
     under_50_count = sum(1 for w in full_unexported_pool if 0 < float(w.get("wholesale_price") or 0) <= 50.0)
+    range_199_299_count = sum(
+        1 for w in full_unexported_pool
+        if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
+    )
 
     # Attach SEO title and description for each winner card
     for w in winners:
@@ -156,12 +168,13 @@ def radar():
     high_conf_count = sum(1 for w in active_winners if w.get("confidence") == "High")
     med_conf_count = sum(1 for w in active_winners if w.get("confidence") == "Medium")
 
-    niches = ["All", "Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories"]
+    niches = ["All", "Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories", "199-299"]
     niche_counts = {
         n: sum(1 for w in active_winners if w.get("niche") == n)
         for n in niches
-        if n != "All"
+        if n not in ("All", "199-299")
     }
+    niche_counts["199-299"] = min(24, range_199_299_count)
     settings = load_settings()
     policy_max = int(settings.get("general", {}).get("supplier_policy_delivery_max_days", 8))
     festival_cutoffs = calculate_festival_cutoffs(policy_max, settings)
@@ -176,6 +189,7 @@ def radar():
         selected_niche=niche,
         selected_cost_filter=cost_filter,
         under_50_count=under_50_count,
+        range_199_299_count=range_199_299_count,
         selected_festival=festival_filter,
         selected_status=status_filter,
         selected_confidence=confidence_filter,
@@ -403,11 +417,12 @@ def export_smartbiz_csv():
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
         )
-        safe_niche = niche.lower().replace("&", "and").replace(" ", "_").replace("__", "_")
+        safe_niche = ("199-299" if cost_filter.lower() in ("199_299", "199-299") and niche == "All" else niche).lower().replace("&", "and").replace(" ", "_").replace("__", "_")
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
 
-    csv_bytes = generate_smartbiz_csv_bytes(products, niche_override=niche if mode != "mix" else None)
+    effective_override = None if mode == "mix" else ("199-299" if (niche == "199-299" or (niche == "All" and cost_filter.lower() in ("199_299", "199-299"))) else niche)
+    csv_bytes = generate_smartbiz_csv_bytes(products, niche_override=effective_override)
     return Response(
         csv_bytes,
         mimetype="text/csv; charset=utf-8",
@@ -453,11 +468,12 @@ def export_smartbiz_xlsx():
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
         )
-        safe_niche = niche.lower().replace("&", "and").replace(" ", "_").replace("__", "_")
+        safe_niche = ("199-299" if cost_filter.lower() in ("199_299", "199-299") and niche == "All" else niche).lower().replace("&", "and").replace(" ", "_").replace("__", "_")
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
 
-    xlsx_bytes = generate_smartbiz_xlsx_bytes(products, niche_override=niche if mode != "mix" else None)
+    effective_override = None if mode == "mix" else ("199-299" if (niche == "199-299" or (niche == "All" and cost_filter.lower() in ("199_299", "199-299"))) else niche)
+    xlsx_bytes = generate_smartbiz_xlsx_bytes(products, niche_override=effective_override)
     return Response(
         xlsx_bytes,
         mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",

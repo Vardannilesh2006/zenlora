@@ -462,6 +462,8 @@ def normalize_niche_param(niche: Optional[str]) -> str:
     low = raw.lower()
     if low in ("all", ""):
         return "All"
+    if low in ("199-299", "199_299", "199 to 299", "under 199-299", "₹199-₹299", "199 - 299"):
+        return "199-299"
     if low in (
         "health",
         "health & beauty",
@@ -603,6 +605,69 @@ def get_winners(
                 seen_title_fps.add(fp["title_fp"])
             deduped.append(w)
         winners = deduped
+
+    # Dedicated "199-299" Collection Page logic (strictly products with Selling Price 199..299)
+    if niche == "199-299":
+        def _is_in_199_299(item_obj: Dict[str, Any]) -> bool:
+            sp_val = int(round(float(item_obj.get("selling_price") or item_obj.get("suggested_price") or 0)))
+            return 199 <= sp_val <= 299
+
+        pool_199_299 = [w for w in winners if _is_in_199_299(w)]
+        if per_niche_display and len(pool_199_299) < per_niche_display:
+            existing_h = {str(x.get("handle") or "").lower() for x in pool_199_299}
+            for fb in all_valid_winners:
+                if _is_in_199_299(fb) and str(fb.get("handle") or "").lower() not in existing_h:
+                    pool_199_299.append(fb)
+                    existing_h.add(str(fb.get("handle") or "").lower())
+                    if len(pool_199_299) >= per_niche_display * 2:
+                        break
+
+        pool_sorted = sorted(
+            pool_199_299,
+            key=lambda x: (
+                not x.get("is_hard_failed", False),
+                x.get("confidence") == "High",
+                x.get("winning_score", 0),
+                x.get("verified_score_pct", 0),
+                x.get("handle", ""),
+            ),
+            reverse=True,
+        )
+        if not per_niche_display or per_niche_display <= 0:
+            return pool_sorted
+
+        b_idx = max(0, int(batch_cursor or 0))
+        if b_idx > 0 and len(pool_sorted) > 1:
+            shift = (b_idx * 6) % len(pool_sorted)
+            rotated = pool_sorted[shift:] + pool_sorted[:shift]
+        else:
+            rotated = pool_sorted
+
+        diverse_199: List[Dict[str, Any]] = []
+        stem_counts_199: Dict[str, int] = {}
+        overflow_199: List[Dict[str, Any]] = []
+        for item in rotated:
+            stem = get_concept_stem(item.get("title", ""))
+            if stem_counts_199.get(stem, 0) < 2:
+                stem_counts_199[stem] = stem_counts_199.get(stem, 0) + 1
+                diverse_199.append(item)
+            else:
+                overflow_199.append(item)
+            if len(diverse_199) >= per_niche_display:
+                break
+        if len(diverse_199) < per_niche_display:
+            diverse_199.extend(overflow_199[: per_niche_display - len(diverse_199)])
+
+        result_199 = []
+        for item in diverse_199[:per_niche_display]:
+            item_copy = dict(item)
+            if isinstance(item_copy.get("smartbiz_preset"), dict):
+                item_copy["smartbiz_preset"] = {
+                    **item_copy["smartbiz_preset"],
+                    "product_category": "199-299",
+                }
+            result_199.append(item_copy)
+        return result_199
 
     # Group by niche to apply batch_cursor rotation and per_niche_display slicing
     if per_niche_display and per_niche_display > 0:

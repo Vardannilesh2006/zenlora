@@ -109,6 +109,7 @@ NICHE_CODE_MAP = {
     "Gadgets": "GADG",
     "Gifts": "GIFT",
     "Health & Beauty Accessories": "HLTH",
+    "199-299": "1992",
 }
 
 HSN_BY_PRODUCT_CATEGORY = {
@@ -118,6 +119,7 @@ HSN_BY_PRODUCT_CATEGORY = {
     "Smart Gadgets": "850980",
     "Gifts & Hampers": "960810",
     "Health & Beauty Accessories": "850980",
+    "199-299": "392640",
 }
 
 NICHE_TO_SMARTBIZ_CATEGORY = {
@@ -133,6 +135,8 @@ NICHE_TO_SMARTBIZ_CATEGORY = {
     "Health & Beauty Accessories": ("GENERAL", "Health & Beauty Accessories"),
     "Health & Beauty": ("GENERAL", "Health & Beauty Accessories"),
     "Beauty": ("GENERAL", "Health & Beauty Accessories"),
+    "199-299": ("GENERAL", "199-299"),
+    "199_299": ("GENERAL", "199-299"),
 }
 
 
@@ -532,13 +536,19 @@ def select_current_page_products(
             include_hard_failed=include_hard_failed,
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
-            per_niche_display=0 if str(cost_filter).lower() == "under_50" else max(limit + 15, 35),
+            per_niche_display=0 if str(cost_filter).lower() in ("under_50", "199_299", "199-299") else max(limit + 15, 35),
             exclude_exported=exclude_exported,
             extra_excluded_keys=extra_excluded_keys,
             auto_refill=exclude_exported,
         )
-        # Strictly enforce that every item belongs to the requested category
-        items = [w for w in items if str(w.get("niche", "")).strip().lower() == niche.strip().lower()]
+        if niche == "199-299":
+            items = [
+                w for w in items
+                if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
+            ]
+        else:
+            # Strictly enforce that every item belongs to the requested category
+            items = [w for w in items if str(w.get("niche", "")).strip().lower() == niche.strip().lower()]
     else:
         items = get_winners(
             niche="All",
@@ -554,6 +564,11 @@ def select_current_page_products(
 
     if str(cost_filter).strip().lower() == "under_50":
         items = [w for w in items if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
+    elif str(cost_filter).strip().lower() in ("199_299", "199-299"):
+        items = [
+            w for w in items
+            if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
+        ]
     if min_score > 0:
         items = [w for w in items if float(w.get("winning_score") or 0) >= min_score]
     if min_margin > 0:
