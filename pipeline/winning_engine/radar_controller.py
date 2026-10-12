@@ -462,7 +462,9 @@ def normalize_niche_param(niche: Optional[str]) -> str:
     low = raw.lower()
     if low in ("all", ""):
         return "All"
-    if low in ("199-299", "199_299", "199 to 299", "under 199-299", "₹199-₹299", "199 - 299"):
+    if low in ("under 199-299", "under_199-299", "under 199_299"):
+        return "Under 199-299"
+    if low in ("199-299", "199_299", "199 to 299", "₹199-₹299", "199 - 299"):
         return "199-299"
     if low in (
         "health",

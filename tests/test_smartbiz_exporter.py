@@ -540,8 +540,9 @@ def test_under_50_deodap_price_preset_and_filter():
     html_filter = res_filter.data.decode("utf-8")
     assert "Under ₹50 DeoDap → ₹179–₹185" in html_filter
     assert "≤₹50 Preset" in html_filter
+    assert "Under 199-299 ·" in html_filter
 
-    # Verify SmartBiz Excel export with cost_filter=under_50 has all rows in 179..185
+    # 1. Verify SmartBiz Excel export with cost_filter=under_50 on niche=All sets Col K = 'Under 199-299' and SP in 179..185
     res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=All&cost_filter=under_50&limit=24&commit=0")
     assert res_xlsx.status_code == 200
     wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data), data_only=True)
@@ -550,7 +551,22 @@ def test_under_50_deodap_price_preset_and_filter():
     for r_idx in range(2, 26):
         sp_val = int(ws.cell(r_idx, 9).value)
         assert 179 <= sp_val <= 185, f"Row {r_idx} Selling Price {sp_val} not in 179..185"
+        assert ws.cell(r_idx, 10).value == "GENERAL"
+        assert ws.cell(r_idx, 11).value == "Under 199-299"
     wb.close()
+
+    # 2. Verify SmartBiz Excel export with cost_filter=under_50 on a specific category page (e.g. Kitchen) ALSO sets Col K = 'Under 199-299'
+    res_kitchen_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Kitchen&cost_filter=under_50&limit=24&commit=0")
+    assert res_kitchen_xlsx.status_code == 200
+    wb_k = openpyxl.load_workbook(io.BytesIO(res_kitchen_xlsx.data), data_only=True)
+    ws_k = wb_k["bulk_upload_template"]
+    assert ws_k.max_row >= 2
+    for r_idx in range(2, ws_k.max_row + 1):
+        sp_val = int(ws_k.cell(r_idx, 9).value)
+        assert 179 <= sp_val <= 185
+        assert ws_k.cell(r_idx, 10).value == "GENERAL"
+        assert ws_k.cell(r_idx, 11).value == "Under 199-299"
+    wb_k.close()
 
 
 def test_199_299_collection_page_and_smartbiz_excel_export():

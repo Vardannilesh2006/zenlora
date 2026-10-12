@@ -110,6 +110,8 @@ NICHE_CODE_MAP = {
     "Gifts": "GIFT",
     "Health & Beauty Accessories": "HLTH",
     "199-299": "1992",
+    "Under 199-299": "U199",
+    "under_50": "U199",
 }
 
 HSN_BY_PRODUCT_CATEGORY = {
@@ -120,6 +122,7 @@ HSN_BY_PRODUCT_CATEGORY = {
     "Gifts & Hampers": "960810",
     "Health & Beauty Accessories": "850980",
     "199-299": "392640",
+    "Under 199-299": "392640",
 }
 
 NICHE_TO_SMARTBIZ_CATEGORY = {
@@ -137,6 +140,9 @@ NICHE_TO_SMARTBIZ_CATEGORY = {
     "Beauty": ("GENERAL", "Health & Beauty Accessories"),
     "199-299": ("GENERAL", "199-299"),
     "199_299": ("GENERAL", "199-299"),
+    "Under 199-299": ("GENERAL", "Under 199-299"),
+    "under 199-299": ("GENERAL", "Under 199-299"),
+    "under_50": ("GENERAL", "Under 199-299"),
 }
 
 

@@ -110,6 +110,12 @@ def radar():
         winners = [w for w in raw_pool if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
         if niche != "All":
             winners = winners[:24]
+        for idx, item in enumerate(winners):
+            copied = dict(item)
+            preset = dict(copied.get("smartbiz_preset") or {})
+            preset["product_category"] = "Under 199-299"
+            copied["smartbiz_preset"] = preset
+            winners[idx] = copied
     elif cost_filter.lower() in ("199_299", "199-299"):
         raw_pool = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=0)
         winners = [
@@ -417,11 +423,23 @@ def export_smartbiz_csv():
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
         )
-        safe_niche = ("199-299" if cost_filter.lower() in ("199_299", "199-299") and niche == "All" else niche).lower().replace("&", "and").replace(" ", "_").replace("__", "_")
+        if cost_filter.lower() == "under_50":
+            safe_niche = "under_199-299"
+        elif cost_filter.lower() in ("199_299", "199-299") and niche == "All":
+            safe_niche = "199-299"
+        else:
+            safe_niche = niche.lower().replace("&", "and").replace(" ", "_").replace("__", "_")
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
 
-    effective_override = None if mode == "mix" else ("199-299" if (niche == "199-299" or (niche == "All" and cost_filter.lower() in ("199_299", "199-299"))) else niche)
+    if mode == "mix":
+        effective_override = None
+    elif cost_filter.lower() == "under_50":
+        effective_override = "Under 199-299"
+    elif niche == "199-299" or (niche == "All" and cost_filter.lower() in ("199_299", "199-299")):
+        effective_override = "199-299"
+    else:
+        effective_override = niche
     csv_bytes = generate_smartbiz_csv_bytes(products, niche_override=effective_override)
     return Response(
         csv_bytes,
@@ -468,11 +486,23 @@ def export_smartbiz_xlsx():
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
         )
-        safe_niche = ("199-299" if cost_filter.lower() in ("199_299", "199-299") and niche == "All" else niche).lower().replace("&", "and").replace(" ", "_").replace("__", "_")
+        if cost_filter.lower() == "under_50":
+            safe_niche = "under_199-299"
+        elif cost_filter.lower() in ("199_299", "199-299") and niche == "All":
+            safe_niche = "199-299"
+        else:
+            safe_niche = niche.lower().replace("&", "and").replace(" ", "_").replace("__", "_")
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
 
-    effective_override = None if mode == "mix" else ("199-299" if (niche == "199-299" or (niche == "All" and cost_filter.lower() in ("199_299", "199-299"))) else niche)
+    if mode == "mix":
+        effective_override = None
+    elif cost_filter.lower() == "under_50":
+        effective_override = "Under 199-299"
+    elif niche == "199-299" or (niche == "All" and cost_filter.lower() in ("199_299", "199-299")):
+        effective_override = "199-299"
+    else:
+        effective_override = niche
     xlsx_bytes = generate_smartbiz_xlsx_bytes(products, niche_override=effective_override)
     return Response(
         xlsx_bytes,

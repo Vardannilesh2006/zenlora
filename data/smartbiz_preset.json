@@ -10,7 +10,8 @@
     "max_deodap_cost_inr": 50,
     "selling_price_min_inr": 179,
     "selling_price_max_inr": 185,
-    "rule_label": "DeoDap Price ≤ ₹50 → Selling Price ₹179 to ₹185"
+    "smartbiz_product_category": "Under 199-299",
+    "rule_label": "DeoDap Price ≤ ₹50 → Selling Price ₹179 to ₹185 (Product Category: Under 199-299)"
   },
   "column_rules": {
     "cols_a_to_e_system_ids": "Blank (\"\") — Creates fresh SmartBiz listings without modifying existing store products",
@@ -19,7 +20,7 @@
     "col_h_mrp": "4-Band Cost-Inverse Variable Discount Box MRP (Ends in 9, 5, or 0; Strictly Never 2x Selling Price)",
     "col_i_selling_price": "DeoDap ≤ Rs.50 -> Fixed Rs.179-Rs.185 Preset | Above Rs.50 -> Market-Anchored Safe Dropship Price",
     "col_j_business_category": "GENERAL (Unified across all rows for zero cross-category validation errors)",
-    "col_k_product_category": "100% Category-Matched Storefront Collections (Festive & Lights, Home Decor, Kitchen & Dining, Smart Gadgets, Gifts & Hampers, Health & Beauty Accessories, 199-299)",
+    "col_k_product_category": "100% Category-Matched Storefront Collections (Festive & Lights, Home Decor, Kitchen & Dining, Smart Gadgets, Gifts & Hampers, Health & Beauty Accessories, 199-299, Under 199-299)",
     "col_l_description": "Clean HTML (<p>...</p>) or natural prose description (<= 2000 chars)",
     "col_u_best_seller": "Selective \"Yes\" (~33% top winners) and \"No\" (~67% others)",
     "cols_w_to_ab_images": "Up to 6 Real DeoDap Gallery Images (.jpg sanitized, query strings stripped)",
@@ -75,6 +76,7 @@
     "Smart Gadgets",
     "Gifts & Hampers",
     "Health & Beauty Accessories",
-    "199-299"
+    "199-299",
+    "Under 199-299"
   ]
 }
