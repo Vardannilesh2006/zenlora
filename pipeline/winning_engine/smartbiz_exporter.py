@@ -513,7 +513,9 @@ def select_current_page_products(
     commit_to_ledger: bool = False,
 ) -> List[Dict]:
     from .export_ledger import extract_product_fingerprints, record_exported_products
+    from .radar_controller import normalize_niche_param
 
+    niche = normalize_niche_param(niche)
     if niche and niche != "All":
         items = get_winners(
             niche=niche,

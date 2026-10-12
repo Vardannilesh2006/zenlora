@@ -23,7 +23,11 @@ if os.environ.get("VERCEL"):
 
     seed_winning = BASE_DIR / "data" / "winning_products.json"
     if seed_winning.exists():
-        if not WINNING_DB_FILE.exists() or seed_winning.stat().st_mtime > WINNING_DB_FILE.stat().st_mtime:
+        if (
+            not WINNING_DB_FILE.exists()
+            or seed_winning.stat().st_mtime > WINNING_DB_FILE.stat().st_mtime
+            or seed_winning.stat().st_size != WINNING_DB_FILE.stat().st_size
+        ):
             try:
                 shutil.copy2(seed_winning, WINNING_DB_FILE)
             except Exception:
@@ -32,7 +36,11 @@ if os.environ.get("VERCEL"):
     seed_mkt = BASE_DIR / "data" / "marketplace_cache.json"
     runtime_mkt = DATA_DIR / "marketplace_cache.json"
     if seed_mkt.exists():
-        if not runtime_mkt.exists() or seed_mkt.stat().st_mtime > runtime_mkt.stat().st_mtime:
+        if (
+            not runtime_mkt.exists()
+            or seed_mkt.stat().st_mtime > runtime_mkt.stat().st_mtime
+            or seed_mkt.stat().st_size != runtime_mkt.stat().st_size
+        ):
             try:
                 shutil.copy2(seed_mkt, runtime_mkt)
             except Exception:

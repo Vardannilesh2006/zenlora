@@ -475,6 +475,43 @@ def test_festive_and_lights_page_always_shows_24_products():
     assert html_text.count('id="card-') == 24
 
 
+def test_health_and_beauty_accessories_radar_page_and_excel_export():
+    """
+    Verifies that 'Health & Beauty Accessories' appears on /radar with 24 products,
+    works with both URL-encoded and unencoded query parameters, and exports 24 items
+    to SmartBiz Excel with Column K = 'Health & Beauty Accessories'.
+    """
+    import openpyxl
 
+    client = app.test_client()
 
+    # 1. Main /radar page includes the URL-encoded Health & Beauty Accessories category pill with (24)
+    res_main = client.get("/radar")
+    assert res_main.status_code == 200
+    main_html = res_main.data.decode("utf-8")
+    assert "Health &amp; Beauty Accessories (24)" in main_html or "Health & Beauty Accessories (24)" in main_html
+    assert "/radar?niche=Health+%26+Beauty+Accessories" in main_html or "/radar?niche=Health%20%26%20Beauty%20Accessories" in main_html
 
+    # 2. Encoded URL /radar?niche=Health+%26+Beauty+Accessories renders 24 Health & Beauty Accessories cards
+    res_enc = client.get("/radar?niche=Health+%26+Beauty+Accessories")
+    assert res_enc.status_code == 200
+    enc_html = res_enc.data.decode("utf-8")
+    assert enc_html.count('id="card-') == 24
+    assert "Health &amp; Beauty Accessories ·" in enc_html or "Health & Beauty Accessories ·" in enc_html
+
+    # 3. Unencoded URL /radar?niche=Health & Beauty Accessories ALSO renders 24 Health & Beauty Accessories cards
+    res_unenc = client.get("/radar?niche=Health & Beauty Accessories")
+    assert res_unenc.status_code == 200
+    unenc_html = res_unenc.data.decode("utf-8")
+    assert unenc_html.count('id="card-') == 24
+
+    # 4. SmartBiz Page Excel (.xlsx) export for Health & Beauty Accessories has 24 rows and Col K = 'Health & Beauty Accessories'
+    res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Health+%26+Beauty+Accessories&limit=24&commit=0")
+    assert res_xlsx.status_code == 200
+    wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data), data_only=True)
+    ws = wb["bulk_upload_template"]
+    assert ws.max_row == 25  # 1 header + 24 products
+    for r_idx in range(2, 26):
+        assert ws.cell(r_idx, 10).value == "GENERAL"
+        assert ws.cell(r_idx, 11).value == "Health & Beauty Accessories"
+    wb.close()

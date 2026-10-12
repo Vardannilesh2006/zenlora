@@ -447,6 +447,44 @@ def auto_refill_unexported_winners(
     return existing_winners
 
 
+_ENRICHED_WINNERS_CACHE: Dict[str, Any] = {
+    "sig": None,
+    "raw_items": [],
+    "enriched_items": [],
+}
+
+
+def normalize_niche_param(niche: Optional[str]) -> str:
+    """Normalizes category query parameters (including partial/unencoded '&' URLs) to canonical niche names."""
+    if not niche:
+        return "All"
+    raw = str(niche).strip()
+    low = raw.lower()
+    if low in ("all", ""):
+        return "All"
+    if low in (
+        "health",
+        "health & beauty",
+        "health and beauty",
+        "health & beauty accessories",
+        "health and beauty accessories",
+        "beauty",
+        "beauty accessories",
+    ) or low.startswith("health"):
+        return "Health & Beauty Accessories"
+    if low in ("festive", "festive & lights", "festive and lights") or low.startswith("festive"):
+        return "Festive"
+    if low in ("gifts", "gifts & hampers", "gifts and hampers") or low.startswith("gift"):
+        return "Gifts"
+    if low in ("gadgets", "smart gadgets"):
+        return "Gadgets"
+    if low == "home decor":
+        return "Home Decor"
+    if low == "kitchen":
+        return "Kitchen"
+    return raw
+
+
 def get_winners(
     niche: Optional[str] = None,
     include_hard_failed: bool = False,
@@ -468,7 +506,7 @@ def get_winners(
         is_product_already_exported,
     )
 
-    winners = []
+    niche = normalize_niche_param(niche)
     repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
 
     candidates = []
@@ -478,17 +516,50 @@ def get_winners(
         candidates.append(repo_file)
     candidates.sort(key=lambda p: p.stat().st_mtime, reverse=True)
 
-    for src_file in candidates:
+    file_sig_parts = []
+    for p in candidates:
         try:
-            with open(src_file, "r", encoding="utf-8") as f:
-                winners = json.load(f)
-            if winners:
-                break
+            st = p.stat()
+            file_sig_parts.append((str(p), st.st_mtime_ns, st.st_size))
         except Exception:
-            continue
+            pass
+    settings_sig = json.dumps(load_settings(), sort_keys=True)
+    cache_sig = (tuple(file_sig_parts), settings_sig)
 
-    if refresh_dynamic and winners:
+    if _ENRICHED_WINNERS_CACHE.get("sig") == cache_sig and _ENRICHED_WINNERS_CACHE.get("raw_items"):
+        if refresh_dynamic and _ENRICHED_WINNERS_CACHE.get("enriched_items"):
+            winners = [dict(w) for w in _ENRICHED_WINNERS_CACHE["enriched_items"]]
+        else:
+            winners = [dict(w) for w in _ENRICHED_WINNERS_CACHE["raw_items"]]
+    else:
+        merged_by_handle: List[Dict[str, Any]] = []
+        seen_loaded_handles = set()
+        for src_file in candidates:
+            try:
+                with open(src_file, "r", encoding="utf-8") as f:
+                    loaded = json.load(f)
+                if isinstance(loaded, list):
+                    for item in loaded:
+                        h = str(item.get("handle") or "").strip().lower()
+                        if h and h not in seen_loaded_handles:
+                            seen_loaded_handles.add(h)
+                            merged_by_handle.append(item)
+            except Exception:
+                continue
+
+        winners = merged_by_handle
+        _ENRICHED_WINNERS_CACHE["sig"] = cache_sig
+        _ENRICHED_WINNERS_CACHE["raw_items"] = [dict(w) for w in winners]
+        if refresh_dynamic and winners:
+            enriched = [enrich_winner_record(w, catalog_pool=winners) for w in winners]
+            _ENRICHED_WINNERS_CACHE["enriched_items"] = [dict(w) for w in enriched]
+            winners = enriched
+        else:
+            _ENRICHED_WINNERS_CACHE["enriched_items"] = []
+
+    if refresh_dynamic and winners and not _ENRICHED_WINNERS_CACHE.get("enriched_items"):
         winners = [enrich_winner_record(w, catalog_pool=winners) for w in winners]
+        _ENRICHED_WINNERS_CACHE["enriched_items"] = [dict(w) for w in winners]
 
     if not include_hard_failed:
         winners = [

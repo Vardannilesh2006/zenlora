@@ -13,6 +13,7 @@ from pipeline_controller import ZenloraPipeline
 from config import EXPORTS_DIR
 from winning_engine.radar_controller import (
     get_winners,
+    normalize_niche_param,
     scan_and_update_winners,
     import_to_studio,
     enrich_winner_record,
@@ -92,7 +93,7 @@ def index():
 def radar():
     from seo_engine import build_deterministic_seo_title, build_deterministic_seo_description
 
-    niche = request.args.get("niche", "All")
+    niche = normalize_niche_param(request.args.get("niche", "All"))
     festival_filter = request.args.get("festival", "All")
     status_filter = request.args.get("status", "All")
     confidence_filter = request.args.get("confidence", "All")
@@ -355,7 +356,7 @@ def _build_export_headers(filename: str, products: list[dict]) -> dict[str, str]
 @app.route("/api/radar/smartbiz.csv", methods=["GET", "POST"])
 def export_smartbiz_csv():
     mode = request.args.get("mode", "page").strip().lower()
-    niche = request.args.get("niche", "All").strip()
+    niche = normalize_niche_param(request.args.get("niche", "All"))
     batch_cursor = int(request.args.get("batch", 0) or 0)
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
@@ -388,7 +389,7 @@ def export_smartbiz_csv():
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
         )
-        safe_niche = niche.lower().replace(" ", "_")
+        safe_niche = niche.lower().replace("&", "and").replace(" ", "_").replace("__", "_")
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
 
@@ -403,7 +404,7 @@ def export_smartbiz_csv():
 @app.route("/api/radar/smartbiz.xlsx", methods=["GET", "POST"])
 def export_smartbiz_xlsx():
     mode = request.args.get("mode", "page").strip().lower()
-    niche = request.args.get("niche", "All").strip()
+    niche = normalize_niche_param(request.args.get("niche", "All"))
     batch_cursor = int(request.args.get("batch", 0) or 0)
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
@@ -436,7 +437,7 @@ def export_smartbiz_xlsx():
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
         )
-        safe_niche = niche.lower().replace(" ", "_")
+        safe_niche = niche.lower().replace("&", "and").replace(" ", "_").replace("__", "_")
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
 

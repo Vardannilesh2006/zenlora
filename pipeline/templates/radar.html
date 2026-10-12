@@ -160,7 +160,7 @@
                     </p>
                 </div>
                 <div class="flex items-center gap-2 flex-wrap">
-                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
+                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche|urlencode }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
                         📊 Page Excel (.xlsx · 24)
                     </a>
                     <a href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition">
@@ -331,12 +331,12 @@
         </div>
     </div>
 
-    <!-- Category Filter Bar (Home Decor, Kitchen, Gadgets, Festive, Gifts) -->
+    <!-- Category Filter Bar (Home Decor, Kitchen, Gadgets, Festive, Gifts, Health & Beauty Accessories) -->
     <div class="border-b border-borderMain bg-white px-3 sm:px-6 py-2.5">
         <div class="max-w-[1500px] mx-auto flex flex-wrap items-center justify-between gap-2.5">
-            <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-full py-0.5">
+            <div class="flex flex-wrap items-center gap-1.5 max-w-full py-0.5">
                 {% for n in niches %}
-                <a href="/radar?niche={{ n }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-zinc-200/80 hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
+                <a href="/radar?niche={{ n|urlencode }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-zinc-200/80 hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
                     {% if n == 'All' %}🌐 All ({{ total_winners }})
                     {% elif n == 'Home Decor' %}🏡 Home Decor ({{ niche_counts.get('Home Decor', 24) if niche_counts else 24 }})
                     {% elif n == 'Kitchen' %}🍳 Kitchen ({{ niche_counts.get('Kitchen', 24) if niche_counts else 24 }})
@@ -358,7 +358,7 @@
                     <span id="vaultToolbarText">🛡️ Preset &amp; Vault ({{ export_ledger.total_blocked_products if export_ledger else 90 }} Blocked)</span>
                 </button>
                 <a 
-                    href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
+                    href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche|urlencode }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
                     onclick="return downloadUniqueSmartBizFile(event, this.href)"
                     title="Download 100% Upload-Ready SmartBiz Excel (.xlsx) with Worksheet bulk_upload_template (Zero-Repeat Vault Protected)"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition flex items-center gap-1.5 whitespace-nowrap shadow-xs"
@@ -708,7 +708,7 @@
                 });
                 const data = await res.json();
                 if (data.success) {
-                    showToast(`Scanned fresh batch #${nextBatch} across all 5 niches (Zero-Repeat Vault active)!`, false);
+                    showToast(`Scanned fresh batch #${nextBatch} across all 6 niches (Zero-Repeat Vault active)!`, false);
                     urlParams.set('batch', String(nextBatch));
                     setTimeout(() => {
                         window.location.search = urlParams.toString();
