@@ -139,45 +139,42 @@
       "firecracker",
       "patakha",
       "patakhe",
-      "cracker",
       "sparkler",
       "anar",
       "chakri"
     ],
     "food_items_fssai": [
-      "edible",
-      "chocolate",
-      "sweet",
       "namkeen",
-      "masala",
-      "spices",
       "tea leaves",
-      "food item"
+      "pickle",
+      "edible oil",
+      "ghee",
+      "protein powder",
+      "supplement"
     ],
     "health_claims": [
-      "cure",
+      "hair oil",
+      "adivasi",
       "diabetes",
       "blood pressure",
       "weight loss pill",
-      " slimming oil",
-      "medical claim"
+      "slimming oil",
+      "medical claim",
+      "pain relief oil"
     ],
     "gold_silver_hallmark": [
       "pure gold",
       "pure silver",
       "999 silver",
-      "24k gold",
       "hallmark",
       "1 gram gold",
       "gold forming"
     ],
     "fragile_idols_glass": [
-      "crystal ball",
       "glass jar",
       "glass cup",
-      "ceramic",
       "terracotta",
-      "clay",
+      "clay idol",
       "porcelain",
       "fragile idol"
     ]

@@ -115,20 +115,16 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
     social_signals = analyze_social_velocity(meta_signals["keyword"], niche, handle=handle)
 
     gemini_signals = item.get("gemini")
-    if not gemini_signals or "label" not in gemini_signals:
-        gemini_signals = {
-            "label": "AI opinion (not data)",
-            "ai_verdict": None,
-            "viral_hook_hinglish": None,
-            "target_audience": None,
-            "suggested_pain_wow_rating_1_to_5": None,
-            "gemini_powered": False,
-            "source": "Google Gemini API (AI opinion)",
-            "source_url": "https://ai.google.dev/",
-            "fetched_at": None,
-            "method": "ai_opinion",
-            "null_reason": "On-demand AI opinion (click product detail to generate)"
-        }
+    if not gemini_signals or not gemini_signals.get("gemini_powered"):
+        gemini_signals = analyze_with_gemini(
+            product_title=title,
+            niche=niche,
+            wholesale_price=wholesale_price,
+            selling_price=int(item.get("selling_price") or 299),
+            description=item.get("description", ""),
+            handle=handle,
+            fetch_live=False
+        )
 
     score_data = compute_winning_score(
         product=item,
@@ -243,7 +239,7 @@ def scan_and_update_winners(
 ) -> List[Dict[str, Any]]:
     """
     Pulls fresh live DeoDap products across all 5 niches, evaluates all 10 criteria
-    with transparent provenance metadata, and persists the updated shortlist pool.
+    with transparent provenance metadata, filters out any hard-failed items, and persists the shortlist pool.
     """
     pool_limit = max(limit_per_niche, 30)
     print(f"[*] Starting Zenlora Winning Radar live scan (pool_limit={pool_limit}, rotate={randomize}, batch={batch_cursor})...")
@@ -254,8 +250,9 @@ def scan_and_update_winners(
     )
 
     winners = [enrich_winner_record(item, catalog_pool=harvested_items) for item in harvested_items]
+    winners = [w for w in winners if not w.get("is_hard_failed", False)]
     if not randomize:
-        winners.sort(key=lambda x: (not x.get("is_hard_failed", False), x.get("winning_score", 0)), reverse=True)
+        winners.sort(key=lambda x: (x.get("winning_score", 0), x.get("verified_score_pct", 0)), reverse=True)
 
     # Persist to both runtime WINNING_DB_FILE and repo winning_products.json
     repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
@@ -267,7 +264,7 @@ def scan_and_update_winners(
         except Exception as e:
             print(f"[!] Warning saving {target}: {e}")
 
-    print(f"[+] Scan completed! {len(winners)} products evaluated with full provenance metadata.")
+    print(f"[+] Scan completed! {len(winners)} verified high-confidence products saved.")
     return winners
 
 

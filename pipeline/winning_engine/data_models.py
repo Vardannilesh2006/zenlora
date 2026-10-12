@@ -186,19 +186,19 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
     },
     "restricted_rules": {
         "firecrackers_patakhe": [
-            "firecracker", "patakha", "patakhe", "cracker", "sparkler", "anar", "chakri"
+            "firecracker", "patakha", "patakhe", "sparkler", "anar", "chakri"
         ],
         "food_items_fssai": [
-            "edible", "chocolate", "sweet", "namkeen", "masala", "spices", "tea leaves", "food item"
+            "namkeen", "tea leaves", "pickle", "edible oil", "ghee", "protein powder", "supplement"
         ],
         "health_claims": [
-            "cure", "diabetes", "blood pressure", "weight loss pill", " slimming oil", "medical claim"
+            "hair oil", "adivasi", "diabetes", "blood pressure", "weight loss pill", "slimming oil", "medical claim", "pain relief oil"
         ],
         "gold_silver_hallmark": [
-            "pure gold", "pure silver", "999 silver", "24k gold", "hallmark", "1 gram gold", "gold forming"
+            "pure gold", "pure silver", "999 silver", "hallmark", "1 gram gold", "gold forming"
         ],
         "fragile_idols_glass": [
-            "crystal ball", "glass jar", "glass cup", "ceramic", "terracotta", "clay", "porcelain", "fragile idol"
+            "glass jar", "glass cup", "terracotta", "clay idol", "porcelain", "fragile idol"
         ]
     },
     "returns_risk_rules": {

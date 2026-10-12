@@ -605,8 +605,18 @@ def populate_smartbiz_excel_file(
     import openpyxl
 
     target_out = output_path or template_path
-    wb = openpyxl.load_workbook(template_path)
-    ws = wb["bulk_upload_template"]
+    try:
+        wb = openpyxl.load_workbook(template_path)
+        ws = wb["bulk_upload_template"] if "bulk_upload_template" in wb.sheetnames else wb.active
+        # Clear old rows below row 1
+        if ws.max_row > 1:
+            ws.delete_rows(2, ws.max_row - 1)
+    except Exception:
+        wb = openpyxl.Workbook()
+        ws = wb.active
+        ws.title = "bulk_upload_template"
+        for c_idx, h_val in enumerate(EXACT_SMARTBIZ_HEADERS, start=1):
+            ws.cell(row=1, column=c_idx, value=h_val)
 
     rows = build_unique_smartbiz_rows(products)
     for r_idx, row_vals in enumerate(rows, start=2):

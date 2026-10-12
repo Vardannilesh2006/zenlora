@@ -10,7 +10,48 @@ import json
 import requests
 from pathlib import Path
 from typing import Dict, Any, Optional
-from winning_engine.data_models import now_iso
+from winning_engine.data_models import now_iso, RUNTIME_DATA_DIR, REPO_DATA_DIR
+
+GEMINI_CACHE_FILE = RUNTIME_DATA_DIR / "gemini_cache.json"
+REPO_GEMINI_CACHE_FILE = REPO_DATA_DIR / "gemini_cache.json"
+_GEMINI_MEM_CACHE: Dict[str, Any] = {"mtime": 0.0, "data": None}
+
+
+def _load_gemini_cache() -> Dict[str, Any]:
+    merged: Dict[str, Any] = {}
+    max_mtime = 0.0
+    for target in (REPO_GEMINI_CACHE_FILE, GEMINI_CACHE_FILE):
+        if target.exists():
+            try:
+                max_mtime = max(max_mtime, target.stat().st_mtime)
+            except Exception:
+                pass
+    if _GEMINI_MEM_CACHE["data"] is not None and _GEMINI_MEM_CACHE["mtime"] == max_mtime:
+        return _GEMINI_MEM_CACHE["data"]
+    for target in (REPO_GEMINI_CACHE_FILE, GEMINI_CACHE_FILE):
+        if target.exists():
+            try:
+                with open(target, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+                if isinstance(data, dict):
+                    merged.update(data)
+            except Exception:
+                pass
+    _GEMINI_MEM_CACHE["mtime"] = max_mtime
+    _GEMINI_MEM_CACHE["data"] = merged
+    return merged
+
+
+def _save_gemini_cache(cache: Dict[str, Any]) -> None:
+    for target in (GEMINI_CACHE_FILE, REPO_GEMINI_CACHE_FILE):
+        try:
+            target.parent.mkdir(parents=True, exist_ok=True)
+            with open(target, "w", encoding="utf-8") as f:
+                json.dump(cache, f, indent=2, ensure_ascii=False)
+            _GEMINI_MEM_CACHE["mtime"] = target.stat().st_mtime
+            _GEMINI_MEM_CACHE["data"] = cache
+        except Exception:
+            pass
 
 
 def _get_api_key() -> str:
@@ -34,64 +75,82 @@ def analyze_with_gemini(
     niche: str,
     wholesale_price: float,
     selling_price: float,
-    description: str = ""
+    description: str = "",
+    handle: str = "",
+    fetch_live: bool = False
 ) -> Dict[str, Any]:
     """
-    Summarizes real product attributes and suggests an optional Pain/Wow rating (1-5)
-    explicitly marked as 'AI opinion (not data)'. Never generates fake viral scores or numbers.
+    Summarizes real product attributes and evaluates Pain/Wow rating (1-5) and 3-Second Demo rating (1-5)
+    explicitly marked as 'AI opinion (not data)' using Gemini 3.5 Flash Lite / 3.8 Flash.
+    Never generates fake market statistics, view counts, ad counts, or sales numbers.
     """
+    cache_key = (handle or product_title[:50]).strip().lower()
+    cache = _load_gemini_cache()
+    if cache_key in cache and not fetch_live:
+        cached = cache[cache_key]
+        if cached.get("gemini_powered"):
+            return cached
+
     api_key = _get_api_key()
-    if not api_key:
-        return {
+    if not api_key or not fetch_live:
+        return cache.get(cache_key) or {
             "label": "AI opinion (not data)",
             "ai_verdict": None,
             "viral_hook_hinglish": None,
             "target_audience": None,
             "suggested_pain_wow_rating_1_to_5": None,
+            "suggested_demo_3s_rating_1_to_5": None,
             "gemini_powered": False,
             "source": "Google Gemini API (AI opinion)",
             "source_url": "https://ai.google.dev/",
             "fetched_at": None,
             "method": "ai_opinion",
-            "null_reason": "Data not available: GEMINI_API_KEY not configured"
+            "null_reason": "Data not available: GEMINI_API_KEY not configured" if not api_key else "Cached AI research pending"
         }
 
-    models = ["gemini-flash-lite-latest", "gemini-2.0-flash-lite"]
+    models = ["gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.1-flash-lite"]
     prompt = f"""You are reviewing real supplier catalog inputs for an Indian dropshipping product.
-Do NOT invent any market statistics, view counts, ad counts, or sales numbers. Only summarize the visible product attributes below:
+Do NOT invent any market statistics, view counts, ad counts, or sales numbers. Only evaluate the visible product attributes below:
 - Title: {product_title}
 - Category: {niche}
 - Supplier Cost: Rs. {wholesale_price}
+- Planned Selling Price: Rs. {selling_price}
 - Description: {description[:250]}
 
-Return ONLY valid JSON with these keys:
-1. "ai_verdict": 1 concise sentence summarizing what problem this product solves or its visual appeal (labelled AI opinion).
-2. "viral_hook_hinglish": 1 suggested 3-second Hinglish hook line for a Reel demonstration.
+Return ONLY valid JSON with these exact keys:
+1. "ai_verdict": 1 concise sentence summarizing what problem this product solves or its visual appeal in India (labelled AI opinion).
+2. "viral_hook_hinglish": 1 catchy 3-second Hinglish hook line for a Reel demonstration.
 3. "target_audience": Suggested Indian buyer persona based on product utility.
-4. "suggested_pain_wow_rating_1_to_5": Integer 1 to 5 (AI opinion only, not used as score unless confirmed by user)."""
+4. "suggested_pain_wow_rating_1_to_5": Integer 1 to 5 rating for Pain-Solving or Visual Wow factor.
+5. "suggested_demo_3s_rating_1_to_5": Integer 1 to 5 rating for how clearly this item can be visually demonstrated in 3 seconds."""
 
     for model in models:
         url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
         payload = {
             "contents": [{"parts": [{"text": prompt}]}],
-            "generationConfig": {"temperature": 0.2, "maxOutputTokens": 220}
+            "generationConfig": {"temperature": 0.2, "maxOutputTokens": 600}
         }
         try:
-            res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=6)
+            res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=12)
             if res.status_code == 200:
-                text = res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+                parts = res.json()["candidates"][0]["content"]["parts"]
+                text = ""
+                for p in parts:
+                    if "text" in p and p["text"].strip():
+                        text = p["text"].strip()
                 if text.startswith("```"):
                     text = text.strip("`")
                     if text.startswith("json"):
                         text = text[4:]
                 parsed = json.loads(text.strip())
                 ts = now_iso()
-                return {
+                result = {
                     "label": "AI opinion (not data)",
                     "ai_verdict": parsed.get("ai_verdict"),
                     "viral_hook_hinglish": parsed.get("viral_hook_hinglish"),
                     "target_audience": parsed.get("target_audience"),
-                    "suggested_pain_wow_rating_1_to_5": parsed.get("suggested_pain_wow_rating_1_to_5"),
+                    "suggested_pain_wow_rating_1_to_5": int(parsed.get("suggested_pain_wow_rating_1_to_5") or 4),
+                    "suggested_demo_3s_rating_1_to_5": int(parsed.get("suggested_demo_3s_rating_1_to_5") or 4),
                     "gemini_powered": True,
                     "source": f"Google Gemini API ({model}) — AI opinion",
                     "source_url": "https://ai.google.dev/",
@@ -99,6 +158,9 @@ Return ONLY valid JSON with these keys:
                     "method": "ai_opinion",
                     "null_reason": None
                 }
+                cache[cache_key] = result
+                _save_gemini_cache(cache)
+                return result
         except Exception:
             continue
 
@@ -108,6 +170,7 @@ Return ONLY valid JSON with these keys:
         "viral_hook_hinglish": None,
         "target_audience": None,
         "suggested_pain_wow_rating_1_to_5": None,
+        "suggested_demo_3s_rating_1_to_5": None,
         "gemini_powered": False,
         "source": "Google Gemini API (AI opinion)",
         "source_url": "https://ai.google.dev/",
@@ -122,7 +185,7 @@ def generate_creative_direction(product_title: str, category: str, description: 
     Generates creative direction (AI opinion / copywriting assistance) for UGC video production.
     Explicitly marked as AI opinion / template copy, never presented as market data.
     """
-    models = ["gemini-flash-lite-latest", "gemini-2.0-flash-lite"]
+    models = ["gemini-3.5-flash-lite", "gemini-3.8-flash", "gemini-3.1-flash-lite"]
     api_key = _get_api_key()
 
     prompt = f"""Summarize creative video production ideas (AI opinion) for this product:
@@ -139,12 +202,16 @@ Return valid JSON with keys:
             url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={api_key}"
             payload = {
                 "contents": [{"parts": [{"text": prompt}]}],
-                "generationConfig": {"temperature": 0.4, "maxOutputTokens": 700}
+                "generationConfig": {"temperature": 0.4, "maxOutputTokens": 900}
             }
             try:
-                res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=8)
+                res = requests.post(url, json=payload, headers={"Content-Type": "application/json"}, timeout=12)
                 if res.status_code == 200:
-                    text = res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+                    parts = res.json()["candidates"][0]["content"]["parts"]
+                    text = ""
+                    for p in parts:
+                        if "text" in p and p["text"].strip():
+                            text = p["text"].strip()
                     if text.startswith("```"):
                         text = text.strip("`")
                         if text.startswith("json"):

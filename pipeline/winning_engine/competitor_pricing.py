@@ -403,8 +403,9 @@ def get_competitor_price_intelligence(
                 pass
 
         sc = scraped.get(key, {})
-        if sc and sc.get("price") is not None:
-            val = float(sc["price"])
+        raw_p = sc.get("price_numeric") if sc.get("price_numeric") is not None else sc.get("price")
+        if sc and raw_p is not None:
+            val = float(str(raw_p).replace("₹", "").replace(",", "").strip())
             ts = sc.get("fetched_at")
             return {
                 "name": display_name,

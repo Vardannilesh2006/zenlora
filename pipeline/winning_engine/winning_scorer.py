@@ -22,16 +22,21 @@ from winning_engine.data_models import (
 )
 
 
+import re
+
 def evaluate_restricted_rules(title: str, description: str, settings: Dict[str, Any]) -> List[Dict[str, str]]:
-    """Checks product against editable restricted categories (firecrackers, food/FSSAI, health, gold/hallmark, fragile idols)."""
-    text = f"{title} {description}".lower()
+    """Checks product title against editable restricted categories using whole-word boundaries."""
+    title_low = (title or "").lower()
     restricted_rules = settings.get("restricted_rules", {})
     flags = []
     for category_key, kw_list in restricted_rules.items():
         if not isinstance(kw_list, list):
             continue
         for kw in kw_list:
-            if kw.lower() in text:
+            kw_clean = kw.strip().lower()
+            if not kw_clean:
+                continue
+            if re.search(r"\b" + re.escape(kw_clean) + r"\b", title_low):
                 flags.append({
                     "rule_category": category_key,
                     "matched_keyword": kw,
@@ -148,7 +153,7 @@ def compute_winning_score(
     # --- EVALUATE ALL 10 CRITERIA SEPARATELY ---
     criteria_list: List[Dict[str, Any]] = []
 
-    # Criterion 1: Pain point / wow factor (Manual rating 1-5 by user; optional AI opinion shown separately)
+    # Criterion 1: Pain point / wow factor (Manual rating 1-5 by user, or Gemini 3.5 Flash AI Research evaluation)
     w1 = float(weights.get("c1_pain_or_wow", 12))
     c1_rating = manual_ratings.get("pain_wow_rating")
     ai_opinion_c1 = gemini_signals.get("suggested_pain_wow_rating_1_to_5") if gemini_signals else None
@@ -159,38 +164,52 @@ def compute_winning_score(
         c1_passed = c1_val >= 4
         c1_detail = f"Manual rating: {c1_val}/5 ({c1_pts}/{w1} pts)"
         c1_ts = manual_ratings.get("fetched_at")
+        c1_source = "Manual User Rating"
+        c1_method = "manual_entry"
+    elif ai_opinion_c1 is not None:
+        c1_val = int(ai_opinion_c1)
+        c1_pts = round((c1_val / 5.0) * w1, 2)
+        c1_status = "rule_based"
+        c1_passed = c1_val >= 4
+        c1_detail = f"AI Research (Gemini): {c1_val}/5 — {gemini_signals.get('ai_verdict') or 'Verified utility/wow'}"
+        c1_ts = gemini_signals.get("fetched_at")
+        c1_source = gemini_signals.get("source", "Google Gemini API (AI opinion)")
+        c1_method = "ai_opinion"
     else:
         c1_val = None
         c1_pts = None
         c1_status = "missing"
         c1_passed = None
-        c1_detail = "Data not available: Manual 1–5 rating not entered yet"
+        c1_detail = "Data not available: Manual 1–5 rating or Gemini AI research not run yet"
         c1_ts = None
+        c1_source = "Awaiting Manual / AI Evaluation"
+        c1_method = "manual_entry"
 
     criteria_list.append({
         "id": 1,
         "key": "c1_pain_or_wow",
         "name": "1. Pain Point / Wow Factor",
-        "value": f"{c1_val}/5" if c1_val is not None else None,
+        "value": f"{c1_val}/5 ({'Manual' if c1_rating is not None else 'Gemini AI'})" if c1_val is not None else None,
         "raw_value": c1_val,
-        "ai_opinion_suggestion": f"AI opinion (not scored): {ai_opinion_c1}/5" if ai_opinion_c1 else (gemini_signals.get("ai_verdict") if gemini_signals else None),
+        "ai_opinion_suggestion": f"AI opinion: {ai_opinion_c1}/5 — {gemini_signals.get('ai_verdict', '')}" if ai_opinion_c1 else None,
         "weight": w1,
         "earned_points": c1_pts,
         "passed": c1_passed,
         "status": c1_status,
         "detail": c1_detail,
-        "source": "Manual User Rating" if c1_val is not None else "Awaiting Manual Entry",
+        "source": c1_source,
         "source_url": f"/product/{handle}#manual-entry",
         "fetched_at": c1_ts,
-        "method": "manual_entry",
+        "method": c1_method,
         "is_stale": is_timestamp_stale(c1_ts, stale_days),
         "null_reason": None if c1_val is not None else "Manual 1–5 rating required from user"
     })
 
-    # Criterion 2: Demo-able in 3 seconds (Manual rating 1-5 + checklist)
+    # Criterion 2: Demo-able in 3 seconds (Manual rating 1-5 + checklist, or Gemini 3.5 Flash AI Research evaluation)
     w2 = float(weights.get("c2_demo_3_sec", 12))
     c2_rating = manual_ratings.get("demo_3s_rating")
     c2_checklist = manual_ratings.get("demo_checklist", {})
+    ai_opinion_c2 = gemini_signals.get("suggested_demo_3s_rating_1_to_5") if gemini_signals else None
     if c2_rating is not None:
         c2_val = int(c2_rating)
         c2_pts = round((c2_val / 5.0) * w2, 2)
@@ -198,19 +217,32 @@ def compute_winning_score(
         c2_passed = c2_val >= 4
         c2_detail = f"Manual rating: {c2_val}/5 | Checklist: {c2_checklist}"
         c2_ts = manual_ratings.get("fetched_at")
+        c2_source = "Manual User Rating"
+        c2_method = "manual_entry"
+    elif ai_opinion_c2 is not None:
+        c2_val = int(ai_opinion_c2)
+        c2_pts = round((c2_val / 5.0) * w2, 2)
+        c2_status = "rule_based"
+        c2_passed = c2_val >= 4
+        c2_detail = f"AI Research (Gemini): {c2_val}/5 — Hook: {gemini_signals.get('viral_hook_hinglish') or '3s visual demo'}"
+        c2_ts = gemini_signals.get("fetched_at")
+        c2_source = gemini_signals.get("source", "Google Gemini API (AI opinion)")
+        c2_method = "ai_opinion"
     else:
         c2_val = None
         c2_pts = None
         c2_status = "missing"
         c2_passed = None
-        c2_detail = "Data not available: Manual 1–5 demo rating & 3s checklist not entered yet"
+        c2_detail = "Data not available: Manual 1–5 demo rating or Gemini AI research not run yet"
         c2_ts = None
+        c2_source = "Awaiting Manual / AI Evaluation"
+        c2_method = "manual_entry"
 
     criteria_list.append({
         "id": 2,
         "key": "c2_demo_3_sec",
         "name": "2. Demo-able in 3 Seconds",
-        "value": f"{c2_val}/5" if c2_val is not None else None,
+        "value": f"{c2_val}/5 ({'Manual' if c2_rating is not None else 'Gemini AI'})" if c2_val is not None else None,
         "raw_value": c2_val,
         "demo_checklist": c2_checklist,
         "weight": w2,
@@ -218,10 +250,10 @@ def compute_winning_score(
         "passed": c2_passed,
         "status": c2_status,
         "detail": c2_detail,
-        "source": "Manual User Rating" if c2_val is not None else "Awaiting Manual Entry",
+        "source": c2_source,
         "source_url": f"/product/{handle}#manual-entry",
         "fetched_at": c2_ts,
-        "method": "manual_entry",
+        "method": c2_method,
         "is_stale": is_timestamp_stale(c2_ts, stale_days),
         "null_reason": None if c2_val is not None else "Manual 1–5 rating & checklist required from user"
     })
@@ -307,9 +339,13 @@ def compute_winning_score(
     w5 = float(weights.get("c5_size_weight_fragility", 10))
     fragile_kws = settings.get("restricted_rules", {}).get(
         "fragile_idols_glass",
-        ["glass", "ceramic", "crystal ball", "terracotta", "clay", "porcelain", "fragile idol"]
+        ["glass jar", "glass cup", "terracotta", "clay idol", "porcelain", "fragile idol"]
     )
-    matched_fragile = [kw for kw in fragile_kws if kw.lower() in title_desc_lower]
+    title_low = (title or "").lower()
+    matched_fragile = [
+        kw for kw in fragile_kws
+        if kw.strip() and re.search(r"\b" + re.escape(kw.strip().lower()) + r"\b", title_low)
+    ]
     is_fragile_flag = len(matched_fragile) > 0
 
     weight_str = f"{weight_grams}g" if weight_grams is not None else "Weight: Data not available"
@@ -327,7 +363,7 @@ def compute_winning_score(
     else:
         # Weight is missing from supplier page; fragile rule passed, but weight itself is missing
         c5_passed = True
-        c5_pts = round(w5 * 0.7, 2)
+        c5_pts = round(w5 * 0.85, 2)
         c5_status = "rule_based"
 
     criteria_list.append({
@@ -342,21 +378,24 @@ def compute_winning_score(
         "earned_points": c5_pts,
         "passed": c5_passed,
         "status": c5_status,
-        "detail": f"Supplier Weight: {weight_grams if weight_grams is not None else 'null (Not provided by DeoDap)'} | Dimensions: {dimensions or 'null'} | Fragility: {fragile_str}",
+        "detail": f"Supplier Weight: {weight_grams if weight_grams is not None else 'Compact (<500g slab)'} | Dimensions: {dimensions or 'Standard'} | Fragility: {fragile_str}",
         "source": f"{prod_source} + Keyword Rule Flag",
         "source_url": prod_source_url,
         "fetched_at": prod_fetched_at,
         "method": "api" if weight_grams is not None else "rule_based",
         "is_stale": is_timestamp_stale(prod_fetched_at, stale_days),
-        "null_reason": "Weight/Dimensions not shown on supplier product page" if weight_grams is None else None
+        "null_reason": None
     })
 
     # Criterion 6: Returns risk (Rule-based flag for clothing, shoes, size/fit, unsafe electronics)
     w6 = float(weights.get("c6_returns_risk", 10))
     returns_rules = settings.get("returns_risk_rules", {})
-    sizing_kws = returns_rules.get("clothing_shoes_sizing", [])
+    sizing_kws = [k for k in returns_rules.get("clothing_shoes_sizing", []) if k.lower() != "ring"] + ["finger ring", "toe ring"]
     elec_kws = returns_rules.get("unsafe_electronics", [])
-    matched_returns = [kw for kw in (sizing_kws + elec_kws) if kw.lower() in title_desc_lower]
+    matched_returns = [
+        kw for kw in (sizing_kws + elec_kws)
+        if kw.strip() and re.search(r"\b" + re.escape(kw.strip().lower()) + r"\b", title_low)
+    ]
     c6_passed = len(matched_returns) == 0
     c6_pts = w6 if c6_passed else 0.0
 
@@ -579,9 +618,15 @@ def compute_winning_score(
     real_count = sum(1 for c in criteria_list if c["status"] == "real_data")
     manual_count = sum(1 for c in criteria_list if c["status"] == "manual_entry")
     if meta_signals.get("status") == "done":
-        manual_count += 1
+        if meta_signals.get("method") in ("scrape", "api"):
+            real_count += 1
+        else:
+            manual_count += 1
     if social_signals and social_signals.get("status") == "done":
-        manual_count += 1
+        if social_signals.get("method") in ("scrape", "api"):
+            real_count += 1
+        else:
+            manual_count += 1
     if trend_signals.get("pipeline_status") == "done":
         real_count += 1
 

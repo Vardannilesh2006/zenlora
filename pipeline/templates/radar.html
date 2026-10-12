@@ -244,11 +244,11 @@
     </div>
 
     <!-- Category Filter Bar (Home Decor, Kitchen, Gadgets, Festive, Gifts) -->
-    <div class="border-b border-borderMain bg-white px-3 sm:px-6 py-2">
-        <div class="max-w-[1500px] mx-auto flex items-center justify-between gap-2 overflow-x-auto no-scrollbar py-0.5">
-            <div class="flex items-center gap-1.5">
+    <div class="border-b border-borderMain bg-white px-3 sm:px-6 py-2.5">
+        <div class="max-w-[1500px] mx-auto flex flex-wrap items-center justify-between gap-2.5">
+            <div class="flex items-center gap-1.5 overflow-x-auto no-scrollbar max-w-full py-0.5">
                 {% for n in niches %}
-                <a href="/radar?niche={{ n }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-transparent hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
+                <a href="/radar?niche={{ n }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap {% if selected_niche == n %}cat-pill-active{% else %}bg-white text-textSecondary border-zinc-200/80 hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
                     {% if n == 'All' %}🌐 All ({{ total_winners }})
                     {% elif n == 'Home Decor' %}🏡 Home Decor (12)
                     {% elif n == 'Kitchen' %}🍳 Kitchen (12)
@@ -260,26 +260,21 @@
                 {% endfor %}
             </div>
 
-            <div class="flex items-center gap-1.5 flex-shrink-0">
+            <div class="flex items-center gap-2 flex-shrink-0">
                 <a 
                     href="/api/radar/smartbiz.csv?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20"
                     title="Download SmartBiz v10 CSV UTF-8 for current category/page (~20 products)"
-                    class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition flex items-center gap-1"
+                    class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition flex items-center gap-1.5 whitespace-nowrap"
                 >
                     <span>📦 SmartBiz Page CSV ({% if selected_niche == 'All' %}Top 20{% else %}{{ selected_niche }} · 20{% endif %})</span>
                 </a>
                 <a 
                     href="/api/radar/smartbiz.csv?mode=mix&batch={{ current_batch }}&count=55"
                     title="Download SmartBiz v10 CSV UTF-8 with 55 mixed winning products across all 5 categories"
-                    class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-zinc-900 text-white border border-zinc-900 hover:bg-zinc-800 transition flex items-center gap-1 shadow-2xs"
+                    class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-zinc-900 text-white border border-zinc-900 hover:bg-zinc-800 transition flex items-center gap-1.5 shadow-2xs whitespace-nowrap"
                 >
                     <span>🚀 SmartBiz Mix 55 CSV</span>
                 </a>
-                {% if hard_failed_count > 0 %}
-                <a href="/radar?niche={{ selected_niche }}{% if current_batch %}&batch={{ current_batch }}{% endif %}&show_hard_failed={{ '0' if show_hard_failed else '1' }}" class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg border {% if show_hard_failed %}bg-red-600 text-white border-red-600{% else %}bg-red-50 text-red-700 border-red-200 hover:bg-red-100{% endif %} transition">
-                    {% if show_hard_failed %}Hide {{ hard_failed_count }} Hard-Failed{% else %}Show {{ hard_failed_count }} Hard-Failed{% endif %}
-                </a>
-                {% endif %}
             </div>
         </div>
     </div>
