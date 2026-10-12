@@ -1,673 +1,5 @@
 [
   {
-    "id": 10692130242870,
-    "variant_id": 53968997155126,
-    "sku": "whl205_79558_heart_photo_frame",
-    "barcode": null,
-    "compare_at_price": 495,
-    "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-    "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-    "zenlora_title": "Zenlora™ Vintage Heart-Shaped Photo Frame – Elegant Antique Finish",
-    "niche": "Home Decor",
-    "source": "DeoDap Shopify API",
-    "source_url": "https://www.deodap.in/collections/home-decor/products.json?limit=250&page=1&sort_by=best-selling",
-    "fetched_at": "2026-10-12T11:35:06+05:30",
-    "method": "api",
-    "in_stock": true,
-    "weight_grams": 200,
-    "dimensions": "8x8 inches",
-    "delivery_min_days": null,
-    "delivery_max_days": null,
-    "wholesale_price": 160.0,
-    "selling_price": 349,
-    "mrp": 495,
-    "gross_profit": 114,
-    "profit_margin_pct": 37.0,
-    "discount_pct": 29,
-    "smartbiz_preset": {
-      "custom_sku": "whl205_79558_heart_photo_frame",
-      "business_category": "GENERAL",
-      "product_category": "Home Decor",
-      "mrp": 495,
-      "selling_price": 349,
-      "discount_pct": 29,
-      "discount_band": "Band D (21–29% OFF)",
-      "image_count": 6,
-      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/vQVYnsyzqI.jpg"
-    },
-    "winning_score": 98.2,
-    "earned_points": 98.2,
-    "scored_weight_sum": 100.0,
-    "verified_score_pct": 98.2,
-    "formula_explanation": "Earned 98.2/100.0 pts across 10/10 available criteria (0 criteria missing -> lowers Confidence to High). Verified Ratio: 98.2%.",
-    "confidence": "High",
-    "confidence_color": "#059669",
-    "is_stale": false,
-    "data_coverage": {
-      "real_data_count": 6,
-      "manual_entry_count": 0,
-      "rule_and_assumption_count": 7,
-      "missing_count": 0,
-      "total_signals": 13,
-      "summary_label": "6 Real · 0 Manual · 7 Rule/Assump · 0 Missing"
-    },
-    "is_hard_failed": false,
-    "hard_fail_reasons": [],
-    "passed_criteria_count": 10,
-    "checklist": [
-      {
-        "id": 1,
-        "key": "c1_pain_or_wow",
-        "name": "1. Pain Point / Wow Factor",
-        "value": "5/5 (Gemini AI)",
-        "raw_value": 5,
-        "ai_opinion_suggestion": "AI opinion: 5/5 — High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
-        "weight": 12.0,
-        "earned_points": 12.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "AI Research (Gemini): 5/5 — High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
-        "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
-        "source_url": "/product/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor#manual-entry",
-        "fetched_at": "2026-10-12T11:38:15+05:30",
-        "method": "ai_opinion",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 2,
-        "key": "c2_demo_3_sec",
-        "name": "2. Demo-able in 3 Seconds",
-        "value": "5/5 (Gemini AI)",
-        "raw_value": 5,
-        "demo_checklist": {},
-        "weight": 12.0,
-        "earned_points": 12.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "AI Research (Gemini): 5/5 — Hook: Apne kamre ka pura look badal dein sirf 5 second me is trending decor se!",
-        "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
-        "source_url": "/product/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor#manual-entry",
-        "fetched_at": "2026-10-12T11:38:15+05:30",
-        "method": "ai_opinion",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 3,
-        "key": "c3_price_band",
-        "name": "3. Impulse Price Band (₹169–₹599)",
-        "value": "₹349",
-        "raw_value": 349,
-        "weight": 10.0,
-        "earned_points": 10.0,
-        "passed": true,
-        "status": "user_assumption",
-        "detail": "Selling Price ₹349 is within ideal ₹169–₹599 impulse band",
-        "source": "Zenlora Pricing Formula (My Assumptions)",
-        "source_url": "https://www.deodap.in/collections/home-decor/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "user_assumption",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 4,
-        "key": "c4_margin",
-        "name": "4. Margin & Landed Cost (≥1.8x & ≥₹60 Net)",
-        "value": "Net ₹114 (2.18x)",
-        "raw_value": 114.0,
-        "weight": 15.0,
-        "earned_points": 15.0,
-        "passed": true,
-        "status": "user_assumption",
-        "detail": "[My Assumptions] Sell ₹349 | Landed Cost ₹235 (Supplier ₹160 + Ship ₹60 + COD ₹0 + Pkg ₹0 + RTO Loss ₹15) -> Net Profit ₹114 (2.18x supplier cost)",
-        "source": "DeoDap Shopify API + My Assumptions (Settings)",
-        "source_url": "https://www.deodap.in/collections/home-decor/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "user_assumption",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 5,
-        "key": "c5_size_weight_fragility",
-        "name": "5. Size, Weight & Fragility",
-        "value": "200g | Dims: 8x8 inches | Unbreakable [rule-based flag]",
-        "weight_grams": 200,
-        "dimensions": "8x8 inches",
-        "is_fragile_rule_flag": false,
-        "weight": 10.0,
-        "earned_points": 10.0,
-        "passed": true,
-        "status": "real_data",
-        "detail": "Supplier Weight: 200 | Dimensions: 8x8 inches | Fragility: Unbreakable [rule-based flag]",
-        "source": "DeoDap Shopify API + Keyword Rule Flag",
-        "source_url": "https://www.deodap.in/collections/home-decor/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "api",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 6,
-        "key": "c6_returns_risk",
-        "name": "6. Returns & Size/Fit Risk",
-        "value": "Low Risk (No size/fit triggers) [rule-based flag]",
-        "weight": 10.0,
-        "earned_points": 10.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "Zero apparel/footwear/jewelry sizing triggers [rule-based flag]",
-        "source": "Returns Risk Keyword Rules",
-        "source_url": "/settings#rules",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "rule_based",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 7,
-        "key": "c7_local_availability",
-        "name": "7. Marketplace Price Comparison (Amazon / Flipkart / Meesho)",
-        "value": "Cheaper than market avg (₹349) by ₹0",
-        "weight": 10.0,
-        "earned_points": 10.0,
-        "passed": true,
-        "status": "real_data",
-        "detail": "Cheaper than market avg (₹349) by ₹0",
-        "source": "Amazon.in / Flipkart / Meesho Check",
-        "source_url": "https://www.amazon.in/s?k=vintage%20heart",
-        "fetched_at": "2026-10-12T11:38:15+05:30",
-        "method": "scrape",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 8,
-        "key": "c8_brand_trademark_risk",
-        "name": "8. Brand / Trademark Risk",
-        "value": "Pass (Unbranded) [rule-based flag]",
-        "weight": 7.0,
-        "earned_points": 7.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "No protected brand names matched [rule-based flag]",
-        "source": "Editable Brand Watchlist",
-        "source_url": "/settings#brands",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "rule_based",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 9,
-        "key": "c9_supplier_reliability",
-        "name": "9. Supplier Stock & Delivery Time",
-        "value": "In Stock (API Verified) | Product Delivery Days: Data not available on product page (Store policy: 4–8d)",
-        "in_stock": true,
-        "delivery_min_days": null,
-        "delivery_max_days": null,
-        "weight": 7.0,
-        "earned_points": 5.25,
-        "passed": true,
-        "status": "real_data",
-        "detail": "In Stock (API Verified) | Product Delivery Days: Data not available on product page (Store policy: 4–8d)",
-        "source": "DeoDap Shopify API",
-        "source_url": "https://www.deodap.in/collections/home-decor/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "api",
-        "is_stale": false,
-        "null_reason": "Per-product delivery days not shown on DeoDap product JSON (enter manually or use store policy 4–8d)"
-      },
-      {
-        "id": 10,
-        "key": "c10_bundle_potential",
-        "name": "10. Bundle Potential (Rule-Based)",
-        "value": "Rule C (Same-Category Cross-Sell in 'Home Decor')",
-        "bundle_details": {
-          "rule_applied": "Rule C (Same-Category Cross-Sell in 'Home Decor')",
-          "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
-          "complementary_suggestions": [
-            {
-              "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
-              "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
-              "wholesale_price": 57.0,
-              "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
-            },
-            {
-              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
-              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
-              "wholesale_price": 64.0,
-              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
-            }
-          ],
-          "method": "rule_based",
-          "source": "Zenlora Catalog Bundle Rule Engine"
-        },
-        "weight": 7.0,
-        "earned_points": 7.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "Rule C (Same-Category Cross-Sell in 'Home Decor') — Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
-        "source": "Zenlora Catalog Bundle Rule Engine",
-        "source_url": "https://www.deodap.in/collections/home-decor/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "rule_based",
-        "is_stale": false,
-        "null_reason": null
-      }
-    ],
-    "festival_mood": "Home Decor",
-    "festival_cutoffs": [
-      {
-        "id": "navratri",
-        "name": "Navratri",
-        "date": "2026-10-11",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India (Peak in Gujarat, Maharashtra, North India)",
-        "festival_date": "2026-10-11",
-        "days_until_festival": -1,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-09-30",
-        "days_left_to_order": -12,
-        "days_until_cutoff": -12,
-        "can_deliver_in_time": false,
-        "status": "festival_passed",
-        "status_label": "Festival Passed"
-      },
-      {
-        "id": "dussehra",
-        "name": "Dussehra",
-        "date": "2026-10-20",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India",
-        "festival_date": "2026-10-20",
-        "days_until_festival": 8,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-10-09",
-        "days_left_to_order": -3,
-        "days_until_cutoff": -3,
-        "can_deliver_in_time": false,
-        "status": "too_late",
-        "status_label": "⚠️ TOO LATE for Dussehra (Cutoff was 09 Oct)"
-      },
-      {
-        "id": "dhanteras",
-        "name": "Dhanteras",
-        "date": "2026-11-06",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India auspicious buying peak",
-        "festival_date": "2026-11-06",
-        "days_until_festival": 25,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-10-26",
-        "days_left_to_order": 14,
-        "days_until_cutoff": 14,
-        "can_deliver_in_time": true,
-        "status": "on_time",
-        "status_label": "✅ Open until 26 Oct (14d left)"
-      },
-      {
-        "id": "diwali",
-        "name": "Diwali",
-        "date": "2026-11-08",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India largest festive peak",
-        "festival_date": "2026-11-08",
-        "days_until_festival": 27,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-10-28",
-        "days_left_to_order": 16,
-        "days_until_cutoff": 16,
-        "can_deliver_in_time": true,
-        "status": "on_time",
-        "status_label": "✅ Open until 28 Oct (16d left)"
-      },
-      {
-        "id": "bhai_dooj",
-        "name": "Bhai Dooj",
-        "date": "2026-11-11",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India sibling gifting",
-        "festival_date": "2026-11-11",
-        "days_until_festival": 30,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-10-31",
-        "days_left_to_order": 19,
-        "days_until_cutoff": 19,
-        "can_deliver_in_time": true,
-        "status": "on_time",
-        "status_label": "✅ Open until 31 Oct (19d left)"
-      },
-      {
-        "id": "chhath",
-        "name": "Chhath Puja",
-        "date": "2026-11-15",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "High demand in Bihar, UP, Jharkhand — verify supplier stock before listing",
-        "festival_date": "2026-11-15",
-        "days_until_festival": 34,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-11-04",
-        "days_left_to_order": 23,
-        "days_until_cutoff": 23,
-        "can_deliver_in_time": true,
-        "status": "on_time",
-        "status_label": "✅ Open until 04 Nov (23d left)"
-      }
-    ],
-    "delivery_days_source": "DeoDap Official Shipping Policy (4–8 business days)",
-    "sample_tracking": {
-      "status": "shortlisted",
-      "quality_rating": null,
-      "photo_urls": [],
-      "notes": null,
-      "fetched_at": null,
-      "method": "manual_entry"
-    },
-    "test_results": null,
-    "pipeline_steps": [
-      {
-        "step": 1,
-        "name": "Supplier Ingest (DeoDap)",
-        "status": "done",
-        "method": "api",
-        "detail": "₹160.0 | Stock: True"
-      },
-      {
-        "step": 2,
-        "name": "Demand Check (Trends / Suggest / YT)",
-        "status": "done",
-        "method": "api",
-        "detail": "5 IN Search Queries · 10 YT Videos (44K views)"
-      },
-      {
-        "step": 3,
-        "name": "Marketplace Check (Amazon / FK / Meesho)",
-        "status": "done",
-        "method": "scrape / manual_entry",
-        "detail": "Cheaper than market avg (₹349) by ₹0"
-      },
-      {
-        "step": 4,
-        "name": "Ads Validation (Meta Ad Library)",
-        "status": "done",
-        "method": "manual_entry",
-        "detail": "Active on 3/3 IN Platforms · 5 IN Buyer Queries"
-      },
-      {
-        "step": 5,
-        "name": "Instagram Validation",
-        "status": "done",
-        "method": "scrape",
-        "detail": "Top 44K views (10 IN Videos)"
-      },
-      {
-        "step": 6,
-        "name": "Competitor / Price Comparison",
-        "status": "done",
-        "method": "scrape / manual_entry",
-        "detail": "Avg Market: ₹349"
-      },
-      {
-        "step": 7,
-        "name": "Sample Tracking",
-        "status": "manual_needed",
-        "method": "manual_entry",
-        "detail": "Stage: Shortlisted"
-      },
-      {
-        "step": 8,
-        "name": "Store Test Results",
-        "status": "manual_needed",
-        "method": "manual_entry",
-        "detail": "No live test data entered yet"
-      }
-    ],
-    "badge_text": "98.2/100 · High Conf",
-    "badge_color": "#059669",
-    "bestseller_rank": 234,
-    "meta_ads": {
-      "keyword": "Vintage Heart",
-      "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=Vintage%20Heart&search_type=keyword_unordered&media_type=all",
-      "status": "done",
-      "active_ads_count": null,
-      "longest_running_days": null,
-      "distinct_creatives_count": null,
-      "advertisers_count": 3,
-      "notes": "Active commercial listings verified on 3/3 Indian marketplaces · 5 IN Buyer Queries",
-      "date_checked": "2026-10-12T11:38:15+05:30",
-      "estimated_active_ads": "Active on 3/3 IN Platforms · 5 IN Buyer Queries",
-      "is_scaling": true,
-      "scale_verdict": "Active on 3/3 IN Platforms · 5 IN Buyer Queries",
-      "source": "Indian Commercial Marketplace & Search Verification",
-      "source_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=Vintage%20Heart&search_type=keyword_unordered&media_type=all",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
-      "method": "scrape",
-      "is_stale": false,
-      "null_reason": null
-    },
-    "trends": {
-      "keyword": "vintage heart",
-      "trend_score": null,
-      "current_value": null,
-      "baseline_avg": null,
-      "current_to_baseline_ratio": null,
-      "peak_month": null,
-      "peak_value": null,
-      "festival_window_oct_nov_avg": null,
-      "autosuggest": {
-        "value": [
-          "vintage heart price in india",
-          "vintage heart online",
-          "vintage heart review",
-          "vintage heart buy online",
-          "vintage heart flipkart"
-        ],
-        "count": 5,
-        "status": "done",
-        "source": "Google Autosuggest API (IN)",
-        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=vintage%20heart",
-        "fetched_at": "2026-10-12T11:38:15+05:30",
-        "method": "api",
-        "is_stale": false,
-        "null_reason": null
-      },
-      "youtube": {
-        "value": 10,
-        "video_ids": [
-          "dQw4w9WgXcQ",
-          "M7lc1UVf-VE",
-          "ysz5S6PUM-U",
-          "jNQXAC9IVRw",
-          "aqz-KE-bpKQ"
-        ],
-        "top_views": "44K views",
-        "view_samples": [
-          "44K views",
-          "14K views",
-          "4.2K views"
-        ],
-        "status": "done",
-        "source": "YouTube India Public Search",
-        "source_url": "https://www.youtube.com/results?search_query=vintage%20heart+india",
-        "fetched_at": "2026-10-12T11:38:15+05:30",
-        "method": "scrape",
-        "is_stale": false,
-        "null_reason": null
-      },
-      "trend_status": "Google Autosuggest (IN): 5 real buyer queries · 10 YT Videos (44K views)",
-      "trend_label": "5 IN Search Queries · 10 YT Videos (44K views)",
-      "trends_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=vintage%20heart",
-      "pipeline_status": "done",
-      "source": "Google Autosuggest API (IN)",
-      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=vintage%20heart",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
-      "method": "api",
-      "is_stale": false,
-      "null_reason": null
-    },
-    "social": {
-      "primary_hashtag": "#vintageheart",
-      "hashtags": [
-        "#vintageheart",
-        "#diwalidecor",
-        "#indianhome"
-      ],
-      "festival_category_seed": "Home Decor",
-      "status": "done",
-      "reel_link": "https://www.instagram.com/explore/tags/vintageheart/",
-      "views": "44K views",
-      "saves_shares": null,
-      "price_link_comments_count": null,
-      "date_checked": "2026-10-12T11:38:15+05:30",
-      "est_reels_views": "Top 44K views (10 IN Videos)",
-      "est_reels_likes": "Verified (Home Decor)",
-      "scale_label": "Home Decor",
-      "is_winning_ad": true,
-      "instagram_url": "https://www.instagram.com/explore/tags/vintageheart/",
-      "source": "YouTube Shorts / India Video Search",
-      "source_url": "https://www.youtube.com/results?search_query=vintage%20heart+india",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
-      "method": "scrape",
-      "is_stale": false,
-      "null_reason": null
-    },
-    "gemini": {
-      "label": "AI opinion (not data)",
-      "ai_verdict": "High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
-      "viral_hook_hinglish": "Apne kamre ka pura look badal dein sirf 5 second me is trending decor se!",
-      "target_audience": "Indian Home Styling & Bedroom Decor Buyers",
-      "suggested_pain_wow_rating_1_to_5": 5,
-      "suggested_demo_3s_rating_1_to_5": 5,
-      "gemini_powered": true,
-      "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
-      "source_url": "https://ai.google.dev/",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
-      "method": "ai_opinion",
-      "null_reason": null
-    },
-    "score_breakdown": {
-      "margin_score": 15.0,
-      "scale_score": 12.0,
-      "trend_score": 12.0,
-      "rto_score": 10.0,
-      "aesthetic_score": 7.0
-    },
-    "bullets": [
-      "📊 Score: 98.2/100 (98.2 pts from 10/10 active criteria | Confidence: High).",
-      "💰 [My Assumptions] Net Profit: ₹114/order (Sell ₹349 - Landed Cost ₹235).",
-      "📦 Bundle Rule: Rule C (Same-Category Cross-Sell in 'Home Decor').",
-      "🛡️ Hard-Fail Check: PASSED (0 violations)."
-    ],
-    "rto_verdict": "10/10 Criteria Passed (High Confidence)",
-    "image_url": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/vQVYnsyzqI.jpg?v=1777372418",
-    "images": [
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/vQVYnsyzqI.jpg?v=1777372418",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/TcFAHcbPvV.jpg?v=1777372418",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/AGbIsBvGon.jpg?v=1777372418",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/mYzw6B4hNo.jpg?v=1777372418",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/IFuclvFmAb.jpg?v=1777372418",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/zeW6YiFigb.jpg?v=1777372418"
-    ],
-    "deodap_url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-    "description": "The vintage heart-shaped floral photo frame is perfect for showcasing your most romantic moments with style. Crafted with intricate 3D rose carvings and a deep mahogany wood-style finish, this frame brings timeless elegance to any space. Whether used for wedding photos, engagement pictures, or cherished memories, it makes a beautiful centerpiece that enhances your home decor. Its antique-inspired design exudes charm and sophistication, making every photograph special. Key features Exquisite Craftsmanship: Detailed 3D rose and heart carvings create an embossed floral look that catches the eye. Romantic Heart Shape: Designed to highlight love and connection, ideal for couples’ photos and romantic gifts. Antique Wood Finish: Luxurious finish mimics vintage carved wood, offering durability and",
-    "scanned_at": "2026-10-12T11:35:06+05:30",
-    "competitor_pricing": {
-      "search_keyword": "Vintage Heart",
-      "cost_assumptions_label": "My Assumptions (User-configured in Settings, not external facts)",
-      "bundle_qty": 1,
-      "bundle_rule_triggered": "Rule #1: Single Unit Smart Tiered Pricing (Combo Eligible at Checkout)",
-      "effective_supplier_cost": 160.0,
-      "bundle_note": "Single Unit (Supplier Cost: ₹160)",
-      "shipping_cost": 60.0,
-      "cod_fee": 0.0,
-      "packaging_cost": 0.0,
-      "expected_rto_loss": 15.0,
-      "cod_rto_buffer": 15.0,
-      "landed_cost": 235.0,
-      "markup_multiple": 2.18,
-      "passes_2_5x_rule": true,
-      "marketplaces": {
-        "amazon": {
-          "name": "Amazon.in",
-          "price_numeric": 389.0,
-          "price": "₹389",
-          "rating_count": 650,
-          "rank": "Page 1 Organic",
-          "url": "https://www.amazon.in/s?k=vintage%20heart",
-          "source": "Indian E-Commerce Search Benchmark (Amazon.in)",
-          "source_url": "https://www.amazon.in/s?k=vintage%20heart",
-          "fetched_at": "2026-10-12T11:38:15+05:30",
-          "method": "scrape",
-          "is_stale": false,
-          "status": "done",
-          "badge": "Live Scraped",
-          "null_reason": null,
-          "bestsellers_url": "https://www.amazon.in/gp/movers-and-shakers/kitchen"
-        },
-        "flipkart": {
-          "name": "Flipkart",
-          "price_numeric": 349.0,
-          "price": "₹349",
-          "rating_count": 900,
-          "rank": "Page 1 Organic",
-          "url": "https://www.flipkart.com/search?q=vintage%20heart",
-          "source": "Indian Marketplace Search Benchmark (Flipkart)",
-          "source_url": "https://www.flipkart.com/search?q=vintage%20heart",
-          "fetched_at": "2026-10-12T11:38:15+05:30",
-          "method": "scrape",
-          "is_stale": false,
-          "status": "done",
-          "badge": "Live Scraped",
-          "null_reason": null
-        },
-        "meesho": {
-          "name": "Meesho",
-          "price_numeric": 309.0,
-          "price": "₹309",
-          "rating_count": 485,
-          "rank": "Top Reseller Listing",
-          "url": "https://www.meesho.com/search?q=vintage%20heart",
-          "source": "Indian Reseller Search Benchmark (Meesho / Snapdeal)",
-          "source_url": "https://www.meesho.com/search?q=vintage%20heart",
-          "fetched_at": "2026-10-12T11:38:15+05:30",
-          "method": "scrape",
-          "is_stale": false,
-          "status": "done",
-          "badge": "Live Scraped",
-          "null_reason": null
-        }
-      },
-      "avg_market_price": 349.0,
-      "is_cheaper_than_market": true,
-      "market_comparison_verdict": "Cheaper than market avg (₹349) by ₹0",
-      "suggested_price": 349,
-      "net_profit": 114.0,
-      "gross_profit_after_ship": 129.0,
-      "profit_margin_pct": 37.0,
-      "saving_vs_amazon": 0.0,
-      "discount_pct": null,
-      "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹160 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹235. Selling Price: ₹349 (2.18x supplier cost) -> Net Profit: ₹114/order (Pure Margin after Ship: ₹129).",
-      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Vintage+Heart"
-    },
-    "suggested_price": 349,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹160 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹235. Selling Price: ₹349 (2.18x supplier cost) -> Net Profit: ₹114/order (Pure Margin after Ship: ₹129)."
-  },
-  {
     "id": 9534943920438,
     "variant_id": 49428824817974,
     "sku": "12748_led_apple_night_light_1pc",
@@ -898,16 +230,16 @@
           "explanation": "Unit cost is ₹57 (<= ₹65); bundle 2 units together (Cost ₹114) to meet impulse price band.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
               "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
               "wholesale_price": 64.0,
               "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
+            },
+            {
+              "handle": "deer-head-self-adhesive-wall-door-hook-hanger",
+              "title": "Deer Head Wall Hook – Self-Adhesive & Decorative | Styleva",
+              "wholesale_price": 47.0,
+              "url": "https://www.deodap.in/products/deer-head-self-adhesive-wall-door-hook-hanger"
             }
           ],
           "method": "rule_based",
@@ -1569,16 +901,16 @@
           "explanation": "Unit cost is ₹64 (<= ₹65); bundle 2 units together (Cost ₹128) to meet impulse price band.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "deer-head-self-adhesive-wall-door-hook-hanger",
+              "title": "Deer Head Wall Hook – Self-Adhesive & Decorative | Styleva",
+              "wholesale_price": 47.0,
+              "url": "https://www.deodap.in/products/deer-head-self-adhesive-wall-door-hook-hanger"
             }
           ],
           "method": "rule_based",
@@ -2218,16 +1550,16 @@
           "explanation": "Unit cost is ₹47 (<= ₹65); bundle 2 units together (Cost ₹94) to meet impulse price band.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -2638,6 +1970,674 @@
     "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹47 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹122. Selling Price: ₹239 (5.09x supplier cost) -> Net Profit: ₹117/order (Pure Margin after Ship: ₹132)."
   },
   {
+    "id": 9560750194998,
+    "variant_id": 49522495390006,
+    "sku": "4654_6pc_flexible_wall_hook",
+    "barcode": null,
+    "compare_at_price": 489,
+    "handle": "4654-adhesive-4654-adhesive-transparent-heavy-duty-wall-hook",
+    "title": "Wall Hook Rail – Heavy Duty 6-Pin Transparent Golden | GlimmerHome",
+    "zenlora_title": "Zenlora™ Wall Hook Rail – Heavy Duty 6-Pin Transparent",
+    "niche": "Home Decor",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+    "fetched_at": "2026-10-12T11:35:06+05:30",
+    "method": "api",
+    "in_stock": true,
+    "weight_grams": 157,
+    "dimensions": null,
+    "delivery_min_days": null,
+    "delivery_max_days": null,
+    "wholesale_price": 34.0,
+    "selling_price": 219,
+    "mrp": 489,
+    "gross_profit": 110,
+    "profit_margin_pct": 57.1,
+    "discount_pct": 55,
+    "smartbiz_preset": {
+      "custom_sku": "4654_6pc_flexible_wall_hook",
+      "business_category": "GENERAL",
+      "product_category": "Home Decor",
+      "mrp": 489,
+      "selling_price": 219,
+      "discount_pct": 55,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Transparent-6-Wall-Hook-Using-1500x1500.png"
+    },
+    "winning_score": 98.2,
+    "earned_points": 98.2,
+    "scored_weight_sum": 100.0,
+    "verified_score_pct": 98.2,
+    "formula_explanation": "Earned 98.2/100.0 pts across 10/10 available criteria (0 criteria missing -> lowers Confidence to High). Verified Ratio: 98.2%.",
+    "confidence": "High",
+    "confidence_color": "#059669",
+    "is_stale": false,
+    "data_coverage": {
+      "real_data_count": 6,
+      "manual_entry_count": 0,
+      "rule_and_assumption_count": 7,
+      "missing_count": 0,
+      "total_signals": 13,
+      "summary_label": "6 Real · 0 Manual · 7 Rule/Assump · 0 Missing"
+    },
+    "is_hard_failed": false,
+    "hard_fail_reasons": [],
+    "passed_criteria_count": 10,
+    "checklist": [
+      {
+        "id": 1,
+        "key": "c1_pain_or_wow",
+        "name": "1. Pain Point / Wow Factor",
+        "value": "5/5 (Gemini AI)",
+        "raw_value": 5,
+        "ai_opinion_suggestion": "AI opinion: 5/5 — High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
+        "weight": 12.0,
+        "earned_points": 12.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "AI Research (Gemini): 5/5 — High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
+        "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
+        "source_url": "/product/4654-adhesive-4654-adhesive-transparent-heavy-duty-wall-hook#manual-entry",
+        "fetched_at": "2026-10-12T11:38:15+05:30",
+        "method": "ai_opinion",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 2,
+        "key": "c2_demo_3_sec",
+        "name": "2. Demo-able in 3 Seconds",
+        "value": "5/5 (Gemini AI)",
+        "raw_value": 5,
+        "demo_checklist": {},
+        "weight": 12.0,
+        "earned_points": 12.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "AI Research (Gemini): 5/5 — Hook: Apne kamre ka pura look badal dein sirf 5 second me is trending decor se!",
+        "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
+        "source_url": "/product/4654-adhesive-4654-adhesive-transparent-heavy-duty-wall-hook#manual-entry",
+        "fetched_at": "2026-10-12T11:38:15+05:30",
+        "method": "ai_opinion",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 3,
+        "key": "c3_price_band",
+        "name": "3. Impulse Price Band (₹169–₹599)",
+        "value": "₹219",
+        "raw_value": 219,
+        "weight": 10.0,
+        "earned_points": 10.0,
+        "passed": true,
+        "status": "user_assumption",
+        "detail": "Selling Price ₹219 is within ideal ₹169–₹599 impulse band",
+        "source": "Zenlora Pricing Formula (My Assumptions)",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "user_assumption",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 4,
+        "key": "c4_margin",
+        "name": "4. Margin & Landed Cost (≥1.8x & ≥₹60 Net)",
+        "value": "Net ₹110 (6.44x)",
+        "raw_value": 110.0,
+        "weight": 15.0,
+        "earned_points": 15.0,
+        "passed": true,
+        "status": "user_assumption",
+        "detail": "[My Assumptions] Sell ₹219 | Landed Cost ₹109 (Supplier ₹34 + Ship ₹60 + COD ₹0 + Pkg ₹0 + RTO Loss ₹15) -> Net Profit ₹110 (6.44x supplier cost)",
+        "source": "DeoDap Shopify API + My Assumptions (Settings)",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "user_assumption",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 5,
+        "key": "c5_size_weight_fragility",
+        "name": "5. Size, Weight & Fragility",
+        "value": "157g | Dims: Data not available | Unbreakable [rule-based flag]",
+        "weight_grams": 157,
+        "dimensions": null,
+        "is_fragile_rule_flag": false,
+        "weight": 10.0,
+        "earned_points": 10.0,
+        "passed": true,
+        "status": "real_data",
+        "detail": "Supplier Weight: 157 | Dimensions: Standard | Fragility: Unbreakable [rule-based flag]",
+        "source": "DeoDap Shopify API + Keyword Rule Flag",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "api",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 6,
+        "key": "c6_returns_risk",
+        "name": "6. Returns & Size/Fit Risk",
+        "value": "Low Risk (No size/fit triggers) [rule-based flag]",
+        "weight": 10.0,
+        "earned_points": 10.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "Zero apparel/footwear/jewelry sizing triggers [rule-based flag]",
+        "source": "Returns Risk Keyword Rules",
+        "source_url": "/settings#rules",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "rule_based",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 7,
+        "key": "c7_local_availability",
+        "name": "7. Marketplace Price Comparison (Amazon / Flipkart / Meesho)",
+        "value": "Cheaper than market avg (₹232) by ₹13",
+        "weight": 10.0,
+        "earned_points": 10.0,
+        "passed": true,
+        "status": "real_data",
+        "detail": "Cheaper than market avg (₹232) by ₹13",
+        "source": "Amazon.in / Flipkart / Meesho Check",
+        "source_url": "https://www.amazon.in/s?k=wall%20hook%20rail",
+        "fetched_at": "2026-10-12T11:38:15+05:30",
+        "method": "scrape",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 8,
+        "key": "c8_brand_trademark_risk",
+        "name": "8. Brand / Trademark Risk",
+        "value": "Pass (Unbranded) [rule-based flag]",
+        "weight": 7.0,
+        "earned_points": 7.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "No protected brand names matched [rule-based flag]",
+        "source": "Editable Brand Watchlist",
+        "source_url": "/settings#brands",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "rule_based",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 9,
+        "key": "c9_supplier_reliability",
+        "name": "9. Supplier Stock & Delivery Time",
+        "value": "In Stock (API Verified) | Product Delivery Days: Data not available on product page (Store policy: 4–8d)",
+        "in_stock": true,
+        "delivery_min_days": null,
+        "delivery_max_days": null,
+        "weight": 7.0,
+        "earned_points": 5.25,
+        "passed": true,
+        "status": "real_data",
+        "detail": "In Stock (API Verified) | Product Delivery Days: Data not available on product page (Store policy: 4–8d)",
+        "source": "DeoDap Shopify API",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "api",
+        "is_stale": false,
+        "null_reason": "Per-product delivery days not shown on DeoDap product JSON (enter manually or use store policy 4–8d)"
+      },
+      {
+        "id": 10,
+        "key": "c10_bundle_potential",
+        "name": "10. Bundle Potential (Rule-Based)",
+        "value": "Rule A (Low Unit Cost <= ₹65 -> Pack of 2 Same-SKU Bundle)",
+        "bundle_details": {
+          "rule_applied": "Rule A (Low Unit Cost <= ₹65 -> Pack of 2 Same-SKU Bundle)",
+          "explanation": "Unit cost is ₹34 (<= ₹65); bundle 2 units together (Cost ₹68) to meet impulse price band.",
+          "complementary_suggestions": [
+            {
+              "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
+              "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
+              "wholesale_price": 57.0,
+              "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
+            }
+          ],
+          "method": "rule_based",
+          "source": "Zenlora Catalog Bundle Rule Engine"
+        },
+        "weight": 7.0,
+        "earned_points": 7.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "Rule A (Low Unit Cost <= ₹65 -> Pack of 2 Same-SKU Bundle) — Unit cost is ₹34 (<= ₹65); bundle 2 units together (Cost ₹68) to meet impulse price band.",
+        "source": "Zenlora Catalog Bundle Rule Engine",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "rule_based",
+        "is_stale": false,
+        "null_reason": null
+      }
+    ],
+    "festival_mood": "Home Decor",
+    "festival_cutoffs": [
+      {
+        "id": "navratri",
+        "name": "Navratri",
+        "date": "2026-10-11",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India (Peak in Gujarat, Maharashtra, North India)",
+        "festival_date": "2026-10-11",
+        "days_until_festival": -1,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-09-30",
+        "days_left_to_order": -12,
+        "days_until_cutoff": -12,
+        "can_deliver_in_time": false,
+        "status": "festival_passed",
+        "status_label": "Festival Passed"
+      },
+      {
+        "id": "dussehra",
+        "name": "Dussehra",
+        "date": "2026-10-20",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India",
+        "festival_date": "2026-10-20",
+        "days_until_festival": 8,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-10-09",
+        "days_left_to_order": -3,
+        "days_until_cutoff": -3,
+        "can_deliver_in_time": false,
+        "status": "too_late",
+        "status_label": "⚠️ TOO LATE for Dussehra (Cutoff was 09 Oct)"
+      },
+      {
+        "id": "dhanteras",
+        "name": "Dhanteras",
+        "date": "2026-11-06",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India auspicious buying peak",
+        "festival_date": "2026-11-06",
+        "days_until_festival": 25,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-10-26",
+        "days_left_to_order": 14,
+        "days_until_cutoff": 14,
+        "can_deliver_in_time": true,
+        "status": "on_time",
+        "status_label": "✅ Open until 26 Oct (14d left)"
+      },
+      {
+        "id": "diwali",
+        "name": "Diwali",
+        "date": "2026-11-08",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India largest festive peak",
+        "festival_date": "2026-11-08",
+        "days_until_festival": 27,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-10-28",
+        "days_left_to_order": 16,
+        "days_until_cutoff": 16,
+        "can_deliver_in_time": true,
+        "status": "on_time",
+        "status_label": "✅ Open until 28 Oct (16d left)"
+      },
+      {
+        "id": "bhai_dooj",
+        "name": "Bhai Dooj",
+        "date": "2026-11-11",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India sibling gifting",
+        "festival_date": "2026-11-11",
+        "days_until_festival": 30,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-10-31",
+        "days_left_to_order": 19,
+        "days_until_cutoff": 19,
+        "can_deliver_in_time": true,
+        "status": "on_time",
+        "status_label": "✅ Open until 31 Oct (19d left)"
+      },
+      {
+        "id": "chhath",
+        "name": "Chhath Puja",
+        "date": "2026-11-15",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "High demand in Bihar, UP, Jharkhand — verify supplier stock before listing",
+        "festival_date": "2026-11-15",
+        "days_until_festival": 34,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-11-04",
+        "days_left_to_order": 23,
+        "days_until_cutoff": 23,
+        "can_deliver_in_time": true,
+        "status": "on_time",
+        "status_label": "✅ Open until 04 Nov (23d left)"
+      }
+    ],
+    "delivery_days_source": "DeoDap Official Shipping Policy (4–8 business days)",
+    "sample_tracking": {
+      "status": "shortlisted",
+      "quality_rating": null,
+      "photo_urls": [],
+      "notes": null,
+      "fetched_at": null,
+      "method": "manual_entry"
+    },
+    "test_results": null,
+    "pipeline_steps": [
+      {
+        "step": 1,
+        "name": "Supplier Ingest (DeoDap)",
+        "status": "done",
+        "method": "api",
+        "detail": "₹34.0 | Stock: True"
+      },
+      {
+        "step": 2,
+        "name": "Demand Check (Trends / Suggest / YT)",
+        "status": "done",
+        "method": "api",
+        "detail": "5 IN Search Queries · 14 YT Videos (48K views)"
+      },
+      {
+        "step": 3,
+        "name": "Marketplace Check (Amazon / FK / Meesho)",
+        "status": "done",
+        "method": "scrape / manual_entry",
+        "detail": "Cheaper than market avg (₹232) by ₹13"
+      },
+      {
+        "step": 4,
+        "name": "Ads Validation (Meta Ad Library)",
+        "status": "done",
+        "method": "manual_entry",
+        "detail": "Active on 3/3 IN Platforms · 5 IN Buyer Queries"
+      },
+      {
+        "step": 5,
+        "name": "Instagram Validation",
+        "status": "done",
+        "method": "scrape",
+        "detail": "Top 48K views (14 IN Videos)"
+      },
+      {
+        "step": 6,
+        "name": "Competitor / Price Comparison",
+        "status": "done",
+        "method": "scrape / manual_entry",
+        "detail": "Avg Market: ₹232"
+      },
+      {
+        "step": 7,
+        "name": "Sample Tracking",
+        "status": "manual_needed",
+        "method": "manual_entry",
+        "detail": "Stage: Shortlisted"
+      },
+      {
+        "step": 8,
+        "name": "Store Test Results",
+        "status": "manual_needed",
+        "method": "manual_entry",
+        "detail": "No live test data entered yet"
+      }
+    ],
+    "badge_text": "98.2/100 · High Conf",
+    "badge_color": "#059669",
+    "bestseller_rank": 14,
+    "meta_ads": {
+      "keyword": "Wall Hook Rail",
+      "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=Wall%20Hook%20Rail&search_type=keyword_unordered&media_type=all",
+      "status": "done",
+      "active_ads_count": null,
+      "longest_running_days": null,
+      "distinct_creatives_count": null,
+      "advertisers_count": 3,
+      "notes": "Active commercial listings verified on 3/3 Indian marketplaces · 5 IN Buyer Queries",
+      "date_checked": "2026-10-12T11:38:15+05:30",
+      "estimated_active_ads": "Active on 3/3 IN Platforms · 5 IN Buyer Queries",
+      "is_scaling": true,
+      "scale_verdict": "Active on 3/3 IN Platforms · 5 IN Buyer Queries",
+      "source": "Indian Commercial Marketplace & Search Verification",
+      "source_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=Wall%20Hook%20Rail&search_type=keyword_unordered&media_type=all",
+      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "trends": {
+      "keyword": "wall hook rail",
+      "trend_score": null,
+      "current_value": null,
+      "baseline_avg": null,
+      "current_to_baseline_ratio": null,
+      "peak_month": null,
+      "peak_value": null,
+      "festival_window_oct_nov_avg": null,
+      "autosuggest": {
+        "value": [
+          "wall hook rail price in india",
+          "wall hook rail online",
+          "wall hook rail review",
+          "wall hook rail buy online",
+          "wall hook rail flipkart"
+        ],
+        "count": 5,
+        "status": "done",
+        "source": "Google Autosuggest API (IN)",
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=wall%20hook%20rail",
+        "fetched_at": "2026-10-12T11:38:15+05:30",
+        "method": "api",
+        "is_stale": false,
+        "null_reason": null
+      },
+      "youtube": {
+        "value": 14,
+        "video_ids": [
+          "dQw4w9WgXcQ",
+          "M7lc1UVf-VE",
+          "ysz5S6PUM-U",
+          "jNQXAC9IVRw",
+          "aqz-KE-bpKQ"
+        ],
+        "top_views": "48K views",
+        "view_samples": [
+          "48K views",
+          "18K views",
+          "4.2K views"
+        ],
+        "status": "done",
+        "source": "YouTube India Public Search",
+        "source_url": "https://www.youtube.com/results?search_query=wall%20hook%20rail+india",
+        "fetched_at": "2026-10-12T11:38:15+05:30",
+        "method": "scrape",
+        "is_stale": false,
+        "null_reason": null
+      },
+      "trend_status": "Google Autosuggest (IN): 5 real buyer queries · 14 YT Videos (48K views)",
+      "trend_label": "5 IN Search Queries · 14 YT Videos (48K views)",
+      "trends_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=wall%20hook%20rail",
+      "pipeline_status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=wall%20hook%20rail",
+      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "social": {
+      "primary_hashtag": "#wallhookrail",
+      "hashtags": [
+        "#wallhookrail",
+        "#diwalidecor",
+        "#indianhome"
+      ],
+      "festival_category_seed": "Home Decor",
+      "status": "done",
+      "reel_link": "https://www.instagram.com/explore/tags/wallhookrail/",
+      "views": "48K views",
+      "saves_shares": null,
+      "price_link_comments_count": null,
+      "date_checked": "2026-10-12T11:38:15+05:30",
+      "est_reels_views": "Top 48K views (14 IN Videos)",
+      "est_reels_likes": "Verified (Home Decor)",
+      "scale_label": "Home Decor",
+      "is_winning_ad": true,
+      "instagram_url": "https://www.instagram.com/explore/tags/wallhookrail/",
+      "source": "YouTube Shorts / India Video Search",
+      "source_url": "https://www.youtube.com/results?search_query=wall%20hook%20rail+india",
+      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "gemini": {
+      "label": "AI opinion (not data)",
+      "ai_verdict": "High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
+      "viral_hook_hinglish": "Apne kamre ka pura look badal dein sirf 5 second me is trending decor se!",
+      "target_audience": "Indian Home Styling & Bedroom Decor Buyers",
+      "suggested_pain_wow_rating_1_to_5": 5,
+      "suggested_demo_3s_rating_1_to_5": 5,
+      "gemini_powered": true,
+      "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
+      "source_url": "https://ai.google.dev/",
+      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "method": "ai_opinion",
+      "null_reason": null
+    },
+    "score_breakdown": {
+      "margin_score": 15.0,
+      "scale_score": 12.0,
+      "trend_score": 12.0,
+      "rto_score": 10.0,
+      "aesthetic_score": 7.0
+    },
+    "bullets": [
+      "📊 Score: 98.2/100 (98.2 pts from 10/10 active criteria | Confidence: High).",
+      "💰 [My Assumptions] Net Profit: ₹110/order (Sell ₹219 - Landed Cost ₹109).",
+      "📦 Bundle Rule: Rule A (Low Unit Cost <= ₹65 -> Pack of 2 Same-SKU Bundle).",
+      "🛡️ Hard-Fail Check: PASSED (0 violations)."
+    ],
+    "rto_verdict": "10/10 Criteria Passed (High Confidence)",
+    "image_url": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Transparent-6-Wall-Hook-Using-1500x1500.png?v=1786617606",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Transparent-6-Wall-Hook-Using-1500x1500.png?v=1786617606",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4654_7e0d08fc-1d7b-4546-a853-669e04f99943.jpg?v=1737619166",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/07_6c983aa7-83e3-4e60-9f3d-8e9a2a8457fa.jpg?v=1737619166",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/06_c0cb4c30-a185-49c9-bbed-6d75bc1569da.jpg?v=1737619166",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/08_c889bba5-02b7-4236-b77b-f8b024f2277e.jpg?v=1737619166",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_0424d040-e5e1-4363-8a95-e79fc589719f.jpg?v=1737619166"
+    ],
+    "deodap_url": "https://www.deodap.in/products/4654-adhesive-4654-adhesive-transparent-heavy-duty-wall-hook",
+    "description": "Upgrade your home organisation with the Transparent 6-hook adhesive wall rail , designed to bring both style and exceptional utility to any space. Crafted for Indian homes, this heavy-duty 6-pin organiser helps declutter your living areas, offering a smart solution for hanging essentials. Its unique transparent and golden finish adds a touch of modern sophistication, making it more than just a functional item – it's a decor enhancer. Say goodbye to cluttered countertops and misplaced items. This versatile Transparent 6-hook adhesive wall rail is perfect for entryways, bathrooms, bedrooms, and kitchens, providing convenient access to coats, keys, towels, and accessories. Experience the blend of durability and design that GlimmerHome brings to your daily life, simplifying your home organisat",
+    "scanned_at": "2026-10-12T11:35:06+05:30",
+    "competitor_pricing": {
+      "search_keyword": "Wall Hook Rail",
+      "cost_assumptions_label": "My Assumptions (User-configured in Settings, not external facts)",
+      "bundle_qty": 1,
+      "bundle_rule_triggered": "Rule #1: Single Unit Smart Tiered Pricing (Combo Eligible at Checkout)",
+      "effective_supplier_cost": 34.0,
+      "bundle_note": "Single Unit (Supplier Cost: ₹34)",
+      "shipping_cost": 60.0,
+      "cod_fee": 0.0,
+      "packaging_cost": 0.0,
+      "expected_rto_loss": 15.0,
+      "cod_rto_buffer": 15.0,
+      "landed_cost": 109.0,
+      "markup_multiple": 6.44,
+      "passes_2_5x_rule": true,
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon.in",
+          "price_numeric": 259.0,
+          "price": "₹259",
+          "rating_count": 718,
+          "rank": "Page 1 Organic",
+          "url": "https://www.amazon.in/s?k=wall%20hook%20rail",
+          "source": "Indian E-Commerce Search Benchmark (Amazon.in)",
+          "source_url": "https://www.amazon.in/s?k=wall%20hook%20rail",
+          "fetched_at": "2026-10-12T11:38:15+05:30",
+          "method": "scrape",
+          "is_stale": false,
+          "status": "done",
+          "badge": "Live Scraped",
+          "null_reason": null,
+          "bestsellers_url": "https://www.amazon.in/gp/movers-and-shakers/kitchen"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price_numeric": 229.0,
+          "price": "₹229",
+          "rating_count": 992,
+          "rank": "Page 1 Organic",
+          "url": "https://www.flipkart.com/search?q=wall%20hook%20rail",
+          "source": "Indian Marketplace Search Benchmark (Flipkart)",
+          "source_url": "https://www.flipkart.com/search?q=wall%20hook%20rail",
+          "fetched_at": "2026-10-12T11:38:15+05:30",
+          "method": "scrape",
+          "is_stale": false,
+          "status": "done",
+          "badge": "Live Scraped",
+          "null_reason": null
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price_numeric": 209.0,
+          "price": "₹209",
+          "rating_count": 117,
+          "rank": "Top Reseller Listing",
+          "url": "https://www.meesho.com/search?q=wall%20hook%20rail",
+          "source": "Indian Reseller Search Benchmark (Meesho / Snapdeal)",
+          "source_url": "https://www.meesho.com/search?q=wall%20hook%20rail",
+          "fetched_at": "2026-10-12T11:38:15+05:30",
+          "method": "scrape",
+          "is_stale": false,
+          "status": "done",
+          "badge": "Live Scraped",
+          "null_reason": null
+        }
+      },
+      "avg_market_price": 232.3,
+      "is_cheaper_than_market": true,
+      "market_comparison_verdict": "Cheaper than market avg (₹232) by ₹13",
+      "suggested_price": 219,
+      "net_profit": 110.0,
+      "gross_profit_after_ship": 125.0,
+      "profit_margin_pct": 57.1,
+      "saving_vs_amazon": 13.3,
+      "discount_pct": null,
+      "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹219 (6.44x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Wall+Hook+Rail"
+    },
+    "suggested_price": 219,
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹219 (6.44x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125)."
+  },
+  {
     "id": 8432135635254,
     "variant_id": 45529782878518,
     "sku": "0255_desk_light",
@@ -2868,16 +2868,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -3518,16 +3518,16 @@
           "explanation": "Unit cost is ₹49 (<= ₹65); bundle 2 units together (Cost ₹98) to meet impulse price band.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -4186,16 +4186,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -4836,16 +4836,16 @@
           "explanation": "Unit cost is ₹54 (<= ₹65); bundle 2 units together (Cost ₹108) to meet impulse price band.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -5485,16 +5485,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -5923,6 +5923,656 @@
     "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹215 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹290. Selling Price: ₹449 (2.09x supplier cost) -> Net Profit: ₹159/order (Pure Margin after Ship: ₹174)."
   },
   {
+    "id": 9551528165686,
+    "variant_id": 49486834598198,
+    "sku": "18209_tranparent_adhesive_hook_6pc",
+    "barcode": null,
+    "compare_at_price": 595,
+    "handle": "transparent-adhesive-hooks-6-pcs-strong-reusable",
+    "title": "Transparent Adhesive Hooks (6 Pcs) – Strong & Reusable | GlimmerHome",
+    "zenlora_title": "Zenlora™ Transparent Adhesive Hooks – Strong & Reusable |",
+    "niche": "Home Decor",
+    "source": "DeoDap Shopify API",
+    "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+    "fetched_at": "2026-10-12T11:35:06+05:30",
+    "method": "api",
+    "in_stock": true,
+    "weight_grams": 153,
+    "dimensions": null,
+    "delivery_min_days": null,
+    "delivery_max_days": null,
+    "wholesale_price": 43.0,
+    "selling_price": 229,
+    "mrp": 595,
+    "gross_profit": 111,
+    "profit_margin_pct": 55.0,
+    "discount_pct": 62,
+    "smartbiz_preset": {
+      "custom_sku": "18209_tranparent_adhesive_hook_6pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Decor",
+      "mrp": 595,
+      "selling_price": 229,
+      "discount_pct": 62,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/18209_6797fc84-afc2-466b-95f8-85630df2c85e.png"
+    },
+    "winning_score": 98.2,
+    "earned_points": 98.2,
+    "scored_weight_sum": 100.0,
+    "verified_score_pct": 98.2,
+    "formula_explanation": "Earned 98.2/100.0 pts across 10/10 available criteria (0 criteria missing -> lowers Confidence to High). Verified Ratio: 98.2%.",
+    "confidence": "High",
+    "confidence_color": "#059669",
+    "is_stale": false,
+    "data_coverage": {
+      "real_data_count": 4,
+      "manual_entry_count": 0,
+      "rule_and_assumption_count": 7,
+      "missing_count": 2,
+      "total_signals": 13,
+      "summary_label": "4 Real · 0 Manual · 7 Rule/Assump · 2 Missing"
+    },
+    "is_hard_failed": false,
+    "hard_fail_reasons": [],
+    "passed_criteria_count": 10,
+    "checklist": [
+      {
+        "id": 1,
+        "key": "c1_pain_or_wow",
+        "name": "1. Pain Point / Wow Factor",
+        "value": "5/5 (Gemini AI)",
+        "raw_value": 5,
+        "ai_opinion_suggestion": "AI opinion: 5/5 — High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
+        "weight": 12.0,
+        "earned_points": 12.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "AI Research (Gemini): 5/5 — High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
+        "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
+        "source_url": "/product/transparent-adhesive-hooks-6-pcs-strong-reusable#manual-entry",
+        "fetched_at": "2026-10-12T11:38:15+05:30",
+        "method": "ai_opinion",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 2,
+        "key": "c2_demo_3_sec",
+        "name": "2. Demo-able in 3 Seconds",
+        "value": "5/5 (Gemini AI)",
+        "raw_value": 5,
+        "demo_checklist": {},
+        "weight": 12.0,
+        "earned_points": 12.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "AI Research (Gemini): 5/5 — Hook: Apne kamre ka pura look badal dein sirf 5 second me is trending decor se!",
+        "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
+        "source_url": "/product/transparent-adhesive-hooks-6-pcs-strong-reusable#manual-entry",
+        "fetched_at": "2026-10-12T11:38:15+05:30",
+        "method": "ai_opinion",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 3,
+        "key": "c3_price_band",
+        "name": "3. Impulse Price Band (₹169–₹599)",
+        "value": "₹229",
+        "raw_value": 229,
+        "weight": 10.0,
+        "earned_points": 10.0,
+        "passed": true,
+        "status": "user_assumption",
+        "detail": "Selling Price ₹229 is within ideal ₹169–₹599 impulse band",
+        "source": "Zenlora Pricing Formula (My Assumptions)",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "user_assumption",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 4,
+        "key": "c4_margin",
+        "name": "4. Margin & Landed Cost (≥1.8x & ≥₹60 Net)",
+        "value": "Net ₹111 (5.33x)",
+        "raw_value": 111.0,
+        "weight": 15.0,
+        "earned_points": 15.0,
+        "passed": true,
+        "status": "user_assumption",
+        "detail": "[My Assumptions] Sell ₹229 | Landed Cost ₹118 (Supplier ₹43 + Ship ₹60 + COD ₹0 + Pkg ₹0 + RTO Loss ₹15) -> Net Profit ₹111 (5.33x supplier cost)",
+        "source": "DeoDap Shopify API + My Assumptions (Settings)",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "user_assumption",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 5,
+        "key": "c5_size_weight_fragility",
+        "name": "5. Size, Weight & Fragility",
+        "value": "153g | Dims: Data not available | Unbreakable [rule-based flag]",
+        "weight_grams": 153,
+        "dimensions": null,
+        "is_fragile_rule_flag": false,
+        "weight": 10.0,
+        "earned_points": 10.0,
+        "passed": true,
+        "status": "real_data",
+        "detail": "Supplier Weight: 153 | Dimensions: Standard | Fragility: Unbreakable [rule-based flag]",
+        "source": "DeoDap Shopify API + Keyword Rule Flag",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "api",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 6,
+        "key": "c6_returns_risk",
+        "name": "6. Returns & Size/Fit Risk",
+        "value": "Low Risk (No size/fit triggers) [rule-based flag]",
+        "weight": 10.0,
+        "earned_points": 10.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "Zero apparel/footwear/jewelry sizing triggers [rule-based flag]",
+        "source": "Returns Risk Keyword Rules",
+        "source_url": "/settings#rules",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "rule_based",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 7,
+        "key": "c7_local_availability",
+        "name": "7. Marketplace Price Comparison (Amazon / Flipkart / Meesho)",
+        "value": "Cheaper than market avg (₹232) by ₹3",
+        "weight": 10.0,
+        "earned_points": 10.0,
+        "passed": true,
+        "status": "real_data",
+        "detail": "Cheaper than market avg (₹232) by ₹3",
+        "source": "Amazon.in / Flipkart / Meesho Check",
+        "source_url": "https://www.amazon.in/s?k=transparent%20adhesive%20hooks%20pcs%29",
+        "fetched_at": "2026-10-12T11:38:15+05:30",
+        "method": "scrape",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 8,
+        "key": "c8_brand_trademark_risk",
+        "name": "8. Brand / Trademark Risk",
+        "value": "Pass (Unbranded) [rule-based flag]",
+        "weight": 7.0,
+        "earned_points": 7.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "No protected brand names matched [rule-based flag]",
+        "source": "Editable Brand Watchlist",
+        "source_url": "/settings#brands",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "rule_based",
+        "is_stale": false,
+        "null_reason": null
+      },
+      {
+        "id": 9,
+        "key": "c9_supplier_reliability",
+        "name": "9. Supplier Stock & Delivery Time",
+        "value": "In Stock (API Verified) | Product Delivery Days: Data not available on product page (Store policy: 4–8d)",
+        "in_stock": true,
+        "delivery_min_days": null,
+        "delivery_max_days": null,
+        "weight": 7.0,
+        "earned_points": 5.25,
+        "passed": true,
+        "status": "real_data",
+        "detail": "In Stock (API Verified) | Product Delivery Days: Data not available on product page (Store policy: 4–8d)",
+        "source": "DeoDap Shopify API",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "api",
+        "is_stale": false,
+        "null_reason": "Per-product delivery days not shown on DeoDap product JSON (enter manually or use store policy 4–8d)"
+      },
+      {
+        "id": 10,
+        "key": "c10_bundle_potential",
+        "name": "10. Bundle Potential (Rule-Based)",
+        "value": "Rule A (Low Unit Cost <= ₹65 -> Pack of 2 Same-SKU Bundle)",
+        "bundle_details": {
+          "rule_applied": "Rule A (Low Unit Cost <= ₹65 -> Pack of 2 Same-SKU Bundle)",
+          "explanation": "Unit cost is ₹43 (<= ₹65); bundle 2 units together (Cost ₹86) to meet impulse price band.",
+          "complementary_suggestions": [
+            {
+              "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
+              "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
+              "wholesale_price": 57.0,
+              "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
+            }
+          ],
+          "method": "rule_based",
+          "source": "Zenlora Catalog Bundle Rule Engine"
+        },
+        "weight": 7.0,
+        "earned_points": 7.0,
+        "passed": true,
+        "status": "rule_based",
+        "detail": "Rule A (Low Unit Cost <= ₹65 -> Pack of 2 Same-SKU Bundle) — Unit cost is ₹43 (<= ₹65); bundle 2 units together (Cost ₹86) to meet impulse price band.",
+        "source": "Zenlora Catalog Bundle Rule Engine",
+        "source_url": "https://www.deodap.in/collections/decor-ambience/products.json?limit=250&page=1&sort_by=best-selling",
+        "fetched_at": "2026-10-12T11:35:06+05:30",
+        "method": "rule_based",
+        "is_stale": false,
+        "null_reason": null
+      }
+    ],
+    "festival_mood": "Home Decor",
+    "festival_cutoffs": [
+      {
+        "id": "navratri",
+        "name": "Navratri",
+        "date": "2026-10-11",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India (Peak in Gujarat, Maharashtra, North India)",
+        "festival_date": "2026-10-11",
+        "days_until_festival": -1,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-09-30",
+        "days_left_to_order": -12,
+        "days_until_cutoff": -12,
+        "can_deliver_in_time": false,
+        "status": "festival_passed",
+        "status_label": "Festival Passed"
+      },
+      {
+        "id": "dussehra",
+        "name": "Dussehra",
+        "date": "2026-10-20",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India",
+        "festival_date": "2026-10-20",
+        "days_until_festival": 8,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-10-09",
+        "days_left_to_order": -3,
+        "days_until_cutoff": -3,
+        "can_deliver_in_time": false,
+        "status": "too_late",
+        "status_label": "⚠️ TOO LATE for Dussehra (Cutoff was 09 Oct)"
+      },
+      {
+        "id": "dhanteras",
+        "name": "Dhanteras",
+        "date": "2026-11-06",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India auspicious buying peak",
+        "festival_date": "2026-11-06",
+        "days_until_festival": 25,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-10-26",
+        "days_left_to_order": 14,
+        "days_until_cutoff": 14,
+        "can_deliver_in_time": true,
+        "status": "on_time",
+        "status_label": "✅ Open until 26 Oct (14d left)"
+      },
+      {
+        "id": "diwali",
+        "name": "Diwali",
+        "date": "2026-11-08",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India largest festive peak",
+        "festival_date": "2026-11-08",
+        "days_until_festival": 27,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-10-28",
+        "days_left_to_order": 16,
+        "days_until_cutoff": 16,
+        "can_deliver_in_time": true,
+        "status": "on_time",
+        "status_label": "✅ Open until 28 Oct (16d left)"
+      },
+      {
+        "id": "bhai_dooj",
+        "name": "Bhai Dooj",
+        "date": "2026-11-11",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "Pan-India sibling gifting",
+        "festival_date": "2026-11-11",
+        "days_until_festival": 30,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-10-31",
+        "days_left_to_order": 19,
+        "days_until_cutoff": 19,
+        "can_deliver_in_time": true,
+        "status": "on_time",
+        "status_label": "✅ Open until 31 Oct (19d left)"
+      },
+      {
+        "id": "chhath",
+        "name": "Chhath Puja",
+        "date": "2026-11-15",
+        "confirmed_by_user": false,
+        "verify_note": "Verify date with calendar (User seed date)",
+        "regional_note": "High demand in Bihar, UP, Jharkhand — verify supplier stock before listing",
+        "festival_date": "2026-11-15",
+        "days_until_festival": 34,
+        "supplier_max_days_used": 8,
+        "buffer_days": 3,
+        "last_order_date": "2026-11-04",
+        "days_left_to_order": 23,
+        "days_until_cutoff": 23,
+        "can_deliver_in_time": true,
+        "status": "on_time",
+        "status_label": "✅ Open until 04 Nov (23d left)"
+      }
+    ],
+    "delivery_days_source": "DeoDap Official Shipping Policy (4–8 business days)",
+    "sample_tracking": {
+      "status": "shortlisted",
+      "quality_rating": null,
+      "photo_urls": [],
+      "notes": null,
+      "fetched_at": null,
+      "method": "manual_entry"
+    },
+    "test_results": null,
+    "pipeline_steps": [
+      {
+        "step": 1,
+        "name": "Supplier Ingest (DeoDap)",
+        "status": "done",
+        "method": "api",
+        "detail": "₹43.0 | Stock: True"
+      },
+      {
+        "step": 2,
+        "name": "Demand Check (Trends / Suggest / YT)",
+        "status": "manual_needed",
+        "method": "api",
+        "detail": "Data not available"
+      },
+      {
+        "step": 3,
+        "name": "Marketplace Check (Amazon / FK / Meesho)",
+        "status": "done",
+        "method": "scrape / manual_entry",
+        "detail": "Cheaper than market avg (₹232) by ₹3"
+      },
+      {
+        "step": 4,
+        "name": "Ads Validation (Meta Ad Library)",
+        "status": "done",
+        "method": "manual_entry",
+        "detail": "Active on 3/3 IN Platforms"
+      },
+      {
+        "step": 5,
+        "name": "Instagram Validation",
+        "status": "manual_needed",
+        "method": "manual_entry",
+        "detail": "Instagram not checked yet"
+      },
+      {
+        "step": 6,
+        "name": "Competitor / Price Comparison",
+        "status": "done",
+        "method": "scrape / manual_entry",
+        "detail": "Avg Market: ₹232"
+      },
+      {
+        "step": 7,
+        "name": "Sample Tracking",
+        "status": "manual_needed",
+        "method": "manual_entry",
+        "detail": "Stage: Shortlisted"
+      },
+      {
+        "step": 8,
+        "name": "Store Test Results",
+        "status": "manual_needed",
+        "method": "manual_entry",
+        "detail": "No live test data entered yet"
+      }
+    ],
+    "badge_text": "98.2/100 · High Conf",
+    "badge_color": "#059669",
+    "bestseller_rank": 184,
+    "meta_ads": {
+      "keyword": "Transparent Adhesive Hooks Pcs)",
+      "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=Transparent%20Adhesive%20Hooks%20Pcs%29&search_type=keyword_unordered&media_type=all",
+      "status": "done",
+      "active_ads_count": null,
+      "longest_running_days": null,
+      "distinct_creatives_count": null,
+      "advertisers_count": 3,
+      "notes": "Active commercial listings verified on 3/3 Indian marketplaces",
+      "date_checked": "2026-10-12T11:38:15+05:30",
+      "estimated_active_ads": "Active on 3/3 IN Platforms",
+      "is_scaling": true,
+      "scale_verdict": "Active on 3/3 IN Platforms",
+      "source": "Indian Commercial Marketplace & Search Verification",
+      "source_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=Transparent%20Adhesive%20Hooks%20Pcs%29&search_type=keyword_unordered&media_type=all",
+      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "trends": {
+      "keyword": "transparent adhesive hooks",
+      "trend_score": null,
+      "current_value": null,
+      "baseline_avg": null,
+      "current_to_baseline_ratio": null,
+      "peak_month": null,
+      "peak_value": null,
+      "festival_window_oct_nov_avg": null,
+      "autosuggest": {
+        "value": null,
+        "count": null,
+        "status": "unavailable",
+        "source": "Google Autosuggest API (IN)",
+        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=transparent%20adhesive%20hooks",
+        "fetched_at": null,
+        "method": "api",
+        "is_stale": false,
+        "null_reason": "Not fetched yet — click 'Fetch Live Demand' to query"
+      },
+      "youtube": {
+        "value": null,
+        "videos": null,
+        "status": "unavailable",
+        "source": "YouTube India Public Search",
+        "source_url": "https://www.youtube.com/results?search_query=transparent%20adhesive%20hooks+india",
+        "fetched_at": null,
+        "method": "scrape",
+        "is_stale": false,
+        "null_reason": "Not fetched yet"
+      },
+      "trend_status": "Data not available (Click 'Fetch Live Demand' on product page to query pytrends & Autosuggest)",
+      "trend_label": "Data not available",
+      "trends_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=transparent%20adhesive%20hooks",
+      "pipeline_status": "manual_needed",
+      "source": "Google Trends India (pytrends)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=transparent%20adhesive%20hooks",
+      "fetched_at": null,
+      "method": "api",
+      "is_stale": false,
+      "null_reason": "Not fetched yet — click 'Fetch Live Demand' to query real Google Trends India"
+    },
+    "social": {
+      "primary_hashtag": "#transparentadhesivehooks",
+      "hashtags": [
+        "#transparentadhesivehooks",
+        "#diwalidecor",
+        "#indianhome"
+      ],
+      "festival_category_seed": "Home Decor",
+      "status": "manual_needed",
+      "reel_link": null,
+      "views": null,
+      "saves_shares": null,
+      "price_link_comments_count": null,
+      "date_checked": null,
+      "est_reels_views": null,
+      "est_reels_likes": null,
+      "scale_label": "Home Decor",
+      "is_winning_ad": null,
+      "instagram_url": "https://www.instagram.com/explore/tags/transparentadhesivehooks/",
+      "source": "Instagram (Manual Entry / Graph API)",
+      "source_url": "https://www.instagram.com/explore/tags/transparentadhesivehooks/",
+      "fetched_at": null,
+      "method": "manual_entry",
+      "is_stale": false,
+      "null_reason": "Data not available: Instagram Graph API credentials not set & manual entry not filled yet"
+    },
+    "gemini": {
+      "label": "AI opinion (not data)",
+      "ai_verdict": "High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
+      "viral_hook_hinglish": "Apne kamre ka pura look badal dein sirf 5 second me is trending decor se!",
+      "target_audience": "Indian Home Styling & Bedroom Decor Buyers",
+      "suggested_pain_wow_rating_1_to_5": 5,
+      "suggested_demo_3s_rating_1_to_5": 5,
+      "gemini_powered": true,
+      "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
+      "source_url": "https://ai.google.dev/",
+      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "method": "ai_opinion",
+      "null_reason": null
+    },
+    "score_breakdown": {
+      "margin_score": 15.0,
+      "scale_score": 12.0,
+      "trend_score": 12.0,
+      "rto_score": 10.0,
+      "aesthetic_score": 7.0
+    },
+    "bullets": [
+      "📊 Score: 98.2/100 (98.2 pts from 10/10 active criteria | Confidence: High).",
+      "💰 [My Assumptions] Net Profit: ₹111/order (Sell ₹229 - Landed Cost ₹118).",
+      "📦 Bundle Rule: Rule A (Low Unit Cost <= ₹65 -> Pack of 2 Same-SKU Bundle).",
+      "🛡️ Hard-Fail Check: PASSED (0 violations)."
+    ],
+    "rto_verdict": "10/10 Criteria Passed (High Confidence)",
+    "image_url": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/18209_6797fc84-afc2-466b-95f8-85630df2c85e.png?v=1786710080",
+    "images": [
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/18209_6797fc84-afc2-466b-95f8-85630df2c85e.png?v=1786710080",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/04f0556f-6f62-4753-b7e7-1c93ed9374c3.jpg?v=1751262627",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_548f39c8-7fd2-438e-bb25-36c27165b698.jpg?v=1751262627",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/04_5f77b3bb-bd98-4a6f-ac78-c644b98e92a7.jpg?v=1751262627",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/017_9155afd4-927a-4888-8b1c-35ed4bca6832.jpg?v=1751262627",
+      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/05_f7bd0aa4-9449-4a5b-831b-1f6ee70f0368.jpg?v=1744195694"
+    ],
+    "deodap_url": "https://www.deodap.in/products/transparent-adhesive-hooks-6-pcs-strong-reusable",
+    "description": "Transform your home organisation with our versatile 6-piece transparent adhesive hook set . These strong, damage-free wall hooks are perfect for decluttering kitchens, bathrooms, and living spaces without drilling or leaving residue. Enjoy a clean, organised environment with GlimmerHome's premium adhesive solution. Key features Damage-Free Adhesion: Each transparent adhesive hook features a separate backing strip that adheres firmly to flat surfaces like tiles, glass, metal, and painted walls, yet removes cleanly without leaving marks or damage. High Load Capacity: Designed for durability, these robust wall hooks can hold up to 3 kg, making them ideal for hanging towels, kitchen utensils, coats, bags, and more. Versatile & Multi-Purpose: Use these strong wall hooks in your kitchen for ladl",
+    "scanned_at": "2026-10-12T11:35:06+05:30",
+    "competitor_pricing": {
+      "search_keyword": "Transparent Adhesive Hooks",
+      "cost_assumptions_label": "My Assumptions (User-configured in Settings, not external facts)",
+      "bundle_qty": 1,
+      "bundle_rule_triggered": "Rule #1: Single Unit Smart Tiered Pricing (Combo Eligible at Checkout)",
+      "effective_supplier_cost": 43.0,
+      "bundle_note": "Single Unit (Supplier Cost: ₹43)",
+      "shipping_cost": 60.0,
+      "cod_fee": 0.0,
+      "packaging_cost": 0.0,
+      "expected_rto_loss": 15.0,
+      "cod_rto_buffer": 15.0,
+      "landed_cost": 118.0,
+      "markup_multiple": 5.33,
+      "passes_2_5x_rule": true,
+      "marketplaces": {
+        "amazon": {
+          "name": "Amazon.in",
+          "price_numeric": 259.0,
+          "price": "₹259",
+          "rating_count": 170,
+          "rank": "Page 1 Organic",
+          "url": "https://www.amazon.in/s?k=transparent%20adhesive%20hooks%20pcs%29",
+          "source": "Indian E-Commerce Search Benchmark (Amazon.in)",
+          "source_url": "https://www.amazon.in/s?k=transparent%20adhesive%20hooks%20pcs%29",
+          "fetched_at": "2026-10-12T11:38:15+05:30",
+          "method": "scrape",
+          "is_stale": false,
+          "status": "done",
+          "badge": "Live Scraped",
+          "null_reason": null,
+          "bestsellers_url": "https://www.amazon.in/gp/movers-and-shakers/kitchen"
+        },
+        "flipkart": {
+          "name": "Flipkart",
+          "price_numeric": 229.0,
+          "price": "₹229",
+          "rating_count": 240,
+          "rank": "Page 1 Organic",
+          "url": "https://www.flipkart.com/search?q=transparent%20adhesive%20hooks%20pcs%29",
+          "source": "Indian Marketplace Search Benchmark (Flipkart)",
+          "source_url": "https://www.flipkart.com/search?q=transparent%20adhesive%20hooks%20pcs%29",
+          "fetched_at": "2026-10-12T11:38:15+05:30",
+          "method": "scrape",
+          "is_stale": false,
+          "status": "done",
+          "badge": "Live Scraped",
+          "null_reason": null
+        },
+        "meesho": {
+          "name": "Meesho",
+          "price_numeric": 209.0,
+          "price": "₹209",
+          "rating_count": 195,
+          "rank": "Top Reseller Listing",
+          "url": "https://www.meesho.com/search?q=transparent%20adhesive%20hooks%20pcs%29",
+          "source": "Indian Reseller Search Benchmark (Meesho / Snapdeal)",
+          "source_url": "https://www.meesho.com/search?q=transparent%20adhesive%20hooks%20pcs%29",
+          "fetched_at": "2026-10-12T11:38:15+05:30",
+          "method": "scrape",
+          "is_stale": false,
+          "status": "done",
+          "badge": "Live Scraped",
+          "null_reason": null
+        }
+      },
+      "avg_market_price": 232.3,
+      "is_cheaper_than_market": true,
+      "market_comparison_verdict": "Cheaper than market avg (₹232) by ₹3",
+      "suggested_price": 229,
+      "net_profit": 111.0,
+      "gross_profit_after_ship": 126.0,
+      "profit_margin_pct": 55.0,
+      "saving_vs_amazon": 3.3,
+      "discount_pct": null,
+      "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹43 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹118. Selling Price: ₹229 (5.33x supplier cost) -> Net Profit: ₹111/order (Pure Margin after Ship: ₹126).",
+      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Transparent+Adhesive+Hooks"
+    },
+    "suggested_price": 229,
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹43 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹118. Selling Price: ₹229 (5.33x supplier cost) -> Net Profit: ₹111/order (Pure Margin after Ship: ₹126)."
+  },
+  {
     "id": 8426338550070,
     "variant_id": 45511709196598,
     "sku": "6621_pearl_shell_night_lamp",
@@ -6153,16 +6803,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -6803,16 +7453,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -7453,16 +8103,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -8121,16 +8771,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -8771,16 +9421,16 @@
           "explanation": "Unit cost is ₹63 (<= ₹65); bundle 2 units together (Cost ₹126) to meet impulse price band.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -9421,16 +10071,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -10071,16 +10721,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -10721,16 +11371,16 @@
           "explanation": "Unit cost is ₹54 (<= ₹65); bundle 2 units together (Cost ₹108) to meet impulse price band.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -11387,16 +12037,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -12037,16 +12687,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -12687,16 +13337,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -13355,16 +14005,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -14023,16 +14673,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -14443,655 +15093,6 @@
     "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹67 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹142. Selling Price: ₹259 (3.87x supplier cost) -> Net Profit: ₹117/order (Pure Margin after Ship: ₹132)."
   },
   {
-    "id": 10837387018550,
-    "variant_id": 54520866144566,
-    "sku": "whl175_94381_wg_1103_mix",
-    "barcode": null,
-    "compare_at_price": 509,
-    "handle": "led-study-lamp-with-3-brightness-modes-touch-control-flexible-neck-color-may-vary-1-pc",
-    "title": "LED Study Lamp with 3 Brightness Modes, Touch Control & Flexible Neck (Color may vary)",
-    "zenlora_title": "Zenlora™ Led Study Lamp With 3 Brightness Modes, Touch",
-    "niche": "Home Decor",
-    "source": "DeoDap Shopify API",
-    "source_url": "https://www.deodap.in/collections/desk-lights/products.json?limit=250&page=1&sort_by=best-selling",
-    "fetched_at": "2026-10-12T11:35:06+05:30",
-    "method": "api",
-    "in_stock": true,
-    "weight_grams": 150,
-    "dimensions": "11 × 11 × 30 cm",
-    "delivery_min_days": null,
-    "delivery_max_days": null,
-    "wholesale_price": 132.0,
-    "selling_price": 319,
-    "mrp": 509,
-    "gross_profit": 112,
-    "profit_margin_pct": 39.8,
-    "discount_pct": 37,
-    "smartbiz_preset": {
-      "custom_sku": "whl175_94381_wg_1103_mix",
-      "business_category": "GENERAL",
-      "product_category": "Home Decor",
-      "mrp": 509,
-      "selling_price": 319,
-      "discount_pct": 37,
-      "discount_band": "Band C (31–39% OFF)",
-      "image_count": 5,
-      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/6ObziZgHB0.jpg"
-    },
-    "winning_score": 98.2,
-    "earned_points": 98.2,
-    "scored_weight_sum": 100.0,
-    "verified_score_pct": 98.2,
-    "formula_explanation": "Earned 98.2/100.0 pts across 10/10 available criteria (0 criteria missing -> lowers Confidence to High). Verified Ratio: 98.2%.",
-    "confidence": "High",
-    "confidence_color": "#059669",
-    "is_stale": false,
-    "data_coverage": {
-      "real_data_count": 4,
-      "manual_entry_count": 0,
-      "rule_and_assumption_count": 7,
-      "missing_count": 2,
-      "total_signals": 13,
-      "summary_label": "4 Real · 0 Manual · 7 Rule/Assump · 2 Missing"
-    },
-    "is_hard_failed": false,
-    "hard_fail_reasons": [],
-    "passed_criteria_count": 10,
-    "checklist": [
-      {
-        "id": 1,
-        "key": "c1_pain_or_wow",
-        "name": "1. Pain Point / Wow Factor",
-        "value": "5/5 (Gemini AI)",
-        "raw_value": 5,
-        "ai_opinion_suggestion": "AI opinion: 5/5 — High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
-        "weight": 12.0,
-        "earned_points": 12.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "AI Research (Gemini): 5/5 — High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
-        "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
-        "source_url": "/product/led-study-lamp-with-3-brightness-modes-touch-control-flexible-neck-color-may-vary-1-pc#manual-entry",
-        "fetched_at": "2026-10-12T11:38:15+05:30",
-        "method": "ai_opinion",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 2,
-        "key": "c2_demo_3_sec",
-        "name": "2. Demo-able in 3 Seconds",
-        "value": "5/5 (Gemini AI)",
-        "raw_value": 5,
-        "demo_checklist": {},
-        "weight": 12.0,
-        "earned_points": 12.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "AI Research (Gemini): 5/5 — Hook: Apne kamre ka pura look badal dein sirf 5 second me is trending decor se!",
-        "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
-        "source_url": "/product/led-study-lamp-with-3-brightness-modes-touch-control-flexible-neck-color-may-vary-1-pc#manual-entry",
-        "fetched_at": "2026-10-12T11:38:15+05:30",
-        "method": "ai_opinion",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 3,
-        "key": "c3_price_band",
-        "name": "3. Impulse Price Band (₹169–₹599)",
-        "value": "₹319",
-        "raw_value": 319,
-        "weight": 10.0,
-        "earned_points": 10.0,
-        "passed": true,
-        "status": "user_assumption",
-        "detail": "Selling Price ₹319 is within ideal ₹169–₹599 impulse band",
-        "source": "Zenlora Pricing Formula (My Assumptions)",
-        "source_url": "https://www.deodap.in/collections/desk-lights/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "user_assumption",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 4,
-        "key": "c4_margin",
-        "name": "4. Margin & Landed Cost (≥1.8x & ≥₹60 Net)",
-        "value": "Net ₹112 (2.42x)",
-        "raw_value": 112.0,
-        "weight": 15.0,
-        "earned_points": 15.0,
-        "passed": true,
-        "status": "user_assumption",
-        "detail": "[My Assumptions] Sell ₹319 | Landed Cost ₹207 (Supplier ₹132 + Ship ₹60 + COD ₹0 + Pkg ₹0 + RTO Loss ₹15) -> Net Profit ₹112 (2.42x supplier cost)",
-        "source": "DeoDap Shopify API + My Assumptions (Settings)",
-        "source_url": "https://www.deodap.in/collections/desk-lights/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "user_assumption",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 5,
-        "key": "c5_size_weight_fragility",
-        "name": "5. Size, Weight & Fragility",
-        "value": "150g | Dims: 11 × 11 × 30 cm | Unbreakable [rule-based flag]",
-        "weight_grams": 150,
-        "dimensions": "11 × 11 × 30 cm",
-        "is_fragile_rule_flag": false,
-        "weight": 10.0,
-        "earned_points": 10.0,
-        "passed": true,
-        "status": "real_data",
-        "detail": "Supplier Weight: 150 | Dimensions: 11 × 11 × 30 cm | Fragility: Unbreakable [rule-based flag]",
-        "source": "DeoDap Shopify API + Keyword Rule Flag",
-        "source_url": "https://www.deodap.in/collections/desk-lights/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "api",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 6,
-        "key": "c6_returns_risk",
-        "name": "6. Returns & Size/Fit Risk",
-        "value": "Low Risk (No size/fit triggers) [rule-based flag]",
-        "weight": 10.0,
-        "earned_points": 10.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "Zero apparel/footwear/jewelry sizing triggers [rule-based flag]",
-        "source": "Returns Risk Keyword Rules",
-        "source_url": "/settings#rules",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "rule_based",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 7,
-        "key": "c7_local_availability",
-        "name": "7. Marketplace Price Comparison (Amazon / Flipkart / Meesho)",
-        "value": "Cheaper than market avg (₹329) by ₹10",
-        "weight": 10.0,
-        "earned_points": 10.0,
-        "passed": true,
-        "status": "real_data",
-        "detail": "Cheaper than market avg (₹329) by ₹10",
-        "source": "Amazon.in / Flipkart / Meesho Check",
-        "source_url": "https://www.amazon.in/s?k=led%20study%20lamp%20brightness",
-        "fetched_at": "2026-10-12T11:38:15+05:30",
-        "method": "scrape",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 8,
-        "key": "c8_brand_trademark_risk",
-        "name": "8. Brand / Trademark Risk",
-        "value": "Pass (Unbranded) [rule-based flag]",
-        "weight": 7.0,
-        "earned_points": 7.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "No protected brand names matched [rule-based flag]",
-        "source": "Editable Brand Watchlist",
-        "source_url": "/settings#brands",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "rule_based",
-        "is_stale": false,
-        "null_reason": null
-      },
-      {
-        "id": 9,
-        "key": "c9_supplier_reliability",
-        "name": "9. Supplier Stock & Delivery Time",
-        "value": "In Stock (API Verified) | Product Delivery Days: Data not available on product page (Store policy: 4–8d)",
-        "in_stock": true,
-        "delivery_min_days": null,
-        "delivery_max_days": null,
-        "weight": 7.0,
-        "earned_points": 5.25,
-        "passed": true,
-        "status": "real_data",
-        "detail": "In Stock (API Verified) | Product Delivery Days: Data not available on product page (Store policy: 4–8d)",
-        "source": "DeoDap Shopify API",
-        "source_url": "https://www.deodap.in/collections/desk-lights/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "api",
-        "is_stale": false,
-        "null_reason": "Per-product delivery days not shown on DeoDap product JSON (enter manually or use store policy 4–8d)"
-      },
-      {
-        "id": 10,
-        "key": "c10_bundle_potential",
-        "name": "10. Bundle Potential (Rule-Based)",
-        "value": "Rule C (Same-Category Cross-Sell in 'Home Decor')",
-        "bundle_details": {
-          "rule_applied": "Rule C (Same-Category Cross-Sell in 'Home Decor')",
-          "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
-          "complementary_suggestions": [
-            {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
-              "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
-              "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
-              "wholesale_price": 57.0,
-              "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
-            }
-          ],
-          "method": "rule_based",
-          "source": "Zenlora Catalog Bundle Rule Engine"
-        },
-        "weight": 7.0,
-        "earned_points": 7.0,
-        "passed": true,
-        "status": "rule_based",
-        "detail": "Rule C (Same-Category Cross-Sell in 'Home Decor') — Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
-        "source": "Zenlora Catalog Bundle Rule Engine",
-        "source_url": "https://www.deodap.in/collections/desk-lights/products.json?limit=250&page=1&sort_by=best-selling",
-        "fetched_at": "2026-10-12T11:35:06+05:30",
-        "method": "rule_based",
-        "is_stale": false,
-        "null_reason": null
-      }
-    ],
-    "festival_mood": "Diwali Decor",
-    "festival_cutoffs": [
-      {
-        "id": "navratri",
-        "name": "Navratri",
-        "date": "2026-10-11",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India (Peak in Gujarat, Maharashtra, North India)",
-        "festival_date": "2026-10-11",
-        "days_until_festival": -1,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-09-30",
-        "days_left_to_order": -12,
-        "days_until_cutoff": -12,
-        "can_deliver_in_time": false,
-        "status": "festival_passed",
-        "status_label": "Festival Passed"
-      },
-      {
-        "id": "dussehra",
-        "name": "Dussehra",
-        "date": "2026-10-20",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India",
-        "festival_date": "2026-10-20",
-        "days_until_festival": 8,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-10-09",
-        "days_left_to_order": -3,
-        "days_until_cutoff": -3,
-        "can_deliver_in_time": false,
-        "status": "too_late",
-        "status_label": "⚠️ TOO LATE for Dussehra (Cutoff was 09 Oct)"
-      },
-      {
-        "id": "dhanteras",
-        "name": "Dhanteras",
-        "date": "2026-11-06",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India auspicious buying peak",
-        "festival_date": "2026-11-06",
-        "days_until_festival": 25,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-10-26",
-        "days_left_to_order": 14,
-        "days_until_cutoff": 14,
-        "can_deliver_in_time": true,
-        "status": "on_time",
-        "status_label": "✅ Open until 26 Oct (14d left)"
-      },
-      {
-        "id": "diwali",
-        "name": "Diwali",
-        "date": "2026-11-08",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India largest festive peak",
-        "festival_date": "2026-11-08",
-        "days_until_festival": 27,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-10-28",
-        "days_left_to_order": 16,
-        "days_until_cutoff": 16,
-        "can_deliver_in_time": true,
-        "status": "on_time",
-        "status_label": "✅ Open until 28 Oct (16d left)"
-      },
-      {
-        "id": "bhai_dooj",
-        "name": "Bhai Dooj",
-        "date": "2026-11-11",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "Pan-India sibling gifting",
-        "festival_date": "2026-11-11",
-        "days_until_festival": 30,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-10-31",
-        "days_left_to_order": 19,
-        "days_until_cutoff": 19,
-        "can_deliver_in_time": true,
-        "status": "on_time",
-        "status_label": "✅ Open until 31 Oct (19d left)"
-      },
-      {
-        "id": "chhath",
-        "name": "Chhath Puja",
-        "date": "2026-11-15",
-        "confirmed_by_user": false,
-        "verify_note": "Verify date with calendar (User seed date)",
-        "regional_note": "High demand in Bihar, UP, Jharkhand — verify supplier stock before listing",
-        "festival_date": "2026-11-15",
-        "days_until_festival": 34,
-        "supplier_max_days_used": 8,
-        "buffer_days": 3,
-        "last_order_date": "2026-11-04",
-        "days_left_to_order": 23,
-        "days_until_cutoff": 23,
-        "can_deliver_in_time": true,
-        "status": "on_time",
-        "status_label": "✅ Open until 04 Nov (23d left)"
-      }
-    ],
-    "delivery_days_source": "DeoDap Official Shipping Policy (4–8 business days)",
-    "sample_tracking": {
-      "status": "shortlisted",
-      "quality_rating": null,
-      "photo_urls": [],
-      "notes": null,
-      "fetched_at": null,
-      "method": "manual_entry"
-    },
-    "test_results": null,
-    "pipeline_steps": [
-      {
-        "step": 1,
-        "name": "Supplier Ingest (DeoDap)",
-        "status": "done",
-        "method": "api",
-        "detail": "₹132.0 | Stock: True"
-      },
-      {
-        "step": 2,
-        "name": "Demand Check (Trends / Suggest / YT)",
-        "status": "manual_needed",
-        "method": "api",
-        "detail": "Data not available"
-      },
-      {
-        "step": 3,
-        "name": "Marketplace Check (Amazon / FK / Meesho)",
-        "status": "done",
-        "method": "scrape / manual_entry",
-        "detail": "Cheaper than market avg (₹329) by ₹10"
-      },
-      {
-        "step": 4,
-        "name": "Ads Validation (Meta Ad Library)",
-        "status": "done",
-        "method": "manual_entry",
-        "detail": "Active on 3/3 IN Platforms"
-      },
-      {
-        "step": 5,
-        "name": "Instagram Validation",
-        "status": "manual_needed",
-        "method": "manual_entry",
-        "detail": "Instagram not checked yet"
-      },
-      {
-        "step": 6,
-        "name": "Competitor / Price Comparison",
-        "status": "done",
-        "method": "scrape / manual_entry",
-        "detail": "Avg Market: ₹329"
-      },
-      {
-        "step": 7,
-        "name": "Sample Tracking",
-        "status": "manual_needed",
-        "method": "manual_entry",
-        "detail": "Stage: Shortlisted"
-      },
-      {
-        "step": 8,
-        "name": "Store Test Results",
-        "status": "manual_needed",
-        "method": "manual_entry",
-        "detail": "No live test data entered yet"
-      }
-    ],
-    "badge_text": "98.2/100 · High Conf",
-    "badge_color": "#059669",
-    "bestseller_rank": 55,
-    "meta_ads": {
-      "keyword": "LED Study Lamp Brightness",
-      "ad_library_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=LED%20Study%20Lamp%20Brightness&search_type=keyword_unordered&media_type=all",
-      "status": "done",
-      "active_ads_count": null,
-      "longest_running_days": null,
-      "distinct_creatives_count": null,
-      "advertisers_count": 3,
-      "notes": "Active commercial listings verified on 3/3 Indian marketplaces",
-      "date_checked": "2026-10-12T11:38:15+05:30",
-      "estimated_active_ads": "Active on 3/3 IN Platforms",
-      "is_scaling": true,
-      "scale_verdict": "Active on 3/3 IN Platforms",
-      "source": "Indian Commercial Marketplace & Search Verification",
-      "source_url": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=IN&q=LED%20Study%20Lamp%20Brightness&search_type=keyword_unordered&media_type=all",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
-      "method": "scrape",
-      "is_stale": false,
-      "null_reason": null
-    },
-    "trends": {
-      "keyword": "led study lamp",
-      "trend_score": null,
-      "current_value": null,
-      "baseline_avg": null,
-      "current_to_baseline_ratio": null,
-      "peak_month": null,
-      "peak_value": null,
-      "festival_window_oct_nov_avg": null,
-      "autosuggest": {
-        "value": null,
-        "count": null,
-        "status": "unavailable",
-        "source": "Google Autosuggest API (IN)",
-        "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=led%20study%20lamp",
-        "fetched_at": null,
-        "method": "api",
-        "is_stale": false,
-        "null_reason": "Not fetched yet — click 'Fetch Live Demand' to query"
-      },
-      "youtube": {
-        "value": null,
-        "videos": null,
-        "status": "unavailable",
-        "source": "YouTube India Public Search",
-        "source_url": "https://www.youtube.com/results?search_query=led%20study%20lamp+india",
-        "fetched_at": null,
-        "method": "scrape",
-        "is_stale": false,
-        "null_reason": "Not fetched yet"
-      },
-      "trend_status": "Data not available (Click 'Fetch Live Demand' on product page to query pytrends & Autosuggest)",
-      "trend_label": "Data not available",
-      "trends_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=led%20study%20lamp",
-      "pipeline_status": "manual_needed",
-      "source": "Google Trends India (pytrends)",
-      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=led%20study%20lamp",
-      "fetched_at": null,
-      "method": "api",
-      "is_stale": false,
-      "null_reason": "Not fetched yet — click 'Fetch Live Demand' to query real Google Trends India"
-    },
-    "social": {
-      "primary_hashtag": "#ledstudylampbrightness",
-      "hashtags": [
-        "#ledstudylampbrightness",
-        "#diwalidecor",
-        "#indianhome"
-      ],
-      "festival_category_seed": "Diwali Decor",
-      "status": "manual_needed",
-      "reel_link": null,
-      "views": null,
-      "saves_shares": null,
-      "price_link_comments_count": null,
-      "date_checked": null,
-      "est_reels_views": null,
-      "est_reels_likes": null,
-      "scale_label": "Diwali Decor",
-      "is_winning_ad": null,
-      "instagram_url": "https://www.instagram.com/explore/tags/ledstudylampbrightness/",
-      "source": "Instagram (Manual Entry / Graph API)",
-      "source_url": "https://www.instagram.com/explore/tags/ledstudylampbrightness/",
-      "fetched_at": null,
-      "method": "manual_entry",
-      "is_stale": false,
-      "null_reason": "Data not available: Instagram Graph API credentials not set & manual entry not filled yet"
-    },
-    "gemini": {
-      "label": "AI opinion (not data)",
-      "ai_verdict": "High visual appeal home decor winner with strong 3-second scroll-stopping lighting/ambience effect.",
-      "viral_hook_hinglish": "Apne kamre ka pura look badal dein sirf 5 second me is trending decor se!",
-      "target_audience": "Indian Home Styling & Bedroom Decor Buyers",
-      "suggested_pain_wow_rating_1_to_5": 5,
-      "suggested_demo_3s_rating_1_to_5": 5,
-      "gemini_powered": true,
-      "source": "Google Gemini API (gemini-2.5-flash) — Category & Utility Evaluation",
-      "source_url": "https://ai.google.dev/",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
-      "method": "ai_opinion",
-      "null_reason": null
-    },
-    "score_breakdown": {
-      "margin_score": 15.0,
-      "scale_score": 12.0,
-      "trend_score": 12.0,
-      "rto_score": 10.0,
-      "aesthetic_score": 7.0
-    },
-    "bullets": [
-      "📊 Score: 98.2/100 (98.2 pts from 10/10 active criteria | Confidence: High).",
-      "💰 [My Assumptions] Net Profit: ₹112/order (Sell ₹319 - Landed Cost ₹207).",
-      "📦 Bundle Rule: Rule C (Same-Category Cross-Sell in 'Home Decor').",
-      "🛡️ Hard-Fail Check: PASSED (0 violations)."
-    ],
-    "rto_verdict": "10/10 Criteria Passed (High Confidence)",
-    "image_url": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/6ObziZgHB0.jpg?v=1788783106",
-    "images": [
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/6ObziZgHB0.jpg?v=1788783106",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4WYl48GuEt.jpg?v=1788783106",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/hh7UyUhSXR.jpg?v=1788783106",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/G3T8shx0jb.jpg?v=1788783106",
-      "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Kf9qrNrAh3.jpg?v=1788783106"
-    ],
-    "deodap_url": "https://www.deodap.in/products/led-study-lamp-with-3-brightness-modes-touch-control-flexible-neck-color-may-vary-1-pc",
-    "description": "Brighten your workspace or study area with our versatile flexible neck LED desk lamp. This modern lamp features three adjustable brightness modes (Low, Medium, High) to suit any task, easily controlled with a sensitive touch button on its base. The flexible silicone gooseneck allows for effortless positioning, directing light exactly where you need it, making it perfect for reading, studying, working, or as a bedside light. Its compact design and non-slip base ensure stability on any surface, from study tables to office desks and kids' rooms. Conveniently USB powered, this flexible neck LED desk lamp is an essential for efficient and comfortable lighting. Key features 3 Brightness Levels: Easily switch between Low, Medium, and High light modes for optimal visibility. Touch Control: Simple ",
-    "scanned_at": "2026-10-12T11:35:06+05:30",
-    "competitor_pricing": {
-      "search_keyword": "LED Study Lamp with Brightness",
-      "cost_assumptions_label": "My Assumptions (User-configured in Settings, not external facts)",
-      "bundle_qty": 1,
-      "bundle_rule_triggered": "Rule #1: Single Unit Smart Tiered Pricing (Combo Eligible at Checkout)",
-      "effective_supplier_cost": 132.0,
-      "bundle_note": "Single Unit (Supplier Cost: ₹132)",
-      "shipping_cost": 60.0,
-      "cod_fee": 0.0,
-      "packaging_cost": 0.0,
-      "expected_rto_loss": 15.0,
-      "cod_rto_buffer": 15.0,
-      "landed_cost": 207.0,
-      "markup_multiple": 2.42,
-      "passes_2_5x_rule": true,
-      "marketplaces": {
-        "amazon": {
-          "name": "Amazon.in",
-          "price_numeric": 369.0,
-          "price": "₹369",
-          "rating_count": 408,
-          "rank": "Page 1 Organic",
-          "url": "https://www.amazon.in/s?k=led%20study%20lamp%20brightness",
-          "source": "Indian E-Commerce Search Benchmark (Amazon.in)",
-          "source_url": "https://www.amazon.in/s?k=led%20study%20lamp%20brightness",
-          "fetched_at": "2026-10-12T11:38:15+05:30",
-          "method": "scrape",
-          "is_stale": false,
-          "status": "done",
-          "badge": "Live Scraped",
-          "null_reason": null,
-          "bestsellers_url": "https://www.amazon.in/gp/movers-and-shakers/kitchen"
-        },
-        "flipkart": {
-          "name": "Flipkart",
-          "price_numeric": 329.0,
-          "price": "₹329",
-          "rating_count": 562,
-          "rank": "Page 1 Organic",
-          "url": "https://www.flipkart.com/search?q=led%20study%20lamp%20brightness",
-          "source": "Indian Marketplace Search Benchmark (Flipkart)",
-          "source_url": "https://www.flipkart.com/search?q=led%20study%20lamp%20brightness",
-          "fetched_at": "2026-10-12T11:38:15+05:30",
-          "method": "scrape",
-          "is_stale": false,
-          "status": "done",
-          "badge": "Live Scraped",
-          "null_reason": null
-        },
-        "meesho": {
-          "name": "Meesho",
-          "price_numeric": 289.0,
-          "price": "₹289",
-          "rating_count": 377,
-          "rank": "Top Reseller Listing",
-          "url": "https://www.meesho.com/search?q=led%20study%20lamp%20brightness",
-          "source": "Indian Reseller Search Benchmark (Meesho / Snapdeal)",
-          "source_url": "https://www.meesho.com/search?q=led%20study%20lamp%20brightness",
-          "fetched_at": "2026-10-12T11:38:15+05:30",
-          "method": "scrape",
-          "is_stale": false,
-          "status": "done",
-          "badge": "Live Scraped",
-          "null_reason": null
-        }
-      },
-      "avg_market_price": 329.0,
-      "is_cheaper_than_market": true,
-      "market_comparison_verdict": "Cheaper than market avg (₹329) by ₹10",
-      "suggested_price": 319,
-      "net_profit": 112.0,
-      "gross_profit_after_ship": 127.0,
-      "profit_margin_pct": 39.8,
-      "saving_vs_amazon": 10.0,
-      "discount_pct": null,
-      "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹132 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹207. Selling Price: ₹319 (2.42x supplier cost) -> Net Profit: ₹112/order (Pure Margin after Ship: ₹127).",
-      "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=LED+Study+Lamp+with+Brightness"
-    },
-    "suggested_price": 319,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹132 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹207. Selling Price: ₹319 (2.42x supplier cost) -> Net Profit: ₹112/order (Pure Margin after Ship: ₹127)."
-  },
-  {
     "id": 10645280751926,
     "variant_id": 53808342270262,
     "sku": "21255_cute_mini_panda_night_light_lamp",
@@ -15322,16 +15323,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -15972,16 +15973,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -16622,16 +16623,16 @@
           "explanation": "Product is already a multi-piece set in 'Home Decor' and pairs with same-category accessories.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -17272,16 +17273,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -17922,16 +17923,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -18572,16 +18573,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",
@@ -19222,16 +19223,16 @@
           "explanation": "Pair with a complementary low-cost item from 'Home Decor' to create a 2-item combo.",
           "complementary_suggestions": [
             {
-              "handle": "vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor",
-              "title": "Vintage Heart-Shaped Photo Frame – Elegant Antique Finish Adds Charm",
-              "wholesale_price": 160.0,
-              "url": "https://www.deodap.in/products/vintage-heart-shaped-floral-photo-frame-antique-finish-wedding-gift-decor"
-            },
-            {
               "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
               "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
               "wholesale_price": 57.0,
               "url": "https://www.deodap.in/products/night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1"
+            },
+            {
+              "handle": "golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc",
+              "title": "Lord Ganesha Wall Hanging – Elegant Wall Decor with Gemstones",
+              "wholesale_price": 64.0,
+              "url": "https://www.deodap.in/products/golden-lord-ganesha-decorative-wall-hanging-for-home-temple-1-pc"
             }
           ],
           "method": "rule_based",

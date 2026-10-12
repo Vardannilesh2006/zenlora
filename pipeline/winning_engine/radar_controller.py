@@ -312,12 +312,18 @@ def scan_and_update_winners(
     if not randomize:
         newly_scanned.sort(key=lambda x: (x.get("confidence") == "High", x.get("winning_score", 0), x.get("verified_score_pct", 0)), reverse=True)
 
-    # Merge newly_scanned at the front + existing unexported items, deduplicating by all 4 keys
+    # Merge newly_scanned at the front + existing items, deduplicating by all 4 keys
     seen_skus = set(excl_sets[0])
     seen_handles = set(excl_sets[1])
     seen_vids = set(excl_sets[2])
     seen_tfps = set(excl_sets[3])
     merged_winners: List[Dict[str, Any]] = []
+
+    master_skus = set()
+    master_handles = set()
+    master_vids = set()
+    master_tfps = set()
+    master_pool: List[Dict[str, Any]] = []
 
     for candidate in newly_scanned + existing_pool:
         if candidate.get("is_hard_failed", False):
@@ -328,9 +334,21 @@ def scan_and_update_winners(
         candidate["niche"] = verified_niche
         if candidate.get("confidence") == "Low":
             continue
+        fp = extract_product_fingerprints(candidate)
+
+        if not is_product_already_exported(candidate, (master_skus, master_handles, master_vids, master_tfps)):
+            if fp["sku"]:
+                master_skus.add(fp["sku"])
+            if fp["handle"]:
+                master_handles.add(fp["handle"])
+            if fp["variant_id"]:
+                master_vids.add(fp["variant_id"])
+            if fp["title_fp"]:
+                master_tfps.add(fp["title_fp"])
+            master_pool.append(candidate)
+
         if is_product_already_exported(candidate, (seen_skus, seen_handles, seen_vids, seen_tfps)):
             continue
-        fp = extract_product_fingerprints(candidate)
         if fp["sku"]:
             seen_skus.add(fp["sku"])
         if fp["handle"]:
@@ -341,12 +359,12 @@ def scan_and_update_winners(
             seen_tfps.add(fp["title_fp"])
         merged_winners.append(candidate)
 
-    # Persist full unexported merged pool to both runtime WINNING_DB_FILE and repo winning_products.json
+    # Persist full master pool to both runtime WINNING_DB_FILE and repo winning_products.json so categories never shrink
     for target in (WINNING_DB_FILE, repo_file):
         try:
             target.parent.mkdir(parents=True, exist_ok=True)
             with open(target, "w", encoding="utf-8") as f:
-                json.dump(merged_winners, f, indent=2, ensure_ascii=False)
+                json.dump(master_pool, f, indent=2, ensure_ascii=False)
         except Exception as e:
             print(f"[!] Warning saving {target}: {e}")
 
@@ -438,12 +456,10 @@ def get_winners(
     exclude_exported: bool = True,
     extra_excluded_keys: Optional[List[str]] = None,
     auto_refill: bool = False,
-    wukusy_only: bool = False,
 ) -> List[Dict[str, Any]]:
     """
     Loads winning products from storage, filters out any product already in the 4-Key Zero-Repeat Export Vault
-    when `exclude_exported=True`, optionally filters strictly to Wukusy wholesaler active SKUs when `wukusy_only=True`,
-    enforces strict category purity + High/Medium confidence,
+    when `exclude_exported=True`, enforces strict category purity + High/Medium confidence,
     and rotates the displayed slice per niche when batch_cursor > 0.
     """
     from winning_engine.export_ledger import (
@@ -474,15 +490,6 @@ def get_winners(
     if refresh_dynamic and winners:
         winners = [enrich_winner_record(w, catalog_pool=winners) for w in winners]
 
-    from winning_engine.wukusy_vault import is_sku_in_wukusy, get_wukusy_sku_set
-
-    wukusy_set = get_wukusy_sku_set()
-    for w in winners:
-        w["wukusy_available"] = is_sku_in_wukusy(w.get("sku"), wukusy_set)
-
-    if wukusy_only and wukusy_set:
-        winners = [w for w in winners if w.get("wukusy_available")]
-
     if not include_hard_failed:
         winners = [
             w for w in winners
@@ -491,18 +498,18 @@ def get_winners(
             and classify_niche(w.get("title", ""), preferred_niche=w.get("niche")) is not None
         ]
 
+    all_valid_winners = list(winners)
+
     if exclude_exported:
         excl_sets = build_exclusion_sets(extra_excluded_keys)
         unexported = [w for w in winners if not is_product_already_exported(w, excl_sets)]
 
-        # Auto-refill from deeper DeoDap pages if unexported pool is running low (disabled when wukusy_only is True so we only pick from user synced catalog)
+        # Auto-refill from deeper DeoDap pages if unexported pool is running low
         target_min = max(per_niche_display * 5 if per_niche_display else 60, 65)
-        if auto_refill and not wukusy_only and len(unexported) < target_min:
+        if auto_refill and len(unexported) < target_min:
             winners = auto_refill_unexported_winners(winners, excl_sets, min_needed_total=target_min)
+            all_valid_winners = list(winners)
             unexported = [w for w in winners if not is_product_already_exported(w, excl_sets)]
-
-        if wukusy_only and wukusy_set:
-            unexported = [w for w in unexported if is_sku_in_wukusy(w.get("sku"), wukusy_set)]
 
         # Also deduplicate by 4-key fingerprint within the active candidate list so two SKUs with identical titles never appear together
         deduped: List[Dict[str, Any]] = []
@@ -536,6 +543,25 @@ def get_winners(
                 by_niche[wn].append(w)
             else:
                 by_niche.setdefault(wn, []).append(w)
+
+        # Guarantee every category (including Festive & Lights) always has at least per_niche_display (24) items
+        for n_name in niches_order:
+            if len(by_niche.get(n_name, [])) < per_niche_display:
+                existing_n_handles = {str(x.get("handle") or "").lower() for x in by_niche.get(n_name, [])}
+                existing_n_skus = {str(x.get("sku") or "").lower() for x in by_niche.get(n_name, []) if x.get("sku")}
+                fallback_pool = [
+                    w for w in all_valid_winners
+                    if w.get("niche") == n_name
+                    and str(w.get("handle") or "").lower() not in existing_n_handles
+                    and (not w.get("sku") or str(w.get("sku") or "").lower() not in existing_n_skus)
+                ]
+                for fb_item in fallback_pool:
+                    by_niche.setdefault(n_name, []).append(fb_item)
+                    existing_n_handles.add(str(fb_item.get("handle") or "").lower())
+                    if fb_item.get("sku"):
+                        existing_n_skus.add(str(fb_item.get("sku") or "").lower())
+                    if len(by_niche[n_name]) >= per_niche_display * 2:
+                        break
 
         sliced_all: List[Dict[str, Any]] = []
         b_idx = max(0, int(batch_cursor or 0))
