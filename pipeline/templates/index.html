@@ -261,8 +261,11 @@
                             <div class="flex items-center justify-between gap-1 mb-2">
                                 <button
                                     type="button"
-                                    onclick="event.stopPropagation(); copyCardSeoIndex('{{ p.handle }}', '{{ p.seo_title|replace("'", "\\'") }}', '{{ p.seo_description|replace("'", "\\'") }}')"
-                                    title="1-Click Copy Viral SEO Title Tag (≤60 chars) & Meta Description (≤160 chars)"
+                                    data-handle="{{ p.handle }}"
+                                    data-title="{{ p.seo_title|e }}"
+                                    data-desc="{{ p.seo_description|e }}"
+                                    onclick="event.stopPropagation(); copyCardSeoIndex(this.dataset.handle, this.dataset.title, this.dataset.desc)"
+                                    title="1-Click Copy Viral SEO Title Tag (≤60 chars) &amp; Meta Description (≤160 chars)"
                                     class="text-[9px] font-bold px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 flex items-center gap-1 transition active:scale-95 flex-shrink-0 shadow-2xs"
                                 >
                                     <span>⚡ SEO 60/160</span>

@@ -394,9 +394,12 @@
                         <div class="flex items-center gap-1.5 min-w-0">
                             <button 
                                 type="button"
-                                onclick="event.stopPropagation(); copyCardSeo('{{ w.handle }}', '{{ w.seo_title|replace("'", "\\'") }}', '{{ w.seo_description|replace("'", "\\'") }}')" 
+                                data-handle="{{ w.handle }}"
+                                data-title="{{ w.seo_title|e }}"
+                                data-desc="{{ w.seo_description|e }}"
+                                onclick="event.stopPropagation(); copyCardSeo(this.dataset.handle, this.dataset.title, this.dataset.desc)" 
                                 id="seo-chip-{{ w.handle }}"
-                                title="1-Click Copy Viral SEO Title Tag (Max 60 chars) & Meta Description (Max 160 chars)"
+                                title="1-Click Copy Viral SEO Title Tag (Max 60 chars) &amp; Meta Description (Max 160 chars)"
                                 class="text-[9px] font-bold px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 flex items-center gap-1 transition active:scale-95 flex-shrink-0 shadow-2xs"
                             >
                                 <span>⚡ SEO 60/160</span>
@@ -582,9 +585,24 @@
             </div>
             {% endfor %}
         </div>
+        <div id="radarEmptyState" class="{% if winners %}hidden{% endif %} zen-card rounded-xl p-10 text-center max-w-md mx-auto my-10">
+            <div class="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-textSecondary flex items-center justify-center mx-auto mb-3">
+                <svg class="w-5 h-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <h3 class="text-sm font-bold text-textPrimary">All products in this category currently locked in Vault</h3>
+            <p class="text-xs text-textSecondary mt-1 mb-4">You have already exported all current {{ selected_niche }} products without repeats! Run a scan or reset test exports.</p>
+            <div class="flex items-center justify-center gap-2">
+                <button onclick="triggerRadarScan()" class="h-8 px-4 rounded-lg bg-brandBlack text-white text-xs font-semibold transition hover:bg-brandHover">
+                    Run Fresh Scan
+                </button>
+                <button onclick="resetExportVault()" class="h-8 px-3 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-textPrimary text-xs font-semibold transition border border-zinc-200">
+                    Reset Test Vault
+                </button>
+            </div>
+        </div>
         {% else %}
         <!-- Empty State -->
-        <div class="zen-card rounded-xl p-10 text-center max-w-md mx-auto my-10">
+        <div id="radarEmptyState" class="zen-card rounded-xl p-10 text-center max-w-md mx-auto my-10">
             <div class="w-10 h-10 rounded-xl bg-zinc-100 border border-zinc-200 text-textSecondary flex items-center justify-center mx-auto mb-3">
                 <svg class="w-5 h-5 text-zinc-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
@@ -765,6 +783,11 @@
                     removedAny = true;
                 }
             });
+            const remainingCards = document.querySelectorAll('[id^="card-"]').length;
+            const emptyEl = document.getElementById('radarEmptyState');
+            if (remainingCards === 0 && emptyEl) {
+                emptyEl.classList.remove('hidden');
+            }
             if (removedAny) {
                 fetch('/api/radar/export-ledger', {
                     method: 'POST',
