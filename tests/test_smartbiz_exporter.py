@@ -267,3 +267,48 @@ def test_scan_deodap_winners_and_repeated_csv_exports_zero_repeats(monkeypatch):
     finally:
         client.post("/api/radar/export-ledger", json={"action": "reset", "keep_store_baseline": True})
 
+
+def test_category_purity_and_exact_smartbiz_product_category():
+    """
+    Verifies:
+    1. Every category page (Festive, Home Decor, Kitchen, Gadgets, Gifts) has 24 High-Confidence,
+       100% category-matching products (and All has 120).
+    2. Downloading CSV for any category sets Column K (Product Category) to the exact storefront
+       category name ('Festive & Lights', 'Home Decor', 'Kitchen & Dining', 'Smart Gadgets', 'Gifts & Hampers')
+       and NEVER outputs generic 'Home Improvement' or 'Home & Kitchen'.
+    """
+    from pipeline.winning_engine.deodap_harvester import classify_niche, is_junk_or_mismatched_product
+    from pipeline.winning_engine.radar_controller import get_winners
+
+    expected_map = {
+        "Festive": "Festive & Lights",
+        "Home Decor": "Home Decor",
+        "Kitchen": "Kitchen & Dining",
+        "Gadgets": "Smart Gadgets",
+        "Gifts": "Gifts & Hampers",
+    }
+
+    all_items = get_winners(niche="All", per_niche_display=24, refresh_dynamic=False)
+    assert len(all_items) == 120
+
+    for niche_key, expected_col_k in expected_map.items():
+        niche_items = get_winners(niche=niche_key, per_niche_display=24, refresh_dynamic=False)
+        assert len(niche_items) == 24, f"{niche_key} expected 24 items, got {len(niche_items)}"
+
+        for item in niche_items:
+            assert item.get("niche") == niche_key
+            assert item.get("confidence") == "High", f"{item.get('title')} has confidence {item.get('confidence')}"
+            assert not is_junk_or_mismatched_product(item.get("title", ""))
+            assert classify_niche(item.get("title", ""), preferred_niche=niche_key) == niche_key
+
+        page_products = select_current_page_products(niche=niche_key, batch_cursor=0, limit=24)
+        assert len(page_products) == 24
+        csv_bytes = generate_smartbiz_csv_bytes(page_products, niche_override=niche_key)
+        rows = list(csv.reader(io.StringIO(csv_bytes.decode("utf-8-sig"))))[1:]
+        assert len(rows) == 24
+        for r in rows:
+            assert r[9] == "GENERAL"
+            assert r[10] == expected_col_k, f"Expected '{expected_col_k}' for {niche_key}, got '{r[10]}'"
+            assert r[10] not in ("Home Improvement", "Home & Kitchen")
+
+

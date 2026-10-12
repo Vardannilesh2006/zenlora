@@ -358,7 +358,7 @@ def export_smartbiz_csv():
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
     else:
-        limit = int(request.args.get("limit", 20) or 20)
+        limit = int(request.args.get("limit", 24) or 24)
         products = select_current_page_products(
             niche=niche,
             batch_cursor=batch_cursor,
@@ -375,7 +375,7 @@ def export_smartbiz_csv():
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
 
-    csv_bytes = generate_smartbiz_csv_bytes(products)
+    csv_bytes = generate_smartbiz_csv_bytes(products, niche_override=niche if mode != "mix" else None)
     return Response(
         csv_bytes,
         mimetype="text/csv; charset=utf-8",
@@ -406,7 +406,7 @@ def export_smartbiz_xlsx():
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
     else:
-        limit = int(request.args.get("limit", 20) or 20)
+        limit = int(request.args.get("limit", 24) or 24)
         products = select_current_page_products(
             niche=niche,
             batch_cursor=batch_cursor,
@@ -423,7 +423,7 @@ def export_smartbiz_xlsx():
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
 
-    xlsx_bytes = generate_smartbiz_xlsx_bytes(products)
+    xlsx_bytes = generate_smartbiz_xlsx_bytes(products, niche_override=niche if mode != "mix" else None)
     return Response(
         xlsx_bytes,
         mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",

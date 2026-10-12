@@ -12,7 +12,7 @@
     "col_h_mrp": "4-Band Cost-Inverse Variable Discount Box MRP (Ends in 9, 5, or 0; Strictly Never 2x Selling Price)",
     "col_i_selling_price": "Market-Anchored Safe Dropship Selling Price (Meesho + Rs.60-85 Value Margin)",
     "col_j_business_category": "GENERAL (Unified across all rows for zero cross-category validation errors)",
-    "col_k_product_category": "Mapped to exact storefront collections (Home & Kitchen, Home Improvement, Health & Beauty Accessories, mobile accessories, Garden & Outdoors, Office Products, Car & Motorbike, Toys & Games, Baby Products, Personal Care)",
+    "col_k_product_category": "100% Category-Matched Storefront Collections (Festive & Lights, Home Decor, Kitchen & Dining, Smart Gadgets, Gifts & Hampers)",
     "col_l_description": "Clean HTML (<p>...</p>) or natural prose description (<= 2000 chars)",
     "col_u_best_seller": "Selective \"Yes\" (~33% top winners) and \"No\" (~67% others)",
     "cols_w_to_ab_images": "Up to 6 Real DeoDap Gallery Images (.jpg sanitized, query strings stripped)",
@@ -61,15 +61,10 @@
     }
   ],
   "storefront_categories": [
-    "Home & Kitchen",
-    "Home Improvement",
-    "Health & Beauty Accessories",
-    "mobile accessories",
-    "Garden & Outdoors",
-    "Office Products",
-    "Car & Motorbike",
-    "Toys & Games",
-    "Baby Products",
-    "Personal Care"
+    "Festive & Lights",
+    "Home Decor",
+    "Kitchen & Dining",
+    "Smart Gadgets",
+    "Gifts & Hampers"
   ]
 }

@@ -14,7 +14,12 @@ from classifier_pricing import ClassifierAndPricingEngine
 from deodap_extractor import DeoDapExtractor
 
 from winning_engine.data_models import now_iso, load_settings, get_product_manual_entry
-from winning_engine.deodap_harvester import harvest_deodap_bestsellers
+from winning_engine.deodap_harvester import (
+    harvest_deodap_bestsellers,
+    classify_niche,
+    is_junk_or_mismatched_product,
+    get_concept_stem,
+)
 from winning_engine.meta_ad_spy import analyze_meta_ad_signals
 from winning_engine.trend_checker import get_google_trends_analysis
 from winning_engine.social_spy import analyze_social_velocity
@@ -107,7 +112,9 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
     """Computes full transparent scoring, provenance, and pipeline status for a single catalog item."""
     handle = item.get("handle", "")
     title = item.get("title", "")
-    niche = item.get("niche", "Home Decor")
+    raw_niche = item.get("niche", "Home Decor")
+    verified_niche = classify_niche(title, preferred_niche=raw_niche)
+    niche = verified_niche or raw_niche
     wholesale_price = float(item.get("wholesale_price") or item.get("wholesale_cost") or 0.0)
 
     meta_signals = analyze_meta_ad_signals(title, niche, handle=handle)
@@ -126,8 +133,9 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
             fetch_live=False
         )
 
+    item_with_niche = {**item, "niche": niche}
     score_data = compute_winning_score(
-        product=item,
+        product=item_with_niche,
         meta_signals=meta_signals,
         trend_signals=trend_signals,
         social_signals=social_signals,
@@ -158,7 +166,7 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
         }
 
     pipeline_steps = _build_pipeline_steps_status(
-        item, trend_signals, competitor_intel, meta_signals, social_signals, score_data
+        item_with_niche, trend_signals, competitor_intel, meta_signals, social_signals, score_data
     )
 
     fetched_at = item.get("fetched_at") or now_iso()
@@ -168,12 +176,18 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
 
     from winning_engine.smartbiz_exporter import get_product_smartbiz_preset_summary
     smartbiz_preset = get_product_smartbiz_preset_summary({
-        **item,
+        **item_with_niche,
         "wholesale_price": wholesale_price,
         "selling_price": score_data["pricing"]["selling_price"],
         "images": raw_imgs[:6],
         "image_url": primary_img,
     })
+
+    is_hard_failed = score_data["is_hard_failed"]
+    hard_fail_reasons = list(score_data["hard_fail_reasons"])
+    if verified_niche is None or is_junk_or_mismatched_product(title):
+        is_hard_failed = True
+        hard_fail_reasons.append("Category Mismatch / Off-Niche Product")
 
     return {
         "id": item.get("id"),
@@ -210,8 +224,8 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
         "confidence_color": score_data["confidence_color"],
         "is_stale": score_data["is_stale"],
         "data_coverage": score_data["data_coverage"],
-        "is_hard_failed": score_data["is_hard_failed"],
-        "hard_fail_reasons": score_data["hard_fail_reasons"],
+        "is_hard_failed": is_hard_failed,
+        "hard_fail_reasons": hard_fail_reasons,
         "passed_criteria_count": score_data["passed_criteria_count"],
         "checklist": score_data["checklist"],
         "festival_mood": score_data["festival_mood"],
@@ -251,7 +265,7 @@ def scan_and_update_winners(
     """
     Pulls fresh live DeoDap products across all 5 niches, enforces the 4-Key Zero-Repeat
     Export Vault (server ledger + browser localStorage keys), evaluates all 10 criteria
-    with transparent provenance metadata, filters out hard-failed items, and merges
+    with transparent provenance metadata, filters out hard-failed or off-niche items, and merges
     newly scanned unexported winners with the existing unexported pool.
     """
     from winning_engine.export_ledger import (
@@ -291,10 +305,12 @@ def scan_and_update_winners(
     newly_scanned = [enrich_winner_record(item, catalog_pool=harvested_items) for item in harvested_items]
     newly_scanned = [
         w for w in newly_scanned
-        if not w.get("is_hard_failed", False) and not is_product_already_exported(w, excl_sets)
+        if not w.get("is_hard_failed", False)
+        and w.get("confidence") != "Low"
+        and not is_product_already_exported(w, excl_sets)
     ]
     if not randomize:
-        newly_scanned.sort(key=lambda x: (x.get("winning_score", 0), x.get("verified_score_pct", 0)), reverse=True)
+        newly_scanned.sort(key=lambda x: (x.get("confidence") == "High", x.get("winning_score", 0), x.get("verified_score_pct", 0)), reverse=True)
 
     # Merge newly_scanned at the front + existing unexported items, deduplicating by all 4 keys
     seen_skus = set(excl_sets[0])
@@ -305,6 +321,12 @@ def scan_and_update_winners(
 
     for candidate in newly_scanned + existing_pool:
         if candidate.get("is_hard_failed", False):
+            continue
+        verified_niche = classify_niche(candidate.get("title", ""), preferred_niche=candidate.get("niche"))
+        if not verified_niche:
+            continue
+        candidate["niche"] = verified_niche
+        if candidate.get("confidence") == "Low":
             continue
         if is_product_already_exported(candidate, (seen_skus, seen_handles, seen_vids, seen_tfps)):
             continue
@@ -348,7 +370,6 @@ def auto_refill_unexported_winners(
     from winning_engine.deodap_harvester import harvest_fresh_unexported_deodap_items
     from winning_engine.export_ledger import (
         extract_product_fingerprints,
-        is_product_already_exported,
         load_export_ledger,
         save_export_ledger,
     )
@@ -390,7 +411,7 @@ def auto_refill_unexported_winners(
     newly_enriched: List[Dict[str, Any]] = []
     for item in raw_new_items:
         enriched = enrich_winner_record(item, catalog_pool=combined_pool)
-        if not enriched.get("is_hard_failed", False):
+        if not enriched.get("is_hard_failed", False) and enriched.get("confidence") != "Low":
             newly_enriched.append(enriched)
 
     if newly_enriched:
@@ -420,7 +441,7 @@ def get_winners(
 ) -> List[Dict[str, Any]]:
     """
     Loads winning products from storage, filters out any product already in the 4-Key Zero-Repeat Export Vault
-    when `exclude_exported=True`, auto-refills from deeper live DeoDap pages when `auto_refill=True`,
+    when `exclude_exported=True`, enforces strict category purity + High/Medium confidence,
     and rotates the displayed slice per niche when batch_cursor > 0.
     """
     from winning_engine.export_ledger import (
@@ -452,7 +473,12 @@ def get_winners(
         winners = [enrich_winner_record(w, catalog_pool=winners) for w in winners]
 
     if not include_hard_failed:
-        winners = [w for w in winners if not w.get("is_hard_failed", False)]
+        winners = [
+            w for w in winners
+            if not w.get("is_hard_failed", False)
+            and w.get("confidence") != "Low"
+            and classify_niche(w.get("title", ""), preferred_niche=w.get("niche")) is not None
+        ]
 
     if exclude_exported:
         excl_sets = build_exclusion_sets(extra_excluded_keys)
@@ -503,10 +529,16 @@ def get_winners(
         for n_name, n_items in by_niche.items():
             if not n_items:
                 continue
-            # Sort base niche pool deterministically by (not hard_failed, score, handle)
+            # Sort base niche pool deterministically by (High confidence, not hard_failed, score, handle)
             n_items_sorted = sorted(
                 n_items,
-                key=lambda x: (not x.get("is_hard_failed", False), x.get("winning_score", 0), x.get("handle", "")),
+                key=lambda x: (
+                    not x.get("is_hard_failed", False),
+                    x.get("confidence") == "High",
+                    x.get("winning_score", 0),
+                    x.get("verified_score_pct", 0),
+                    x.get("handle", ""),
+                ),
                 reverse=True
             )
             if b_idx > 0 and len(n_items_sorted) > 1:
@@ -514,12 +546,36 @@ def get_winners(
                 rotated_niche = n_items_sorted[shift:] + n_items_sorted[:shift]
             else:
                 rotated_niche = n_items_sorted
-            sliced_all.extend(rotated_niche[:per_niche_display])
+
+            # Enforce concept-stem diversity within the displayed slice (max 2 per concept stem first pass)
+            diverse_slice: List[Dict[str, Any]] = []
+            stem_counts: Dict[str, int] = {}
+            overflow_slice: List[Dict[str, Any]] = []
+            for item in rotated_niche:
+                stem = get_concept_stem(item.get("title", ""))
+                if stem_counts.get(stem, 0) < 2:
+                    stem_counts[stem] = stem_counts.get(stem, 0) + 1
+                    diverse_slice.append(item)
+                else:
+                    overflow_slice.append(item)
+                if len(diverse_slice) >= per_niche_display:
+                    break
+            if len(diverse_slice) < per_niche_display:
+                diverse_slice.extend(overflow_slice[: per_niche_display - len(diverse_slice)])
+
+            sliced_all.extend(diverse_slice[:per_niche_display])
 
         # Interleave niches for 'All' tab when batch_cursor > 0 so top row immediately changes across all categories
         if not niche or str(niche).strip().lower() == "all":
             if b_idx == 0:
-                sliced_all.sort(key=lambda x: (not x.get("is_hard_failed", False), x.get("winning_score", 0)), reverse=True)
+                sliced_all.sort(
+                    key=lambda x: (
+                        not x.get("is_hard_failed", False),
+                        x.get("confidence") == "High",
+                        x.get("winning_score", 0),
+                    ),
+                    reverse=True,
+                )
             else:
                 interleaved: List[Dict[str, Any]] = []
                 niche_buckets = [

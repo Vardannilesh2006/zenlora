@@ -375,7 +375,7 @@ def get_competitor_price_intelligence(
     if fetch_live:
         scraped = scrape_live_marketplace_prices(clean_keyword)
     else:
-        scraped = cache.get(clean_keyword.lower(), {})
+        scraped = cache.get(clean_keyword.lower()) or (cache.get(handle.lower(), {}) if handle else {})
 
     manual_all = get_product_manual_entry(handle) if handle else {}
     manual_mkt = manual_all.get("marketplace_prices", {})

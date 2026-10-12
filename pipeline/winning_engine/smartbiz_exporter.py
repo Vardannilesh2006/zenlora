@@ -111,14 +111,23 @@ NICHE_CODE_MAP = {
 }
 
 HSN_BY_PRODUCT_CATEGORY = {
-    "Pooja essentials": "830629",
-    "Mops, Brushes & Scrubs": "960390",
-    "Lighting": "940540",
-    "Kitchen & Dining": "392410",
-    "Home storage and Organization": "392490",
+    "Festive & Lights": "830629",
     "Home Decor": "392640",
-    "Other Electronics": "850980",
-    "General": "960810",
+    "Kitchen & Dining": "392410",
+    "Smart Gadgets": "850980",
+    "Gifts & Hampers": "960810",
+}
+
+NICHE_TO_SMARTBIZ_CATEGORY = {
+    "Festive": ("GENERAL", "Festive & Lights"),
+    "Festive & Lights": ("GENERAL", "Festive & Lights"),
+    "Home Decor": ("GENERAL", "Home Decor"),
+    "Kitchen": ("GENERAL", "Kitchen & Dining"),
+    "Kitchen & Dining": ("GENERAL", "Kitchen & Dining"),
+    "Gadgets": ("GENERAL", "Smart Gadgets"),
+    "Smart Gadgets": ("GENERAL", "Smart Gadgets"),
+    "Gifts": ("GENERAL", "Gifts & Hampers"),
+    "Gifts & Hampers": ("GENERAL", "Gifts & Hampers"),
 }
 
 
@@ -177,52 +186,29 @@ def extract_product_images(product: Dict) -> List[str]:
 
 def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
     """
-    Maps a Zenlora product to the exact SmartBiz preset structure from the user's live store:
-    - Column J (Business Category): "GENERAL" (ensuring zero cross-category collision across the store)
-    - Column K (Product Category): Exact storefront collection names ("Home & Kitchen", "Home Improvement",
-      "Health & Beauty Accessories", "mobile accessories", "Garden & Outdoors", "Office Products",
-      "Car & Motorbike", "Toys & Games", "Baby Products", "Personal Care").
+    Maps a Zenlora product 100% deterministically to its exact Storefront Category:
+    - Column J (Business Category): "GENERAL" (from SmartBiz's 21-item dropdown, ensuring 0% cross-Business-Category collision)
+    - Column K (Product Category): Exact Radar & Storefront category name:
+      * Festive    -> "Festive & Lights"
+      * Home Decor -> "Home Decor"
+      * Kitchen    -> "Kitchen & Dining"
+      * Gadgets    -> "Smart Gadgets"
+      * Gifts      -> "Gifts & Hampers"
     """
-    niche = str(product.get("niche") or product.get("primary_category") or "Home Decor").strip()
-    title_lower = str(product.get("title") or "").lower()
-    desc_lower = str(product.get("description") or "").lower()
-    combined = f"{title_lower} {desc_lower}"
+    niche = str(product.get("niche") or product.get("primary_category") or "").strip()
+    if niche in NICHE_TO_SMARTBIZ_CATEGORY:
+        return NICHE_TO_SMARTBIZ_CATEGORY[niche]
 
-    # 1. Car & Motorbike
-    if any(kw in title_lower for kw in ("car ", "bike ", "bicycle", "motorcycle", "tire", "tyre", "dashboard", "air vent", "key finder", "pick up tool")):
-        return ("GENERAL", "Car & Motorbike")
-
-    # 2. Mobile Accessories
-    if any(kw in title_lower for kw in ("phone", "mobile", "cable", "charger", "type-c", "usb hub", "earbud", "power strip", "cable clip", "wire holder")):
-        return ("GENERAL", "mobile accessories")
-
-    # 3. Health & Beauty Accessories / Personal Care (exclude bathroom organizers like soap stand/holder)
-    if not any(hw in title_lower for hw in ("soap stand", "soap holder", "soap dish", "towel hanger", "organizer", "incense", "agarbatti", "dhoop")):
-        if any(kw in title_lower for kw in ("roller", "massager", "blackhead", "grooming", "manicure", "pedicure", "eyebrow", "shaver", "makeup", "eyeliner", "hair", "comb", "bath brush", "eye mask", "foot", "toothbrush")):
-            return ("GENERAL", "Health & Beauty Accessories")
-    if "sewing" in title_lower:
-        return ("GENERAL", "Personal Care")
-
-    # 4. Baby Products / Toys & Games (exclude plumbing 'bib cock')
-    if "bib cock" not in title_lower and any(kw in title_lower for kw in ("baby", "toddler", "sippy", "baby bib", "children's")):
-        return ("GENERAL", "Baby Products")
-    if any(kw in title_lower for kw in ("puzzle", "stamp", "toy", "couple keychain", "game")):
-        return ("GENERAL", "Toys & Games")
-
-    # 5. Garden & Outdoors
-    if any(kw in title_lower for kw in ("solar", "camping", "lantern", "flashlight", "torch", "plant", "watering", "flower pot", "planter")):
-        return ("GENERAL", "Garden & Outdoors")
-
-    # 6. Office Products
-    if any(kw in title_lower for kw in ("pen holder", "pen stand", "desk", "stationery", "voltage tester", "ruler", "diary", "notebook")):
-        return ("GENERAL", "Office Products")
-
-    # 7. Kitchen & Home & Kitchen
-    if niche == "Kitchen" or any(kw in title_lower for kw in ("kitchen", "oil", "dispenser", "sprout", "juicer", "chopper", "slicer", "peeler", "strainer", "egg", "cooker", "frother", "bottle", "chopping", "mortar", "pestle", "cookie", "hot mate", "towel", "dish", "bajot")):
-        return ("GENERAL", "Home & Kitchen")
-
-    # 8. Default for Home Decor, Lamps, Hooks, Cleaning, Pooja/Festive & Organizers -> Home Improvement
-    return ("GENERAL", "Home Improvement")
+    # Title-based fallback if niche is missing
+    from .deodap_harvester import classify_niche
+    inferred = classify_niche(
+        str(product.get("title") or ""),
+        str(product.get("tags") or ""),
+        str(product.get("description") or ""),
+    )
+    if inferred and inferred in NICHE_TO_SMARTBIZ_CATEGORY:
+        return NICHE_TO_SMARTBIZ_CATEGORY[inferred]
+    return ("GENERAL", "Home Decor")
 
 
 def _clean_text(text: str) -> str:
@@ -519,30 +505,13 @@ def select_current_page_products(
             include_hard_failed=include_hard_failed,
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
-            per_niche_display=max(limit + 10, 30),
+            per_niche_display=max(limit + 15, 35),
             exclude_exported=exclude_exported,
             extra_excluded_keys=extra_excluded_keys,
             auto_refill=exclude_exported,
         )
-        # If a specific category has fewer than `limit` unexported items remaining, top up from all unexported categories
-        if len(items) < limit:
-            all_unexported = get_winners(
-                niche="All",
-                include_hard_failed=include_hard_failed,
-                refresh_dynamic=True,
-                batch_cursor=batch_cursor,
-                per_niche_display=0,
-                exclude_exported=exclude_exported,
-                extra_excluded_keys=extra_excluded_keys,
-                auto_refill=exclude_exported,
-            )
-            existing_handles = {w.get("handle") for w in items}
-            for w in all_unexported:
-                if w.get("handle") not in existing_handles:
-                    items.append(w)
-                    existing_handles.add(w.get("handle"))
-                    if len(items) >= limit:
-                        break
+        # Strictly enforce that every item belongs to the requested category
+        items = [w for w in items if str(w.get("niche", "")).strip().lower() == niche.strip().lower()]
     else:
         items = get_winners(
             niche="All",
@@ -676,10 +645,12 @@ def select_smart_mix_products(
     return selected
 
 
-def build_unique_smartbiz_rows(products: List[Dict]) -> List[List[str]]:
+def build_unique_smartbiz_rows(products: List[Dict], niche_override: Optional[str] = None) -> List[List[str]]:
     rows: List[List[str]] = []
     used_skus = set()
     for idx, prod in enumerate(products, start=1):
+        if niche_override and niche_override != "All":
+            prod = {**prod, "niche": niche_override}
         row = product_to_smartbiz_row(prod, index=idx)
         sku = row[5]
         if sku in used_skus:
@@ -691,7 +662,7 @@ def build_unique_smartbiz_rows(products: List[Dict]) -> List[List[str]]:
     return rows
 
 
-def generate_smartbiz_csv_bytes(products: List[Dict]) -> bytes:
+def generate_smartbiz_csv_bytes(products: List[Dict], niche_override: Optional[str] = None) -> bytes:
     """
     Generates a CSV UTF-8 (Comma delimited) (*.csv) byte stream with the exact 52 column headers
     from `smartbiz_bulk_upload_template_v10.xlsx`.
@@ -699,12 +670,12 @@ def generate_smartbiz_csv_bytes(products: List[Dict]) -> bytes:
     output = io.StringIO()
     writer = csv.writer(output, lineterminator="\r\n")
     writer.writerow(EXACT_SMARTBIZ_HEADERS)
-    for row in build_unique_smartbiz_rows(products):
+    for row in build_unique_smartbiz_rows(products, niche_override=niche_override):
         writer.writerow(row)
     return output.getvalue().encode("utf-8-sig")
 
 
-def generate_smartbiz_xlsx_bytes(products: List[Dict]) -> bytes:
+def generate_smartbiz_xlsx_bytes(products: List[Dict], niche_override: Optional[str] = None) -> bytes:
     """
     Generates an in-memory 3-sheet Excel `.xlsx` byte stream preserving `important_instructions`,
     `bulk_upload_template` (52 headers + product rows), and `DataSheet` from `smartbiz_bulk_upload_template_v10.xlsx`.
@@ -727,7 +698,7 @@ def generate_smartbiz_xlsx_bytes(products: List[Dict]) -> bytes:
         for c_idx, h_val in enumerate(EXACT_SMARTBIZ_HEADERS, start=1):
             ws.cell(row=1, column=c_idx, value=h_val)
 
-    rows = build_unique_smartbiz_rows(products)
+    rows = build_unique_smartbiz_rows(products, niche_override=niche_override)
     for r_idx, row_vals in enumerate(rows, start=2):
         for c_idx, val in enumerate(row_vals, start=1):
             if c_idx in (8, 9) and str(val).isdigit():

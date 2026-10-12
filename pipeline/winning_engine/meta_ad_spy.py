@@ -83,8 +83,8 @@ def analyze_meta_ad_signals(title: str, niche: str, handle: Optional[str] = None
         from winning_engine.competitor_pricing import _load_market_cache, extract_clean_product_name
         from winning_engine.trend_checker import _load_trends_cache, normalize_trend_keyword
         m_cache = _load_market_cache()
-        c_key = (handle or extract_clean_product_name(title)).lower()
-        m_entry = m_cache.get(c_key, {})
+        clean_kw_key = extract_clean_product_name(title).lower()
+        m_entry = (m_cache.get(handle.lower()) if handle else None) or m_cache.get(clean_kw_key, {})
 
         t_cache = _load_trends_cache()
         t_entry = t_cache.get(normalize_trend_keyword(keyword), {})
