@@ -380,5 +380,71 @@ def test_one_click_product_images_zip_download(monkeypatch):
             assert zf.read(name) == fake_img_bytes
 
 
+def test_smartbiz_excel_worksheet_bulk_upload_template_and_structure():
+    """
+    Verifies that SmartBiz Excel (.xlsx) exports strictly satisfy:
+    1. The workbook contains exactly 3 sheets: ['important_instructions', 'bulk_upload_template', 'DataSheet']
+    2. The worksheet 'bulk_upload_template' is present and active (eliminating the SmartBiz error:
+       'Worksheet named "bulk_upload_template" missing in the uploaded file')
+    3. Row 1 has the exact 52 official headers.
+    4. Row 2..N has valid product data:
+       - Columns A..E are blank for new products.
+       - Column F is the custom/DeoDap SKU.
+       - Column G is clean product name (no \ufffd).
+       - Columns H & I are integers (MRP > Selling Price).
+       - Column J is 'GENERAL'.
+       - Column K is the exact category ('Festive & Lights').
+    """
+    client = app.test_client()
+
+    # 1. Test Category Page (.xlsx)
+    res_page = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Festive&batch=0&limit=24&commit=0")
+    assert res_page.status_code == 200
+    assert "openxmlformats" in res_page.content_type
+    disp = res_page.headers.get("Content-Disposition", "")
+    assert ".xlsx" in disp
+
+    wb_page = openpyxl.load_workbook(io.BytesIO(res_page.data), data_only=True)
+    assert wb_page.sheetnames == ["important_instructions", "bulk_upload_template", "DataSheet"]
+    assert "bulk_upload_template" in wb_page.sheetnames
+    assert wb_page.active.title == "bulk_upload_template"
+
+    ws_page = wb_page["bulk_upload_template"]
+    assert ws_page.max_row == 25  # 1 header row + 24 product rows
+    assert [ws_page.cell(1, col).value for col in range(1, 53)] == EXACT_SMARTBIZ_HEADERS
+
+    for r_idx in range(2, 26):
+        # A..E must be None/empty
+        for col in range(1, 6):
+            assert ws_page.cell(r_idx, col).value in (None, "")
+        # F: SKU
+        sku = ws_page.cell(r_idx, 6).value
+        assert sku and len(str(sku)) <= 40
+        # G: Name
+        name = ws_page.cell(r_idx, 7).value
+        assert name and "\ufffd" not in str(name) and len(str(name)) <= 200
+        # H & I: MRP & Selling Price as integers
+        mrp = ws_page.cell(r_idx, 8).value
+        sp = ws_page.cell(r_idx, 9).value
+        assert isinstance(mrp, (int, float)) and isinstance(sp, (int, float))
+        assert int(mrp) > int(sp)
+        # J: Business Category
+        assert ws_page.cell(r_idx, 10).value == "GENERAL"
+        # K: Product Category
+        assert ws_page.cell(r_idx, 11).value == "Festive & Lights"
+
+    wb_page.close()
+
+    # 2. Test Smart Mix 55 (.xlsx)
+    res_mix = client.get("/api/radar/smartbiz.xlsx?mode=mix&batch=0&count=55&commit=0")
+    assert res_mix.status_code == 200
+    wb_mix = openpyxl.load_workbook(io.BytesIO(res_mix.data), data_only=True)
+    assert "bulk_upload_template" in wb_mix.sheetnames
+    ws_mix = wb_mix["bulk_upload_template"]
+    assert ws_mix.max_row == 56  # 1 header + 55 products
+    wb_mix.close()
+
+
+
 
 

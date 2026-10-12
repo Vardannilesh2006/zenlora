@@ -357,20 +357,20 @@
                     <span id="vaultToolbarText">🛡️ Preset &amp; Vault ({{ export_ledger.total_blocked_products if export_ledger else 90 }} Blocked)</span>
                 </button>
                 <a 
-                    href="/api/radar/smartbiz.csv?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
+                    href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
                     onclick="return downloadUniqueSmartBizFile(event, this.href)"
-                    title="Download 100% Unique SmartBiz v10 CSV UTF-8 (Zero-Repeat Vault Protected)"
-                    class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition flex items-center gap-1.5 whitespace-nowrap"
+                    title="Download 100% Upload-Ready SmartBiz Excel (.xlsx) with Worksheet bulk_upload_template (Zero-Repeat Vault Protected)"
+                    class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-emerald-600 text-white hover:bg-emerald-700 transition flex items-center gap-1.5 whitespace-nowrap shadow-xs"
                 >
-                    <span>📦 SmartBiz Page CSV ({% if selected_niche == 'All' %}Top 24{% else %}{{ selected_niche }} · {{ niche_counts.get(selected_niche, 24) if niche_counts else 24 }}{% endif %})</span>
+                    <span>📊 SmartBiz Page Excel (.xlsx · {% if selected_niche == 'All' %}Top 24{% else %}{{ selected_niche }} · {{ niche_counts.get(selected_niche, 24) if niche_counts else 24 }}{% endif %})</span>
                 </a>
                 <a 
-                    href="/api/radar/smartbiz.csv?mode=mix&batch={{ current_batch }}&count=55"
+                    href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55"
                     onclick="return downloadUniqueSmartBizFile(event, this.href)"
-                    title="Download 100% Unique SmartBiz v10 CSV UTF-8 with 55 mixed winning products (Zero-Repeat Vault Protected)"
+                    title="Download 100% Upload-Ready SmartBiz Excel (.xlsx) with 55 mixed winning products (Zero-Repeat Vault Protected)"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-zinc-900 text-white border border-zinc-900 hover:bg-zinc-800 transition flex items-center gap-1.5 shadow-2xs whitespace-nowrap"
                 >
-                    <span>🚀 SmartBiz Mix 55 CSV</span>
+                    <span>🚀 SmartBiz Mix 55 Excel (.xlsx)</span>
                 </a>
             </div>
         </div>
@@ -761,7 +761,7 @@
             if (btn) {
                 btn.style.pointerEvents = 'none';
                 btn.classList.add('opacity-75');
-                btn.innerHTML = `<span>⏳ Generating 100% Unique File...</span>`;
+                btn.innerHTML = `<span>⏳ Generating SmartBiz Excel (.xlsx)...</span>`;
             }
 
             const browserKeys = getBrowserVaultKeys();
@@ -777,7 +777,7 @@
                 const exportedHandles = (res.headers.get('X-Zenlora-Exported-Handles') || '').split(',').filter(Boolean);
                 const blockedTotal = res.headers.get('X-Zenlora-Blocked-Total') || '';
                 const disp = res.headers.get('Content-Disposition') || '';
-                let filename = url.includes('.xlsx') ? 'smartbiz_bulk_upload_unique.xlsx' : 'smartbiz_bulk_upload_unique.csv';
+                let filename = url.includes('.csv') ? 'smartbiz_bulk_upload_unique.csv' : 'smartbiz_bulk_upload_unique.xlsx';
                 const match = disp.match(/filename=([^;]+)/i);
                 if (match && match[1]) filename = match[1].trim().replace(/^["']|["']$/g, '');
 
@@ -806,7 +806,7 @@
                     if (b2) b2.innerText = `🛡️ Preset & Vault (${blockedTotal} Blocked)`;
                 }
 
-                showToast(`Downloaded ${exportedSkus.length} unique products! Locked in Zero-Repeat Vault (${blockedTotal} total blocked).`, false);
+                showToast(`Downloaded ${exportedSkus.length} products in SmartBiz Excel (.xlsx)! Locked in Zero-Repeat Vault (${blockedTotal} total blocked).`, false);
                 setTimeout(() => window.location.reload(), 900);
             })
             .catch((err) => {

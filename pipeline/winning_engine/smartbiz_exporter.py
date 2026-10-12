@@ -216,7 +216,17 @@ def _clean_text(text: str) -> str:
         return ""
     no_tags = re.sub(r"<[^>]+>", " ", str(text))
     unescaped = html.unescape(no_tags)
-    return re.sub(r"\s+", " ", unescaped).strip()
+    # Sanitize broken unicode characters or garbled replacement characters
+    cleaned = (
+        unescaped.replace("\ufffd", "-")
+        .replace("\u2013", "-")
+        .replace("\u2014", "-")
+        .replace("\u2018", "'")
+        .replace("\u2019", "'")
+        .replace("\u201c", '"')
+        .replace("\u201d", '"')
+    )
+    return re.sub(r"\s+", " ", cleaned).strip()
 
 
 def build_smartbiz_custom_sku(product: Dict, index: int) -> str:
@@ -677,39 +687,57 @@ def generate_smartbiz_csv_bytes(products: List[Dict], niche_override: Optional[s
 
 def generate_smartbiz_xlsx_bytes(products: List[Dict], niche_override: Optional[str] = None) -> bytes:
     """
-    Generates an in-memory 3-sheet Excel `.xlsx` byte stream preserving `important_instructions`,
-    `bulk_upload_template` (52 headers + product rows), and `DataSheet` from `smartbiz_bulk_upload_template_v10.xlsx`.
+    Generates an in-memory 3-sheet Excel `.xlsx` byte stream strictly guaranteeing:
+    - Sheet 1: `important_instructions` (preserved instructions)
+    - Sheet 2: `bulk_upload_template` (exact required name, 52 column headers, real data)
+    - Sheet 3: `DataSheet` (dropdown source data)
+    Active sheet is explicitly set to `bulk_upload_template` so SmartBiz immediately reads it.
     """
     import openpyxl
 
-    template_path = ROOT_DIR / "smartbiz_bulk_upload_template_v10.xlsx"
+    template_path = ROOT_DIR / "data" / "smartbiz_master_template.xlsx"
+    if not template_path.exists():
+        template_path = ROOT_DIR / "smartbiz_bulk_upload_template_v10.xlsx"
+
+    wb = None
     try:
         if template_path.exists():
             wb = openpyxl.load_workbook(template_path)
-            ws = wb["bulk_upload_template"] if "bulk_upload_template" in wb.sheetnames else wb.active
-            if ws.max_row > 1:
-                ws.delete_rows(2, ws.max_row - 1)
+            if "bulk_upload_template" not in wb.sheetnames:
+                ws = wb.create_sheet(title="bulk_upload_template")
+                for c_idx, h_val in enumerate(EXACT_SMARTBIZ_HEADERS, start=1):
+                    ws.cell(row=1, column=c_idx, value=h_val)
+            else:
+                ws = wb["bulk_upload_template"]
+                if ws.max_row > 1:
+                    ws.delete_rows(2, ws.max_row)
         else:
-            raise FileNotFoundError("Template not found")
+            raise FileNotFoundError("Master template not found")
     except Exception:
         wb = openpyxl.Workbook()
-        ws = wb.active
-        ws.title = "bulk_upload_template"
+        ws_inst = wb.active
+        ws_inst.title = "important_instructions"
+        ws = wb.create_sheet(title="bulk_upload_template")
+        wb.create_sheet(title="DataSheet")
         for c_idx, h_val in enumerate(EXACT_SMARTBIZ_HEADERS, start=1):
             ws.cell(row=1, column=c_idx, value=h_val)
 
     rows = build_unique_smartbiz_rows(products, niche_override=niche_override)
     for r_idx, row_vals in enumerate(rows, start=2):
         for c_idx, val in enumerate(row_vals, start=1):
-            if c_idx in (8, 9) and str(val).isdigit():
+            if c_idx in (8, 9) and (isinstance(val, (int, float)) or str(val).isdigit()):
                 ws.cell(row=r_idx, column=c_idx, value=int(val))
             else:
                 ws.cell(row=r_idx, column=c_idx, value=val if val != "" else None)
+
+    # Explicitly set the active sheet to `bulk_upload_template`
+    wb.active = ws
 
     bio = io.BytesIO()
     wb.save(bio)
     wb.close()
     return bio.getvalue()
+
 
 
 def populate_smartbiz_excel_file(

@@ -327,7 +327,7 @@ def _build_export_headers(filename: str, products: list[dict]) -> dict[str, str]
             exported_handles.append(fp["handle"])
     ledger = load_export_ledger()
     return {
-        "Content-Disposition": f"attachment; filename={filename}",
+        "Content-Disposition": f'attachment; filename="{filename}"',
         "X-Zenlora-Exported-SKUs": ",".join(exported_skus[:80]),
         "X-Zenlora-Exported-Handles": ",".join(exported_handles[:80]),
         "X-Zenlora-Blocked-Total": str(ledger.get("total_blocked_products", 0)),
