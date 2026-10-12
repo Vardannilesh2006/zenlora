@@ -12,11 +12,14 @@ Generates 100% upload-ready CSV UTF-8 and Excel (.xlsx) files strictly adhering 
 import csv
 import html
 import io
+import json
 import re
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 from .radar_controller import get_winners
+
+ROOT_DIR = Path(__file__).resolve().parent.parent.parent
 
 # Exact 52 column headers from `smartbiz_bulk_upload_template_v10.xlsx` -> `bulk_upload_template` Row 1 (A1:AZ1)
 EXACT_SMARTBIZ_HEADERS: List[str] = [
@@ -443,11 +446,67 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
     return row
 
 
+def load_smartbiz_preset() -> Dict:
+    """
+    Loads the saved Zenlora SmartBiz v10 Store Preset configuration from `data/smartbiz_preset.json`.
+    """
+    preset_path = ROOT_DIR / "data" / "smartbiz_preset.json"
+    if preset_path.exists():
+        try:
+            return json.loads(preset_path.read_text(encoding="utf-8"))
+        except Exception:
+            pass
+    return {
+        "preset_id": "zenlora_smartbiz_v10_new_winners",
+        "preset_name": "Zenlora SmartBiz v10 Store Preset (New High-Score Winners)",
+        "version": "10.0",
+        "status": "active",
+        "listing_mode": "new_products_only",
+    }
+
+
+def get_product_smartbiz_preset_summary(product: Dict, index: int = 1) -> Dict:
+    """
+    Computes the real SmartBiz preset fields for a single product so both the Radar UI
+    and CSV/XLSX exporter show identical, verified data.
+    """
+    custom_sku = build_smartbiz_custom_sku(product, index=index)
+    mrp, selling_price = calculate_smartbiz_prices(product)
+    business_cat, product_cat = map_smartbiz_categories(product)
+    images = [img for img in extract_product_images(product) if img]
+    cost = float(product.get("wholesale_price") or product.get("pricing", {}).get("wholesale_price") or 0.0)
+    disc_pct = int(round(((mrp - selling_price) / float(mrp)) * 100)) if mrp > selling_price else 0
+
+    if cost <= 55.0:
+        band_label = "Band A (53–63% OFF)"
+    elif cost <= 95.0:
+        band_label = "Band B (41–49% OFF)"
+    elif cost <= 150.0:
+        band_label = "Band C (31–39% OFF)"
+    else:
+        band_label = "Band D (21–29% OFF)"
+
+    return {
+        "custom_sku": custom_sku[:40],
+        "business_category": business_cat,
+        "product_category": product_cat,
+        "mrp": mrp,
+        "selling_price": selling_price,
+        "discount_pct": disc_pct,
+        "discount_band": band_label,
+        "image_count": len(images),
+        "primary_jpg": images[0] if images else "",
+    }
+
+
 def select_current_page_products(
     niche: str = "All",
     batch_cursor: int = 0,
     limit: int = 20,
     include_hard_failed: bool = False,
+    min_score: float = 0.0,
+    min_margin: float = 0.0,
+    confidence: str = "All",
 ) -> List[Dict]:
     if niche and niche != "All":
         items = get_winners(
@@ -455,19 +514,26 @@ def select_current_page_products(
             include_hard_failed=include_hard_failed,
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
-            per_niche_display=limit,
+            per_niche_display=max(limit, 20),
         )
-        return items[:limit]
+    else:
+        items = get_winners(
+            niche="All",
+            include_hard_failed=include_hard_failed,
+            refresh_dynamic=True,
+            batch_cursor=batch_cursor,
+            per_niche_display=12,
+        )
+        items = sorted(items, key=lambda x: float(x.get("winning_score") or 0), reverse=True)
 
-    items = get_winners(
-        niche="All",
-        include_hard_failed=include_hard_failed,
-        refresh_dynamic=True,
-        batch_cursor=batch_cursor,
-        per_niche_display=12,
-    )
-    items_sorted = sorted(items, key=lambda x: float(x.get("winning_score") or 0), reverse=True)
-    return items_sorted[:limit]
+    if min_score > 0:
+        items = [w for w in items if float(w.get("winning_score") or 0) >= min_score]
+    if min_margin > 0:
+        items = [w for w in items if float(w.get("competitor_pricing", {}).get("net_profit") or 0) >= min_margin]
+    if confidence and confidence != "All":
+        items = [w for w in items if str(w.get("confidence", "")).lower() == confidence.lower()]
+
+    return items[:limit]
 
 
 def select_smart_mix_products(
@@ -545,24 +611,22 @@ def generate_smartbiz_csv_bytes(products: List[Dict]) -> bytes:
     return output.getvalue().encode("utf-8-sig")
 
 
-def populate_smartbiz_excel_file(
-    products: List[Dict],
-    template_path: Path,
-    output_path: Optional[Path] = None,
-) -> Path:
+def generate_smartbiz_xlsx_bytes(products: List[Dict]) -> bytes:
     """
-    Populates the `bulk_upload_template` sheet inside `smartbiz_bulk_upload_template_v10.xlsx`
-    with the given products while preserving `important_instructions`, `DataSheet`, and Row 1 headers.
+    Generates an in-memory 3-sheet Excel `.xlsx` byte stream preserving `important_instructions`,
+    `bulk_upload_template` (52 headers + product rows), and `DataSheet` from `smartbiz_bulk_upload_template_v10.xlsx`.
     """
     import openpyxl
 
-    target_out = output_path or template_path
+    template_path = ROOT_DIR / "smartbiz_bulk_upload_template_v10.xlsx"
     try:
-        wb = openpyxl.load_workbook(template_path)
-        ws = wb["bulk_upload_template"] if "bulk_upload_template" in wb.sheetnames else wb.active
-        # Clear old rows below row 1
-        if ws.max_row > 1:
-            ws.delete_rows(2, ws.max_row - 1)
+        if template_path.exists():
+            wb = openpyxl.load_workbook(template_path)
+            ws = wb["bulk_upload_template"] if "bulk_upload_template" in wb.sheetnames else wb.active
+            if ws.max_row > 1:
+                ws.delete_rows(2, ws.max_row - 1)
+        else:
+            raise FileNotFoundError("Template not found")
     except Exception:
         wb = openpyxl.Workbook()
         ws = wb.active
@@ -573,12 +637,28 @@ def populate_smartbiz_excel_file(
     rows = build_unique_smartbiz_rows(products)
     for r_idx, row_vals in enumerate(rows, start=2):
         for c_idx, val in enumerate(row_vals, start=1):
-            # Store numeric MRP & Selling Price as actual integers in Excel so DataValidation ISNUMBER() passes
             if c_idx in (8, 9) and str(val).isdigit():
                 ws.cell(row=r_idx, column=c_idx, value=int(val))
             else:
                 ws.cell(row=r_idx, column=c_idx, value=val if val != "" else None)
 
-    wb.save(target_out)
+    bio = io.BytesIO()
+    wb.save(bio)
     wb.close()
+    return bio.getvalue()
+
+
+def populate_smartbiz_excel_file(
+    products: List[Dict],
+    template_path: Path,
+    output_path: Optional[Path] = None,
+) -> Path:
+    """
+    Populates the `bulk_upload_template` sheet inside `smartbiz_bulk_upload_template_v10.xlsx`
+    with the given products while preserving `important_instructions`, `DataSheet`, and Row 1 headers.
+    """
+    target_out = output_path or template_path
+    xlsx_bytes = generate_smartbiz_xlsx_bytes(products)
+    target_out.write_bytes(xlsx_bytes)
     return target_out
+

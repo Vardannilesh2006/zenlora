@@ -29,6 +29,8 @@ from winning_engine.competitor_pricing import get_competitor_price_intelligence
 from winning_engine.gemini_analyzer import analyze_with_gemini
 from winning_engine.smartbiz_exporter import (
     generate_smartbiz_csv_bytes,
+    generate_smartbiz_xlsx_bytes,
+    load_smartbiz_preset,
     select_current_page_products,
     select_smart_mix_products,
 )
@@ -126,6 +128,8 @@ def radar():
     festival_cutoffs = calculate_festival_cutoffs(policy_max, settings)
     audit_logs = get_audit_logs(limit=25)
 
+    smartbiz_preset = load_smartbiz_preset()
+
     return render_template(
         "radar.html",
         winners=winners,
@@ -147,6 +151,7 @@ def radar():
         festival_cutoffs=festival_cutoffs,
         audit_logs=audit_logs,
         current_batch=batch_cursor,
+        smartbiz_preset=smartbiz_preset,
     )
 
 
@@ -247,11 +252,19 @@ def export_radar_csv():
     )
 
 
+@app.route("/api/radar/smartbiz-preset", methods=["GET"])
+def api_smartbiz_preset():
+    return jsonify(load_smartbiz_preset())
+
+
 @app.route("/api/radar/smartbiz.csv", methods=["GET"])
 def export_smartbiz_csv():
     mode = request.args.get("mode", "page").strip().lower()
     niche = request.args.get("niche", "All").strip()
     batch_cursor = int(request.args.get("batch", 0) or 0)
+    min_score = float(request.args.get("min_score", 0) or 0)
+    min_margin = float(request.args.get("min_margin", 0) or 0)
+    confidence = request.args.get("confidence", "All").strip()
 
     if mode == "mix":
         total_count = int(request.args.get("count", 55) or 55)
@@ -264,6 +277,9 @@ def export_smartbiz_csv():
             batch_cursor=batch_cursor,
             limit=limit,
             include_hard_failed=False,
+            min_score=min_score,
+            min_margin=min_margin,
+            confidence=confidence,
         )
         safe_niche = niche.lower().replace(" ", "_")
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_batch{batch_cursor}.csv"
@@ -272,6 +288,41 @@ def export_smartbiz_csv():
     return Response(
         csv_bytes,
         mimetype="text/csv; charset=utf-8",
+        headers={"Content-Disposition": f"attachment; filename={filename}"},
+    )
+
+
+@app.route("/api/radar/smartbiz.xlsx", methods=["GET"])
+def export_smartbiz_xlsx():
+    mode = request.args.get("mode", "page").strip().lower()
+    niche = request.args.get("niche", "All").strip()
+    batch_cursor = int(request.args.get("batch", 0) or 0)
+    min_score = float(request.args.get("min_score", 0) or 0)
+    min_margin = float(request.args.get("min_margin", 0) or 0)
+    confidence = request.args.get("confidence", "All").strip()
+
+    if mode == "mix":
+        total_count = int(request.args.get("count", 55) or 55)
+        products = select_smart_mix_products(total_count=total_count, batch_cursor=batch_cursor)
+        filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_batch{batch_cursor}.xlsx"
+    else:
+        limit = int(request.args.get("limit", 20) or 20)
+        products = select_current_page_products(
+            niche=niche,
+            batch_cursor=batch_cursor,
+            limit=limit,
+            include_hard_failed=False,
+            min_score=min_score,
+            min_margin=min_margin,
+            confidence=confidence,
+        )
+        safe_niche = niche.lower().replace(" ", "_")
+        filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_batch{batch_cursor}.xlsx"
+
+    xlsx_bytes = generate_smartbiz_xlsx_bytes(products)
+    return Response(
+        xlsx_bytes,
+        mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
         headers={"Content-Disposition": f"attachment; filename={filename}"},
     )
 

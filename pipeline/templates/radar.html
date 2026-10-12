@@ -120,6 +120,9 @@
 
             <!-- Right: Compact Controls & Live Scan Button (Single Line, Zero Overflow) -->
             <div class="flex items-center gap-2 flex-shrink-0 whitespace-nowrap">
+                <button onclick="togglePanel('smartbizPresetPanel')" class="hidden sm:flex h-8 px-2.5 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-emerald-900 border border-emerald-200 font-semibold text-xs items-center gap-1 transition" title="View Saved SmartBiz v10 Bulk Upload Preset & 4-Band Variable Discount Rules">
+                    <span>📋 SmartBiz Preset</span>
+                </button>
                 <button onclick="togglePanel('festivalPanel')" class="hidden md:flex h-8 px-2.5 rounded-lg bg-amber-50 hover:bg-amber-100 text-amber-900 border border-amber-200 font-semibold text-xs items-center gap-1 transition">
                     <span>🪔 Festivals</span>
                 </button>
@@ -139,6 +142,79 @@
             </div>
         </div>
     </header>
+
+    <!-- Collapsible SmartBiz v10 Store Preset & 4-Band Variable Discount Panel -->
+    <div id="smartbizPresetPanel" class="hidden border-b border-emerald-200 bg-emerald-50/60 px-3 sm:px-6 py-4">
+        <div class="max-w-[1500px] mx-auto">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <h2 class="text-sm font-bold text-emerald-950">📋 Saved SmartBiz v10 Store Preset (New High-Score Winners Only)</h2>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-600 text-white">ACTIVE PRESET</span>
+                    </div>
+                    <p class="text-[11px] text-emerald-900 mt-0.5">
+                        Every CSV &amp; Excel download automatically applies your saved SmartBiz 52-column store preset with 100% real DeoDap SKUs, `.jpg` gallery images, and dynamic 4-Band Variable Discounts (0% flat-50% trap).
+                    </p>
+                </div>
+                <div class="flex items-center gap-2">
+                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
+                        📊 Page Excel (.xlsx)
+                    </a>
+                    <a href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition">
+                        📊 Mix 55 Excel (.xlsx)
+                    </a>
+                    <button onclick="togglePanel('smartbizPresetPanel')" class="text-xs font-bold text-emerald-950 hover:underline ml-1">Close ✕</button>
+                </div>
+            </div>
+
+            <!-- 4-Band Cost-Inverse Variable Discount Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 mb-3">
+                <div class="bg-white rounded-lg p-2.5 border border-emerald-200 shadow-2xs text-xs">
+                    <div class="flex items-center justify-between font-bold text-textPrimary">
+                        <span>Band A · Cost ≤ ₹55</span>
+                        <span class="font-mono text-[11px] font-bold text-emerald-700 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-200">53% – 63% OFF</span>
+                    </div>
+                    <p class="text-[10px] text-textSecondary mt-1">Low-cost impulse items get high visual discount to trigger instant impulse checkout.</p>
+                </div>
+                <div class="bg-white rounded-lg p-2.5 border border-emerald-200 shadow-2xs text-xs">
+                    <div class="flex items-center justify-between font-bold text-textPrimary">
+                        <span>Band B · Cost ₹56–₹95</span>
+                        <span class="font-mono text-[11px] font-bold text-blue-700 bg-blue-50 px-1.5 py-0.5 rounded border border-blue-200">41% – 49% OFF</span>
+                    </div>
+                    <p class="text-[10px] text-textSecondary mt-1">Budget daily utilities get realistic marketplace offers strictly avoiding flat 50% OFF.</p>
+                </div>
+                <div class="bg-white rounded-lg p-2.5 border border-emerald-200 shadow-2xs text-xs">
+                    <div class="flex items-center justify-between font-bold text-textPrimary">
+                        <span>Band C · Cost ₹96–₹150</span>
+                        <span class="font-mono text-[11px] font-bold text-amber-800 bg-amber-50 px-1.5 py-0.5 rounded border border-amber-200">31% – 39% OFF</span>
+                    </div>
+                    <p class="text-[10px] text-textSecondary mt-1">Worth-it problem solvers &amp; decor lamps get credible mid-tier discounts.</p>
+                </div>
+                <div class="bg-white rounded-lg p-2.5 border border-emerald-200 shadow-2xs text-xs">
+                    <div class="flex items-center justify-between font-bold text-textPrimary">
+                        <span>Band D · Cost &gt; ₹150</span>
+                        <span class="font-mono text-[11px] font-bold text-purple-800 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-200">21% – 29% OFF</span>
+                    </div>
+                    <p class="text-[10px] text-textSecondary mt-1">High-worth premium items get subtle, high-trust discounts that protect perceived value.</p>
+                </div>
+            </div>
+
+            <!-- Preset Column Mapping Summary -->
+            <div class="bg-white rounded-lg p-2.5 border border-emerald-200 text-[11px] text-textSecondary flex flex-wrap items-center gap-x-4 gap-y-1">
+                <span><strong class="text-textPrimary">Cols A–E (IDs):</strong> Blank (New Listings Only)</span>
+                <span>•</span>
+                <span><strong class="text-textPrimary">Col F (Custom SKU):</strong> Real DeoDap SKU (≤40 chars)</span>
+                <span>•</span>
+                <span><strong class="text-textPrimary">Col J (Business Cat):</strong> <code class="font-mono bg-zinc-100 px-1 rounded">GENERAL</code></span>
+                <span>•</span>
+                <span><strong class="text-textPrimary">Col K (Product Cat):</strong> 10 Storefront Collections</span>
+                <span>•</span>
+                <span><strong class="text-textPrimary">Col U (Best Seller):</strong> Selective Yes (~33%) / No (~67%)</span>
+                <span>•</span>
+                <span><strong class="text-textPrimary">Cols W–AB (Images):</strong> Up to 6 Real DeoDap <code class="font-mono bg-zinc-100 px-1 rounded">.jpg</code> URLs</span>
+            </div>
+        </div>
+    </div>
 
     <!-- Collapsible Festival Calendar & Delivery Cutoff Calculator Panel -->
     <div id="festivalPanel" class="hidden border-b border-amber-200 bg-amber-50/70 px-3 sm:px-6 py-4">
@@ -260,17 +336,24 @@
                 {% endfor %}
             </div>
 
-            <div class="flex items-center gap-2 flex-shrink-0">
+            <div class="flex items-center gap-2 flex-shrink-0 flex-wrap">
+                <button
+                    onclick="togglePanel('smartbizPresetPanel')"
+                    title="Inspect Saved SmartBiz v10 Store Preset & 4-Band Variable Discount Rules"
+                    class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-zinc-100 text-textPrimary border border-zinc-200 hover:bg-zinc-200 transition flex items-center gap-1 whitespace-nowrap"
+                >
+                    <span>⚙️ Preset Active</span>
+                </button>
                 <a 
-                    href="/api/radar/smartbiz.csv?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20"
-                    title="Download SmartBiz v10 CSV UTF-8 for current category/page (~20 products)"
+                    href="/api/radar/smartbiz.csv?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
+                    title="Download SmartBiz v10 CSV UTF-8 using Saved Store Preset for current category/page (~20 products)"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition flex items-center gap-1.5 whitespace-nowrap"
                 >
                     <span>📦 SmartBiz Page CSV ({% if selected_niche == 'All' %}Top 20{% else %}{{ selected_niche }} · 20{% endif %})</span>
                 </a>
                 <a 
                     href="/api/radar/smartbiz.csv?mode=mix&batch={{ current_batch }}&count=55"
-                    title="Download SmartBiz v10 CSV UTF-8 with 55 mixed winning products across all 5 categories"
+                    title="Download SmartBiz v10 CSV UTF-8 using Saved Store Preset with 55 mixed winning products across all 5 categories"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-zinc-900 text-white border border-zinc-900 hover:bg-zinc-800 transition flex items-center gap-1.5 shadow-2xs whitespace-nowrap"
                 >
                     <span>🚀 SmartBiz Mix 55 CSV</span>
@@ -346,17 +429,25 @@
                             </p>
 
                             <!-- Financial Numbers -->
-                            <div class="mt-2 flex items-baseline gap-1.5">
+                            <div class="mt-2 flex items-baseline gap-1.5 flex-wrap">
                                 <span class="font-mono text-base font-bold text-textPrimary">₹{{ w.selling_price }}</span>
                                 {% if w.mrp %}
-                                <span class="font-mono text-[11px] text-textMuted line-through">₹{{ w.mrp }}</span>
+                                <span class="font-mono text-[11px] text-textMuted line-through">₹{{ w.mrp|int }}</span>
+                                {% endif %}
+                                {% if w.discount_pct %}
+                                <span class="text-[9px] font-bold text-rose-700 bg-rose-50 px-1.5 py-0.2 rounded border border-rose-200">
+                                    {{ w.discount_pct }}% OFF
+                                </span>
                                 {% endif %}
                                 <span class="text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-100">
                                     Net +₹{{ w.competitor_pricing.net_profit|int }}
                                 </span>
                             </div>
-                            <div class="text-[10px] text-textSecondary mt-0.5 font-mono">
-                                Cost: ₹{{ w.wholesale_price }} · {{ w.competitor_pricing.markup_multiple }}x Markup
+                            <div class="text-[10px] text-textSecondary mt-0.5 font-mono truncate">
+                                Cost: ₹{{ w.wholesale_price|int }} · {{ w.competitor_pricing.markup_multiple }}x
+                                {% if w.smartbiz_preset %}
+                                · <span class="text-emerald-800 font-semibold" title="Saved SmartBiz Preset Category & Gallery Images">{{ w.smartbiz_preset.product_category }} ({{ w.smartbiz_preset.image_count }} JPGs)</span>
+                                {% endif %}
                             </div>
                         </div>
                     </div>

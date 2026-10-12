@@ -1,0 +1,75 @@
+{
+  "preset_id": "zenlora_smartbiz_v10_new_winners",
+  "preset_name": "Zenlora SmartBiz v10 Store Preset (New High-Score Winners)",
+  "version": "10.0",
+  "status": "active",
+  "updated_at": "2026-10-12T10:14:00+05:30",
+  "listing_mode": "new_products_only",
+  "column_rules": {
+    "cols_a_to_e_system_ids": "Blank (\"\") — Creates fresh SmartBiz listings without modifying existing 39 store products",
+    "col_f_custom_sku": "Real Live DeoDap Variant SKU (<= 40 chars)",
+    "col_g_product_name": "Clean Commercial Product Title (<= 200 chars)",
+    "col_h_mrp": "4-Band Cost-Inverse Variable Discount Box MRP (Ends in 9, 5, or 0; Strictly Never 2x Selling Price)",
+    "col_i_selling_price": "Market-Anchored Safe Dropship Selling Price (Meesho + Rs.60-85 Value Margin)",
+    "col_j_business_category": "GENERAL (Unified across all rows for zero cross-category validation errors)",
+    "col_k_product_category": "Mapped to exact storefront collections (Home & Kitchen, Home Improvement, Health & Beauty Accessories, mobile accessories, Garden & Outdoors, Office Products, Car & Motorbike, Toys & Games, Baby Products, Personal Care)",
+    "col_l_description": "Clean HTML (<p>...</p>) or natural prose description (<= 2000 chars)",
+    "col_u_best_seller": "Selective \"Yes\" (~33% top winners) and \"No\" (~67% others)",
+    "cols_w_to_ab_images": "Up to 6 Real DeoDap Gallery Images (.jpg sanitized, query strings stripped)",
+    "cols_v_and_ac_to_az": "Blank (\"\") matching store preset"
+  },
+  "discount_bands": [
+    {
+      "band": "Band A",
+      "label": "Low-Cost Impulse Items",
+      "cost_range_inr": "Rs.1 - Rs.55",
+      "cost_max": 55,
+      "discount_range_pct": "53% - 63% OFF",
+      "min_disc": 53,
+      "max_disc": 63,
+      "strategy": "High visual discount triggers instant impulse purchase on low-cost daily items"
+    },
+    {
+      "band": "Band B",
+      "label": "Budget Daily Utility",
+      "cost_range_inr": "Rs.56 - Rs.95",
+      "cost_max": 95,
+      "discount_range_pct": "41% - 49% OFF",
+      "min_disc": 41,
+      "max_disc": 49,
+      "strategy": "Balanced marketplace offer strictly avoiding the flat 50% OFF trap"
+    },
+    {
+      "band": "Band C",
+      "label": "Worth-It Problem Solvers & Decor",
+      "cost_range_inr": "Rs.96 - Rs.150",
+      "cost_max": 150,
+      "discount_range_pct": "31% - 39% OFF",
+      "min_disc": 31,
+      "max_disc": 39,
+      "strategy": "Credible mid-tier discount for problem-solving kitchen/home tools and decor lamps"
+    },
+    {
+      "band": "Band D",
+      "label": "High-Worth Premium Products",
+      "cost_range_inr": "Above Rs.150",
+      "cost_max": 99999,
+      "discount_range_pct": "21% - 29% OFF",
+      "min_disc": 21,
+      "max_disc": 29,
+      "strategy": "Subtle, high-trust discount for premium items that command natural price authority"
+    }
+  ],
+  "storefront_categories": [
+    "Home & Kitchen",
+    "Home Improvement",
+    "Health & Beauty Accessories",
+    "mobile accessories",
+    "Garden & Outdoors",
+    "Office Products",
+    "Car & Motorbike",
+    "Toys & Games",
+    "Baby Products",
+    "Personal Care"
+  ]
+}

@@ -20,10 +20,10 @@
     "delivery_max_days": null,
     "wholesale_price": 96.0,
     "selling_price": 239,
-    "mrp": 499.0,
+    "mrp": 395,
     "gross_profit": 68,
     "profit_margin_pct": 34.7,
-    "discount_pct": null,
+    "discount_pct": 39,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -660,6 +660,17 @@
     "pricing": {
       "mrp": 395,
       "discount_pct": 39
+    },
+    "smartbiz_preset": {
+      "custom_sku": "7544_cnp_decoration_frame",
+      "business_category": "GENERAL",
+      "product_category": "Office Products",
+      "mrp": 395,
+      "selling_price": 239,
+      "discount_pct": 39,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/12401c7b-7c28-4bbb-91a5-0394a023d8f9.jpg"
     }
   },
   {
@@ -683,10 +694,10 @@
     "delivery_max_days": null,
     "wholesale_price": 29.0,
     "selling_price": 189,
-    "mrp": 99.0,
+    "mrp": 429,
     "gross_profit": 85,
     "profit_margin_pct": 52.9,
-    "discount_pct": null,
+    "discount_pct": 56,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -1327,6 +1338,17 @@
     "pricing": {
       "mrp": 429,
       "discount_pct": 56
+    },
+    "smartbiz_preset": {
+      "custom_sku": "16087_2in1_folding_hair_brush_with_mirro",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 429,
+      "selling_price": 189,
+      "discount_pct": 56,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Mini-Brush-with-Mirror-1.jpg"
     }
   },
   {
@@ -1350,10 +1372,10 @@
     "delivery_max_days": null,
     "wholesale_price": 80.0,
     "selling_price": 269,
-    "mrp": 249.0,
+    "mrp": 460,
     "gross_profit": 114,
     "profit_margin_pct": 48.0,
-    "discount_pct": null,
+    "discount_pct": 42,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -1994,6 +2016,17 @@
     "pricing": {
       "mrp": 460,
       "discount_pct": 42
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl193_66687_2_hanger_self_adhesive_wall",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 460,
+      "selling_price": 269,
+      "discount_pct": 42,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/GjwdTB9gL3.jpg"
     }
   },
   {
@@ -2017,10 +2050,10 @@
     "delivery_max_days": null,
     "wholesale_price": 29.0,
     "selling_price": 169,
-    "mrp": 99.0,
+    "mrp": 399,
     "gross_profit": 65,
     "profit_margin_pct": 47.3,
-    "discount_pct": null,
+    "discount_pct": 58,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -2661,6 +2694,17 @@
     "pricing": {
       "mrp": 399,
       "discount_pct": 58
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22366_decoration_backdrop_curtain_180x12",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 399,
+      "selling_price": 169,
+      "discount_pct": 58,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/22366-New-Year-Backdrop_2.jpg"
     }
   },
   {
@@ -2684,10 +2728,10 @@
     "delivery_max_days": null,
     "wholesale_price": 29.0,
     "selling_price": 169,
-    "mrp": 99.0,
+    "mrp": 415,
     "gross_profit": 65,
     "profit_margin_pct": 47.3,
-    "discount_pct": null,
+    "discount_pct": 59,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -3328,6 +3372,17 @@
     "pricing": {
       "mrp": 415,
       "discount_pct": 59
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22359_decoration_backdrop_curtain_210x15",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 415,
+      "selling_price": 169,
+      "discount_pct": 59,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/NewYearBackdrop_2.jpg"
     }
   },
   {
@@ -3351,10 +3406,10 @@
     "delivery_max_days": null,
     "wholesale_price": 82.0,
     "selling_price": 239,
-    "mrp": 164.0,
+    "mrp": 439,
     "gross_profit": 82,
     "profit_margin_pct": 40.6,
-    "discount_pct": null,
+    "discount_pct": 46,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -3992,6 +4047,17 @@
     "pricing": {
       "mrp": 439,
       "discount_pct": 46
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl175_94433_rj_277",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 439,
+      "selling_price": 239,
+      "discount_pct": 46,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/OQd3knTELv.jpg"
     }
   },
   {
@@ -4015,10 +4081,10 @@
     "delivery_max_days": null,
     "wholesale_price": 112.0,
     "selling_price": 269,
-    "mrp": 224.0,
+    "mrp": 409,
     "gross_profit": 82,
     "profit_margin_pct": 36.1,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 88.8,
     "earned_points": 88.8,
     "scored_weight_sum": 100.0,
@@ -4659,6 +4725,17 @@
     "pricing": {
       "mrp": 409,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl295_80198_1482_earth",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 409,
+      "selling_price": 269,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/pjR6fNS8V9.jpg"
     }
   },
   {
@@ -4682,10 +4759,10 @@
     "delivery_max_days": null,
     "wholesale_price": 72.0,
     "selling_price": 279,
-    "mrp": 299.0,
+    "mrp": 515,
     "gross_profit": 132,
     "profit_margin_pct": 52.7,
-    "discount_pct": null,
+    "discount_pct": 46,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -5326,6 +5403,17 @@
     "pricing": {
       "mrp": 515,
       "discount_pct": 46
+    },
+    "smartbiz_preset": {
+      "custom_sku": "12384_3d_creative_visualization_lamp_no4",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 515,
+      "selling_price": 279,
+      "discount_pct": 46,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1744521e-7503-4a82-b751-7a5f912b4559.jpg"
     }
   },
   {
@@ -5349,10 +5437,10 @@
     "delivery_max_days": null,
     "wholesale_price": 239.0,
     "selling_price": 449,
-    "mrp": 649.0,
+    "mrp": 619,
     "gross_profit": 135,
     "profit_margin_pct": 33.4,
-    "discount_pct": null,
+    "discount_pct": 27,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -5993,6 +6081,17 @@
     "pricing": {
       "mrp": 619,
       "discount_pct": 27
+    },
+    "smartbiz_preset": {
+      "custom_sku": "14814_decorative_led_bulb_lamp_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 619,
+      "selling_price": 449,
+      "discount_pct": 27,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/2cad4d41-2e02-457a-a75c-8f22a897dc51.jpg"
     }
   },
   {
@@ -6016,10 +6115,10 @@
     "delivery_max_days": null,
     "wholesale_price": 99.0,
     "selling_price": 279,
-    "mrp": 299.0,
+    "mrp": 469,
     "gross_profit": 105,
     "profit_margin_pct": 43.0,
-    "discount_pct": null,
+    "discount_pct": 41,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -6656,6 +6755,17 @@
     "pricing": {
       "mrp": 469,
       "discount_pct": 41
+    },
+    "smartbiz_preset": {
+      "custom_sku": "12382_3d_creative_visualization_ganesh_l",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 469,
+      "selling_price": 279,
+      "discount_pct": 41,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_00508724-b349-4df3-8161-b8ece2f85a43.jpg"
     }
   },
   {
@@ -6679,10 +6789,10 @@
     "delivery_max_days": null,
     "wholesale_price": 79.0,
     "selling_price": 279,
-    "mrp": 299.0,
+    "mrp": 499,
     "gross_profit": 125,
     "profit_margin_pct": 50.2,
-    "discount_pct": null,
+    "discount_pct": 44,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -7309,6 +7419,17 @@
     "pricing": {
       "mrp": 499,
       "discount_pct": 44
+    },
+    "smartbiz_preset": {
+      "custom_sku": "12385_3d_creative_visualization_ganesh_l",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 499,
+      "selling_price": 279,
+      "discount_pct": 44,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_001a09a2-b9a6-41b2-ac4a-65b0c3dc285e.jpg"
     }
   },
   {
@@ -7332,10 +7453,10 @@
     "delivery_max_days": null,
     "wholesale_price": 57.0,
     "selling_price": 229,
-    "mrp": 199.0,
+    "mrp": 409,
     "gross_profit": 97,
     "profit_margin_pct": 48.9,
-    "discount_pct": null,
+    "discount_pct": 44,
     "winning_score": 86.5,
     "earned_points": 86.5,
     "scored_weight_sum": 100.0,
@@ -7963,6 +8084,17 @@
     "pricing": {
       "mrp": 409,
       "discount_pct": 44
+    },
+    "smartbiz_preset": {
+      "custom_sku": "12748_led_apple_night_light_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 409,
+      "selling_price": 229,
+      "discount_pct": 44,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/8a75d758-ad92-41ac-9447-09af0a1ad4d3.jpg"
     }
   },
   {
@@ -7986,10 +8118,10 @@
     "delivery_max_days": null,
     "wholesale_price": 199.0,
     "selling_price": 369,
-    "mrp": 599.0,
+    "mrp": 495,
     "gross_profit": 95,
     "profit_margin_pct": 29.8,
-    "discount_pct": null,
+    "discount_pct": 25,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -8613,6 +8745,17 @@
     "pricing": {
       "mrp": 495,
       "discount_pct": 25
+    },
+    "smartbiz_preset": {
+      "custom_sku": "23601_led_penguin_decorative_light",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 495,
+      "selling_price": 369,
+      "discount_pct": 25,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/23601-01.jpg"
     }
   },
   {
@@ -8636,10 +8779,10 @@
     "delivery_max_days": null,
     "wholesale_price": 75.0,
     "selling_price": 289,
-    "mrp": 299.0,
+    "mrp": 515,
     "gross_profit": 139,
     "profit_margin_pct": 53.3,
-    "discount_pct": null,
+    "discount_pct": 44,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -9278,6 +9421,17 @@
     "pricing": {
       "mrp": 515,
       "discount_pct": 44
+    },
+    "smartbiz_preset": {
+      "custom_sku": "12381_3d_creative_visualization_mahadev_",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 515,
+      "selling_price": 289,
+      "discount_pct": 44,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_9ecb0a6e-db8a-45c1-ab15-fafe2c213610.jpg"
     }
   },
   {
@@ -9301,10 +9455,10 @@
     "delivery_max_days": null,
     "wholesale_price": 165.0,
     "selling_price": 329,
-    "mrp": 339.0,
+    "mrp": 465,
     "gross_profit": 89,
     "profit_margin_pct": 31.6,
-    "discount_pct": null,
+    "discount_pct": 29,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -9945,6 +10099,17 @@
     "pricing": {
       "mrp": 465,
       "discount_pct": 29
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18056_3d_moving_sand_art_round_frame_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 465,
+      "selling_price": 329,
+      "discount_pct": 29,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/18056-01.jpg"
     }
   },
   {
@@ -9968,10 +10133,10 @@
     "delivery_max_days": null,
     "wholesale_price": 134.0,
     "selling_price": 289,
-    "mrp": 599.0,
+    "mrp": 435,
     "gross_profit": 80,
     "profit_margin_pct": 32.9,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 86.5,
     "earned_points": 86.5,
     "scored_weight_sum": 100.0,
@@ -10611,6 +10776,17 @@
     "pricing": {
       "mrp": 435,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "17631_3d_space_round_carpet_60cm_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 435,
+      "selling_price": 289,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/CarpetRound-WOSKU-01.jpg"
     }
   },
   {
@@ -10634,10 +10810,10 @@
     "delivery_max_days": null,
     "wholesale_price": 129.0,
     "selling_price": 349,
-    "mrp": 399.0,
+    "mrp": 565,
     "gross_profit": 145,
     "profit_margin_pct": 45.8,
-    "discount_pct": null,
+    "discount_pct": 38,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -11278,6 +11454,17 @@
     "pricing": {
       "mrp": 565,
       "discount_pct": 38
+    },
+    "smartbiz_preset": {
+      "custom_sku": "12904_3d_mini_saturn_lamp_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 565,
+      "selling_price": 349,
+      "discount_pct": 38,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/12904_3d_mini_saturn_lamp_1pc.png"
     }
   },
   {
@@ -11301,10 +11488,10 @@
     "delivery_max_days": null,
     "wholesale_price": 199.0,
     "selling_price": 369,
-    "mrp": 699.0,
+    "mrp": 509,
     "gross_profit": 95,
     "profit_margin_pct": 29.8,
-    "discount_pct": null,
+    "discount_pct": 28,
     "winning_score": 87.5,
     "earned_points": 87.5,
     "scored_weight_sum": 100.0,
@@ -11945,6 +12132,17 @@
     "pricing": {
       "mrp": 509,
       "discount_pct": 28
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18282_3d_space_round_carpet_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 509,
+      "selling_price": 369,
+      "discount_pct": 28,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_241f9c7d-5146-4156-909f-e5721afdc14a.jpg"
     }
   },
   {
@@ -11968,10 +12166,10 @@
     "delivery_max_days": null,
     "wholesale_price": 68.0,
     "selling_price": 279,
-    "mrp": 149.0,
+    "mrp": 509,
     "gross_profit": 136,
     "profit_margin_pct": 54.1,
-    "discount_pct": null,
+    "discount_pct": 45,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -12593,6 +12791,17 @@
     "pricing": {
       "mrp": 509,
       "discount_pct": 45
+    },
+    "smartbiz_preset": {
+      "custom_sku": "21114_4in1_manicure_n_pedicure_grooming_",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 509,
+      "selling_price": 279,
+      "discount_pct": 45,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/21114_4in1_manicure_n_pedicure_grooming_kit.png"
     }
   },
   {
@@ -12616,10 +12825,10 @@
     "delivery_max_days": null,
     "wholesale_price": 108.0,
     "selling_price": 299,
-    "mrp": 299.0,
+    "mrp": 465,
     "gross_profit": 116,
     "profit_margin_pct": 43.8,
-    "discount_pct": null,
+    "discount_pct": 36,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -13256,6 +13465,17 @@
     "pricing": {
       "mrp": 465,
       "discount_pct": 36
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18733_glass_hourglass_sand_timer_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Office Products",
+      "mrp": 465,
+      "selling_price": 299,
+      "discount_pct": 36,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Glass-Sand-Timer-1.jpg"
     }
   },
   {
@@ -13279,10 +13499,10 @@
     "delivery_max_days": null,
     "wholesale_price": 99.0,
     "selling_price": 259,
-    "mrp": 199.0,
+    "mrp": 405,
     "gross_profit": 85,
     "profit_margin_pct": 38.6,
-    "discount_pct": null,
+    "discount_pct": 36,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -13923,6 +14143,17 @@
     "pricing": {
       "mrp": 405,
       "discount_pct": 36
+    },
+    "smartbiz_preset": {
+      "custom_sku": "21005_shell_shaped_makeup_brush_with_mir",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 405,
+      "selling_price": 259,
+      "discount_pct": 36,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_979ba448-fb91-4c1f-9bc7-3b09deccb4d0.jpg"
     }
   },
   {
@@ -13946,10 +14177,10 @@
     "delivery_max_days": null,
     "wholesale_price": 34.0,
     "selling_price": 169,
-    "mrp": 199.0,
+    "mrp": 400,
     "gross_profit": 60,
     "profit_margin_pct": 44.4,
-    "discount_pct": null,
+    "discount_pct": 58,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -14590,6 +14821,17 @@
     "pricing": {
       "mrp": 400,
       "discount_pct": 58
+    },
+    "smartbiz_preset": {
+      "custom_sku": "8643_wagtail_green_abrasive_wheel_3pc_no",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 400,
+      "selling_price": 169,
+      "discount_pct": 58,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/8643_wagtail_green_abrasive_wheel_3pc_no42.jpg"
     }
   },
   {
@@ -14613,10 +14855,10 @@
     "delivery_max_days": null,
     "wholesale_price": 45.0,
     "selling_price": 189,
-    "mrp": 199.0,
+    "mrp": 500,
     "gross_profit": 69,
     "profit_margin_pct": 44.4,
-    "discount_pct": null,
+    "discount_pct": 62,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -15240,6 +15482,17 @@
     "pricing": {
       "mrp": 500,
       "discount_pct": 62
+    },
+    "smartbiz_preset": {
+      "custom_sku": "6651_split_ac_cover_1_ton",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 500,
+      "selling_price": 189,
+      "discount_pct": 62,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_5fd34dce-8357-4175-a947-9eea4b4bd856.jpg"
     }
   },
   {
@@ -15263,10 +15516,10 @@
     "delivery_max_days": null,
     "wholesale_price": 101.0,
     "selling_price": 259,
-    "mrp": 209.0,
+    "mrp": 409,
     "gross_profit": 83,
     "profit_margin_pct": 37.8,
-    "discount_pct": null,
+    "discount_pct": 37,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -15907,6 +16160,17 @@
     "pricing": {
       "mrp": 409,
       "discount_pct": 37
+    },
+    "smartbiz_preset": {
+      "custom_sku": "4203_acrylic_paint_color_kit_1_set_no7",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 409,
+      "selling_price": 259,
+      "discount_pct": 37,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4203_acrylic_paint_color_kit_1_set_no7.png"
     }
   },
   {
@@ -15930,10 +16194,10 @@
     "delivery_max_days": null,
     "wholesale_price": 195.0,
     "selling_price": 369,
-    "mrp": 599.0,
+    "mrp": 509,
     "gross_profit": 99,
     "profit_margin_pct": 30.9,
-    "discount_pct": null,
+    "discount_pct": 28,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -16574,6 +16838,17 @@
     "pricing": {
       "mrp": 509,
       "discount_pct": 28
+    },
+    "smartbiz_preset": {
+      "custom_sku": "23281_adhesive_cable_protector_cord_cove",
+      "business_category": "GENERAL",
+      "product_category": "mobile accessories",
+      "mrp": 509,
+      "selling_price": 369,
+      "discount_pct": 28,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/23281.jpg"
     }
   },
   {
@@ -16597,10 +16872,10 @@
     "delivery_max_days": null,
     "wholesale_price": 78.0,
     "selling_price": 219,
-    "mrp": 399.0,
+    "mrp": 390,
     "gross_profit": 66,
     "profit_margin_pct": 37.0,
-    "discount_pct": null,
+    "discount_pct": 44,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -17241,6 +17516,17 @@
     "pricing": {
       "mrp": 390,
       "discount_pct": 44
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18140_creative_adhe_cat_hook_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 390,
+      "selling_price": 219,
+      "discount_pct": 44,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_5579e72a-31e1-4d94-a66e-790249680635.jpg"
     }
   },
   {
@@ -17264,10 +17550,10 @@
     "delivery_max_days": null,
     "wholesale_price": 33.0,
     "selling_price": 169,
-    "mrp": 199.0,
+    "mrp": 465,
     "gross_profit": 61,
     "profit_margin_pct": 45.0,
-    "discount_pct": null,
+    "discount_pct": 64,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -17891,6 +18177,17 @@
     "pricing": {
       "mrp": 465,
       "discount_pct": 64
+    },
+    "smartbiz_preset": {
+      "custom_sku": "4725_plastic_wall_hanger_hook",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 465,
+      "selling_price": 169,
+      "discount_pct": 64,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/01_27e5128e-c7eb-4e57-86d0-b6156674b370.jpg"
     }
   },
   {
@@ -17914,10 +18211,10 @@
     "delivery_max_days": null,
     "wholesale_price": 51.0,
     "selling_price": 189,
-    "mrp": 199.0,
+    "mrp": 500,
     "gross_profit": 63,
     "profit_margin_pct": 41.3,
-    "discount_pct": null,
+    "discount_pct": 62,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -18541,6 +18838,17 @@
     "pricing": {
       "mrp": 500,
       "discount_pct": 62
+    },
+    "smartbiz_preset": {
+      "custom_sku": "15234_plastic_adhesive_wall_hooks_3pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 500,
+      "selling_price": 189,
+      "discount_pct": 62,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Wall-Hooks-1_fbffdc8f-3096-4840-a8b5-8e4ba2803556.jpg"
     }
   },
   {
@@ -18564,10 +18872,10 @@
     "delivery_max_days": null,
     "wholesale_price": 85.0,
     "selling_price": 229,
-    "mrp": 399.0,
+    "mrp": 449,
     "gross_profit": 69,
     "profit_margin_pct": 36.7,
-    "discount_pct": null,
+    "discount_pct": 49,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -19206,6 +19514,17 @@
     "pricing": {
       "mrp": 449,
       "discount_pct": 49
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl282_4206_paint_by_number_kit_2_set_no",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 449,
+      "selling_price": 229,
+      "discount_pct": 49,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_182ce6c2-9795-4c65-884f-7e263250e4e7.jpg"
     }
   },
   {
@@ -19229,10 +19548,10 @@
     "delivery_max_days": null,
     "wholesale_price": 40.0,
     "selling_price": 179,
-    "mrp": 65.0,
+    "mrp": 480,
     "gross_profit": 64,
     "profit_margin_pct": 44.1,
-    "discount_pct": null,
+    "discount_pct": 63,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -19856,6 +20175,17 @@
     "pricing": {
       "mrp": 480,
       "discount_pct": 63
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl206_68758_dou_side_tape_5mtr_24mm_aer",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 480,
+      "selling_price": 179,
+      "discount_pct": 63,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/itvRdEhAGz.jpg"
     }
   },
   {
@@ -19879,10 +20209,10 @@
     "delivery_max_days": null,
     "wholesale_price": 115.0,
     "selling_price": 259,
-    "mrp": 449.0,
+    "mrp": 425,
     "gross_profit": 69,
     "profit_margin_pct": 32.4,
-    "discount_pct": null,
+    "discount_pct": 39,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -20522,6 +20852,17 @@
     "pricing": {
       "mrp": 425,
       "discount_pct": 39
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl193_66586_1_l_sports_water_bottle_pac",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 425,
+      "selling_price": 259,
+      "discount_pct": 39,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/BvhaF8BJNc.jpg"
     }
   },
   {
@@ -20545,10 +20886,10 @@
     "delivery_max_days": null,
     "wholesale_price": 149.0,
     "selling_price": 319,
-    "mrp": 399.0,
+    "mrp": 499,
     "gross_profit": 95,
     "profit_margin_pct": 34.5,
-    "discount_pct": null,
+    "discount_pct": 36,
     "winning_score": 85.8,
     "earned_points": 85.8,
     "scored_weight_sum": 90.0,
@@ -21185,6 +21526,17 @@
     "pricing": {
       "mrp": 499,
       "discount_pct": 36
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl193_66678_1_tier_rotation_tray_with_h",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 499,
+      "selling_price": 319,
+      "discount_pct": 36,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/O10eXxg2GC.jpg"
     }
   },
   {
@@ -21208,10 +21560,10 @@
     "delivery_max_days": null,
     "wholesale_price": 123.0,
     "selling_price": 259,
-    "mrp": 249.0,
+    "mrp": 419,
     "gross_profit": 61,
     "profit_margin_pct": 29.3,
-    "discount_pct": null,
+    "discount_pct": 38,
     "winning_score": 77.5,
     "earned_points": 77.5,
     "scored_weight_sum": 90.0,
@@ -21847,6 +22199,17 @@
     "pricing": {
       "mrp": 419,
       "discount_pct": 38
+    },
+    "smartbiz_preset": {
+      "custom_sku": "4828_gallon_bottle_1500ml",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 419,
+      "selling_price": 259,
+      "discount_pct": 38,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4828_gallon_bottle_1500ml.jpg"
     }
   },
   {
@@ -21870,10 +22233,10 @@
     "delivery_max_days": null,
     "wholesale_price": 65.0,
     "selling_price": 209,
-    "mrp": 299.0,
+    "mrp": 409,
     "gross_profit": 69,
     "profit_margin_pct": 40.2,
-    "discount_pct": null,
+    "discount_pct": 49,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -22510,6 +22873,17 @@
     "pricing": {
       "mrp": 409,
       "discount_pct": 49
+    },
+    "smartbiz_preset": {
+      "custom_sku": "21390_diamond_insulated_water_bottle_n_b",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 409,
+      "selling_price": 209,
+      "discount_pct": 49,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_c1cbad1b-448a-420e-b27b-3f40566f641a.jpg"
     }
   },
   {
@@ -22533,10 +22907,10 @@
     "delivery_max_days": null,
     "wholesale_price": 104.0,
     "selling_price": 239,
-    "mrp": 299.0,
+    "mrp": 375,
     "gross_profit": 60,
     "profit_margin_pct": 31.4,
-    "discount_pct": null,
+    "discount_pct": 36,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -23173,6 +23547,17 @@
     "pricing": {
       "mrp": 375,
       "discount_pct": 36
+    },
+    "smartbiz_preset": {
+      "custom_sku": "10853_11in1_plastic_snack_serving_plates",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 375,
+      "selling_price": 239,
+      "discount_pct": 36,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/10853_snack_plates_01_main.jpg"
     }
   },
   {
@@ -23196,10 +23581,10 @@
     "delivery_max_days": null,
     "wholesale_price": 49.0,
     "selling_price": 189,
-    "mrp": 149.0,
+    "mrp": 500,
     "gross_profit": 65,
     "profit_margin_pct": 42.3,
-    "discount_pct": null,
+    "discount_pct": 62,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -23836,6 +24221,17 @@
     "pricing": {
       "mrp": 500,
       "discount_pct": 62
+    },
+    "smartbiz_preset": {
+      "custom_sku": "7170_12cavity_ice_cube_tray",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 500,
+      "selling_price": 189,
+      "discount_pct": 62,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/7170-1-Ice-Tray_2_-1.jpg"
     }
   },
   {
@@ -23859,10 +24255,10 @@
     "delivery_max_days": null,
     "wholesale_price": 152.0,
     "selling_price": 349,
-    "mrp": 399.0,
+    "mrp": 485,
     "gross_profit": 122,
     "profit_margin_pct": 39.3,
-    "discount_pct": null,
+    "discount_pct": 28,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 100.0,
@@ -24503,6 +24899,17 @@
     "pricing": {
       "mrp": 485,
       "discount_pct": 28
+    },
+    "smartbiz_preset": {
+      "custom_sku": "8570_12_pocket_shoe_hanging_bag",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 485,
+      "selling_price": 349,
+      "discount_pct": 28,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Hanging-shoe-organizer-01.jpg"
     }
   },
   {
@@ -24526,10 +24933,10 @@
     "delivery_max_days": null,
     "wholesale_price": 192.0,
     "selling_price": 349,
-    "mrp": 389.0,
+    "mrp": 455,
     "gross_profit": 82,
     "profit_margin_pct": 27.8,
-    "discount_pct": null,
+    "discount_pct": 23,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -25166,6 +25573,17 @@
     "pricing": {
       "mrp": 455,
       "discount_pct": 23
+    },
+    "smartbiz_preset": {
+      "custom_sku": "8768_13_pocket_file_folder_37x24cm",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 455,
+      "selling_price": 349,
+      "discount_pct": 23,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/948ad2ae-cfd6-47b5-9e3b-e542416246d3.jpg"
     }
   },
   {
@@ -25189,10 +25607,10 @@
     "delivery_max_days": null,
     "wholesale_price": 52.0,
     "selling_price": 189,
-    "mrp": 149.0,
+    "mrp": 485,
     "gross_profit": 62,
     "profit_margin_pct": 40.7,
-    "discount_pct": null,
+    "discount_pct": 61,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -25816,6 +26234,17 @@
     "pricing": {
       "mrp": 485,
       "discount_pct": 61
+    },
+    "smartbiz_preset": {
+      "custom_sku": "24030_blue_14_cavity_plastic_ice_cube_tr",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 485,
+      "selling_price": 189,
+      "discount_pct": 61,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/WhatsApp_Image_2026-08-27_at_18.57.15_7d21e5ae-da45-4281-84af-3ef78209dd79.jpg"
     }
   },
   {
@@ -25839,10 +26268,10 @@
     "delivery_max_days": null,
     "wholesale_price": 238.0,
     "selling_price": 429,
-    "mrp": 499.0,
+    "mrp": 575,
     "gross_profit": 116,
     "profit_margin_pct": 30.5,
-    "discount_pct": null,
+    "discount_pct": 25,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -26479,6 +26908,17 @@
     "pricing": {
       "mrp": 575,
       "discount_pct": 25
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl205_79577_linea_flask_1400_pla",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 575,
+      "selling_price": 429,
+      "discount_pct": 25,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/UnEBKlzj9d.jpg"
     }
   },
   {
@@ -26502,10 +26942,10 @@
     "delivery_max_days": null,
     "wholesale_price": 223.0,
     "selling_price": 429,
-    "mrp": 405.0,
+    "mrp": 575,
     "gross_profit": 131,
     "profit_margin_pct": 34.0,
-    "discount_pct": null,
+    "discount_pct": 25,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -27144,6 +27584,17 @@
     "pricing": {
       "mrp": 575,
       "discount_pct": 25
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl207_68811_black_defender_laptop_bag",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 575,
+      "selling_price": 429,
+      "discount_pct": 25,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 4,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/u2TSNQbNz3.jpg"
     }
   },
   {
@@ -27167,10 +27618,10 @@
     "delivery_max_days": null,
     "wholesale_price": 202.0,
     "selling_price": 369,
-    "mrp": 579.0,
+    "mrp": 479,
     "gross_profit": 92,
     "profit_margin_pct": 29.0,
-    "discount_pct": null,
+    "discount_pct": 23,
     "winning_score": 77.5,
     "earned_points": 77.5,
     "scored_weight_sum": 90.0,
@@ -27808,6 +28259,17 @@
     "pricing": {
       "mrp": 479,
       "discount_pct": 23
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0356_nekza_parish_bottle_1500ml_n303",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 479,
+      "selling_price": 369,
+      "discount_pct": 23,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/0356_nekza_parish_bottle_1500ml_n303.jpg"
     }
   },
   {
@@ -27831,10 +28293,10 @@
     "delivery_max_days": null,
     "wholesale_price": 34.0,
     "selling_price": 179,
-    "mrp": 60.0,
+    "mrp": 445,
     "gross_profit": 70,
     "profit_margin_pct": 47.5,
-    "discount_pct": null,
+    "discount_pct": 60,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -28475,6 +28937,17 @@
     "pricing": {
       "mrp": 445,
       "discount_pct": 60
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl206_99419_cutter_blade_18mm_aerotix_b",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 445,
+      "selling_price": 179,
+      "discount_pct": 60,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/rWGOoVTHtj.jpg"
     }
   },
   {
@@ -28498,10 +28971,10 @@
     "delivery_max_days": null,
     "wholesale_price": 39.0,
     "selling_price": 199,
-    "mrp": 149.0,
+    "mrp": 449,
     "gross_profit": 85,
     "profit_margin_pct": 50.3,
-    "discount_pct": null,
+    "discount_pct": 56,
     "winning_score": 85.8,
     "earned_points": 85.8,
     "scored_weight_sum": 90.0,
@@ -29142,6 +29615,17 @@
     "pricing": {
       "mrp": 449,
       "discount_pct": 56
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl282_16154_car_safety_hammer_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Car & Motorbike",
+      "mrp": 449,
+      "selling_price": 199,
+      "discount_pct": 56,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Car-Safety-Hammer-1.jpg"
     }
   },
   {
@@ -29165,10 +29649,10 @@
     "delivery_max_days": null,
     "wholesale_price": 57.0,
     "selling_price": 219,
-    "mrp": 119.0,
+    "mrp": 410,
     "gross_profit": 87,
     "profit_margin_pct": 46.6,
-    "discount_pct": null,
+    "discount_pct": 47,
     "winning_score": 85.8,
     "earned_points": 85.8,
     "scored_weight_sum": 90.0,
@@ -29805,6 +30289,17 @@
     "pricing": {
       "mrp": 410,
       "discount_pct": 47
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0073_2in1_clever_cutter",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 410,
+      "selling_price": 219,
+      "discount_pct": 47,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/0073.jpg"
     }
   },
   {
@@ -29828,10 +30323,10 @@
     "delivery_max_days": null,
     "wholesale_price": 45.0,
     "selling_price": 209,
-    "mrp": 149.0,
+    "mrp": 489,
     "gross_profit": 89,
     "profit_margin_pct": 49.8,
-    "discount_pct": null,
+    "discount_pct": 57,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -30455,6 +30950,17 @@
     "pricing": {
       "mrp": 489,
       "discount_pct": 57
+    },
+    "smartbiz_preset": {
+      "custom_sku": "6372_2in1_l_shape_bottle_cleaning_brush",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 489,
+      "selling_price": 209,
+      "discount_pct": 57,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/6372-2in1-bottle-cleaning-brush-1.jpg"
     }
   },
   {
@@ -30478,10 +30984,10 @@
     "delivery_max_days": null,
     "wholesale_price": 149.0,
     "selling_price": 319,
-    "mrp": 299.0,
+    "mrp": 509,
     "gross_profit": 95,
     "profit_margin_pct": 34.5,
-    "discount_pct": null,
+    "discount_pct": 37,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -31122,6 +31628,17 @@
     "pricing": {
       "mrp": 509,
       "discount_pct": 37
+    },
+    "smartbiz_preset": {
+      "custom_sku": "7928_2in1_cleaning_brush",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 509,
+      "selling_price": 319,
+      "discount_pct": 37,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Cleaning_Brush_2.jpg"
     }
   },
   {
@@ -31145,10 +31662,10 @@
     "delivery_max_days": null,
     "wholesale_price": 129.0,
     "selling_price": 289,
-    "mrp": 399.0,
+    "mrp": 439,
     "gross_profit": 85,
     "profit_margin_pct": 34.6,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -31789,6 +32306,17 @@
     "pricing": {
       "mrp": 439,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl146_8498_plastic_water_bottle_400ml_c",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 439,
+      "selling_price": 289,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02_465d5c8d-65c9-42e2-9e29-301cf2cc0b0b.jpg"
     }
   },
   {
@@ -31812,10 +32340,10 @@
     "delivery_max_days": null,
     "wholesale_price": 119.0,
     "selling_price": 279,
-    "mrp": 399.0,
+    "mrp": 429,
     "gross_profit": 85,
     "profit_margin_pct": 35.8,
-    "discount_pct": null,
+    "discount_pct": 35,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -32456,6 +32984,17 @@
     "pricing": {
       "mrp": 429,
       "discount_pct": 35
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22895_plastic_2in1_soap_dispenser_cleani",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 429,
+      "selling_price": 279,
+      "discount_pct": 35,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/22895-1-Cleaning-Brush-1.jpg"
     }
   },
   {
@@ -32479,10 +33018,10 @@
     "delivery_max_days": null,
     "wholesale_price": 148.0,
     "selling_price": 319,
-    "mrp": 299.0,
+    "mrp": 460,
     "gross_profit": 96,
     "profit_margin_pct": 34.8,
-    "discount_pct": null,
+    "discount_pct": 31,
     "winning_score": 85.8,
     "earned_points": 85.8,
     "scored_weight_sum": 90.0,
@@ -33120,6 +33659,17 @@
     "pricing": {
       "mrp": 460,
       "discount_pct": 31
+    },
+    "smartbiz_preset": {
+      "custom_sku": "23341_soap_pump_dispenser_with_sponge_ho",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 460,
+      "selling_price": 319,
+      "discount_pct": 31,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Soap-Dispenser-1.jpg"
     }
   },
   {
@@ -33143,10 +33693,10 @@
     "delivery_max_days": null,
     "wholesale_price": 197.0,
     "selling_price": 369,
-    "mrp": 399.0,
+    "mrp": 519,
     "gross_profit": 97,
     "profit_margin_pct": 30.4,
-    "discount_pct": null,
+    "discount_pct": 29,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -33787,6 +34337,17 @@
     "pricing": {
       "mrp": 519,
       "discount_pct": 29
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18495_2in1_snow_scraper_n_brush",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 519,
+      "selling_price": 369,
+      "discount_pct": 29,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/MultipurposeCleaningBrush02-live.jpg"
     }
   },
   {
@@ -33810,10 +34371,10 @@
     "delivery_max_days": null,
     "wholesale_price": 99.0,
     "selling_price": 259,
-    "mrp": 299.0,
+    "mrp": 399,
     "gross_profit": 85,
     "profit_margin_pct": 38.6,
-    "discount_pct": null,
+    "discount_pct": 35,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -34441,6 +35002,17 @@
     "pricing": {
       "mrp": 399,
       "discount_pct": 35
+    },
+    "smartbiz_preset": {
+      "custom_sku": "7996_2in1_window_glass_cleaning_wiper",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 399,
+      "selling_price": 259,
+      "discount_pct": 35,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/7996-1.jpg"
     }
   },
   {
@@ -34464,10 +35036,10 @@
     "delivery_max_days": null,
     "wholesale_price": 136.0,
     "selling_price": 279,
-    "mrp": 399.0,
+    "mrp": 465,
     "gross_profit": 68,
     "profit_margin_pct": 29.7,
-    "discount_pct": null,
+    "discount_pct": 40,
     "winning_score": 77.5,
     "earned_points": 77.5,
     "scored_weight_sum": 90.0,
@@ -35108,6 +35680,17 @@
     "pricing": {
       "mrp": 465,
       "discount_pct": 40
+    },
+    "smartbiz_preset": {
+      "custom_sku": "21194_plastic_water_bottle_2ltr",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 465,
+      "selling_price": 279,
+      "discount_pct": 40,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/GreenBottle-WOSKU-01.jpg"
     }
   },
   {
@@ -35131,10 +35714,10 @@
     "delivery_max_days": null,
     "wholesale_price": 58.0,
     "selling_price": 259,
-    "mrp": 199.0,
+    "mrp": 469,
     "gross_profit": 126,
     "profit_margin_pct": 54.4,
-    "discount_pct": null,
+    "discount_pct": 45,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -35775,6 +36358,17 @@
     "pricing": {
       "mrp": 469,
       "discount_pct": 45
+    },
+    "smartbiz_preset": {
+      "custom_sku": "19251_2in1_towel_hanger_n_soap_stand_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 469,
+      "selling_price": 259,
+      "discount_pct": 45,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/19251_2in1_towel_hanger_n_soap_stand_1pc.jpg"
     }
   },
   {
@@ -35798,10 +36392,10 @@
     "delivery_max_days": null,
     "wholesale_price": 28.0,
     "selling_price": 219,
-    "mrp": 99.0,
+    "mrp": 599,
     "gross_profit": 116,
     "profit_margin_pct": 59.8,
-    "discount_pct": null,
+    "discount_pct": 63,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -36442,6 +37036,17 @@
     "pricing": {
       "mrp": 599,
       "discount_pct": 63
+    },
+    "smartbiz_preset": {
+      "custom_sku": "2856_pla_manual_lemon_squeezer",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 599,
+      "selling_price": 219,
+      "discount_pct": 63,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/08_d17aa0e0-d3fa-4355-805d-3d7234dc72de.jpg"
     }
   },
   {
@@ -36465,10 +37070,10 @@
     "delivery_max_days": null,
     "wholesale_price": 56.0,
     "selling_price": 249,
-    "mrp": 199.0,
+    "mrp": 485,
     "gross_profit": 118,
     "profit_margin_pct": 53.4,
-    "discount_pct": null,
+    "discount_pct": 49,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -37109,6 +37714,17 @@
     "pricing": {
       "mrp": 485,
       "discount_pct": 49
+    },
+    "smartbiz_preset": {
+      "custom_sku": "5865_multifunction_grinding_machine",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 485,
+      "selling_price": 249,
+      "discount_pct": 49,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/5865_multifunction_grinding_machine.png"
     }
   },
   {
@@ -37132,10 +37748,10 @@
     "delivery_max_days": null,
     "wholesale_price": 26.0,
     "selling_price": 219,
-    "mrp": 199.0,
+    "mrp": 480,
     "gross_profit": 118,
     "profit_margin_pct": 60.7,
-    "discount_pct": null,
+    "discount_pct": 54,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -37776,6 +38392,17 @@
     "pricing": {
       "mrp": 480,
       "discount_pct": 54
+    },
+    "smartbiz_preset": {
+      "custom_sku": "13314_2in1_multi_clea_clip_brush_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 480,
+      "selling_price": 219,
+      "discount_pct": 54,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01florcelner.jpg"
     }
   },
   {
@@ -37799,10 +38426,10 @@
     "delivery_max_days": null,
     "wholesale_price": 236.0,
     "selling_price": 429,
-    "mrp": 249.0,
+    "mrp": 589,
     "gross_profit": 118,
     "profit_margin_pct": 31.0,
-    "discount_pct": null,
+    "discount_pct": 27,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -38442,6 +39069,17 @@
     "pricing": {
       "mrp": 589,
       "discount_pct": 27
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl182_41470_2in1_angle_cock_plastic_tap",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 589,
+      "selling_price": 429,
+      "discount_pct": 27,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/UpHQk9SQR4.jpg"
     }
   },
   {
@@ -38465,10 +39103,10 @@
     "delivery_max_days": null,
     "wholesale_price": 27.0,
     "selling_price": 229,
-    "mrp": 149.0,
+    "mrp": 609,
     "gross_profit": 127,
     "profit_margin_pct": 62.0,
-    "discount_pct": null,
+    "discount_pct": 62,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -39109,6 +39747,17 @@
     "pricing": {
       "mrp": 609,
       "discount_pct": 62
+    },
+    "smartbiz_preset": {
+      "custom_sku": "23897_2in1_lint_remover",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 609,
+      "selling_price": 229,
+      "discount_pct": 62,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/23897-2in1-lint-remover-01.jpg"
     }
   },
   {
@@ -39132,10 +39781,10 @@
     "delivery_max_days": null,
     "wholesale_price": 98.0,
     "selling_price": 289,
-    "mrp": 299.0,
+    "mrp": 435,
     "gross_profit": 116,
     "profit_margin_pct": 45.3,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 87.5,
     "earned_points": 87.5,
     "scored_weight_sum": 100.0,
@@ -39776,6 +40425,17 @@
     "pricing": {
       "mrp": 435,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "11272_plastic_colander_basket_with_bowl",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 435,
+      "selling_price": 289,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/08-Vegetable-Basket.jpg"
     }
   },
   {
@@ -39799,10 +40459,10 @@
     "delivery_max_days": null,
     "wholesale_price": 40.0,
     "selling_price": 179,
-    "mrp": 50.0,
+    "mrp": 469,
     "gross_profit": 64,
     "profit_margin_pct": 44.1,
-    "discount_pct": null,
+    "discount_pct": 62,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -40425,6 +41085,17 @@
     "pricing": {
       "mrp": 469,
       "discount_pct": 62
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl197_67249_0_7mm_par_lead_10pc_6784147",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 469,
+      "selling_price": 179,
+      "discount_pct": 62,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/XOeSwYE8xt.jpg"
     }
   },
   {
@@ -40448,10 +41119,10 @@
     "delivery_max_days": null,
     "wholesale_price": 110.0,
     "selling_price": 269,
-    "mrp": 299.0,
+    "mrp": 430,
     "gross_profit": 84,
     "profit_margin_pct": 36.8,
-    "discount_pct": null,
+    "discount_pct": 37,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -41075,6 +41746,17 @@
     "pricing": {
       "mrp": 430,
       "discount_pct": 37
+    },
+    "smartbiz_preset": {
+      "custom_sku": "21116_11in1_manicure_n_pedicure_grooming",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 430,
+      "selling_price": 269,
+      "discount_pct": 37,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/ManicuresetToolKit-WOSKU-01.jpg"
     }
   },
   {
@@ -41098,10 +41780,10 @@
     "delivery_max_days": null,
     "wholesale_price": 175.0,
     "selling_price": 349,
-    "mrp": 599.0,
+    "mrp": 475,
     "gross_profit": 99,
     "profit_margin_pct": 32.7,
-    "discount_pct": null,
+    "discount_pct": 27,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -41738,6 +42420,17 @@
     "pricing": {
       "mrp": 475,
       "discount_pct": 27
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22408_2in1_abc_maths_activity_board",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 475,
+      "selling_price": 349,
+      "discount_pct": 27,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/22408-board-2.jpg"
     }
   },
   {
@@ -41761,10 +42454,10 @@
     "delivery_max_days": null,
     "wholesale_price": 71.0,
     "selling_price": 259,
-    "mrp": 189.0,
+    "mrp": 460,
     "gross_profit": 113,
     "profit_margin_pct": 49.4,
-    "discount_pct": null,
+    "discount_pct": 44,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -42405,6 +43098,17 @@
     "pricing": {
       "mrp": 460,
       "discount_pct": 44
+    },
+    "smartbiz_preset": {
+      "custom_sku": "1578_2in1_garden_tool",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 460,
+      "selling_price": 259,
+      "discount_pct": 44,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_02d85355-dc9e-4696-bed6-35b5c1f9e19d.jpg"
     }
   },
   {
@@ -42428,10 +43132,10 @@
     "delivery_max_days": null,
     "wholesale_price": 95.0,
     "selling_price": 239,
-    "mrp": 189.0,
+    "mrp": 449,
     "gross_profit": 69,
     "profit_margin_pct": 35.1,
-    "discount_pct": null,
+    "discount_pct": 47,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -43072,6 +43776,17 @@
     "pricing": {
       "mrp": 449,
       "discount_pct": 47
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl197_70190_cube_star_2_2_at262",
+      "business_category": "GENERAL",
+      "product_category": "Toys & Games",
+      "mrp": 449,
+      "selling_price": 239,
+      "discount_pct": 47,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/JZp2OysUpb.png"
     }
   },
   {
@@ -43095,10 +43810,10 @@
     "delivery_max_days": null,
     "wholesale_price": 75.0,
     "selling_price": 219,
-    "mrp": 299.0,
+    "mrp": 425,
     "gross_profit": 69,
     "profit_margin_pct": 38.4,
-    "discount_pct": null,
+    "discount_pct": 48,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -43722,6 +44437,17 @@
     "pricing": {
       "mrp": 425,
       "discount_pct": 48
+    },
+    "smartbiz_preset": {
+      "custom_sku": "9003_travel_safety_lock_no1",
+      "business_category": "GENERAL",
+      "product_category": "mobile accessories",
+      "mrp": 425,
+      "selling_price": 219,
+      "discount_pct": 48,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Travel-Combination-Lock-1.jpg"
     }
   },
   {
@@ -43745,10 +44471,10 @@
     "delivery_max_days": null,
     "wholesale_price": 29.0,
     "selling_price": 189,
-    "mrp": 99.0,
+    "mrp": 489,
     "gross_profit": 85,
     "profit_margin_pct": 52.9,
-    "discount_pct": null,
+    "discount_pct": 61,
     "winning_score": 85.8,
     "earned_points": 85.8,
     "scored_weight_sum": 90.0,
@@ -44387,6 +45113,17 @@
     "pricing": {
       "mrp": 489,
       "discount_pct": 61
+    },
+    "smartbiz_preset": {
+      "custom_sku": "23375_multi_function_cleaning_pen_brush",
+      "business_category": "GENERAL",
+      "product_category": "mobile accessories",
+      "mrp": 489,
+      "selling_price": 189,
+      "discount_pct": 61,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/23375-1-02.jpg"
     }
   },
   {
@@ -44410,10 +45147,10 @@
     "delivery_max_days": null,
     "wholesale_price": 54.0,
     "selling_price": 239,
-    "mrp": 199.0,
+    "mrp": 639,
     "gross_profit": 110,
     "profit_margin_pct": 52.3,
-    "discount_pct": null,
+    "discount_pct": 63,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -45037,6 +45774,17 @@
     "pricing": {
       "mrp": 639,
       "discount_pct": 63
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18995_anti_theft_3_digit_wire_lock_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 639,
+      "selling_price": 239,
+      "discount_pct": 63,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/18995_anti_theft_3_digit_wire_lock_1pc.jpg"
     }
   },
   {
@@ -45060,10 +45808,10 @@
     "delivery_max_days": null,
     "wholesale_price": 83.0,
     "selling_price": 269,
-    "mrp": 399.0,
+    "mrp": 469,
     "gross_profit": 111,
     "profit_margin_pct": 46.8,
-    "discount_pct": null,
+    "discount_pct": 43,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -45687,6 +46435,17 @@
     "pricing": {
       "mrp": 469,
       "discount_pct": 43
+    },
+    "smartbiz_preset": {
+      "custom_sku": "19458_knx_table_tennis_balls_6pc_cls_713",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 469,
+      "selling_price": 269,
+      "discount_pct": 43,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/CLS-713-01.jpg"
     }
   },
   {
@@ -45710,10 +46469,10 @@
     "delivery_max_days": null,
     "wholesale_price": 103.0,
     "selling_price": 279,
-    "mrp": 199.0,
+    "mrp": 429,
     "gross_profit": 101,
     "profit_margin_pct": 41.6,
-    "discount_pct": null,
+    "discount_pct": 35,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -46337,6 +47096,17 @@
     "pricing": {
       "mrp": 429,
       "discount_pct": 35
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl197_70191_spinny_twist_at242",
+      "business_category": "GENERAL",
+      "product_category": "Toys & Games",
+      "mrp": 429,
+      "selling_price": 279,
+      "discount_pct": 35,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/UOTiOKm3hf.jpg"
     }
   },
   {
@@ -46360,10 +47130,10 @@
     "delivery_max_days": null,
     "wholesale_price": 114.0,
     "selling_price": 269,
-    "mrp": 399.0,
+    "mrp": 425,
     "gross_profit": 80,
     "profit_margin_pct": 35.3,
-    "discount_pct": null,
+    "discount_pct": 37,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -47004,6 +47774,17 @@
     "pricing": {
       "mrp": 425,
       "discount_pct": 37
+    },
+    "smartbiz_preset": {
+      "custom_sku": "17059_31in1_precision_screwdriver_set",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 425,
+      "selling_price": 269,
+      "discount_pct": 37,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/d66240cb-4b1a-448c-8c6c-b24c15b65994.jpg"
     }
   },
   {
@@ -47027,10 +47808,10 @@
     "delivery_max_days": null,
     "wholesale_price": 95.0,
     "selling_price": 259,
-    "mrp": 299.0,
+    "mrp": 489,
     "gross_profit": 89,
     "profit_margin_pct": 40.2,
-    "discount_pct": null,
+    "discount_pct": 47,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -47667,6 +48448,17 @@
     "pricing": {
       "mrp": 489,
       "discount_pct": 47
+    },
+    "smartbiz_preset": {
+      "custom_sku": "12479_pla_360_degree_rotation_car_phone_",
+      "business_category": "GENERAL",
+      "product_category": "Car & Motorbike",
+      "mrp": 489,
+      "selling_price": 259,
+      "discount_pct": 47,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/12479-1.jpg"
     }
   },
   {
@@ -47690,10 +48482,10 @@
     "delivery_max_days": null,
     "wholesale_price": 125.0,
     "selling_price": 289,
-    "mrp": 484.0,
+    "mrp": 439,
     "gross_profit": 89,
     "profit_margin_pct": 36.0,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -48334,6 +49126,17 @@
     "pricing": {
       "mrp": 439,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0370_cm_3d_massager",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 439,
+      "selling_price": 289,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/3D_Facial_Massager_02.jpg"
     }
   },
   {
@@ -48357,10 +49160,10 @@
     "delivery_max_days": null,
     "wholesale_price": 119.0,
     "selling_price": 259,
-    "mrp": 149.0,
+    "mrp": 405,
     "gross_profit": 65,
     "profit_margin_pct": 30.9,
-    "discount_pct": null,
+    "discount_pct": 36,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -48987,6 +49790,17 @@
     "pricing": {
       "mrp": 405,
       "discount_pct": 36
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl197_70139_cube_star_3x3x3_at44",
+      "business_category": "GENERAL",
+      "product_category": "Toys & Games",
+      "mrp": 405,
+      "selling_price": 259,
+      "discount_pct": 36,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_293850a6-9099-4a75-8981-e08b25c5c3d3.jpg"
     }
   },
   {
@@ -49010,10 +49824,10 @@
     "delivery_max_days": null,
     "wholesale_price": 228.0,
     "selling_price": 429,
-    "mrp": 1199.0,
+    "mrp": 585,
     "gross_profit": 126,
     "profit_margin_pct": 32.9,
-    "discount_pct": null,
+    "discount_pct": 27,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -49650,6 +50464,17 @@
     "pricing": {
       "mrp": 585,
       "discount_pct": 27
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl334_92703_hub_a_c",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 585,
+      "selling_price": 429,
+      "discount_pct": 27,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/bX6NWjiYg9.jpg"
     }
   },
   {
@@ -49673,10 +50498,10 @@
     "delivery_max_days": null,
     "wholesale_price": 98.0,
     "selling_price": 289,
-    "mrp": 299.0,
+    "mrp": 475,
     "gross_profit": 116,
     "profit_margin_pct": 45.3,
-    "discount_pct": null,
+    "discount_pct": 39,
     "winning_score": 87.5,
     "earned_points": 87.5,
     "scored_weight_sum": 100.0,
@@ -50313,6 +51138,17 @@
     "pricing": {
       "mrp": 475,
       "discount_pct": 39
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl282_7641_isb_4in1_soap_dish",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 475,
+      "selling_price": 289,
+      "discount_pct": 39,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_5dec3e01-b4d3-485a-b339-af460f46cd6d.jpg"
     }
   },
   {
@@ -50336,10 +51172,10 @@
     "delivery_max_days": null,
     "wholesale_price": 58.0,
     "selling_price": 269,
-    "mrp": 299.0,
+    "mrp": 475,
     "gross_profit": 136,
     "profit_margin_pct": 56.1,
-    "discount_pct": null,
+    "discount_pct": 43,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -50976,6 +51812,17 @@
     "pricing": {
       "mrp": 475,
       "discount_pct": 43
+    },
+    "smartbiz_preset": {
+      "custom_sku": "6076_4in1_medicine_crusher",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 475,
+      "selling_price": 269,
+      "discount_pct": 43,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/6076_4in1_medicine_crusher.jpg"
     }
   },
   {
@@ -50999,10 +51846,10 @@
     "delivery_max_days": null,
     "wholesale_price": 179.0,
     "selling_price": 379,
-    "mrp": 999.0,
+    "mrp": 539,
     "gross_profit": 125,
     "profit_margin_pct": 36.9,
-    "discount_pct": null,
+    "discount_pct": 30,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -51638,6 +52485,17 @@
     "pricing": {
       "mrp": 539,
       "discount_pct": 30
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl334_92707_link_hub_black",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 539,
+      "selling_price": 379,
+      "discount_pct": 30,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/RGuPQ5mJdX.png"
     }
   },
   {
@@ -51661,10 +52519,10 @@
     "delivery_max_days": null,
     "wholesale_price": 38.0,
     "selling_price": 209,
-    "mrp": 129.0,
+    "mrp": 559,
     "gross_profit": 96,
     "profit_margin_pct": 53.1,
-    "discount_pct": null,
+    "discount_pct": 63,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -52305,6 +53163,17 @@
     "pricing": {
       "mrp": 559,
       "discount_pct": 63
+    },
+    "smartbiz_preset": {
+      "custom_sku": "17952_soft_eraser_30pc_set",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 559,
+      "selling_price": 209,
+      "discount_pct": 63,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_1a918657-9490-4364-8fea-823a3a184fc9.jpg"
     }
   },
   {
@@ -52328,10 +53197,10 @@
     "delivery_max_days": null,
     "wholesale_price": 172.0,
     "selling_price": 369,
-    "mrp": 359.0,
+    "mrp": 499,
     "gross_profit": 122,
     "profit_margin_pct": 37.1,
-    "discount_pct": null,
+    "discount_pct": 26,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -52955,6 +53824,17 @@
     "pricing": {
       "mrp": 499,
       "discount_pct": 26
+    },
+    "smartbiz_preset": {
+      "custom_sku": "1975_magic_puzzle_cube_4x4x4_at45",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 499,
+      "selling_price": 369,
+      "discount_pct": 26,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_30437282-80e9-42ce-a2a2-e1bb473011f2.jpg"
     }
   },
   {
@@ -52978,10 +53858,10 @@
     "delivery_max_days": null,
     "wholesale_price": 174.0,
     "selling_price": 369,
-    "mrp": 349.0,
+    "mrp": 495,
     "gross_profit": 120,
     "profit_margin_pct": 36.6,
-    "discount_pct": null,
+    "discount_pct": 25,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -53605,6 +54485,17 @@
     "pricing": {
       "mrp": 495,
       "discount_pct": 25
+    },
+    "smartbiz_preset": {
+      "custom_sku": "15438_6_led_solar_fence_light_2pc",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 495,
+      "selling_price": 369,
+      "discount_pct": 25,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/71ca71fc-d470-44c1-a3e3-1a9b141c05cf_8924a530-3aa4-447a-a8e4-db5cee92d5ed.jpg"
     }
   },
   {
@@ -53628,10 +54519,10 @@
     "delivery_max_days": null,
     "wholesale_price": 65.0,
     "selling_price": 239,
-    "mrp": 139.0,
+    "mrp": 439,
     "gross_profit": 99,
     "profit_margin_pct": 47.7,
-    "discount_pct": null,
+    "discount_pct": 46,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -54268,6 +55159,17 @@
     "pricing": {
       "mrp": 439,
       "discount_pct": 46
+    },
+    "smartbiz_preset": {
+      "custom_sku": "4969_toothbrush_case_6pc",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 439,
+      "selling_price": 239,
+      "discount_pct": 46,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4969.jpg"
     }
   },
   {
@@ -54291,10 +55193,10 @@
     "delivery_max_days": null,
     "wholesale_price": 214.0,
     "selling_price": 399,
-    "mrp": 599.0,
+    "mrp": 545,
     "gross_profit": 110,
     "profit_margin_pct": 31.3,
-    "discount_pct": null,
+    "discount_pct": 27,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -54935,6 +55837,17 @@
     "pricing": {
       "mrp": 545,
       "discount_pct": 27
+    },
+    "smartbiz_preset": {
+      "custom_sku": "6994_usb_7port_data_hub",
+      "business_category": "GENERAL",
+      "product_category": "mobile accessories",
+      "mrp": 545,
+      "selling_price": 399,
+      "discount_pct": 27,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/USB-01.jpg"
     }
   },
   {
@@ -54958,10 +55871,10 @@
     "delivery_max_days": null,
     "wholesale_price": 245.0,
     "selling_price": 449,
-    "mrp": 799.0,
+    "mrp": 639,
     "gross_profit": 129,
     "profit_margin_pct": 32.1,
-    "discount_pct": null,
+    "discount_pct": 30,
     "winning_score": 77.5,
     "earned_points": 77.5,
     "scored_weight_sum": 90.0,
@@ -55602,6 +56515,17 @@
     "pricing": {
       "mrp": 639,
       "discount_pct": 30
+    },
+    "smartbiz_preset": {
+      "custom_sku": "7428_gym_ball_pump_combo",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 639,
+      "selling_price": 449,
+      "discount_pct": 30,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/7428.png"
     }
   },
   {
@@ -55625,10 +56549,10 @@
     "delivery_max_days": null,
     "wholesale_price": 49.0,
     "selling_price": 189,
-    "mrp": 399.0,
+    "mrp": 475,
     "gross_profit": 65,
     "profit_margin_pct": 42.3,
-    "discount_pct": null,
+    "discount_pct": 60,
     "winning_score": 85.8,
     "earned_points": 85.8,
     "scored_weight_sum": 90.0,
@@ -56265,6 +57189,17 @@
     "pricing": {
       "mrp": 475,
       "discount_pct": 60
+    },
+    "smartbiz_preset": {
+      "custom_sku": "24823_sipora_travel_tumbler_750ml",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 475,
+      "selling_price": 189,
+      "discount_pct": 60,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/f7ad7279-a8c3-4abc-850a-ed37ac45f038.jpg"
     }
   },
   {
@@ -56288,10 +57223,10 @@
     "delivery_max_days": null,
     "wholesale_price": 123.0,
     "selling_price": 289,
-    "mrp": 399.0,
+    "mrp": 429,
     "gross_profit": 91,
     "profit_margin_pct": 36.7,
-    "discount_pct": null,
+    "discount_pct": 33,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -56928,6 +57863,17 @@
     "pricing": {
       "mrp": 429,
       "discount_pct": 33
+    },
+    "smartbiz_preset": {
+      "custom_sku": "15310_8in1_multi_cycling_bike_repair_too",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 429,
+      "selling_price": 289,
+      "discount_pct": 33,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/folding-torx-key-set-1.jpg"
     }
   },
   {
@@ -56951,10 +57897,10 @@
     "delivery_max_days": null,
     "wholesale_price": 121.0,
     "selling_price": 259,
-    "mrp": 299.0,
+    "mrp": 399,
     "gross_profit": 63,
     "profit_margin_pct": 30.1,
-    "discount_pct": null,
+    "discount_pct": 35,
     "winning_score": 85.8,
     "earned_points": 85.8,
     "scored_weight_sum": 90.0,
@@ -57589,6 +58535,17 @@
     "pricing": {
       "mrp": 399,
       "discount_pct": 35
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl193_66677_glass_tumbler_with_handle_a",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 399,
+      "selling_price": 259,
+      "discount_pct": 35,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 4,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/ehD32nRWHx.jpg"
     }
   },
   {
@@ -57612,10 +58569,10 @@
     "delivery_max_days": null,
     "wholesale_price": 34.0,
     "selling_price": 169,
-    "mrp": 9999.0,
+    "mrp": 365,
     "gross_profit": 60,
     "profit_margin_pct": 44.4,
-    "discount_pct": null,
+    "discount_pct": 54,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -58256,6 +59213,17 @@
     "pricing": {
       "mrp": 365,
       "discount_pct": 54
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl206_68514_my_clear_bag_ot_317f",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 365,
+      "selling_price": 169,
+      "discount_pct": 54,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/NlM9Shiia0.jpg"
     }
   },
   {
@@ -58279,10 +59247,10 @@
     "delivery_max_days": null,
     "wholesale_price": 25.0,
     "selling_price": 169,
-    "mrp": 40.0,
+    "mrp": 419,
     "gross_profit": 69,
     "profit_margin_pct": 49.7,
-    "discount_pct": null,
+    "discount_pct": 60,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -58923,6 +59891,17 @@
     "pricing": {
       "mrp": 419,
       "discount_pct": 60
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl206_68761_215_my_clear_bag_aerotix",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 419,
+      "selling_price": 169,
+      "discount_pct": 60,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/7G2Z9xedO2.jpg"
     }
   },
   {
@@ -58946,10 +59925,10 @@
     "delivery_max_days": null,
     "wholesale_price": 80.0,
     "selling_price": 219,
-    "mrp": 299.0,
+    "mrp": 389,
     "gross_profit": 64,
     "profit_margin_pct": 36.1,
-    "discount_pct": null,
+    "discount_pct": 44,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -59590,6 +60569,17 @@
     "pricing": {
       "mrp": 389,
       "discount_pct": 44
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18132_file_folder_35x26cm_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 389,
+      "selling_price": 219,
+      "discount_pct": 44,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/12934_1.png"
     }
   },
   {
@@ -59613,10 +60603,10 @@
     "delivery_max_days": null,
     "wholesale_price": 99.0,
     "selling_price": 289,
-    "mrp": 299.0,
+    "mrp": 449,
     "gross_profit": 115,
     "profit_margin_pct": 45.0,
-    "discount_pct": null,
+    "discount_pct": 36,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -60257,6 +61247,17 @@
     "pricing": {
       "mrp": 449,
       "discount_pct": 36
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22461_2in1_cleaning_brush",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 449,
+      "selling_price": 289,
+      "discount_pct": 36,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/22461-1.jpg"
     }
   },
   {
@@ -60280,10 +61281,10 @@
     "delivery_max_days": null,
     "wholesale_price": 129.0,
     "selling_price": 269,
-    "mrp": 420.0,
+    "mrp": 445,
     "gross_profit": 65,
     "profit_margin_pct": 29.7,
-    "discount_pct": null,
+    "discount_pct": 40,
     "winning_score": 77.5,
     "earned_points": 77.5,
     "scored_weight_sum": 90.0,
@@ -60919,6 +61920,17 @@
     "pricing": {
       "mrp": 445,
       "discount_pct": 40
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0634_candy_tray",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 445,
+      "selling_price": 269,
+      "discount_pct": 40,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/a3450af3-7503-4663-b850-74b86e89fcaf.jpg"
     }
   },
   {
@@ -60942,10 +61954,10 @@
     "delivery_max_days": null,
     "wholesale_price": 53.0,
     "selling_price": 249,
-    "mrp": 90.0,
+    "mrp": 629,
     "gross_profit": 121,
     "profit_margin_pct": 54.6,
-    "discount_pct": null,
+    "discount_pct": 60,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -61569,6 +62581,17 @@
     "pricing": {
       "mrp": 629,
       "discount_pct": 60
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl344_41237_danglar_6in1_20gm",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 629,
+      "selling_price": 249,
+      "discount_pct": 60,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/5rKcdMgMe4.png"
     }
   },
   {
@@ -61592,10 +62615,10 @@
     "delivery_max_days": null,
     "wholesale_price": 57.0,
     "selling_price": 219,
-    "mrp": 90.0,
+    "mrp": 410,
     "gross_profit": 87,
     "profit_margin_pct": 46.6,
-    "discount_pct": null,
+    "discount_pct": 47,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -62235,6 +63258,17 @@
     "pricing": {
       "mrp": 410,
       "discount_pct": 47
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl167_48535_7rose_dhoop_stick",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 410,
+      "selling_price": 219,
+      "discount_pct": 47,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Sa8igJj280.jpg"
     }
   },
   {
@@ -62258,10 +63292,10 @@
     "delivery_max_days": null,
     "wholesale_price": 125.0,
     "selling_price": 289,
-    "mrp": 299.0,
+    "mrp": 479,
     "gross_profit": 89,
     "profit_margin_pct": 36.0,
-    "discount_pct": null,
+    "discount_pct": 40,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -62898,6 +63932,17 @@
     "pricing": {
       "mrp": 479,
       "discount_pct": 40
+    },
+    "smartbiz_preset": {
+      "custom_sku": "13749_adiyogi_shiva_smoke_fountain_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 479,
+      "selling_price": 289,
+      "discount_pct": 40,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_09315466-9d0c-49c3-ad47-bc7ca1f803f5.jpg"
     }
   },
   {
@@ -62921,10 +63966,10 @@
     "delivery_max_days": null,
     "wholesale_price": 160.0,
     "selling_price": 299,
-    "mrp": 250.0,
+    "mrp": 410,
     "gross_profit": 64,
     "profit_margin_pct": 26.4,
-    "discount_pct": null,
+    "discount_pct": 27,
     "winning_score": 86.5,
     "earned_points": 86.5,
     "scored_weight_sum": 100.0,
@@ -63564,6 +64609,17 @@
     "pricing": {
       "mrp": 410,
       "discount_pct": 27
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl167_48553_gugalam_agarbatti_250g",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 410,
+      "selling_price": 299,
+      "discount_pct": 27,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Q9edm4uwBM.jpg"
     }
   },
   {
@@ -63587,10 +64643,10 @@
     "delivery_max_days": null,
     "wholesale_price": 54.0,
     "selling_price": 219,
-    "mrp": 125.0,
+    "mrp": 485,
     "gross_profit": 90,
     "profit_margin_pct": 47.9,
-    "discount_pct": null,
+    "discount_pct": 55,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -64231,6 +65287,17 @@
     "pricing": {
       "mrp": 485,
       "discount_pct": 55
+    },
+    "smartbiz_preset": {
+      "custom_sku": "13678_mix_flav_incense_sticks_90gm",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 485,
+      "selling_price": 219,
+      "discount_pct": 55,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/13678.png"
     }
   },
   {
@@ -64254,10 +65321,10 @@
     "delivery_max_days": null,
     "wholesale_price": 41.0,
     "selling_price": 219,
-    "mrp": 55.0,
+    "mrp": 535,
     "gross_profit": 103,
     "profit_margin_pct": 53.9,
-    "discount_pct": null,
+    "discount_pct": 59,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -64898,6 +65965,17 @@
     "pricing": {
       "mrp": 535,
       "discount_pct": 59
+    },
+    "smartbiz_preset": {
+      "custom_sku": "13687_mix_flav_incense_sticks_10pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 535,
+      "selling_price": 219,
+      "discount_pct": 59,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/013bcf98-70fc-434f-873f-cf69a13907ce.jpg"
     }
   },
   {
@@ -64921,10 +65999,10 @@
     "delivery_max_days": null,
     "wholesale_price": 58.0,
     "selling_price": 199,
-    "mrp": 90.0,
+    "mrp": 369,
     "gross_profit": 66,
     "profit_margin_pct": 40.7,
-    "discount_pct": null,
+    "discount_pct": 46,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -65564,6 +66642,17 @@
     "pricing": {
       "mrp": 369,
       "discount_pct": 46
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl167_48504_lavendor_agarbatti",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 369,
+      "selling_price": 199,
+      "discount_pct": 46,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/0ba17838-d6ae-4d84-91bb-aae90a6f2c12.jpg"
     }
   },
   {
@@ -65587,10 +66676,10 @@
     "delivery_max_days": null,
     "wholesale_price": 34.0,
     "selling_price": 219,
-    "mrp": 99.0,
+    "mrp": 500,
     "gross_profit": 110,
     "profit_margin_pct": 57.1,
-    "discount_pct": null,
+    "discount_pct": 56,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -66226,6 +67315,17 @@
     "pricing": {
       "mrp": 500,
       "discount_pct": 56
+    },
+    "smartbiz_preset": {
+      "custom_sku": "2234_silver_bajot",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 500,
+      "selling_price": 219,
+      "discount_pct": 56,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/2_bdb9a21a-cd11-4af6-a6c7-f54b76dc16b9.jpg"
     }
   },
   {
@@ -66249,10 +67349,10 @@
     "delivery_max_days": null,
     "wholesale_price": 155.0,
     "selling_price": 299,
-    "mrp": 299.0,
+    "mrp": 409,
     "gross_profit": 69,
     "profit_margin_pct": 28.1,
-    "discount_pct": null,
+    "discount_pct": 27,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -66889,6 +67989,17 @@
     "pricing": {
       "mrp": 409,
       "discount_pct": 27
+    },
+    "smartbiz_preset": {
+      "custom_sku": "24670_cnl_acrylic_antique_lamp_4pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 409,
+      "selling_price": 299,
+      "discount_pct": 27,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/24670-Flameless-LED-Tea-Light-Candles-01.jpg"
     }
   },
   {
@@ -66912,10 +68023,10 @@
     "delivery_max_days": null,
     "wholesale_price": 185.0,
     "selling_price": 349,
-    "mrp": 339.0,
+    "mrp": 495,
     "gross_profit": 89,
     "profit_margin_pct": 29.8,
-    "discount_pct": null,
+    "discount_pct": 29,
     "winning_score": 76.5,
     "earned_points": 76.5,
     "scored_weight_sum": 90.0,
@@ -67552,6 +68663,17 @@
     "pricing": {
       "mrp": 495,
       "discount_pct": 29
+    },
+    "smartbiz_preset": {
+      "custom_sku": "12527_decor_apple_led_candles_4pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 495,
+      "selling_price": 349,
+      "discount_pct": 29,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/12527_decor_apple_led_candles_4pc_showcase.png"
     }
   },
   {
@@ -67575,10 +68697,10 @@
     "delivery_max_days": null,
     "wholesale_price": 62.0,
     "selling_price": 199,
-    "mrp": 120.0,
+    "mrp": 369,
     "gross_profit": 62,
     "profit_margin_pct": 38.7,
-    "discount_pct": null,
+    "discount_pct": 46,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -68216,6 +69338,17 @@
     "pricing": {
       "mrp": 369,
       "discount_pct": 46
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl344_41207_box_p_aroma_100gm",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 369,
+      "selling_price": 199,
+      "discount_pct": 46,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/oCBhjNIbzR.png"
     }
   },
   {
@@ -68239,10 +69372,10 @@
     "delivery_max_days": null,
     "wholesale_price": 81.0,
     "selling_price": 219,
-    "mrp": 299.0,
+    "mrp": 389,
     "gross_profit": 63,
     "profit_margin_pct": 35.6,
-    "discount_pct": null,
+    "discount_pct": 44,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -68881,6 +70014,17 @@
     "pricing": {
       "mrp": 389,
       "discount_pct": 44
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0053_effete_assorted_chocolates_as96",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 389,
+      "selling_price": 219,
+      "discount_pct": 44,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 4,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1st_416cfa9a-fdb8-4a2f-8f14-3aae33fb9b46.jpg"
     }
   },
   {
@@ -68904,10 +70048,10 @@
     "delivery_max_days": null,
     "wholesale_price": 45.0,
     "selling_price": 189,
-    "mrp": 99.0,
+    "mrp": 480,
     "gross_profit": 69,
     "profit_margin_pct": 44.4,
-    "discount_pct": null,
+    "discount_pct": 61,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -69544,6 +70688,17 @@
     "pricing": {
       "mrp": 480,
       "discount_pct": 61
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl239_73373_red_shubh_labh_swastik_laks",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 480,
+      "selling_price": 189,
+      "discount_pct": 61,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/si4t1b.jpg"
     }
   },
   {
@@ -69567,10 +70722,10 @@
     "delivery_max_days": null,
     "wholesale_price": 129.0,
     "selling_price": 269,
-    "mrp": 399.0,
+    "mrp": 390,
     "gross_profit": 65,
     "profit_margin_pct": 29.7,
-    "discount_pct": null,
+    "discount_pct": 31,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -70198,6 +71353,17 @@
     "pricing": {
       "mrp": 390,
       "discount_pct": 31
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18744_baby_first_block_set_16pc",
+      "business_category": "GENERAL",
+      "product_category": "Baby Products",
+      "mrp": 390,
+      "selling_price": 269,
+      "discount_pct": 31,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/977c3226-7130-42d0-999a-fae82b99b2dd.jpg"
     }
   },
   {
@@ -70221,10 +71387,10 @@
     "delivery_max_days": null,
     "wholesale_price": 161.0,
     "selling_price": 299,
-    "mrp": 329.0,
+    "mrp": 389,
     "gross_profit": 63,
     "profit_margin_pct": 26.1,
-    "discount_pct": null,
+    "discount_pct": 23,
     "winning_score": 77.5,
     "earned_points": 77.5,
     "scored_weight_sum": 90.0,
@@ -70865,6 +72031,17 @@
     "pricing": {
       "mrp": 389,
       "discount_pct": 23
+    },
+    "smartbiz_preset": {
+      "custom_sku": "19275_shreeji_bal_gopal_jhula_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 389,
+      "selling_price": 299,
+      "discount_pct": 23,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_72dbdb6f-ea5e-4886-a5e0-a79e5c759f31.jpg"
     }
   },
   {
@@ -70888,10 +72065,10 @@
     "delivery_max_days": null,
     "wholesale_price": 38.0,
     "selling_price": 179,
-    "mrp": 80.0,
+    "mrp": 480,
     "gross_profit": 66,
     "profit_margin_pct": 45.3,
-    "discount_pct": null,
+    "discount_pct": 63,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -71528,6 +72705,17 @@
     "pricing": {
       "mrp": 480,
       "discount_pct": 63
+    },
+    "smartbiz_preset": {
+      "custom_sku": "13806_mix_flav_incense_sticks_100gm",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 480,
+      "selling_price": 179,
+      "discount_pct": 63,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/13806_mix_flav_incense_sticks_100gm_showcase.png"
     }
   },
   {
@@ -71551,10 +72739,10 @@
     "delivery_max_days": null,
     "wholesale_price": 97.0,
     "selling_price": 249,
-    "mrp": 199.0,
+    "mrp": 380,
     "gross_profit": 77,
     "profit_margin_pct": 36.9,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 95.8,
     "earned_points": 95.8,
     "scored_weight_sum": 100.0,
@@ -72178,6 +73366,17 @@
     "pricing": {
       "mrp": 380,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl239_73380_big_round_rangoli_stencil_b",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 380,
+      "selling_price": 249,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/nn0gyk.jpg"
     }
   },
   {
@@ -72201,10 +73400,10 @@
     "delivery_max_days": null,
     "wholesale_price": 65.0,
     "selling_price": 209,
-    "mrp": 120.0,
+    "mrp": 399,
     "gross_profit": 69,
     "profit_margin_pct": 40.2,
-    "discount_pct": null,
+    "discount_pct": 48,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -72840,6 +74039,17 @@
     "pricing": {
       "mrp": 399,
       "discount_pct": 48
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl344_41210_box_p_blue_pearls_100gm",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 399,
+      "selling_price": 209,
+      "discount_pct": 48,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/dhh3Cv7VAS.png"
     }
   },
   {
@@ -72863,10 +74073,10 @@
     "delivery_max_days": null,
     "wholesale_price": 113.0,
     "selling_price": 249,
-    "mrp": 299.0,
+    "mrp": 375,
     "gross_profit": 61,
     "profit_margin_pct": 30.5,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -73506,6 +74716,17 @@
     "pricing": {
       "mrp": 375,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0049_effete_blueberry_choco_ba96",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 375,
+      "selling_price": 249,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/BA_1_9514bc8c-658b-4932-9bfb-da5dfe3b90a4.jpg"
     }
   },
   {
@@ -73529,10 +74750,10 @@
     "delivery_max_days": null,
     "wholesale_price": 82.0,
     "selling_price": 219,
-    "mrp": 299.0,
+    "mrp": 415,
     "gross_profit": 62,
     "profit_margin_pct": 35.2,
-    "discount_pct": null,
+    "discount_pct": 47,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -74169,6 +75390,17 @@
     "pricing": {
       "mrp": 415,
       "discount_pct": 47
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0042_effete_butterscotch_bs96",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 415,
+      "selling_price": 219,
+      "discount_pct": 47,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/1ST_cdfe19f9-0203-4077-9aef-97557d1b0f06.jpg"
     }
   },
   {
@@ -74192,10 +75424,10 @@
     "delivery_max_days": null,
     "wholesale_price": 234.0,
     "selling_price": 429,
-    "mrp": 469.0,
+    "mrp": 579,
     "gross_profit": 120,
     "profit_margin_pct": 31.5,
-    "discount_pct": null,
+    "discount_pct": 26,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -74831,6 +76063,17 @@
     "pricing": {
       "mrp": 579,
       "discount_pct": 26
+    },
+    "smartbiz_preset": {
+      "custom_sku": "19452_cartoon_stationery_14pc",
+      "business_category": "GENERAL",
+      "product_category": "Office Products",
+      "mrp": 579,
+      "selling_price": 429,
+      "discount_pct": 26,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/03_734a1fa1-c385-494e-82a9-cb02444d2967.jpg"
     }
   },
   {
@@ -74854,10 +76097,10 @@
     "delivery_max_days": null,
     "wholesale_price": 65.0,
     "selling_price": 209,
-    "mrp": 85.0,
+    "mrp": 365,
     "gross_profit": 69,
     "profit_margin_pct": 40.2,
-    "discount_pct": null,
+    "discount_pct": 43,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -75497,6 +76740,17 @@
     "pricing": {
       "mrp": 365,
       "discount_pct": 43
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl344_41221_jar_dhoop_chandan_100gm",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 365,
+      "selling_price": 209,
+      "discount_pct": 43,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/lWqgvDIhpA.png"
     }
   },
   {
@@ -75520,10 +76774,10 @@
     "delivery_max_days": null,
     "wholesale_price": 65.0,
     "selling_price": 209,
-    "mrp": 85.0,
+    "mrp": 389,
     "gross_profit": 69,
     "profit_margin_pct": 40.2,
-    "discount_pct": null,
+    "discount_pct": 46,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -76164,6 +77418,17 @@
     "pricing": {
       "mrp": 389,
       "discount_pct": 46
+    },
+    "smartbiz_preset": {
+      "custom_sku": "24865_chandan_dhoop_stick_jar_100g",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 389,
+      "selling_price": 209,
+      "discount_pct": 46,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Chandan-Dhoop-Stick-01.jpg"
     }
   },
   {
@@ -76187,10 +77452,10 @@
     "delivery_max_days": null,
     "wholesale_price": 49.0,
     "selling_price": 189,
-    "mrp": 75.0,
+    "mrp": 449,
     "gross_profit": 65,
     "profit_margin_pct": 42.3,
-    "discount_pct": null,
+    "discount_pct": 58,
     "winning_score": 73.5,
     "earned_points": 73.5,
     "scored_weight_sum": 90.0,
@@ -76827,6 +78092,17 @@
     "pricing": {
       "mrp": 449,
       "discount_pct": 58
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl344_41206_box_h_chandan_100gm",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 449,
+      "selling_price": 189,
+      "discount_pct": 58,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/PwOLnCbo5A.png"
     }
   },
   {
@@ -76850,10 +78126,10 @@
     "delivery_max_days": null,
     "wholesale_price": 155.0,
     "selling_price": 299,
-    "mrp": 249.0,
+    "mrp": 405,
     "gross_profit": 69,
     "profit_margin_pct": 28.1,
-    "discount_pct": null,
+    "discount_pct": 26,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -77477,6 +78753,17 @@
     "pricing": {
       "mrp": 405,
       "discount_pct": 26
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl190_64551_chesse_makhana_75gm",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 405,
+      "selling_price": 299,
+      "discount_pct": 26,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Chesse-Makhana-01.jpg"
     }
   },
   {
@@ -77500,10 +78787,10 @@
     "delivery_max_days": null,
     "wholesale_price": 85.0,
     "selling_price": 229,
-    "mrp": 120.0,
+    "mrp": 449,
     "gross_profit": 69,
     "profit_margin_pct": 36.7,
-    "discount_pct": null,
+    "discount_pct": 49,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -78140,6 +79427,17 @@
     "pricing": {
       "mrp": 449,
       "discount_pct": 49
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl190_64539_chesse_tomato_soya_mini_120",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 449,
+      "selling_price": 229,
+      "discount_pct": 49,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/04_3787a688-ce49-4def-8685-98c34abb86b8.jpg"
     }
   },
   {
@@ -78163,10 +79461,10 @@
     "delivery_max_days": null,
     "wholesale_price": 72.0,
     "selling_price": 209,
-    "mrp": 299.0,
+    "mrp": 375,
     "gross_profit": 62,
     "profit_margin_pct": 36.8,
-    "discount_pct": null,
+    "discount_pct": 44,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -78788,6 +80086,17 @@
     "pricing": {
       "mrp": 375,
       "discount_pct": 44
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0051_effete_premiume_chocolate_cm96",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 375,
+      "selling_price": 209,
+      "discount_pct": 44,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 4,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/CM96_1_c47ff0b5-60ac-4ca1-be86-6889ad35ab28.jpg"
     }
   },
   {
@@ -78811,10 +80120,10 @@
     "delivery_max_days": null,
     "wholesale_price": 25.0,
     "selling_price": 169,
-    "mrp": 99.0,
+    "mrp": 395,
     "gross_profit": 69,
     "profit_margin_pct": 49.7,
-    "discount_pct": null,
+    "discount_pct": 57,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -79451,6 +80760,17 @@
     "pricing": {
       "mrp": 395,
       "discount_pct": 57
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0048_effete_chocoma_cm32",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 395,
+      "selling_price": 169,
+      "discount_pct": 57,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Choco-Magic-Filled-Chocolate-01.jpg"
     }
   },
   {
@@ -79474,10 +80794,10 @@
     "delivery_max_days": null,
     "wholesale_price": 118.0,
     "selling_price": 299,
-    "mrp": 249.0,
+    "mrp": 450,
     "gross_profit": 106,
     "profit_margin_pct": 40.5,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -80101,6 +81421,17 @@
     "pricing": {
       "mrp": 450,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "21110_11in1_manicure_n_pedicure_grooming",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 450,
+      "selling_price": 299,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_4dcf21f6-61dc-4650-8d8a-ba44c861b18d.jpg"
     }
   },
   {
@@ -80124,10 +81455,10 @@
     "delivery_max_days": null,
     "wholesale_price": 54.0,
     "selling_price": 189,
-    "mrp": 108.0,
+    "mrp": 449,
     "gross_profit": 60,
     "profit_margin_pct": 39.7,
-    "discount_pct": null,
+    "discount_pct": 58,
     "winning_score": 85.8,
     "earned_points": 85.8,
     "scored_weight_sum": 90.0,
@@ -80754,6 +82085,17 @@
     "pricing": {
       "mrp": 449,
       "discount_pct": 58
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl175_67690_mn_033_go",
+      "business_category": "GENERAL",
+      "product_category": "Home & Kitchen",
+      "mrp": 449,
+      "selling_price": 189,
+      "discount_pct": 58,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 5,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/whl175_67690_mn_033_go.jpg"
     }
   },
   {
@@ -80777,10 +82119,10 @@
     "delivery_max_days": null,
     "wholesale_price": 46.0,
     "selling_price": 239,
-    "mrp": 99.0,
+    "mrp": 530,
     "gross_profit": 118,
     "profit_margin_pct": 55.6,
-    "discount_pct": null,
+    "discount_pct": 55,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -81404,6 +82746,17 @@
     "pricing": {
       "mrp": 530,
       "discount_pct": 55
+    },
+    "smartbiz_preset": {
+      "custom_sku": "13574_3_sided_soft_toothbrush_2pc",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 530,
+      "selling_price": 239,
+      "discount_pct": 55,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/fdb70b55-5fd2-4847-9031-8d09ed1fa6d3.jpg"
     }
   },
   {
@@ -81427,10 +82780,10 @@
     "delivery_max_days": null,
     "wholesale_price": 34.0,
     "selling_price": 189,
-    "mrp": 199.0,
+    "mrp": 445,
     "gross_profit": 80,
     "profit_margin_pct": 50.3,
-    "discount_pct": null,
+    "discount_pct": 58,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -82071,6 +83424,17 @@
     "pricing": {
       "mrp": 445,
       "discount_pct": 58
+    },
+    "smartbiz_preset": {
+      "custom_sku": "18029_mix_design_eraser_1set_no6",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 445,
+      "selling_price": 189,
+      "discount_pct": 58,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/02451c54-066e-4fa9-9cd6-4ae021ac8276.jpg"
     }
   },
   {
@@ -82094,10 +83458,10 @@
     "delivery_max_days": null,
     "wholesale_price": 149.0,
     "selling_price": 319,
-    "mrp": 225.0,
+    "mrp": 515,
     "gross_profit": 95,
     "profit_margin_pct": 34.5,
-    "discount_pct": null,
+    "discount_pct": 38,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -82721,6 +84085,17 @@
     "pricing": {
       "mrp": 515,
       "discount_pct": 38
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22440_3d_eva_unicorn_assembly_craft_puzz",
+      "business_category": "GENERAL",
+      "product_category": "Toys & Games",
+      "mrp": 515,
+      "selling_price": 319,
+      "discount_pct": 38,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/22440-1.jpg"
     }
   },
   {
@@ -82744,10 +84119,10 @@
     "delivery_max_days": null,
     "wholesale_price": 127.0,
     "selling_price": 269,
-    "mrp": 399.0,
+    "mrp": 439,
     "gross_profit": 67,
     "profit_margin_pct": 30.5,
-    "discount_pct": null,
+    "discount_pct": 39,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -83388,6 +84763,17 @@
     "pricing": {
       "mrp": 439,
       "discount_pct": 39
+    },
+    "smartbiz_preset": {
+      "custom_sku": "15926_4_digit_combination_padlock",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 439,
+      "selling_price": 269,
+      "discount_pct": 39,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Combination_Padlock_7.jpg"
     }
   },
   {
@@ -83411,10 +84797,10 @@
     "delivery_max_days": null,
     "wholesale_price": 165.0,
     "selling_price": 329,
-    "mrp": 339.0,
+    "mrp": 465,
     "gross_profit": 89,
     "profit_margin_pct": 31.6,
-    "discount_pct": null,
+    "discount_pct": 29,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -84055,6 +85441,17 @@
     "pricing": {
       "mrp": 465,
       "discount_pct": 29
+    },
+    "smartbiz_preset": {
+      "custom_sku": "15628_5in1_gardening_hand_tool_set",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 465,
+      "selling_price": 329,
+      "discount_pct": 29,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/15628.png"
     }
   },
   {
@@ -84078,10 +85475,10 @@
     "delivery_max_days": null,
     "wholesale_price": 55.0,
     "selling_price": 249,
-    "mrp": 149.0,
+    "mrp": 615,
     "gross_profit": 119,
     "profit_margin_pct": 53.8,
-    "discount_pct": null,
+    "discount_pct": 60,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -84722,6 +86119,17 @@
     "pricing": {
       "mrp": 615,
       "discount_pct": 60
+    },
+    "smartbiz_preset": {
+      "custom_sku": "20035_student_stationery_combo_set",
+      "business_category": "GENERAL",
+      "product_category": "Office Products",
+      "mrp": 615,
+      "selling_price": 249,
+      "discount_pct": 60,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/20035_student_stationery_combo_set.jpg"
     }
   },
   {
@@ -84745,10 +86153,10 @@
     "delivery_max_days": null,
     "wholesale_price": 69.0,
     "selling_price": 279,
-    "mrp": 149.0,
+    "mrp": 479,
     "gross_profit": 135,
     "profit_margin_pct": 53.8,
-    "discount_pct": null,
+    "discount_pct": 42,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -85389,6 +86797,17 @@
     "pricing": {
       "mrp": 479,
       "discount_pct": 42
+    },
+    "smartbiz_preset": {
+      "custom_sku": "14446_7in1_manicure_tool_set",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 479,
+      "selling_price": 279,
+      "discount_pct": 42,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/14446_7in1_manicure_tool_set.png"
     }
   },
   {
@@ -85412,10 +86831,10 @@
     "delivery_max_days": null,
     "wholesale_price": 154.0,
     "selling_price": 289,
-    "mrp": 299.0,
+    "mrp": 380,
     "gross_profit": 60,
     "profit_margin_pct": 26.0,
-    "discount_pct": null,
+    "discount_pct": 24,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -86052,6 +87471,17 @@
     "pricing": {
       "mrp": 380,
       "discount_pct": 24
+    },
+    "smartbiz_preset": {
+      "custom_sku": "9542_wagtail_8in1_screwdrivers_set",
+      "business_category": "GENERAL",
+      "product_category": "mobile accessories",
+      "mrp": 380,
+      "selling_price": 289,
+      "discount_pct": 24,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/06_7b202084-a1db-43a3-9798-38695bd92026.jpg"
     }
   },
   {
@@ -86075,10 +87505,10 @@
     "delivery_max_days": null,
     "wholesale_price": 125.0,
     "selling_price": 319,
-    "mrp": 259.0,
+    "mrp": 525,
     "gross_profit": 119,
     "profit_margin_pct": 42.0,
-    "discount_pct": null,
+    "discount_pct": 39,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -86715,6 +88145,17 @@
     "pricing": {
       "mrp": 525,
       "discount_pct": 39
+    },
+    "smartbiz_preset": {
+      "custom_sku": "23852_kids_tumbler_with_lid_n_straw_900m",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 525,
+      "selling_price": 319,
+      "discount_pct": 39,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/DA057j3tzy.jpg"
     }
   },
   {
@@ -86738,10 +88179,10 @@
     "delivery_max_days": null,
     "wholesale_price": 34.0,
     "selling_price": 219,
-    "mrp": 199.0,
+    "mrp": 589,
     "gross_profit": 110,
     "profit_margin_pct": 57.1,
-    "discount_pct": null,
+    "discount_pct": 63,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -87378,6 +88819,17 @@
     "pricing": {
       "mrp": 589,
       "discount_pct": 63
+    },
+    "smartbiz_preset": {
+      "custom_sku": "8644_wagtail_brown_abrasive_wheel_3pc_no",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 589,
+      "selling_price": 219,
+      "discount_pct": 63,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/8644_wagtail_brown_abrasive_wheel_3pc_no39.jpg"
     }
   },
   {
@@ -87401,10 +88853,10 @@
     "delivery_max_days": null,
     "wholesale_price": 129.0,
     "selling_price": 299,
-    "mrp": 299.0,
+    "mrp": 479,
     "gross_profit": 95,
     "profit_margin_pct": 36.8,
-    "discount_pct": null,
+    "discount_pct": 38,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 100.0,
@@ -88041,6 +89493,17 @@
     "pricing": {
       "mrp": 479,
       "discount_pct": 38
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22312_buckleless_belt_2pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 479,
+      "selling_price": 299,
+      "discount_pct": 38,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/22312-01-Buckleless-Belt-Hook02-01.jpg"
     }
   },
   {
@@ -88064,10 +89527,10 @@
     "delivery_max_days": null,
     "wholesale_price": 99.0,
     "selling_price": 239,
-    "mrp": 299.0,
+    "mrp": 395,
     "gross_profit": 65,
     "profit_margin_pct": 33.5,
-    "discount_pct": null,
+    "discount_pct": 39,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -88704,6 +90167,17 @@
     "pricing": {
       "mrp": 395,
       "discount_pct": 39
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22455_adjustable_kids_elbow_protection_p",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 395,
+      "selling_price": 239,
+      "discount_pct": 39,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/22455-1.jpg"
     }
   },
   {
@@ -88727,10 +90201,10 @@
     "delivery_max_days": null,
     "wholesale_price": 99.0,
     "selling_price": 239,
-    "mrp": 299.0,
+    "mrp": 379,
     "gross_profit": 65,
     "profit_margin_pct": 33.5,
-    "discount_pct": null,
+    "discount_pct": 37,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -89366,6 +90840,17 @@
     "pricing": {
       "mrp": 379,
       "discount_pct": 37
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22330_adjustable_kids_knee_protection_pa",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 379,
+      "selling_price": 239,
+      "discount_pct": 37,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/22330-1.jpg"
     }
   },
   {
@@ -89389,10 +90874,10 @@
     "delivery_max_days": null,
     "wholesale_price": 94.0,
     "selling_price": 229,
-    "mrp": 299.0,
+    "mrp": 399,
     "gross_profit": 60,
     "profit_margin_pct": 32.8,
-    "discount_pct": null,
+    "discount_pct": 43,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -90018,6 +91503,17 @@
     "pricing": {
       "mrp": 399,
       "discount_pct": 43
+    },
+    "smartbiz_preset": {
+      "custom_sku": "17853_safety_goggles_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 399,
+      "selling_price": 229,
+      "discount_pct": 43,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/safety_goggles_17853_01_main.jpg"
     }
   },
   {
@@ -90041,10 +91537,10 @@
     "delivery_max_days": null,
     "wholesale_price": 72.0,
     "selling_price": 209,
-    "mrp": 299.0,
+    "mrp": 399,
     "gross_profit": 62,
     "profit_margin_pct": 36.8,
-    "discount_pct": null,
+    "discount_pct": 48,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -90667,6 +92163,17 @@
     "pricing": {
       "mrp": 399,
       "discount_pct": 48
+    },
+    "smartbiz_preset": {
+      "custom_sku": "23051_adjustable_waist_bag_1pc",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 399,
+      "selling_price": 209,
+      "discount_pct": 48,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/WhatsApp_Image_2026-08-24_at_11.16.28_AM_3cd3ad44-7d2f-41a4-a34d-7db704584bda.jpg"
     }
   },
   {
@@ -90690,10 +92197,10 @@
     "delivery_max_days": null,
     "wholesale_price": 159.0,
     "selling_price": 299,
-    "mrp": 499.0,
+    "mrp": 429,
     "gross_profit": 65,
     "profit_margin_pct": 26.8,
-    "discount_pct": null,
+    "discount_pct": 30,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -91334,6 +92841,17 @@
     "pricing": {
       "mrp": 429,
       "discount_pct": 30
+    },
+    "smartbiz_preset": {
+      "custom_sku": "22409_alphabet_word_puzzle_cards",
+      "business_category": "GENERAL",
+      "product_category": "Toys & Games",
+      "mrp": 429,
+      "selling_price": 299,
+      "discount_pct": 30,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/4bb4a057-5a14-4c18-82af-a3ebff1712f5.jpg"
     }
   },
   {
@@ -91357,10 +92875,10 @@
     "delivery_max_days": null,
     "wholesale_price": 223.0,
     "selling_price": 429,
-    "mrp": 398.0,
+    "mrp": 609,
     "gross_profit": 131,
     "profit_margin_pct": 34.0,
-    "discount_pct": null,
+    "discount_pct": 30,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -91982,6 +93500,17 @@
     "pricing": {
       "mrp": 609,
       "discount_pct": 30
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl200_72120_silver_round_silicon_belt_w",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 609,
+      "selling_price": 429,
+      "discount_pct": 30,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 4,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/qYXdIfocrv.jpg"
     }
   },
   {
@@ -92005,10 +93534,10 @@
     "delivery_max_days": null,
     "wholesale_price": 26.0,
     "selling_price": 209,
-    "mrp": 199.0,
+    "mrp": 485,
     "gross_profit": 108,
     "profit_margin_pct": 58.9,
-    "discount_pct": null,
+    "discount_pct": 57,
     "winning_score": 93.5,
     "earned_points": 93.5,
     "scored_weight_sum": 100.0,
@@ -92649,6 +94178,17 @@
     "pricing": {
       "mrp": 485,
       "discount_pct": 57
+    },
+    "smartbiz_preset": {
+      "custom_sku": "7302_ladies_l_print_socks",
+      "business_category": "GENERAL",
+      "product_category": "Health & Beauty Accessories",
+      "mrp": 485,
+      "selling_price": 209,
+      "discount_pct": 57,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Socks-01.jpg"
     }
   },
   {
@@ -92672,10 +94212,10 @@
     "delivery_max_days": null,
     "wholesale_price": 125.0,
     "selling_price": 269,
-    "mrp": 299.0,
+    "mrp": 430,
     "gross_profit": 69,
     "profit_margin_pct": 31.2,
-    "discount_pct": null,
+    "discount_pct": 37,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -93311,6 +94851,17 @@
     "pricing": {
       "mrp": 430,
       "discount_pct": 37
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl146_11521_apex_ss_cat_mug_250ml_cm_cp",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 430,
+      "selling_price": 269,
+      "discount_pct": 37,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/01_db6a104e-3139-4cde-985e-dd560fbbaed5.jpg"
     }
   },
   {
@@ -93334,10 +94885,10 @@
     "delivery_max_days": null,
     "wholesale_price": 126.0,
     "selling_price": 269,
-    "mrp": 325.0,
+    "mrp": 409,
     "gross_profit": 68,
     "profit_margin_pct": 30.9,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -93974,6 +95525,17 @@
     "pricing": {
       "mrp": 409,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "24582_apex_liner_mug_300ml",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 409,
+      "selling_price": 269,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/LinnerMug-01.jpg"
     }
   },
   {
@@ -93997,10 +95559,10 @@
     "delivery_max_days": null,
     "wholesale_price": 161.0,
     "selling_price": 299,
-    "mrp": 499.0,
+    "mrp": 385,
     "gross_profit": 63,
     "profit_margin_pct": 26.1,
-    "discount_pct": null,
+    "discount_pct": 22,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -94637,6 +96199,17 @@
     "pricing": {
       "mrp": 385,
       "discount_pct": 22
+    },
+    "smartbiz_preset": {
+      "custom_sku": "24583_apex_cozy_mug_450ml",
+      "business_category": "GENERAL",
+      "product_category": "Office Products",
+      "mrp": 385,
+      "selling_price": 299,
+      "discount_pct": 22,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Cap-1_2c4bab79-22a6-44c7-8fb9-abebcf9717ec.jpg"
     }
   },
   {
@@ -94660,10 +96233,10 @@
     "delivery_max_days": null,
     "wholesale_price": 150.0,
     "selling_price": 289,
-    "mrp": 499.0,
+    "mrp": 475,
     "gross_profit": 64,
     "profit_margin_pct": 27.3,
-    "discount_pct": null,
+    "discount_pct": 39,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -95300,6 +96873,17 @@
     "pricing": {
       "mrp": 475,
       "discount_pct": 39
+    },
+    "smartbiz_preset": {
+      "custom_sku": "24581_apex_lyra_mug_400ml",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 475,
+      "selling_price": 289,
+      "discount_pct": 39,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Lyramug-01.jpg"
     }
   },
   {
@@ -95323,10 +96907,10 @@
     "delivery_max_days": null,
     "wholesale_price": 29.0,
     "selling_price": 169,
-    "mrp": 99.0,
+    "mrp": 419,
     "gross_profit": 65,
     "profit_margin_pct": 47.3,
-    "discount_pct": null,
+    "discount_pct": 60,
     "winning_score": 78.8,
     "earned_points": 78.8,
     "scored_weight_sum": 90.0,
@@ -95954,6 +97538,17 @@
     "pricing": {
       "mrp": 419,
       "discount_pct": 60
+    },
+    "smartbiz_preset": {
+      "custom_sku": "1468_apple_shape_paper_soap",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 419,
+      "selling_price": 169,
+      "discount_pct": 60,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/5ce85857-ace2-4348-b6a2-be693a39c16b.jpg"
     }
   },
   {
@@ -95977,10 +97572,10 @@
     "delivery_max_days": null,
     "wholesale_price": 148.0,
     "selling_price": 289,
-    "mrp": 400.0,
+    "mrp": 439,
     "gross_profit": 66,
     "profit_margin_pct": 28.0,
-    "discount_pct": null,
+    "discount_pct": 34,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -96604,6 +98199,17 @@
     "pricing": {
       "mrp": 439,
       "discount_pct": 34
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0879_golden_rose",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 439,
+      "selling_price": 289,
+      "discount_pct": 34,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/products/51Q96McTu2L_70a0be37-dfb4-49be-b882-d224998293ad.jpg"
     }
   },
   {
@@ -96627,10 +98233,10 @@
     "delivery_max_days": null,
     "wholesale_price": 195.0,
     "selling_price": 369,
-    "mrp": 299.0,
+    "mrp": 499,
     "gross_profit": 99,
     "profit_margin_pct": 30.9,
-    "discount_pct": null,
+    "discount_pct": 26,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -97255,6 +98861,17 @@
     "pricing": {
       "mrp": 499,
       "discount_pct": 26
+    },
+    "smartbiz_preset": {
+      "custom_sku": "whl190_64569_assorted_choco_dates",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 499,
+      "selling_price": 369,
+      "discount_pct": 26,
+      "discount_band": "Band D (21–29% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/Assorted-Choco-Dates-01_39f10621-4c02-41f8-99fa-2f13ab94f180.jpg"
     }
   },
   {
@@ -97278,10 +98895,10 @@
     "delivery_max_days": null,
     "wholesale_price": 120.0,
     "selling_price": 259,
-    "mrp": 299.0,
+    "mrp": 410,
     "gross_profit": 64,
     "profit_margin_pct": 30.5,
-    "discount_pct": null,
+    "discount_pct": 37,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -97920,6 +99537,17 @@
     "pricing": {
       "mrp": 410,
       "discount_pct": 37
+    },
+    "smartbiz_preset": {
+      "custom_sku": "0031_effete_assorted_chocolate_crm96",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 410,
+      "selling_price": 259,
+      "discount_pct": 37,
+      "discount_band": "Band C (31–39% OFF)",
+      "image_count": 4,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/CRM_4.jpg"
     }
   },
   {
@@ -97943,10 +99571,10 @@
     "delivery_max_days": null,
     "wholesale_price": 81.0,
     "selling_price": 219,
-    "mrp": 199.0,
+    "mrp": 379,
     "gross_profit": 63,
     "profit_margin_pct": 35.6,
-    "discount_pct": null,
+    "discount_pct": 42,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -98585,6 +100213,17 @@
     "pricing": {
       "mrp": 379,
       "discount_pct": 42
+    },
+    "smartbiz_preset": {
+      "custom_sku": "93731_new_assorted_chocolates_as96",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 379,
+      "selling_price": 219,
+      "discount_pct": 42,
+      "discount_band": "Band B (41–49% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/7_d569c4f6-e814-47bf-9504-98fe7b391d27.jpg"
     }
   },
   {
@@ -98608,10 +100247,10 @@
     "delivery_max_days": null,
     "wholesale_price": 48.0,
     "selling_price": 189,
-    "mrp": 149.0,
+    "mrp": 439,
     "gross_profit": 66,
     "profit_margin_pct": 42.9,
-    "discount_pct": null,
+    "discount_pct": 57,
     "winning_score": 83.5,
     "earned_points": 83.5,
     "scored_weight_sum": 90.0,
@@ -99250,6 +100889,17 @@
     "pricing": {
       "mrp": 439,
       "discount_pct": 57
+    },
+    "smartbiz_preset": {
+      "custom_sku": "93759_assorted_chocolate_as60",
+      "business_category": "GENERAL",
+      "product_category": "Home Improvement",
+      "mrp": 439,
+      "selling_price": 189,
+      "discount_pct": 57,
+      "discount_band": "Band A (53–63% OFF)",
+      "image_count": 6,
+      "primary_jpg": "https://cdn.shopify.com/s/files/1/0782/3284/6646/files/whl181_93759_assorted_chocolate_as60_1_57c9c850-82b7-4d05-94ff-3849337cfa01.jpg"
     }
   }
 ]

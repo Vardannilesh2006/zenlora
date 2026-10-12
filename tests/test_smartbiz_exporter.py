@@ -132,3 +132,17 @@ def test_flask_smartbiz_csv_endpoints():
     rows_mix = list(csv.reader(io.StringIO(resp_mix.data.decode("utf-8-sig"))))
     assert rows_mix[0] == EXACT_SMARTBIZ_HEADERS
     assert len(rows_mix) - 1 == 55
+
+    # 3. Test Saved SmartBiz Preset Endpoint
+    resp_preset = client.get("/api/radar/smartbiz-preset")
+    assert resp_preset.status_code == 200
+    preset_json = resp_preset.get_json()
+    assert preset_json["preset_id"] == "zenlora_smartbiz_v10_new_winners"
+    assert len(preset_json["discount_bands"]) == 4
+
+    # 4. Test SmartBiz 3-Sheet Excel (.xlsx) Endpoint
+    resp_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Kitchen&batch=0&limit=15")
+    assert resp_xlsx.status_code == 200
+    wb = openpyxl.load_workbook(io.BytesIO(resp_xlsx.data), read_only=True)
+    assert "bulk_upload_template" in wb.sheetnames
+    wb.close()

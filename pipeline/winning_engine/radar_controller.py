@@ -166,12 +166,21 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
     primary_img = item.get("image_url") or item.get("primary_image") or ""
     raw_imgs = item.get("images") or ([primary_img] if primary_img else [])
 
+    from winning_engine.smartbiz_exporter import get_product_smartbiz_preset_summary
+    smartbiz_preset = get_product_smartbiz_preset_summary({
+        **item,
+        "wholesale_price": wholesale_price,
+        "selling_price": score_data["pricing"]["selling_price"],
+        "images": raw_imgs[:6],
+        "image_url": primary_img,
+    })
+
     return {
         "id": item.get("id"),
         "variant_id": item.get("variant_id"),
         "sku": item.get("sku"),
         "barcode": item.get("barcode"),
-        "compare_at_price": item.get("compare_at_price"),
+        "compare_at_price": score_data["pricing"]["mrp"],
         "handle": handle,
         "title": title,
         "zenlora_title": zen_title,
@@ -191,6 +200,7 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
         "gross_profit": score_data["pricing"]["gross_profit"],
         "profit_margin_pct": score_data["pricing"]["profit_margin_pct"],
         "discount_pct": score_data["pricing"]["discount_pct"],
+        "smartbiz_preset": smartbiz_preset,
         "winning_score": score_data["total_score"],
         "earned_points": score_data["earned_points"],
         "scored_weight_sum": score_data["scored_weight_sum"],
