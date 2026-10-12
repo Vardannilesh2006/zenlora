@@ -79,10 +79,13 @@ def test_smart_mix_and_csv_validation_rules():
         assert sp > 0
         assert mrp > sp
         assert mrp <= 999999
+        # Strictly forbid flat 50% discount trap (MRP == 2 * Selling Price)
+        assert mrp != sp * 2
 
         # Col J (9) & Col K (10): Business Category & Product Category
         b_cat = row[9]
         p_cat = row[10]
+        assert b_cat == "GENERAL"
         assert b_cat in OFFICIAL_BUSINESS_CATEGORIES
         assert 1 <= len(p_cat) <= 100
         # Enforce Row 17 rule: Same Product Category name cannot appear under different Business Categories
@@ -98,8 +101,8 @@ def test_smart_mix_and_csv_validation_rules():
         # Col M (12): Variant Relationship blank for standalone
         assert row[12] == ""
 
-        # Col U (20): Best Seller is "Yes" or ""
-        assert row[20] in ("Yes", "")
+        # Col U (20): Best Seller is "Yes" or "No" (matching user's SmartBiz preset)
+        assert row[20] in ("Yes", "No", "")
 
         # Cols W-AB (22..27): Product Images must not have .webp or ? query strings
         for img_col in row[22:28]:
@@ -107,7 +110,7 @@ def test_smart_mix_and_csv_validation_rules():
                 assert "?" not in img_col
                 assert img_col.lower().endswith((".jpg", ".jpeg", ".png"))
 
-        # Cols AD (29) & AE (30): SEOMeta Title <= 60, SEOMeta Description <= 160
+        # Cols AD (29) & AE (30): Left blank matching user's SmartBiz preset
         assert len(row[29]) <= 60
         assert len(row[30]) <= 160
 

@@ -4,7 +4,7 @@
     "variant_id": 45511300251958,
     "sku": "7544_cnp_decoration_frame",
     "barcode": null,
-    "compare_at_price": 499.0,
+    "compare_at_price": 395,
     "handle": "12x12-inch-photo-frame-wooden-desktop-display",
     "title": "12x12 Inch Photo Frame – Wooden Desktop Display | PaintEdge",
     "zenlora_title": "Zenlora™ 12X12 Inch Photo Frame – Wooden Desktop Display",
@@ -656,14 +656,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=12x12+Inch+Photo+Frame"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹96 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹171. Selling Price: ₹239 (2.49x supplier cost) -> Net Profit: ₹68/order (Pure Margin after Ship: ₹83)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹96 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹171. Selling Price: ₹239 (2.49x supplier cost) -> Net Profit: ₹68/order (Pure Margin after Ship: ₹83).",
+    "pricing": {
+      "mrp": 395,
+      "discount_pct": 39
+    }
   },
   {
     "id": 10763449762102,
     "variant_id": 54180139696438,
     "sku": "16087_2in1_folding_hair_brush_with_mirror",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 429,
     "handle": "2-in-1-folding-hair-brush-with-mirror-compact-pop-up-for-travel-1-pc",
     "title": "2 in 1 Folding Hair Brush with Mirror Compact Pop Up for Travel",
     "zenlora_title": "Zenlora™ 2 In 1 Folding Hair Brush With Mirror",
@@ -1319,14 +1323,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Folding+Hair+Brush+with"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹189 (6.52x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹189 (6.52x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100).",
+    "pricing": {
+      "mrp": 429,
+      "discount_pct": 56
+    }
   },
   {
     "id": 10860468306230,
     "variant_id": 54605893337398,
     "sku": "whl193_66687_2_hanger_self_adhesive_wall_mount_hooks_pack_of_2",
     "barcode": null,
-    "compare_at_price": 249.0,
+    "compare_at_price": 460,
     "handle": "2-hanger-self-adhesive-wall-mount-hooks-for-keys-towels-accessories-pack-of-2",
     "title": "2-Hanger Self-Adhesive Wall Mount Hooks for Keys, Towels & Accessories (Pack of 2)",
     "zenlora_title": "Zenlora™ 2-Hanger Self-Adhesive Wall Mount Hooks For Keys, Towels",
@@ -1982,14 +1990,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹80 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹155. Selling Price: ₹269 (3.36x supplier cost) -> Net Profit: ₹114/order (Pure Margin after Ship: ₹129)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹80 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹155. Selling Price: ₹269 (3.36x supplier cost) -> Net Profit: ₹114/order (Pure Margin after Ship: ₹129).",
+    "pricing": {
+      "mrp": 460,
+      "discount_pct": 42
+    }
   },
   {
     "id": 10845259497782,
     "variant_id": 54547544473910,
     "sku": "22366_decoration_backdrop_curtain_180x120cm_no11",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 399,
     "handle": "2026-new-year-feliz-ano-nuevo-backdrop-curtain-for-party-photo-decor-180x120-cm",
     "title": "2026 New Year Feliz Año Nuevo Backdrop Curtain for Party Wall Decor (180x120 Cm)",
     "zenlora_title": "Zenlora™ 2026 New Year Feliz Año Nuevo Backdrop Curtain",
@@ -2645,14 +2657,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=New+Year+Feliz+A%C3%B1o+Nuevo"
     },
     "suggested_price": 169,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹169 (5.83x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹169 (5.83x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 399,
+      "discount_pct": 58
+    }
   },
   {
     "id": 15402235593014,
     "variant_id": 67613259333942,
     "sku": "22359_decoration_backdrop_curtain_210x150cm_no4",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 415,
     "handle": "2026-new-year-party-backdrop-curtain-black-and-gold-210x150-cm",
     "title": "2026 New Year Party Backdrop Curtain Black and Gold (210x150 Cm)",
     "zenlora_title": "Zenlora™ 2026 New Year Party Backdrop Curtain Black And",
@@ -3308,14 +3324,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=New+Year+Party+Backdrop+Curtain"
     },
     "suggested_price": 169,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹169 (5.83x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹169 (5.83x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 415,
+      "discount_pct": 59
+    }
   },
   {
     "id": 15409199284534,
     "variant_id": 67650185265462,
     "sku": "whl175_94433_rj_277",
     "barcode": null,
-    "compare_at_price": 164.0,
+    "compare_at_price": 439,
     "handle": "3-piece-flameless-led-crystal-candle-light-set-for-home-decor",
     "title": "3 Piece Flameless LED Crystal Candle Light Set for Home Decor",
     "zenlora_title": "Zenlora™ 3 Piece Flameless Led Crystal Candle Light Set",
@@ -3968,14 +3988,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Piece+Flameless+LED+Crystal+Candle"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹82 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹157. Selling Price: ₹239 (2.91x supplier cost) -> Net Profit: ₹82/order (Pure Margin after Ship: ₹97)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹82 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹157. Selling Price: ₹239 (2.91x supplier cost) -> Net Profit: ₹82/order (Pure Margin after Ship: ₹97).",
+    "pricing": {
+      "mrp": 439,
+      "discount_pct": 46
+    }
   },
   {
     "id": 10796040683830,
     "variant_id": 54358359867702,
     "sku": "whl295_80198_1482_earth",
     "barcode": null,
-    "compare_at_price": 224.0,
+    "compare_at_price": 409,
     "handle": "3d-crystal-globe-led-night-lamp-with-wooden-base-usb-powered",
     "title": "3D Crystal Globe LED Night Lamp with Wooden Base, USB Powered",
     "zenlora_title": "Zenlora™ 3D Crystal Globe Led Night Lamp With Wooden",
@@ -4631,14 +4655,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+Globe+LED+Night"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹112 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹187. Selling Price: ₹269 (2.4x supplier cost) -> Net Profit: ₹82/order (Pure Margin after Ship: ₹97)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹112 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹187. Selling Price: ₹269 (2.4x supplier cost) -> Net Profit: ₹82/order (Pure Margin after Ship: ₹97).",
+    "pricing": {
+      "mrp": 409,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10575483273526,
     "variant_id": 53634668724534,
     "sku": "12384_3d_creative_visualization_lamp_no4",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 515,
     "handle": "3d-crystal-led-table-lamp-1-pc",
     "title": "3D Crystal LED Table Lamp – Running Horses on Wooden Base",
     "zenlora_title": "Zenlora™ 3D Crystal Led Table Lamp – Running Horses",
@@ -5294,14 +5322,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Crystal+LED+Table+Lamp"
     },
     "suggested_price": 279,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹72 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹147. Selling Price: ₹279 (3.88x supplier cost) -> Net Profit: ₹132/order (Pure Margin after Ship: ₹147)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹72 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹147. Selling Price: ₹279 (3.88x supplier cost) -> Net Profit: ₹132/order (Pure Margin after Ship: ₹147).",
+    "pricing": {
+      "mrp": 515,
+      "discount_pct": 46
+    }
   },
   {
     "id": 10588190343478,
     "variant_id": 53666023244086,
     "sku": "14814_decorative_led_bulb_lamp_1pc",
     "barcode": null,
-    "compare_at_price": 649.0,
+    "compare_at_price": 619,
     "handle": "3d-firework-led-decorative-bulb-light-for-home-decoration-night-ambience",
     "title": "3D Firework LED Bulb – Sparkling Ambience for Home Decor",
     "zenlora_title": "Zenlora™ 3D Firework Led Bulb – Sparkling Ambience For",
@@ -5957,14 +5989,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Firework+LED+Bulb"
     },
     "suggested_price": 449,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹239 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹314. Selling Price: ₹449 (1.88x supplier cost) -> Net Profit: ₹135/order (Pure Margin after Ship: ₹150)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹239 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹314. Selling Price: ₹449 (1.88x supplier cost) -> Net Profit: ₹135/order (Pure Margin after Ship: ₹150).",
+    "pricing": {
+      "mrp": 619,
+      "discount_pct": 27
+    }
   },
   {
     "id": 10866766938422,
     "variant_id": 54631113851190,
     "sku": "12382_3d_creative_visualization_ganesh_lamp_no2",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 469,
     "handle": "3d-ganesha-acrylic-led-lamp-with-warm-golden-glow-for-decor-1-pc",
     "title": "3D Ganesha Acrylic LED Lamp with Warm Golden Glow for Decor (1 Pc)",
     "zenlora_title": "Zenlora™ 3D Ganesha Acrylic Led Lamp With Warm Golden",
@@ -6616,14 +6652,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Ganesha+Acrylic+LED+Lamp"
     },
     "suggested_price": 279,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹279 (2.82x supplier cost) -> Net Profit: ₹105/order (Pure Margin after Ship: ₹120)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹279 (2.82x supplier cost) -> Net Profit: ₹105/order (Pure Margin after Ship: ₹120).",
+    "pricing": {
+      "mrp": 469,
+      "discount_pct": 41
+    }
   },
   {
     "id": 10866767954230,
     "variant_id": 54631123681590,
     "sku": "12385_3d_creative_visualization_ganesh_lamp_no5",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 499,
     "handle": "3d-ganesha-led-lamp-with-wooden-base-for-home-and-pooja-decor-1-pc",
     "title": "3D Ganesha LED Lamp with Wooden Base for Home and Pooja Decor (1 Pc)",
     "zenlora_title": "Zenlora™ 3D Ganesha Led Lamp With Wooden Base For",
@@ -7265,14 +7305,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Ganesha+LED+Lamp+with"
     },
     "suggested_price": 279,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹79 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹154. Selling Price: ₹279 (3.53x supplier cost) -> Net Profit: ₹125/order (Pure Margin after Ship: ₹140)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹79 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹154. Selling Price: ₹279 (3.53x supplier cost) -> Net Profit: ₹125/order (Pure Margin after Ship: ₹140).",
+    "pricing": {
+      "mrp": 499,
+      "discount_pct": 44
+    }
   },
   {
     "id": 9534943920438,
     "variant_id": 49428824817974,
     "sku": "12748_led_apple_night_light_1pc",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 409,
     "handle": "night-light-comes-with-3d-illusion-design-suitable-for-drawing-room-lobby-energy-saving-light-led-decorative-night-light-1-pc-1",
     "title": "3D Illusion Night Light – Energy-Saving LED Lamp | Indo Glow",
     "zenlora_title": "Zenlora™ 3D Illusion Night Light – Energy-Saving Led Lamp",
@@ -7915,14 +7959,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Illusion+Night+Light"
     },
     "suggested_price": 229,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹57 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹132. Selling Price: ₹229 (4.02x supplier cost) -> Net Profit: ₹97/order (Pure Margin after Ship: ₹112)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹57 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹132. Selling Price: ₹229 (4.02x supplier cost) -> Net Profit: ₹97/order (Pure Margin after Ship: ₹112).",
+    "pricing": {
+      "mrp": 409,
+      "discount_pct": 44
+    }
   },
   {
     "id": 10799696838966,
     "variant_id": 54371414442294,
     "sku": "23601_led_penguin_decorative_light",
     "barcode": null,
-    "compare_at_price": 599.0,
+    "compare_at_price": 495,
     "handle": "3d-led-penguin-decorative-infinity-mirror-light-for-room-and-wall-decor-1-pc",
     "title": "3D LED Penguin Decorative Infinity Mirror Light for Room and Wall Decor",
     "zenlora_title": "Zenlora™ 3D Led Penguin Decorative Infinity Mirror Light For",
@@ -8561,14 +8609,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+LED+Penguin+Decorative+Infinity"
     },
     "suggested_price": 369,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹199 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹274. Selling Price: ₹369 (1.85x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹199 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹274. Selling Price: ₹369 (1.85x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110).",
+    "pricing": {
+      "mrp": 495,
+      "discount_pct": 25
+    }
   },
   {
     "id": 10866766774582,
     "variant_id": 54631113687350,
     "sku": "12381_3d_creative_visualization_mahadev_lamp_no1",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 515,
     "handle": "3d-mahadev-led-lamp-with-wooden-base-for-home-decor-shelf-1-pc",
     "title": "3D Mahadev LED Lamp with Wooden Base for Home Decor Shelf (1 Pc)",
     "zenlora_title": "Zenlora™ 3D Mahadev Led Lamp With Wooden Base For",
@@ -9222,14 +9274,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Mahadev+LED+Lamp+with"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹75 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹150. Selling Price: ₹289 (3.85x supplier cost) -> Net Profit: ₹139/order (Pure Margin after Ship: ₹154)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹75 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹150. Selling Price: ₹289 (3.85x supplier cost) -> Net Profit: ₹139/order (Pure Margin after Ship: ₹154).",
+    "pricing": {
+      "mrp": 515,
+      "discount_pct": 44
+    }
   },
   {
     "id": 10785683669302,
     "variant_id": 54301714710838,
     "sku": "18056_3d_moving_sand_art_round_frame_1pc",
     "barcode": null,
-    "compare_at_price": 339.0,
+    "compare_at_price": 465,
     "handle": "3d-moving-sand-art-round-frame-with-stand-for-home-and-office-table-decor-1-pc",
     "title": "3D Moving Sand Art Round Frame with Stand for Home and Office Table Decor",
     "zenlora_title": "Zenlora™ 3D Moving Sand Art Round Frame With Stand",
@@ -9885,14 +9941,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Moving+Sand+Art+Round"
     },
     "suggested_price": 329,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹165 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹240. Selling Price: ₹329 (1.99x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹165 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹240. Selling Price: ₹329 (1.99x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104).",
+    "pricing": {
+      "mrp": 465,
+      "discount_pct": 29
+    }
   },
   {
     "id": 10365657350454,
     "variant_id": 53147993899318,
     "sku": "17631_3d_space_round_carpet_60cm_1pc",
     "barcode": null,
-    "compare_at_price": 599.0,
+    "compare_at_price": 435,
     "handle": "3d-space-round-carpet-floor-mat-non-woven-doormat-80-cm",
     "title": "3D Optical Illusion Round Rug – Anti-Skid 60 cm Floor Mat",
     "zenlora_title": "Zenlora™ 3D Optical Illusion Round Rug – Anti-Skid 60",
@@ -10547,14 +10607,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Optical+Illusion+Round+Rug"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹134 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹209. Selling Price: ₹289 (2.16x supplier cost) -> Net Profit: ₹80/order (Pure Margin after Ship: ₹95)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹134 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹209. Selling Price: ₹289 (2.16x supplier cost) -> Net Profit: ₹80/order (Pure Margin after Ship: ₹95).",
+    "pricing": {
+      "mrp": 435,
+      "discount_pct": 34
+    }
   },
   {
     "id": 9528866341174,
     "variant_id": 49407747096886,
     "sku": "12904_3d_mini_saturn_lamp_1pc",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 565,
     "handle": "3d-saturn-lamp-bedside-night-light-multicolor",
     "title": "3D Saturn Lamp – Multicolor LED Night Light with Base | Styleva",
     "zenlora_title": "Zenlora™ 3D Saturn Lamp – Multi Led Night Light",
@@ -11210,14 +11274,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Saturn+Lamp"
     },
     "suggested_price": 349,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹349 (2.71x supplier cost) -> Net Profit: ₹145/order (Pure Margin after Ship: ₹160)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹349 (2.71x supplier cost) -> Net Profit: ₹145/order (Pure Margin after Ship: ₹160).",
+    "pricing": {
+      "mrp": 565,
+      "discount_pct": 38
+    }
   },
   {
     "id": 10394898268470,
     "variant_id": 53214869061942,
     "sku": "18282_3d_space_round_carpet_1pc",
     "barcode": null,
-    "compare_at_price": 699.0,
+    "compare_at_price": 509,
     "handle": "3d-space-round-carpet-non-slip-optical",
     "title": "3D Space Round Carpet – Non-Slip Optical Illusion Rug",
     "zenlora_title": "Zenlora™ 3D Space Round Carpet – Non-Slip Optical Illusion",
@@ -11873,14 +11941,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Space+Round+Carpet"
     },
     "suggested_price": 369,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹199 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹274. Selling Price: ₹369 (1.85x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹199 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹274. Selling Price: ₹369 (1.85x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110).",
+    "pricing": {
+      "mrp": 509,
+      "discount_pct": 28
+    }
   },
   {
     "id": 10643293339958,
     "variant_id": 53802158326070,
     "sku": "21114_4in1_manicure_n_pedicure_grooming_kit",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 509,
     "handle": "4-in-1-manicure-pedicure-grooming-kit",
     "title": "4 in 1 Manicure and Pedicure Grooming Kit, Compact Nail Care Set",
     "zenlora_title": "Zenlora™ 4 In 1 Manicure And Pedicure Grooming Kit,",
@@ -12517,14 +12589,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+and+Pedicure+Grooming"
     },
     "suggested_price": 279,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹68 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹143. Selling Price: ₹279 (4.1x supplier cost) -> Net Profit: ₹136/order (Pure Margin after Ship: ₹151)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹68 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹143. Selling Price: ₹279 (4.1x supplier cost) -> Net Profit: ₹136/order (Pure Margin after Ship: ₹151).",
+    "pricing": {
+      "mrp": 509,
+      "discount_pct": 45
+    }
   },
   {
     "id": 10683041939766,
     "variant_id": 53942483452214,
     "sku": "18733_glass_hourglass_sand_timer_1pc",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 465,
     "handle": "4-minute-approx-sand-timer-hourglass-decorative-glass-timer-1-pc-copy",
     "title": "4-Minute Sand Timer Hourglass – Elegant Glass for Desk Decor",
     "zenlora_title": "Zenlora™ 4-Minute Sand Timer Hourglass – Elegant Glass For",
@@ -13176,14 +13252,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹108 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹183. Selling Price: ₹299 (2.77x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹108 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹183. Selling Price: ₹299 (2.77x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131).",
+    "pricing": {
+      "mrp": 465,
+      "discount_pct": 36
+    }
   },
   {
     "id": 10588174876982,
     "variant_id": 53665935327542,
     "sku": "21005_shell_shaped_makeup_brush_with_mirror",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 405,
     "handle": "5-in-1-makeup-brush-set-with-mirror-box-compact-cosmetic-kit",
     "title": "5 in 1 Makeup Brush Set – Compact Kit with Built-in Mirror",
     "zenlora_title": "Zenlora™ 5 In 1 Makeup Brush Set – Compact",
@@ -13839,14 +13919,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Makeup+Brush+Set"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹259 (2.62x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹259 (2.62x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100).",
+    "pricing": {
+      "mrp": 405,
+      "discount_pct": 36
+    }
   },
   {
     "id": 9529328697654,
     "variant_id": 49409216381238,
     "sku": "8643_wagtail_green_abrasive_wheel_3pc_no42",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 400,
     "handle": "abrasive-buffing-polishing-wheel-set-3pcs",
     "title": "Abrasive Polishing Wheel Set – 3 Pcs, 3mm Shank for Rotary Tools | Wagtail",
     "zenlora_title": "Zenlora™ Abrasive Polishing Wheel Set – 3 Pcs, 3Mm",
@@ -14502,14 +14586,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Abrasive+Polishing+Wheel+Set"
     },
     "suggested_price": 169,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹169 (4.97x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹169 (4.97x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75).",
+    "pricing": {
+      "mrp": 400,
+      "discount_pct": 58
+    }
   },
   {
     "id": 10035095109942,
     "variant_id": 51423863767350,
     "sku": "6651_split_ac_cover_1_ton",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 500,
     "handle": "ac-cover-air-conditioning-dust-cover-folding-designer-approx-1-ton-1-pc-ac-curtain",
     "title": "AC Dust Cover for 1 Ton Split AC – Designer & Washable | Velvet Wheels",
     "zenlora_title": "Zenlora™ Ac Dust Cover For 1 Ton Split Ac",
@@ -15148,14 +15236,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=AC+Dust+Cover+for+Ton"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹45 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹120. Selling Price: ₹189 (4.2x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹45 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹120. Selling Price: ₹189 (4.2x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 500,
+      "discount_pct": 62
+    }
   },
   {
     "id": 10062605943094,
     "variant_id": 51499317756214,
     "sku": "4203_acrylic_paint_color_kit_1_set_no7",
     "barcode": null,
-    "compare_at_price": 209.0,
+    "compare_at_price": 409,
     "handle": "acrylic-paint-color-kits-1-set-4-color-1-set",
     "title": "Acrylic Paint by Number Kit for Adults – 4 Colors | Craftily",
     "zenlora_title": "Zenlora™ Acrylic Paint By Number Kit For Adults –",
@@ -15811,14 +15903,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Acrylic+Paint+by+Number+Kit"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹101 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹176. Selling Price: ₹259 (2.56x supplier cost) -> Net Profit: ₹83/order (Pure Margin after Ship: ₹98)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹101 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹176. Selling Price: ₹259 (2.56x supplier cost) -> Net Profit: ₹83/order (Pure Margin after Ship: ₹98).",
+    "pricing": {
+      "mrp": 409,
+      "discount_pct": 37
+    }
   },
   {
     "id": 10772514537782,
     "variant_id": 54207677169974,
     "sku": "23281_adhesive_cable_protector_cord_cover_3mtr",
     "barcode": null,
-    "compare_at_price": 599.0,
+    "compare_at_price": 509,
     "handle": "adhesive-cable-protector-cord-cover-3-meter-floor-wall-wire-hider-3-mtr",
     "title": "Adhesive Cable Protector Cord Cover 3 Meter Floor Wall Wire Hider (3 Mtr)",
     "zenlora_title": "Zenlora™ Adhesive Cable Protector Cord Cover 3 Meter Floor",
@@ -16474,14 +16570,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adhesive+Cable+Protector+Cord+Cover"
     },
     "suggested_price": 369,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹195 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹270. Selling Price: ₹369 (1.89x supplier cost) -> Net Profit: ₹99/order (Pure Margin after Ship: ₹114)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹195 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹270. Selling Price: ₹369 (1.89x supplier cost) -> Net Profit: ₹99/order (Pure Margin after Ship: ₹114).",
+    "pricing": {
+      "mrp": 509,
+      "discount_pct": 28
+    }
   },
   {
     "id": 9634715631926,
     "variant_id": 49964553470262,
     "sku": "18140_creative_adhe_cat_hook_1pc",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 390,
     "handle": "creative-adhesive-coat-hook-wink-cat-hook-1-pc",
     "title": "Adhesive Coat Hook – Cute Wink Cat Design, No Drill | Indo Glow",
     "zenlora_title": "Zenlora™ Adhesive Coat Hook – Cute Wink Cat Design,",
@@ -17137,14 +17237,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adhesive+Coat+Hook"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹78 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹153. Selling Price: ₹219 (2.81x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹78 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹153. Selling Price: ₹219 (2.81x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81).",
+    "pricing": {
+      "mrp": 390,
+      "discount_pct": 44
+    }
   },
   {
     "id": 8426273276214,
     "variant_id": 45511407206710,
     "sku": "4725_plastic_wall_hanger_hook",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 465,
     "handle": "adhesive-wall-hooks-heavy-duty-no-drill",
     "title": "Adhesive Wall Hooks – Heavy Duty No-Drill (Pack of 4) | Indo Glow",
     "zenlora_title": "Zenlora™ Adhesive Wall Hooks – Heavy Duty No-Drill |",
@@ -17783,14 +17887,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adhesive+Wall+Hooks"
     },
     "suggested_price": 169,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹33 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹108. Selling Price: ₹169 (5.12x supplier cost) -> Net Profit: ₹61/order (Pure Margin after Ship: ₹76)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹33 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹108. Selling Price: ₹169 (5.12x supplier cost) -> Net Profit: ₹61/order (Pure Margin after Ship: ₹76).",
+    "pricing": {
+      "mrp": 465,
+      "discount_pct": 64
+    }
   },
   {
     "id": 10121374826806,
     "variant_id": 51665477304630,
     "sku": "15234_plastic_adhesive_wall_hooks_3pc",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 500,
     "handle": "all-plastic-adhesive-wall-hooks-strong-no-damage-easy-to-install-3-pc-set",
     "title": "Adhesive Wall Hooks – Strong Clear Hold, No Damage 3 Pc Set",
     "zenlora_title": "Zenlora™ Adhesive Wall Hooks – Strong Clear Hold, No",
@@ -18429,14 +18537,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adhesive+Wall+Hooks"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹51 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹126. Selling Price: ₹189 (3.71x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹51 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹126. Selling Price: ₹189 (3.71x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78).",
+    "pricing": {
+      "mrp": 500,
+      "discount_pct": 62
+    }
   },
   {
     "id": 10055148634422,
     "variant_id": 51478505226550,
     "sku": "whl282_4206_paint_by_number_kit_2_set_no1",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 449,
     "handle": "adult-paint-number-kit-2-set-24",
     "title": "Adult Paint by Number Kit – 2 Set with 24 Colors | Craftily",
     "zenlora_title": "Zenlora™ Adult Paint By Number Kit – 2 Set",
@@ -19090,14 +19202,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adult+Paint+by+Number+Kit"
     },
     "suggested_price": 229,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹85 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹160. Selling Price: ₹229 (2.69x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹85 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹160. Selling Price: ₹229 (2.69x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 449,
+      "discount_pct": 49
+    }
   },
   {
     "id": 10719650775350,
     "variant_id": 54042936082742,
     "sku": "whl206_68758_dou_side_tape_5mtr_24mm_aerotix",
     "barcode": null,
-    "compare_at_price": 65.0,
+    "compare_at_price": 480,
     "handle": "aerotix-cable-management-tape-for-desk-home-organization-5-mtrs",
     "title": "Aerotix Foam Mounting Tape – Strong & Durable 5m Roll",
     "zenlora_title": "Zenlora™ Aerotix Foam Mounting Tape – Strong & Durable",
@@ -19736,14 +19852,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Aerotix+Foam+Mounting+Tape"
     },
     "suggested_price": 179,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹40 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹115. Selling Price: ₹179 (4.47x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹40 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹115. Selling Price: ₹179 (4.47x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79).",
+    "pricing": {
+      "mrp": 480,
+      "discount_pct": 63
+    }
   },
   {
     "id": 10545756045622,
     "variant_id": 53540428644662,
     "sku": "whl193_66586_1_l_sports_water_bottle_pack_of_1",
     "barcode": null,
-    "compare_at_price": 449.0,
+    "compare_at_price": 425,
     "handle": "1-l-sports-water-bottle-pack-of-1",
     "title": "1 L Sports Water Bottle – Leak-Proof Motivational Design",
     "zenlora_title": "Zenlora™ 1 L Sports Water Bottle – Leak-Proof Motivational",
@@ -20398,14 +20518,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Sports+Water+Bottle"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹115 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹190. Selling Price: ₹259 (2.25x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹115 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹190. Selling Price: ₹259 (2.25x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 425,
+      "discount_pct": 39
+    }
   },
   {
     "id": 10844004745526,
     "variant_id": 54544903799094,
     "sku": "whl193_66678_1_tier_rotation_tray_with_handle",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 499,
     "handle": "1-layer-360-rotating-tray-with-handles-multipurpose-kitchen-organizer-for-storage",
     "title": "1 Layer 360° Rotating Tray with Handles Multipurpose Kitchen Organizer for Storage",
     "zenlora_title": "Zenlora™ 1 Layer 360° Rotating Tray With Handles Multipurpose",
@@ -21057,14 +21181,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Layer+360%C2%B0+Rotating+Tray+with"
     },
     "suggested_price": 319,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹149 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹224. Selling Price: ₹319 (2.14x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹149 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹224. Selling Price: ₹319 (2.14x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110).",
+    "pricing": {
+      "mrp": 499,
+      "discount_pct": 36
+    }
   },
   {
     "id": 8928312525110,
     "variant_id": 47480516280630,
     "sku": "4828_gallon_bottle_1500ml",
     "barcode": null,
-    "compare_at_price": 249.0,
+    "compare_at_price": 419,
     "handle": "1-5l-gym-water-bottle-mixer-strainer",
     "title": "1.5L Gym Water Bottle – Mixer & Strainer | hydrozilla",
     "zenlora_title": "Zenlora™ 1.5L Gym Water Bottle – Mixer & Strainer",
@@ -21715,14 +21843,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=1.5L+Gym+Water+Bottle"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹123 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹198. Selling Price: ₹259 (2.11x supplier cost) -> Net Profit: ₹61/order (Pure Margin after Ship: ₹76)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹123 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹198. Selling Price: ₹259 (2.11x supplier cost) -> Net Profit: ₹61/order (Pure Margin after Ship: ₹76).",
+    "pricing": {
+      "mrp": 419,
+      "discount_pct": 38
+    }
   },
   {
     "id": 10591301337398,
     "variant_id": 53673845686582,
     "sku": "21390_diamond_insulated_water_bottle_n_box_1000ml",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 409,
     "handle": "1000-ml-diamond-pattern-leakproof-water-bottle-1-pc",
     "title": "1000ML Leakproof Diamond Pattern Water Bottle – Stylish Grip",
     "zenlora_title": "Zenlora™ 1000Ml Leakproof Diamond Pattern Water Bottle – Stylish",
@@ -22374,14 +22506,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=1000ML+Leakproof+Diamond+Pattern+Water"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹209 (3.22x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹209 (3.22x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 409,
+      "discount_pct": 49
+    }
   },
   {
     "id": 10709212463414,
     "variant_id": 54018510651702,
     "sku": "10853_11in1_plastic_snack_serving_plates_set",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 375,
     "handle": "11-in-1-plastic-snack-serving-plates-set-multi-compartment-party-snack-tray-for-home-events",
     "title": "11-in-1 Snack Serving Plates Set – Multi-Compartment & Durable",
     "zenlora_title": "Zenlora™ 11-In-1 Snack Serving Plates Set – Multi-Compartment &",
@@ -23033,14 +23169,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=11"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹104 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹179. Selling Price: ₹239 (2.3x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹104 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹179. Selling Price: ₹239 (2.3x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75).",
+    "pricing": {
+      "mrp": 375,
+      "discount_pct": 36
+    }
   },
   {
     "id": 10821011931446,
     "variant_id": 54454447767862,
     "sku": "7170_12cavity_ice_cube_tray",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 500,
     "handle": "12-cavity-plastic-ice-cube-tray-with-easy-release-for-freezer-and-drinks-1-pc",
     "title": "12 Cavity Plastic Ice Cube Tray with Easy Release for Freezer and Drinks",
     "zenlora_title": "Zenlora™ 12 Cavity Plastic Ice Cube Tray With Easy",
@@ -23692,14 +23832,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Cavity+Plastic+Ice+Cube+Tray"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹49 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹124. Selling Price: ₹189 (3.86x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹49 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹124. Selling Price: ₹189 (3.86x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 500,
+      "discount_pct": 62
+    }
   },
   {
     "id": 10463534383414,
     "variant_id": 53384593735990,
     "sku": "8570_12_pocket_shoe_hanging_bag",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 485,
     "handle": "12-grids-hanging-storage-bag-1-pc-12-pocket-mix-color",
     "title": "12-Pocket Hanging Shoe Organizer – Space-Saving Durable Storage",
     "zenlora_title": "Zenlora™ 12-Pocket Hanging Shoe Organizer – Space-Saving Durable Storage",
@@ -24355,14 +24499,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=12"
     },
     "suggested_price": 349,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹152 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹227. Selling Price: ₹349 (2.3x supplier cost) -> Net Profit: ₹122/order (Pure Margin after Ship: ₹137)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹152 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹227. Selling Price: ₹349 (2.3x supplier cost) -> Net Profit: ₹122/order (Pure Margin after Ship: ₹137).",
+    "pricing": {
+      "mrp": 485,
+      "discount_pct": 28
+    }
   },
   {
     "id": 10521619923254,
     "variant_id": 53470996332854,
     "sku": "8768_13_pocket_file_folder_37x24cm",
     "barcode": null,
-    "compare_at_price": 389.0,
+    "compare_at_price": 455,
     "handle": "13-pocket-document-file-folder-with-handle",
     "title": "13 Pocket Document File Folder – Expanding Plastic with Handle",
     "zenlora_title": "Zenlora™ 13 Pocket Document File Folder – Expanding Plastic",
@@ -25014,14 +25162,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Pocket+Document+File+Folder"
     },
     "suggested_price": 349,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹192 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹267. Selling Price: ₹349 (1.82x supplier cost) -> Net Profit: ₹82/order (Pure Margin after Ship: ₹97)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹192 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹267. Selling Price: ₹349 (1.82x supplier cost) -> Net Profit: ₹82/order (Pure Margin after Ship: ₹97).",
+    "pricing": {
+      "mrp": 455,
+      "discount_pct": 23
+    }
   },
   {
     "id": 10715060797750,
     "variant_id": 54031676309814,
     "sku": "24030_blue_14_cavity_plastic_ice_cube_tray_1pc",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 485,
     "handle": "multipurpose-plastic-ice-cube-tray-1-pc-14-gride-230430",
     "title": "14-Grid Plastic Ice Cube Tray – Easy-Release & Multipurpose Use",
     "zenlora_title": "Zenlora™ 14-Grid Plastic Ice Cube Tray – Easy-Release &",
@@ -25660,14 +25812,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=14"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹52 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹127. Selling Price: ₹189 (3.63x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹52 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹127. Selling Price: ₹189 (3.63x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77).",
+    "pricing": {
+      "mrp": 485,
+      "discount_pct": 61
+    }
   },
   {
     "id": 10822655344950,
     "variant_id": 54460679389494,
     "sku": "whl205_79577_linea_flask_1400_pla",
     "barcode": null,
-    "compare_at_price": 499.0,
+    "compare_at_price": 575,
     "handle": "insulated-thermos-flask-1400ml-hot-and-cold-flask-with-handle-bpa-free-food-grade-body",
     "title": "1400ml Insulated Thermos Flask for Hot & Cold Drinks",
     "zenlora_title": "Zenlora™ 1400Ml Insulated Thermos Flask For Hot & Cold",
@@ -26319,14 +26475,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=1400ml+Insulated+Thermos+Flask+for"
     },
     "suggested_price": 429,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹238 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹313. Selling Price: ₹429 (1.8x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹238 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹313. Selling Price: ₹429 (1.8x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131).",
+    "pricing": {
+      "mrp": 575,
+      "discount_pct": 25
+    }
   },
   {
     "id": 10398272618806,
     "variant_id": 53224697626934,
     "sku": "whl207_68811_black_defender_laptop_bag",
     "barcode": null,
-    "compare_at_price": 405.0,
+    "compare_at_price": 575,
     "handle": "defender-laptop-bag-15-5-inch-office-laptop-briefcase-with-shoulder-strap-multi-compartment-organizer-for-business-travel-and-school-black",
     "title": "15.5 Inch Laptop Briefcase with Shoulder Strap & Multi-Compartment Organizer for Office",
     "zenlora_title": "Zenlora™ 15.5 Inch Laptop Briefcase With Shoulder Strap &",
@@ -26980,14 +27140,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=15.5+Inch+Laptop+Briefcase+with"
     },
     "suggested_price": 429,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹223 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹298. Selling Price: ₹429 (1.92x supplier cost) -> Net Profit: ₹131/order (Pure Margin after Ship: ₹146)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹223 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹298. Selling Price: ₹429 (1.92x supplier cost) -> Net Profit: ₹131/order (Pure Margin after Ship: ₹146).",
+    "pricing": {
+      "mrp": 575,
+      "discount_pct": 25
+    }
   },
   {
     "id": 9501606609206,
     "variant_id": 49332412318006,
     "sku": "0356_nekza_parish_bottle_1500ml_n303",
     "barcode": null,
-    "compare_at_price": 579.0,
+    "compare_at_price": 479,
     "handle": "insulated-water-bottle-1500ml-leakproof-bpa-free-handle-strap-sports",
     "title": "1500ml Insulated Water Bottle – Leakproof, BPA-Free | Nekza",
     "zenlora_title": "Zenlora™ 1500Ml Insulated Water Bottle – Leakproof, Bpa-Free |",
@@ -27640,14 +27804,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=1500ml+Insulated+Water+Bottle"
     },
     "suggested_price": 369,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹202 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹277. Selling Price: ₹369 (1.83x supplier cost) -> Net Profit: ₹92/order (Pure Margin after Ship: ₹107)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹202 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹277. Selling Price: ₹369 (1.83x supplier cost) -> Net Profit: ₹92/order (Pure Margin after Ship: ₹107).",
+    "pricing": {
+      "mrp": 479,
+      "discount_pct": 23
+    }
   },
   {
     "id": 10842552041782,
     "variant_id": 54539373510966,
     "sku": "whl206_99419_cutter_blade_18mm_aerotix_b18_1_unit_10_pcs",
     "barcode": null,
-    "compare_at_price": 60.0,
+    "compare_at_price": 445,
     "handle": "18mm-snap-off-utility-knife-replacement-blades-for-cutter-use-10-boxes-100-pcs",
     "title": "18mm Snap-Off Utility Knife Replacement Blades for Cutter Use (1 Unit, 10 Pcs)",
     "zenlora_title": "Zenlora™ 18Mm Snap-Off Utility Knife Replacement Blades For Cutter",
@@ -28303,14 +28471,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=18mm+Snap"
     },
     "suggested_price": 179,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹179 (5.26x supplier cost) -> Net Profit: ₹70/order (Pure Margin after Ship: ₹85)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹179 (5.26x supplier cost) -> Net Profit: ₹70/order (Pure Margin after Ship: ₹85).",
+    "pricing": {
+      "mrp": 445,
+      "discount_pct": 60
+    }
   },
   {
     "id": 10758683951414,
     "variant_id": 54160765550902,
     "sku": "whl282_16154_car_safety_hammer_1pc",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 449,
     "handle": "2-in-1-car-safety-hammer-emergency-window-breaker-and-seatbelt-cutter-1-pc",
     "title": "2 in 1 Car Safety Hammer Emergency Window Breaker and Seatbelt Cutter",
     "zenlora_title": "Zenlora™ 2 In 1 Car Safety Hammer Emergency Window",
@@ -28966,14 +29138,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Car+Safety+Hammer+Emergency"
     },
     "suggested_price": 199,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹39 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹114. Selling Price: ₹199 (5.1x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹39 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹114. Selling Price: ₹199 (5.1x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100).",
+    "pricing": {
+      "mrp": 449,
+      "discount_pct": 56
+    }
   },
   {
     "id": 8432235774262,
     "variant_id": 45529916211510,
     "sku": "0073_2in1_clever_cutter",
     "barcode": null,
-    "compare_at_price": 119.0,
+    "compare_at_price": 410,
     "handle": "clever-cutter-2-in-1-stainless-steel-vegetable-chopper-quickslice",
     "title": "2 in 1 Clever Cutter with Stainless Steel Blade and Cutting Board",
     "zenlora_title": "Zenlora™ 2 In 1 Clever Cutter With Stainless Steel",
@@ -29625,14 +29801,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Clever+Cutter+with+Stainless"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹57 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹132. Selling Price: ₹219 (3.84x supplier cost) -> Net Profit: ₹87/order (Pure Margin after Ship: ₹102)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹57 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹132. Selling Price: ₹219 (3.84x supplier cost) -> Net Profit: ₹87/order (Pure Margin after Ship: ₹102).",
+    "pricing": {
+      "mrp": 410,
+      "discount_pct": 47
+    }
   },
   {
     "id": 10821081694518,
     "variant_id": 54454541582646,
     "sku": "6372_2in1_l_shape_bottle_cleaning_brush",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 489,
     "handle": "2-in-1-detachable-dual-head-bottle-cleaning-brush-with-long-grip-handle-1-pc",
     "title": "2 in 1 Detachable Dual Head Bottle Cleaning Brush with Long Grip Handle",
     "zenlora_title": "Zenlora™ 2 In 1 Detachable Dual Head Bottle Cleaning",
@@ -30271,14 +30451,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Detachable+Dual+Head+Bottle"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹45 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹120. Selling Price: ₹209 (4.64x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹45 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹120. Selling Price: ₹209 (4.64x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104).",
+    "pricing": {
+      "mrp": 489,
+      "discount_pct": 57
+    }
   },
   {
     "id": 10866770739510,
     "variant_id": 54631127580982,
     "sku": "7928_2in1_cleaning_brush",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 509,
     "handle": "2-in-1-floor-cleaning-brush-with-wiper-and-long-handle-1-pc",
     "title": "2 in 1 Floor Cleaning Brush with Wiper and Long Handle (1 Pc)",
     "zenlora_title": "Zenlora™ 2 In 1 Floor Cleaning Brush With Wiper",
@@ -30934,14 +31118,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Floor+Cleaning+Brush+with"
     },
     "suggested_price": 319,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹149 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹224. Selling Price: ₹319 (2.14x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹149 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹224. Selling Price: ₹319 (2.14x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110).",
+    "pricing": {
+      "mrp": 509,
+      "discount_pct": 37
+    }
   },
   {
     "id": 10107634450742,
     "variant_id": 51626768433462,
     "sku": "whl146_8498_plastic_water_bottle_400ml_cpr",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 439,
     "handle": "customize-2-in-1-mist-spray-water-bottle-for-cycling-400ml-multicolor-plastic",
     "title": "2 In 1 Mist Spray Water Bottle – Multipurpose BPA-Free 400ml",
     "zenlora_title": "Zenlora™ 2 In 1 Mist Spray Water Bottle –",
@@ -31597,14 +31785,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Mist+Spray+Water+Bottle"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹289 (2.24x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹289 (2.24x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100).",
+    "pricing": {
+      "mrp": 439,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10821005148470,
     "variant_id": 54454430171446,
     "sku": "22895_plastic_2in1_soap_dispenser_cleaning_brush",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 429,
     "handle": "2-in-1-plastic-soap-dispenser-cleaning-brush-for-kitchen-and-bathroom-use-1-pc",
     "title": "2 in 1 Plastic Soap Dispenser Cleaning Brush for Kitchen and Bathroom Use",
     "zenlora_title": "Zenlora™ 2 In 1 Plastic Soap Dispenser Cleaning Brush",
@@ -32260,14 +32452,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Plastic+Soap+Dispenser+Cleaning"
     },
     "suggested_price": 279,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹119 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹194. Selling Price: ₹279 (2.34x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹119 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹194. Selling Price: ₹279 (2.34x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100).",
+    "pricing": {
+      "mrp": 429,
+      "discount_pct": 35
+    }
   },
   {
     "id": 10785749041462,
     "variant_id": 54302531289398,
     "sku": "23341_soap_pump_dispenser_with_sponge_holder",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 460,
     "handle": "2-in-1-press-soap-pump-dispenser-with-sponge-holder-for-kitchen-sink-1-pc",
     "title": "2 In 1 Press Soap Pump Dispenser with Sponge Holder for Kitchen Sink",
     "zenlora_title": "Zenlora™ 2 In 1 Press Soap Pump Dispenser With",
@@ -32920,14 +33116,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Press+Soap+Pump+Dispenser"
     },
     "suggested_price": 319,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹148 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹223. Selling Price: ₹319 (2.16x supplier cost) -> Net Profit: ₹96/order (Pure Margin after Ship: ₹111)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹148 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹223. Selling Price: ₹319 (2.16x supplier cost) -> Net Profit: ₹96/order (Pure Margin after Ship: ₹111).",
+    "pricing": {
+      "mrp": 460,
+      "discount_pct": 31
+    }
   },
   {
     "id": 10727901561142,
     "variant_id": 54068837155126,
     "sku": "18495_2in1_snow_scraper_n_brush",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 519,
     "handle": "2-in-1-multipurpose-cleaning-brush-with-scraper-1-pc-69-cm-long-copy",
     "title": "2 in 1 Snow Scraper and Cleaning Brush, Long Handle",
     "zenlora_title": "Zenlora™ 2 In 1 Snow Scraper And Cleaning Brush,",
@@ -33583,14 +33783,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Snow+Scraper+and+Cleaning"
     },
     "suggested_price": 369,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹197 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹272. Selling Price: ₹369 (1.87x supplier cost) -> Net Profit: ₹97/order (Pure Margin after Ship: ₹112)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹197 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹272. Selling Price: ₹369 (1.87x supplier cost) -> Net Profit: ₹97/order (Pure Margin after Ship: ₹112).",
+    "pricing": {
+      "mrp": 519,
+      "discount_pct": 29
+    }
   },
   {
     "id": 10824158740790,
     "variant_id": 54469368316214,
     "sku": "7996_2in1_window_glass_cleaning_wiper",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 399,
     "handle": "2-in-1-window-glass-cleaning-wiper-with-scrubber-pads-and-long-handle-1-piece",
     "title": "2 in 1 Window Glass Cleaning Wiper with Scrubber Pads and Long Handle",
     "zenlora_title": "Zenlora™ 2 In 1 Window Glass Cleaning Wiper With",
@@ -34233,14 +34437,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Window+Glass+Cleaning+Wiper"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹259 (2.62x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹259 (2.62x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100).",
+    "pricing": {
+      "mrp": 399,
+      "discount_pct": 35
+    }
   },
   {
     "id": 10550800253238,
     "variant_id": 53561064063286,
     "sku": "21194_plastic_water_bottle_2ltr",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 465,
     "handle": "2-litre-large-capacity-leakproof-sports-water-bottle-1-pc",
     "title": "2 Litre Sports Water Bottle – Leakproof Flip Lock with Straw",
     "zenlora_title": "Zenlora™ 2 Litre Sports Water Bottle – Leakproof Flip",
@@ -34896,14 +35104,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Litre+Sports+Water+Bottle"
     },
     "suggested_price": 279,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹136 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹211. Selling Price: ₹279 (2.05x supplier cost) -> Net Profit: ₹68/order (Pure Margin after Ship: ₹83)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹136 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹211. Selling Price: ₹279 (2.05x supplier cost) -> Net Profit: ₹68/order (Pure Margin after Ship: ₹83).",
+    "pricing": {
+      "mrp": 465,
+      "discount_pct": 40
+    }
   },
   {
     "id": 10204338749750,
     "variant_id": 51918186283318,
     "sku": "19251_2in1_towel_hanger_n_soap_stand_1pc",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 469,
     "handle": "2-in-1-self-adhesive-towel-hanger-soap-holder-stand-1-pc",
     "title": "2-in-1 Bathroom Organizer – Self-Adhesive Soap Holder & Towel Rack",
     "zenlora_title": "Zenlora™ 2-In-1 Bathroom Organizer – Self-Adhesive Soap Holder &",
@@ -35559,14 +35771,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹58 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹133. Selling Price: ₹259 (4.47x supplier cost) -> Net Profit: ₹126/order (Pure Margin after Ship: ₹141)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹58 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹133. Selling Price: ₹259 (4.47x supplier cost) -> Net Profit: ₹126/order (Pure Margin after Ship: ₹141).",
+    "pricing": {
+      "mrp": 469,
+      "discount_pct": 45
+    }
   },
   {
     "id": 8431296741686,
     "variant_id": 45527030006070,
     "sku": "2856_pla_manual_lemon_squeezer",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 599,
     "handle": "2in1-lemon-squeezer-plastic-bottle-opener",
     "title": "2-in-1 Lemon Squeezer – Plastic & Bottle Opener | Quickslice",
     "zenlora_title": "Zenlora™ 2-In-1 Lemon Squeezer – Plastic & Bottle Opener",
@@ -36222,14 +36438,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹28 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹103. Selling Price: ₹219 (7.82x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹28 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹103. Selling Price: ₹219 (7.82x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131).",
+    "pricing": {
+      "mrp": 599,
+      "discount_pct": 63
+    }
   },
   {
     "id": 10713034162486,
     "variant_id": 54026691084598,
     "sku": "5865_multifunction_grinding_machine",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 485,
     "handle": "2-in-1-manual-citrus-juicer-and-grinder-portable-ginger-garlic-fruit-vegetable-copy",
     "title": "2-in-1 Manual Citrus Juicer & Grinder – Portable & Easy to Use",
     "zenlora_title": "Zenlora™ 2-In-1 Manual Citrus Juicer & Grinder – Portable",
@@ -36885,14 +37105,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 249,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹56 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹131. Selling Price: ₹249 (4.45x supplier cost) -> Net Profit: ₹118/order (Pure Margin after Ship: ₹133)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹56 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹131. Selling Price: ₹249 (4.45x supplier cost) -> Net Profit: ₹118/order (Pure Margin after Ship: ₹133).",
+    "pricing": {
+      "mrp": 485,
+      "discount_pct": 49
+    }
   },
   {
     "id": 10661301027126,
     "variant_id": 53893818876214,
     "sku": "13314_2in1_multi_clea_clip_brush_1pc",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 480,
     "handle": "2-in-1-multipurpose-cleaning-brush-with-ergonomic-handle-1-pc",
     "title": "2-in-1 Multipurpose Cleaning Brush – Ergonomic Handle for Easy Cleaning",
     "zenlora_title": "Zenlora™ 2-In-1 Multipurpose Cleaning Brush – Ergonomic Handle For",
@@ -37548,14 +37772,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹26 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹101. Selling Price: ₹219 (8.42x supplier cost) -> Net Profit: ₹118/order (Pure Margin after Ship: ₹133)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹26 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹101. Selling Price: ₹219 (8.42x supplier cost) -> Net Profit: ₹118/order (Pure Margin after Ship: ₹133).",
+    "pricing": {
+      "mrp": 480,
+      "discount_pct": 54
+    }
   },
   {
     "id": 10201060180278,
     "variant_id": 51909688492342,
     "sku": "whl182_41470_2in1_angle_cock_plastic_tap_2pc",
     "barcode": null,
-    "compare_at_price": 249.0,
+    "compare_at_price": 589,
     "handle": "2-in-1-plastic-bib-cock-water-tap-set",
     "title": "2-in-1 Plastic Bib Cock Water Tap – Dual Outlet, Leak-Proof ABS Faucet",
     "zenlora_title": "Zenlora™ 2-In-1 Plastic Bib Cock Water Tap – Dual",
@@ -38210,14 +38438,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 429,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹236 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹311. Selling Price: ₹429 (1.82x supplier cost) -> Net Profit: ₹118/order (Pure Margin after Ship: ₹133)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹236 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹311. Selling Price: ₹429 (1.82x supplier cost) -> Net Profit: ₹118/order (Pure Margin after Ship: ₹133).",
+    "pricing": {
+      "mrp": 589,
+      "discount_pct": 27
+    }
   },
   {
     "id": 10783837094198,
     "variant_id": 54276808737078,
     "sku": "23897_2in1_lint_remover",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 609,
     "handle": "2-in-1-portable-pet-hair-and-lint-remover-brush-for-clothes-and-furniture-1-pc",
     "title": "2-in-1 Portable Pet Hair and Lint Remover Brush for Clothes and Furniture",
     "zenlora_title": "Zenlora™ 2-In-1 Portable Pet Hair And Lint Remover Brush",
@@ -38873,14 +39105,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 229,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹27 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹102. Selling Price: ₹229 (8.48x supplier cost) -> Net Profit: ₹127/order (Pure Margin after Ship: ₹142)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹27 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹102. Selling Price: ₹229 (8.48x supplier cost) -> Net Profit: ₹127/order (Pure Margin after Ship: ₹142).",
+    "pricing": {
+      "mrp": 609,
+      "discount_pct": 62
+    }
   },
   {
     "id": 10664307458358,
     "variant_id": 53901567000886,
     "sku": "11272_plastic_colander_basket_with_bowl",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 435,
     "handle": "multipurpose-2-in-1-vegetable-washing-bowl-with-strainer-1-pc",
     "title": "2-in-1 Vegetable Washing Bowl – Effortless Rinsing & Draining",
     "zenlora_title": "Zenlora™ 2-In-1 Vegetable Washing Bowl – Effortless Rinsing &",
@@ -39536,14 +39772,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹98 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹173. Selling Price: ₹289 (2.95x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹98 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹173. Selling Price: ₹289 (2.95x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131).",
+    "pricing": {
+      "mrp": 435,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10313394028854,
     "variant_id": 52875648532790,
     "sku": "whl197_67249_0_7mm_par_lead_10pc_6784147",
     "barcode": null,
-    "compare_at_price": 50.0,
+    "compare_at_price": 469,
     "handle": "camlin-hi-par-mechanical-pencil-leads-0-7mm-b-grade-high-polymer-strong-leads-10-tubes",
     "title": "0.7mm B Grade Mechanical Pencil Leads – Durable & Smooth Writing",
     "zenlora_title": "Zenlora™ 0.7Mm B Grade Mechanical Pencil Leads – Durable",
@@ -40181,14 +40421,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=0.7mm+Grade+Mechanical+Pencil+Leads"
     },
     "suggested_price": 179,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹40 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹115. Selling Price: ₹179 (4.47x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹40 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹115. Selling Price: ₹179 (4.47x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79).",
+    "pricing": {
+      "mrp": 469,
+      "discount_pct": 62
+    }
   },
   {
     "id": 10631399473462,
     "variant_id": 53785066471734,
     "sku": "21116_11in1_manicure_n_pedicure_grooming_kit",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 430,
     "handle": "11-in-1-manicure-pedicure-grooming-kit-nail-care-set-1-set",
     "title": "11 in 1 manicure pedicure kit – Complete nail care for home and salon",
     "zenlora_title": "Zenlora™ 11 In 1 Manicure Pedicure Kit – Complete",
@@ -40827,14 +41071,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+manicure+pedicure+kit"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹110 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹185. Selling Price: ₹269 (2.45x supplier cost) -> Net Profit: ₹84/order (Pure Margin after Ship: ₹99)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹110 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹185. Selling Price: ₹269 (2.45x supplier cost) -> Net Profit: ₹84/order (Pure Margin after Ship: ₹99).",
+    "pricing": {
+      "mrp": 430,
+      "discount_pct": 37
+    }
   },
   {
     "id": 10847346557238,
     "variant_id": 54556668297526,
     "sku": "22408_2in1_abc_maths_activity_board",
     "barcode": null,
-    "compare_at_price": 599.0,
+    "compare_at_price": 475,
     "handle": "2-in-1-abc-and-maths-activity-board-with-sliding-letters-for-learning-22x18-cm",
     "title": "2 in 1 ABC and Maths Activity Board with Sliding Letters for Learning (22x18 Cm)",
     "zenlora_title": "Zenlora™ 2 In 1 Abc And Maths Activity Board",
@@ -41486,14 +41734,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+ABC+and+Maths+Activity"
     },
     "suggested_price": 349,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹175 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹250. Selling Price: ₹349 (1.99x supplier cost) -> Net Profit: ₹99/order (Pure Margin after Ship: ₹114)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹175 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹250. Selling Price: ₹349 (1.99x supplier cost) -> Net Profit: ₹99/order (Pure Margin after Ship: ₹114).",
+    "pricing": {
+      "mrp": 475,
+      "discount_pct": 27
+    }
   },
   {
     "id": 8431927427382,
     "variant_id": 45529457131830,
     "sku": "1578_2in1_garden_tool",
     "barcode": null,
-    "compare_at_price": 189.0,
+    "compare_at_price": 460,
     "handle": "2-in-1-double-hoe-tool-gardening-tool",
     "title": "2-in-1 Double Hoe – Carbon Steel Gardening Tool | ToolMate Pro",
     "zenlora_title": "Zenlora™ 2-In-1 Double Hoe – Carbon Steel Gardening Tool",
@@ -42149,14 +42401,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹71 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹146. Selling Price: ₹259 (3.65x supplier cost) -> Net Profit: ₹113/order (Pure Margin after Ship: ₹128)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹71 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹146. Selling Price: ₹259 (3.65x supplier cost) -> Net Profit: ₹113/order (Pure Margin after Ship: ₹128).",
+    "pricing": {
+      "mrp": 460,
+      "discount_pct": 44
+    }
   },
   {
     "id": 10817632796982,
     "variant_id": 54427420688694,
     "sku": "whl197_70190_cube_star_2_2_at262",
     "barcode": null,
-    "compare_at_price": 189.0,
+    "compare_at_price": 449,
     "handle": "2-2-speed-cube-puzzle-smooth-turning-stickerless-magic-cube",
     "title": "2×2 Speed Cube Puzzle – Smooth Turning Stickerless Magic Cube",
     "zenlora_title": "Zenlora™ 2×2 Speed Cube Puzzle – Smooth Turning Stickerless",
@@ -42812,14 +43068,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=2%C3%972+Speed+Cube+Puzzle"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹95 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹170. Selling Price: ₹239 (2.52x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹95 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹170. Selling Price: ₹239 (2.52x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 449,
+      "discount_pct": 47
+    }
   },
   {
     "id": 10778378862902,
     "variant_id": 54231594828086,
     "sku": "9003_travel_safety_lock_no1",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 425,
     "handle": "3-digit-combination-helmet-cable-lock-with-coiled-wire-for-travel-safety-1-pc",
     "title": "3 Digit Combination Helmet Cable Lock with Coiled Wire for Travel Safety",
     "zenlora_title": "Zenlora™ 3 Digit Combination Helmet Cable Lock With Coiled",
@@ -43458,14 +43718,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Digit+Combination+Helmet+Cable+Lock"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹75 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹150. Selling Price: ₹219 (2.92x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹75 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹150. Selling Price: ₹219 (2.92x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 425,
+      "discount_pct": 48
+    }
   },
   {
     "id": 10798557757750,
     "variant_id": 54365745971510,
     "sku": "23375_multi_function_cleaning_pen_brush",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 489,
     "handle": "3-in-1-multifunction-cleaning-pen-brush-for-earbuds-keyboard-and-gadgets-1-pc",
     "title": "3 in 1 Multifunction Cleaning Pen Brush for Earbuds, Keyboard and Gadgets",
     "zenlora_title": "Zenlora™ 3 In 1 Multifunction Cleaning Pen Brush For",
@@ -44119,14 +44383,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Multifunction+Cleaning+Pen+Brush"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹189 (6.52x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹189 (6.52x supplier cost) -> Net Profit: ₹85/order (Pure Margin after Ship: ₹100).",
+    "pricing": {
+      "mrp": 489,
+      "discount_pct": 61
+    }
   },
   {
     "id": 10141466231094,
     "variant_id": 51719664566582,
     "sku": "18995_anti_theft_3_digit_wire_lock_1pc",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 639,
     "handle": "3-digit-combination-anti-theft-padlock-keyless",
     "title": "3-Digit Combination Anti-Theft Padlock – Keyless Security & Built-In Wire",
     "zenlora_title": "Zenlora™ 3-Digit Combination Anti-Theft Padlock – Keyless Security &",
@@ -44765,14 +45033,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹54 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹129. Selling Price: ₹239 (4.43x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹54 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹129. Selling Price: ₹239 (4.43x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125).",
+    "pricing": {
+      "mrp": 639,
+      "discount_pct": 63
+    }
   },
   {
     "id": 10411856724278,
     "variant_id": 53263293874486,
     "sku": "19458_knx_table_tennis_balls_6pc_cls_713",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 469,
     "handle": "professional-table-tennis-balls-6-pc",
     "title": "3-Star Table Tennis Balls – Durable High Bounce Pack of 6",
     "zenlora_title": "Zenlora™ 3-Star Table Tennis Balls – Durable High Bounce",
@@ -45411,14 +45683,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹83 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹158. Selling Price: ₹269 (3.24x supplier cost) -> Net Profit: ₹111/order (Pure Margin after Ship: ₹126)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹83 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹158. Selling Price: ₹269 (3.24x supplier cost) -> Net Profit: ₹111/order (Pure Margin after Ship: ₹126).",
+    "pricing": {
+      "mrp": 469,
+      "discount_pct": 43
+    }
   },
   {
     "id": 10817632633142,
     "variant_id": 54427420557622,
     "sku": "whl197_70191_spinny_twist_at242",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 429,
     "handle": "3-wheel-spinning-bead-puzzle-toy-spinny-twist-fidget-toy-for-kids",
     "title": "3-Wheel Spinning Bead Puzzle Toy – Spinny Twist Fidget Toy for Kids (Mix Colur)",
     "zenlora_title": "Zenlora™ 3-Wheel Spinning Bead Puzzle Toy – Spinny Twist",
@@ -46057,14 +46333,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
     },
     "suggested_price": 279,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹103 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹178. Selling Price: ₹279 (2.71x supplier cost) -> Net Profit: ₹101/order (Pure Margin after Ship: ₹116)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹103 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹178. Selling Price: ₹279 (2.71x supplier cost) -> Net Profit: ₹101/order (Pure Margin after Ship: ₹116).",
+    "pricing": {
+      "mrp": 429,
+      "discount_pct": 35
+    }
   },
   {
     "id": 10773242675510,
     "variant_id": 54209798373686,
     "sku": "17059_31in1_precision_screwdriver_set",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 425,
     "handle": "31-in-1-precision-screwdriver-set-multi-bit-repair-tool-kit-with-case-1-set",
     "title": "31 In 1 Precision Screwdriver Set Multi Bit Repair Tool Kit with Case",
     "zenlora_title": "Zenlora™ 31 In 1 Precision Screwdriver Set Multi Bit",
@@ -46720,14 +47000,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+Precision+Screwdriver+Set+Multi"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹114 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹189. Selling Price: ₹269 (2.36x supplier cost) -> Net Profit: ₹80/order (Pure Margin after Ship: ₹95)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹114 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹189. Selling Price: ₹269 (2.36x supplier cost) -> Net Profit: ₹80/order (Pure Margin after Ship: ₹95).",
+    "pricing": {
+      "mrp": 425,
+      "discount_pct": 37
+    }
   },
   {
     "id": 10798625751350,
     "variant_id": 54366103109942,
     "sku": "12479_pla_360_degree_rotation_car_phone_holder",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 489,
     "handle": "360-degree-rotating-car-phone-holder-with-adjustable-dashboard-clip-stand-1-pc",
     "title": "360 Degree Rotating Car Phone Holder with Adjustable Dashboard Clip Stand",
     "zenlora_title": "Zenlora™ 360 Degree Rotating Car Phone Holder With Adjustable",
@@ -47379,14 +47663,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Degree+Rotating+Car+Phone+Holder"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹95 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹170. Selling Price: ₹259 (2.73x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹95 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹170. Selling Price: ₹259 (2.73x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104).",
+    "pricing": {
+      "mrp": 489,
+      "discount_pct": 47
+    }
   },
   {
     "id": 8432254583094,
     "variant_id": 45529947373878,
     "sku": "0370_cm_3d_massager",
     "barcode": null,
-    "compare_at_price": 484.0,
+    "compare_at_price": 439,
     "handle": "3d-roller-face-massager-skin-tightening-tool",
     "title": "3D Roller Face Massager – Skin Tightening Tool | Velvet Wellness",
     "zenlora_title": "Zenlora™ 3D Roller Face Massager – Skin Tightening Tool",
@@ -48042,14 +48330,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Roller+Face+Massager"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹125 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹200. Selling Price: ₹289 (2.31x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹125 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹200. Selling Price: ₹289 (2.31x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104).",
+    "pricing": {
+      "mrp": 439,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10471198064950,
     "variant_id": 53402913800502,
     "sku": "whl197_70139_cube_star_3x3x3_at44",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 405,
     "handle": "cube-star-3x3-puzzle-rubiks-cube-colorful-brain-teaser",
     "title": "3x3 Stickerless Speed Cube – Smooth Puzzle for Kids & Beginners",
     "zenlora_title": "Zenlora™ 3X3 Stickerless Speed Cube – Smooth Puzzle For",
@@ -48691,14 +48983,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3x3+Stickerless+Speed+Cube"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹119 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹194. Selling Price: ₹259 (2.18x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹119 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹194. Selling Price: ₹259 (2.18x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 405,
+      "discount_pct": 36
+    }
   },
   {
     "id": 10770941051190,
     "variant_id": 54201010061622,
     "sku": "whl334_92703_hub_a_c",
     "barcode": null,
-    "compare_at_price": 1199.0,
+    "compare_at_price": 585,
     "handle": "uniwave-4-in-1-usb-3-0-hub-with-type-c-dual-connector-for-laptop-pc-mac-silver",
     "title": "4 In 1 USB 3.0 Hub With Type C Dual Connector For Laptop PC Mac (Silver)",
     "zenlora_title": "Zenlora™ 4 In 1 Usb 3.0 Hub With Type",
@@ -49350,14 +49646,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=In+USB+3.0+Hub+With"
     },
     "suggested_price": 429,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹228 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹303. Selling Price: ₹429 (1.88x supplier cost) -> Net Profit: ₹126/order (Pure Margin after Ship: ₹141)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹228 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹303. Selling Price: ₹429 (1.88x supplier cost) -> Net Profit: ₹126/order (Pure Margin after Ship: ₹141).",
+    "pricing": {
+      "mrp": 585,
+      "discount_pct": 27
+    }
   },
   {
     "id": 8426806378806,
     "variant_id": 45512873509174,
     "sku": "whl282_7641_isb_4in1_soap_dish",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 475,
     "handle": "7641_isb_4in1_soap_dish",
     "title": "4-in-1 Glass Soap Dish with Stand – Modern Bathroom Decor | Pure Source India",
     "zenlora_title": "Zenlora™ 4-In-1 Glass Soap Dish With Stand – Modern",
@@ -50009,14 +50309,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹98 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹173. Selling Price: ₹289 (2.95x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹98 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹173. Selling Price: ₹289 (2.95x supplier cost) -> Net Profit: ₹116/order (Pure Margin after Ship: ₹131).",
+    "pricing": {
+      "mrp": 475,
+      "discount_pct": 39
+    }
   },
   {
     "id": 8426220192054,
     "variant_id": 45511266238774,
     "sku": "6076_4in1_medicine_crusher",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 475,
     "handle": "4in1-portable-pill-cutter-crusher-smart-storage",
     "title": "4-in-1 Portable Pill Cutter & Crusher with Smart Storage",
     "zenlora_title": "Zenlora™ 4-In-1 Portable Pill Cutter & Crusher With Smart",
@@ -50668,14 +50972,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹58 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹133. Selling Price: ₹269 (4.64x supplier cost) -> Net Profit: ₹136/order (Pure Margin after Ship: ₹151)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹58 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹133. Selling Price: ₹269 (4.64x supplier cost) -> Net Profit: ₹136/order (Pure Margin after Ship: ₹151).",
+    "pricing": {
+      "mrp": 475,
+      "discount_pct": 43
+    }
   },
   {
     "id": 15401056600374,
     "variant_id": 67607697424694,
     "sku": "whl334_92707_link_hub_black",
     "barcode": null,
-    "compare_at_price": 999.0,
+    "compare_at_price": 539,
     "handle": "4-port-usb-3-0-hub-plug-play-high-speed-usb-splitter-for-laptop-and-pc",
     "title": "4-Port USB 3.0 Hub, Plug & Play High-Speed USB Splitter for Laptop and PC",
     "zenlora_title": "Zenlora™ 4-Port Usb 3.0 Hub, Plug & Play High-Speed",
@@ -51326,14 +51634,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4"
     },
     "suggested_price": 379,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹179 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹254. Selling Price: ₹379 (2.12x supplier cost) -> Net Profit: ₹125/order (Pure Margin after Ship: ₹140)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹179 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹254. Selling Price: ₹379 (2.12x supplier cost) -> Net Profit: ₹125/order (Pure Margin after Ship: ₹140).",
+    "pricing": {
+      "mrp": 539,
+      "discount_pct": 30
+    }
   },
   {
     "id": 9557821423926,
     "variant_id": 49510098633014,
     "sku": "17952_soft_eraser_30pc_set",
     "barcode": null,
-    "compare_at_price": 129.0,
+    "compare_at_price": 559,
     "handle": "4b-erasers-smudge-free-30-pack-students",
     "title": "4B Erasers – Smudge-Free 30-Pack for Students | TinyTrendy",
     "zenlora_title": "Zenlora™ 4B Erasers – Smudge-Free 30-Pack For Students |",
@@ -51989,14 +52301,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4B+Erasers"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹38 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹113. Selling Price: ₹209 (5.5x supplier cost) -> Net Profit: ₹96/order (Pure Margin after Ship: ₹111)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹38 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹113. Selling Price: ₹209 (5.5x supplier cost) -> Net Profit: ₹96/order (Pure Margin after Ship: ₹111).",
+    "pricing": {
+      "mrp": 559,
+      "discount_pct": 63
+    }
   },
   {
     "id": 9257643475254,
     "variant_id": 48609654276406,
     "sku": "1975_magic_puzzle_cube_4x4x4_at45",
     "barcode": null,
-    "compare_at_price": 359.0,
+    "compare_at_price": 499,
     "handle": "small-puzzles-cubes-4-4-4-high-speed-sticker-less-magic-cube-game-kids-and-professionals-magic-cube-puzzle-toy-pack-of-1-8-years",
     "title": "4x4x4 Magic Cube – High Speed Stickerless Brain Teaser | Aditi",
     "zenlora_title": "Zenlora™ 4X4X4 Magic Cube – High Speed Stickerless Brain",
@@ -52635,14 +52951,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=4x4x4+Magic+Cube"
     },
     "suggested_price": 369,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹172 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹247. Selling Price: ₹369 (2.15x supplier cost) -> Net Profit: ₹122/order (Pure Margin after Ship: ₹137)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹172 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹247. Selling Price: ₹369 (2.15x supplier cost) -> Net Profit: ₹122/order (Pure Margin after Ship: ₹137).",
+    "pricing": {
+      "mrp": 499,
+      "discount_pct": 26
+    }
   },
   {
     "id": 10270345494838,
     "variant_id": 52357735416118,
     "sku": "15438_6_led_solar_fence_light_2pc",
     "barcode": null,
-    "compare_at_price": 349.0,
+    "compare_at_price": 495,
     "handle": "6-led-solar-powered-wall-mount-fence-light-with-honeycomb-shade-design-2-pc-set",
     "title": "6 LED Solar Wall Fence Light – Honeycomb Shade Design, 2 Pc Set",
     "zenlora_title": "Zenlora™ 6 Led Solar Wall Fence Light – Honeycomb",
@@ -53281,14 +53601,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=LED+Solar+Wall+Fence+Light"
     },
     "suggested_price": 369,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹174 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹249. Selling Price: ₹369 (2.12x supplier cost) -> Net Profit: ₹120/order (Pure Margin after Ship: ₹135)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹174 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹249. Selling Price: ₹369 (2.12x supplier cost) -> Net Profit: ₹120/order (Pure Margin after Ship: ₹135).",
+    "pricing": {
+      "mrp": 495,
+      "discount_pct": 25
+    }
   },
   {
     "id": 8427246649654,
     "variant_id": 45513793700150,
     "sku": "4969_toothbrush_case_6pc",
     "barcode": null,
-    "compare_at_price": 139.0,
+    "compare_at_price": 439,
     "handle": "6pc-plastic-toothbrush-covers-hygienic-travel-protection",
     "title": "6pc Plastic Toothbrush Covers - Hygienic Travel Protection",
     "zenlora_title": "Zenlora™ 6Pc Plastic Toothbrush Covers - Hygienic Travel Protection",
@@ -53940,14 +54264,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=6pc+Plastic+Toothbrush+Covers"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹239 (3.68x supplier cost) -> Net Profit: ₹99/order (Pure Margin after Ship: ₹114)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹239 (3.68x supplier cost) -> Net Profit: ₹99/order (Pure Margin after Ship: ₹114).",
+    "pricing": {
+      "mrp": 439,
+      "discount_pct": 46
+    }
   },
   {
     "id": 8593680695606,
     "variant_id": 46336685080886,
     "sku": "6994_usb_7port_data_hub",
     "barcode": null,
-    "compare_at_price": 599.0,
+    "compare_at_price": 545,
     "handle": "7-port-usb-hub-7in1-individual-switches",
     "title": "7 Port USB Hub – 7-in-1 Individual Switches, LED Indicators | Compshop",
     "zenlora_title": "Zenlora™ 7 Port Usb Hub – 7-In-1 Individual Switches,",
@@ -54603,14 +54931,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Port+USB+Hub"
     },
     "suggested_price": 399,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹214 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹289. Selling Price: ₹399 (1.86x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹214 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹289. Selling Price: ₹399 (1.86x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125).",
+    "pricing": {
+      "mrp": 545,
+      "discount_pct": 27
+    }
   },
   {
     "id": 10813256007990,
     "variant_id": 54407667876150,
     "sku": "7428_gym_ball_pump_combo",
     "barcode": null,
-    "compare_at_price": 799.0,
+    "compare_at_price": 639,
     "handle": "75-cm-gym-stability-ball-for-men-non-slip-core-training-ball-1-pc",
     "title": "75 CM Gym Stability Ball for Men Non Slip Core Training Ball",
     "zenlora_title": "Zenlora™ 75 Cm Gym Stability Ball For Men Non",
@@ -55266,14 +55598,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=CM+Gym+Stability+Ball+for"
     },
     "suggested_price": 449,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹245 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹320. Selling Price: ₹449 (1.83x supplier cost) -> Net Profit: ₹129/order (Pure Margin after Ship: ₹144)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹245 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹320. Selling Price: ₹449 (1.83x supplier cost) -> Net Profit: ₹129/order (Pure Margin after Ship: ₹144).",
+    "pricing": {
+      "mrp": 639,
+      "discount_pct": 30
+    }
   },
   {
     "id": 15410383520054,
     "variant_id": 67657501507894,
     "sku": "24823_sipora_travel_tumbler_750ml",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 475,
     "handle": "750-ml-travel-tumbler-with-straw-and-handle-cup-holder-friendly-sipper-1-pc",
     "title": "750 ml Travel Tumbler with Straw and Handle, Cup Holder Friendly Sipper (1 Pc)",
     "zenlora_title": "Zenlora™ 750 Ml Travel Tumbler With Straw And Handle,",
@@ -55925,14 +56261,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ml+Travel+Tumbler+with+Straw"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹49 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹124. Selling Price: ₹189 (3.86x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹49 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹124. Selling Price: ₹189 (3.86x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 475,
+      "discount_pct": 60
+    }
   },
   {
     "id": 10694538363190,
     "variant_id": 53974135243062,
     "sku": "15310_8in1_multi_cycling_bike_repair_tool",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 429,
     "handle": "8-in-1-multifunctional-cycling-bike-repair-tool-portable-foldable-multi-tool-kit-copy",
     "title": "8-in-1 Portable Cycling Repair Tool Kit – Compact & Durable",
     "zenlora_title": "Zenlora™ 8-In-1 Portable Cycling Repair Tool Kit – Compact",
@@ -56584,14 +56924,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=8"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹123 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹198. Selling Price: ₹289 (2.35x supplier cost) -> Net Profit: ₹91/order (Pure Margin after Ship: ₹106)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹123 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹198. Selling Price: ₹289 (2.35x supplier cost) -> Net Profit: ₹91/order (Pure Margin after Ship: ₹106).",
+    "pricing": {
+      "mrp": 429,
+      "discount_pct": 33
+    }
   },
   {
     "id": 10844004712758,
     "variant_id": 54544903831862,
     "sku": "whl193_66677_glass_tumbler_with_handle_and_straw",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 399,
     "handle": "900-ml-glass-tumbler-cup-with-handle-lid-straw-for-juice-water-and-cold-drinks",
     "title": "900 ML Glass Tumbler Cup with Handle, Lid & Straw for Juice, Water and Cold Drinks",
     "zenlora_title": "Zenlora™ 900 Ml Glass Tumbler Cup With Handle, Lid",
@@ -57241,14 +57585,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Glass+Tumbler+Cup+with"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹121 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹196. Selling Price: ₹259 (2.14x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹121 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹196. Selling Price: ₹259 (2.14x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78).",
+    "pricing": {
+      "mrp": 399,
+      "discount_pct": 35
+    }
   },
   {
     "id": 10353095409974,
     "variant_id": 53074169332022,
     "sku": "whl206_68514_my_clear_bag_ot_317f",
     "barcode": null,
-    "compare_at_price": 9999.0,
+    "compare_at_price": 365,
     "handle": "mix-design-a4-plastic-document-folder-button-closure-envelope-file-for-office-school-use-1-pc",
     "title": "A4 Document Folder – Secure Button Closure for Office & School",
     "zenlora_title": "Zenlora™ A4 Document Folder – Secure Button Closure For",
@@ -57904,14 +58252,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=A4+Document+Folder"
     },
     "suggested_price": 169,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹169 (4.97x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹169 (4.97x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75).",
+    "pricing": {
+      "mrp": 365,
+      "discount_pct": 54
+    }
   },
   {
     "id": 10736207298870,
     "variant_id": 54093741818166,
     "sku": "whl206_68761_215_my_clear_bag_aerotix",
     "barcode": null,
-    "compare_at_price": 40.0,
+    "compare_at_price": 419,
     "handle": "premium-a4-document-envelope-folders-with-snap-button-closure-4-assorted-designs",
     "title": "A4 Document Folder – Secure Snap Closure with Bright Designs",
     "zenlora_title": "Zenlora™ A4 Document Folder – Secure Snap Closure With",
@@ -58567,14 +58919,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=A4+Document+Folder"
     },
     "suggested_price": 169,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹25 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹100. Selling Price: ₹169 (6.76x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹25 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹100. Selling Price: ₹169 (6.76x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 419,
+      "discount_pct": 60
+    }
   },
   {
     "id": 9529320997174,
     "variant_id": 49409201635638,
     "sku": "18132_file_folder_35x26cm_1pc",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 389,
     "handle": "best-file-folder-documents",
     "title": "A4 File Folder – Plastic Clip Document Holder | Filora",
     "zenlora_title": "Zenlora™ A4 File Folder – Plastic Clip Document Holder",
@@ -59230,14 +59586,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=A4+File+Folder"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹80 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹155. Selling Price: ₹219 (2.74x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹80 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹155. Selling Price: ₹219 (2.74x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79).",
+    "pricing": {
+      "mrp": 389,
+      "discount_pct": 44
+    }
   },
   {
     "id": 10856798945590,
     "variant_id": 54595808395574,
     "sku": "22461_2in1_cleaning_brush",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 449,
     "handle": "2-in-1-floor-cleaning-brush-with-water-scraper-and-metal-handle-for-bathroom-use",
     "title": "2 in 1 Floor Cleaning Brush with Water Scraper and Metal Handle for Bathroom Use",
     "zenlora_title": "Zenlora™ 2 In 1 Floor Cleaning Brush With Water",
@@ -59893,14 +60253,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Floor+Cleaning+Brush+with"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹289 (2.92x supplier cost) -> Net Profit: ₹115/order (Pure Margin after Ship: ₹130)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹289 (2.92x supplier cost) -> Net Profit: ₹115/order (Pure Margin after Ship: ₹130).",
+    "pricing": {
+      "mrp": 449,
+      "discount_pct": 36
+    }
   },
   {
     "id": 10856444363062,
     "variant_id": 54595063677238,
     "sku": "0634_candy_tray",
     "barcode": null,
-    "compare_at_price": 420.0,
+    "compare_at_price": 445,
     "handle": "5-compartment-petal-shape-storage-box-for-dry-fruits-and-masala-1-pc",
     "title": "5 Compartment Petal Shape Storage Box for Dry Fruits and Masala (1 Pc)",
     "zenlora_title": "Zenlora™ 5 Compartment Petal Shape Storage Box For Dry",
@@ -60551,14 +60915,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Compartment+Petal+Shape+Storage+Box"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹269 (2.09x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹269 (2.09x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 445,
+      "discount_pct": 40
+    }
   },
   {
     "id": 15397592269110,
     "variant_id": 67595300143414,
     "sku": "whl344_41237_danglar_6in1_20gm",
     "barcode": null,
-    "compare_at_price": 90.0,
+    "compare_at_price": 629,
     "handle": "6-in-1-premium-incense-sticks-pouch-for-puja-meditation-6-fragrance-combo-90-grm",
     "title": "6 in 1 Premium Incense Sticks Pouch for Puja, Meditation 6 Fragrance Combo (120 gm)",
     "zenlora_title": "Zenlora™ 6 In 1 Premium Incense Sticks Pouch For",
@@ -61197,14 +61565,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Premium+Incense+Sticks+Pouch"
     },
     "suggested_price": 249,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹53 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹128. Selling Price: ₹249 (4.7x supplier cost) -> Net Profit: ₹121/order (Pure Margin after Ship: ₹136)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹53 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹128. Selling Price: ₹249 (4.7x supplier cost) -> Net Profit: ₹121/order (Pure Margin after Ship: ₹136).",
+    "pricing": {
+      "mrp": 629,
+      "discount_pct": 60
+    }
   },
   {
     "id": 10760811020598,
     "variant_id": 54168808423734,
     "sku": "whl167_48535_7rose_dhoop_stick",
     "barcode": null,
-    "compare_at_price": 90.0,
+    "compare_at_price": 410,
     "handle": "7-rose-dhoop-sticks-premium-natural-aroma-jar-100g",
     "title": "7 Rose Dhoop Sticks – Premium Natural Aroma Jar 100g",
     "zenlora_title": "Zenlora™ 7 Rose Dhoop Sticks – Premium Natural Aroma",
@@ -61859,14 +62231,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Rose+Dhoop+Sticks"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹57 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹132. Selling Price: ₹219 (3.84x supplier cost) -> Net Profit: ₹87/order (Pure Margin after Ship: ₹102)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹57 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹132. Selling Price: ₹219 (3.84x supplier cost) -> Net Profit: ₹87/order (Pure Margin after Ship: ₹102).",
+    "pricing": {
+      "mrp": 410,
+      "discount_pct": 47
+    }
   },
   {
     "id": 9831476560182,
     "variant_id": 50986603774262,
     "sku": "13749_adiyogi_shiva_smoke_fountain_1pc",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 479,
     "handle": "adiyogi-shiva-backflow-incense-holder-serene-smoke",
     "title": "Adiyogi Shiva Backflow Incense Holder – Serene Smoke Fountain | Fixorix",
     "zenlora_title": "Zenlora™ Adiyogi Shiva Backflow Incense Holder – Serene Smoke",
@@ -62518,14 +62894,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adiyogi+Shiva+Backflow+Incense+Holder"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹125 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹200. Selling Price: ₹289 (2.31x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹125 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹200. Selling Price: ₹289 (2.31x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104).",
+    "pricing": {
+      "mrp": 479,
+      "discount_pct": 40
+    }
   },
   {
     "id": 10141656449334,
     "variant_id": 51720193016118,
     "sku": "whl167_48553_gugalam_agarbatti_250g",
     "barcode": null,
-    "compare_at_price": 250.0,
+    "compare_at_price": 410,
     "handle": "gugalam-premium-aura-agarbatti-1-jar-250-gram",
     "title": "Agarbatti Incense Sticks – Premium Natural Fragrance 250g Jar",
     "zenlora_title": "Zenlora™ Agarbatti Incense Sticks – Premium Natural Fragrance 250G",
@@ -63180,14 +63560,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Agarbatti+Incense+Sticks"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹160 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹235. Selling Price: ₹299 (1.87x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹160 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹235. Selling Price: ₹299 (1.87x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79).",
+    "pricing": {
+      "mrp": 410,
+      "discount_pct": 27
+    }
   },
   {
     "id": 9747165086006,
     "variant_id": 50590021091638,
     "sku": "13678_mix_flav_incense_sticks_90gm",
     "barcode": null,
-    "compare_at_price": 125.0,
+    "compare_at_price": 485,
     "handle": "agarbatti-sticks-mixed-floral-fragrance-90-gm",
     "title": "Agarbatti Sticks – Mixed Floral Fragrance, 90 GM | DeoDap",
     "zenlora_title": "Zenlora™ Agarbatti Sticks – Mixed Floral Fragrance, 90 Gm",
@@ -63843,14 +64227,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Agarbatti+Sticks"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹54 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹129. Selling Price: ₹219 (4.06x supplier cost) -> Net Profit: ₹90/order (Pure Margin after Ship: ₹105)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹54 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹129. Selling Price: ₹219 (4.06x supplier cost) -> Net Profit: ₹90/order (Pure Margin after Ship: ₹105).",
+    "pricing": {
+      "mrp": 485,
+      "discount_pct": 55
+    }
   },
   {
     "id": 9747696615734,
     "variant_id": 50591147884854,
     "sku": "13687_mix_flav_incense_sticks_10pc",
     "barcode": null,
-    "compare_at_price": 55.0,
+    "compare_at_price": 535,
     "handle": "agarbatti-sticks-premium-mixed-flavours-pooja-home",
     "title": "Agarbatti Sticks – Premium Mixed Flavours for Pooja & Home | Styleva",
     "zenlora_title": "Zenlora™ Agarbatti Sticks – Premium Mixed Flavours For Pooja",
@@ -64506,14 +64894,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Agarbatti+Sticks"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹41 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹116. Selling Price: ₹219 (5.34x supplier cost) -> Net Profit: ₹103/order (Pure Margin after Ship: ₹118)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹41 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹116. Selling Price: ₹219 (5.34x supplier cost) -> Net Profit: ₹103/order (Pure Margin after Ship: ₹118).",
+    "pricing": {
+      "mrp": 535,
+      "discount_pct": 59
+    }
   },
   {
     "id": 10109264724278,
     "variant_id": 51632494444854,
     "sku": "whl167_48504_lavendor_agarbatti",
     "barcode": null,
-    "compare_at_price": 90.0,
+    "compare_at_price": 369,
     "handle": "levendor-premium-agarbatti",
     "title": "Agarbatti – Premium Organic Incense Sticks for Puja & Home",
     "zenlora_title": "Zenlora™ Agarbatti – Premium Organic Incense Sticks For Puja",
@@ -65168,14 +65560,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Agarbatti"
     },
     "suggested_price": 199,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹58 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹133. Selling Price: ₹199 (3.43x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹58 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹133. Selling Price: ₹199 (3.43x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81).",
+    "pricing": {
+      "mrp": 369,
+      "discount_pct": 46
+    }
   },
   {
     "id": 8431935684918,
     "variant_id": 45529473450294,
     "sku": "2234_silver_bajot",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 500,
     "handle": "2234-fancy-aluminium-foil-designer-bajot",
     "title": "Aluminium Foil Bajot – Handcrafted Pooja Chowki for Home | Styleva",
     "zenlora_title": "Zenlora™ Aluminium Foil Bajot – Handcrafted Pooja Chowki For",
@@ -65826,14 +66222,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Aluminium+Foil+Bajot"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹219 (6.44x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹219 (6.44x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125).",
+    "pricing": {
+      "mrp": 500,
+      "discount_pct": 56
+    }
   },
   {
     "id": 15404163727670,
     "variant_id": 67622731383094,
     "sku": "24670_cnl_acrylic_antique_lamp_4pc",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 409,
     "handle": "antique-style-golden-led-tealight-lamps-for-festive-table-decoration-4-pc-set",
     "title": "Antique Style Golden LED Tealight Lamps for Festive Table Decoration (4 Pc Set)",
     "zenlora_title": "Zenlora™ Antique Style Golden Led Tealight Lamps For Festive",
@@ -66485,14 +66885,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Antique+Style+Golden+LED+Tealight"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹155 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹230. Selling Price: ₹299 (1.93x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹155 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹230. Selling Price: ₹299 (1.93x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 409,
+      "discount_pct": 27
+    }
   },
   {
     "id": 10349030310198,
     "variant_id": 53059941892406,
     "sku": "12527_decor_apple_led_candles_4pc",
     "barcode": null,
-    "compare_at_price": 339.0,
+    "compare_at_price": 495,
     "handle": "decorative-apple-shape-led-tealight-candles-4-pc",
     "title": "Apple LED Tealight Candles – Flameless Festive Glow (Set of 4)",
     "zenlora_title": "Zenlora™ Apple Led Tealight Candles – Flameless Festive Glow",
@@ -67144,14 +67548,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Apple+LED+Tealight+Candles"
     },
     "suggested_price": 349,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹185 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹260. Selling Price: ₹349 (1.89x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹185 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹260. Selling Price: ₹349 (1.89x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104).",
+    "pricing": {
+      "mrp": 495,
+      "discount_pct": 29
+    }
   },
   {
     "id": 10870853009718,
     "variant_id": 54647054631222,
     "sku": "whl344_41207_box_p_aroma_100gm",
     "barcode": null,
-    "compare_at_price": 120.0,
+    "compare_at_price": 369,
     "handle": "aroma-premium-incense-sticks-for-puja-meditation-and-fresh-home-fragrance-100gm",
     "title": "Aroma Premium Incense Sticks for Puja, Meditation and Fresh Home Fragrance (100Gm)",
     "zenlora_title": "Zenlora™ Aroma Premium Incense Sticks For Puja, Meditation And",
@@ -67804,14 +68212,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Aroma+Premium+Incense+Sticks+for"
     },
     "suggested_price": 199,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹62 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹137. Selling Price: ₹199 (3.21x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹62 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹137. Selling Price: ₹199 (3.21x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77).",
+    "pricing": {
+      "mrp": 369,
+      "discount_pct": 46
+    }
   },
   {
     "id": 10225976410422,
     "variant_id": 52252204695862,
     "sku": "0053_effete_assorted_chocolates_as96",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 389,
     "handle": "assorted-chocolate-box-for-corporate-gifts",
     "title": "Assorted Chocolate Box – Premium Crunchy Nut Delight Gift",
     "zenlora_title": "Zenlora™ Assorted Chocolate Box – Premium Crunchy Nut Delight",
@@ -68465,14 +68877,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Assorted+Chocolate+Box"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹81 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹156. Selling Price: ₹219 (2.7x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹81 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹156. Selling Price: ₹219 (2.7x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78).",
+    "pricing": {
+      "mrp": 389,
+      "discount_pct": 44
+    }
   },
   {
     "id": 10821782896950,
     "variant_id": 54455241081142,
     "sku": "whl239_73373_red_shubh_labh_swastik_lakshmi_footprints_set",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 480,
     "handle": "decorative-shubh-labh-swastik-lakshmi-footprints-set-for-pooja-room-home-decor",
     "title": "Auspicious Shubh Labh Swastik Lakshmi Footprint Decor Set",
     "zenlora_title": "Zenlora™ Auspicious Shubh Labh Swastik Lakshmi Footprint Decor Set",
@@ -69124,14 +69540,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Auspicious+Shubh+Labh+Swastik+Lakshmi"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹45 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹120. Selling Price: ₹189 (4.2x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹45 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹120. Selling Price: ₹189 (4.2x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 480,
+      "discount_pct": 61
+    }
   },
   {
     "id": 10852035592502,
     "variant_id": 54579566838070,
     "sku": "18744_baby_first_block_set_16pc",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 390,
     "handle": "baby-shape-sorter-toy-with-geometric-stacking-blocks-16-pc",
     "title": "Baby Shape Sorter Toy with Geometric Stacking Blocks (16 Pc)",
     "zenlora_title": "Zenlora™ Baby Shape Sorter Toy With Geometric Stacking Blocks",
@@ -69774,14 +70194,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Baby+Shape+Sorter+Toy+with"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹269 (2.09x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹269 (2.09x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 390,
+      "discount_pct": 31
+    }
   },
   {
     "id": 10199430201654,
     "variant_id": 51899364999478,
     "sku": "19275_shreeji_bal_gopal_jhula_1pc",
     "barcode": null,
-    "compare_at_price": 329.0,
+    "compare_at_price": 389,
     "handle": "shreeji-bal-gopal-jhula-1-pc",
     "title": "Bal Gopal Jhula – Silver-Coated Decorative Swing for Krishna Idol",
     "zenlora_title": "Zenlora™ Bal Gopal Jhula – Silver-Coated Decorative Swing For",
@@ -70437,14 +70861,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Bal+Gopal+Jhula"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹161 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹236. Selling Price: ₹299 (1.86x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹161 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹236. Selling Price: ₹299 (1.86x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78).",
+    "pricing": {
+      "mrp": 389,
+      "discount_pct": 23
+    }
   },
   {
     "id": 9873241407798,
     "variant_id": 51101096902966,
     "sku": "13806_mix_flav_incense_sticks_100gm",
     "barcode": null,
-    "compare_at_price": 80.0,
+    "compare_at_price": 480,
     "handle": "bela-ke-phool-incense-sticks-premium-agarbatti",
     "title": "Bela Ke Phool Incense Sticks – Premium Agarbatti with Stand | DeoDap",
     "zenlora_title": "Zenlora™ Bela Ke Phool Incense Sticks – Premium Agarbatti",
@@ -71096,14 +71524,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Bela+Ke+Phool+Incense+Sticks"
     },
     "suggested_price": 179,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹38 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹113. Selling Price: ₹179 (4.71x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹38 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹113. Selling Price: ₹179 (4.71x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81).",
+    "pricing": {
+      "mrp": 480,
+      "discount_pct": 63
+    }
   },
   {
     "id": 15397801197878,
     "variant_id": 67595894161718,
     "sku": "whl239_73380_big_round_rangoli_stencil_board",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 380,
     "handle": "big-round-rangoli-stencil-board-for-home-entrance-diwali-and-festival-decor",
     "title": "Big Round Rangoli Stencil Board for Home Entrance, Diwali and Festival Decor",
     "zenlora_title": "Zenlora™ Big Round Rangoli Stencil Board For Home Entrance,",
@@ -71742,14 +72174,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Big+Round+Rangoli+Stencil+Board"
     },
     "suggested_price": 249,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹97 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹172. Selling Price: ₹249 (2.57x supplier cost) -> Net Profit: ₹77/order (Pure Margin after Ship: ₹92)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹97 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹172. Selling Price: ₹249 (2.57x supplier cost) -> Net Profit: ₹77/order (Pure Margin after Ship: ₹92).",
+    "pricing": {
+      "mrp": 380,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10870852976950,
     "variant_id": 54647054729526,
     "sku": "whl344_41210_box_p_blue_pearls_100gm",
     "barcode": null,
-    "compare_at_price": 120.0,
+    "compare_at_price": 399,
     "handle": "blue-pearl-premium-agarbatti-for-cool-fresh-aroma-and-daily-prayer-100gm",
     "title": "Blue Pearl Premium Agarbatti for Cool Fresh Aroma and Daily Prayer (100Gm)",
     "zenlora_title": "Zenlora™ Blue Pearl Premium Agarbatti For Cool Fresh Aroma",
@@ -72400,14 +72836,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Blue+Pearl+Premium+Agarbatti+for"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹209 (3.22x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹209 (3.22x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 399,
+      "discount_pct": 48
+    }
   },
   {
     "id": 10225989746998,
     "variant_id": 52252290548022,
     "sku": "0049_effete_blueberry_choco_ba96",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 375,
     "handle": "blue-berry-choco-almond-chocolate-96-gm-share",
     "title": "Blueberry Almond Chocolate – Crunchy & Smooth Delight",
     "zenlora_title": "Zenlora™ Blueberry Almond Chocolate – Crunchy & Smooth Delight",
@@ -73062,14 +73502,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Blueberry+Almond+Chocolate"
     },
     "suggested_price": 249,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹113 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹188. Selling Price: ₹249 (2.2x supplier cost) -> Net Profit: ₹61/order (Pure Margin after Ship: ₹76)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹113 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹188. Selling Price: ₹249 (2.2x supplier cost) -> Net Profit: ₹61/order (Pure Margin after Ship: ₹76).",
+    "pricing": {
+      "mrp": 375,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10303110218038,
     "variant_id": 52742587384118,
     "sku": "0042_effete_butterscotch_bs96",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 415,
     "handle": "choco-nuts-butterscotch-chocolate",
     "title": "Butterscotch Chocolate Nuts – Crunchy Premium Festive Treat",
     "zenlora_title": "Zenlora™ Butterscotch Chocolate Nuts – Crunchy Premium Festive Treat",
@@ -73721,14 +74165,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Butterscotch+Chocolate+Nuts"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹82 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹157. Selling Price: ₹219 (2.67x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹82 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹157. Selling Price: ₹219 (2.67x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77).",
+    "pricing": {
+      "mrp": 415,
+      "discount_pct": 47
+    }
   },
   {
     "id": 10280376041782,
     "variant_id": 52403139313974,
     "sku": "19452_cartoon_stationery_14pc",
     "barcode": null,
-    "compare_at_price": 469.0,
+    "compare_at_price": 579,
     "handle": "cartoon-stationery-gift-set-for-kids-14-pc",
     "title": "Cartoon Stationery Set for Kids – Complete 14-Piece School Supplies",
     "zenlora_title": "Zenlora™ Cartoon Stationery Set For Kids – Complete 14-Piece",
@@ -74379,14 +74827,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Cartoon+Stationery+Set+for+Kids"
     },
     "suggested_price": 429,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹234 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹309. Selling Price: ₹429 (1.83x supplier cost) -> Net Profit: ₹120/order (Pure Margin after Ship: ₹135)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹234 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹309. Selling Price: ₹429 (1.83x supplier cost) -> Net Profit: ₹120/order (Pure Margin after Ship: ₹135).",
+    "pricing": {
+      "mrp": 579,
+      "discount_pct": 26
+    }
   },
   {
     "id": 10869597667638,
     "variant_id": 54642288099638,
     "sku": "whl344_41221_jar_dhoop_chandan_100gm",
     "barcode": null,
-    "compare_at_price": 85.0,
+    "compare_at_price": 365,
     "handle": "chandan-dhoop-sticks-for-puja-meditation-aromatherapy-and-home-fragrance-100gm",
     "title": "Chandan Dhoop Sticks for Puja, Meditation, Aromatherapy and Home Fragrance (100Gm)",
     "zenlora_title": "Zenlora™ Chandan Dhoop Sticks For Puja, Meditation, Aromatherapy And",
@@ -75041,14 +75493,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Chandan+Dhoop+Sticks+for+Puja%2C"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹209 (3.22x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹209 (3.22x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 365,
+      "discount_pct": 43
+    }
   },
   {
     "id": 15396274667830,
     "variant_id": 67593077195062,
     "sku": "24865_chandan_dhoop_stick_jar_100g",
     "barcode": null,
-    "compare_at_price": 85.0,
+    "compare_at_price": 389,
     "handle": "chandan-dhoop-sticks-jar-for-daily-puja-prayer-and-home-fragrance-use-100-gm",
     "title": "Chandan Dhoop Sticks Jar for Daily Puja Prayer and Home Fragrance Use (100 Gm)",
     "zenlora_title": "Zenlora™ Chandan Dhoop Sticks Jar For Daily Puja Prayer",
@@ -75704,14 +76160,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Chandan+Dhoop+Sticks+Jar+for"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹209 (3.22x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹65 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹140. Selling Price: ₹209 (3.22x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 389,
+      "discount_pct": 46
+    }
   },
   {
     "id": 10869597634870,
     "variant_id": 54642288230710,
     "sku": "whl344_41206_box_h_chandan_100gm",
     "barcode": null,
-    "compare_at_price": 75.0,
+    "compare_at_price": 449,
     "handle": "chandan-herbal-incense-sticks-with-soothing-sandal-aroma-for-puja-and-peace-100gm",
     "title": "Chandan Herbal Incense Sticks with Soothing Sandal Aroma for Puja and Peace (100Gm)",
     "zenlora_title": "Zenlora™ Chandan Herbal Incense Sticks With Soothing Sandal Aroma",
@@ -76363,14 +76823,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Chandan+Herbal+Incense+Sticks+with"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹49 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹124. Selling Price: ₹189 (3.86x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹49 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹124. Selling Price: ₹189 (3.86x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 449,
+      "discount_pct": 58
+    }
   },
   {
     "id": 10748834414902,
     "variant_id": 54134270755126,
     "sku": "whl190_64551_chesse_makhana_75gm",
     "barcode": null,
-    "compare_at_price": 249.0,
+    "compare_at_price": 405,
     "handle": "oracle-cheese-makhana-roasted-crunchy-cheesy-flavoured-healthy-fox-nuts-snack-75g",
     "title": "Cheese Makhana Premium Roasted Crunchy Fox Nuts with Rich Cheesy Flavour Snack (75g)",
     "zenlora_title": "Zenlora™ Cheese Makhana Premium Roasted Crunchy Fox Nuts With",
@@ -77009,14 +77473,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Cheese+Makhana+Premium+Roasted+Crunchy"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹155 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹230. Selling Price: ₹299 (1.93x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹155 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹230. Selling Price: ₹299 (1.93x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 405,
+      "discount_pct": 26
+    }
   },
   {
     "id": 10748834119990,
     "variant_id": 54134269837622,
     "sku": "whl190_64539_chesse_tomato_soya_mini_120gm",
     "barcode": null,
-    "compare_at_price": 120.0,
+    "compare_at_price": 449,
     "handle": "oracle-soya-mini-cheese-tomato-crunchy-tangy-high-protein-soya-sticks-snack-120g",
     "title": "Cheese Tomato Soya Mini Premium High Protein Roasted Crunchy Tasty Soya Bites (120g)",
     "zenlora_title": "Zenlora™ Cheese Tomato Soya Mini Premium High Protein Roasted",
@@ -77668,14 +78136,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Cheese+Tomato+Soya+Mini+Premium"
     },
     "suggested_price": 229,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹85 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹160. Selling Price: ₹229 (2.69x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹85 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹160. Selling Price: ₹229 (2.69x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 449,
+      "discount_pct": 49
+    }
   },
   {
     "id": 10225977065782,
     "variant_id": 52252206399798,
     "sku": "0051_effete_premiume_chocolate_cm96",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 375,
     "handle": "effete-choco-magic-assorted-chocolates",
     "title": "Choco Magic Assorted Chocolate Balls – Crispy Nutty Delight",
     "zenlora_title": "Zenlora™ Choco Magic Assorted Chocolate Balls – Crispy Nutty",
@@ -78312,14 +78784,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Choco+Magic+Assorted+Chocolate+Balls"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹72 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹147. Selling Price: ₹209 (2.9x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹72 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹147. Selling Price: ₹209 (2.9x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77).",
+    "pricing": {
+      "mrp": 375,
+      "discount_pct": 44
+    }
   },
   {
     "id": 10225969987894,
     "variant_id": 52252172321078,
     "sku": "0048_effete_chocoma_cm32",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 395,
     "handle": "choco-magic-gift-on-rakshabandhan",
     "title": "Choco Magic Filled Chocolate – Crunchy Nutty Delight",
     "zenlora_title": "Zenlora™ Choco Magic Filled Chocolate – Crunchy Nutty Delight",
@@ -78971,14 +79447,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Choco+Magic+Filled+Chocolate"
     },
     "suggested_price": 169,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹25 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹100. Selling Price: ₹169 (6.76x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹25 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹100. Selling Price: ₹169 (6.76x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 395,
+      "discount_pct": 57
+    }
   },
   {
     "id": 10622263853366,
     "variant_id": 53769256173878,
     "sku": "21110_11in1_manicure_n_pedicure_grooming_kit",
     "barcode": null,
-    "compare_at_price": 249.0,
+    "compare_at_price": 450,
     "handle": "11-in-1-manicure-pedicure-nail-care-kit-set",
     "title": "11 in 1 Manicure Pedicure Nail Care Kit – Professional Grooming Set | DeoDap",
     "zenlora_title": "Zenlora™ 11 In 1 Manicure Pedicure Nail Care Kit",
@@ -79617,14 +80097,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+Pedicure+Nail+Care"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹118 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹193. Selling Price: ₹299 (2.53x supplier cost) -> Net Profit: ₹106/order (Pure Margin after Ship: ₹121)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹118 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹193. Selling Price: ₹299 (2.53x supplier cost) -> Net Profit: ₹106/order (Pure Margin after Ship: ₹121).",
+    "pricing": {
+      "mrp": 450,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10529157939510,
     "variant_id": 53495874421046,
     "sku": "whl175_67690_mn_033_go",
     "barcode": null,
-    "compare_at_price": 108.0,
+    "compare_at_price": 449,
     "handle": "24k-gold-foil-rose-with-luxury-gift-box-artificial-golden-rose-for-love-anniversary-birthday-valentine-s-day-special-occasions-long-lasting-romantic-gift-for-girlfriend-wife-women-decoration",
     "title": "24K Gold Foil Rose – Luxurious Eternal Romantic Gift",
     "zenlora_title": "Zenlora™ 24K Gold Foil Rose – Luxurious Eternal Romantic",
@@ -80266,14 +80750,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=24K+Gold+Foil+Rose"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹54 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹129. Selling Price: ₹189 (3.5x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹54 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹129. Selling Price: ₹189 (3.5x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75).",
+    "pricing": {
+      "mrp": 449,
+      "discount_pct": 58
+    }
   },
   {
     "id": 9992782709046,
     "variant_id": 51305140224310,
     "sku": "13574_3_sided_soft_toothbrush_2pc",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 530,
     "handle": "3-sided-toothbrush-soft-bristle-set-complete",
     "title": "3-Sided Toothbrush – Soft Bristle Set for Complete Oral Care | BrushedUp",
     "zenlora_title": "Zenlora™ 3-Sided Toothbrush – Soft Bristle Set For Complete",
@@ -80912,14 +81400,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹46 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹121. Selling Price: ₹239 (5.2x supplier cost) -> Net Profit: ₹118/order (Pure Margin after Ship: ₹133)."
+    "strategy_insight": "[Tier 2: Problem-Solver Utility] Landed Cost = Supplier ₹46 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹121. Selling Price: ₹239 (5.2x supplier cost) -> Net Profit: ₹118/order (Pure Margin after Ship: ₹133).",
+    "pricing": {
+      "mrp": 530,
+      "discount_pct": 55
+    }
   },
   {
     "id": 9461045297462,
     "variant_id": 49135536210230,
     "sku": "18029_mix_design_eraser_1set_no6",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 445,
     "handle": "3d-erasers-kids-fun-colorful-novelty-set",
     "title": "3D Erasers for Kids – Fun & Colorful Novelty Set | Colorful Creations",
     "zenlora_title": "Zenlora™ 3D Erasers For Kids – Fun & Ful",
@@ -81575,14 +82067,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+Erasers+for+Kids"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹189 (5.56x supplier cost) -> Net Profit: ₹80/order (Pure Margin after Ship: ₹95)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹189 (5.56x supplier cost) -> Net Profit: ₹80/order (Pure Margin after Ship: ₹95).",
+    "pricing": {
+      "mrp": 445,
+      "discount_pct": 58
+    }
   },
   {
     "id": 10852616044854,
     "variant_id": 54581482029366,
     "sku": "22440_3d_eva_unicorn_assembly_craft_puzzle_kt123",
     "barcode": null,
-    "compare_at_price": 225.0,
+    "compare_at_price": 515,
     "handle": "3d-eva-unicorn-assembly-craft-puzzle-kit-with-stickers-for-creative-kids-crafts",
     "title": "3D EVA Unicorn Assembly Craft Puzzle Kit with Stickers for Creative Kids Crafts",
     "zenlora_title": "Zenlora™ 3D Eva Unicorn Assembly Craft Puzzle Kit With",
@@ -82221,14 +82717,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=3D+EVA+Unicorn+Assembly+Craft"
     },
     "suggested_price": 319,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹149 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹224. Selling Price: ₹319 (2.14x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹149 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹224. Selling Price: ₹319 (2.14x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110).",
+    "pricing": {
+      "mrp": 515,
+      "discount_pct": 38
+    }
   },
   {
     "id": 10758674121014,
     "variant_id": 54160653910326,
     "sku": "15926_4_digit_combination_padlock",
     "barcode": null,
-    "compare_at_price": 399.0,
+    "compare_at_price": 439,
     "handle": "4-digit-combination-padlock-resettable-number-lock-for-luggage-and-locker-1-pc",
     "title": "4 Digit Combination Padlock Resettable Number Lock for Luggage and...",
     "zenlora_title": "Zenlora™ 4 Digit Combination Padlock Resettable Number Lock For",
@@ -82884,14 +83384,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Digit+Combination+Padlock+Resettable+Number"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹127 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹202. Selling Price: ₹269 (2.12x supplier cost) -> Net Profit: ₹67/order (Pure Margin after Ship: ₹82)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹127 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹202. Selling Price: ₹269 (2.12x supplier cost) -> Net Profit: ₹67/order (Pure Margin after Ship: ₹82).",
+    "pricing": {
+      "mrp": 439,
+      "discount_pct": 39
+    }
   },
   {
     "id": 10405964022070,
     "variant_id": 53247313281334,
     "sku": "15628_5in1_gardening_hand_tool_set",
     "barcode": null,
-    "compare_at_price": 339.0,
+    "compare_at_price": 465,
     "handle": "5-in-1-multipurpose-gardening-hand-tool-set",
     "title": "5 in 1 Gardening Hand Tool Set – Durable Wooden Handles",
     "zenlora_title": "Zenlora™ 5 In 1 Gardening Hand Tool Set –",
@@ -83547,14 +84051,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Gardening+Hand+Tool+Set"
     },
     "suggested_price": 329,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹165 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹240. Selling Price: ₹329 (1.99x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹165 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹240. Selling Price: ₹329 (1.99x supplier cost) -> Net Profit: ₹89/order (Pure Margin after Ship: ₹104).",
+    "pricing": {
+      "mrp": 465,
+      "discount_pct": 29
+    }
   },
   {
     "id": 10523236565302,
     "variant_id": 53476539892022,
     "sku": "20035_student_stationery_combo_set",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 615,
     "handle": "6-in-1-stationery-set-1-set-for-school-office",
     "title": "6-in-1 Stationery Set – Compact All-in-One School & Office Kit",
     "zenlora_title": "Zenlora™ 6-In-1 Stationery Set – Compact All-In-One School &",
@@ -84210,14 +84718,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=6"
     },
     "suggested_price": 249,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹55 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹130. Selling Price: ₹249 (4.53x supplier cost) -> Net Profit: ₹119/order (Pure Margin after Ship: ₹134)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹55 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹130. Selling Price: ₹249 (4.53x supplier cost) -> Net Profit: ₹119/order (Pure Margin after Ship: ₹134).",
+    "pricing": {
+      "mrp": 615,
+      "discount_pct": 60
+    }
   },
   {
     "id": 10104370233654,
     "variant_id": 51614843371830,
     "sku": "14446_7in1_manicure_tool_set",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 479,
     "handle": "7-in-1-manicure-set-tool-kit-by-deodap",
     "title": "7 in 1 Manicure Tool Kit – Professional Nail & Foot Care Set",
     "zenlora_title": "Zenlora™ 7 In 1 Manicure Tool Kit – Professional",
@@ -84873,14 +85385,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=in+Manicure+Tool+Kit"
     },
     "suggested_price": 279,
-    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹69 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹144. Selling Price: ₹279 (4.04x supplier cost) -> Net Profit: ₹135/order (Pure Margin after Ship: ₹150)."
+    "strategy_insight": "[Tier 3: High-Wow & Hard-to-Find Locally] Landed Cost = Supplier ₹69 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹144. Selling Price: ₹279 (4.04x supplier cost) -> Net Profit: ₹135/order (Pure Margin after Ship: ₹150).",
+    "pricing": {
+      "mrp": 479,
+      "discount_pct": 42
+    }
   },
   {
     "id": 9499278868790,
     "variant_id": 49324999901494,
     "sku": "9542_wagtail_8in1_screwdrivers_set",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 380,
     "handle": "8-in-1-screwdrivers-set-for-household-tasks",
     "title": "8-in-1 Screwdriver Set – Precision Mobile Repair Tool | Wagtail",
     "zenlora_title": "Zenlora™ 8-In-1 Screwdriver Set – Precision Mobile Repair Tool",
@@ -85532,14 +86048,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=8"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹154 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹229. Selling Price: ₹289 (1.88x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹154 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹229. Selling Price: ₹289 (1.88x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75).",
+    "pricing": {
+      "mrp": 380,
+      "discount_pct": 24
+    }
   },
   {
     "id": 10721910325558,
     "variant_id": 54051158556982,
     "sku": "23852_kids_tumbler_with_lid_n_straw_900ml",
     "barcode": null,
-    "compare_at_price": 259.0,
+    "compare_at_price": 525,
     "handle": "glass-tumbler-with-handle-and-straw",
     "title": "900 ML Glass Tumbler with Handle – Stylish & Durable Drinkware for Everyday Use",
     "zenlora_title": "Zenlora™ 900 Ml Glass Tumbler With Handle – Stylish",
@@ -86191,14 +86711,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=ML+Glass+Tumbler+with+Handle"
     },
     "suggested_price": 319,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹125 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹200. Selling Price: ₹319 (2.55x supplier cost) -> Net Profit: ₹119/order (Pure Margin after Ship: ₹134)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹125 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹200. Selling Price: ₹319 (2.55x supplier cost) -> Net Profit: ₹119/order (Pure Margin after Ship: ₹134).",
+    "pricing": {
+      "mrp": 525,
+      "discount_pct": 39
+    }
   },
   {
     "id": 9529317949750,
     "variant_id": 49409187316022,
     "sku": "8644_wagtail_brown_abrasive_wheel_3pc_no39",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 589,
     "handle": "abrasive-buffing-polishing-wheel-3pcs",
     "title": "Abrasive Buffing Wheel Set – 3mm Shank for Rotary Tools | Wagtail",
     "zenlora_title": "Zenlora™ Abrasive Buffing Wheel Set – 3Mm Shank For",
@@ -86850,14 +87374,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Abrasive+Buffing+Wheel+Set"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹219 (6.44x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹34 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹109. Selling Price: ₹219 (6.44x supplier cost) -> Net Profit: ₹110/order (Pure Margin after Ship: ₹125).",
+    "pricing": {
+      "mrp": 589,
+      "discount_pct": 63
+    }
   },
   {
     "id": 10791947370806,
     "variant_id": 54337559560502,
     "sku": "22312_buckleless_belt_2pc",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 479,
     "handle": "adjustable-buckleless-elastic-waist-belt-hooks-for-jeans-and-trousers-2-pc-set",
     "title": "Adjustable Buckleless Elastic Waist Belt Hooks for Jeans and Trousers (2 Pc Set)",
     "zenlora_title": "Zenlora™ Adjustable Buckleless Elastic Waist Belt Hooks For Jeans",
@@ -87509,14 +88037,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Buckleless+Elastic+Waist+Belt"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹299 (2.32x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹129 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹204. Selling Price: ₹299 (2.32x supplier cost) -> Net Profit: ₹95/order (Pure Margin after Ship: ₹110).",
+    "pricing": {
+      "mrp": 479,
+      "discount_pct": 38
+    }
   },
   {
     "id": 10852893131062,
     "variant_id": 54582245228854,
     "sku": "22455_adjustable_kids_elbow_protection_pads_1pair",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 395,
     "handle": "adjustable-kids-elbow-protection-pads-for-cycling-skating-and-scooter-play-pair",
     "title": "Adjustable Kids Elbow Protection Pads for Cycling Skating and Scooter Play (1 Pair)",
     "zenlora_title": "Zenlora™ Adjustable Kids Elbow Protection Pads For Cycling Skating",
@@ -88168,14 +88700,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Kids+Elbow+Protection+Pads"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹239 (2.41x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹239 (2.41x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 395,
+      "discount_pct": 39
+    }
   },
   {
     "id": 10852862361910,
     "variant_id": 54582163112246,
     "sku": "22330_adjustable_kids_knee_protection_pads_1pair",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 379,
     "handle": "adjustable-kids-knee-protection-pads-for-cycling-skating-and-scooter-play-pair",
     "title": "Adjustable Kids Knee Protection Pads for Cycling Skating and Scooter Play (1 Pair)",
     "zenlora_title": "Zenlora™ Adjustable Kids Knee Protection Pads For Cycling Skating",
@@ -88826,14 +89362,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Kids+Knee+Protection+Pads"
     },
     "suggested_price": 239,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹239 (2.41x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹99 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹174. Selling Price: ₹239 (2.41x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 379,
+      "discount_pct": 37
+    }
   },
   {
     "id": 10705844568374,
     "variant_id": 54007673192758,
     "sku": "17853_safety_goggles_1pc",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 399,
     "handle": "safety-goggles-with-adjustable-temple-length-for-eye-protection-lab-industrial-construction-and-outdoor-use-1-pc",
     "title": "Adjustable Safety Goggles – Impact-Resistant Polycarbonate Lens for Workplace & Outdoor",
     "zenlora_title": "Zenlora™ Adjustable Safety Goggles – Impact-Resistant Polycarbonate Lens For",
@@ -89474,14 +90014,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Safety+Goggles"
     },
     "suggested_price": 229,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹94 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹169. Selling Price: ₹229 (2.44x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹94 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹169. Selling Price: ₹229 (2.44x supplier cost) -> Net Profit: ₹60/order (Pure Margin after Ship: ₹75).",
+    "pricing": {
+      "mrp": 399,
+      "discount_pct": 43
+    }
   },
   {
     "id": 10645827027254,
     "variant_id": 53810570690870,
     "sku": "23051_adjustable_waist_bag_1pc",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 399,
     "handle": "adjustable-waist-bag-1-pc-lightweight-travel-fanny-pack-with-zipper",
     "title": "Adjustable Travel Waist Bag – Secure Zipper & Lightweight Design",
     "zenlora_title": "Zenlora™ Adjustable Travel Waist Bag – Secure Zipper &",
@@ -90119,14 +90663,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Adjustable+Travel+Waist+Bag"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹72 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹147. Selling Price: ₹209 (2.9x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹72 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹147. Selling Price: ₹209 (2.9x supplier cost) -> Net Profit: ₹62/order (Pure Margin after Ship: ₹77).",
+    "pricing": {
+      "mrp": 399,
+      "discount_pct": 48
+    }
   },
   {
     "id": 10856445149494,
     "variant_id": 54595065217334,
     "sku": "22409_alphabet_word_puzzle_cards",
     "barcode": null,
-    "compare_at_price": 499.0,
+    "compare_at_price": 429,
     "handle": "alphabet-word-puzzle-cards-learning-toy-for-spelling-practice-1-set",
     "title": "Alphabet Word Puzzle Cards Learning Toy for Spelling Practice (1 Set)",
     "zenlora_title": "Zenlora™ Alphabet Word Puzzle Cards Learning Toy For Spelling",
@@ -90782,14 +91330,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Alphabet+Word+Puzzle+Cards+Learning"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹159 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹234. Selling Price: ₹299 (1.88x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹159 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹234. Selling Price: ₹299 (1.88x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 429,
+      "discount_pct": 30
+    }
   },
   {
     "id": 10723370959158,
     "variant_id": 54054702940470,
     "sku": "whl200_72120_silver_round_silicon_belt_watch",
     "barcode": null,
-    "compare_at_price": 398.0,
+    "compare_at_price": 609,
     "handle": "premium-analog-wrist-watch-with-elegant-round-dial-soft-strap-for-daily-wear",
     "title": "Analog Wrist Watch – Classic Style with Comfortable Strap for Daily Wear",
     "zenlora_title": "Zenlora™ Analog Wrist Watch – Classic Style With Comfortable",
@@ -91426,14 +91978,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Analog+Wrist+Watch"
     },
     "suggested_price": 429,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹223 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹298. Selling Price: ₹429 (1.92x supplier cost) -> Net Profit: ₹131/order (Pure Margin after Ship: ₹146)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹223 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹298. Selling Price: ₹429 (1.92x supplier cost) -> Net Profit: ₹131/order (Pure Margin after Ship: ₹146).",
+    "pricing": {
+      "mrp": 609,
+      "discount_pct": 30
+    }
   },
   {
     "id": 8431614361910,
     "variant_id": 45528584651062,
     "sku": "7302_ladies_l_print_socks",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 485,
     "handle": "ankle-length-socks-soft-cotton-breathable-combo",
     "title": "Ankle Length Socks – Soft Cotton Breathable Combo | FitFuzion",
     "zenlora_title": "Zenlora™ Ankle Length Socks – Soft Cotton Breathable |",
@@ -92089,14 +92645,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Ankle+Length+Socks"
     },
     "suggested_price": 209,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹26 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹101. Selling Price: ₹209 (8.04x supplier cost) -> Net Profit: ₹108/order (Pure Margin after Ship: ₹123)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹26 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹101. Selling Price: ₹209 (8.04x supplier cost) -> Net Profit: ₹108/order (Pure Margin after Ship: ₹123).",
+    "pricing": {
+      "mrp": 485,
+      "discount_pct": 57
+    }
   },
   {
     "id": 10226008883510,
     "variant_id": 52252361228598,
     "sku": "whl146_11521_apex_ss_cat_mug_250ml_cm_cpr",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 430,
     "handle": "whl146_11521_apex_ss_cat_mug_250ml_cm_cpr",
     "title": "Apex Cat Mug – 250 ml Stainless Steel Insulated Kids' Mug",
     "zenlora_title": "Zenlora™ Apex Cat Mug – 250 Ml Stainless Steel",
@@ -92747,14 +93307,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Apex+Cat+Mug"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹125 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹200. Selling Price: ₹269 (2.15x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹125 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹200. Selling Price: ₹269 (2.15x supplier cost) -> Net Profit: ₹69/order (Pure Margin after Ship: ₹84).",
+    "pricing": {
+      "mrp": 430,
+      "discount_pct": 37
+    }
   },
   {
     "id": 10813251944758,
     "variant_id": 54407660667190,
     "sku": "24582_apex_liner_mug_300ml",
     "barcode": null,
-    "compare_at_price": 325.0,
+    "compare_at_price": 409,
     "handle": "compact-coffee-mug-300-ml-with-handle-and-lid-matte-black-1-pc",
     "title": "Apex Compact Coffee Mug 300 ML with Handle and Lid Matte Black",
     "zenlora_title": "Zenlora™ Apex Compact Coffee Mug 300 Ml With Handle",
@@ -93406,14 +93970,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Apex+Compact+Coffee+Mug+ML"
     },
     "suggested_price": 269,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹126 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹201. Selling Price: ₹269 (2.13x supplier cost) -> Net Profit: ₹68/order (Pure Margin after Ship: ₹83)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹126 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹201. Selling Price: ₹269 (2.13x supplier cost) -> Net Profit: ₹68/order (Pure Margin after Ship: ₹83).",
+    "pricing": {
+      "mrp": 409,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10812950741302,
     "variant_id": 54406406209846,
     "sku": "24583_apex_cozy_mug_450ml",
     "barcode": null,
-    "compare_at_price": 499.0,
+    "compare_at_price": 385,
     "handle": "cozy-coffee-mug-450-ml-with-lid-and-steel-rim-for-desk-use-1-pc",
     "title": "Apex Cozy Coffee Mug 450 ML with Lid and Steel Rim for Desk Use",
     "zenlora_title": "Zenlora™ Apex Cozy Coffee Mug 450 Ml With Lid",
@@ -94065,14 +94633,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Apex+Cozy+Coffee+Mug+ML"
     },
     "suggested_price": 299,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹161 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹236. Selling Price: ₹299 (1.86x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹161 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹236. Selling Price: ₹299 (1.86x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78).",
+    "pricing": {
+      "mrp": 385,
+      "discount_pct": 22
+    }
   },
   {
     "id": 10813251682614,
     "variant_id": 54407660142902,
     "sku": "24581_apex_lyra_mug_400ml",
     "barcode": null,
-    "compare_at_price": 499.0,
+    "compare_at_price": 475,
     "handle": "office-mug-400-ml-with-handle-and-lid-steel-rim-coffee-mug-1-pc",
     "title": "Apex Office Mug 400 ML with Handle and Lid Steel Rim Coffee Mug",
     "zenlora_title": "Zenlora™ Apex Office Mug 400 Ml With Handle And",
@@ -94724,14 +95296,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Apex+Office+Mug+ML+with"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹150 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹225. Selling Price: ₹289 (1.93x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹150 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹225. Selling Price: ₹289 (1.93x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79).",
+    "pricing": {
+      "mrp": 475,
+      "discount_pct": 39
+    }
   },
   {
     "id": 10869625094454,
     "variant_id": 54642399969590,
     "sku": "1468_apple_shape_paper_soap",
     "barcode": null,
-    "compare_at_price": 99.0,
+    "compare_at_price": 419,
     "handle": "apple-shape-paper-soap-for-travel-portable-hand-wash-soap-sheets-box-1-pc",
     "title": "Apple Shape Paper Soap for Travel, Portable Hand Wash Soap Sheets Box (1 Pc)",
     "zenlora_title": "Zenlora™ Apple Shape Paper Soap For Travel, Portable Hand",
@@ -95374,14 +95950,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Apple+Shape+Paper+Soap+for"
     },
     "suggested_price": 169,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹169 (5.83x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹29 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹104. Selling Price: ₹169 (5.83x supplier cost) -> Net Profit: ₹65/order (Pure Margin after Ship: ₹80).",
+    "pricing": {
+      "mrp": 419,
+      "discount_pct": 60
+    }
   },
   {
     "id": 8432158769462,
     "variant_id": 45529808044342,
     "sku": "0879_golden_rose",
     "barcode": null,
-    "compare_at_price": 400.0,
+    "compare_at_price": 439,
     "handle": "879-24k-artificial-golden-rose-gold-red-rose-with-gift-box-10-inches",
     "title": "Artificial Golden Rose – 24K Plated Everlasting Gift | Styleva",
     "zenlora_title": "Zenlora™ Artificial Golden Rose – 24K Plated Everlasting Gift",
@@ -96020,14 +96600,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Artificial+Golden+Rose"
     },
     "suggested_price": 289,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹148 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹223. Selling Price: ₹289 (1.95x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹148 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹223. Selling Price: ₹289 (1.95x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81).",
+    "pricing": {
+      "mrp": 439,
+      "discount_pct": 34
+    }
   },
   {
     "id": 10748835987766,
     "variant_id": 54134281208118,
     "sku": "whl190_64569_assorted_choco_dates",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 499,
     "handle": "oracle-assorted-choco-dates-smooth-chocolate-coated-premium-nut-filled-dates-200g",
     "title": "Assorted Choco Dates Premium Soft Dates in Dark Milk and White Chocolate Coating",
     "zenlora_title": "Zenlora™ Assorted Choco Dates Premium Soft Dates In Dark",
@@ -96667,14 +97251,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Assorted+Choco+Dates+Premium+Soft"
     },
     "suggested_price": 369,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹195 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹270. Selling Price: ₹369 (1.89x supplier cost) -> Net Profit: ₹99/order (Pure Margin after Ship: ₹114)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹195 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹270. Selling Price: ₹369 (1.89x supplier cost) -> Net Profit: ₹99/order (Pure Margin after Ship: ₹114).",
+    "pricing": {
+      "mrp": 499,
+      "discount_pct": 26
+    }
   },
   {
     "id": 9534950965558,
     "variant_id": 49428849361206,
     "sku": "0031_effete_assorted_chocolate_crm96",
     "barcode": null,
-    "compare_at_price": 299.0,
+    "compare_at_price": 410,
     "handle": "assorted-chocolate-96gm-idael-diwali-corporate-gifts",
     "title": "Assorted Chocolate Box – Crunchy Nuts & Smooth Delight | Effete",
     "zenlora_title": "Zenlora™ Assorted Chocolate Box – Crunchy Nuts & Smooth",
@@ -97328,14 +97916,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Assorted+Chocolate+Box"
     },
     "suggested_price": 259,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹120 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹195. Selling Price: ₹259 (2.16x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹120 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹195. Selling Price: ₹259 (2.16x supplier cost) -> Net Profit: ₹64/order (Pure Margin after Ship: ₹79).",
+    "pricing": {
+      "mrp": 410,
+      "discount_pct": 37
+    }
   },
   {
     "id": 10774477275446,
     "variant_id": 54212908319030,
     "sku": "93731_new_assorted_chocolates_as96",
     "barcode": null,
-    "compare_at_price": 199.0,
+    "compare_at_price": 379,
     "handle": "premium-effete-assorted-chocolaty-dryfruits-chocolate-96-gm",
     "title": "Assorted Chocolaty Dryfruits",
     "zenlora_title": "Zenlora™ Assorted Chocolaty Dryfruits",
@@ -97989,14 +98581,18 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Assorted+Chocolaty+Dryfruits"
     },
     "suggested_price": 219,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹81 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹156. Selling Price: ₹219 (2.7x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹81 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹156. Selling Price: ₹219 (2.7x supplier cost) -> Net Profit: ₹63/order (Pure Margin after Ship: ₹78).",
+    "pricing": {
+      "mrp": 379,
+      "discount_pct": 42
+    }
   },
   {
     "id": 10776590090550,
     "variant_id": 54223616934198,
     "sku": "93759_assorted_chocolate_as60",
     "barcode": null,
-    "compare_at_price": 149.0,
+    "compare_at_price": 439,
     "handle": "premium-effete-assorted-chocolaty-dryfruits-chocolate-60-gm",
     "title": "Assorted Chocolaty Dryfruits – Almond, Choco Magic & Butterscotch 60g",
     "zenlora_title": "Zenlora™ Assorted Chocolaty Dryfruits – Almond, Choco Magic &",
@@ -98650,6 +99246,10 @@
       "google_shopping_url": "https://www.google.com/search?tbm=shop&gl=in&q=Assorted+Chocolaty+Dryfruits"
     },
     "suggested_price": 189,
-    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹48 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹123. Selling Price: ₹189 (3.94x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81)."
+    "strategy_insight": "[Tier 1: Standard Local-Market Utility (Safe Low Margin)] Landed Cost = Supplier ₹48 + Shipping ₹60 + COD Fee ₹0 + Packaging ₹0 + Expected RTO Loss ₹15 = ₹123. Selling Price: ₹189 (3.94x supplier cost) -> Net Profit: ₹66/order (Pure Margin after Ship: ₹81).",
+    "pricing": {
+      "mrp": 439,
+      "discount_pct": 57
+    }
   }
 ]

@@ -174,87 +174,52 @@ def extract_product_images(product: Dict) -> List[str]:
 
 def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
     """
-    Maps a Zenlora product to its official SmartBiz (Business Category, Product Category) pair
-    from `DataSheet`.
-    Strictly enforces `important_instructions` Row 17:
-    "Please remember not to create product categories with the same name in different business categories."
+    Maps a Zenlora product to the exact SmartBiz preset structure from the user's live store:
+    - Column J (Business Category): "GENERAL" (ensuring zero cross-category collision across the store)
+    - Column K (Product Category): Exact storefront collection names ("Home & Kitchen", "Home Improvement",
+      "Health & Beauty Accessories", "mobile accessories", "Garden & Outdoors", "Office Products",
+      "Car & Motorbike", "Toys & Games", "Baby Products", "Personal Care").
     """
     niche = str(product.get("niche") or product.get("primary_category") or "Home Decor").strip()
     title_lower = str(product.get("title") or "").lower()
-    mood_lower = str(product.get("festival_mood") or "").lower()
-    combined = f"{title_lower} {mood_lower}"
+    desc_lower = str(product.get("description") or "").lower()
+    combined = f"{title_lower} {desc_lower}"
 
-    if niche == "Festive":
-        if any(
-            kw in combined
-            for kw in (
-                "brush",
-                "mop",
-                "scrub",
-                "wiper",
-                "microfiber",
-                "cleaner",
-                "cleaning",
-                "duster",
-                "sponge",
-                "lint",
-                "broom",
-            )
-        ):
-            return ("HOME_CARE", "Mops, Brushes & Scrubs")
-        if any(
-            kw in combined
-            for kw in (
-                "pooja",
-                "puja",
-                "diya",
-                "kalash",
-                "thali",
-                "agarbatti",
-                "dhoop",
-                "incense",
-                "camphor",
-                "kapoor",
-                "shankh",
-                "bell",
-                "toran",
-                "rangoli",
-                "shubh",
-                "labh",
-                "swastik",
-                "om ",
-                "jyot",
-                "batti",
-                "kumkum",
-                "haldi",
-                "chandan",
-            )
-        ):
-            return ("HOME_CARE", "Pooja essentials")
-        return ("HOME_AND_KITCHEN", "Lighting")
+    # 1. Car & Motorbike
+    if any(kw in title_lower for kw in ("car ", "bike ", "bicycle", "motorcycle", "tire", "tyre", "dashboard", "air vent", "key finder", "pick up tool")):
+        return ("GENERAL", "Car & Motorbike")
 
-    if niche == "Kitchen":
-        if any(
-            kw in combined
-            for kw in ("rack", "organizer", "storage", "shelf", "holder", "container", "jar", "basket", "hook")
-        ):
-            return ("HOME_AND_KITCHEN", "Home storage and Organization")
-        return ("HOME_AND_KITCHEN", "Kitchen & Dining")
+    # 2. Mobile Accessories
+    if any(kw in title_lower for kw in ("phone", "mobile", "cable", "charger", "type-c", "usb hub", "earbud", "power strip", "cable clip", "wire holder")):
+        return ("GENERAL", "mobile accessories")
 
-    if niche == "Home Decor":
-        if any(kw in combined for kw in ("light", "lamp", "led", "lantern", "neon", "bulb", "string")):
-            return ("HOME_AND_KITCHEN", "Lighting")
-        if any(kw in combined for kw in ("rack", "organizer", "storage", "shelf", "hook", "hanger")):
-            return ("HOME_AND_KITCHEN", "Home storage and Organization")
-        return ("HOME_AND_KITCHEN", "Home Decor")
+    # 3. Health & Beauty Accessories / Personal Care (exclude bathroom organizers like soap stand/holder)
+    if not any(hw in title_lower for hw in ("soap stand", "soap holder", "soap dish", "towel hanger", "organizer", "incense", "agarbatti", "dhoop")):
+        if any(kw in title_lower for kw in ("roller", "massager", "blackhead", "grooming", "manicure", "pedicure", "eyebrow", "shaver", "makeup", "eyeliner", "hair", "comb", "bath brush", "eye mask", "foot", "toothbrush")):
+            return ("GENERAL", "Health & Beauty Accessories")
+    if "sewing" in title_lower:
+        return ("GENERAL", "Personal Care")
 
-    if niche == "Gadgets":
-        return ("ELECTRONICS", "Other Electronics")
+    # 4. Baby Products / Toys & Games (exclude plumbing 'bib cock')
+    if "bib cock" not in title_lower and any(kw in title_lower for kw in ("baby", "toddler", "sippy", "baby bib", "children's")):
+        return ("GENERAL", "Baby Products")
+    if any(kw in title_lower for kw in ("puzzle", "stamp", "toy", "couple keychain", "game")):
+        return ("GENERAL", "Toys & Games")
 
-    if niche == "Gifts":
-        return ("MULTIPURPOSE", "General")
+    # 5. Garden & Outdoors
+    if any(kw in title_lower for kw in ("solar", "camping", "lantern", "flashlight", "torch", "plant", "watering", "flower pot", "planter")):
+        return ("GENERAL", "Garden & Outdoors")
 
-    return ("HOME_AND_KITCHEN", "Home Decor")
+    # 6. Office Products
+    if any(kw in title_lower for kw in ("pen holder", "pen stand", "desk", "stationery", "voltage tester", "ruler", "diary", "notebook")):
+        return ("GENERAL", "Office Products")
+
+    # 7. Kitchen & Home & Kitchen
+    if niche == "Kitchen" or any(kw in title_lower for kw in ("kitchen", "oil", "dispenser", "sprout", "juicer", "chopper", "slicer", "peeler", "strainer", "egg", "cooker", "frother", "bottle", "chopping", "mortar", "pestle", "cookie", "hot mate", "towel", "dish", "bajot")):
+        return ("GENERAL", "Home & Kitchen")
+
+    # 8. Default for Home Decor, Lamps, Hooks, Cleaning, Pooja/Festive & Organizers -> Home Improvement
+    return ("GENERAL", "Home Improvement")
 
 
 def _clean_text(text: str) -> str:
@@ -267,7 +232,7 @@ def _clean_text(text: str) -> str:
 
 def build_smartbiz_custom_sku(product: Dict, index: int) -> str:
     """
-    Uses the real DeoDap SKU (`variants[0].sku`, e.g., `2037_4comp_pla_food_plate`) in Column F (Custom SKU),
+    Uses the real DeoDap SKU (`variants[0].sku`, e.g., `12111_2in1_glass_oil_dispenser_bottle`) in Column F (Custom SKU),
     strictly <= 40 characters. Falls back to deterministic `ZEN-<NICHE>-<INDEX>-<HANDLE>` if SKU is missing.
     """
     raw_sku = str(product.get("sku") or "").strip()
@@ -289,90 +254,98 @@ def build_smartbiz_product_name(product: Dict) -> str:
     """
     raw_title = str(product.get("title") or product.get("zenlora_title") or "Zenlora Utility Product").strip()
     clean_title = _clean_text(raw_title).replace("Zenlora™", "").strip()
-    # Remove any leading numeric model code like "0452 " if present
-    clean_title = re.sub(r"^\d{3,5}\s*[-–:]?\s*", "", clean_title).strip()
+    clean_title = re.sub(r"^\d{3,5}[A-Za-z]?\s*[-–:]?\s*", "", clean_title).strip()
     clean_title = clean_title.rstrip(" &-–|,:/")
     if not clean_title:
-        clean_title = "Zenlora Home & Kitchen Utility Product"
+        clean_title = "Home & Kitchen Utility Product"
     return clean_title[:200].rstrip(" &-–|,:/")
 
 
 def calculate_smartbiz_prices(product: Dict) -> Tuple[int, int]:
     """
-    Returns (mrp, selling_price) as positive integers satisfying SmartBiz validation:
-    AND(I2<=H2, ISNUMBER(I2), I2>=0) and AND(ISNUMBER(H2), H2>0, H2<=999999.99)
-    where H = MRP and I = Selling Price.
+    4-Band Cost-Inverse Variable Discount & MRP Engine:
+    - Never uses a flat 50% off (`MRP = 2 * Selling Price`).
+    - Low DeoDap wholesale cost items (`<= ₹55`) get a higher offer (`53%–63% OFF`) to drive impulse orders.
+    - Mid-cost utility items (`₹56–₹95`) get a balanced offer (`41%–49% OFF`).
+    - Worth-it problem solvers (`₹96–₹150`) get a credible offer (`31%–39% OFF`).
+    - High-worth premium items (`> ₹150`) get a smaller, high-trust offer (`21%–29% OFF`).
+    - Every product gets a deterministic, varied discount % based on its SKU/handle and a realistic box MRP.
     """
-    raw_sp = product.get("selling_price") or 399
+    raw_sp = product.get("selling_price") or product.get("suggested_price") or 249
     try:
         selling_price = int(round(float(raw_sp)))
     except (ValueError, TypeError):
-        selling_price = 399
-
+        selling_price = 249
     if selling_price <= 0:
-        selling_price = 399
+        selling_price = 249
 
-    raw_mrp = product.get("mrp") or product.get("compare_at_price") or 0
+    raw_cost = product.get("wholesale_price") or product.get("wholesale_cost") or 0
     try:
-        mrp = int(round(float(raw_mrp)))
+        cost = float(raw_cost)
     except (ValueError, TypeError):
-        mrp = 0
+        cost = 0.0
+    if cost <= 0:
+        cost = max(35.0, (selling_price - 125.0) * 0.7)
 
-    if mrp <= selling_price:
-        computed = max(selling_price + 200, int(round(selling_price * 1.75)))
-        mrp = (computed // 100) * 100 + 99
-        if mrp <= selling_price:
-            mrp = selling_price + 200
+    # Deterministic per-product seed so each SKU gets a distinct discount % inside its band
+    sku_key = str(product.get("sku") or product.get("handle") or product.get("title") or "zenlora")
+    seed = sum((idx + 1) * ord(ch) for idx, ch in enumerate(sku_key))
 
-    return (mrp, selling_price)
+    if cost <= 55.0:
+        # Band A: Low DeoDap Cost -> High Offer Appeal (53% to 63% OFF)
+        target_disc_pct = 53 + (seed % 11)
+    elif cost <= 95.0:
+        # Band B: Budget Daily Utility -> Balanced Offer (41% to 49% OFF, never 50%)
+        target_disc_pct = 41 + (seed % 9)
+    elif cost <= 150.0:
+        # Band C: Worth-It Problem Solvers & Decor -> Credible Offer (31% to 39% OFF)
+        target_disc_pct = 31 + (seed % 9)
+    else:
+        # Band D: High-Worth Premium Items -> High-Trust Subtle Offer (21% to 29% OFF)
+        target_disc_pct = 21 + (seed % 9)
+
+    raw_mrp = selling_price / (1.0 - (target_disc_pct / 100.0))
+
+    # Snap to natural Indian retail box MRP endings (...9, ...5, or ...0) without collapsing all items to the same number
+    endings = (9, 5, 9, 0, 9, 5)
+    chosen_ending = endings[seed % len(endings)]
+    decade = int(round(raw_mrp / 10.0)) * 10
+    mrp = decade + chosen_ending if chosen_ending > 0 else decade
+
+    # Strict guard against flat 50% OFF (`mrp == selling_price * 2` or `round((mrp - sp)/mrp * 100) == 50`)
+    if mrp <= selling_price + 35:
+        mrp = selling_price + 60 + chosen_ending
+
+    actual_disc = round(((mrp - selling_price) / float(mrp)) * 100)
+    if actual_disc == 50 or mrp == selling_price * 2:
+        mrp += 20 if (seed % 2 == 0) else -15
+        if mrp <= selling_price + 30:
+            mrp = selling_price + 75
+
+    return (int(mrp), int(selling_price))
 
 
 def build_smartbiz_html_description(product: Dict) -> str:
     """
-    Generates a clean, high-conversion HTML product description strictly <= 2000 characters
-    using real DeoDap specifications and bullet points.
+    Generates a clean, natural product description matching the user's SmartBiz store preset
+    (strictly <= 2000 characters, using <p>...</p> for featured items or clean prose).
     """
-    title = html.escape(build_smartbiz_product_name(product))
-    niche = html.escape(str(product.get("niche") or "Home & Kitchen"))
-    festival_mood = str(product.get("festival_mood") or "").strip()
+    title = build_smartbiz_product_name(product)
     raw_desc = _clean_text(str(product.get("description") or product.get("body_html") or ""))
 
-    bullets = []
-    if raw_desc:
-        sentences = [s.strip() for s in re.split(r"[.!?•\n]+", raw_desc) if len(s.strip()) > 12]
-        for s in sentences[:5]:
-            bullets.append(html.escape(s[:180]))
+    if not raw_desc or len(raw_desc) < 25:
+        niche = str(product.get("niche") or "Home & Kitchen")
+        raw_desc = (
+            f"Upgrade your everyday {niche.lower()} routine with the {title}. "
+            f"Crafted from durable, high-quality materials, it offers effortless convenience, "
+            f"reliable performance, and a practical space-saving design ideal for modern Indian homes."
+        )
 
-    if not bullets:
-        bullets = [
-            f"Premium quality {title} designed for everyday Indian households.",
-            "Compact, durable, and easy-to-use utility design with zero installation hassle.",
-            "Ideal for daily convenience, home organization, and festive gifting.",
-        ]
-
-    weight_g = product.get("weight_grams")
-    if weight_g:
-        bullets.append(f"Weight & Build: Approx. {int(float(weight_g))}g unbreakable transit-safe build.")
-
-    dims = product.get("dimensions")
-    if dims:
-        bullets.append(f"Dimensions: {html.escape(str(dims))}.")
-
-    if festival_mood and festival_mood.lower() not in ("none", "general", "all"):
-        bullets.append(f"Best Suited For: {html.escape(festival_mood)}.")
-
-    bullets.append("Quality Checked & Dispatched across India with secure packaging.")
-
-    li_html = "".join(f"<li>{b}</li>" for b in bullets)
-    html_desc = (
-        f"<p><strong>{title}</strong> — Curated by Zenlora for {niche}.</p>"
-        f"<ul>{li_html}</ul>"
-        f"<p><b>Fast Pan-India Delivery:</b> Dispatched within 24–48 hours with 4–8 business days delivery.</p>"
-    )
-
-    if len(html_desc) > 2000:
-        html_desc = html_desc[:1993] + "</p>"
-    return html_desc
+    trimmed = raw_desc[:1950].strip()
+    score = float(product.get("winning_score") or 0)
+    if score >= 89.0:
+        return f"<p>{html.escape(trimmed)}</p>"[:2000]
+    return trimmed[:2000]
 
 
 def build_seo_metadata(product: Dict, primary_image_url: str) -> Tuple[str, str, str]:
@@ -399,7 +372,7 @@ def build_seo_metadata(product: Dict, primary_image_url: str) -> Tuple[str, str,
 def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
     """
     Converts a single Zenlora product dictionary into an exact 52-column row
-    matching `smartbiz_bulk_upload_template_v10.xlsx` (`bulk_upload_template` A..AZ).
+    matching the user's SmartBiz store preset (`bulk_upload_template` A..AZ).
     """
     custom_sku = build_smartbiz_custom_sku(product, index)
     product_name = build_smartbiz_product_name(product)
@@ -407,46 +380,25 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
     business_cat, product_cat = map_smartbiz_categories(product)
     html_description = build_smartbiz_html_description(product)
 
-    score = float(product.get("winning_score") or 0)
-    best_seller = "Yes" if score >= 50.0 else "Yes"
-
-    raw_hsn = str(product.get("hsn_code") or "").strip()
-    hsn_code = re.sub(r"[^0-9]", "", raw_hsn)[:8] if raw_hsn else HSN_BY_PRODUCT_CATEGORY.get(product_cat, "392410")
+    # Selective Best Seller ("Yes" for ~33% of rows, "No" for ~67% — matching user's SmartBiz preset)
+    best_seller = "Yes" if (index % 3 == 1) else "No"
 
     images = extract_product_images(product)
-    seo_title, seo_desc, seo_img = build_seo_metadata(product, images[0])
-
-    niche_label = str(product.get("niche") or "Home & Kitchen")
-    festival_mood = str(product.get("festival_mood") or "").strip()
-    collection_val = f"{niche_label} ({festival_mood})" if festival_mood else niche_label
-
-    deodap_sku = str(product.get("sku") or custom_sku)
-    deodap_pid = str(product.get("id") or "")
-    deodap_vid = str(product.get("variant_id") or "")
-    supplier_ref = f"SKU: {deodap_sku}"
-    if deodap_pid:
-        supplier_ref += f" | Product ID: {deodap_pid}"
-    if deodap_vid:
-        supplier_ref += f" | Variant ID: {deodap_vid}"
-
-    weight_val = f"{int(float(product['weight_grams']))} Grams" if product.get("weight_grams") else "Standard Compact Parcel (<500g)"
-    if product.get("dimensions"):
-        weight_val += f" ({product['dimensions']})"
 
     row = [
-        "",                     # 1. A: SKU ID (Not to be Edited) -> SmartBiz system internal ID (blank for new uploads)
-        "",                     # 2. B: Variant ID (Not to be Edited) -> SmartBiz system internal ID (blank for new uploads)
+        "",                     # 1. A: SKU ID (Not to be Edited) -> Blank for new product bulk upload
+        "",                     # 2. B: Variant ID (Not to be Edited) -> Blank for new product bulk upload
         "",                     # 3. C: Variant Feature 1 ID ( Not to be edited)
         "",                     # 4. D: Variant Feature 2 ID ( Not to be edited)
         "",                     # 5. E: Variant Feature 3 ID ( Not to be edited)
-        custom_sku[:40],        # 6. F: Custom SKU (Optional) Maximum 40 characters -> Real DeoDap SKU!
+        custom_sku[:40],        # 6. F: Custom SKU (Optional) Maximum 40 characters -> Real DeoDap SKU
         product_name[:200],     # 7. G: Product Name (Mandatory) Maximum 200 characters
-        str(mrp),               # 8. H: MRP (Mandatory) Number only
+        str(mrp),               # 8. H: MRP (Mandatory) Number only (Smart 4-Band Variable Discount MRP)
         str(selling_price),     # 9. I: Selling Price (Optional) Number only Should be less than MRP
-        business_cat,           # 10. J: Business Category (Mandatory) Select from Dropdown
-        product_cat[:100],      # 11. K: Product Category (Mandatory)
+        business_cat,           # 10. J: Business Category (Mandatory) -> "GENERAL" (matches store preset)
+        product_cat[:100],      # 11. K: Product Category (Mandatory) -> Storefront category preset
         html_description[:2000],# 12. L: Product Description (Optional) Maximum 2000 characters
-        "",                     # 13. M: Variant Relationship (Optional) -> Blank = Standalone Product
+        "",                     # 13. M: Variant Relationship (Optional)
         "",                     # 14. N: Variant Feature 1 (Optional)
         "",                     # 15. O: Variant Value 1 (Optional)
         "",                     # 16. P: Variant Feature 2 (Optional)
@@ -454,8 +406,8 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
         "",                     # 18. R: Variant Feature 3 (Optional)
         "",                     # 19. S: Variant Value 3 (Optional)
         "",                     # 20. T: Color Code (Optional) Maximum 7 characters
-        best_seller,            # 21. U: Best Seller (Optional)
-        hsn_code,               # 22. V: HSN Code (Optional)
+        best_seller,            # 21. U: Best Seller (Optional) -> Selective "Yes" / "No"
+        "",                     # 22. V: HSN Code (Optional) -> Blank matching user's preset
         images[0],              # 23. W: Product Image1 (Optional) -> DeoDap Image 1
         images[1],              # 24. X: Product Image2 (Optional) -> DeoDap Image 2
         images[2],              # 25. Y: Product Image3 (Optional) -> DeoDap Image 3
@@ -463,21 +415,21 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
         images[4],              # 27. AA: Product Image5 (Optional) -> DeoDap Image 5
         images[5],              # 28. AB: Product Image6 (Optional) -> DeoDap Image 6
         "",                     # 29. AC: Size Guide (Optional)
-        seo_title[:60],         # 30. AD: SEOMeta Title (Optional)
-        seo_desc[:160],         # 31. AE: SEOMeta Description (Optional)
-        seo_img,                # 32. AF: SEOMeta ImageUrl (Optional)
-        "Country of Origin",    # 33. AG: Custom Attribute Key 1 (Optional)
-        "India",                # 34. AH: Custom Attribute Value 1 (Optional)
-        "Supplier SKU & ID",    # 35. AI: Custom Attribute Key 2 (Optional)
-        supplier_ref[:1000],    # 36. AJ: Custom Attribute Value 2 (Optional)
-        "Weight & Dimensions",  # 37. AK: Custom Attribute Key 3 (Optional)
-        weight_val[:1000],      # 38. AL: Custom Attribute Value 3 (Optional)
-        "Delivery Timeline",    # 39. AM: Custom Attribute Key 4 (Optional)
-        "4-8 Business Days (Free Pan-India Shipping)",  # 40. AN: Custom Attribute Value 4 (Optional)
-        "Return & Replacement", # 41. AO: Custom Attribute Key 5 (Optional)
-        "7-Day Easy Replacement for Damaged or Defective Transit Items",  # 42. AP: Custom Attribute Value 5 (Optional)
-        "Collection & Utility", # 43. AQ: Custom Attribute Key 6 (Optional)
-        collection_val[:1000],  # 44. AR: Custom Attribute Value 6 (Optional)
+        "",                     # 30. AD: SEOMeta Title (Optional)
+        "",                     # 31. AE: SEOMeta Description (Optional)
+        "",                     # 32. AF: SEOMeta ImageUrl (Optional)
+        "",                     # 33. AG: Custom Attribute Key 1 (Optional)
+        "",                     # 34. AH: Custom Attribute Value 1 (Optional)
+        "",                     # 35. AI: Custom Attribute Key 2 (Optional)
+        "",                     # 36. AJ: Custom Attribute Value 2 (Optional)
+        "",                     # 37. AK: Custom Attribute Key 3 (Optional)
+        "",                     # 38. AL: Custom Attribute Value 3 (Optional)
+        "",                     # 39. AM: Custom Attribute Key 4 (Optional)
+        "",                     # 40. AN: Custom Attribute Value 4 (Optional)
+        "",                     # 41. AO: Custom Attribute Key 5 (Optional)
+        "",                     # 42. AP: Custom Attribute Value 5 (Optional)
+        "",                     # 43. AQ: Custom Attribute Key 6 (Optional)
+        "",                     # 44. AR: Custom Attribute Value 6 (Optional)
         "",                     # 45. AS: Custom Attribute Key 7 (Optional)
         "",                     # 46. AT: Custom Attribute Value 7 (Optional)
         "",                     # 47. AU: Custom Attribute Key 8 (Optional)

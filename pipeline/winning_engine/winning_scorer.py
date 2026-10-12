@@ -670,14 +670,24 @@ def compute_winning_score(
     badge_text = f"{final_score}/100 · {confidence} Conf"
     badge_color = "#DC2626" if is_hard_failed else confidence_color
 
+    from winning_engine.smartbiz_exporter import calculate_smartbiz_prices
+    smart_mrp, _ = calculate_smartbiz_prices({
+        "wholesale_price": wholesale_price,
+        "selling_price": selling_price,
+        "sku": product.get("sku"),
+        "handle": handle,
+        "title": title,
+    })
+    discount_pct = int(round((smart_mrp - selling_price) / float(smart_mrp) * 100)) if smart_mrp > selling_price else 0
+
     pricing = {
         "wholesale_price": wholesale_price,
         "effective_cost": effective_cost,
         "selling_price": selling_price,
-        "mrp": product.get("compare_at_price"),  # Real compare_at_price or None
+        "mrp": smart_mrp,
         "gross_profit": int(net_profit),
         "profit_margin_pct": comp["profit_margin_pct"],
-        "discount_pct": None,
+        "discount_pct": discount_pct,
         "badge": f"{passed_count}/{len(scored_criteria)} Verified Criteria"
     }
 
