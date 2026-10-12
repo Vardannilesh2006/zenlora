@@ -94,6 +94,7 @@ def radar():
     from seo_engine import build_deterministic_seo_title, build_deterministic_seo_description
 
     niche = normalize_niche_param(request.args.get("niche", "All"))
+    cost_filter = request.args.get("cost_filter", "All").strip()
     festival_filter = request.args.get("festival", "All")
     status_filter = request.args.get("status", "All")
     confidence_filter = request.args.get("confidence", "All")
@@ -104,7 +105,16 @@ def radar():
     batch_cursor = int(request.args.get("batch", 0) or 0)
 
     all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
-    winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
+    if cost_filter.lower() == "under_50":
+        raw_pool = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=0)
+        winners = [w for w in raw_pool if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
+        if niche != "All":
+            winners = winners[:24]
+    else:
+        winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
+
+    full_unexported_pool = get_winners(niche="All", include_hard_failed=False, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=0)
+    under_50_count = sum(1 for w in full_unexported_pool if 0 < float(w.get("wholesale_price") or 0) <= 50.0)
 
     # Attach SEO title and description for each winner card
     for w in winners:
@@ -164,6 +174,8 @@ def radar():
         "radar.html",
         winners=winners,
         selected_niche=niche,
+        selected_cost_filter=cost_filter,
+        under_50_count=under_50_count,
         selected_festival=festival_filter,
         selected_status=status_filter,
         selected_confidence=confidence_filter,
@@ -357,6 +369,7 @@ def _build_export_headers(filename: str, products: list[dict]) -> dict[str, str]
 def export_smartbiz_csv():
     mode = request.args.get("mode", "page").strip().lower()
     niche = normalize_niche_param(request.args.get("niche", "All"))
+    cost_filter = request.args.get("cost_filter", "All").strip()
     batch_cursor = int(request.args.get("batch", 0) or 0)
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
@@ -385,6 +398,7 @@ def export_smartbiz_csv():
             min_score=min_score,
             min_margin=min_margin,
             confidence=confidence,
+            cost_filter=cost_filter,
             exclude_exported=True,
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
@@ -405,6 +419,7 @@ def export_smartbiz_csv():
 def export_smartbiz_xlsx():
     mode = request.args.get("mode", "page").strip().lower()
     niche = normalize_niche_param(request.args.get("niche", "All"))
+    cost_filter = request.args.get("cost_filter", "All").strip()
     batch_cursor = int(request.args.get("batch", 0) or 0)
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
@@ -433,6 +448,7 @@ def export_smartbiz_xlsx():
             min_score=min_score,
             min_margin=min_margin,
             confidence=confidence,
+            cost_filter=cost_filter,
             exclude_exported=True,
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,

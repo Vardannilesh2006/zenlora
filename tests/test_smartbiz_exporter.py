@@ -515,3 +515,39 @@ def test_health_and_beauty_accessories_radar_page_and_excel_export():
         assert ws.cell(r_idx, 10).value == "GENERAL"
         assert ws.cell(r_idx, 11).value == "Health & Beauty Accessories"
     wb.close()
+
+
+def test_under_50_deodap_price_preset_and_filter():
+    """
+    Verifies that every product with DeoDap wholesale price <= ₹50 has Selling Price
+    strictly in ₹179 to ₹185, and that the /radar?cost_filter=under_50 filter & Excel export work.
+    """
+    import openpyxl
+    from pipeline.winning_engine.radar_controller import get_winners
+
+    all_items = get_winners(niche="All", per_niche_display=0, exclude_exported=False, refresh_dynamic=True)
+    under_50 = [w for w in all_items if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
+    assert len(under_50) >= 50
+    for w in under_50:
+        sp = int(w.get("selling_price") or 0)
+        sug = int(w.get("suggested_price") or 0)
+        assert 179 <= sp <= 185, f"Expected 179..185 for {w.get('handle')} (cost={w.get('wholesale_price')}), got {sp}"
+        assert 179 <= sug <= 185, f"Expected 179..185 suggested_price for {w.get('handle')}, got {sug}"
+
+    client = app.test_client()
+    res_filter = client.get("/radar?cost_filter=under_50")
+    assert res_filter.status_code == 200
+    html_filter = res_filter.data.decode("utf-8")
+    assert "Under ₹50 DeoDap → ₹179–₹185" in html_filter
+    assert "≤₹50 Preset" in html_filter
+
+    # Verify SmartBiz Excel export with cost_filter=under_50 has all rows in 179..185
+    res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=All&cost_filter=under_50&limit=24&commit=0")
+    assert res_xlsx.status_code == 200
+    wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data), data_only=True)
+    ws = wb["bulk_upload_template"]
+    assert ws.max_row == 25
+    for r_idx in range(2, 26):
+        sp_val = int(ws.cell(r_idx, 9).value)
+        assert 179 <= sp_val <= 185, f"Row {r_idx} Selling Price {sp_val} not in 179..185"
+    wb.close()

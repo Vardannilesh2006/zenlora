@@ -300,8 +300,9 @@ def compute_winning_score(
     w4 = float(weights.get("c4_margin", 15))
     min_profit = float(cost_cfg.get("min_net_profit", 150.0))
     min_mk = float(cost_cfg.get("min_markup_multiple", 2.5))
+    is_under_50_preset = wholesale_price is not None and 0 < wholesale_price <= 50.0 and 179 <= selling_price <= 185
     if wholesale_price is not None:
-        c4_passed = net_profit >= min_profit and markup >= min_mk
+        c4_passed = is_under_50_preset or (net_profit >= min_profit and markup >= min_mk)
         c4_pts = w4 if c4_passed else (round(w4 * 0.4, 2) if net_profit > 0 else 0.0)
         c4_status = "user_assumption"
         c4_detail = (
@@ -568,7 +569,7 @@ def compute_winning_score(
         hard_fail_reasons.append("No Supplier Price")
     if restricted_flags:
         hard_fail_reasons.extend(f["label"] for f in restricted_flags)
-    if wholesale_price is not None and (net_profit < min_profit or markup < min_mk):
+    if wholesale_price is not None and not is_under_50_preset and (net_profit < min_profit or markup < min_mk):
         hard_fail_reasons.append(f"Margin Below Minimum (Net ₹{net_profit:.0f} < ₹{min_profit:.0f} or {markup}x < {min_mk}x)")
 
     is_hard_failed = len(hard_fail_reasons) > 0

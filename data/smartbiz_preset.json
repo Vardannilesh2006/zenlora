@@ -3,16 +3,23 @@
   "preset_name": "Zenlora SmartBiz v10 Store Preset (New High-Score Winners)",
   "version": "10.0",
   "status": "active",
-  "updated_at": "2026-10-12T10:14:00+05:30",
+  "updated_at": "2026-10-12T19:55:00+05:30",
   "listing_mode": "new_products_only",
+  "under_50_price_preset": {
+    "enabled": true,
+    "max_deodap_cost_inr": 50,
+    "selling_price_min_inr": 179,
+    "selling_price_max_inr": 185,
+    "rule_label": "DeoDap Price ≤ ₹50 → Selling Price ₹179 to ₹185"
+  },
   "column_rules": {
-    "cols_a_to_e_system_ids": "Blank (\"\") — Creates fresh SmartBiz listings without modifying existing 39 store products",
+    "cols_a_to_e_system_ids": "Blank (\"\") — Creates fresh SmartBiz listings without modifying existing store products",
     "col_f_custom_sku": "Real Live DeoDap Variant SKU (<= 40 chars)",
     "col_g_product_name": "Clean Commercial Product Title (<= 200 chars)",
     "col_h_mrp": "4-Band Cost-Inverse Variable Discount Box MRP (Ends in 9, 5, or 0; Strictly Never 2x Selling Price)",
-    "col_i_selling_price": "Market-Anchored Safe Dropship Selling Price (Meesho + Rs.60-85 Value Margin)",
+    "col_i_selling_price": "DeoDap ≤ Rs.50 -> Fixed Rs.179-Rs.185 Preset | Above Rs.50 -> Market-Anchored Safe Dropship Price",
     "col_j_business_category": "GENERAL (Unified across all rows for zero cross-category validation errors)",
-    "col_k_product_category": "100% Category-Matched Storefront Collections (Festive & Lights, Home Decor, Kitchen & Dining, Smart Gadgets, Gifts & Hampers)",
+    "col_k_product_category": "100% Category-Matched Storefront Collections (Festive & Lights, Home Decor, Kitchen & Dining, Smart Gadgets, Gifts & Hampers, Health & Beauty Accessories)",
     "col_l_description": "Clean HTML (<p>...</p>) or natural prose description (<= 2000 chars)",
     "col_u_best_seller": "Selective \"Yes\" (~33% top winners) and \"No\" (~67% others)",
     "cols_w_to_ab_images": "Up to 6 Real DeoDap Gallery Images (.jpg sanitized, query strings stripped)",
@@ -21,13 +28,14 @@
   "discount_bands": [
     {
       "band": "Band A",
-      "label": "Low-Cost Impulse Items",
-      "cost_range_inr": "Rs.1 - Rs.55",
+      "label": "Under ₹50 DeoDap Preset (Sell ₹179–₹185)",
+      "cost_range_inr": "Rs.1 - Rs.50 (<= Rs.55)",
       "cost_max": 55,
+      "selling_price_preset": "Rs.179 - Rs.185",
       "discount_range_pct": "53% - 63% OFF",
       "min_disc": 53,
       "max_disc": 63,
-      "strategy": "High visual discount triggers instant impulse purchase on low-cost daily items"
+      "strategy": "All DeoDap items listed under Rs.40-50 are locked to Rs.179-Rs.185 selling price with 53-63% OFF box MRP"
     },
     {
       "band": "Band B",
@@ -65,6 +73,7 @@
     "Home Decor",
     "Kitchen & Dining",
     "Smart Gadgets",
-    "Gifts & Hampers"
+    "Gifts & Hampers",
+    "Health & Beauty Accessories"
   ]
 }

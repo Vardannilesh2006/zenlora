@@ -101,6 +101,17 @@ def snap_to_impulse_price(target: float, max_cap: int = 599) -> int:
     return int(round(target))
 
 
+def compute_under_50_preset_price(wholesale_price: float, seed_key: str = "") -> int:
+    """
+    Preset Rule: Every DeoDap product listed at <= ₹50 (under ₹40-₹50) gets a deterministic
+    Selling Price strictly between ₹179 and ₹185 (inclusive).
+    """
+    key = str(seed_key or "zenlora").strip().lower()
+    seed = sum((idx + 1) * ord(ch) for idx, ch in enumerate(key)) + int(round(float(wholesale_price or 0)))
+    return 179 + (seed % 7)
+
+
+
 def classify_pricing_tier(title: str, niche: str = "Home Decor") -> Dict[str, Any]:
     """
     Classifies a product into 1 of 3 Perceived-Value & Local-Availability Pricing Tiers:
@@ -460,24 +471,29 @@ def get_competitor_price_intelligence(
     msh_val = msh_entry["price_numeric"]
     amz_val = amz_entry["price_numeric"]
 
-    if msh_val is not None and msh_val > 0:
-        meesho_anchored = msh_val + meesho_delta
-        # Cap excessive Meesho outliers while respecting the no-loss safety floor
-        raw_target = max(no_loss_floor, min(meesho_anchored, no_loss_floor + 50))
-        if amz_val is not None and amz_val > no_loss_floor + 20:
-            raw_target = min(raw_target, amz_val - 20)
+    if 0 < effective_cost <= 50.0:
+        suggested_sell_price = compute_under_50_preset_price(effective_cost, handle or title)
+        bundle_rule_triggered = "Preset Rule: DeoDap Cost ≤ ₹50 → Fixed Selling Price ₹179–₹185"
+        bundle_label = f"Under ₹50 DeoDap Preset (Cost: ₹{effective_cost:.0f} → Sell: ₹{suggested_sell_price})"
     else:
-        raw_target = no_loss_floor
+        if msh_val is not None and msh_val > 0:
+            meesho_anchored = msh_val + meesho_delta
+            # Cap excessive Meesho outliers while respecting the no-loss safety floor
+            raw_target = max(no_loss_floor, min(meesho_anchored, no_loss_floor + 50))
+            if amz_val is not None and amz_val > no_loss_floor + 20:
+                raw_target = min(raw_target, amz_val - 20)
+        else:
+            raw_target = no_loss_floor
 
-    suggested_sell_price = snap_to_impulse_price(raw_target, max_cap=ideal_max)
-    if suggested_sell_price < no_loss_floor:
-        suggested_sell_price = int(round(no_loss_floor // 10) * 10 + 9)
+        suggested_sell_price = snap_to_impulse_price(raw_target, max_cap=ideal_max)
+        if suggested_sell_price < no_loss_floor:
+            suggested_sell_price = int(round(no_loss_floor // 10) * 10 + 9)
 
     net_profit = round(suggested_sell_price - landed_cost, 2)
     gross_profit_after_ship = round(suggested_sell_price - effective_cost - shipping_cost, 2)
     profit_margin_pct = round((gross_profit_after_ship / suggested_sell_price) * 100, 1) if suggested_sell_price > 0 else 0.0
     markup_multiple = round(suggested_sell_price / effective_cost, 2) if effective_cost > 0 else 0.0
-    passes_2_5x_rule = markup_multiple >= min_markup and net_profit >= min_net_profit
+    passes_2_5x_rule = (0 < effective_cost <= 50.0) or (markup_multiple >= min_markup and net_profit >= min_net_profit)
 
     real_prices = [
         e["price_numeric"] for e in (amz_entry, fk_entry, msh_entry)

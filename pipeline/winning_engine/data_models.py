@@ -90,7 +90,10 @@ DEFAULT_SETTINGS: Dict[str, Any] = {
         "min_markup_multiple": 1.8,
         "target_markup_multiple": 2.2,
         "ideal_price_min": 169,
-        "ideal_price_max": 599
+        "ideal_price_max": 599,
+        "under_50_cost_threshold": 50.0,
+        "under_50_sell_min": 179,
+        "under_50_sell_max": 185
     },
     "general": {
         "stale_days_limit": 7,

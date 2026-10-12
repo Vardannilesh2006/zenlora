@@ -288,12 +288,19 @@ def calculate_smartbiz_prices(product: Dict) -> Tuple[int, int]:
         cost = float(raw_cost)
     except (ValueError, TypeError):
         cost = 0.0
-    if cost <= 0:
-        cost = max(35.0, (selling_price - 125.0) * 0.7)
 
     # Deterministic per-product seed so each SKU gets a distinct discount % inside its band
     sku_key = str(product.get("sku") or product.get("handle") or product.get("title") or "zenlora")
     seed = sum((idx + 1) * ord(ch) for idx, ch in enumerate(sku_key))
+
+    # Preset Rule: Any DeoDap product with wholesale price <= ₹50 must have Selling Price ₹179 to ₹185
+    if 0 < cost <= 50.0:
+        if not (179 <= selling_price <= 185):
+            from .competitor_pricing import compute_under_50_preset_price
+            selling_price = compute_under_50_preset_price(cost, product.get("handle") or product.get("title") or sku_key)
+
+    if cost <= 0:
+        cost = max(35.0, (selling_price - 125.0) * 0.7)
 
     if cost <= 55.0:
         # Band A: Low DeoDap Cost -> High Offer Appeal (53% to 63% OFF)
@@ -478,7 +485,9 @@ def get_product_smartbiz_preset_summary(product: Dict, index: int = 1) -> Dict:
     cost = float(product.get("wholesale_price") or product.get("pricing", {}).get("wholesale_price") or 0.0)
     disc_pct = int(round(((mrp - selling_price) / float(mrp)) * 100)) if mrp > selling_price else 0
 
-    if cost <= 55.0:
+    if 0 < cost <= 50.0:
+        band_label = "Under ₹50 Preset (₹179–₹185 · 53–63% OFF)"
+    elif cost <= 55.0:
         band_label = "Band A (53–63% OFF)"
     elif cost <= 95.0:
         band_label = "Band B (41–49% OFF)"
@@ -508,6 +517,7 @@ def select_current_page_products(
     min_score: float = 0.0,
     min_margin: float = 0.0,
     confidence: str = "All",
+    cost_filter: str = "All",
     exclude_exported: bool = True,
     extra_excluded_keys: Optional[List[str]] = None,
     commit_to_ledger: bool = False,
@@ -522,7 +532,7 @@ def select_current_page_products(
             include_hard_failed=include_hard_failed,
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
-            per_niche_display=max(limit + 15, 35),
+            per_niche_display=0 if str(cost_filter).lower() == "under_50" else max(limit + 15, 35),
             exclude_exported=exclude_exported,
             extra_excluded_keys=extra_excluded_keys,
             auto_refill=exclude_exported,
@@ -542,6 +552,8 @@ def select_current_page_products(
         )
         items = sorted(items, key=lambda x: float(x.get("winning_score") or 0), reverse=True)
 
+    if str(cost_filter).strip().lower() == "under_50":
+        items = [w for w in items if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
     if min_score > 0:
         items = [w for w in items if float(w.get("winning_score") or 0) >= min_score]
     if min_margin > 0:

@@ -68,7 +68,7 @@ class ClassifierAndPricingEngine:
         return f"Zenlora™ {clean}"
 
     @classmethod
-    def calculate_pricing(cls, wholesale_price: float) -> dict:
+    def calculate_pricing(cls, wholesale_price: float, seed_key: str = "") -> dict:
         """Calculates realistic D2C psychological selling price, MRP, and gross profit margins."""
         if wholesale_price <= 0:
             wholesale_price = 100.0
@@ -76,23 +76,28 @@ class ClassifierAndPricingEngine:
         # Estimated bare-minimum breakeven (Wholesale + absorbed shipping)
         landed_cost = wholesale_price + SHIPPING_BUFFER
 
-        # Target raw retail price
-        raw_target = (wholesale_price * TARGET_MARKUP) + SHIPPING_BUFFER
+        if 0 < wholesale_price <= 50.0:
+            key = str(seed_key or "zenlora").strip().lower()
+            seed = sum((idx + 1) * ord(ch) for idx, ch in enumerate(key)) + int(round(float(wholesale_price)))
+            selling_price = 179 + (seed % 7)
+        else:
+            # Target raw retail price
+            raw_target = (wholesale_price * TARGET_MARKUP) + SHIPPING_BUFFER
 
-        # Snap to closest upper psychological price point
-        selling_price = cls.PSYCHOLOGICAL_POINTS[-1]
-        for pt in cls.PSYCHOLOGICAL_POINTS:
-            if pt >= raw_target:
-                selling_price = pt
-                break
-
-        # Ensure selling price is never below (wholesale * 2.2 + shipping)
-        min_allowed = math.ceil(wholesale_price * MIN_MARKUP + SHIPPING_BUFFER)
-        if selling_price < min_allowed:
+            # Snap to closest upper psychological price point
+            selling_price = cls.PSYCHOLOGICAL_POINTS[-1]
             for pt in cls.PSYCHOLOGICAL_POINTS:
-                if pt >= min_allowed:
+                if pt >= raw_target:
                     selling_price = pt
                     break
+
+            # Ensure selling price is never below (wholesale * 2.2 + shipping)
+            min_allowed = math.ceil(wholesale_price * MIN_MARKUP + SHIPPING_BUFFER)
+            if selling_price < min_allowed:
+                for pt in cls.PSYCHOLOGICAL_POINTS:
+                    if pt >= min_allowed:
+                        selling_price = pt
+                        break
 
         # Calculate MRP (Compare-at price) for a visible 50% - 65% discount
         raw_mrp = selling_price * COMPARE_PRICE_RATIO
@@ -126,7 +131,10 @@ class ClassifierAndPricingEngine:
             product_type=extracted_data.get("product_type", "")
         )
 
-        pricing = cls.calculate_pricing(extracted_data.get("wholesale_price", 0.0))
+        pricing = cls.calculate_pricing(
+            extracted_data.get("wholesale_price", 0.0),
+            seed_key=extracted_data.get("handle") or extracted_data.get("sku") or extracted_data.get("title", ""),
+        )
         zenlora_title = cls.generate_zenlora_title(extracted_data.get("title", ""))
 
         return {
