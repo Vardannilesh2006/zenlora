@@ -414,9 +414,9 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
         images[4],              # 27. AA: Product Image5 (Optional) -> DeoDap Image 5
         images[5],              # 28. AB: Product Image6 (Optional) -> DeoDap Image 6
         "",                     # 29. AC: Size Guide (Optional)
-        "",                     # 30. AD: SEOMeta Title (Optional)
-        "",                     # 31. AE: SEOMeta Description (Optional)
-        "",                     # 32. AF: SEOMeta ImageUrl (Optional)
+        (product.get("seo_title") or build_smartbiz_product_name(product))[:60], # 30. AD: SEOMeta Title (Optional) -> Max 60 chars
+        (product.get("seo_description") or html_description)[:160],              # 31. AE: SEOMeta Description (Optional) -> Max 160 chars
+        images[0] if images else "", # 32. AF: SEOMeta ImageUrl (Optional)
         "",                     # 33. AG: Custom Attribute Key 1 (Optional)
         "",                     # 34. AH: Custom Attribute Value 1 (Optional)
         "",                     # 35. AI: Custom Attribute Key 2 (Optional)

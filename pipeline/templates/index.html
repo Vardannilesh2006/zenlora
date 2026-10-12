@@ -257,6 +257,24 @@
                         data-sku="{{ p.sku|lower }}"
                     >
                         <div>
+                            <!-- Top: SEO Chip Row -->
+                            <div class="flex items-center justify-between gap-1 mb-2">
+                                <button
+                                    type="button"
+                                    onclick="event.stopPropagation(); copyCardSeoIndex('{{ p.handle }}', '{{ p.seo_title|replace("'", "\\'") }}', '{{ p.seo_description|replace("'", "\\'") }}')"
+                                    title="1-Click Copy Viral SEO Title Tag (≤60 chars) & Meta Description (≤160 chars)"
+                                    class="text-[9px] font-bold px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 flex items-center gap-1 transition active:scale-95 flex-shrink-0 shadow-2xs"
+                                >
+                                    <span>⚡ SEO 60/160</span>
+                                </button>
+                                <a
+                                    href="/product/{{ p.handle }}"
+                                    onclick="event.stopPropagation()"
+                                    title="Open product details page"
+                                    class="text-[9px] text-textMuted hover:text-indigo-700 font-mono transition flex-shrink-0"
+                                >Details →</a>
+                            </div>
+
                             <!-- Top: Thumbnail + Title -->
                             <div class="flex items-start gap-3">
                                 
@@ -465,6 +483,37 @@
                 </div>
             </div>
 
+            <!-- Viral SEO Title Tag & Meta Description Section -->
+            <div class="p-3.5 rounded-xl bg-indigo-50/60 border border-indigo-200/80 space-y-2.5">
+                <div class="flex items-center justify-between">
+                    <span class="text-[10px] font-bold text-indigo-800 uppercase tracking-wider flex items-center gap-1.5">
+                        <span class="w-5 h-5 rounded bg-indigo-600 text-white flex items-center justify-center text-[8px] font-bold flex-shrink-0">SEO</span>
+                        Viral SEO Title &amp; Description
+                    </span>
+                    <button
+                        onclick="copyDrawerSeo()"
+                        class="h-6 px-2.5 rounded bg-indigo-600 hover:bg-indigo-700 text-white text-[10px] font-bold flex items-center gap-1 transition active:scale-95"
+                        title="Copy Both SEO Title &amp; Meta Description"
+                    >📋 Copy Both</button>
+                </div>
+                <!-- SEO Title Tag -->
+                <div class="bg-white rounded-lg p-2.5 border border-indigo-200/60">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-semibold text-textSecondary">SEO Title Tag <span id="drawerSeoTitleLen" class="font-mono text-emerald-700">(0/60 chars)</span></span>
+                        <button onclick="copySingleDrawerSeoField('drawerSeoTitle', 'SEO Title Copied!')" class="text-[9px] px-2 py-0.5 rounded bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-semibold transition">📋 Copy</button>
+                    </div>
+                    <p id="drawerSeoTitle" class="text-xs font-semibold text-textPrimary select-all leading-snug"></p>
+                </div>
+                <!-- SEO Meta Description -->
+                <div class="bg-white rounded-lg p-2.5 border border-indigo-200/60">
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-[10px] font-semibold text-textSecondary">Meta Description <span id="drawerSeoDescLen" class="font-mono text-emerald-700">(0/160 chars)</span></span>
+                        <button onclick="copySingleDrawerSeoField('drawerSeoDesc', 'Meta Description Copied!')" class="text-[9px] px-2 py-0.5 rounded bg-zinc-100 hover:bg-zinc-200 text-zinc-700 font-semibold transition">📋 Copy</button>
+                    </div>
+                    <p id="drawerSeoDesc" class="text-xs text-textSecondary select-all leading-relaxed"></p>
+                </div>
+            </div>
+
             <!-- Prompt Studio Section -->
             <div class="space-y-3">
                 <div class="flex items-center justify-between pt-1">
@@ -655,6 +704,28 @@
             copyText(text);
         }
 
+        function copyCardSeoIndex(handle, title, desc) {
+            const combined = `SEO Title Tag (${title.length}/60 chars):\n${title}\n\nSEO Meta Description (${desc.length}/160 chars):\n${desc}`;
+            copyText(combined);
+            showToast('Copied Viral SEO Title & Meta Description!');
+        }
+
+        function copyDrawerSeo() {
+            if (!selectedProduct) return;
+            const t = selectedProduct.seo_title || selectedProduct.zenlora_title || '';
+            const d = selectedProduct.seo_description || '';
+            const combined = `SEO Title Tag (${t.length}/60 chars):\n${t}\n\nSEO Meta Description (${d.length}/160 chars):\n${d}`;
+            copyText(combined);
+            showToast('Copied Both SEO Title & Description!');
+        }
+
+        function copySingleDrawerSeoField(id, msg) {
+            const el = document.getElementById(id);
+            if (!el) return;
+            copyText(el.innerText);
+            showToast(msg || 'Copied!');
+        }
+
         function inspectProduct(handle) {
             const p = productsData.find(item => item.handle === handle);
             if (!p) return;
@@ -669,6 +740,18 @@
             document.getElementById('drawerMargin').innerText = '+₹' + p.gross_profit + ' (' + p.profit_margin_pct + '%)';
             document.getElementById('drawerHook').innerText = '"' + p.on_screen_hook_text + '"';
             document.getElementById('drawerAudio').innerText = p.audio_recommendation;
+
+            const seoTitle = p.seo_title || p.zenlora_title || '';
+            const seoDesc = p.seo_description || '';
+            const titleEl = document.getElementById('drawerSeoTitle');
+            const descEl = document.getElementById('drawerSeoDesc');
+            const titleLenEl = document.getElementById('drawerSeoTitleLen');
+            const descLenEl = document.getElementById('drawerSeoDescLen');
+            if (titleEl) titleEl.innerText = seoTitle;
+            if (descEl) descEl.innerText = seoDesc;
+            if (titleLenEl) titleLenEl.innerText = `(${seoTitle.length}/60 chars)`;
+            if (descLenEl) descLenEl.innerText = `(${seoDesc.length}/160 chars)`;
+
             document.getElementById('drawerStoryboardText').innerText = p.storyboard_image_prompt;
             document.getElementById('drawerScene1Text').innerText = p.scene_1_video_prompt;
             document.getElementById('drawerScene2Text').innerText = p.scene_2_video_prompt;

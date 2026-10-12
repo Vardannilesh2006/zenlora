@@ -63,7 +63,15 @@ def favicon():
 
 @app.route("/")
 def index():
+    from seo_engine import build_deterministic_seo_title, build_deterministic_seo_description
+
     products = ZenloraPipeline.load_db()
+    for p in products:
+        if not p.get("seo_title"):
+            p["seo_title"] = build_deterministic_seo_title(p.get("title") or p.get("zenlora_title", ""), p.get("primary_category", ""), p.get("selling_price", 0))
+        if not p.get("seo_description"):
+            p["seo_description"] = build_deterministic_seo_description(p.get("title") or p.get("zenlora_title", ""), p.get("description", ""), p.get("selling_price", 299), p.get("mrp", 599), p.get("primary_category", ""))
+
     total_products = len(products)
     total_profit = sum(p.get("gross_profit", 0) for p in products)
     avg_margin = (
@@ -82,6 +90,8 @@ def index():
 
 @app.route("/radar")
 def radar():
+    from seo_engine import build_deterministic_seo_title, build_deterministic_seo_description
+
     niche = request.args.get("niche", "All")
     festival_filter = request.args.get("festival", "All")
     status_filter = request.args.get("status", "All")
@@ -94,6 +104,13 @@ def radar():
 
     all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
     winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
+
+    # Attach SEO title and description for each winner card
+    for w in winners:
+        if not w.get("seo_title"):
+            w["seo_title"] = build_deterministic_seo_title(w.get("title") or w.get("zenlora_title", ""), w.get("niche", ""), w.get("selling_price", 0))
+        if not w.get("seo_description"):
+            w["seo_description"] = build_deterministic_seo_description(w.get("title") or w.get("zenlora_title", ""), w.get("description", ""), w.get("selling_price", 299), w.get("mrp", 599), w.get("niche", ""))
 
     # Apply dashboard filters
     if festival_filter != "All":
@@ -678,8 +695,52 @@ def product_detail(handle):
             pass
 
     product["zip_filename"] = f"{DeoDapExtractor.sanitize_title_for_filename(product.get('title') or product.get('zenlora_title'))}.zip"
+
+    # Pre-populate viral SEO Title Tag (<= 60 chars) & SEO Meta Description (<= 160 chars)
+    try:
+        from seo_engine import SEOEngine
+        seo_info = SEOEngine.generate_product_seo(
+            title=product.get("title") or product["zenlora_title"],
+            description=product.get("description", ""),
+            price=int(round(sp)),
+            mrp=int(mrp_val),
+            category=product["primary_category"],
+            handle=handle,
+        )
+        product["seo_title"] = seo_info.get("seo_title", "")
+        product["seo_description"] = seo_info.get("seo_description", "")
+        product["seo_keywords"] = seo_info.get("keywords", [])
+        product["seo_ai_powered"] = seo_info.get("ai_powered", False)
+    except Exception:
+        product["seo_title"] = (product.get("title") or product.get("zenlora_title") or "")[:60]
+        product["seo_description"] = (product.get("description") or "")[:160]
+
     settings = load_settings()
     return render_template("product_detail.html", p=product, settings=settings)
+
+
+@app.route("/api/product/<handle>/ai-seo", methods=["GET", "POST"])
+def api_product_ai_seo(handle):
+    from seo_engine import SEOEngine
+
+    product = _find_any_product_by_handle(handle) or {}
+    sp = float(product.get("selling_price") or product.get("suggested_price") or 299)
+    mrp = float(product.get("mrp") or product.get("compare_at_price") or sp * 1.8)
+    title = product.get("title") or product.get("zenlora_title") or handle
+    desc = product.get("description") or ""
+    cat = product.get("primary_category") or product.get("niche") or "Home & Kitchen"
+
+    force_refresh = request.args.get("refresh", "1") == "1" or request.method == "POST"
+    seo_data = SEOEngine.generate_product_seo(
+        title=title,
+        description=desc,
+        price=int(round(sp)),
+        mrp=int(round(mrp)),
+        category=cat,
+        handle=handle,
+        force_refresh=force_refresh,
+    )
+    return jsonify({"success": True, **seo_data})
 
 
 @app.route("/api/process", methods=["POST"])

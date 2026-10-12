@@ -1,0 +1,66 @@
+{
+  "crystal-rose-lamp": {
+    "seo_title": "Crystal Rose Diamond Table Lamp 16 RGB Colors | Zenlora",
+    "seo_description": "Touch sensor rechargeable table lamp for modern bedside living room aesthetics. Buy online at Rs.399. Free Pan-India Delivery & COD. Order now!",
+    "title_len": 55,
+    "desc_len": 143,
+    "keywords": [
+      "Crystal Rose Diamond Table Lam",
+      "Festive & Lights online",
+      "best dropshipping product",
+      "zenlora india",
+      "buy online"
+    ],
+    "ai_powered": false,
+    "ai_model": "deterministic-high-ctr-rules",
+    "handle": "crystal-rose-lamp"
+  },
+  "glass-oil-dispenser": {
+    "seo_title": "2 in 1 Glass Oil dispenser jar Bottle with brush | Zenlora",
+    "seo_description": "Practical kitchen oil brush bottle for cooking and grilling. Buy online at Rs.207. Free Pan-India Delivery & COD. Order now!",
+    "title_len": 58,
+    "desc_len": 124,
+    "keywords": [
+      "2 in 1 Glass Oil dispenser jar",
+      "Kitchen & Dining online",
+      "best dropshipping product",
+      "zenlora india",
+      "buy online"
+    ],
+    "ai_powered": false,
+    "ai_model": "deterministic-high-ctr-rules",
+    "handle": "glass-oil-dispenser"
+  },
+  "om-mandala-rangoli": {
+    "seo_title": "Buy Om Mandala Rangoli Stencil | Zenlora",
+    "seo_description": "Create mess-free Diwali art with this reusable Om Mandala Rangoli stencil. Only Rs.259! Free Pan-India Delivery & COD. Shop your pooja decor now!",
+    "title_len": 40,
+    "desc_len": 145,
+    "keywords": [
+      "rangoli stencil for diwali",
+      "om mandala rangoli template",
+      "reusable rangoli design",
+      "pooja decoration items online",
+      "mess free rangoli maker"
+    ],
+    "ai_powered": true,
+    "ai_model": "gemini-3.5-flash-lite",
+    "handle": "om-mandala-rangoli"
+  },
+  "pooja-rangoli-design": {
+    "seo_title": "Om Mandala Rangoli Stencil | Zenlora",
+    "seo_description": "Create mess-free rangoli instantly! Sacred Om design for festivals. Only Rs.259 with Free Pan-India Delivery & COD. Shop this festive essential now!",
+    "title_len": 36,
+    "desc_len": 148,
+    "keywords": [
+      "rangoli stencil",
+      "om rangoli design",
+      "mess free rangoli",
+      "pooja room decoration items",
+      "diwali decoration products"
+    ],
+    "ai_powered": true,
+    "ai_model": "gemini-3.5-flash-lite",
+    "handle": "pooja-rangoli-design"
+  }
+}

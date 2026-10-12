@@ -389,11 +389,22 @@
             >
                 
                 <div>
-                    <!-- Top Status Bar: Niche Tag & Score Badge -->
+                    <!-- Top Status Bar: SEO Chip (Top Left) & Niche Tag & Score Badge -->
                     <div class="flex items-center justify-between gap-1.5 mb-2.5">
-                        <span class="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200 uppercase tracking-wider truncate">
-                            {{ w.niche }} · {{ w.sample_tracking.status|replace('_', ' ') if w.sample_tracking else 'Shortlisted' }}
-                        </span>
+                        <div class="flex items-center gap-1.5 min-w-0">
+                            <button 
+                                type="button"
+                                onclick="event.stopPropagation(); copyCardSeo('{{ w.handle }}', '{{ w.seo_title|replace("'", "\\'") }}', '{{ w.seo_description|replace("'", "\\'") }}')" 
+                                id="seo-chip-{{ w.handle }}"
+                                title="1-Click Copy Viral SEO Title Tag (Max 60 chars) & Meta Description (Max 160 chars)"
+                                class="text-[9px] font-bold px-2 py-0.5 rounded bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 flex items-center gap-1 transition active:scale-95 flex-shrink-0 shadow-2xs"
+                            >
+                                <span>⚡ SEO 60/160</span>
+                            </button>
+                            <span class="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200 uppercase tracking-wider truncate">
+                                {{ w.niche }} · {{ w.sample_tracking.status|replace('_', ' ') if w.sample_tracking else 'Shortlisted' }}
+                            </span>
+                        </div>
                         <span class="text-[10px] font-bold px-2 py-0.5 rounded-full text-white shadow-xs flex-shrink-0" style="background-color: {{ w.badge_color }};">
                             {{ w.badge_text }}
                         </span>
@@ -618,6 +629,15 @@
                 toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
                 toast.classList.remove('translate-y-0', 'opacity-100');
             }, 4000);
+        }
+
+        function copyCardSeo(handle, title, desc) {
+            const combined = `SEO Title Tag (${(title || '').length}/60 chars):\n${title}\n\nSEO Meta Description (${(desc || '').length}/160 chars):\n${desc}`;
+            navigator.clipboard.writeText(combined).then(() => {
+                showToast(`Copied SEO Title (${(title || '').length}/60) & Meta (${(desc || '').length}/160)!`, false);
+            }).catch(() => {
+                showToast(`Copied! Title: ${title}`, false);
+            });
         }
 
         async function saveUserSettings(e) {

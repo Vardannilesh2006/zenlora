@@ -98,6 +98,148 @@
 
     <main class="max-w-[1200px] w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
 
+        <!-- Top Viral SEO Title Tag & Meta Description Studio Box -->
+        <section class="zen-card rounded-2xl p-5 sm:p-6 border-2 border-indigo-200/80 bg-gradient-to-br from-white via-indigo-50/20 to-zinc-50 relative overflow-hidden shadow-xs">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 mb-4 border-b border-indigo-100">
+                <div class="flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold text-xs shadow-xs flex-shrink-0">
+                        SEO
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 flex-wrap">
+                            <h2 class="text-sm sm:text-base font-bold text-zinc-900">Viral SEO Title Tag &amp; Meta Description</h2>
+                            <span class="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-100 text-indigo-800 border border-indigo-200 uppercase tracking-wide">
+                                ⚡ Google Search &amp; Storefront
+                            </span>
+                            <span id="aiPoweredBadge" class="text-[9px] font-bold px-1.5 py-0.5 rounded {% if p.seo_ai_powered %}bg-emerald-100 text-emerald-800 border border-emerald-200{% else %}bg-zinc-100 text-zinc-700{% endif %}">
+                                {% if p.seo_ai_powered %}✨ Gemini AI Verified{% else %}🤖 AI Ready{% endif %}
+                            </span>
+                        </div>
+                        <p class="text-xs text-textSecondary mt-0.5">
+                            High-CTR click magnet optimized for Google Rankings, SmartBiz listings, and viral social shopping traffic.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Action Controls: AI Regenerate & Copy All -->
+                <div class="flex items-center gap-2 flex-wrap">
+                    <button 
+                        type="button" 
+                        onclick="regenerateAiSeo('{{ p.handle }}', this)" 
+                        id="btnAiSeoRegen" 
+                        class="h-8 px-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold flex items-center gap-1.5 transition active:scale-95 shadow-xs"
+                        title="Assign task to Gemini AI API to write smart, engaging, viral SEO Title & Description"
+                    >
+                        <span id="aiSeoBtnIcon">✨</span>
+                        <span id="aiSeoBtnText">AI Regenerate (Gemini)</span>
+                    </button>
+                    <button 
+                        type="button" 
+                        onclick="copyBothSeoTags()" 
+                        class="h-8 px-3 rounded-lg bg-zinc-900 hover:bg-black text-white text-xs font-semibold flex items-center gap-1.5 transition active:scale-95 shadow-xs"
+                    >
+                        <span>📋 Copy Both</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+                
+                <!-- Card 1: SEO Title Tag (Max 60 chars) -->
+                <div class="bg-white rounded-xl p-4 border border-zinc-200 shadow-2xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="seoTitleInput" class="text-xs font-bold text-zinc-900 flex items-center gap-1.5">
+                                <span>SEO Title Tag</span>
+                                <span class="text-[10px] font-medium text-textMuted">(Max 60 characters)</span>
+                            </label>
+                            <span id="seoTitleCounter" class="text-[11px] font-mono font-bold px-2 py-0.5 rounded {% if (p.seo_title|length) <= 60 %}bg-emerald-50 text-emerald-700 border border-emerald-200{% else %}bg-rose-50 text-rose-700 border border-rose-200{% endif %}">
+                                {{ p.seo_title|length }}/60 characters
+                            </span>
+                        </div>
+                        <input 
+                            type="text" 
+                            id="seoTitleInput" 
+                            maxlength="60"
+                            placeholder="Enter Title Tag (Maximum 60 characters)"
+                            value="{{ p.seo_title }}" 
+                            oninput="updateSeoTitleCount(this.value)"
+                            class="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-textPrimary placeholder-zinc-400 font-semibold focus:outline-none focus:bg-white focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 transition"
+                        />
+                    </div>
+                    <div class="mt-3 pt-2.5 border-t border-zinc-100 flex items-center justify-between text-xs">
+                        <span class="text-[10px] text-textMuted font-mono">Formula: [Hook] + [Product] + | Zenlora</span>
+                        <button 
+                            type="button" 
+                            onclick="copySeoField('seoTitleInput', 'SEO Title Tag Copied!')" 
+                            class="h-7 px-2.5 rounded-md bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold text-[11px] flex items-center gap-1 transition"
+                        >
+                            <span>📋 Copy Title Tag</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Card 2: SEO Meta Description (Max 160 chars) -->
+                <div class="bg-white rounded-xl p-4 border border-zinc-200 shadow-2xs flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-2">
+                            <label for="seoDescInput" class="text-xs font-bold text-zinc-900 flex items-center gap-1.5">
+                                <span>SEO Meta Description</span>
+                                <span class="text-[10px] font-medium text-textMuted">(Max 160 characters)</span>
+                            </label>
+                            <span id="seoDescCounter" class="text-[11px] font-mono font-bold px-2 py-0.5 rounded {% if (p.seo_description|length) <= 160 %}bg-emerald-50 text-emerald-700 border border-emerald-200{% else %}bg-rose-50 text-rose-700 border border-rose-200{% endif %}">
+                                {{ p.seo_description|length }}/160 characters
+                            </span>
+                        </div>
+                        <textarea 
+                            id="seoDescInput" 
+                            rows="2" 
+                            maxlength="160"
+                            placeholder="Enter Meta Description (Maximum 160 characters)"
+                            oninput="updateSeoDescCount(this.value)"
+                            class="w-full bg-zinc-50 border border-zinc-200 rounded-lg p-2.5 text-xs text-textPrimary placeholder-zinc-400 leading-relaxed focus:outline-none focus:bg-white focus:border-indigo-600 focus:ring-1 focus:ring-indigo-600 transition"
+                        >{{ p.seo_description }}</textarea>
+                    </div>
+                    <div class="mt-3 pt-2.5 border-t border-zinc-100 flex items-center justify-between text-xs">
+                        <span class="text-[10px] text-textMuted font-mono">Hook + ₹{{ p.selling_price }} + Free Delivery + COD</span>
+                        <button 
+                            type="button" 
+                            onclick="copySeoField('seoDescInput', 'SEO Meta Description Copied!')" 
+                            class="h-7 px-2.5 rounded-md bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold text-[11px] flex items-center gap-1 transition"
+                        >
+                            <span>📋 Copy Meta Description</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Google Live SERP Simulation Snippet -->
+            <div class="mt-3.5 p-3 rounded-xl bg-white border border-zinc-200/90 text-xs shadow-2xs">
+                <div class="flex items-center justify-between mb-1.5">
+                    <span class="text-[10px] font-bold text-textMuted uppercase tracking-wider flex items-center gap-1">
+                        <span>🌐 Live Google Search Snippet Preview</span>
+                    </span>
+                    <span id="serpStatusPill" class="text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200">
+                        100% Search Length Compliant
+                    </span>
+                </div>
+                <div class="font-sans">
+                    <div class="text-[11px] text-zinc-600 flex items-center gap-1 truncate">
+                        <span class="text-zinc-400">https://zenlora.in</span>
+                        <span class="text-zinc-300">›</span>
+                        <span class="text-zinc-500 font-mono text-[10px]">products/{{ p.handle }}</span>
+                    </div>
+                    <div id="serpPreviewTitle" class="text-sm font-semibold text-blue-700 hover:underline cursor-pointer truncate mt-0.5">
+                        {{ p.seo_title }}
+                    </div>
+                    <div id="serpPreviewDesc" class="text-xs text-zinc-600 leading-snug mt-1 line-clamp-2">
+                        {{ p.seo_description }}
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Master Product Card (Clicking Image OR Title opens DeoDap in New Tab) -->
         <section class="zen-card rounded-2xl p-5 sm:p-7">
             <div class="flex flex-col md:flex-row items-start gap-6">
@@ -476,13 +618,130 @@
             toast.classList.remove('translate-y-20', 'opacity-0');
             setTimeout(() => {
                 toast.classList.add('translate-y-20', 'opacity-0');
-            }, 2000);
+            }, 2500);
         }
 
         function copyText(text) {
             navigator.clipboard.writeText(text).then(() => {
                 showToast('Copied to Clipboard');
             });
+        }
+
+        function updateSeoTitleCount(val) {
+            const el = document.getElementById('seoTitleCounter');
+            const serp = document.getElementById('serpPreviewTitle');
+            const len = val.length;
+            if (el) {
+                el.innerText = `${len}/60 characters`;
+                if (len <= 60) {
+                    el.className = "text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200";
+                } else {
+                    el.className = "text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200";
+                }
+            }
+            if (serp) {
+                serp.innerText = val || 'Enter Title Tag';
+            }
+            checkSerpCompliance();
+        }
+
+        function updateSeoDescCount(val) {
+            const el = document.getElementById('seoDescCounter');
+            const serp = document.getElementById('serpPreviewDesc');
+            const len = val.length;
+            if (el) {
+                el.innerText = `${len}/160 characters`;
+                if (len <= 160) {
+                    el.className = "text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-emerald-50 text-emerald-700 border border-emerald-200";
+                } else {
+                    el.className = "text-[11px] font-mono font-bold px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200";
+                }
+            }
+            if (serp) {
+                serp.innerText = val || 'Enter Meta Description';
+            }
+            checkSerpCompliance();
+        }
+
+        function checkSerpCompliance() {
+            const titleInput = document.getElementById('seoTitleInput');
+            const descInput = document.getElementById('seoDescInput');
+            const pill = document.getElementById('serpStatusPill');
+            if (!pill || !titleInput || !descInput) return;
+            const tLen = titleInput.value.length;
+            const dLen = descInput.value.length;
+            if (tLen <= 60 && dLen <= 160) {
+                pill.innerText = "100% Search Length Compliant";
+                pill.className = "text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-200";
+            } else {
+                pill.innerText = "⚠️ Exceeds Recommended Limit";
+                pill.className = "text-[9px] font-semibold text-amber-800 bg-amber-50 px-1.5 py-0.2 rounded border border-amber-200";
+            }
+        }
+
+        function copySeoField(fieldId, toastMsg) {
+            const input = document.getElementById(fieldId);
+            if (!input) return;
+            copyText(input.value);
+            showToast(toastMsg || 'Copied!');
+        }
+
+        function copyBothSeoTags() {
+            const t = (document.getElementById('seoTitleInput') || {}).value || '';
+            const d = (document.getElementById('seoDescInput') || {}).value || '';
+            const combined = `SEO Title Tag (${t.length}/60 chars):\n${t}\n\nSEO Meta Description (${d.length}/160 chars):\n${d}`;
+            copyText(combined);
+            showToast('Copied Both SEO Title & Meta Description!');
+        }
+
+        async function regenerateAiSeo(handle, btn) {
+            const btnText = document.getElementById('aiSeoBtnText');
+            const btnIcon = document.getElementById('aiSeoBtnIcon');
+            const aiBadge = document.getElementById('aiPoweredBadge');
+            const origText = btnText ? btnText.innerText : '';
+            if (btn) {
+                btn.disabled = true;
+                btn.classList.add('opacity-75');
+            }
+            if (btnText) btnText.innerText = 'Crafting with Gemini...';
+            if (btnIcon) btnIcon.innerText = '⏳';
+            showToast('Assigning task to Gemini AI for viral SEO...');
+
+            try {
+                const res = await fetch(`/api/product/${encodeURIComponent(handle)}/ai-seo?refresh=1`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    const titleInput = document.getElementById('seoTitleInput');
+                    const descInput = document.getElementById('seoDescInput');
+                    if (titleInput && data.seo_title) {
+                        titleInput.value = data.seo_title;
+                        updateSeoTitleCount(data.seo_title);
+                    }
+                    if (descInput && data.seo_description) {
+                        descInput.value = data.seo_description;
+                        updateSeoDescCount(data.seo_description);
+                    }
+                    if (aiBadge) {
+                        aiBadge.innerText = data.ai_powered ? `✨ Gemini AI Verified (${data.ai_model})` : '🤖 AI Ready';
+                        aiBadge.className = "text-[9px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800 border border-emerald-200";
+                    }
+                    showToast(`✨ Generated! Title: ${data.title_len}/60, Desc: ${data.desc_len}/160`);
+                } else {
+                    alert('AI Generation error: ' + (data.error || 'Unknown error'));
+                }
+            } catch (err) {
+                alert('Request failed: ' + err.message);
+            } finally {
+                if (btn) {
+                    btn.disabled = false;
+                    btn.classList.remove('opacity-75');
+                }
+                if (btnText) btnText.innerText = origText || 'AI Regenerate (Gemini)';
+                if (btnIcon) btnIcon.innerText = '✨';
+            }
         }
 
         function selectGalleryImage(src, thumbEl) {
