@@ -442,7 +442,17 @@ def get_google_trends_analysis(keyword: str, niche: str, fetch_live: bool = Fals
             "is_stale": False,
             "null_reason": "Not fetched yet — click 'Fetch Live Demand' to query"
         },
-        "youtube": fetch_youtube_demand(q),
+        "youtube": {
+            "value": None,
+            "videos": None,
+            "status": "unavailable",
+            "source": "YouTube India Public Search",
+            "source_url": f"https://www.youtube.com/results?search_query={encoded}+india",
+            "fetched_at": None,
+            "method": "scrape",
+            "is_stale": False,
+            "null_reason": "Not fetched yet"
+        },
         "trend_status": "Data not available (Click 'Fetch Live Demand' on product page to query pytrends & Autosuggest)",
         "trend_label": "Data not available",
         "trends_url": trends_url,

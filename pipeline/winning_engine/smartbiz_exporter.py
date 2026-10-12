@@ -507,22 +507,52 @@ def select_current_page_products(
     min_score: float = 0.0,
     min_margin: float = 0.0,
     confidence: str = "All",
+    exclude_exported: bool = True,
+    extra_excluded_keys: Optional[List[str]] = None,
+    commit_to_ledger: bool = False,
 ) -> List[Dict]:
+    from .export_ledger import extract_product_fingerprints, record_exported_products
+
     if niche and niche != "All":
         items = get_winners(
             niche=niche,
             include_hard_failed=include_hard_failed,
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
-            per_niche_display=max(limit, 20),
+            per_niche_display=max(limit + 10, 30),
+            exclude_exported=exclude_exported,
+            extra_excluded_keys=extra_excluded_keys,
+            auto_refill=exclude_exported,
         )
+        # If a specific category has fewer than `limit` unexported items remaining, top up from all unexported categories
+        if len(items) < limit:
+            all_unexported = get_winners(
+                niche="All",
+                include_hard_failed=include_hard_failed,
+                refresh_dynamic=True,
+                batch_cursor=batch_cursor,
+                per_niche_display=0,
+                exclude_exported=exclude_exported,
+                extra_excluded_keys=extra_excluded_keys,
+                auto_refill=exclude_exported,
+            )
+            existing_handles = {w.get("handle") for w in items}
+            for w in all_unexported:
+                if w.get("handle") not in existing_handles:
+                    items.append(w)
+                    existing_handles.add(w.get("handle"))
+                    if len(items) >= limit:
+                        break
     else:
         items = get_winners(
             niche="All",
             include_hard_failed=include_hard_failed,
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
-            per_niche_display=12,
+            per_niche_display=0,
+            exclude_exported=exclude_exported,
+            extra_excluded_keys=extra_excluded_keys,
+            auto_refill=exclude_exported,
         )
         items = sorted(items, key=lambda x: float(x.get("winning_score") or 0), reverse=True)
 
@@ -533,18 +563,51 @@ def select_current_page_products(
     if confidence and confidence != "All":
         items = [w for w in items if str(w.get("confidence", "")).lower() == confidence.lower()]
 
-    return items[:limit]
+    # Final 4-key deduplication pass within the batch
+    selected: List[Dict] = []
+    seen_skus = set()
+    seen_handles = set()
+    seen_fps = set()
+    for w in items:
+        fp = extract_product_fingerprints(w)
+        if (fp["sku"] and fp["sku"] in seen_skus) or (fp["handle"] and fp["handle"] in seen_handles) or (fp["title_fp"] and fp["title_fp"] in seen_fps):
+            continue
+        if fp["sku"]:
+            seen_skus.add(fp["sku"])
+        if fp["handle"]:
+            seen_handles.add(fp["handle"])
+        if fp["title_fp"]:
+            seen_fps.add(fp["title_fp"])
+        selected.append(w)
+        if len(selected) >= limit:
+            break
+
+    if commit_to_ledger and selected:
+        record_exported_products(
+            selected,
+            source_label=f"smartbiz_page_{niche.lower()}",
+            extra_client_keys=extra_excluded_keys,
+        )
+
+    return selected
 
 
 def select_smart_mix_products(
     total_count: int = 55,
     batch_cursor: int = 0,
+    exclude_exported: bool = True,
+    extra_excluded_keys: Optional[List[str]] = None,
+    commit_to_ledger: bool = False,
 ) -> List[Dict]:
+    from .export_ledger import extract_product_fingerprints, record_exported_products
+
     categories = ["Festive", "Kitchen", "Home Decor", "Gadgets", "Gifts"]
     per_cat = max(1, total_count // len(categories))
 
     mixed: List[Dict] = []
+    seen_skus = set()
     seen_handles = set()
+    seen_fps = set()
 
     for cat in categories:
         cat_items = get_winners(
@@ -552,17 +615,28 @@ def select_smart_mix_products(
             include_hard_failed=False,
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
-            per_niche_display=per_cat + 5,
+            per_niche_display=per_cat + 10,
+            exclude_exported=exclude_exported,
+            extra_excluded_keys=extra_excluded_keys,
+            auto_refill=exclude_exported,
         )
         added = 0
         for item in cat_items:
-            h = item.get("handle")
-            if h and h not in seen_handles and not item.get("is_hard_failed", False):
-                seen_handles.add(h)
-                mixed.append(item)
-                added += 1
-                if added >= per_cat:
-                    break
+            if item.get("is_hard_failed", False):
+                continue
+            fp = extract_product_fingerprints(item)
+            if (fp["sku"] and fp["sku"] in seen_skus) or (fp["handle"] and fp["handle"] in seen_handles) or (fp["title_fp"] and fp["title_fp"] in seen_fps):
+                continue
+            if fp["sku"]:
+                seen_skus.add(fp["sku"])
+            if fp["handle"]:
+                seen_handles.add(fp["handle"])
+            if fp["title_fp"]:
+                seen_fps.add(fp["title_fp"])
+            mixed.append(item)
+            added += 1
+            if added >= per_cat:
+                break
 
     if len(mixed) < total_count:
         all_pool = get_winners(
@@ -571,16 +645,35 @@ def select_smart_mix_products(
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
             per_niche_display=0,
+            exclude_exported=exclude_exported,
+            extra_excluded_keys=extra_excluded_keys,
+            auto_refill=exclude_exported,
         )
         for item in all_pool:
-            h = item.get("handle")
-            if h and h not in seen_handles and not item.get("is_hard_failed", False):
-                seen_handles.add(h)
-                mixed.append(item)
-                if len(mixed) >= total_count:
-                    break
+            if item.get("is_hard_failed", False):
+                continue
+            fp = extract_product_fingerprints(item)
+            if (fp["sku"] and fp["sku"] in seen_skus) or (fp["handle"] and fp["handle"] in seen_handles) or (fp["title_fp"] and fp["title_fp"] in seen_fps):
+                continue
+            if fp["sku"]:
+                seen_skus.add(fp["sku"])
+            if fp["handle"]:
+                seen_handles.add(fp["handle"])
+            if fp["title_fp"]:
+                seen_fps.add(fp["title_fp"])
+            mixed.append(item)
+            if len(mixed) >= total_count:
+                break
 
-    return mixed[:total_count]
+    selected = mixed[:total_count]
+    if commit_to_ledger and selected:
+        record_exported_products(
+            selected,
+            source_label="smartbiz_mix_55",
+            extra_client_keys=extra_excluded_keys,
+        )
+
+    return selected
 
 
 def build_unique_smartbiz_rows(products: List[Dict]) -> List[List[str]]:

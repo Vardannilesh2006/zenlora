@@ -278,17 +278,100 @@ def scan_and_update_winners(
     return winners
 
 
+def auto_refill_unexported_winners(
+    existing_winners: List[Dict[str, Any]],
+    exclusion_sets,
+    min_needed_total: int = 80,
+) -> List[Dict[str, Any]]:
+    """
+    If the number of unexported winners falls below `min_needed_total`, automatically crawls
+    the next unseen pages of DeoDap's live Shopify catalog, enriches & scores the new items,
+    persists them to storage, and returns the expanded pool.
+    """
+    from winning_engine.deodap_harvester import harvest_fresh_unexported_deodap_items
+    from winning_engine.export_ledger import (
+        extract_product_fingerprints,
+        is_product_already_exported,
+        load_export_ledger,
+        save_export_ledger,
+    )
+
+    ledger = load_export_ledger()
+    start_pg = int(ledger.get("last_harvested_deodap_page") or 3) + 1
+
+    # Combine existing pool fingerprints into exclusion sets so we don't re-harvest items already in winning_products.json
+    skus, handles, variant_ids, title_fps = (
+        set(exclusion_sets[0]),
+        set(exclusion_sets[1]),
+        set(exclusion_sets[2]),
+        set(exclusion_sets[3]),
+    )
+    for w in existing_winners:
+        fp = extract_product_fingerprints(w)
+        if fp["sku"]:
+            skus.add(fp["sku"])
+        if fp["handle"]:
+            handles.add(fp["handle"])
+        if fp["variant_id"]:
+            variant_ids.add(fp["variant_id"])
+        if fp["title_fp"]:
+            title_fps.add(fp["title_fp"])
+
+    raw_new_items, next_pg = harvest_fresh_unexported_deodap_items(
+        start_page=start_pg,
+        max_pages=2,
+        exclusion_sets=(skus, handles, variant_ids, title_fps),
+    )
+
+    ledger["last_harvested_deodap_page"] = next_pg - 1
+    save_export_ledger(ledger)
+
+    if not raw_new_items:
+        return existing_winners
+
+    combined_pool = existing_winners + raw_new_items
+    newly_enriched: List[Dict[str, Any]] = []
+    for item in raw_new_items:
+        enriched = enrich_winner_record(item, catalog_pool=combined_pool)
+        if not enriched.get("is_hard_failed", False):
+            newly_enriched.append(enriched)
+
+    if newly_enriched:
+        updated_all = existing_winners + newly_enriched
+        repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
+        for target in (WINNING_DB_FILE, repo_file):
+            try:
+                target.parent.mkdir(parents=True, exist_ok=True)
+                with open(target, "w", encoding="utf-8") as f:
+                    json.dump(updated_all, f, indent=2, ensure_ascii=False)
+            except Exception:
+                pass
+        return updated_all
+
+    return existing_winners
+
+
 def get_winners(
     niche: Optional[str] = None,
     include_hard_failed: bool = False,
     refresh_dynamic: bool = True,
     batch_cursor: int = 0,
-    per_niche_display: int = 12
+    per_niche_display: int = 12,
+    exclude_exported: bool = True,
+    extra_excluded_keys: Optional[List[str]] = None,
+    auto_refill: bool = False,
 ) -> List[Dict[str, Any]]:
     """
-    Loads winning products from storage, dynamically applying any updated manual entries
-    or user settings, and rotates the displayed slice per niche when batch_cursor > 0.
+    Loads winning products from storage, filters out any product already in the 4-Key Zero-Repeat Export Vault
+    when `exclude_exported=True`, auto-refills from deeper live DeoDap pages when `auto_refill=True`,
+    and rotates the displayed slice per niche when batch_cursor > 0.
     """
+    from winning_engine.export_ledger import (
+        build_exclusion_sets,
+        extract_product_fingerprints,
+        is_product_already_exported,
+    )
+
     winners = []
     repo_file = CONFIG_BASE_DIR / "data" / "winning_products.json"
 
@@ -313,6 +396,38 @@ def get_winners(
 
     if not include_hard_failed:
         winners = [w for w in winners if not w.get("is_hard_failed", False)]
+
+    if exclude_exported:
+        excl_sets = build_exclusion_sets(extra_excluded_keys)
+        unexported = [w for w in winners if not is_product_already_exported(w, excl_sets)]
+
+        # Auto-refill from deeper DeoDap pages if unexported pool is running low
+        target_min = max(per_niche_display * 5 if per_niche_display else 60, 65)
+        if auto_refill and len(unexported) < target_min:
+            winners = auto_refill_unexported_winners(winners, excl_sets, min_needed_total=target_min)
+            unexported = [w for w in winners if not is_product_already_exported(w, excl_sets)]
+
+        # Also deduplicate by 4-key fingerprint within the active candidate list so two SKUs with identical titles never appear together
+        deduped: List[Dict[str, Any]] = []
+        seen_skus = set()
+        seen_handles = set()
+        seen_title_fps = set()
+        for w in unexported:
+            fp = extract_product_fingerprints(w)
+            if fp["sku"] and fp["sku"] in seen_skus:
+                continue
+            if fp["handle"] and fp["handle"] in seen_handles:
+                continue
+            if fp["title_fp"] and len(fp["title_fp"]) >= 5 and fp["title_fp"] in seen_title_fps:
+                continue
+            if fp["sku"]:
+                seen_skus.add(fp["sku"])
+            if fp["handle"]:
+                seen_handles.add(fp["handle"])
+            if fp["title_fp"]:
+                seen_title_fps.add(fp["title_fp"])
+            deduped.append(w)
+        winners = deduped
 
     # Group by niche to apply batch_cursor rotation and per_niche_display slicing
     if per_niche_display and per_niche_display > 0:
@@ -376,7 +491,7 @@ def get_winners(
 def import_to_studio(handle: str) -> Dict[str, Any]:
     """Imports a discovered winning product directly into the Zenlora Studio database."""
     normalized_handle = DeoDapExtractor.clean_handle(handle)
-    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=False, per_niche_display=0)
+    all_winners = get_winners(include_hard_failed=True, refresh_dynamic=False, per_niche_display=0, exclude_exported=False)
     target = next(
         (
             w for w in all_winners
@@ -390,3 +505,4 @@ def import_to_studio(handle: str) -> Dict[str, Any]:
     from pipeline_controller import ZenloraPipeline
     deodap_url = target.get("deodap_url") or f"https://www.deodap.in/products/{normalized_handle}"
     return ZenloraPipeline.process_url(deodap_url)
+

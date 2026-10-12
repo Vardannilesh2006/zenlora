@@ -464,3 +464,68 @@ def harvest_deodap_bestsellers(
     })
 
     return selected_items
+
+
+def harvest_fresh_unexported_deodap_items(
+    start_page: int = 4,
+    max_pages: int = 3,
+    exclusion_sets=None,
+) -> tuple[List[Dict[str, Any]], int]:
+    """
+    Crawls deeper unseen pages of DeoDap's live Shopify catalog (`page=4..20`) to auto-refill
+    the pool whenever unexported winning products run low.
+    """
+    from winning_engine.export_ledger import (
+        build_exclusion_sets,
+        extract_product_fingerprints,
+        is_product_already_exported,
+    )
+
+    excl = exclusion_sets or build_exclusion_sets()
+    skus, handles, variant_ids, title_fps = (
+        set(excl[0]),
+        set(excl[1]),
+        set(excl[2]),
+        set(excl[3]),
+    )
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
+        "Accept": "application/json",
+    }
+    fetched_at = now_iso()
+    fresh_items: List[Dict[str, Any]] = []
+    curr_pg = max(1, int(start_page or 4))
+
+    for _ in range(max_pages):
+        pg = ((curr_pg - 1) % 20) + 1
+        curr_pg += 1
+        url = f"https://www.deodap.in/collections/all/products.json?limit=250&page={pg}&sort_by=best-selling"
+        try:
+            resp = requests.get(url, headers=headers, timeout=4.0)
+            if resp.status_code != 200:
+                continue
+            prods = resp.json().get("products", [])
+            if not prods:
+                continue
+            for idx, p in enumerate(prods):
+                item = _format_deodap_item(p, pg, idx, url, fetched_at)
+                if not item or not item.get("in_stock") or not item.get("images"):
+                    continue
+                if is_product_already_exported(item, (skus, handles, variant_ids, title_fps)):
+                    continue
+                fp = extract_product_fingerprints(item)
+                if fp["sku"]:
+                    skus.add(fp["sku"])
+                if fp["handle"]:
+                    handles.add(fp["handle"])
+                if fp["variant_id"]:
+                    variant_ids.add(fp["variant_id"])
+                if fp["title_fp"]:
+                    title_fps.add(fp["title_fp"])
+                fresh_items.append(item)
+        except Exception as e:
+            print(f"[DeoDap Auto-Refill] Page {pg} fetch warning: {e}")
+
+    return fresh_items, curr_pg
+

@@ -140,9 +140,52 @@ def test_flask_smartbiz_csv_endpoints():
     assert preset_json["preset_id"] == "zenlora_smartbiz_v10_new_winners"
     assert len(preset_json["discount_bands"]) == 4
 
-    # 4. Test SmartBiz 3-Sheet Excel (.xlsx) Endpoint
-    resp_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Kitchen&batch=0&limit=15")
+    # 4. Test SmartBiz 3-Sheet Excel (.xlsx) Endpoint (without committing to ledger)
+    resp_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Kitchen&batch=0&limit=15&commit=0")
     assert resp_xlsx.status_code == 200
     wb = openpyxl.load_workbook(io.BytesIO(resp_xlsx.data), read_only=True)
     assert "bulk_upload_template" in wb.sheetnames
     wb.close()
+
+    # Reset test exports back to store baseline
+    client.post("/api/radar/export-ledger", json={"action": "reset", "keep_store_baseline": True})
+
+
+def test_zero_repeat_vault_across_multiple_csv_exports():
+    """
+    Strictly verifies that generating CSV multiple times in a row NEVER repeats a single SKU or product title,
+    and never exports any of the 90 existing store baseline products.
+    """
+    client = app.test_client()
+    client.post("/api/radar/export-ledger", json={"action": "reset", "keep_store_baseline": True})
+
+    baseline_ledger = client.get("/api/radar/export-ledger").get_json()
+    baseline_skus = set(baseline_ledger.get("skus", []))
+    assert len(baseline_skus) >= 39
+
+    all_exported_skus = set()
+    all_exported_titles = set()
+
+    try:
+        # Generate 3 consecutive CSV files (25 products each = 75 products total)
+        for run_idx in range(3):
+            resp = client.post(
+                "/api/radar/smartbiz.csv?mode=page&niche=All&limit=25",
+                json={"excluded_keys": list(all_exported_skus)},
+            )
+            assert resp.status_code == 200
+            rows = list(csv.reader(io.StringIO(resp.data.decode("utf-8-sig"))))[1:]
+            assert len(rows) == 25
+
+            for r in rows:
+                sku = r[5].strip().lower()
+                title = r[6].strip().lower()
+                assert sku not in baseline_skus, f"Store baseline SKU {sku} was repeated!"
+                assert sku not in all_exported_skus, f"SKU {sku} was repeated in run {run_idx + 1}!"
+                assert title not in all_exported_titles, f"Title '{title}' was repeated in run {run_idx + 1}!"
+                all_exported_skus.add(sku)
+                all_exported_titles.add(title)
+    finally:
+        # Cleanly restore ledger to the 90 store baseline items after test
+        client.post("/api/radar/export-ledger", json={"action": "reset", "keep_store_baseline": True})
+

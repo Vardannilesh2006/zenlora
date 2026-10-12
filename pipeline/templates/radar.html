@@ -148,19 +148,22 @@
         <div class="max-w-[1500px] mx-auto">
             <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
                 <div>
-                    <div class="flex items-center gap-2">
-                        <h2 class="text-sm font-bold text-emerald-950">📋 Saved SmartBiz v10 Store Preset (New High-Score Winners Only)</h2>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <h2 class="text-sm font-bold text-emerald-950">📋 Saved SmartBiz v10 Store Preset + 🛡️ Zero-Repeat Vault</h2>
                         <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-600 text-white">ACTIVE PRESET</span>
+                        <span class="text-[10px] font-bold px-2 py-0.5 rounded-full bg-zinc-900 text-emerald-300" id="vaultBadgeHeader">
+                            🛡️ {{ export_ledger.total_blocked_products if export_ledger else 90 }} Products Blocked (0 Repeats)
+                        </span>
                     </div>
                     <p class="text-[11px] text-emerald-900 mt-0.5">
-                        Every CSV &amp; Excel download automatically applies your saved SmartBiz 52-column store preset with 100% real DeoDap SKUs, `.jpg` gallery images, and dynamic 4-Band Variable Discounts (0% flat-50% trap).
+                        Every CSV &amp; Excel download automatically locks exported SKUs &amp; titles into your Server + Browser Vault so the same product is <strong>never exported twice</strong>.
                     </p>
                 </div>
-                <div class="flex items-center gap-2">
-                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
+                <div class="flex items-center gap-2 flex-wrap">
+                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
                         📊 Page Excel (.xlsx)
                     </a>
-                    <a href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition">
+                    <a href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition">
                         📊 Mix 55 Excel (.xlsx)
                     </a>
                     <button onclick="togglePanel('smartbizPresetPanel')" class="text-xs font-bold text-emerald-950 hover:underline ml-1">Close ✕</button>
@@ -199,19 +202,28 @@
                 </div>
             </div>
 
-            <!-- Preset Column Mapping Summary -->
-            <div class="bg-white rounded-lg p-2.5 border border-emerald-200 text-[11px] text-textSecondary flex flex-wrap items-center gap-x-4 gap-y-1">
-                <span><strong class="text-textPrimary">Cols A–E (IDs):</strong> Blank (New Listings Only)</span>
-                <span>•</span>
-                <span><strong class="text-textPrimary">Col F (Custom SKU):</strong> Real DeoDap SKU (≤40 chars)</span>
-                <span>•</span>
-                <span><strong class="text-textPrimary">Col J (Business Cat):</strong> <code class="font-mono bg-zinc-100 px-1 rounded">GENERAL</code></span>
-                <span>•</span>
-                <span><strong class="text-textPrimary">Col K (Product Cat):</strong> 10 Storefront Collections</span>
-                <span>•</span>
-                <span><strong class="text-textPrimary">Col U (Best Seller):</strong> Selective Yes (~33%) / No (~67%)</span>
-                <span>•</span>
-                <span><strong class="text-textPrimary">Cols W–AB (Images):</strong> Up to 6 Real DeoDap <code class="font-mono bg-zinc-100 px-1 rounded">.jpg</code> URLs</span>
+            <!-- Preset Column Mapping & Zero-Repeat Vault Controls -->
+            <div class="bg-white rounded-lg p-2.5 border border-emerald-200 text-[11px] text-textSecondary flex flex-wrap items-center justify-between gap-2">
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <span><strong class="text-textPrimary">Cols A–E:</strong> Blank (New Only)</span>
+                    <span>•</span>
+                    <span><strong class="text-textPrimary">Col F:</strong> Real DeoDap SKU</span>
+                    <span>•</span>
+                    <span><strong class="text-textPrimary">Col J:</strong> <code class="font-mono bg-zinc-100 px-1 rounded">GENERAL</code></span>
+                    <span>•</span>
+                    <span><strong class="text-textPrimary">Cols W–AB:</strong> Up to 6 <code class="font-mono bg-zinc-100 px-1 rounded">.jpg</code> URLs</span>
+                    <span>•</span>
+                    <span><strong class="text-emerald-800">4-Key Deduplication:</strong> SKU + Handle + Variant ID + Core Title</span>
+                </div>
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <label class="cursor-pointer px-2.5 py-1 rounded bg-zinc-100 hover:bg-zinc-200 text-textPrimary border border-zinc-300 font-semibold text-[10px] transition">
+                        📤 Sync Store Sheet (.xlsx/.csv)
+                        <input type="file" accept=".xlsx,.csv" class="hidden" onchange="uploadStoreSheetToVault(this)">
+                    </label>
+                    <button type="button" onclick="resetExportVault()" class="px-2.5 py-1 rounded bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-200 font-semibold text-[10px] transition" title="Reset CSV test exports while keeping your 90 live store products protected">
+                        🔄 Reset Test Exports
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -339,21 +351,23 @@
             <div class="flex items-center gap-2 flex-shrink-0 flex-wrap">
                 <button
                     onclick="togglePanel('smartbizPresetPanel')"
-                    title="Inspect Saved SmartBiz v10 Store Preset & 4-Band Variable Discount Rules"
+                    title="Inspect Saved SmartBiz v10 Store Preset & Zero-Repeat Export Vault"
                     class="flex-shrink-0 text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-zinc-100 text-textPrimary border border-zinc-200 hover:bg-zinc-200 transition flex items-center gap-1 whitespace-nowrap"
                 >
-                    <span>⚙️ Preset Active</span>
+                    <span id="vaultToolbarText">🛡️ Preset &amp; Vault ({{ export_ledger.total_blocked_products if export_ledger else 90 }} Blocked)</span>
                 </button>
                 <a 
                     href="/api/radar/smartbiz.csv?mode=page&niche={{ selected_niche }}&batch={{ current_batch }}&limit=20&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}"
-                    title="Download SmartBiz v10 CSV UTF-8 using Saved Store Preset for current category/page (~20 products)"
+                    onclick="return downloadUniqueSmartBizFile(event, this.href)"
+                    title="Download 100% Unique SmartBiz v10 CSV UTF-8 (Zero-Repeat Vault Protected)"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-800 border border-emerald-200 hover:bg-emerald-100 transition flex items-center gap-1.5 whitespace-nowrap"
                 >
                     <span>📦 SmartBiz Page CSV ({% if selected_niche == 'All' %}Top 20{% else %}{{ selected_niche }} · 20{% endif %})</span>
                 </a>
                 <a 
                     href="/api/radar/smartbiz.csv?mode=mix&batch={{ current_batch }}&count=55"
-                    title="Download SmartBiz v10 CSV UTF-8 using Saved Store Preset with 55 mixed winning products across all 5 categories"
+                    onclick="return downloadUniqueSmartBizFile(event, this.href)"
+                    title="Download 100% Unique SmartBiz v10 CSV UTF-8 with 55 mixed winning products (Zero-Repeat Vault Protected)"
                     class="flex-shrink-0 text-[11px] font-semibold px-3 py-1.5 rounded-lg bg-zinc-900 text-white border border-zinc-900 hover:bg-zinc-800 transition flex items-center gap-1.5 shadow-2xs whitespace-nowrap"
                 >
                     <span>🚀 SmartBiz Mix 55 CSV</span>
@@ -688,6 +702,140 @@
                 alert('Import network error: ' + err.message);
                 btn.disabled = false;
                 btn.innerHTML = originalHtml;
+            }
+        }
+
+        const VAULT_STORAGE_KEY = 'zenlora_exported_vault_keys_v1';
+
+        function getBrowserVaultKeys() {
+            try {
+                const raw = localStorage.getItem(VAULT_STORAGE_KEY);
+                return raw ? JSON.parse(raw) : [];
+            } catch (e) {
+                return [];
+            }
+        }
+
+        function addBrowserVaultKeys(newKeys) {
+            try {
+                const current = new Set(getBrowserVaultKeys());
+                newKeys.forEach(k => {
+                    if (k && String(k).trim()) current.add(String(k).trim().toLowerCase());
+                });
+                localStorage.setItem(VAULT_STORAGE_KEY, JSON.stringify(Array.from(current)));
+            } catch (e) {}
+        }
+
+        function downloadUniqueSmartBizFile(event, url) {
+            if (event) event.preventDefault();
+            const btn = event ? event.currentTarget : null;
+            const origHtml = btn ? btn.innerHTML : '';
+            if (btn) {
+                btn.style.pointerEvents = 'none';
+                btn.classList.add('opacity-75');
+                btn.innerHTML = `<span>⏳ Generating 100% Unique File...</span>`;
+            }
+
+            const browserKeys = getBrowserVaultKeys();
+
+            fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ excluded_keys: browserKeys })
+            })
+            .then(async (res) => {
+                if (!res.ok) throw new Error('Export failed with status ' + res.status);
+                const exportedSkus = (res.headers.get('X-Zenlora-Exported-SKUs') || '').split(',').filter(Boolean);
+                const exportedHandles = (res.headers.get('X-Zenlora-Exported-Handles') || '').split(',').filter(Boolean);
+                const blockedTotal = res.headers.get('X-Zenlora-Blocked-Total') || '';
+                const disp = res.headers.get('Content-Disposition') || '';
+                let filename = url.includes('.xlsx') ? 'smartbiz_bulk_upload_unique.xlsx' : 'smartbiz_bulk_upload_unique.csv';
+                const match = disp.match(/filename=([^;]+)/i);
+                if (match && match[1]) filename = match[1].trim().replace(/^["']|["']$/g, '');
+
+                addBrowserVaultKeys([...exportedSkus, ...exportedHandles]);
+
+                const blob = await res.blob();
+                const blobUrl = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = blobUrl;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                setTimeout(() => URL.revokeObjectURL(blobUrl), 2000);
+
+                // Hide exported product cards immediately from current screen
+                exportedHandles.forEach(h => {
+                    const card = document.getElementById('card-' + h);
+                    if (card) card.remove();
+                });
+
+                if (blockedTotal) {
+                    const b1 = document.getElementById('vaultBadgeHeader');
+                    const b2 = document.getElementById('vaultToolbarText');
+                    if (b1) b1.innerText = `🛡️ ${blockedTotal} Products Blocked (0 Repeats)`;
+                    if (b2) b2.innerText = `🛡️ Preset & Vault (${blockedTotal} Blocked)`;
+                }
+
+                showToast(`Downloaded ${exportedSkus.length} unique products! Locked in Zero-Repeat Vault (${blockedTotal} total blocked).`, false);
+                setTimeout(() => window.location.reload(), 900);
+            })
+            .catch((err) => {
+                alert('Export error: ' + err.message);
+            })
+            .finally(() => {
+                if (btn) {
+                    btn.style.pointerEvents = '';
+                    btn.classList.remove('opacity-75');
+                    btn.innerHTML = origHtml;
+                }
+            });
+
+            return false;
+        }
+
+        async function uploadStoreSheetToVault(inputEl) {
+            if (!inputEl.files || !inputEl.files[0]) return;
+            const formData = new FormData();
+            formData.append('file', inputEl.files[0]);
+            showToast('Syncing SmartBiz sheet into Zero-Repeat Vault...', false);
+            try {
+                const res = await fetch('/api/radar/export-ledger', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await res.json();
+                if (data.success) {
+                    if (data.ledger && Array.isArray(data.ledger.skus)) {
+                        addBrowserVaultKeys(data.ledger.skus);
+                    }
+                    showToast(`Synced ${data.imported_count} store items! Total blocked: ${data.total_blocked_products}`, false);
+                    setTimeout(() => window.location.reload(), 800);
+                } else {
+                    alert('Sync error: ' + (data.error || 'Unknown error'));
+                }
+            } catch (e) {
+                alert('Upload failed: ' + e.message);
+            }
+        }
+
+        async function resetExportVault() {
+            if (!confirm('Reset CSV test exports while keeping your 90 existing SmartBiz store products protected?')) return;
+            try {
+                localStorage.removeItem(VAULT_STORAGE_KEY);
+                const res = await fetch('/api/radar/export-ledger', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ action: 'reset', keep_store_baseline: true })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast(`Reset complete! ${data.ledger.total_blocked_products} live store products remain protected.`, false);
+                    setTimeout(() => window.location.reload(), 700);
+                }
+            } catch (e) {
+                alert('Reset failed: ' + e.message);
             }
         }
     </script>

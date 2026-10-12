@@ -34,6 +34,12 @@ from winning_engine.smartbiz_exporter import (
     select_current_page_products,
     select_smart_mix_products,
 )
+from winning_engine.export_ledger import (
+    extract_product_fingerprints,
+    import_smartbiz_sheet_to_ledger,
+    load_export_ledger,
+    reset_export_ledger,
+)
 from ugc_engine import UGCEngine
 
 app = Flask(
@@ -129,6 +135,7 @@ def radar():
     audit_logs = get_audit_logs(limit=25)
 
     smartbiz_preset = load_smartbiz_preset()
+    export_ledger = load_export_ledger()
 
     return render_template(
         "radar.html",
@@ -152,6 +159,7 @@ def radar():
         audit_logs=audit_logs,
         current_batch=batch_cursor,
         smartbiz_preset=smartbiz_preset,
+        export_ledger=export_ledger,
     )
 
 
@@ -257,7 +265,61 @@ def api_smartbiz_preset():
     return jsonify(load_smartbiz_preset())
 
 
-@app.route("/api/radar/smartbiz.csv", methods=["GET"])
+@app.route("/api/radar/export-ledger", methods=["GET", "POST"])
+def api_export_ledger():
+    if request.method == "GET":
+        return jsonify(load_export_ledger())
+    try:
+        if "file" in request.files:
+            f = request.files["file"]
+            res = import_smartbiz_sheet_to_ledger(f.read(), f.filename or "upload.xlsx")
+            return jsonify({"success": True, **res})
+        body = request.get_json(silent=True) or {}
+        action = body.get("action", "")
+        if action == "reset":
+            keep_baseline = bool(body.get("keep_store_baseline", True))
+            updated = reset_export_ledger(keep_store_baseline=keep_baseline)
+            return jsonify({"success": True, "ledger": updated})
+        return jsonify({"success": True, "ledger": load_export_ledger()})
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+
+def _extract_client_excluded_keys() -> list[str]:
+    keys: list[str] = []
+    hdr = request.headers.get("X-Zenlora-Excluded", "")
+    if hdr:
+        keys.extend(k.strip() for k in hdr.split(",") if k.strip())
+    q_excl = request.args.get("excluded", "")
+    if q_excl:
+        keys.extend(k.strip() for k in q_excl.split(",") if k.strip())
+    if request.is_json:
+        body = request.get_json(silent=True) or {}
+        if isinstance(body.get("excluded_keys"), list):
+            keys.extend(str(k).strip() for k in body["excluded_keys"] if str(k).strip())
+    return keys
+
+
+def _build_export_headers(filename: str, products: list[dict]) -> dict[str, str]:
+    exported_skus = []
+    exported_handles = []
+    for p in products:
+        fp = extract_product_fingerprints(p)
+        if fp["sku"]:
+            exported_skus.append(fp["sku"])
+        if fp["handle"]:
+            exported_handles.append(fp["handle"])
+    ledger = load_export_ledger()
+    return {
+        "Content-Disposition": f"attachment; filename={filename}",
+        "X-Zenlora-Exported-SKUs": ",".join(exported_skus[:80]),
+        "X-Zenlora-Exported-Handles": ",".join(exported_handles[:80]),
+        "X-Zenlora-Blocked-Total": str(ledger.get("total_blocked_products", 0)),
+        "X-Zenlora-Export-Batches": str(ledger.get("total_export_batches", 0)),
+    }
+
+
+@app.route("/api/radar/smartbiz.csv", methods=["GET", "POST"])
 def export_smartbiz_csv():
     mode = request.args.get("mode", "page").strip().lower()
     niche = request.args.get("niche", "All").strip()
@@ -265,11 +327,20 @@ def export_smartbiz_csv():
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
     confidence = request.args.get("confidence", "All").strip()
+    commit_flag = request.args.get("commit", "1") != "0"
+    extra_keys = _extract_client_excluded_keys()
 
     if mode == "mix":
         total_count = int(request.args.get("count", 55) or 55)
-        products = select_smart_mix_products(total_count=total_count, batch_cursor=batch_cursor)
-        filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_batch{batch_cursor}.csv"
+        products = select_smart_mix_products(
+            total_count=total_count,
+            batch_cursor=batch_cursor,
+            exclude_exported=True,
+            extra_excluded_keys=extra_keys,
+            commit_to_ledger=commit_flag,
+        )
+        ledger = load_export_ledger()
+        filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
     else:
         limit = int(request.args.get("limit", 20) or 20)
         products = select_current_page_products(
@@ -280,19 +351,23 @@ def export_smartbiz_csv():
             min_score=min_score,
             min_margin=min_margin,
             confidence=confidence,
+            exclude_exported=True,
+            extra_excluded_keys=extra_keys,
+            commit_to_ledger=commit_flag,
         )
         safe_niche = niche.lower().replace(" ", "_")
-        filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_batch{batch_cursor}.csv"
+        ledger = load_export_ledger()
+        filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
 
     csv_bytes = generate_smartbiz_csv_bytes(products)
     return Response(
         csv_bytes,
         mimetype="text/csv; charset=utf-8",
-        headers={"Content-Disposition": f"attachment; filename={filename}"},
+        headers=_build_export_headers(filename, products),
     )
 
 
-@app.route("/api/radar/smartbiz.xlsx", methods=["GET"])
+@app.route("/api/radar/smartbiz.xlsx", methods=["GET", "POST"])
 def export_smartbiz_xlsx():
     mode = request.args.get("mode", "page").strip().lower()
     niche = request.args.get("niche", "All").strip()
@@ -300,11 +375,20 @@ def export_smartbiz_xlsx():
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
     confidence = request.args.get("confidence", "All").strip()
+    commit_flag = request.args.get("commit", "1") != "0"
+    extra_keys = _extract_client_excluded_keys()
 
     if mode == "mix":
         total_count = int(request.args.get("count", 55) or 55)
-        products = select_smart_mix_products(total_count=total_count, batch_cursor=batch_cursor)
-        filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_batch{batch_cursor}.xlsx"
+        products = select_smart_mix_products(
+            total_count=total_count,
+            batch_cursor=batch_cursor,
+            exclude_exported=True,
+            extra_excluded_keys=extra_keys,
+            commit_to_ledger=commit_flag,
+        )
+        ledger = load_export_ledger()
+        filename = f"smartbiz_bulk_upload_mix_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
     else:
         limit = int(request.args.get("limit", 20) or 20)
         products = select_current_page_products(
@@ -315,15 +399,19 @@ def export_smartbiz_xlsx():
             min_score=min_score,
             min_margin=min_margin,
             confidence=confidence,
+            exclude_exported=True,
+            extra_excluded_keys=extra_keys,
+            commit_to_ledger=commit_flag,
         )
         safe_niche = niche.lower().replace(" ", "_")
-        filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_batch{batch_cursor}.xlsx"
+        ledger = load_export_ledger()
+        filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
 
     xlsx_bytes = generate_smartbiz_xlsx_bytes(products)
     return Response(
         xlsx_bytes,
         mimetype="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        headers={"Content-Disposition": f"attachment; filename={filename}"},
+        headers=_build_export_headers(filename, products),
     )
 
 
