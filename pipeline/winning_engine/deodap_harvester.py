@@ -85,6 +85,18 @@ NICHE_COLLECTIONS_MAP = {
         "gift",
         "gifts-seasonal",
     ],
+    "Health & Beauty Accessories": [
+        "personal-care-appliances",
+        "skin-care-tools",
+        "makeup-accessories",
+        "makeup-and-organizers",
+        "massager",
+        "hair-care-styling",
+        "grooming-shaving",
+        "health-beauty-personal-care",
+        "personal-care-health-appliances",
+        "foot-care",
+    ],
 }
 
 # Strictly Excluded Wearable / Artificial Jewelry (Word-boundary matched; never blocks 'rechargeable' or 'string' or 'jewelry box')
@@ -97,7 +109,7 @@ EXCLUDED_JEWELRY = [
     "locket necklace", "stick pendant",
 ]
 
-# Global Junk & Non-Dropshipping Blocklist (Blocks food, raw agarbatti refills, hardware tools, stationery, toiletries, cables)
+# Global Junk & Non-Dropshipping Blocklist (Blocks food, raw agarbatti refills, hardware tools, stationery, consumables, cables)
 GLOBAL_JUNK_KEYWORDS = [
     # Food / Perishables / Snacks / Chocolates
     "makhana", "chocolate", "choco", "soya", "dates", "nutty", "butterscotch",
@@ -114,7 +126,7 @@ GLOBAL_JUNK_KEYWORDS = [
     "bangle", "bangles", "toe ring", "anklet",
     "choker", "mangalsutra", "kundan", "stud combo", "stud earring",
     "hoop earring", "payal", "bichiya", "ear ring", "neck piece", "gold-tone",
-    "silver-tone", "oxidised", "1 gram gold", "gold forming", "socks", "ankle length",
+    "silver-tone", "oxidised", "1 gram gold", "gold forming", "ankle length",
     "waist belt", "buckleless", "slipper", "sandal", "t-shirt", "kurti", "saree",
     "sunglass", "safety goggles", "goggles", "swimming goggles", "hair claw", "hair clip",
     "hair band", "scrunchie", "tiara", "brooch", "saree pin",
@@ -137,17 +149,16 @@ GLOBAL_JUNK_KEYWORDS = [
     "puzzle card", "unicorn assembly", "craft puzzle", "table tennis", "ping pong",
     "feliz a", "new year", "happy birthday banner", "balloon", "party foil",
     "gift envelope", "shagun envelope", "money envelope", "carry bag", "packing bag",
-    # Basic Toiletries / Grooming / Commodity Cables / Bags
-    "toothbrush", "tongue cleaner", "manicure", "pedicure", "nail cutter",
-    "makeup brush", "eyebrow", "eyeliner", "folding hair brush", "hair brush",
-    "shampoo scalp", "scalp massager", "micro usb", "type c to lightning",
+    # Raw Liquid Cosmetics / Commodity Cables / Bags
+    "hair oil", "olive hair", "argan", "bleach cream", "glycerine", "handmade soap",
+    "bath bar", "tissue paper", "nipple cover", "detox foot", "kinoki", "color powder",
+    "micro usb", "type c to lightning",
     "charging cable", "charging cord", "data cable", "wall adapter",
     "charging adapter", "fast charger", "usb splitter",
     "ac dust cover", "hanging shoe organizer", "laptop briefcase", "travel waist bag",
-    "pill cutter", "ear wax", "blackhead",
 ]
 
-# Strict Title-Only Positive Rules for Each of the 5 Categories
+# Strict Title-Only Positive Rules for Each of the 6 Categories
 NICHE_RULES = {
     "Festive": [
         "diya", "tealight", "tea light", "pooja thali", "puja thali", "aarti thali",
@@ -233,6 +244,25 @@ NICHE_RULES = {
         "dry fruit box", "gift combo", "men's gift", "women's gift", "gift",
         "cruiser ship", "sand art", "baby buddha", "dashboard idol", "idol throne",
         "pocket mirror", "coin pouch", "handbag",
+    ],
+    "Health & Beauty Accessories": [
+        "gua sha", "facial roller", "jade roller", "ice roller", "face roller",
+        "face massager", "3d roller", "body massager", "neck massager",
+        "foot massager", "scalp massager", "cellulite roller", "acupressure",
+        "manicure", "pedicure", "nail care", "nail kit", "nail cutter", "nail clipper",
+        "makeup brush", "makeup sponge", "beauty blender", "makeup organizer",
+        "cosmetic organizer", "cosmetic bag", "vanity", "compact mirror", "led mirror",
+        "hair brush", "detangling brush", "self-cleaning hair", "hair comb",
+        "hair straightener", "hair curler", "hair styler", "hair dryer", "blow dryer",
+        "nose trimmer", "ear trimmer", "hair trimmer", "beard trimmer", "beard apron",
+        "threading", "epilator", "flawless", "eyebrow trimmer", "derma roller",
+        "blackhead", "pore cleaner", "skin tag", "facial steamer", "nano mist",
+        "hot water bag", "heating pad", "gel eye mask", "eye mask", "sleeping mask",
+        "heel protector", "heel socks", "heel cup", "foot scrubber", "pumice",
+        "bath brush", "shower brush", "back scrubber", "body scrubber", "bath sponge",
+        "loofah", "water flosser", "electric toothbrush", "ear swab", "ear cleaner",
+        "knee support", "posture corrector", "wrist support", "ankle support",
+        "pill box", "medicine box", "shaving", "grooming",
     ],
 }
 
@@ -530,8 +560,8 @@ def harvest_deodap_bestsellers(
     live_items: List[Dict[str, Any]] = []
     live_sources_fetched = 0
 
-    # 1. Live Fetch from DeoDap's Official Category Collections (Gifts & Gadgets first so specialized items aren't claimed by broader collections)
-    harvest_order = ["Gifts", "Festive", "Gadgets", "Home Decor", "Kitchen"]
+    # 1. Live Fetch from DeoDap's Official Category Collections (Gifts, Festive & Health/Beauty first so specialized items aren't claimed by broader collections)
+    harvest_order = ["Gifts", "Festive", "Health & Beauty Accessories", "Gadgets", "Home Decor", "Kitchen"]
     for target_niche in harvest_order:
         cols = NICHE_COLLECTIONS_MAP.get(target_niche, [])
         col_idx = (page_cursor - 1) % len(cols)
@@ -612,12 +642,12 @@ def harvest_deodap_bestsellers(
     if live_items and not is_vercel:
         try:
             with open(cache_file, "w", encoding="utf-8") as f:
-                json.dump(all_candidates[:900], f, indent=2, ensure_ascii=False)
+                json.dump(all_candidates[:1100], f, indent=2, ensure_ascii=False)
         except Exception:
             pass
 
     # 3. Group by Niche, enforce Concept-Stem Diversity (max 2 per concept), and Rotate
-    niches = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts"]
+    niches = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories"]
     by_niche: Dict[str, List[Dict[str, Any]]] = {n: [] for n in niches}
     for item in all_candidates:
         n = item.get("niche")

@@ -535,7 +535,7 @@ def get_winners(
 
     # Group by niche to apply batch_cursor rotation and per_niche_display slicing
     if per_niche_display and per_niche_display > 0:
-        niches_order = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts"]
+        niches_order = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories"]
         by_niche: Dict[str, List[Dict[str, Any]]] = {n: [] for n in niches_order}
         for w in winners:
             wn = w.get("niche", "Gadgets")

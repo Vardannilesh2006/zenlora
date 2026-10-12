@@ -286,10 +286,11 @@ def test_category_purity_and_exact_smartbiz_product_category():
         "Kitchen": "Kitchen & Dining",
         "Gadgets": "Smart Gadgets",
         "Gifts": "Gifts & Hampers",
+        "Health & Beauty Accessories": "Health & Beauty Accessories",
     }
 
     all_items = get_winners(niche="All", per_niche_display=24, refresh_dynamic=False)
-    assert len(all_items) == 120
+    assert len(all_items) == 144
 
     for niche_key, expected_col_k in expected_map.items():
         niche_items = get_winners(niche=niche_key, per_niche_display=24, refresh_dynamic=False)

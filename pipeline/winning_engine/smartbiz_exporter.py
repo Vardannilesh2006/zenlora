@@ -108,6 +108,7 @@ NICHE_CODE_MAP = {
     "Home Decor": "DECO",
     "Gadgets": "GADG",
     "Gifts": "GIFT",
+    "Health & Beauty Accessories": "HLTH",
 }
 
 HSN_BY_PRODUCT_CATEGORY = {
@@ -116,6 +117,7 @@ HSN_BY_PRODUCT_CATEGORY = {
     "Kitchen & Dining": "392410",
     "Smart Gadgets": "850980",
     "Gifts & Hampers": "960810",
+    "Health & Beauty Accessories": "850980",
 }
 
 NICHE_TO_SMARTBIZ_CATEGORY = {
@@ -128,6 +130,9 @@ NICHE_TO_SMARTBIZ_CATEGORY = {
     "Smart Gadgets": ("GENERAL", "Smart Gadgets"),
     "Gifts": ("GENERAL", "Gifts & Hampers"),
     "Gifts & Hampers": ("GENERAL", "Gifts & Hampers"),
+    "Health & Beauty Accessories": ("GENERAL", "Health & Beauty Accessories"),
+    "Health & Beauty": ("GENERAL", "Health & Beauty Accessories"),
+    "Beauty": ("GENERAL", "Health & Beauty Accessories"),
 }
 
 
@@ -580,7 +585,7 @@ def select_smart_mix_products(
 ) -> List[Dict]:
     from .export_ledger import extract_product_fingerprints, record_exported_products
 
-    categories = ["Festive", "Kitchen", "Home Decor", "Gadgets", "Gifts"]
+    categories = ["Festive", "Kitchen", "Home Decor", "Gadgets", "Gifts", "Health & Beauty Accessories"]
     per_cat = max(1, total_count // len(categories))
 
     mixed: List[Dict] = []

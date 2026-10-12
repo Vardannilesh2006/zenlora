@@ -145,7 +145,7 @@ def radar():
     high_conf_count = sum(1 for w in active_winners if w.get("confidence") == "High")
     med_conf_count = sum(1 for w in active_winners if w.get("confidence") == "Medium")
 
-    niches = ["All", "Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts"]
+    niches = ["All", "Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories"]
     niche_counts = {
         n: sum(1 for w in active_winners if w.get("niche") == n)
         for n in niches

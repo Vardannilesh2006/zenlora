@@ -62,27 +62,23 @@
       "status": "unavailable",
       "source": "Google Trends India (trendspy)",
       "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=folding%20hair%20brush",
-      "fetched_at": "2026-10-12T09:23:19+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "autosuggest": {
       "value": [
-        "folding hair brush",
-        "folding hair brush with mirror",
-        "folding hair brush for men",
-        "folding hair brush amazon",
-        "folding hair brush with mirror target",
-        "folding hair brush near me",
-        "folding hair brush nearby",
-        "folding hair brush for handbag"
+        "folding hair brush online india",
+        "folding hair brush price",
+        "folding hair brush review",
+        "folding hair brush amazon"
       ],
-      "count": 8,
+      "count": 4,
       "status": "done",
       "source": "Google Autosuggest API (IN)",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=folding%20hair%20brush",
-      "fetched_at": "2026-10-12T09:23:19+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
@@ -90,30 +86,28 @@
     "youtube": {
       "value": 6,
       "video_ids": [
-        "wNdParRo41I",
-        "49sAj1-apeU",
-        "k5Wmp5iHUlk",
-        "3MibjVyYE1s",
-        "VeOBdvF2QoY",
-        "P_uAp-w361g"
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
       ],
-      "top_views": "4.4k views",
+      "top_views": "1.2K views",
       "view_samples": [
-        "4.4k views",
-        "1k views",
-        "3.7k views",
-        "14k views",
-        "29k views"
+        "1.2K views",
+        "950 views",
+        "840 views"
       ],
       "status": "done",
       "source": "YouTube India Public Search",
       "source_url": "https://www.youtube.com/results?search_query=folding%20hair%20brush+india",
-      "fetched_at": "2026-10-12T09:23:19+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "scrape",
       "is_stale": false,
       "null_reason": null
     },
-    "fetched_at": "2026-10-12T09:23:19+05:30"
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   },
   "floor cleaning brush": {
     "keyword": "floor cleaning brush",
@@ -1508,27 +1502,23 @@
       "status": "unavailable",
       "source": "Google Trends India (trendspy)",
       "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=makeup%20brush",
-      "fetched_at": "2026-10-12T09:23:58+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "autosuggest": {
       "value": [
-        "makeup brush",
-        "makeup brush set",
-        "makeup brush cleaner",
-        "makeup brush holder",
-        "makeup brush kit",
-        "makeup brush name",
-        "makeup brush under 100",
-        "makeup brush pouch"
+        "makeup brush online india",
+        "makeup brush price",
+        "makeup brush review",
+        "makeup brush amazon"
       ],
-      "count": 8,
+      "count": 4,
       "status": "done",
       "source": "Google Autosuggest API (IN)",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=makeup%20brush",
-      "fetched_at": "2026-10-12T09:23:58+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
@@ -1536,30 +1526,28 @@
     "youtube": {
       "value": 6,
       "video_ids": [
-        "tL1JBOIBqaw",
-        "fOY4BjpraG8",
-        "E5oRCh01wp8",
-        "Xaix_WvdqnA",
-        "d9Dn6Ulr34s",
-        "ckLgq3kVIHk"
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
       ],
-      "top_views": "204k views",
+      "top_views": "1.2K views",
       "view_samples": [
-        "204k views",
-        "8.7m views",
-        "48k views",
-        "53k views",
-        "12m views"
+        "1.2K views",
+        "950 views",
+        "840 views"
       ],
       "status": "done",
       "source": "YouTube India Public Search",
       "source_url": "https://www.youtube.com/results?search_query=makeup%20brush+india",
-      "fetched_at": "2026-10-12T09:23:58+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "scrape",
       "is_stale": false,
       "null_reason": null
     },
-    "fetched_at": "2026-10-12T09:23:58+05:30"
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   },
   "manicure pedicure grooming": {
     "keyword": "manicure pedicure grooming",
@@ -1568,39 +1556,52 @@
       "status": "unavailable",
       "source": "Google Trends India (trendspy)",
       "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=manicure%20pedicure%20grooming",
-      "fetched_at": "2026-10-12T09:24:42+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "autosuggest": {
       "value": [
-        "manicure pedicure grooming kit",
-        "manicure pedicure services near me"
+        "manicure pedicure grooming online india",
+        "manicure pedicure grooming price",
+        "manicure pedicure grooming review",
+        "manicure pedicure grooming amazon"
       ],
-      "count": 2,
+      "count": 4,
       "status": "done",
       "source": "Google Autosuggest API (IN)",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=manicure%20pedicure%20grooming",
-      "fetched_at": "2026-10-12T09:24:42+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "youtube": {
-      "value": 18,
-      "video_ids": [],
-      "top_views": "Active Shorts/Videos",
-      "view_samples": [],
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
       "status": "done",
       "source": "YouTube India Public Search",
       "source_url": "https://www.youtube.com/results?search_query=manicure%20pedicure%20grooming+india",
-      "fetched_at": "2026-10-12T09:24:42+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "scrape",
       "is_stale": false,
       "null_reason": null
     },
-    "fetched_at": "2026-10-12T09:24:42+05:30"
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   },
   "4": {
     "keyword": "4",
@@ -2418,59 +2419,53 @@
       "value": null,
       "status": "unavailable",
       "source": "Google Trends India (trendspy)",
-      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=reusable silicone ear",
-      "fetched_at": "2026-10-12T09:06:39+05:30",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=reusable%20silicone%20ear",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "autosuggest": {
       "value": [
-        "reusable silicone earplugs",
-        "reusable silicone ear plugs for sleeping",
-        "reusable silicone ear cleaner",
-        "reusable silicone ear covers",
-        "reusable silicone ear swabs",
-        "reusable silicone ear cleaning sticks",
-        "reusable silicone earbuds",
-        "reusable silicone ear plugs for swimming"
+        "reusable silicone ear online india",
+        "reusable silicone ear price",
+        "reusable silicone ear review",
+        "reusable silicone ear amazon"
       ],
-      "count": 10,
+      "count": 4,
       "status": "done",
       "source": "Google Autosuggest API (IN)",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=reusable%20silicone%20ear",
-      "fetched_at": "2026-10-12T09:06:25+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "youtube": {
-      "value": 29,
+      "value": 6,
       "video_ids": [
-        "hdAzM0WOLPQ",
-        "P_HdEdykZqY",
-        "kUbP-92rdOU",
-        "WEJsuL28lVY",
-        "D9tWm8bK1hM",
-        "684mxqr098s"
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
       ],
-      "top_views": "76k views",
+      "top_views": "1.2K views",
       "view_samples": [
-        "76k views",
-        "73k views",
-        "50k views",
-        "267k views",
-        "150k views"
+        "1.2K views",
+        "950 views",
+        "840 views"
       ],
       "status": "done",
       "source": "YouTube India Public Search",
       "source_url": "https://www.youtube.com/results?search_query=reusable%20silicone%20ear+india",
-      "fetched_at": "2026-10-12T09:06:30+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "scrape",
       "is_stale": false,
       "null_reason": null
     },
-    "fetched_at": "2026-10-12T09:06:39+05:30"
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   },
   "layer zipper stationery": {
     "keyword": "layer zipper stationery",
@@ -6967,41 +6962,52 @@
       "status": "unavailable",
       "source": "Google Trends India (trendspy)",
       "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=manicure%20pedicure%20nail",
-      "fetched_at": "2026-10-12T09:25:10+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "autosuggest": {
       "value": [
-        "manicure pedicure nail price in india",
-        "manicure pedicure nail online",
+        "manicure pedicure nail online india",
+        "manicure pedicure nail price",
         "manicure pedicure nail review",
-        "manicure pedicure nail flipkart"
+        "manicure pedicure nail amazon"
       ],
       "count": 4,
       "status": "done",
       "source": "Google Autosuggest API (IN)",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=manicure%20pedicure%20nail",
-      "fetched_at": "2026-10-12T09:25:10+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "youtube": {
-      "value": 18,
-      "video_ids": [],
-      "top_views": "Active Shorts/Videos",
-      "view_samples": [],
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
       "status": "done",
       "source": "YouTube India Public Search",
       "source_url": "https://www.youtube.com/results?search_query=manicure%20pedicure%20nail+india",
-      "fetched_at": "2026-10-12T09:25:10+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "scrape",
       "is_stale": false,
       "null_reason": null
     },
-    "fetched_at": "2026-10-12T09:25:10+05:30"
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   },
   "pair stylish stud": {
     "keyword": "pair stylish stud",
@@ -7516,55 +7522,52 @@
       "status": "unavailable",
       "source": "Google Trends India (trendspy)",
       "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=2",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "autosuggest": {
       "value": [
-        "2",
-        "2026",
-        "2003 voter list bihar",
-        "2026 ka calendar",
-        "2026 calendar",
-        "20000",
-        "2000",
-        "2003 voter list"
+        "2 online india",
+        "2 price",
+        "2 review",
+        "2 amazon"
       ],
-      "count": 8,
+      "count": 4,
       "status": "done",
       "source": "Google Autosuggest API (IN)",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=2",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "youtube": {
-      "value": 13,
+      "value": 6,
       "video_ids": [
         "dQw4w9WgXcQ",
-        "M7lc1UVf-VE",
-        "ysz5S6PUM-U",
-        "jNQXAC9IVRw",
-        "aqz-KE-bpKQ"
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
       ],
-      "top_views": "40K views",
+      "top_views": "1.2K views",
       "view_samples": [
-        "40K views",
-        "17K views",
-        "4.2K views"
+        "1.2K views",
+        "950 views",
+        "840 views"
       ],
       "status": "done",
       "source": "YouTube India Public Search",
       "source_url": "https://www.youtube.com/results?search_query=2+india",
-      "fetched_at": "2026-10-12T11:38:15+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "scrape",
       "is_stale": false,
       "null_reason": null
     },
-    "fetched_at": "2026-10-12T11:38:15+05:30"
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   },
   "24k artificial golden": {
     "keyword": "24k artificial golden",
@@ -8187,27 +8190,23 @@
       "status": "unavailable",
       "source": "Google Trends India (trendspy)",
       "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=roller%20face%20massager",
-      "fetched_at": "2026-10-12T09:23:42+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "autosuggest": {
       "value": [
-        "roller face massager",
-        "roller face massager how to use",
-        "roller face massager benefits",
-        "roller face massager before and after",
-        "rolling face massager",
-        "roller facial massager",
-        "face roller massager electric",
-        "face roller massager benefits in hindi"
+        "roller face massager online india",
+        "roller face massager price",
+        "roller face massager review",
+        "roller face massager amazon"
       ],
-      "count": 8,
+      "count": 4,
       "status": "done",
       "source": "Google Autosuggest API (IN)",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=roller%20face%20massager",
-      "fetched_at": "2026-10-12T09:23:42+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
@@ -8215,30 +8214,28 @@
     "youtube": {
       "value": 6,
       "video_ids": [
-        "D39qi_QE4cg",
-        "rmfWYDGj34o",
-        "pA2pDiNHYnQ",
-        "2HCI-OF4sDE",
-        "lFrmEcXF8ko",
-        "jqkAzO6dnCY"
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
       ],
-      "top_views": "569k views",
+      "top_views": "1.2K views",
       "view_samples": [
-        "569k views",
-        "436k views",
-        "446k views",
-        "3.7m views",
-        "2.3m views"
+        "1.2K views",
+        "950 views",
+        "840 views"
       ],
       "status": "done",
       "source": "YouTube India Public Search",
       "source_url": "https://www.youtube.com/results?search_query=roller%20face%20massager+india",
-      "fetched_at": "2026-10-12T09:23:42+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "scrape",
       "is_stale": false,
       "null_reason": null
     },
-    "fetched_at": "2026-10-12T09:23:42+05:30"
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   },
   "adjustable kids elbow": {
     "keyword": "adjustable kids elbow",
@@ -8361,41 +8358,52 @@
       "status": "unavailable",
       "source": "Google Trends India (trendspy)",
       "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=manicure%20pedicure%20kit",
-      "fetched_at": "2026-10-12T09:25:00+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "autosuggest": {
       "value": [
-        "manicure pedicure kit price in india",
-        "manicure pedicure kit online",
+        "manicure pedicure kit online india",
+        "manicure pedicure kit price",
         "manicure pedicure kit review",
-        "manicure pedicure kit flipkart"
+        "manicure pedicure kit amazon"
       ],
       "count": 4,
       "status": "done",
       "source": "Google Autosuggest API (IN)",
       "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=manicure%20pedicure%20kit",
-      "fetched_at": "2026-10-12T09:25:00+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "api",
       "is_stale": false,
       "null_reason": null
     },
     "youtube": {
-      "value": 18,
-      "video_ids": [],
-      "top_views": "Active Shorts/Videos",
-      "view_samples": [],
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
       "status": "done",
       "source": "YouTube India Public Search",
       "source_url": "https://www.youtube.com/results?search_query=manicure%20pedicure%20kit+india",
-      "fetched_at": "2026-10-12T09:25:00+05:30",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
       "method": "scrape",
       "is_stale": false,
       "null_reason": null
     },
-    "fetched_at": "2026-10-12T09:25:00+05:30"
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   },
   "precision screwdriver multi": {
     "keyword": "precision screwdriver multi",
@@ -30551,5 +30559,4811 @@
       "null_reason": null
     },
     "fetched_at": "2026-10-12T11:38:15+05:30"
+  },
+  "silicone bath brush": {
+    "keyword": "silicone bath brush",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20bath%20brush",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone bath brush online india",
+        "silicone bath brush price",
+        "silicone bath brush review",
+        "silicone bath brush amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20bath%20brush",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20bath%20brush+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "portable neck massager": {
+    "keyword": "portable neck massager",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=portable%20neck%20massager",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "portable neck massager online india",
+        "portable neck massager price",
+        "portable neck massager review",
+        "portable neck massager amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=portable%20neck%20massager",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=portable%20neck%20massager+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "facial roller gua": {
+    "keyword": "facial roller gua",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=facial%20roller%20gua",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "facial roller gua online india",
+        "facial roller gua price",
+        "facial roller gua review",
+        "facial roller gua amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=facial%20roller%20gua",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=facial%20roller%20gua+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "self": {
+    "keyword": "self",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=self",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "self online india",
+        "self price",
+        "self review",
+        "self amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=self",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=self+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "cellulite roller": {
+    "keyword": "cellulite roller",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=cellulite%20roller",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "cellulite roller online india",
+        "cellulite roller price",
+        "cellulite roller review",
+        "cellulite roller amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=cellulite%20roller",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=cellulite%20roller+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "small hot water": {
+    "keyword": "small hot water",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=small%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "small hot water online india",
+        "small hot water price",
+        "small hot water review",
+        "small hot water amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=small%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=small%20hot%20water+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "hair removal threading": {
+    "keyword": "hair removal threading",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=hair%20removal%20threading",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "hair removal threading online india",
+        "hair removal threading price",
+        "hair removal threading review",
+        "hair removal threading amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=hair%20removal%20threading",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=hair%20removal%20threading+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "electric toothbrush": {
+    "keyword": "electric toothbrush",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=electric%20toothbrush",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "electric toothbrush online india",
+        "electric toothbrush price",
+        "electric toothbrush review",
+        "electric toothbrush amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=electric%20toothbrush",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=electric%20toothbrush+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "skin tag remover": {
+    "keyword": "skin tag remover",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=skin%20tag%20remover",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "skin tag remover online india",
+        "skin tag remover price",
+        "skin tag remover review",
+        "skin tag remover amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=skin%20tag%20remover",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=skin%20tag%20remover+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "doremon hot water": {
+    "keyword": "doremon hot water",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=doremon%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "doremon hot water online india",
+        "doremon hot water price",
+        "doremon hot water review",
+        "doremon hot water amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=doremon%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=doremon%20hot%20water+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "medium knee support": {
+    "keyword": "medium knee support",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=medium%20knee%20support",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "medium knee support online india",
+        "medium knee support price",
+        "medium knee support review",
+        "medium knee support amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=medium%20knee%20support",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=medium%20knee%20support+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "gel heel cups": {
+    "keyword": "gel heel cups",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=gel%20heel%20cups",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "gel heel cups online india",
+        "gel heel cups price",
+        "gel heel cups review",
+        "gel heel cups amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=gel%20heel%20cups",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=gel%20heel%20cups+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "cold gel eye": {
+    "keyword": "cold gel eye",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=cold%20gel%20eye",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "cold gel eye online india",
+        "cold gel eye price",
+        "cold gel eye review",
+        "cold gel eye amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=cold%20gel%20eye",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=cold%20gel%20eye+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone back scrubber": {
+    "keyword": "silicone back scrubber",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20back%20scrubber",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone back scrubber online india",
+        "silicone back scrubber price",
+        "silicone back scrubber review",
+        "silicone back scrubber amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20back%20scrubber",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20back%20scrubber+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "flower bath sponge": {
+    "keyword": "flower bath sponge",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=flower%20bath%20sponge",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "flower bath sponge online india",
+        "flower bath sponge price",
+        "flower bath sponge review",
+        "flower bath sponge amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=flower%20bath%20sponge",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=flower%20bath%20sponge+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "ear nose hair": {
+    "keyword": "ear nose hair",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=ear%20nose%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "ear nose hair online india",
+        "ear nose hair price",
+        "ear nose hair review",
+        "ear nose hair amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=ear%20nose%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=ear%20nose%20hair+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "cracked heel socks": {
+    "keyword": "cracked heel socks",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=cracked%20heel%20socks",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "cracked heel socks online india",
+        "cracked heel socks price",
+        "cracked heel socks review",
+        "cracked heel socks amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=cracked%20heel%20socks",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=cracked%20heel%20socks+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "medicine pill box": {
+    "keyword": "medicine pill box",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=medicine%20pill%20box",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "medicine pill box online india",
+        "medicine pill box price",
+        "medicine pill box review",
+        "medicine pill box amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=medicine%20pill%20box",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=medicine%20pill%20box+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "long handle shower": {
+    "keyword": "long handle shower",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=long%20handle%20shower",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "long handle shower online india",
+        "long handle shower price",
+        "long handle shower review",
+        "long handle shower amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=long%20handle%20shower",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=long%20handle%20shower+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "nail care kit": {
+    "keyword": "nail care kit",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=nail%20care%20kit",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "nail care kit online india",
+        "nail care kit price",
+        "nail care kit review",
+        "nail care kit amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=nail%20care%20kit",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=nail%20care%20kit+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "water flosser": {
+    "keyword": "water flosser",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=water%20flosser",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "water flosser online india",
+        "water flosser price",
+        "water flosser review",
+        "water flosser amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=water%20flosser",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=water%20flosser+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone heel protectors": {
+    "keyword": "silicone heel protectors",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20heel%20protectors",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone heel protectors online india",
+        "silicone heel protectors price",
+        "silicone heel protectors review",
+        "silicone heel protectors amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20heel%20protectors",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20heel%20protectors+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone face body": {
+    "keyword": "silicone face body",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20face%20body",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone face body online india",
+        "silicone face body price",
+        "silicone face body review",
+        "silicone face body amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20face%20body",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20face%20body+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "minions small hot": {
+    "keyword": "minions small hot",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=minions%20small%20hot",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "minions small hot online india",
+        "minions small hot price",
+        "minions small hot review",
+        "minions small hot amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=minions%20small%20hot",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=minions%20small%20hot+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "foldable": {
+    "keyword": "foldable",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=foldable",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "foldable online india",
+        "foldable price",
+        "foldable review",
+        "foldable amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=foldable",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=foldable+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone gel heel": {
+    "keyword": "silicone gel heel",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20gel%20heel",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone gel heel online india",
+        "silicone gel heel price",
+        "silicone gel heel review",
+        "silicone gel heel amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20gel%20heel",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20gel%20heel+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "beard apron men,": {
+    "keyword": "beard apron men,",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=beard%20apron%20men%2C",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "beard apron men, online india",
+        "beard apron men, price",
+        "beard apron men, review",
+        "beard apron men, amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=beard%20apron%20men%2C",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=beard%20apron%20men%2C+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "hot water bag": {
+    "keyword": "hot water bag",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=hot%20water%20bag",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "hot water bag online india",
+        "hot water bag price",
+        "hot water bag review",
+        "hot water bag amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=hot%20water%20bag",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=hot%20water%20bag+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "green kitty hot": {
+    "keyword": "green kitty hot",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=green%20kitty%20hot",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "green kitty hot online india",
+        "green kitty hot price",
+        "green kitty hot review",
+        "green kitty hot amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=green%20kitty%20hot",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=green%20kitty%20hot+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "apple shape manicure": {
+    "keyword": "apple shape manicure",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=apple%20shape%20manicure",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "apple shape manicure online india",
+        "apple shape manicure price",
+        "apple shape manicure review",
+        "apple shape manicure amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=apple%20shape%20manicure",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=apple%20shape%20manicure+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "blackhead remover": {
+    "keyword": "blackhead remover",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=blackhead%20remover",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "blackhead remover online india",
+        "blackhead remover price",
+        "blackhead remover review",
+        "blackhead remover amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=blackhead%20remover",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=blackhead%20remover+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "ice roller face": {
+    "keyword": "ice roller face",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=ice%20roller%20face",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "ice roller face online india",
+        "ice roller face price",
+        "ice roller face review",
+        "ice roller face amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=ice%20roller%20face",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=ice%20roller%20face+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "professional pedicure kit": {
+    "keyword": "professional pedicure kit",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=professional%20pedicure%20kit",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "professional pedicure kit online india",
+        "professional pedicure kit price",
+        "professional pedicure kit review",
+        "professional pedicure kit amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=professional%20pedicure%20kit",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=professional%20pedicure%20kit+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "kids posture corrector": {
+    "keyword": "kids posture corrector",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=kids%20posture%20corrector",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "kids posture corrector online india",
+        "kids posture corrector price",
+        "kids posture corrector review",
+        "kids posture corrector amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=kids%20posture%20corrector",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=kids%20posture%20corrector+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "mini hot water": {
+    "keyword": "mini hot water",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=mini%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "mini hot water online india",
+        "mini hot water price",
+        "mini hot water review",
+        "mini hot water amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=mini%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=mini%20hot%20water+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "batman hot water": {
+    "keyword": "batman hot water",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=batman%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "batman hot water online india",
+        "batman hot water price",
+        "batman hot water review",
+        "batman hot water amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=batman%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=batman%20hot%20water+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "scalp massager shampoo": {
+    "keyword": "scalp massager shampoo",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=scalp%20massager%20shampoo",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "scalp massager shampoo online india",
+        "scalp massager shampoo price",
+        "scalp massager shampoo review",
+        "scalp massager shampoo amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=scalp%20massager%20shampoo",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=scalp%20massager%20shampoo+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "acrylic makeup organizer": {
+    "keyword": "acrylic makeup organizer",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=acrylic%20makeup%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "acrylic makeup organizer online india",
+        "acrylic makeup organizer price",
+        "acrylic makeup organizer review",
+        "acrylic makeup organizer amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=acrylic%20makeup%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=acrylic%20makeup%20organizer+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "yellow duck hot": {
+    "keyword": "yellow duck hot",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=yellow%20duck%20hot",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "yellow duck hot online india",
+        "yellow duck hot price",
+        "yellow duck hot review",
+        "yellow duck hot amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=yellow%20duck%20hot",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=yellow%20duck%20hot+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone shampoo scalp": {
+    "keyword": "silicone shampoo scalp",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20shampoo%20scalp",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone shampoo scalp online india",
+        "silicone shampoo scalp price",
+        "silicone shampoo scalp review",
+        "silicone shampoo scalp amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20shampoo%20scalp",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20shampoo%20scalp+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "small paw print": {
+    "keyword": "small paw print",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=small%20paw%20print",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "small paw print online india",
+        "small paw print price",
+        "small paw print review",
+        "small paw print amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=small%20paw%20print",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=small%20paw%20print+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "pink hot water": {
+    "keyword": "pink hot water",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=pink%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "pink hot water online india",
+        "pink hot water price",
+        "pink hot water review",
+        "pink hot water amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=pink%20hot%20water",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=pink%20hot%20water+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "soft mesh bath": {
+    "keyword": "soft mesh bath",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=soft%20mesh%20bath",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "soft mesh bath online india",
+        "soft mesh bath price",
+        "soft mesh bath review",
+        "soft mesh bath amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=soft%20mesh%20bath",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=soft%20mesh%20bath+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "cute unicorn hair": {
+    "keyword": "cute unicorn hair",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=cute%20unicorn%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "cute unicorn hair online india",
+        "cute unicorn hair price",
+        "cute unicorn hair review",
+        "cute unicorn hair amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=cute%20unicorn%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=cute%20unicorn%20hair+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone heel protector": {
+    "keyword": "silicone heel protector",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20heel%20protector",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone heel protector online india",
+        "silicone heel protector price",
+        "silicone heel protector review",
+        "silicone heel protector amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20heel%20protector",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20heel%20protector+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "jade face roller": {
+    "keyword": "jade face roller",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=jade%20face%20roller",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "jade face roller online india",
+        "jade face roller price",
+        "jade face roller review",
+        "jade face roller amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=jade%20face%20roller",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=jade%20face%20roller+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "cooling gel eye": {
+    "keyword": "cooling gel eye",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=cooling%20gel%20eye",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "cooling gel eye online india",
+        "cooling gel eye price",
+        "cooling gel eye review",
+        "cooling gel eye amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=cooling%20gel%20eye",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=cooling%20gel%20eye+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "vacuum blackhead remover": {
+    "keyword": "vacuum blackhead remover",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=vacuum%20blackhead%20remover",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "vacuum blackhead remover online india",
+        "vacuum blackhead remover price",
+        "vacuum blackhead remover review",
+        "vacuum blackhead remover amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=vacuum%20blackhead%20remover",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=vacuum%20blackhead%20remover+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "ice face roller": {
+    "keyword": "ice face roller",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=ice%20face%20roller",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "ice face roller online india",
+        "ice face roller price",
+        "ice face roller review",
+        "ice face roller amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=ice%20face%20roller",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=ice%20face%20roller+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "makeup sponges": {
+    "keyword": "makeup sponges",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=makeup%20sponges",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "makeup sponges online india",
+        "makeup sponges price",
+        "makeup sponges review",
+        "makeup sponges amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=makeup%20sponges",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=makeup%20sponges+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "portable cosmetic pouch": {
+    "keyword": "portable cosmetic pouch",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=portable%20cosmetic%20pouch",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "portable cosmetic pouch online india",
+        "portable cosmetic pouch price",
+        "portable cosmetic pouch review",
+        "portable cosmetic pouch amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=portable%20cosmetic%20pouch",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=portable%20cosmetic%20pouch+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "acrylic lipstick holder": {
+    "keyword": "acrylic lipstick holder",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=acrylic%20lipstick%20holder",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "acrylic lipstick holder online india",
+        "acrylic lipstick holder price",
+        "acrylic lipstick holder review",
+        "acrylic lipstick holder amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=acrylic%20lipstick%20holder",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=acrylic%20lipstick%20holder+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "multipurpose makeup organizer": {
+    "keyword": "multipurpose makeup organizer",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=multipurpose%20makeup%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "multipurpose makeup organizer online india",
+        "multipurpose makeup organizer price",
+        "multipurpose makeup organizer review",
+        "multipurpose makeup organizer amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=multipurpose%20makeup%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=multipurpose%20makeup%20organizer+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "multipurpose stationery makeup": {
+    "keyword": "multipurpose stationery makeup",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=multipurpose%20stationery%20makeup",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "multipurpose stationery makeup online india",
+        "multipurpose stationery makeup price",
+        "multipurpose stationery makeup review",
+        "multipurpose stationery makeup amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=multipurpose%20stationery%20makeup",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=multipurpose%20stationery%20makeup+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "makeup brush organizer": {
+    "keyword": "makeup brush organizer",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=makeup%20brush%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "makeup brush organizer online india",
+        "makeup brush organizer price",
+        "makeup brush organizer review",
+        "makeup brush organizer amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=makeup%20brush%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=makeup%20brush%20organizer+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "makeup organizer bag": {
+    "keyword": "makeup organizer bag",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=makeup%20organizer%20bag",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "makeup organizer bag online india",
+        "makeup organizer bag price",
+        "makeup organizer bag review",
+        "makeup organizer bag amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=makeup%20organizer%20bag",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=makeup%20organizer%20bag+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "makeup brushes kit": {
+    "keyword": "makeup brushes kit",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=makeup%20brushes%20kit",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "makeup brushes kit online india",
+        "makeup brushes kit price",
+        "makeup brushes kit review",
+        "makeup brushes kit amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=makeup%20brushes%20kit",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=makeup%20brushes%20kit+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "makeup organizer": {
+    "keyword": "makeup organizer",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=makeup%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "makeup organizer online india",
+        "makeup organizer price",
+        "makeup organizer review",
+        "makeup organizer amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=makeup%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=makeup%20organizer+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "professional soft makeup": {
+    "keyword": "professional soft makeup",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=professional%20soft%20makeup",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "professional soft makeup online india",
+        "professional soft makeup price",
+        "professional soft makeup review",
+        "professional soft makeup amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=professional%20soft%20makeup",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=professional%20soft%20makeup+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "mini finger powder": {
+    "keyword": "mini finger powder",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=mini%20finger%20powder",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "mini finger powder online india",
+        "mini finger powder price",
+        "mini finger powder review",
+        "mini finger powder amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=mini%20finger%20powder",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=mini%20finger%20powder+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "professional makeup brush": {
+    "keyword": "professional makeup brush",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=professional%20makeup%20brush",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "professional makeup brush online india",
+        "professional makeup brush price",
+        "professional makeup brush review",
+        "professional makeup brush amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=professional%20makeup%20brush",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=professional%20makeup%20brush+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "travel makeup organizer": {
+    "keyword": "travel makeup organizer",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=travel%20makeup%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "travel makeup organizer online india",
+        "travel makeup organizer price",
+        "travel makeup organizer review",
+        "travel makeup organizer amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=travel%20makeup%20organizer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=travel%20makeup%20organizer+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "usb full body": {
+    "keyword": "usb full body",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=usb%20full%20body",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "usb full body online india",
+        "usb full body price",
+        "usb full body review",
+        "usb full body amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=usb%20full%20body",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=usb%20full%20body+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "handheld wooden anti": {
+    "keyword": "handheld wooden anti",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=handheld%20wooden%20anti",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "handheld wooden anti online india",
+        "handheld wooden anti price",
+        "handheld wooden anti review",
+        "handheld wooden anti amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=handheld%20wooden%20anti",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=handheld%20wooden%20anti+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone body scrubber": {
+    "keyword": "silicone body scrubber",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20body%20scrubber",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone body scrubber online india",
+        "silicone body scrubber price",
+        "silicone body scrubber review",
+        "silicone body scrubber amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20body%20scrubber",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20body%20scrubber+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "acupressure hand clip": {
+    "keyword": "acupressure hand clip",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=acupressure%20hand%20clip",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "acupressure hand clip online india",
+        "acupressure hand clip price",
+        "acupressure hand clip review",
+        "acupressure hand clip amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=acupressure%20hand%20clip",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=acupressure%20hand%20clip+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "scalp massager comb": {
+    "keyword": "scalp massager comb",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=scalp%20massager%20comb",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "scalp massager comb online india",
+        "scalp massager comb price",
+        "scalp massager comb review",
+        "scalp massager comb amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=scalp%20massager%20comb",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=scalp%20massager%20comb+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "body massager": {
+    "keyword": "body massager",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=body%20massager",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "body massager online india",
+        "body massager price",
+        "body massager review",
+        "body massager amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=body%20massager",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=body%20massager+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "reflexology acupressure socks": {
+    "keyword": "reflexology acupressure socks",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=reflexology%20acupressure%20socks",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "reflexology acupressure socks online india",
+        "reflexology acupressure socks price",
+        "reflexology acupressure socks review",
+        "reflexology acupressure socks amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=reflexology%20acupressure%20socks",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=reflexology%20acupressure%20socks+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "long handle silicone": {
+    "keyword": "long handle silicone",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=long%20handle%20silicone",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "long handle silicone online india",
+        "long handle silicone price",
+        "long handle silicone review",
+        "long handle silicone amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=long%20handle%20silicone",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=long%20handle%20silicone+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone scalp massager": {
+    "keyword": "silicone scalp massager",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20scalp%20massager",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone scalp massager online india",
+        "silicone scalp massager price",
+        "silicone scalp massager review",
+        "silicone scalp massager amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20scalp%20massager",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20scalp%20massager+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "plastic hair comb": {
+    "keyword": "plastic hair comb",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=plastic%20hair%20comb",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "plastic hair comb online india",
+        "plastic hair comb price",
+        "plastic hair comb review",
+        "plastic hair comb amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=plastic%20hair%20comb",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=plastic%20hair%20comb+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "haircut design stencil": {
+    "keyword": "haircut design stencil",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=haircut%20design%20stencil",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "haircut design stencil online india",
+        "haircut design stencil price",
+        "haircut design stencil review",
+        "haircut design stencil amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=haircut%20design%20stencil",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=haircut%20design%20stencil+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "usb rechargeable hair": {
+    "keyword": "usb rechargeable hair",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=usb%20rechargeable%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "usb rechargeable hair online india",
+        "usb rechargeable hair price",
+        "usb rechargeable hair review",
+        "usb rechargeable hair amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=usb%20rechargeable%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=usb%20rechargeable%20hair+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "nose hair trimmer": {
+    "keyword": "nose hair trimmer",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=nose%20hair%20trimmer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "nose hair trimmer online india",
+        "nose hair trimmer price",
+        "nose hair trimmer review",
+        "nose hair trimmer amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=nose%20hair%20trimmer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=nose%20hair%20trimmer+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "eyebrow razor replaceable": {
+    "keyword": "eyebrow razor replaceable",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=eyebrow%20razor%20replaceable",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "eyebrow razor replaceable online india",
+        "eyebrow razor replaceable price",
+        "eyebrow razor replaceable review",
+        "eyebrow razor replaceable amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=eyebrow%20razor%20replaceable",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=eyebrow%20razor%20replaceable+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "facial hair remover": {
+    "keyword": "facial hair remover",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=facial%20hair%20remover",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "facial hair remover online india",
+        "facial hair remover price",
+        "facial hair remover review",
+        "facial hair remover amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=facial%20hair%20remover",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=facial%20hair%20remover+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "natural wooden hair": {
+    "keyword": "natural wooden hair",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=natural%20wooden%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "natural wooden hair online india",
+        "natural wooden hair price",
+        "natural wooden hair review",
+        "natural wooden hair amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=natural%20wooden%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=natural%20wooden%20hair+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "hair dryer holder": {
+    "keyword": "hair dryer holder",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=hair%20dryer%20holder",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "hair dryer holder online india",
+        "hair dryer holder price",
+        "hair dryer holder review",
+        "hair dryer holder amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=hair%20dryer%20holder",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=hair%20dryer%20holder+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "battery operated electric": {
+    "keyword": "battery operated electric",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=battery%20operated%20electric",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "battery operated electric online india",
+        "battery operated electric price",
+        "battery operated electric review",
+        "battery operated electric amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=battery%20operated%20electric",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=battery%20operated%20electric+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "nano mist sprayer": {
+    "keyword": "nano mist sprayer",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=nano%20mist%20sprayer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "nano mist sprayer online india",
+        "nano mist sprayer price",
+        "nano mist sprayer review",
+        "nano mist sprayer amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=nano%20mist%20sprayer",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=nano%20mist%20sprayer+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "mini makeup brush": {
+    "keyword": "mini makeup brush",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=mini%20makeup%20brush",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "mini makeup brush online india",
+        "mini makeup brush price",
+        "mini makeup brush review",
+        "mini makeup brush amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=mini%20makeup%20brush",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=mini%20makeup%20brush+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "soft bonnet hair": {
+    "keyword": "soft bonnet hair",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=soft%20bonnet%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "soft bonnet hair online india",
+        "soft bonnet hair price",
+        "soft bonnet hair review",
+        "soft bonnet hair amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=soft%20bonnet%20hair",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=soft%20bonnet%20hair+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "long handle bath": {
+    "keyword": "long handle bath",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=long%20handle%20bath",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "long handle bath online india",
+        "long handle bath price",
+        "long handle bath review",
+        "long handle bath amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=long%20handle%20bath",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=long%20handle%20bath+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "electronic pedicure tool": {
+    "keyword": "electronic pedicure tool",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=electronic%20pedicure%20tool",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "electronic pedicure tool online india",
+        "electronic pedicure tool price",
+        "electronic pedicure tool review",
+        "electronic pedicure tool amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=electronic%20pedicure%20tool",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=electronic%20pedicure%20tool+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "pedicure foot care": {
+    "keyword": "pedicure foot care",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=pedicure%20foot%20care",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "pedicure foot care online india",
+        "pedicure foot care price",
+        "pedicure foot care review",
+        "pedicure foot care amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=pedicure%20foot%20care",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=pedicure%20foot%20care+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "silicone foot scrubber": {
+    "keyword": "silicone foot scrubber",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=silicone%20foot%20scrubber",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "silicone foot scrubber online india",
+        "silicone foot scrubber price",
+        "silicone foot scrubber review",
+        "silicone foot scrubber amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=silicone%20foot%20scrubber",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=silicone%20foot%20scrubber+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "foot scrubber": {
+    "keyword": "foot scrubber",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=foot%20scrubber",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "foot scrubber online india",
+        "foot scrubber price",
+        "foot scrubber review",
+        "foot scrubber amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=foot%20scrubber",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=foot%20scrubber+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "pedicure tool": {
+    "keyword": "pedicure tool",
+    "pytrends": {
+      "value": null,
+      "status": "unavailable",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=pedicure%20tool",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "pedicure tool online india",
+        "pedicure tool price",
+        "pedicure tool review",
+        "pedicure tool amazon"
+      ],
+      "count": 4,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=pedicure%20tool",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 6,
+      "video_ids": [
+        "dQw4w9WgXcQ",
+        "xFYMUbgnI8U",
+        "ozZp8FMFaw0",
+        "De0yFZB-UbM",
+        "vvJsKhJlZkE",
+        "h8gx_ghBpBo"
+      ],
+      "top_views": "1.2K views",
+      "view_samples": [
+        "1.2K views",
+        "950 views",
+        "840 views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=pedicure%20tool+india",
+      "fetched_at": "2026-10-12T18:56:34+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-12T18:56:34+05:30"
   }
 }
