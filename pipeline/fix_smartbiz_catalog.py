@@ -62,9 +62,10 @@ def fix_smartbiz_catalog_file(input_path: str, output_path: str = None) -> dict:
     updated_descriptions = 0
 
     offer_block = (
-        "\n\n⚡ EXCLUSIVE ONLINE PAYMENT PRIVILEGES:\n"
-        "• Pay Online (UPI / GPay / PhonePe / Cards): Flat 15% Instant Discount + Priority 24h Express Dispatch + Zero Delivery Fee\n"
-        "• Cash on Delivery (COD): Standard delivery available. ₹49 Cash Handling Fee applies."
+        "\n\nAvailable offers:\n"
+        "• Bank Offer: Flat 15% Instant Discount on UPI and Net Banking payments.\n"
+        "• Partner Offer: Free Express Shipping & Priority 24h Dispatch on prepaid orders.\n"
+        "• Cash on Delivery: Available across India (₹49 handling fee applies)."
     )
 
     for r in range(2, target_sheet.max_row + 1):
@@ -109,10 +110,11 @@ def fix_smartbiz_catalog_file(input_path: str, output_path: str = None) -> dict:
             target_sheet.cell(row=r, column=c_sp, value=int(new_sp))
             fixed_count += 1
 
-        # Update description with clean 15% payment privilege
+        # Update description with clean Available offers standard
         existing_desc = str(target_sheet.cell(row=r, column=c_desc).value or "").strip()
         # Remove old offer blocks if present
         clean_desc = re.sub(r"\n*⚡\s*(SPECIAL|EXCLUSIVE)\s*(PAYMENT\s*OFFERS|ONLINE\s*PAYMENT\s*PRIVILEGES)[\s\S]*$", "", existing_desc).strip()
+        clean_desc = re.sub(r"\n*Available offers:[\s\S]*$", "", clean_desc).strip()
         clean_desc = clean_desc.replace("<p>", "").replace("</p>", "").strip()
         if not clean_desc or len(clean_desc) < 20:
             clean_desc = f"Upgrade your daily lifestyle routine with the {title_val}. Crafted from durable, high-quality materials designed for modern Indian homes."

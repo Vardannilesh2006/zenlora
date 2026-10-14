@@ -473,6 +473,9 @@
                                 <span class="text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-100">
                                     Net +₹{{ w.competitor_pricing.net_profit|int }}
                                 </span>
+                                <span class="text-[9px] font-bold text-emerald-800 bg-emerald-50/90 px-1.5 py-0.2 rounded border border-emerald-200" title="Bank Offer: 15% Instant Discount on UPI & Online Payments">
+                                    🏷️ UPI: ₹{{ (w.selling_price * 0.85)|round|int }}
+                                </span>
                                 {% if w.wholesale_price <= 50 %}
                                 <span class="text-[9px] font-bold text-indigo-800 bg-indigo-50 px-1.5 py-0.2 rounded border border-indigo-200" title="DeoDap Cost ≤ ₹50 → Preset Selling Price ₹179–₹185 (Under 199 Collection)">
                                     🏷️ Under 199

@@ -319,9 +319,51 @@
                         <div class="p-3 rounded-xl bg-zinc-50 border border-borderMain">
                             <span class="text-[10px] font-medium text-textMuted block uppercase">Stock & Shipping</span>
                             <span class="text-sm font-semibold text-emerald-800 mt-1 block">{% if p.in_stock is sameas false %}Out of Stock{% else %}In Stock · Free Ship{% endif %}</span>
-                            <span class="text-[10px] text-textMuted">4–8 Days Delivery</span>
                         </div>
                     </div>
+
+                    <!-- 🏷️ Flipkart & Amazon Standard: Available Offers Container -->
+                    {% if p.rto_killer %}
+                    <div class="p-3.5 sm:p-4 rounded-xl bg-white border border-zinc-200/90 shadow-2xs space-y-2.5">
+                        <div class="flex items-center justify-between pb-1.5 border-b border-zinc-100">
+                            <span class="text-xs font-bold uppercase tracking-wider text-zinc-900 flex items-center gap-1.5">
+                                <span>Available offers</span>
+                            </span>
+                            <span class="text-[10px] font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
+                                15% Instant UPI Discount Active
+                            </span>
+                        </div>
+                        
+                        <!-- Bank Offer -->
+                        <div class="flex items-start gap-2 text-xs text-zinc-800 leading-snug">
+                            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M17.707 9.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-7-7A.997.997 0 012 10V5a3 3 0 013-3h5c.256 0 .512.098.707.293l7 7zM5 6a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/></svg>
+                            <div>
+                                <span class="font-bold text-zinc-900">Bank Offer:</span> 
+                                <span>Flat 15% Instant Discount on UPI &amp; Net Banking (Pay ₹{{ p.rto_killer.upi_price }} only · Save ₹{{ p.rto_killer.savings }}).</span>
+                                <span class="text-blue-600 font-semibold cursor-pointer hover:underline ml-1" onclick="alert('Flat 15% instant discount automatically applies when you choose UPI or Cards at checkout.')">T&amp;C</span>
+                            </div>
+                        </div>
+
+                        <!-- Partner Offer (Express Shipping) -->
+                        <div class="flex items-start gap-2 text-xs text-zinc-800 leading-snug pt-1 border-t border-zinc-100/80">
+                            <svg class="w-4 h-4 text-zinc-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0"/></svg>
+                            <div>
+                                <span class="font-bold text-zinc-900">Partner Offer:</span> 
+                                <span>Free Express Shipping + Priority 24h Air Dispatch on prepaid orders.</span>
+                                <span class="text-blue-600 font-semibold cursor-pointer hover:underline ml-1" onclick="alert('All prepaid orders are dispatched via priority air couriers within 24 hours.')">T&amp;C</span>
+                            </div>
+                        </div>
+
+                        <!-- Cash on Delivery -->
+                        <div class="flex items-start gap-2 text-xs text-zinc-800 leading-snug pt-1 border-t border-zinc-100/80">
+                            <svg class="w-4 h-4 text-zinc-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+                            <div>
+                                <span class="font-bold text-zinc-900">Cash on Delivery:</span> 
+                                <span class="text-zinc-600">Standard delivery available across India (₹49 handling fee applies).</span>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
 
                     <!-- Direct Action Link Buttons (One-Click DeoDap ZIP + Open DeoDap Page) -->
                     <div class="pt-1 flex flex-wrap items-center gap-2.5">

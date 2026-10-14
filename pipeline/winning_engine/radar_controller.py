@@ -214,6 +214,8 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
         "gross_profit": score_data["pricing"]["gross_profit"],
         "profit_margin_pct": score_data["pricing"]["profit_margin_pct"],
         "discount_pct": score_data["pricing"]["discount_pct"],
+        "upi_price": max(149, int(round(score_data["pricing"]["selling_price"] * 0.85))),
+        "upi_savings": max(20, int(round(score_data["pricing"]["selling_price"] * 0.15))),
         "smartbiz_preset": smartbiz_preset,
         "winning_score": score_data["total_score"],
         "earned_points": score_data["earned_points"],

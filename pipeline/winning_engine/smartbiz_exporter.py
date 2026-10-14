@@ -382,9 +382,10 @@ def build_smartbiz_html_description(product: Dict) -> str:
 
     trimmed = raw_desc[:1750].strip()
     offer_block = (
-        "\n\n⚡ EXCLUSIVE ONLINE PAYMENT PRIVILEGES:\n"
-        "• Pay Online (UPI / GPay / PhonePe / Cards): Flat 15% Instant Discount + Priority 24h Express Dispatch + Zero Delivery Fee\n"
-        "• Cash on Delivery (COD): Standard delivery available. ₹49 Cash Handling Fee applies."
+        "\n\nAvailable offers:\n"
+        "• Bank Offer: Flat 15% Instant Discount on UPI and Net Banking payments.\n"
+        "• Partner Offer: Free Express Shipping & Priority 24h Dispatch on prepaid orders.\n"
+        "• Cash on Delivery: Available across India (₹49 handling fee applies)."
     )
     full_desc = f"{trimmed}{offer_block}"[:2000].strip()
 
