@@ -462,7 +462,7 @@ def normalize_niche_param(niche: Optional[str]) -> str:
     low = raw.lower()
     if low in ("all", ""):
         return "All"
-    if low in ("under 199-299", "under_199-299", "under 199_299"):
+    if low in ("under 199-299", "under_199-299", "under 199_299", "under_50", "under 50", "under50"):
         return "Under 199-299"
     if low in ("199-299", "199_299", "199 to 299", "₹199-₹299", "199 - 299"):
         return "199-299"
@@ -607,6 +607,67 @@ def get_winners(
                 seen_title_fps.add(fp["title_fp"])
             deduped.append(w)
         winners = deduped
+
+    # Dedicated "Under 199-299" Collection Page logic (DeoDap cost <= 50, selling price 179..185)
+    if niche == "Under 199-299":
+        def _is_under_199_299(item_obj: Dict[str, Any]) -> bool:
+            cost = float(item_obj.get("wholesale_price") or 0.0)
+            return 0 < cost <= 50.0
+
+        pool_under = [w for w in winners if _is_under_199_299(w)]
+        if per_niche_display and len(pool_under) < per_niche_display:
+            existing_h = {str(x.get("handle") or "").lower() for x in pool_under}
+            for fb in all_valid_winners:
+                if _is_under_199_299(fb) and str(fb.get("handle") or "").lower() not in existing_h:
+                    pool_under.append(fb)
+                    existing_h.add(str(fb.get("handle") or "").lower())
+                    if len(pool_under) >= per_niche_display * 2:
+                        break
+
+        pool_sorted = sorted(
+            pool_under,
+            key=lambda x: (
+                not x.get("is_hard_failed", False),
+                x.get("confidence") == "High",
+                x.get("winning_score", 0),
+                x.get("verified_score_pct", 0),
+                x.get("handle", ""),
+            ),
+            reverse=True,
+        )
+        if not per_niche_display or per_niche_display <= 0:
+            return pool_sorted
+
+        b_idx = max(0, int(batch_cursor or 0))
+        if b_idx > 0 and len(pool_sorted) > 1:
+            shift = (b_idx * 6) % len(pool_sorted)
+            rotated = pool_sorted[shift:] + pool_sorted[:shift]
+        else:
+            rotated = pool_sorted
+
+        diverse_under: List[Dict[str, Any]] = []
+        stem_counts_under: Dict[str, int] = {}
+        overflow_under: List[Dict[str, Any]] = []
+        for item in rotated:
+            stem = get_concept_stem(item.get("title", ""))
+            if stem_counts_under.get(stem, 0) < 2:
+                stem_counts_under[stem] = stem_counts_under.get(stem, 0) + 1
+                diverse_under.append(item)
+            else:
+                overflow_under.append(item)
+            if len(diverse_under) >= per_niche_display:
+                break
+        if len(diverse_under) < per_niche_display:
+            diverse_under.extend(overflow_under[: per_niche_display - len(diverse_under)])
+
+        result_under = []
+        for item in diverse_under[:per_niche_display]:
+            item_copy = dict(item)
+            preset = dict(item_copy.get("smartbiz_preset") or {})
+            preset["product_category"] = "Under 199-299"
+            item_copy["smartbiz_preset"] = preset
+            result_under.append(item_copy)
+        return result_under
 
     # Dedicated "199-299" Collection Page logic (strictly products with Selling Price 199..299)
     if niche == "199-299":

@@ -538,9 +538,16 @@ def test_under_50_deodap_price_preset_and_filter():
     res_filter = client.get("/radar?cost_filter=under_50")
     assert res_filter.status_code == 200
     html_filter = res_filter.data.decode("utf-8")
-    assert "Under ₹50 DeoDap → ₹179–₹185" in html_filter
+    assert "Under 199-299" in html_filter
     assert "≤₹50 Preset" in html_filter
     assert "Under 199-299 ·" in html_filter
+
+    # Check dedicated /radar?niche=Under+199-299 tab renders 24 cards
+    res_tab = client.get("/radar?niche=Under+199-299")
+    assert res_tab.status_code == 200
+    html_tab = res_tab.data.decode("utf-8")
+    assert html_tab.count('id="card-') == 24
+    assert "Under 199-299 (24)" in html_tab
 
     # 1. Verify SmartBiz Excel export with cost_filter=under_50 on niche=All sets Col K = 'Under 199-299' and SP in 179..185
     res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=All&cost_filter=under_50&limit=24&commit=0")

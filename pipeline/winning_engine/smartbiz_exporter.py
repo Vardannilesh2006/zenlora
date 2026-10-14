@@ -552,6 +552,11 @@ def select_current_page_products(
                 w for w in items
                 if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
             ]
+        elif niche == "Under 199-299":
+            items = [
+                w for w in items
+                if 0 < float(w.get("wholesale_price") or 0) <= 50.0
+            ]
         else:
             # Strictly enforce that every item belongs to the requested category
             items = [w for w in items if str(w.get("niche", "")).strip().lower() == niche.strip().lower()]
