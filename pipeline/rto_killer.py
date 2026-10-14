@@ -8,19 +8,19 @@ from typing import Dict, Any
 class RTOKillerEngine:
     """Generates anti-RTO pricing arbitrage and WhatsApp interactive confirmation copy."""
 
-    UPI_INSTANT_DISCOUNT = 50  # Instant discount for prepaid UPI / GPay
+    UPI_DISCOUNT_PERCENT = 15  # 15% instant discount for prepaid UPI / Online Payment
     FREE_GIFT_VALUE = 199      # Perceived value of mystery free gift
 
     @classmethod
     def generate_rto_killer_data(cls, product_title: str, cod_selling_price: int) -> Dict[str, Any]:
         cod_price = int(cod_selling_price)
-        upi_price = max(199, cod_price - cls.UPI_INSTANT_DISCOUNT)
-        savings = cod_price - upi_price
+        savings = max(20, int(round(cod_price * (cls.UPI_DISCOUNT_PERCENT / 100.0))))
+        upi_price = max(149, cod_price - savings)
 
         # 1. Checkout Banner Copy (for Shopify / Website Checkout)
-        checkout_badge = f"Save ₹{savings} with UPI"
+        checkout_badge = f"Save 15% (₹{savings}) with UPI"
         checkout_copy = (
-            f"⚡ Pay via UPI / GPay: ₹{upi_price} (Save ₹{savings} Instantly + Free Mystery Gift worth ₹{cls.FREE_GIFT_VALUE}) "
+            f"⚡ Pay via UPI / GPay: ₹{upi_price} (Save 15% Instantly + Free Mystery Gift worth ₹{cls.FREE_GIFT_VALUE}) "
             f"| COD: ₹{cod_price}"
         )
 
@@ -33,7 +33,7 @@ class RTOKillerEngine:
             f"💵 Total: *₹{cod_price} (Cash on Delivery)*\n\n"
             f"🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\n"
             f"Agar aap abhi UPI/GPay se pay karte hain:\n"
-            f"✅ *Instant ₹{savings} Discount* (Pay only ₹{upi_price})\n"
+            f"✅ *Instant 15% Discount* (Pay only ₹{upi_price} — Save ₹{savings})\n"
             f"✅ *FREE Mystery Gift* (worth ₹{cls.FREE_GIFT_VALUE})\n"
             f"✅ *Express Priority Shipping* (Delivered 2 days faster)\n\n"
             f"Kripya niche diye gaye 2 options me se ek select karein:"
