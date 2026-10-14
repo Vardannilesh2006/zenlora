@@ -379,11 +379,18 @@ def build_smartbiz_html_description(product: Dict) -> str:
             f"reliable performance, and a practical space-saving design ideal for modern Indian homes."
         )
 
-    trimmed = raw_desc[:1950].strip()
+    trimmed = raw_desc[:1750].strip()
+    offer_block = (
+        "\n\n⚡ SPECIAL PAYMENT OFFERS:\n"
+        "• Pay Online (UPI / GPay / PhonePe): Flat ₹50 Instant Discount + FREE Express Delivery + Free Mystery Gift 🎁\n"
+        "• Cash on Delivery (COD): Standard delivery available."
+    )
+    full_desc = f"{trimmed}{offer_block}"[:2000].strip()
+
     score = float(product.get("winning_score") or 0)
     if score >= 89.0:
-        return f"<p>{html.escape(trimmed)}</p>"[:2000]
-    return trimmed[:2000]
+        return f"<p>{html.escape(full_desc)}</p>"[:2000]
+    return full_desc[:2000]
 
 
 def build_seo_metadata(product: Dict, primary_image_url: str) -> Tuple[str, str, str]:

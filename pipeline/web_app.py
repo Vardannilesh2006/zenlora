@@ -779,6 +779,17 @@ def product_detail(handle):
         product["seo_title"] = (product.get("title") or product.get("zenlora_title") or "")[:60]
         product["seo_description"] = (product.get("description") or "")[:160]
 
+    # RTO Killer Protocol & Pricing Arbitrage
+    try:
+        from rto_killer import RTOKillerEngine
+        if not product.get("rto_killer"):
+            product["rto_killer"] = RTOKillerEngine.generate_rto_killer_data(
+                product_title=product.get("title") or product["zenlora_title"],
+                cod_selling_price=int(round(sp)),
+            )
+    except Exception:
+        pass
+
     settings = load_settings()
     return render_template("product_detail.html", p=product, settings=settings)
 
