@@ -287,10 +287,11 @@ def test_category_purity_and_exact_smartbiz_product_category():
         "Gadgets": "Smart Gadgets",
         "Gifts": "Gifts & Hampers",
         "Health & Beauty Accessories": "Health & Beauty",
+        "Toys & Games": "Toys & Games",
     }
 
     all_items = get_winners(niche="All", per_niche_display=24, refresh_dynamic=False)
-    assert len(all_items) == 144
+    assert len(all_items) == 168
 
     for niche_key, expected_col_k in expected_map.items():
         niche_items = get_winners(niche=niche_key, per_niche_display=24, refresh_dynamic=False)
@@ -595,16 +596,17 @@ def test_strict_7_primary_categories_and_smartbiz_excel_export():
 
     preset = load_smartbiz_preset()
     allowed_categories = set(preset.get("storefront_categories", []))
-    expected_7 = {
+    expected_categories = {
         "Home Decor",
         "Kitchen & Dining",
         "Smart Gadgets",
         "Festive & Lights",
         "Gifts & Hampers",
         "Health & Beauty",
+        "Toys & Games",
         "Under 199 Collection",
     }
-    assert allowed_categories == expected_7, f"Preset storefront_categories mismatch: {allowed_categories}"
+    assert allowed_categories == expected_categories, f"Preset storefront_categories mismatch: {allowed_categories}"
 
     client = app.test_client()
 
@@ -616,6 +618,7 @@ def test_strict_7_primary_categories_and_smartbiz_excel_export():
         ("Festive", "Festive & Lights"),
         ("Gifts", "Gifts & Hampers"),
         ("Health & Beauty", "Health & Beauty"),
+        ("Toys & Games", "Toys & Games"),
         ("Under 199 Collection", "Under 199 Collection"),
     ]
     for page_niche, expected_cat in category_checks:
@@ -630,7 +633,7 @@ def test_strict_7_primary_categories_and_smartbiz_excel_export():
             assert ws.cell(r, 10).value == "GENERAL"
         wb.close()
 
-    # 2. Test Mix 55 export strictly contains only these 7 categories
+    # 2. Test Mix 55 export strictly contains only these approved categories
     res_mix = client.get("/api/radar/smartbiz.xlsx?mode=mix&count=55&commit=0")
     assert res_mix.status_code == 200
     wb_m = openpyxl.load_workbook(io.BytesIO(res_mix.data), data_only=True)
@@ -638,6 +641,51 @@ def test_strict_7_primary_categories_and_smartbiz_excel_export():
     assert ws_m.max_row >= 50
     for r in range(2, ws_m.max_row + 1):
         cat_val = ws_m.cell(r, 11).value
-        assert cat_val in expected_7, f"Mix export row {r} has illegal category '{cat_val}' not in {expected_7}"
+        assert cat_val in expected_categories, f"Mix export row {r} has illegal category '{cat_val}' not in {expected_categories}"
     wb_m.close()
+
+
+def test_toys_and_games_radar_page_and_excel_export():
+    """
+    Verifies that 'Toys & Games' appears on /radar with 24 winning products,
+    renders properly with URL-encoded query parameters, and exports 24 items
+    to SmartBiz Excel with Column J = 'GENERAL' and Column K = 'Toys & Games'.
+    """
+    import openpyxl
+    from pipeline.winning_engine.radar_controller import get_winners
+
+    toys_items = get_winners(niche="Toys & Games", per_niche_display=24, exclude_exported=False, refresh_dynamic=True)
+    assert len(toys_items) == 24, f"Expected 24 items for Toys & Games, got {len(toys_items)}"
+    for t in toys_items:
+        assert t.get("confidence") == "High"
+        assert not t.get("is_hard_failed")
+
+    client = app.test_client()
+
+    # 1. Main /radar page includes the Toys & Games category pill with (24)
+    res_main = client.get("/radar")
+    assert res_main.status_code == 200
+    main_html = res_main.data.decode("utf-8")
+    assert "Toys &amp; Games (24)" in main_html or "Toys & Games (24)" in main_html
+
+    # 2. Dedicated page /radar?niche=Toys+%26+Games renders 24 product cards
+    res_page = client.get("/radar?niche=Toys+%26+Games")
+    assert res_page.status_code == 200
+    page_html = res_page.data.decode("utf-8")
+    assert page_html.count('id="card-') == 24
+
+    # 3. SmartBiz Page Excel (.xlsx) export has 24 rows and Col K = 'Toys & Games'
+    res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Toys+%26+Games&limit=24&commit=0")
+    assert res_xlsx.status_code == 200
+    wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data), data_only=True)
+    ws = wb["bulk_upload_template"]
+    assert ws.max_row == 25  # 1 header + 24 products
+    for r_idx in range(2, 26):
+        mrp_val = int(ws.cell(r_idx, 8).value)
+        sp_val = int(ws.cell(r_idx, 9).value)
+        assert sp_val > 0
+        assert mrp_val > sp_val
+        assert ws.cell(r_idx, 10).value == "GENERAL"
+        assert ws.cell(r_idx, 11).value == "Toys & Games"
+    wb.close()
 

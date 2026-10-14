@@ -175,12 +175,17 @@ def radar():
         "Festive",
         "Gifts",
         "Health & Beauty",
+        "Toys & Games",
         "Under 199 Collection",
     ]
     niche_counts = {
         n: sum(
             1 for w in active_winners
-            if (w.get("niche") == n or (n == "Health & Beauty" and w.get("niche") in ("Health & Beauty", "Health & Beauty Accessories")))
+            if (
+                w.get("niche") == n
+                or (n == "Health & Beauty" and w.get("niche") in ("Health & Beauty", "Health & Beauty Accessories"))
+                or (n == "Toys & Games" and w.get("niche") in ("Toys & Games", "Toys", "Games"))
+            )
         )
         for n in niches
         if n not in ("All", "Under 199 Collection")

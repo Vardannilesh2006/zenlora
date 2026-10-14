@@ -117,9 +117,9 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
     niche = verified_niche or raw_niche
     wholesale_price = float(item.get("wholesale_price") or item.get("wholesale_cost") or 0.0)
 
-    meta_signals = analyze_meta_ad_signals(title, niche, handle=handle)
-    trend_signals = get_google_trends_analysis(meta_signals["keyword"], niche, fetch_live=False)
-    social_signals = analyze_social_velocity(meta_signals["keyword"], niche, handle=handle)
+    meta_signals = item.get("meta_ads") if (isinstance(item.get("meta_ads"), dict) and item.get("meta_ads", {}).get("status") == "done") else analyze_meta_ad_signals(title, niche, handle=handle)
+    trend_signals = item.get("trends") if (isinstance(item.get("trends"), dict) and item.get("trends", {}).get("pipeline_status") == "done") else get_google_trends_analysis(meta_signals["keyword"], niche, fetch_live=False)
+    social_signals = item.get("social") if (isinstance(item.get("social"), dict) and item.get("social", {}).get("status") == "done") else analyze_social_velocity(meta_signals["keyword"], niche, handle=handle)
 
     gemini_signals = item.get("gemini")
     if not gemini_signals or not gemini_signals.get("gemini_powered"):
@@ -494,6 +494,8 @@ def normalize_niche_param(niche: Optional[str]) -> str:
         return "Gifts"
     if low in ("gadgets", "smart gadgets"):
         return "Gadgets"
+    if low in ("toys", "toys & games", "toys and games", "kids toys", "games") or low.startswith("toy"):
+        return "Toys & Games"
     if low in ("home decor", "home_decor"):
         return "Home Decor"
     if low in ("kitchen", "kitchen & dining", "kitchen and dining"):
@@ -509,6 +511,8 @@ def matches_niche(item_niche: str, query_niche: str) -> bool:
         return True
     if item_n == q_n:
         return True
+    if q_n in ("toys & games", "toys and games", "toys", "games", "kids toys"):
+        return item_n in ("toys & games", "toys and games", "toys", "games", "kids toys")
     if q_n in ("health & beauty", "health & beauty accessories", "health and beauty", "beauty", "health"):
         return item_n in ("health & beauty", "health & beauty accessories", "health and beauty", "beauty", "health")
     if q_n in ("festive", "festive & lights", "festive and lights"):
@@ -708,7 +712,7 @@ def get_winners(
 
     # Group by niche to apply batch_cursor rotation and per_niche_display slicing
     if per_niche_display and per_niche_display > 0:
-        niches_order = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories"]
+        niches_order = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories", "Toys & Games"]
         by_niche: Dict[str, List[Dict[str, Any]]] = {n: [] for n in niches_order}
         for w in winners:
             wn = w.get("niche", "Gadgets")

@@ -1,5 +1,50 @@
 [
   {
+    "timestamp": "2026-10-14T12:18:59+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-14T12:18:56+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-14T12:17:01+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-14T12:16:51+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-14T12:05:37+05:30",
+    "action": "google_trends_fetch",
+    "target": "stunt car",
+    "source": "Google Trends India (trendspy)",
+    "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=stunt%20car",
+    "method": "api",
+    "details": "Peak: Feb 2026 (100), Current: 72, Baseline: 67.02, Ratio: 1.07x"
+  },
+  {
     "timestamp": "2026-10-14T10:54:59+05:30",
     "action": "deodap_live_ingest",
     "target": "0 products",

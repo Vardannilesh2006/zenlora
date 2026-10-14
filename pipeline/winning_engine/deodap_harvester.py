@@ -97,6 +97,10 @@ NICHE_COLLECTIONS_MAP = {
         "personal-care-health-appliances",
         "foot-care",
     ],
+    "Toys & Games": [
+        "toys-games",
+        "kids-toys",
+    ],
 }
 
 # Strictly Excluded Wearable / Artificial Jewelry (Word-boundary matched; never blocks 'rechargeable' or 'string' or 'jewelry box')
@@ -140,13 +144,12 @@ GLOBAL_JUNK_KEYWORDS = [
     "double hoe", "gardening hand tool", "garden trowel", "pruning shear",
     "impact sprinkler", "snow scraper", "safety hammer", "window breaker",
     "watering can", "solder", "multimeter", "glue stick", "hot melt glue",
-    # School Stationery / Kids Toys / Sports Balls / Party Banners
-    "bendy ruler", "flexible ruler", "30cm", "eraser", "sharpener", "crayon",
-    "paint by number", "document file", "file folder", "expanding plastic",
+    # School Stationery / Sports Balls / Party Banners
+    "bendy ruler", "flexible ruler", "30cm", "eraser", "sharpener",
+    "document file", "file folder", "expanding plastic",
     "stapler", "stationery kit", "stationery set", "school supplies", "pencil pouch",
     "geometry box", "compass box", "marker", "highlighter", "whiteboard",
-    "shape sorter", "speed cube", "magic cube", "fidget toy", "spinning bead",
-    "puzzle card", "unicorn assembly", "craft puzzle", "table tennis", "ping pong",
+    "table tennis", "ping pong",
     "feliz a", "new year", "happy birthday banner", "balloon", "party foil",
     "gift envelope", "shagun envelope", "money envelope", "carry bag", "packing bag",
     # Raw Liquid Cosmetics / Commodity Cables / Bags
@@ -263,6 +266,22 @@ NICHE_RULES = {
         "loofah", "water flosser", "electric toothbrush", "ear swab", "ear cleaner",
         "knee support", "posture corrector", "wrist support", "ankle support",
         "pill box", "medicine box", "shaving", "grooming",
+    ],
+    "Toys & Games": [
+        "toy", "toys", "game", "games", "puzzle", "board game", "fidget",
+        "magic cube", "speed cube", "rubik", "rubix", "building blocks", "block toy",
+        "rc car", "remote control car", "remote car", "diecast", "die-cast",
+        "racing car", "stunt car", "drone", "helicopter", "robot", "action figure",
+        "doll", "barbie", "plush", "stuffed toy", "drawing tablet", "lcd writing",
+        "water gun", "bubble gun", "bubble blower", "bubble machine", "slime",
+        "clay set", "kinetic sand", "train set", "track set", "dart", "dartboard",
+        "chess", "ludo", "carrom", "snake and ladder", "uno", "card game",
+        "educational toy", "learning toy", "stem toy", "musical toy", "drum set",
+        "xylophone", "piano toy", "walkie talkie", "glow track", "finger toy",
+        "pop it", "push pop", "spinner", "yo-yo", "yoyo", "spinning top",
+        "flying spinner", "magic slate", "magnetic tiles", "diy craft", "craft kit",
+        "dough", "mind game", "shape sorter", "spinning bead", "puzzle card",
+        "craft puzzle", "clay", "magnetic puzzle",
     ],
 }
 

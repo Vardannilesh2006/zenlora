@@ -35365,5 +35365,72 @@
       "null_reason": null
     },
     "fetched_at": "2026-10-12T18:56:34+05:30"
+  },
+  "stunt car": {
+    "keyword": "stunt car",
+    "pytrends": {
+      "value": 72,
+      "current_value": 72,
+      "baseline_avg": 67.02,
+      "current_to_baseline_ratio": 1.07,
+      "peak_month": "Feb 2026",
+      "peak_value": 100,
+      "peak_to_baseline_ratio": 1.49,
+      "festival_window_oct_nov_avg": 60.3,
+      "status": "done",
+      "source": "Google Trends India (trendspy)",
+      "source_url": "https://trends.google.com/trends/explore?date=today%2012-m&geo=IN&q=stunt%20car",
+      "fetched_at": "2026-10-14T12:05:33+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "autosuggest": {
+      "value": [
+        "stunt car",
+        "stunt car toy",
+        "stunt car extreme",
+        "stunt car remote control",
+        "stunt car price",
+        "stunt car for kids",
+        "stunt car game",
+        "stunt car challenge 3"
+      ],
+      "count": 10,
+      "status": "done",
+      "source": "Google Autosuggest API (IN)",
+      "source_url": "https://suggestqueries.google.com/complete/search?client=firefox&gl=in&q=stunt%20car",
+      "fetched_at": "2026-10-14T12:05:37+05:30",
+      "method": "api",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "youtube": {
+      "value": 26,
+      "video_ids": [
+        "r1IG4w6Q-k4",
+        "tq7_n9iXU9Q",
+        "MEP2mB8iZP0",
+        "4xRxJLDJR6Y",
+        "NWgfCoMggXQ",
+        "3Sqsi91w5vU"
+      ],
+      "top_views": "3.6k views",
+      "view_samples": [
+        "3.6k views",
+        "10m views",
+        "87k views",
+        "541k views",
+        "1.5m views"
+      ],
+      "status": "done",
+      "source": "YouTube India Public Search",
+      "source_url": "https://www.youtube.com/results?search_query=stunt%20car+india",
+      "fetched_at": "2026-10-14T12:05:38+05:30",
+      "method": "scrape",
+      "is_stale": false,
+      "null_reason": null
+    },
+    "fetched_at": "2026-10-14T12:05:40+05:30"
   }
 }
