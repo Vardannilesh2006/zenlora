@@ -355,10 +355,11 @@ def calculate_smartbiz_prices(product: Dict) -> Tuple[int, int]:
         mrp = selling_price + 60 + chosen_ending
 
     actual_disc = round(((mrp - selling_price) / float(mrp)) * 100)
-    if actual_disc == 50 or mrp == selling_price * 2:
-        mrp += 20 if (seed % 2 == 0) else -15
+    while actual_disc == 50 or mrp == selling_price * 2:
+        mrp += 25 if (seed % 2 == 0) else -20
         if mrp <= selling_price + 30:
-            mrp = selling_price + 75
+            mrp = selling_price + 79
+        actual_disc = round(((mrp - selling_price) / float(mrp)) * 100)
 
     return (int(mrp), int(selling_price))
 
