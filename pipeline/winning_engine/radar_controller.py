@@ -462,10 +462,22 @@ def normalize_niche_param(niche: Optional[str]) -> str:
     low = raw.lower()
     if low in ("all", ""):
         return "All"
-    if low in ("under 199-299", "under_199-299", "under 199_299", "under_50", "under 50", "under50"):
-        return "Under 199-299"
-    if low in ("199-299", "199_299", "199 to 299", "₹199-₹299", "199 - 299"):
-        return "199-299"
+    if low in (
+        "under 199",
+        "under 199 collection",
+        "under 199-299",
+        "under_199",
+        "under_199_collection",
+        "under_199-299",
+        "under 199_299",
+        "under_50",
+        "under 50",
+        "under50",
+        "199-299",
+        "199_299",
+        "199 to 299",
+    ):
+        return "Under 199 Collection"
     if low in (
         "health",
         "health & beauty",
@@ -475,18 +487,43 @@ def normalize_niche_param(niche: Optional[str]) -> str:
         "beauty",
         "beauty accessories",
     ) or low.startswith("health"):
-        return "Health & Beauty Accessories"
+        return "Health & Beauty"
     if low in ("festive", "festive & lights", "festive and lights") or low.startswith("festive"):
         return "Festive"
     if low in ("gifts", "gifts & hampers", "gifts and hampers") or low.startswith("gift"):
         return "Gifts"
     if low in ("gadgets", "smart gadgets"):
         return "Gadgets"
-    if low == "home decor":
+    if low in ("home decor", "home_decor"):
         return "Home Decor"
-    if low == "kitchen":
+    if low in ("kitchen", "kitchen & dining", "kitchen and dining"):
         return "Kitchen"
     return raw
+
+
+def matches_niche(item_niche: str, query_niche: str) -> bool:
+    """Robust bidirectional matcher for canonical Zenlora / SmartBiz niche categories."""
+    item_n = str(item_niche or "").strip().lower()
+    q_n = str(query_niche or "").strip().lower()
+    if not q_n or q_n == "all":
+        return True
+    if item_n == q_n:
+        return True
+    if q_n in ("health & beauty", "health & beauty accessories", "health and beauty", "beauty", "health"):
+        return item_n in ("health & beauty", "health & beauty accessories", "health and beauty", "beauty", "health")
+    if q_n in ("festive", "festive & lights", "festive and lights"):
+        return item_n in ("festive", "festive & lights", "festive and lights")
+    if q_n in ("gadgets", "smart gadgets"):
+        return item_n in ("gadgets", "smart gadgets")
+    if q_n in ("kitchen", "kitchen & dining"):
+        return item_n in ("kitchen", "kitchen & dining")
+    if q_n in ("gifts", "gifts & hampers"):
+        return item_n in ("gifts", "gifts & hampers")
+    if q_n in ("home decor", "home_decor"):
+        return item_n in ("home decor", "home_decor")
+    if q_n in ("under 199 collection", "under 199", "under 199-299", "199-299", "under_50"):
+        return item_n in ("under 199 collection", "under 199", "under 199-299", "199-299", "under_50")
+    return False
 
 
 def get_winners(
@@ -608,17 +645,17 @@ def get_winners(
             deduped.append(w)
         winners = deduped
 
-    # Dedicated "Under 199-299" Collection Page logic (DeoDap cost <= 50, selling price 179..185)
-    if niche == "Under 199-299":
-        def _is_under_199_299(item_obj: Dict[str, Any]) -> bool:
+    # Dedicated "Under 199 Collection" Page logic (DeoDap cost <= 50, selling price 179..185)
+    if niche == "Under 199 Collection":
+        def _is_under_199(item_obj: Dict[str, Any]) -> bool:
             cost = float(item_obj.get("wholesale_price") or 0.0)
             return 0 < cost <= 50.0
 
-        pool_under = [w for w in winners if _is_under_199_299(w)]
+        pool_under = [w for w in winners if _is_under_199(w)]
         if per_niche_display and len(pool_under) < per_niche_display:
             existing_h = {str(x.get("handle") or "").lower() for x in pool_under}
             for fb in all_valid_winners:
-                if _is_under_199_299(fb) and str(fb.get("handle") or "").lower() not in existing_h:
+                if _is_under_199(fb) and str(fb.get("handle") or "").lower() not in existing_h:
                     pool_under.append(fb)
                     existing_h.add(str(fb.get("handle") or "").lower())
                     if len(pool_under) >= per_niche_display * 2:
@@ -664,73 +701,10 @@ def get_winners(
         for item in diverse_under[:per_niche_display]:
             item_copy = dict(item)
             preset = dict(item_copy.get("smartbiz_preset") or {})
-            preset["product_category"] = "Under 199-299"
+            preset["product_category"] = "Under 199 Collection"
             item_copy["smartbiz_preset"] = preset
             result_under.append(item_copy)
         return result_under
-
-    # Dedicated "199-299" Collection Page logic (strictly products with Selling Price 199..299)
-    if niche == "199-299":
-        def _is_in_199_299(item_obj: Dict[str, Any]) -> bool:
-            sp_val = int(round(float(item_obj.get("selling_price") or item_obj.get("suggested_price") or 0)))
-            return 199 <= sp_val <= 299
-
-        pool_199_299 = [w for w in winners if _is_in_199_299(w)]
-        if per_niche_display and len(pool_199_299) < per_niche_display:
-            existing_h = {str(x.get("handle") or "").lower() for x in pool_199_299}
-            for fb in all_valid_winners:
-                if _is_in_199_299(fb) and str(fb.get("handle") or "").lower() not in existing_h:
-                    pool_199_299.append(fb)
-                    existing_h.add(str(fb.get("handle") or "").lower())
-                    if len(pool_199_299) >= per_niche_display * 2:
-                        break
-
-        pool_sorted = sorted(
-            pool_199_299,
-            key=lambda x: (
-                not x.get("is_hard_failed", False),
-                x.get("confidence") == "High",
-                x.get("winning_score", 0),
-                x.get("verified_score_pct", 0),
-                x.get("handle", ""),
-            ),
-            reverse=True,
-        )
-        if not per_niche_display or per_niche_display <= 0:
-            return pool_sorted
-
-        b_idx = max(0, int(batch_cursor or 0))
-        if b_idx > 0 and len(pool_sorted) > 1:
-            shift = (b_idx * 6) % len(pool_sorted)
-            rotated = pool_sorted[shift:] + pool_sorted[:shift]
-        else:
-            rotated = pool_sorted
-
-        diverse_199: List[Dict[str, Any]] = []
-        stem_counts_199: Dict[str, int] = {}
-        overflow_199: List[Dict[str, Any]] = []
-        for item in rotated:
-            stem = get_concept_stem(item.get("title", ""))
-            if stem_counts_199.get(stem, 0) < 2:
-                stem_counts_199[stem] = stem_counts_199.get(stem, 0) + 1
-                diverse_199.append(item)
-            else:
-                overflow_199.append(item)
-            if len(diverse_199) >= per_niche_display:
-                break
-        if len(diverse_199) < per_niche_display:
-            diverse_199.extend(overflow_199[: per_niche_display - len(diverse_199)])
-
-        result_199 = []
-        for item in diverse_199[:per_niche_display]:
-            item_copy = dict(item)
-            if isinstance(item_copy.get("smartbiz_preset"), dict):
-                item_copy["smartbiz_preset"] = {
-                    **item_copy["smartbiz_preset"],
-                    "product_category": "199-299",
-                }
-            result_199.append(item_copy)
-        return result_199
 
     # Group by niche to apply batch_cursor rotation and per_niche_display slicing
     if per_niche_display and per_niche_display > 0:
@@ -738,9 +712,13 @@ def get_winners(
         by_niche: Dict[str, List[Dict[str, Any]]] = {n: [] for n in niches_order}
         for w in winners:
             wn = w.get("niche", "Gadgets")
-            if wn in by_niche:
-                by_niche[wn].append(w)
-            else:
+            matched = False
+            for target_n in niches_order:
+                if matches_niche(wn, target_n):
+                    by_niche[target_n].append(w)
+                    matched = True
+                    break
+            if not matched:
                 by_niche.setdefault(wn, []).append(w)
 
         # Guarantee every category (including Festive & Lights) always has at least per_niche_display (24) items
@@ -750,7 +728,7 @@ def get_winners(
                 existing_n_skus = {str(x.get("sku") or "").lower() for x in by_niche.get(n_name, []) if x.get("sku")}
                 fallback_pool = [
                     w for w in all_valid_winners
-                    if w.get("niche") == n_name
+                    if matches_niche(w.get("niche", ""), n_name)
                     and str(w.get("handle") or "").lower() not in existing_n_handles
                     and (not w.get("sku") or str(w.get("sku") or "").lower() not in existing_n_skus)
                 ]
@@ -818,7 +796,7 @@ def get_winners(
             else:
                 interleaved: List[Dict[str, Any]] = []
                 niche_buckets = [
-                    [x for x in sliced_all if x.get("niche") == n_key]
+                    [x for x in sliced_all if matches_niche(x.get("niche", ""), n_key)]
                     for n_key in niches_order
                 ]
                 # Rotate bucket order by batch_cursor too
@@ -832,11 +810,11 @@ def get_winners(
             return sliced_all
 
         target_niche = str(niche).strip().lower()
-        return [w for w in sliced_all if str(w.get("niche", "")).strip().lower() == target_niche]
+        return [w for w in sliced_all if matches_niche(w.get("niche", ""), target_niche)]
 
     if niche and str(niche).strip().lower() != "all":
         target_niche = str(niche).strip().lower()
-        return [w for w in winners if str(w.get("niche", "")).strip().lower() == target_niche]
+        return [w for w in winners if matches_niche(w.get("niche", ""), target_niche)]
     return winners
 
 

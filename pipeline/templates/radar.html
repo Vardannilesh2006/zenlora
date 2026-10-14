@@ -331,21 +331,20 @@
         </div>
     </div>
 
-    <!-- Category Filter Bar (Home Decor, Kitchen, Gadgets, Festive, Gifts, Health & Beauty Accessories, Under 199-299, 199-299) -->
+    <!-- Category Filter Bar (Home Decor, Kitchen, Gadgets, Festive, Gifts, Health & Beauty, Under 199 Collection) -->
     <div class="border-b border-borderMain bg-white px-3 sm:px-6 py-2.5">
         <div class="max-w-[1500px] mx-auto flex flex-wrap items-center justify-between gap-2.5">
             <div class="flex flex-wrap items-center gap-1.5 max-w-full py-0.5">
                 {% for n in niches %}
-                <a href="/radar?niche={{ n|urlencode }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap {% if selected_niche == n %}cat-pill-active{% elif n == 'Under 199-299' %}bg-emerald-50 text-emerald-900 border-emerald-300 hover:bg-emerald-100{% elif n == '199-299' %}bg-amber-50 text-amber-900 border-amber-300 hover:bg-amber-100{% else %}bg-white text-textSecondary border-zinc-200/80 hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
+                <a href="/radar?niche={{ n|urlencode }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap {% if selected_niche == n or (n == 'Health & Beauty' and selected_niche in ('Health & Beauty', 'Health & Beauty Accessories')) or (n == 'Under 199 Collection' and selected_niche in ('Under 199 Collection', 'Under 199', 'Under 199-299', '199-299')) %}cat-pill-active{% elif n == 'Under 199 Collection' %}bg-emerald-50 text-emerald-900 border-emerald-300 hover:bg-emerald-100{% else %}bg-white text-textSecondary border-zinc-200/80 hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
                     {% if n == 'All' %}🌐 All ({{ total_winners }})
                     {% elif n == 'Home Decor' %}🏡 Home Decor ({{ niche_counts.get('Home Decor', 24) if niche_counts else 24 }})
                     {% elif n == 'Kitchen' %}🍳 Kitchen ({{ niche_counts.get('Kitchen', 24) if niche_counts else 24 }})
                     {% elif n == 'Gadgets' %}⚡ Smart Gadgets ({{ niche_counts.get('Gadgets', 24) if niche_counts else 24 }})
                     {% elif n == 'Festive' %}🪔 Festive & Lights ({{ niche_counts.get('Festive', 24) if niche_counts else 24 }})
                     {% elif n == 'Gifts' %}🎁 Gifts & Hampers ({{ niche_counts.get('Gifts', 24) if niche_counts else 24 }})
-                    {% elif n == 'Health & Beauty Accessories' %}💄 Health & Beauty Accessories ({{ niche_counts.get('Health & Beauty Accessories', 24) if niche_counts else 24 }})
-                    {% elif n == 'Under 199-299' %}🏷️ Under 199-299 ({{ niche_counts.get('Under 199-299', 24) if niche_counts else 24 }})
-                    {% elif n == '199-299' %}🔥 199-299 ({{ niche_counts.get('199-299', 24) if niche_counts else 24 }})
+                    {% elif n == 'Health & Beauty' %}💄 Health & Beauty ({{ niche_counts.get('Health & Beauty', 24) if niche_counts else 24 }})
+                    {% elif n == 'Under 199 Collection' %}🏷️ Under 199 Collection ({{ niche_counts.get('Under 199 Collection', 24) if niche_counts else 24 }})
                     {% else %}{{ n }}{% endif %}
                 </a>
                 {% endfor %}
@@ -408,7 +407,7 @@
                                 <span>⚡ SEO 60/160</span>
                             </button>
                             <span class="text-[10px] font-semibold px-2 py-0.5 rounded-md bg-zinc-100 text-textSecondary border border-zinc-200 uppercase tracking-wider truncate">
-                                {% if selected_niche in ('Under 199-299', '199-299') %}{{ selected_niche }} · {{ w.niche }}{% else %}{{ w.niche }} · {{ w.sample_tracking.status|replace('_', ' ') if w.sample_tracking else 'Shortlisted' }}{% endif %}
+                                {% if selected_niche in ('Under 199 Collection', 'Under 199', 'Under 199-299', '199-299') %}Under 199 Collection · {{ w.niche }}{% else %}{{ w.niche }} · {{ w.sample_tracking.status|replace('_', ' ') if w.sample_tracking else 'Shortlisted' }}{% endif %}
                             </span>
                         </div>
                         <span class="text-[10px] font-bold px-2 py-0.5 rounded-full text-white shadow-xs flex-shrink-0" style="background-color: {{ w.badge_color }};">
@@ -474,13 +473,8 @@
                                     Net +₹{{ w.competitor_pricing.net_profit|int }}
                                 </span>
                                 {% if w.wholesale_price <= 50 %}
-                                <span class="text-[9px] font-bold text-indigo-800 bg-indigo-50 px-1.5 py-0.2 rounded border border-indigo-200" title="DeoDap Cost ≤ ₹50 → Preset Selling Price ₹179–₹185">
-                                    🏷️ ≤₹50 Preset
-                                </span>
-                                {% endif %}
-                                {% if 199 <= w.selling_price <= 299 %}
-                                <span class="text-[9px] font-bold text-amber-800 bg-amber-50 px-1.5 py-0.2 rounded border border-amber-200" title="199-299 Storefront Collection">
-                                    🔥 199-299
+                                <span class="text-[9px] font-bold text-indigo-800 bg-indigo-50 px-1.5 py-0.2 rounded border border-indigo-200" title="DeoDap Cost ≤ ₹50 → Preset Selling Price ₹179–₹185 (Under 199 Collection)">
+                                    🏷️ Under 199
                                 </span>
                                 {% endif %}
                             </div>

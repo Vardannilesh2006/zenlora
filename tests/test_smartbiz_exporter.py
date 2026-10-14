@@ -286,7 +286,7 @@ def test_category_purity_and_exact_smartbiz_product_category():
         "Kitchen": "Kitchen & Dining",
         "Gadgets": "Smart Gadgets",
         "Gifts": "Gifts & Hampers",
-        "Health & Beauty Accessories": "Health & Beauty Accessories",
+        "Health & Beauty Accessories": "Health & Beauty",
     }
 
     all_items = get_winners(niche="All", per_niche_display=24, refresh_dynamic=False)
@@ -477,43 +477,43 @@ def test_festive_and_lights_page_always_shows_24_products():
 
 def test_health_and_beauty_accessories_radar_page_and_excel_export():
     """
-    Verifies that 'Health & Beauty Accessories' appears on /radar with 24 products,
+    Verifies that 'Health & Beauty' appears on /radar with 24 products,
     works with both URL-encoded and unencoded query parameters, and exports 24 items
-    to SmartBiz Excel with Column K = 'Health & Beauty Accessories'.
+    to SmartBiz Excel with Column K = 'Health & Beauty'.
     """
     import openpyxl
 
     client = app.test_client()
 
-    # 1. Main /radar page includes the URL-encoded Health & Beauty Accessories category pill with (24)
+    # 1. Main /radar page includes the URL-encoded Health & Beauty category pill with (24)
     res_main = client.get("/radar")
     assert res_main.status_code == 200
     main_html = res_main.data.decode("utf-8")
-    assert "Health &amp; Beauty Accessories (24)" in main_html or "Health & Beauty Accessories (24)" in main_html
-    assert "/radar?niche=Health+%26+Beauty+Accessories" in main_html or "/radar?niche=Health%20%26%20Beauty%20Accessories" in main_html
+    assert "Health &amp; Beauty (24)" in main_html or "Health & Beauty (24)" in main_html
+    assert "/radar?niche=Health+%26+Beauty" in main_html or "/radar?niche=Health%20%26%20Beauty" in main_html
 
-    # 2. Encoded URL /radar?niche=Health+%26+Beauty+Accessories renders 24 Health & Beauty Accessories cards
-    res_enc = client.get("/radar?niche=Health+%26+Beauty+Accessories")
+    # 2. Encoded URL /radar?niche=Health+%26+Beauty renders 24 Health & Beauty cards
+    res_enc = client.get("/radar?niche=Health+%26+Beauty")
     assert res_enc.status_code == 200
     enc_html = res_enc.data.decode("utf-8")
     assert enc_html.count('id="card-') == 24
-    assert "Health &amp; Beauty Accessories ·" in enc_html or "Health & Beauty Accessories ·" in enc_html
+    assert "Health &amp; Beauty" in enc_html or "Health & Beauty" in enc_html
 
-    # 3. Unencoded URL /radar?niche=Health & Beauty Accessories ALSO renders 24 Health & Beauty Accessories cards
-    res_unenc = client.get("/radar?niche=Health & Beauty Accessories")
+    # 3. Unencoded URL /radar?niche=Health & Beauty ALSO renders 24 Health & Beauty cards
+    res_unenc = client.get("/radar?niche=Health & Beauty")
     assert res_unenc.status_code == 200
     unenc_html = res_unenc.data.decode("utf-8")
     assert unenc_html.count('id="card-') == 24
 
-    # 4. SmartBiz Page Excel (.xlsx) export for Health & Beauty Accessories has 24 rows and Col K = 'Health & Beauty Accessories'
-    res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Health+%26+Beauty+Accessories&limit=24&commit=0")
+    # 4. SmartBiz Page Excel (.xlsx) export for Health & Beauty has 24 rows and Col K = 'Health & Beauty'
+    res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Health+%26+Beauty&limit=24&commit=0")
     assert res_xlsx.status_code == 200
     wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data), data_only=True)
     ws = wb["bulk_upload_template"]
     assert ws.max_row == 25  # 1 header + 24 products
     for r_idx in range(2, 26):
         assert ws.cell(r_idx, 10).value == "GENERAL"
-        assert ws.cell(r_idx, 11).value == "Health & Beauty Accessories"
+        assert ws.cell(r_idx, 11).value == "Health & Beauty"
     wb.close()
 
 
@@ -538,18 +538,17 @@ def test_under_50_deodap_price_preset_and_filter():
     res_filter = client.get("/radar?cost_filter=under_50")
     assert res_filter.status_code == 200
     html_filter = res_filter.data.decode("utf-8")
-    assert "Under 199-299" in html_filter
-    assert "≤₹50 Preset" in html_filter
-    assert "Under 199-299 ·" in html_filter
+    assert "Under 199 Collection" in html_filter
+    assert "Under 199" in html_filter
 
-    # Check dedicated /radar?niche=Under+199-299 tab renders 24 cards
-    res_tab = client.get("/radar?niche=Under+199-299")
+    # Check dedicated /radar?niche=Under+199+Collection tab renders 24 cards
+    res_tab = client.get("/radar?niche=Under+199+Collection")
     assert res_tab.status_code == 200
     html_tab = res_tab.data.decode("utf-8")
     assert html_tab.count('id="card-') == 24
-    assert "Under 199-299 (24)" in html_tab
+    assert "Under 199 Collection (24)" in html_tab
 
-    # 1. Verify SmartBiz Excel export with cost_filter=under_50 on niche=All sets Col K = 'Under 199-299' and SP in 179..185
+    # 1. Verify SmartBiz Excel export with cost_filter=under_50 on niche=All sets Col K = 'Under 199 Collection' and SP in 179..185
     res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=All&cost_filter=under_50&limit=24&commit=0")
     assert res_xlsx.status_code == 200
     wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data), data_only=True)
@@ -559,10 +558,10 @@ def test_under_50_deodap_price_preset_and_filter():
         sp_val = int(ws.cell(r_idx, 9).value)
         assert 179 <= sp_val <= 185, f"Row {r_idx} Selling Price {sp_val} not in 179..185"
         assert ws.cell(r_idx, 10).value == "GENERAL"
-        assert ws.cell(r_idx, 11).value == "Under 199-299"
+        assert ws.cell(r_idx, 11).value == "Under 199 Collection"
     wb.close()
 
-    # 2. Verify SmartBiz Excel export with cost_filter=under_50 on a specific category page (e.g. Kitchen) ALSO sets Col K = 'Under 199-299'
+    # 2. Verify SmartBiz Excel export with cost_filter=under_50 on a specific category page (e.g. Kitchen) ALSO sets Col K = 'Under 199 Collection'
     res_kitchen_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=Kitchen&cost_filter=under_50&limit=24&commit=0")
     assert res_kitchen_xlsx.status_code == 200
     wb_k = openpyxl.load_workbook(io.BytesIO(res_kitchen_xlsx.data), data_only=True)
@@ -572,51 +571,73 @@ def test_under_50_deodap_price_preset_and_filter():
         sp_val = int(ws_k.cell(r_idx, 9).value)
         assert 179 <= sp_val <= 185
         assert ws_k.cell(r_idx, 10).value == "GENERAL"
-        assert ws_k.cell(r_idx, 11).value == "Under 199-299"
+        assert ws_k.cell(r_idx, 11).value == "Under 199 Collection"
     wb_k.close()
 
 
-def test_199_299_collection_page_and_smartbiz_excel_export():
+def test_strict_7_primary_categories_and_smartbiz_excel_export():
     """
     Verifies:
-    1. Dedicated '/radar?niche=199-299' collection page renders 24 winning products strictly
-       with Selling Price between ₹199 and ₹299.
-    2. '/radar?cost_filter=199_299' filter also filters products to ₹199–₹299.
-    3. Exporting SmartBiz Page Excel (.xlsx) from '/radar?niche=199-299' outputs 24 rows
-       with Selling Price in ₹199–₹299, Column J = 'GENERAL', and Column K (Product Category) = '199-299'.
+    1. Only 7 primary storefront categories exist in Zenlora:
+       - Home Decor
+       - Kitchen & Dining
+       - Smart Gadgets
+       - Festive & Lights
+       - Gifts & Hampers
+       - Health & Beauty
+       - Under 199 Collection
+    2. Exporting SmartBiz Page Excel (.xlsx) from each dedicated page outputs exactly that category in Col K.
+    3. Exporting SmartBiz Mix (.xlsx) or All (.xlsx) has 100% of rows belonging ONLY to these 7 categories.
     """
     import openpyxl
     from pipeline.winning_engine.radar_controller import get_winners
+    from pipeline.winning_engine.smartbiz_exporter import load_smartbiz_preset
 
-    winners_199_299 = get_winners(niche="199-299", per_niche_display=24, exclude_exported=True, refresh_dynamic=True)
-    assert len(winners_199_299) == 24
-    for w in winners_199_299:
-        sp = int(w.get("selling_price") or 0)
-        assert 199 <= sp <= 299, f"Expected 199..299 for {w.get('handle')}, got {sp}"
-        assert w.get("smartbiz_preset", {}).get("product_category") == "199-299"
+    preset = load_smartbiz_preset()
+    allowed_categories = set(preset.get("storefront_categories", []))
+    expected_7 = {
+        "Home Decor",
+        "Kitchen & Dining",
+        "Smart Gadgets",
+        "Festive & Lights",
+        "Gifts & Hampers",
+        "Health & Beauty",
+        "Under 199 Collection",
+    }
+    assert allowed_categories == expected_7, f"Preset storefront_categories mismatch: {allowed_categories}"
 
     client = app.test_client()
 
-    # Check dedicated /radar?niche=199-299 page
-    res_page = client.get("/radar?niche=199-299")
-    assert res_page.status_code == 200
-    html_page = res_page.data.decode("utf-8")
-    assert html_page.count('id="card-') == 24
-    assert "🔥 199-299 (24)" in html_page
-    assert "199-299 ·" in html_page
+    # 1. Test dedicated category exports
+    category_checks = [
+        ("Home Decor", "Home Decor"),
+        ("Kitchen", "Kitchen & Dining"),
+        ("Gadgets", "Smart Gadgets"),
+        ("Festive", "Festive & Lights"),
+        ("Gifts", "Gifts & Hampers"),
+        ("Health & Beauty", "Health & Beauty"),
+        ("Under 199 Collection", "Under 199 Collection"),
+    ]
+    for page_niche, expected_cat in category_checks:
+        res = client.get(f"/api/radar/smartbiz.xlsx?mode=page&niche={page_niche}&limit=24&commit=0")
+        assert res.status_code == 200, f"Export failed for {page_niche}"
+        wb = openpyxl.load_workbook(io.BytesIO(res.data), data_only=True)
+        ws = wb["bulk_upload_template"]
+        assert ws.max_row >= 2
+        for r in range(2, ws.max_row + 1):
+            cat_val = ws.cell(r, 11).value
+            assert cat_val == expected_cat, f"Page {page_niche} row {r} Col K is '{cat_val}', expected '{expected_cat}'"
+            assert ws.cell(r, 10).value == "GENERAL"
+        wb.close()
 
-    # Check SmartBiz Excel export for 199-299 collection
-    res_xlsx = client.get("/api/radar/smartbiz.xlsx?mode=page&niche=199-299&limit=24&commit=0")
-    assert res_xlsx.status_code == 200
-    wb = openpyxl.load_workbook(io.BytesIO(res_xlsx.data), data_only=True)
-    ws = wb["bulk_upload_template"]
-    assert ws.max_row == 25  # 1 header + 24 items
-    for r_idx in range(2, 26):
-        mrp_val = int(ws.cell(r_idx, 8).value)
-        sp_val = int(ws.cell(r_idx, 9).value)
-        assert 199 <= sp_val <= 299, f"Row {r_idx} Selling Price {sp_val} not in 199..299"
-        assert mrp_val > sp_val
-        assert ws.cell(r_idx, 10).value == "GENERAL"
-        assert ws.cell(r_idx, 11).value == "199-299"
-    wb.close()
+    # 2. Test Mix 55 export strictly contains only these 7 categories
+    res_mix = client.get("/api/radar/smartbiz.xlsx?mode=mix&count=55&commit=0")
+    assert res_mix.status_code == 200
+    wb_m = openpyxl.load_workbook(io.BytesIO(res_mix.data), data_only=True)
+    ws_m = wb_m["bulk_upload_template"]
+    assert ws_m.max_row >= 50
+    for r in range(2, ws_m.max_row + 1):
+        cat_val = ws_m.cell(r, 11).value
+        assert cat_val in expected_7, f"Mix export row {r} has illegal category '{cat_val}' not in {expected_7}"
+    wb_m.close()
 

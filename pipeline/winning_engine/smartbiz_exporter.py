@@ -103,46 +103,55 @@ OFFICIAL_BUSINESS_CATEGORIES = {
 }
 
 NICHE_CODE_MAP = {
-    "Festive": "FEST",
-    "Kitchen": "KITC",
     "Home Decor": "DECO",
+    "Kitchen": "KITC",
+    "Kitchen & Dining": "KITC",
     "Gadgets": "GADG",
+    "Smart Gadgets": "GADG",
+    "Festive": "FEST",
+    "Festive & Lights": "FEST",
     "Gifts": "GIFT",
+    "Gifts & Hampers": "GIFT",
+    "Health & Beauty": "HLTH",
     "Health & Beauty Accessories": "HLTH",
-    "199-299": "1992",
+    "Under 199 Collection": "U199",
+    "Under 199": "U199",
     "Under 199-299": "U199",
     "under_50": "U199",
 }
 
 HSN_BY_PRODUCT_CATEGORY = {
-    "Festive & Lights": "830629",
     "Home Decor": "392640",
     "Kitchen & Dining": "392410",
     "Smart Gadgets": "850980",
+    "Festive & Lights": "830629",
     "Gifts & Hampers": "960810",
+    "Health & Beauty": "850980",
     "Health & Beauty Accessories": "850980",
-    "199-299": "392640",
+    "Under 199 Collection": "392640",
+    "Under 199": "392640",
     "Under 199-299": "392640",
 }
 
 NICHE_TO_SMARTBIZ_CATEGORY = {
-    "Festive": ("GENERAL", "Festive & Lights"),
-    "Festive & Lights": ("GENERAL", "Festive & Lights"),
     "Home Decor": ("GENERAL", "Home Decor"),
     "Kitchen": ("GENERAL", "Kitchen & Dining"),
     "Kitchen & Dining": ("GENERAL", "Kitchen & Dining"),
     "Gadgets": ("GENERAL", "Smart Gadgets"),
     "Smart Gadgets": ("GENERAL", "Smart Gadgets"),
+    "Festive": ("GENERAL", "Festive & Lights"),
+    "Festive & Lights": ("GENERAL", "Festive & Lights"),
     "Gifts": ("GENERAL", "Gifts & Hampers"),
     "Gifts & Hampers": ("GENERAL", "Gifts & Hampers"),
-    "Health & Beauty Accessories": ("GENERAL", "Health & Beauty Accessories"),
-    "Health & Beauty": ("GENERAL", "Health & Beauty Accessories"),
-    "Beauty": ("GENERAL", "Health & Beauty Accessories"),
-    "199-299": ("GENERAL", "199-299"),
-    "199_299": ("GENERAL", "199-299"),
-    "Under 199-299": ("GENERAL", "Under 199-299"),
-    "under 199-299": ("GENERAL", "Under 199-299"),
-    "under_50": ("GENERAL", "Under 199-299"),
+    "Health & Beauty": ("GENERAL", "Health & Beauty"),
+    "Health & Beauty Accessories": ("GENERAL", "Health & Beauty"),
+    "Beauty": ("GENERAL", "Health & Beauty"),
+    "Under 199 Collection": ("GENERAL", "Under 199 Collection"),
+    "Under 199": ("GENERAL", "Under 199 Collection"),
+    "Under 199-299": ("GENERAL", "Under 199 Collection"),
+    "under 199-299": ("GENERAL", "Under 199 Collection"),
+    "under 199": ("GENERAL", "Under 199 Collection"),
+    "under_50": ("GENERAL", "Under 199 Collection"),
 }
 
 
@@ -533,7 +542,7 @@ def select_current_page_products(
     commit_to_ledger: bool = False,
 ) -> List[Dict]:
     from .export_ledger import extract_product_fingerprints, record_exported_products
-    from .radar_controller import normalize_niche_param
+    from .radar_controller import normalize_niche_param, matches_niche
 
     niche = normalize_niche_param(niche)
     if niche and niche != "All":
@@ -542,24 +551,19 @@ def select_current_page_products(
             include_hard_failed=include_hard_failed,
             refresh_dynamic=True,
             batch_cursor=batch_cursor,
-            per_niche_display=0 if str(cost_filter).lower() in ("under_50", "199_299", "199-299") else max(limit + 15, 35),
+            per_niche_display=0 if str(cost_filter).lower() in ("under_50", "under_199", "under_199_collection") else max(limit + 15, 35),
             exclude_exported=exclude_exported,
             extra_excluded_keys=extra_excluded_keys,
             auto_refill=exclude_exported,
         )
-        if niche == "199-299":
-            items = [
-                w for w in items
-                if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
-            ]
-        elif niche == "Under 199-299":
+        if niche in ("Under 199 Collection", "Under 199", "Under 199-299"):
             items = [
                 w for w in items
                 if 0 < float(w.get("wholesale_price") or 0) <= 50.0
             ]
         else:
             # Strictly enforce that every item belongs to the requested category
-            items = [w for w in items if str(w.get("niche", "")).strip().lower() == niche.strip().lower()]
+            items = [w for w in items if matches_niche(w.get("niche", ""), niche)]
     else:
         items = get_winners(
             niche="All",
@@ -573,13 +577,8 @@ def select_current_page_products(
         )
         items = sorted(items, key=lambda x: float(x.get("winning_score") or 0), reverse=True)
 
-    if str(cost_filter).strip().lower() == "under_50":
+    if str(cost_filter).strip().lower() in ("under_50", "under_199", "under_199_collection"):
         items = [w for w in items if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
-    elif str(cost_filter).strip().lower() in ("199_299", "199-299"):
-        items = [
-            w for w in items
-            if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
-        ]
     if min_score > 0:
         items = [w for w in items if float(w.get("winning_score") or 0) >= min_score]
     if min_margin > 0:

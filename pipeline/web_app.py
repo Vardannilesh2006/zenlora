@@ -104,17 +104,13 @@ def radar():
     show_hard_failed = request.args.get("show_hard_failed", "0") == "1"
     batch_cursor = int(request.args.get("batch", 0) or 0)
 
-    if cost_filter.lower() == "under_50" and niche in ("All", ""):
-        niche = "Under 199-299"
-    elif cost_filter.lower() in ("199_299", "199-299") and niche in ("All", ""):
-        niche = "199-299"
+    if cost_filter.lower() in ("under_50", "under_199", "under_199_collection") and niche in ("All", ""):
+        niche = "Under 199 Collection"
 
     all_winners = get_winners(include_hard_failed=True, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
-    if niche == "Under 199-299":
-        winners = get_winners(niche="Under 199-299", include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
-    elif niche == "199-299":
-        winners = get_winners(niche="199-299", include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
-    elif cost_filter.lower() == "under_50":
+    if niche in ("Under 199 Collection", "Under 199"):
+        winners = get_winners(niche="Under 199 Collection", include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
+    elif cost_filter.lower() in ("under_50", "under_199", "under_199_collection"):
         raw_pool = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=0)
         winners = [w for w in raw_pool if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
         if niche != "All":
@@ -122,26 +118,14 @@ def radar():
         for idx, item in enumerate(winners):
             copied = dict(item)
             preset = dict(copied.get("smartbiz_preset") or {})
-            preset["product_category"] = "Under 199-299"
+            preset["product_category"] = "Under 199 Collection"
             copied["smartbiz_preset"] = preset
             winners[idx] = copied
-    elif cost_filter.lower() in ("199_299", "199-299"):
-        raw_pool = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=0)
-        winners = [
-            w for w in raw_pool
-            if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
-        ]
-        if niche != "All":
-            winners = winners[:24]
     else:
         winners = get_winners(niche=niche, include_hard_failed=show_hard_failed, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24)
 
     full_unexported_pool = get_winners(niche="All", include_hard_failed=False, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=0)
     under_50_count = sum(1 for w in full_unexported_pool if 0 < float(w.get("wholesale_price") or 0) <= 50.0)
-    range_199_299_count = sum(
-        1 for w in full_unexported_pool
-        if 199 <= int(round(float(w.get("selling_price") or w.get("suggested_price") or 0))) <= 299
-    )
 
     # Attach SEO title and description for each winner card
     for w in winners:
@@ -190,17 +174,18 @@ def radar():
         "Gadgets",
         "Festive",
         "Gifts",
-        "Health & Beauty Accessories",
-        "Under 199-299",
-        "199-299",
+        "Health & Beauty",
+        "Under 199 Collection",
     ]
     niche_counts = {
-        n: sum(1 for w in active_winners if w.get("niche") == n)
+        n: sum(
+            1 for w in active_winners
+            if (w.get("niche") == n or (n == "Health & Beauty" and w.get("niche") in ("Health & Beauty", "Health & Beauty Accessories")))
+        )
         for n in niches
-        if n not in ("All", "Under 199-299", "199-299")
+        if n not in ("All", "Under 199 Collection")
     }
-    niche_counts["Under 199-299"] = len(get_winners(niche="Under 199-299", include_hard_failed=False, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24))
-    niche_counts["199-299"] = len(get_winners(niche="199-299", include_hard_failed=False, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24))
+    niche_counts["Under 199 Collection"] = len(get_winners(niche="Under 199 Collection", include_hard_failed=False, refresh_dynamic=True, batch_cursor=batch_cursor, per_niche_display=24))
     settings = load_settings()
     policy_max = int(settings.get("general", {}).get("supplier_policy_delivery_max_days", 8))
     festival_cutoffs = calculate_festival_cutoffs(policy_max, settings)
@@ -215,7 +200,6 @@ def radar():
         selected_niche=niche,
         selected_cost_filter=cost_filter,
         under_50_count=under_50_count,
-        range_199_299_count=range_199_299_count,
         selected_festival=festival_filter,
         selected_status=status_filter,
         selected_confidence=confidence_filter,
@@ -443,21 +427,17 @@ def export_smartbiz_csv():
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
         )
-        if cost_filter.lower() == "under_50":
-            safe_niche = "under_199-299"
-        elif cost_filter.lower() in ("199_299", "199-299") and niche == "All":
-            safe_niche = "199-299"
+        if niche in ("Under 199 Collection", "Under 199", "Under 199-299") or cost_filter.lower() in ("under_50", "under_199", "under_199_collection"):
+            safe_niche = "under_199_collection"
         else:
             safe_niche = niche.lower().replace("&", "and").replace(" ", "_").replace("__", "_")
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.csv"
 
-    if mode == "mix":
+    if str(cost_filter).strip().lower() in ("under_50", "under_199", "under_199_collection") or niche in ("Under 199 Collection", "Under 199", "Under 199-299"):
+        effective_override = "Under 199 Collection"
+    elif mode == "mix" or niche == "All":
         effective_override = None
-    elif niche == "Under 199-299" or cost_filter.lower() == "under_50":
-        effective_override = "Under 199-299"
-    elif niche == "199-299" or (niche == "All" and cost_filter.lower() in ("199_299", "199-299")):
-        effective_override = "199-299"
     else:
         effective_override = niche
     csv_bytes = generate_smartbiz_csv_bytes(products, niche_override=effective_override)
@@ -506,21 +486,17 @@ def export_smartbiz_xlsx():
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
         )
-        if niche == "Under 199-299" or cost_filter.lower() == "under_50":
-            safe_niche = "under_199-299"
-        elif cost_filter.lower() in ("199_299", "199-299") and niche == "All":
-            safe_niche = "199-299"
+        if niche in ("Under 199 Collection", "Under 199", "Under 199-299") or cost_filter.lower() in ("under_50", "under_199", "under_199_collection"):
+            safe_niche = "under_199_collection"
         else:
             safe_niche = niche.lower().replace("&", "and").replace(" ", "_").replace("__", "_")
         ledger = load_export_ledger()
         filename = f"smartbiz_bulk_upload_{safe_niche}_{len(products)}_items_run{ledger.get('total_export_batches', 1)}.xlsx"
 
-    if mode == "mix":
+    if str(cost_filter).strip().lower() in ("under_50", "under_199", "under_199_collection") or niche in ("Under 199 Collection", "Under 199", "Under 199-299"):
+        effective_override = "Under 199 Collection"
+    elif mode == "mix" or niche == "All":
         effective_override = None
-    elif niche == "Under 199-299" or cost_filter.lower() == "under_50":
-        effective_override = "Under 199-299"
-    elif niche == "199-299" or (niche == "All" and cost_filter.lower() in ("199_299", "199-299")):
-        effective_override = "199-299"
     else:
         effective_override = niche
     xlsx_bytes = generate_smartbiz_xlsx_bytes(products, niche_override=effective_override)

@@ -215,22 +215,22 @@
                     Home Decor
                 </button>
                 <button onclick="setCategoryFilter('Kitchen')" data-cat="Kitchen" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
-                    Kitchen Hacks
+                    Kitchen & Dining
                 </button>
                 <button onclick="setCategoryFilter('Gadget')" data-cat="Gadget" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
                     Smart Gadgets
                 </button>
-                <button onclick="setCategoryFilter('Beauty')" data-cat="Beauty" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
-                    Health & Beauty Accessories
-                </button>
                 <button onclick="setCategoryFilter('Festive')" data-cat="Festive" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
-                    Festive Gifting
+                    Festive & Lights
                 </button>
-                <button onclick="setCategoryFilter('Under 199-299')" data-cat="Under 199-299" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition">
-                    🏷️ Under 199-299
+                <button onclick="setCategoryFilter('Gifts')" data-cat="Gifts" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
+                    Gifts & Hampers
                 </button>
-                <button onclick="setCategoryFilter('199-299')" data-cat="199-299" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-300 transition">
-                    🔥 199-299
+                <button onclick="setCategoryFilter('Health & Beauty')" data-cat="Health & Beauty" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-medium text-textSecondary hover:text-textPrimary hover:bg-zinc-100 border border-transparent transition">
+                    Health & Beauty
+                </button>
+                <button onclick="setCategoryFilter('Under 199 Collection')" data-cat="Under 199 Collection" class="cat-pill flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold text-emerald-900 bg-emerald-50 hover:bg-emerald-100 border border-emerald-300 transition">
+                    🏷️ Under 199 Collection
                 </button>
             </div>
 
@@ -806,9 +806,8 @@
                 const cardSku = card.getAttribute('data-sku');
 
                 const matchesCat = (currentFilter === 'all')
-                    || ((currentFilter === 'under_50' || currentFilter === 'under 199-299') && cardWholesale > 0 && cardWholesale <= 50)
-                    || (currentFilter === '199-299' && cardSelling >= 199 && cardSelling <= 299)
-                    || (currentFilter !== 'under_50' && currentFilter !== 'under 199-299' && currentFilter !== '199-299' && cardCat.includes(currentFilter.toLowerCase()));
+                    || ((currentFilter === 'under_50' || currentFilter.toLowerCase().includes('under 199') || currentFilter === '199-299') && cardWholesale > 0 && cardWholesale <= 50)
+                    || (cardCat.includes(currentFilter.toLowerCase()));
                 const matchesQuery = !query || cardTitle.includes(query) || cardSku.includes(query);
 
                 card.style.display = (matchesCat && matchesQuery) ? 'flex' : 'none';
