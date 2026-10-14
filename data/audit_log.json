@@ -1,5 +1,23 @@
 [
   {
+    "timestamp": "2026-10-14T13:38:15+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-14T13:38:04+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
     "timestamp": "2026-10-14T13:32:20+05:30",
     "action": "deodap_live_ingest",
     "target": "0 products",

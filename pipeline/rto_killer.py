@@ -9,7 +9,6 @@ class RTOKillerEngine:
     """Generates anti-RTO pricing arbitrage and WhatsApp interactive confirmation copy."""
 
     UPI_DISCOUNT_PERCENT = 15  # 15% instant discount for prepaid UPI / Online Payment
-    FREE_GIFT_VALUE = 199      # Perceived value of mystery free gift
 
     @classmethod
     def generate_rto_killer_data(cls, product_title: str, cod_selling_price: int) -> Dict[str, Any]:
@@ -20,7 +19,7 @@ class RTOKillerEngine:
         # 1. Checkout Banner Copy (for Shopify / Website Checkout)
         checkout_badge = f"Save 15% (₹{savings}) with UPI"
         checkout_copy = (
-            f"⚡ Pay via UPI / GPay: ₹{upi_price} (Save 15% Instantly + Free Mystery Gift worth ₹{cls.FREE_GIFT_VALUE}) "
+            f"⚡ Pay Online via UPI: ₹{upi_price} (Save 15% Instantly + Priority 24h Express Dispatch) "
             f"| COD: ₹{cod_price}"
         )
 
@@ -31,16 +30,16 @@ class RTOKillerEngine:
             f"Aapka Zenlora order receive ho gaya hai:\n"
             f"📦 Product: *{clean_title}*\n"
             f"💵 Total: *₹{cod_price} (Cash on Delivery)*\n\n"
-            f"🔥 *SPECIAL VIP PREPAID UPGRADE (Next 15 Mins Only):*\n"
+            f"🔥 *EXCLUSIVE PREPAID PRIVILEGE (Next 15 Mins Only):*\n"
             f"Agar aap abhi UPI/GPay se pay karte hain:\n"
-            f"✅ *Instant 15% Discount* (Pay only ₹{upi_price} — Save ₹{savings})\n"
-            f"✅ *FREE Mystery Gift* (worth ₹{cls.FREE_GIFT_VALUE})\n"
-            f"✅ *Express Priority Shipping* (Delivered 2 days faster)\n\n"
+            f"✅ *Instant 15% Discount* (Pay only ₹{upi_price} — Direct Savings: ₹{savings})\n"
+            f"✅ *Priority 24-Hour Express Dispatch* (Air Shipping)\n"
+            f"✅ *Zero Cash Handling Fee* (Save extra ₹49 COD fee)\n\n"
             f"Kripya niche diye gaye 2 options me se ek select karein:"
         )
 
-        button_1_upi = f"💳 Pay ₹{upi_price} via UPI (Claim Free Gift)"
-        button_2_cod = "📦 No, I Continue with Cash on Delivery"
+        button_1_upi = f"💳 Pay ₹{upi_price} via UPI (15% OFF)"
+        button_2_cod = "📦 Continue with Cash on Delivery"
 
         # 3. Backend Operational Guardrail
         backend_rule = (

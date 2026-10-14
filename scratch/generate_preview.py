@@ -34,9 +34,9 @@ html_content = """<!DOCTYPE html>
 
     <!-- Announcement Bar -->
     <div class="bg-gradient-to-r from-emerald-600 via-teal-700 to-indigo-800 text-white text-center py-2 px-4 text-xs font-bold tracking-wide flex items-center justify-center gap-2 shadow-xs">
-      <span>⚡ PREPAID OFFER:</span>
-      <span>Pay Online via UPI &amp; Save Flat 15% OFF Instantly + Free Mystery Gift worth ₹199!</span>
-      <span class="bg-white/20 px-2 py-0.5 rounded text-[10px] font-mono uppercase">Free Express Delivery</span>
+      <span>⚡ PREPAID PRIVILEGE:</span>
+      <span>Instant 15% OFF on UPI &amp; Cards | Priority 24-Hour Express Dispatch | Zero Delivery Fee</span>
+      <span class="bg-white/20 px-2 py-0.5 rounded text-[10px] font-mono uppercase">Auto-Applied</span>
     </div>
 
     <!-- Store Header -->
@@ -170,11 +170,11 @@ html_content = """<!DOCTYPE html>
         <!-- ======================================================== -->
         <!-- THE NEW AUTO-EXPORTED PAYMENT INCENTIVE BOX (COLUMN L) -->
         <!-- ======================================================== -->
-        <div class="rounded-xl border-2 border-emerald-500/80 bg-gradient-to-br from-emerald-50 via-teal-50/40 to-indigo-50/50 p-4 shadow-xs relative">
+        <div class="rounded-xl border-2 border-emerald-500/80 bg-gradient-to-br from-emerald-50/90 via-teal-50/40 to-indigo-50/50 p-4 shadow-xs relative">
           <div class="flex items-center gap-2 mb-2">
             <span class="w-6 h-6 rounded-md bg-emerald-600 text-white flex items-center justify-center text-xs font-bold shadow-xs">⚡</span>
             <h4 class="text-xs font-black uppercase tracking-wider text-emerald-950">
-              SPECIAL PAYMENT OFFERS (Auto-Applied)
+              EXCLUSIVE ONLINE PAYMENT PRIVILEGES (Auto-Applied)
             </h4>
             <span class="ml-auto text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-600 text-white uppercase">
               Save 15% OFF
@@ -185,9 +185,9 @@ html_content = """<!DOCTYPE html>
             <div class="flex items-start gap-2.5 bg-white p-3 rounded-lg border border-emerald-200 shadow-2xs">
               <span class="text-emerald-700 font-bold text-base leading-none">💳</span>
               <div class="leading-snug">
-                <span class="font-bold text-zinc-900">Pay Online (UPI / GPay / PhonePe / Paytm):</span>
+                <span class="font-bold text-zinc-900">Pay Online (UPI / GPay / PhonePe / Cards):</span>
                 <span class="text-emerald-800 font-semibold block mt-0.5 text-xs">
-                  Flat <span class="font-extrabold text-emerald-950 underline">15% Instant Discount</span> (Pay only ₹297) + <span class="font-bold text-emerald-950">FREE Express Delivery</span> + Free Mystery Gift 🎁
+                  Flat <span class="font-extrabold text-emerald-950 underline">15% Instant Discount</span> (Pay only ₹297) + <span class="font-bold text-emerald-950">Priority 24h Express Dispatch</span> + Zero Delivery Fee
                 </span>
               </div>
             </div>
@@ -196,7 +196,7 @@ html_content = """<!DOCTYPE html>
               <span class="text-zinc-500 text-sm leading-none">📦</span>
               <div class="leading-snug">
                 <span class="font-semibold text-zinc-800">Cash on Delivery (COD):</span>
-                <span class="text-zinc-600 text-[11px] block">Standard delivery available. ₹49 Handling fee applies on COD.</span>
+                <span class="text-zinc-600 text-[11px] block">Standard delivery available. ₹49 Cash Handling Fee applies on COD.</span>
               </div>
             </div>
           </div>
