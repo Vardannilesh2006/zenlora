@@ -122,6 +122,7 @@ def test_generate_16s_reel_pack_dual_act_and_continuity():
     assert len(pack["cta_keyword"]) >= 2
     assert "#zenlora" in pack["hashtags"].lower()
     assert len(pack["recommendation_keywords"]) >= 5
+    assert pack["store_url"].startswith("https://www.zenlora.store/product/")
 
 
 def test_character_mode_toggle_asmr():

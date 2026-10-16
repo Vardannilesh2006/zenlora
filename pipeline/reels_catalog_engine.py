@@ -79,7 +79,7 @@ def _build_json_from_excel() -> List[Dict[str, Any]]:
                 "id": f"zen_{idx+1}", "sku": sku, "handle": handle, "title": title,
                 "mrp": mrp, "selling_price": selling_price, "category": category,
                 "description": desc, "image_url": image_url, "images": images,
-                "discount_pct": disc_pct, "store_url": f"https://zenlora.store/search?q={sku}",
+                "discount_pct": disc_pct, "store_url": f"https://www.zenlora.store/product/{sku}",
             })
         for target in (RUNTIME_CATALOG_JSON, REPO_CATALOG_JSON):
             try:
@@ -708,7 +708,11 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
         "caption": caption,
         "hashtags": hashtags,
         "recommendation_keywords": rec_keywords,
-        "store_url": product.get("store_url") or f"https://zenlora.store/product/{sku}",
+        "store_url": (
+            product.get("store_url", "").replace("https://zenlora.store", "https://www.zenlora.store")
+            if product.get("store_url")
+            else f"https://www.zenlora.store/product/{sku}"
+        ),
         "image_url": product.get("image_url", ""),
         "images": product.get("images") or ([product.get("image_url")] if product.get("image_url") else []),
         "safe_title": safe_title,

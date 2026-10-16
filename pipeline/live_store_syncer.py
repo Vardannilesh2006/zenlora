@@ -30,7 +30,7 @@ except ImportError:
 
 LIVE_CACHE_FILE = DATA_DIR / "live_store_cache.json"
 
-STORE_URL = "https://zenlora.store"
+STORE_URL = "https://www.zenlora.store"
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "

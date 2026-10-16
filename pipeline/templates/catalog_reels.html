@@ -418,128 +418,81 @@
                     </div>
                 </div>
 
-                <!-- 1. 6-Panel Storyboard Grid Prompt (Midjourney / Ideogram / SDXL) -->
+                <!-- 1. 6-Panel Storyboard Grid Prompt (Google Flow / Gemini / Midjourney) -->
                 <div class="bg-zinc-900 text-white rounded-xl p-4 sm:p-5 border border-zinc-800">
                     <div class="flex items-center justify-between mb-2">
                         <div class="flex items-center gap-2">
                             <span class="text-amber-400 font-bold text-xs uppercase tracking-wider">🖼️ 6-Panel Storyboard Grid Prompt</span>
-                            <span class="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300">Midjourney / Ideogram / SDXL</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 font-medium">Google Flow / NanoBanana / Midjourney</span>
                         </div>
                         <button onclick="copyText('storyboardPromptText', this)" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95 flex items-center gap-1">
                             <span>Copy Prompt</span>
                         </button>
                     </div>
                     <p class="text-zinc-400 text-[11px] mb-2.5">
-                        Generates a single 2x3 sequential comic grid covering all 6 key story moments (0-3s hook, 3-5s price shock, 5-8s demo, 8-11s anchor, 11-14s makeover, 14-16s CTA) with identical character & product consistency.
+                        Generates a single 2x3 sequential comic grid covering all 6 key story moments (0-3s hook, 3-5s price shock, 5-8s demo, 8-11s anchor, 11-14s makeover, 14-16s CTA) with consistent character & product across panels.
                     </p>
                     <div class="bg-zinc-950/80 p-3 rounded-lg border border-zinc-800 font-mono text-xs text-zinc-300 leading-relaxed max-h-40 overflow-y-auto selection:bg-amber-500 selection:text-black" id="storyboardPromptText">
                         Loading...
                     </div>
                 </div>
 
-                <!-- 🚨 PRO CREATOR SECRETS: WHY AI VIDEOS MORPH & HOW TO FIX IT -->
-                <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-950 shadow-2xs">
-                    <div class="font-bold flex items-center gap-2 mb-1.5 text-amber-900">
-                        <span class="text-base">💡</span>
-                        <span class="text-xs uppercase tracking-wide">Pro Creator Secret: Storyboard-se-Video kaise banayein (Zero Morphing)?</span>
-                    </div>
-                    <p class="text-zinc-600 text-[11px] leading-relaxed mb-2.5">
-                        Kling, Runway, aur VideoFX me jab aap 1 image se 4 alag-alag kaam (unboxing + demo + makeover + CTA) karwane ka lamba prompt dete hain, toh AI character ka chehra aur product morph/distort kar deta hai.
-                        <strong>Instagram / TikTok par Viral D2C Creators ka Asli Formula:</strong> Storyboard ke <strong>har shot ke liye wahi specific panel / image</strong> upload karein aur 3–4 second ka micro-prompt chalayein!
-                    </p>
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[10px]">
-                        <div class="bg-white/90 p-2.5 rounded-lg border border-amber-200">
-                            <span class="font-bold text-amber-900 block mb-0.5">🎯 Method 1 (10/10 Quality):</span>
-                            <span>4 alag micro-shots (3-4s each) generate karein aur CapCut me 60s me stitch karein.</span>
+                <!-- 2. ⚡ GOOGLE FLOW 16-SECOND PRODUCTION BLUEPRINT (8s Clip 1 + 8s Clip 2) -->
+                <div class="space-y-4">
+                    <!-- Instruction Banner -->
+                    <div class="bg-gradient-to-r from-blue-50 via-indigo-50 to-purple-50 border border-indigo-200 rounded-xl p-4 text-xs text-indigo-950 shadow-2xs">
+                        <div class="font-bold flex items-center justify-between mb-1 text-indigo-950">
+                            <div class="flex items-center gap-2">
+                                <span class="text-base">⚡</span>
+                                <span class="text-xs uppercase tracking-wide">Google Flow (VideoFX) 16s Production Blueprint (8s + 8s)</span>
+                            </div>
+                            <span class="text-[10px] bg-indigo-100 text-indigo-900 font-bold px-2 py-0.5 rounded">Single Proven Method</span>
                         </div>
-                        <div class="bg-white/90 p-2.5 rounded-lg border border-amber-200">
-                            <span class="font-bold text-amber-900 block mb-0.5">⚡ Method 2 (Google Flow / Kling):</span>
-                            <span>Start Frame (Creator) + End Frame (Product Hero) daalein aur Transition Prompt chalayein.</span>
-                        </div>
-                        <div class="bg-white/90 p-2.5 rounded-lg border border-amber-200">
-                            <span class="font-bold text-amber-900 block mb-0.5">🎞️ Method 3 (Fast 2-Clips):</span>
-                            <span>Classic Act 1 (0-8s) aur Act 2 (8-16s) direct generation.</span>
-                        </div>
+                        <p class="text-zinc-600 text-[11px] leading-relaxed">
+                            Google Flow natural image-to-video instructions follow karta hai. 
+                            <strong>Step 1 (Clip 1, 0–8s):</strong> Apni Female Creator photo ya Product Photo ko start frame banayein aur Clip 1 Prompt chalayein.
+                            <strong>Step 2 (Clip 2, 8–16s):</strong> Clip 1 ke 8th second ke steady frame ko Google Flow me start frame banayein aur Clip 2 Prompt chalayein.
+                            <strong>Step 3:</strong> Dono 8s clips ko CapCut me merge karein — 16s seamless viral video ready!
+                        </p>
                     </div>
-                </div>
 
-                <!-- 🎬 WORKFLOW TAB SWITCHER -->
-                <div class="border-b border-zinc-200 flex items-center gap-1 sm:gap-3 overflow-x-auto pb-px">
-                    <button onclick="switchVideoWorkflowTab('shots')" id="tabBtnShots" class="px-3 py-2 text-xs font-bold border-b-2 border-zinc-950 text-zinc-950 transition whitespace-nowrap">
-                        🎯 Method 1: Shot-by-Shot Prompts (Zero Morphing)
-                    </button>
-                    <button onclick="switchVideoWorkflowTab('bridge')" id="tabBtnBridge" class="px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap">
-                        ⚡ Method 2: Start + End Frame Bridge
-                    </button>
-                    <button onclick="switchVideoWorkflowTab('acts')" id="tabBtnActs" class="px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap">
-                        🎞️ Method 3: 2-Act Dual Pack (8s + 8s)
-                    </button>
-                </div>
-
-                <!-- Section 1: Shot-by-Shot Prompts (Zero Morphing) -->
-                <div id="shotsWorkflowSection" class="space-y-3">
-                    <div id="shotsListContainer" class="space-y-3">
-                        <!-- Populated by JS -->
-                    </div>
-                </div>
-
-                <!-- Section 2: Start + End Frame Bridge -->
-                <div id="bridgeWorkflowSection" class="hidden space-y-3">
+                    <!-- Clip 1 (0–8s: Hook & Unboxing) -->
                     <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
                         <div class="flex items-center justify-between mb-2">
                             <div class="flex items-center gap-2">
-                                <span class="font-bold text-xs text-zinc-900">⚡ Google Flow & Kling AI: Start Frame + End Frame Transition</span>
-                                <span class="text-[10px] font-semibold text-purple-800 bg-purple-100 px-2 py-0.5 rounded">Interpolation Mode</span>
+                                <span class="font-bold text-xs text-zinc-900">🎬 Clip 1 (0–8s): Hook & First Touch</span>
+                                <span class="text-[10px] font-semibold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">Start Frame: Character / Product Photo</span>
                             </div>
-                            <button onclick="copyText('bridgePromptText', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
-                                Copy Bridge Prompt
+                            <button onclick="copyText('act1PromptText', this)" class="bg-amber-500 hover:bg-amber-600 text-zinc-950 text-xs font-bold px-3 py-1 rounded-md transition active:scale-95 shadow-xs">
+                                📋 Copy Clip 1 Prompt
                             </button>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-3 text-[11px] text-zinc-600 bg-zinc-50 p-2.5 rounded-lg border border-zinc-200">
-                            <div><strong class="text-zinc-800">📸 Start Frame (Upload Frame 0):</strong> <span id="bridgeStartFrameText">Storyboard Panel 1 (or Your Custom Character Photo)</span></div>
-                            <div><strong class="text-zinc-800">🏁 End Frame (Upload Final Frame):</strong> <span id="bridgeEndFrameText">Storyboard Panel 4 (Product Hero Photo)</span></div>
-                        </div>
-                        <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-800 font-mono text-xs text-zinc-200 leading-relaxed select-all" id="bridgePromptText">
-                            Loading bridge prompt...
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Section 3: 2-Act Video Prompts (Preserved) -->
-                <div id="actsWorkflowSection" class="hidden space-y-4">
-                    
-                    <!-- Act 1 Prompt -->
-                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="flex items-center gap-2">
-                                <span class="font-bold text-xs text-zinc-900">🎬 Act 1 Video Prompt (0–8s: Hook & Unboxing)</span>
-                                <span class="text-[10px] font-semibold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">First Clip</span>
-                            </div>
-                            <button onclick="copyText('act1PromptText', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
-                                Copy Act 1
-                            </button>
+                        <div class="text-[11px] text-zinc-500 mb-2 flex items-center gap-2 bg-amber-50/60 px-2.5 py-1.5 rounded-lg border border-amber-100">
+                            <span>📸 <strong>Google Flow Start Image:</strong> Apni female character photo ya upar diye Product Photos Vault se image upload karein.</span>
                         </div>
                         <div class="bg-zinc-50 p-3 rounded-lg border border-zinc-200 font-mono text-xs text-zinc-800 leading-relaxed select-all" id="act1PromptText">
                             Loading...
                         </div>
                     </div>
 
-                    <!-- Act 2 Prompt (Continuity Injected) -->
+                    <!-- Clip 2 (8–16s: Continuity, Room Transformation & CTA) -->
                     <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
                         <div class="flex items-center justify-between mb-2">
                             <div class="flex items-center gap-2">
-                                <span class="font-bold text-xs text-zinc-900">🎬 Act 2 Video Prompt (8–16s: Continuity + Makeover + CTA)</span>
-                                <span class="text-[10px] font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">Second Clip</span>
+                                <span class="font-bold text-xs text-zinc-900">🎬 Clip 2 (8–16s): Makeover & Auto-DM CTA</span>
+                                <span class="text-[10px] font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">Start Frame: Clip 1 Anchor Frame (at 8s)</span>
                             </div>
-                            <button onclick="copyText('act2PromptText', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
-                                Copy Act 2
+                            <button onclick="copyText('act2PromptText', this)" class="bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 py-1 rounded-md transition active:scale-95 shadow-xs">
+                                📋 Copy Clip 2 Prompt
                             </button>
                         </div>
-                        <div class="bg-emerald-50/50 p-3 rounded-lg border border-emerald-200 font-mono text-xs text-zinc-800 leading-relaxed select-all" id="act2PromptText">
+                        <div class="text-[11px] text-zinc-500 mb-2 flex items-center gap-2 bg-emerald-50/60 px-2.5 py-1.5 rounded-lg border border-emerald-100">
+                            <span>🔗 <strong>Google Flow Continuity:</strong> Clip 1 ka last steady frame (8th second) download karke Google Flow me second clip ka start frame banayein.</span>
+                        </div>
+                        <div class="bg-emerald-50/40 p-3 rounded-lg border border-emerald-200 font-mono text-xs text-zinc-800 leading-relaxed select-all" id="act2PromptText">
                             Loading...
                         </div>
                     </div>
-
                 </div>
 
                 <!-- 3. 16-Second Timed Voiceover Script & Viral Hooks -->
@@ -730,7 +683,7 @@
                                 <span class="text-[10px] font-mono text-zinc-400 truncate" title="${p.sku}">
                                     SKU: ${p.sku}
                                 </span>
-                                <a href="${p.store_url || ('https://zenlora.store/product/' + p.sku)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 hover:text-emerald-800 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded transition shadow-2xs whitespace-nowrap" onclick="event.stopPropagation()">
+                                <a href="${(p.store_url || ('https://www.zenlora.store/product/' + p.sku)).replace('https://zenlora.store', 'https://www.zenlora.store')}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 hover:text-emerald-800 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded transition shadow-2xs whitespace-nowrap" onclick="event.stopPropagation()">
                                     <span>See Product</span>
                                     <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
                                 </a>
@@ -754,7 +707,7 @@
                                 <span class="text-base sm:text-lg font-extrabold text-zinc-950">₹${p.selling_price}</span>
                                 ${p.mrp > p.selling_price ? `<span class="text-xs text-zinc-400 line-through">₹${p.mrp}</span>` : ''}
                             </div>
-                            <a href="${p.store_url || ('https://zenlora.store/product/' + p.sku)}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-0.5">
+                            <a href="${(p.store_url || ('https://www.zenlora.store/product/' + p.sku)).replace('https://zenlora.store', 'https://www.zenlora.store')}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-0.5">
                                 zenlora.store ↗
                             </a>
                         </div>
@@ -932,10 +885,14 @@
             document.getElementById("modalProductPrice").innerText = "₹" + pack.selling_price;
             document.getElementById("modalProductCategory").innerText = pack.category;
             
-            // Wire up See Product link
+            // Wire up See Product link (canonical www.zenlora.store to prevent redirect to homepage)
             const storeLink = document.getElementById("modalProductStoreLink");
             if (storeLink) {
-                storeLink.href = pack.store_url || ("https://zenlora.store/product/" + pack.sku);
+                let url = pack.store_url || ("https://www.zenlora.store/product/" + pack.sku);
+                if (url.startsWith("https://zenlora.store")) {
+                    url = url.replace("https://zenlora.store", "https://www.zenlora.store");
+                }
+                storeLink.href = url;
             }
 
             if (pack.image_url) {
@@ -968,40 +925,7 @@
                 }
             }
 
-            // Populate Shot-by-Shot Prompts (Zero Morphing Architecture)
-            const shotsContainer = document.getElementById("shotsListContainer");
-            if (shotsContainer && pack.storyboard_shots) {
-                shotsContainer.innerHTML = pack.storyboard_shots.map((shot, idx) => `
-                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
-                        <div class="flex items-center justify-between mb-2">
-                            <div class="flex items-center gap-2">
-                                <span class="w-5 h-5 rounded-full bg-amber-500 text-zinc-950 font-black text-[11px] flex items-center justify-center">${shot.shot_number}</span>
-                                <span class="font-bold text-xs text-zinc-900">${shot.name}</span>
-                                <span class="text-[10px] font-semibold text-amber-800 bg-amber-100 px-1.5 py-0.2 rounded">${shot.timing}</span>
-                            </div>
-                            <button onclick="copyText('shotPromptText_${idx}', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
-                                Copy Shot ${shot.shot_number}
-                            </button>
-                        </div>
-                        <div class="text-[11px] text-zinc-500 mb-2 flex flex-wrap items-center gap-2 bg-zinc-50 px-2.5 py-1.5 rounded-lg border border-zinc-100">
-                            <span>🖼️ <strong>Start Frame:</strong> ${shot.start_frame_source}</span>
-                            <span class="text-zinc-300">•</span>
-                            <span>🎥 <strong>Camera:</strong> ${shot.camera_motion}</span>
-                        </div>
-                        <div class="bg-zinc-50 p-3 rounded-lg border border-zinc-200 font-mono text-xs text-zinc-800 leading-relaxed select-all" id="shotPromptText_${idx}">
-                            ${shot.video_prompt}
-                        </div>
-                    </div>
-                `).join("");
-            }
-
-            // Populate Start + End Frame Bridge
-            if (pack.start_end_frame_bridge) {
-                document.getElementById("bridgeStartFrameText").innerText = pack.start_end_frame_bridge.start_frame;
-                document.getElementById("bridgeEndFrameText").innerText = pack.start_end_frame_bridge.end_frame;
-                document.getElementById("bridgePromptText").innerText = pack.start_end_frame_bridge.bridge_prompt;
-            }
-
+            // Populate Google Flow 16s Production Prompts
             document.getElementById("storyboardPromptText").innerText = pack.storyboard_grid_prompt;
             document.getElementById("act1PromptText").innerText = pack.acts.act_1.prompt;
             document.getElementById("act2PromptText").innerText = pack.acts.act_2.prompt;
@@ -1022,34 +946,6 @@
                     <span class="text-[10px] text-zinc-400 opacity-60 hover:opacity-100">copy</span>
                 </li>
             `).join("");
-        }
-
-        function switchVideoWorkflowTab(tab) {
-            const btnShots = document.getElementById("tabBtnShots");
-            const btnBridge = document.getElementById("tabBtnBridge");
-            const btnActs = document.getElementById("tabBtnActs");
-            const secShots = document.getElementById("shotsWorkflowSection");
-            const secBridge = document.getElementById("bridgeWorkflowSection");
-            const secActs = document.getElementById("actsWorkflowSection");
-
-            secShots.classList.add("hidden");
-            secBridge.classList.add("hidden");
-            secActs.classList.add("hidden");
-
-            btnShots.className = "px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap";
-            btnBridge.className = "px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap";
-            btnActs.className = "px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap";
-
-            if (tab === "shots") {
-                secShots.classList.remove("hidden");
-                btnShots.className = "px-3 py-2 text-xs font-bold border-b-2 border-zinc-950 text-zinc-950 transition whitespace-nowrap";
-            } else if (tab === "bridge") {
-                secBridge.classList.remove("hidden");
-                btnBridge.className = "px-3 py-2 text-xs font-bold border-b-2 border-purple-600 text-purple-700 transition whitespace-nowrap";
-            } else if (tab === "acts") {
-                secActs.classList.remove("hidden");
-                btnActs.className = "px-3 py-2 text-xs font-bold border-b-2 border-amber-600 text-amber-700 transition whitespace-nowrap";
-            }
         }
 
         function setVoiceoverLang(lang) {
