@@ -463,88 +463,83 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
         env = "aesthetic cozy Japandi room corner with textured beige linen, warm floor lamp glow, and soft natural lighting"
 
     # 1. 6-Panel Storyboard Grid Prompt
+    # 1. 6-Panel Storyboard Grid Prompt (Consistent UGC Ad Comic Strip)
     if is_female_creator:
         storyboard_prompt = (
             f"A photorealistic, highly detailed 6-panel AI Video Storyboard Grid (2 rows by 3 columns, vertical 9:16 format) "
-            f"for an aesthetic D2C viral reel featuring '{safe_title}'. "
-            f"Consistent Creator: The female creator from your reference start image. Environment: {env}. "
-            f"Panel 1 [Hook 0-3s]: Creator looking frustrated or shocked at a common daily problem in the room, holding her phone showing an overpriced competitor product ₹{mrp}. "
-            f"Panel 2 [Price Shock 3-5s]: Creator excitedly unboxing a sleek package, pulling out '{safe_title}', on-screen graphic badge 'ZENLORA ₹{selling_price}'. "
-            f"Panel 3 [Tactile Demo 5-8s]: Close-up of creator's hands actively demonstrating '{safe_title}' with instant satisfying utility or warm light glow. "
-            f"Panel 4 [Anchor Frame 8-11s]: Cinematic macro close-up of '{safe_title}' in aesthetic action, warm golden bokeh highlights, premium finish. "
-            f"Panel 5 [Room Makeover 11-14s]: Full wide shot of the room completely transformed, creator smiling in sheer delight at the aesthetic upgrade. "
-            f"Panel 6 [Auto-DM CTA 14-16s]: Creator smiling at camera, holding the product, pointing down with a clean graphic sticker: 'COMMENT \"{clean_kw}\" FOR SECRET ₹50 OFF LINK 🎁'. "
-            f"Hyper-realistic 8k, cinematic color grading, identical character and product across all 6 panels, clean comic grid border lines."
+            f"for an authentic D2C viral UGC reel featuring '{safe_title}'. "
+            f"Consistent Creator: The Indian female creator from your reference start image wearing a cozy neutral outfit. Environment: {env}. "
+            f"Panel 1 [Hook 0-3s]: Creator looking directly into the smartphone camera with a curious, relatable reaction, pointing at an empty or dark corner in her room. "
+            f"Panel 2 [First Impression 3-5s]: Creator holding '{safe_title}' in her hand up to the camera, smiling with genuine delight at the premium build quality and finish. "
+            f"Panel 3 [Feature Demo 5-8s]: Creator's hands gently demonstrating '{safe_title}' on the wooden table, activating its satisfying function or warm ambient light glow. "
+            f"Panel 4 [Anchor Frame 8-11s]: Creator proudly holding '{safe_title}' beside her smiling face in sharp focus under soft warm lighting. "
+            f"Panel 5 [Room Makeover 11-14s]: Wide shot of the cozy room beautifully elevated by '{safe_title}', creator sitting in the warm aesthetic glow looking thrilled. "
+            f"Panel 6 [Auto-DM CTA 14-16s]: Creator smiling warmly at the camera, holding '{safe_title}', pointing down with a clean graphic sticker: 'COMMENT \"{clean_kw}\" FOR SECRET ₹50 OFF LINK 🎁'. "
+            f"Hyper-realistic, identical creator face, matching clothing, and exact product design across all 6 panels. Clean comic grid borders."
         )
     else:
         storyboard_prompt = (
             f"A photorealistic, highly detailed 6-panel AI Video Storyboard Grid (2 rows by 3 columns, vertical 9:16 format) "
             f"for an aesthetic ASMR D2C viral reel featuring '{safe_title}'. "
             f"Style: {ASMR_HANDS_DESCRIPTION} Environment: {env}. "
-            f"Panel 1 [Hook 0-3s]: Macro shot of the cluttered or dark space with high-contrast moody lighting and an aesthetic question sticker. "
-            f"Panel 2 [Unboxing 3-5s]: Sleek minimal packaging being opened by clean hands, peeling protective film in a satisfying ASMR motion. "
-            f"Panel 3 [First Demo 5-8s]: First tactile touch - hands activating or using '{safe_title}', crisp macro texture and immediate visual feedback. "
-            f"Panel 4 [Anchor Frame 8-11s]: Ultra-crisp hero shot of '{safe_title}' standing gracefully in the center, warm ambient glow illuminating the surrounding decor. "
-            f"Panel 5 [Aesthetic Transformation 11-14s]: Slow smooth camera pan across the fully upgraded space, looking like a ₹50,000 Pinterest room makeover. "
+            f"Panel 1 [Hook 0-3s]: Macro shot of the moody room corner with soft natural shadows and an aesthetic question sticker. "
+            f"Panel 2 [First Touch 3-5s]: Clean manicured hands gently picking up '{safe_title}' from the table, showcasing its tactile finish. "
+            f"Panel 3 [Feature Demo 5-8s]: Hands pressing the switch or operating '{safe_title}', crisp macro texture with instant satisfying light activation. "
+            f"Panel 4 [Anchor Frame 8-11s]: Ultra-crisp hero shot of '{safe_title}' standing gracefully in the center, warm ambient glow illuminating the dark wood surface. "
+            f"Panel 5 [Room Transformation 11-14s]: Slow smooth camera pan across the fully upgraded space, looking like a ₹50,000 Pinterest room makeover. "
             f"Panel 6 [Auto-DM CTA 14-16s]: Clean minimal end card showing '{safe_title}' with on-screen graphic pill: 'Comment \"{clean_kw}\" for the direct link + ₹50 OFF coupon'. "
-            f"Hyper-realistic 8k, cinematic 35mm lens, soft bokeh, warm Japandi aesthetic, identical product across all 6 panels."
+            f"Hyper-realistic 8k, soft bokeh, warm Japandi aesthetic, identical product across all 6 panels."
         )
 
-    # 2. Shot-by-Shot Storyboard-to-Video Engine (Industry Best Practice for Zero Morphing)
+    # 2. Shot-by-Shot Prompts (Preserved for micro-editing)
     if is_female_creator:
         shot_1_prompt = (
             f"Vertical 9:16 iPhone POV shot. Natural handheld camera with subtle organic micro-jitter. "
-            f"In a {env}, the creator looks directly into the lens with an authentic surprised reaction, "
-            f"smiling warmly. Natural ambient room lighting, authentic social media UGC aesthetic, 24fps, zero plastic morphing."
+            f"In a {env}, the Indian female creator looks directly into the lens with an authentic surprised reaction, "
+            f"holding '{safe_title}'. Natural ambient room lighting, authentic social media UGC aesthetic, 24fps."
         )
         shot_2_prompt = (
-            f"Vertical 9:16 macro perspective on a clean surface. "
-            f"Clean hands enter the frame, gently unboxing and presenting the sleek {safe_title}. "
-            f"Satisfying tactile ASMR movement, soft natural daylight reflecting off the surface, stable product geometry, 4k 24fps."
+            f"Vertical 9:16 medium close-up. The creator holds '{safe_title}' up to the camera lens, "
+            f"smiling enthusiastically and showcasing its smooth finish. Soft natural light, stable product geometry, 24fps."
         )
         shot_3_prompt = (
-            f"Vertical 9:16 slow cinematic push-in focusing on {safe_title} operating on the tabletop. "
-            f"Warm golden ambient light softly illuminates the surrounding room decor, subtle dust motes in the air, "
-            f"stable locked-on product geometry, zero morphing, photorealistic 24fps."
+            f"Vertical 9:16 slow cinematic push-in focusing on '{safe_title}' operating on the tabletop. "
+            f"Warm golden ambient light softly illuminates the surrounding room decor, stable product geometry, photorealistic 24fps."
         )
         shot_4_prompt = (
-            f"Vertical 9:16 smooth gimbal pullback revealing the fully transformed aesthetic room. "
-            f"The creator holds up {safe_title} near camera level, smiling and pointing downwards for the link. "
+            f"Vertical 9:16 smooth handheld shot. The creator holds up '{safe_title}' near camera level, smiling warmly and pointing downwards for the link. "
             f"Warm cozy ambient glow, authentic UGC aesthetic, 24fps."
         )
         bridge_prompt = (
-            f"Seamless continuous camera glide moving fluidly from the creator's unboxing presentation "
-            f"into the steady, illuminated hero shot of {safe_title} on the table. "
-            f"Natural room lighting transition, stable product geometry, zero distortion, photorealistic 4k 24fps."
+            f"Seamless continuous camera glide moving fluidly from the creator holding '{safe_title}' "
+            f"into the steady, illuminated hero shot of '{safe_title}' on the table. Natural room lighting transition, stable product geometry, 24fps."
         )
     else:
         shot_1_prompt = (
-            f"Vertical 9:16 moody atmospheric macro shot of an uninspired dark room corner. "
-            f"Slow continuous dolly push-in, soft natural shadow play, realistic phone camera texture, 24fps."
+            f"Vertical 9:16 moody atmospheric macro shot of an uninspired dark room corner with '{safe_title}' on the table. "
+            f"Slow continuous push-in, soft natural shadow play, realistic phone camera texture, 24fps."
         )
         shot_2_prompt = (
-            f"Top-down macro perspective. Well-manicured hands enter frame, gently peeling packaging film and lifting {safe_title}. "
-            f"Crisp tactile touch, satisfying ASMR visual triggers, natural window light, stable product geometry, 4k."
+            f"Top-down macro perspective. Well-manicured hands gently touch and turn '{safe_title}'. "
+            f"Crisp tactile touch, satisfying ASMR visual triggers, natural window light, stable product geometry, 24fps."
         )
         shot_3_prompt = (
-            f"Macro product shot, slow continuous 45-degree orbit around {safe_title}. "
-            f"Hands gently activate the product, warm cozy amber illumination softly lights the tabletop, "
-            f"subtle dust particles, ultra-stable product geometry, no morphing."
+            f"Macro product shot, slow continuous 45-degree orbit around '{safe_title}'. "
+            f"Hands activate the product, warm cozy amber illumination softly lights the tabletop, ultra-stable product geometry."
         )
         shot_4_prompt = (
             f"Slow smooth camera pan across the elevated luxury Japandi aesthetic room. "
             f"Warm golden hour lighting, clean graphic pill overlay at bottom, ultra-crisp finish, 24fps."
         )
         bridge_prompt = (
-            f"Smooth cinematic glide transitioning from the tactile unboxing touch directly into the fully lit aesthetic {safe_title} glowing on the table. "
-            f"Natural lighting progression, stable geometry, 4k 24fps."
+            f"Smooth cinematic glide transitioning from the tactile touch directly into the fully lit aesthetic '{safe_title}' glowing on the table. 24fps."
         )
 
     storyboard_shots = [
         {
             "shot_number": 1,
             "timing": "0-3s",
-            "name": "The Hook & Creator Reaction",
+            "name": "The Hook & Relatable Reaction",
             "start_frame_source": "Storyboard Panel 1 (or Your Custom Character Photo)",
             "camera_motion": "Handheld iPhone POV, subtle micro-jitter",
             "video_prompt": shot_1_prompt,
@@ -552,25 +547,25 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
         {
             "shot_number": 2,
             "timing": "3-6s",
-            "name": "Tactile Unboxing & First Touch",
-            "start_frame_source": "Storyboard Panel 2/3 (or Product Photo)",
-            "camera_motion": "Top-down / 45-degree macro push-in",
+            "name": "First Touch & Product Reveal",
+            "start_frame_source": "Storyboard Panel 2 (Creator holding product)",
+            "camera_motion": "Medium close-up push-in",
             "video_prompt": shot_2_prompt,
         },
         {
             "shot_number": 3,
             "timing": "6-11s",
             "name": "Anchor Frame Hero Demo",
-            "start_frame_source": "Storyboard Panel 4 (or Glowing Product Angle)",
-            "camera_motion": "Slow smooth cinematic push-in",
+            "start_frame_source": "Storyboard Panel 4 (Creator holding glowing product)",
+            "camera_motion": "Steady hold on creator & product",
             "video_prompt": shot_3_prompt,
         },
         {
             "shot_number": 4,
             "timing": "11-16s",
             "name": "Room Makeover & Auto-DM CTA",
-            "start_frame_source": "Storyboard Panel 5/6 (or Creator holding product)",
-            "camera_motion": "Smooth pullback & warm smile",
+            "start_frame_source": "Storyboard Panel 5/6 (Creator holding product pointing down)",
+            "camera_motion": "Warm smile & downward gesture",
             "video_prompt": shot_4_prompt,
         }
     ]
@@ -581,43 +576,46 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
         "bridge_prompt": bridge_prompt,
     }
 
-    # 3. Dual-Act Video Prompts (Preserved for 2-Clip 8s + 8s Fast Workflow)
+    # 3. Dual-Act Video Prompts (Continuous Single-Take UGC Formula: 8s + 8s)
     if is_female_creator:
         act_1_prompt = (
-            f"[ACT 1: 0 to 8 Seconds | Hook & Unboxing] "
-            f"Using the uploaded reference character start frame: "
-            f"Natural vertical 9:16 iPhone POV shot in a {env}. The creator starts with an authentic curious hook looking towards camera, "
-            f"then smoothly unboxes and presents the '{safe_title}'. "
-            f"Her hands demonstrate the product's primary feature or satisfying aesthetic illumination at second 5 to 7. "
-            f"The scene stabilizes and smoothly settles into an ultra-sharp steady ANCHOR FRAME at second 8, "
-            f"focusing cleanly on '{safe_title}' operating in warm ambient light. Smooth handheld camera motion, 24fps, authentic UGC aesthetic."
+            f"[ACT 1: 0 to 8 Seconds | UGC Hook & Product Showcase] "
+            f"Handheld vertical 9:16 smartphone front camera POV, authentic UGC influencer video in a {env}. "
+            f"The Indian female creator is holding '{safe_title}' in her hand, smiling enthusiastically at the camera. "
+            f"She speaks with animated, natural expressions as if sharing a secret home hack with her best friend. "
+            f"At second 4 to 6, she holds '{safe_title}' closer to the phone lens so viewers clearly see its real texture, color, and premium finish. "
+            f"The camera has natural subtle handheld micro-movements, authentic room lighting, and zero CGI distortion. "
+            f"At second 8, the video settles into a crystal-clear, steady ANCHOR FRAME with the creator holding '{safe_title}' beside her smiling face."
         )
         act_2_prompt = (
             f"{CONTINUITY_PROMPT} "
-            f"[ACT 2: 8 to 16 Seconds | Transformation & CTA] "
-            f"Starting precisely from the steady anchor frame of '{safe_title}' in the {env}: "
-            f"The camera smoothly pans back to reveal the complete aesthetic room transformation. "
-            f"The creator steps into the warm golden lighting with an excited, satisfied smile. "
-            f"At second 12 to 14, the creator holds the product up near camera level and gestures pointing downwards with a welcoming smile for the link. "
-            f"Smooth cinematic slow-motion, soft bokeh background, 24fps, photorealistic 4k."
+            f"[ACT 2: 8 to 16 Seconds | Seamless Continuation, Demo & CTA] "
+            f"Continuing seamlessly from the 8-second anchor frame without cut. "
+            f"Same Indian female creator in the exact same cozy room and identical outfit, holding '{safe_title}' in the exact same position beside her smile. "
+            f"Maintaining exact lighting, facial features, and framing from the anchor frame. "
+            f"She continues speaking naturally to the camera, tilting '{safe_title}' slightly as warm ambient light reflects softly across her room. "
+            f"At second 12 to 14, she smiles warmly and points downwards with her other hand, giving a clear friendly recommendation: 'Comment \"{clean_kw}\" below to get the direct discount link!' "
+            f"Natural handheld smartphone motion, perfectly locked character consistency, zero morphing, authentic UGC video ad finish."
         )
     else:
         act_1_prompt = (
             f"[ACT 1: 0 to 8 Seconds | ASMR Hook & Tactile Demo] "
-            f"Using the uploaded reference start frame: "
-            f"Cinematic vertical 9:16 macro shot in a {env}. "
-            f"Aesthetic hands smoothly unbox and present the sleek '{safe_title}'. "
-            f"Crisp tactile product demonstration and ambient activation at second 4 to 6. "
-            f"The camera pulls into a steady, perfectly focused ANCHOR FRAME at second 8, "
-            f"capturing '{safe_title}' in warm amber lighting. Smooth dolly-in, 24fps, photorealistic 4k, zero faces shown."
+            f"Vertical 9:16 macro top-down perspective on a clean wooden tabletop in a {env}. "
+            f"The sleek '{safe_title}' is already resting elegantly on the surface next to aesthetic room decor. "
+            f"Well-manicured hands enter the frame, gently gliding fingers over the product's premium matte texture and tapping the switch. "
+            f"Warm ambient light softly turns on, casting a cozy glow on the wood. "
+            f"Slow smooth camera push-in with crisp tactile sound cues, zero CGI jitter. "
+            f"At second 8, settles into a steady, perfectly focused ANCHOR FRAME capturing '{safe_title}' glowing in the center of the frame."
         )
         act_2_prompt = (
             f"{CONTINUITY_PROMPT} "
-            f"[ACT 2: 8 to 16 Seconds | ASMR Transformation & CTA] "
-            f"Starting precisely from the steady anchor frame of '{safe_title}' in the {env}: "
-            f"The camera glides in a smooth cinematic orbit around the product, showing the full room elevated into luxury aesthetic decor. "
-            f"Warm golden ambient light fills the room. "
-            f"At second 13 to 16, the video gently slows down on an elegant close-up of '{safe_title}'. Smooth gimbal pan, 24fps, photorealistic 4k."
+            f"[ACT 2: 8 to 16 Seconds | ASMR Seamless Continuity & Room Transformation] "
+            f"Continuing seamlessly from the 8-second anchor frame without cut. "
+            f"Same camera angle and identical tabletop in the {env}, focusing on '{safe_title}' glowing with warm ambient light. "
+            f"Maintaining exact lighting, product position, and surface reflections from the anchor frame. "
+            f"The camera glides in a slow, ultra-smooth 45-degree cinematic arc around the glowing product, revealing the cozy Japandi room beautifully elevated in the soft background bokeh. "
+            f"At second 13 to 16, video gently comes to a rest on a breathtaking hero shot of '{safe_title}'. "
+            f"Ultra-stable product geometry, no distortion, authentic tactile ASMR aesthetic."
         )
 
     # 4. 16-Second Timed Voiceover Script (~35-42 words)
