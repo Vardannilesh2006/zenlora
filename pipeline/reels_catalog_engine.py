@@ -1,4 +1,5 @@
 import os
+import re
 import json
 import time
 import random
@@ -332,9 +333,48 @@ def query_reels_products(
 # 16-Second Dual-Act (8s + 8s) & Storyboard Prompt Generator
 # -------------------------------------------------------------
 
+def sanitize_for_ai_prompt(title: str) -> str:
+    """
+    Cleanses product titles for AI video & image generators (Google VideoFX, Kling, Runway, Luma, Midjourney)
+    to prevent false-positive policy violations (weapons, religious figures/deities/idols, blades, sharp tools).
+    """
+    cleaned = title
+    rules = [
+        (r"\bom trishul damru decorative idol\b", "Handcrafted Antique Copper Metallic Accent Decor Centerpiece"),
+        (r"\btrishul\b", "traditional artistic metallic motif"),
+        (r"\bdamru\b", "classic acoustic metallic accent"),
+        (r"\bidol\b", "decorative sculpted art centerpiece"),
+        (r"\bidols\b", "decorative sculpted art centerpieces"),
+        (r"\bstatue\b", "sculptural artistic centerpiece"),
+        (r"\bpanchmukhi hanuman\b", "Traditional Handcrafted Figurine Heritage Centerpiece"),
+        (r"\bganesh\b", "Traditional Handcrafted Figurine"),
+        (r"\bganesha\b", "Traditional Handcrafted Figurine"),
+        (r"\blaxmi charan\b", "Traditional Auspicious Festive Floor Art Set"),
+        (r"\bpooja\b", "festive decor"),
+        (r"\bpuja\b", "festive decor"),
+        (r"\btemple\b", "ambient space"),
+        (r"\bknife\b", "culinary prep tool"),
+        (r"\bknives\b", "culinary prep tools"),
+        (r"\bblade\b", "slicing component"),
+        (r"\bblades\b", "slicing components"),
+        (r"\bcutter\b", "kitchen produce prep tool"),
+        (r"\bchopper\b", "multipurpose food processor"),
+        (r"\bpeeler\b", "produce prep tool"),
+        (r"\bgun\b", "dispenser device"),
+        (r"\bweapon\b", "utility tool"),
+        (r"\bkill\b", "remove"),
+    ]
+    for pattern, rep in rules:
+        cleaned = re.sub(pattern, rep, cleaned, flags=re.IGNORECASE)
+    cleaned = re.sub(r"[^a-zA-Z0-9\s\-,&']", "", cleaned)
+    cleaned = re.sub(r"\s+", " ", cleaned).strip()
+    return cleaned
+
+
+# User's Custom Reference Character is used as Start Frame in VideoFX / Kling / Runway
 FEMALE_CREATOR_DESCRIPTION = (
-    "A charismatic, expressive Indian woman in her mid-20s, wearing an elegant neutral modern pastel kurta, "
-    "with natural hair and warm expressive facial reactions. Genuine relatable Indian D2C creator persona."
+    "The creator from the uploaded reference character start frame. "
+    "Clean, expressive, natural gestures, warm D2C host presence matching the reference image."
 )
 
 ASMR_HANDS_DESCRIPTION = (
@@ -372,7 +412,7 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
     """
     Generates the complete 16-second dual-act (8s + 8s) production pack:
     - 6-Panel Storyboard Grid Prompt (Midjourney / Ideogram / SDXL / NanoBanana)
-    - Act 1 Video Prompt (0-8s: Hook & First Demo)
+    - Act 1 Video Prompt (0-8s: Hook & First Demo, using user's uploaded reference character)
     - Act 2 Video Prompt (8-16s: Continuity Injection + Makeover + Auto-DM CTA)
     - 16s Timed Voiceover Script (Hinglish + English)
     - Viral On-Screen Hooks
@@ -381,6 +421,7 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
     - Trending Hashtags & Algorithmic Search Keywords
     """
     title = product.get("title", "Zenlora Luxury Product").replace("Zenlora™", "").strip()
+    safe_title = sanitize_for_ai_prompt(title)
     category = product.get("category", "Home & Kitchen")
     selling_price = product.get("selling_price", 399)
     mrp = product.get("mrp", selling_price * 2 or 799)
@@ -413,24 +454,24 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
 
     # Environment setup
     if "kitchen" in category.lower() or "kitchen" in title_lower:
-        env = "modern Indian Japandi modular kitchen with clean white quartz countertop and warm recessed under-cabinet lighting"
+        env = "modern Japandi modular kitchen with clean white countertop and warm recessed lighting"
     elif "festive" in category.lower() or "light" in title_lower:
-        env = "warm festive Indian living room decorated with fresh marigold flowers, soft brass accents, and glowing fairy lights"
+        env = "warm festive ambient living room decorated with soft brass accents and warm glowing fairy lights"
     elif "smart" in category.lower() or "gadget" in title_lower:
         env = "minimalist aesthetic dark oak study desk setup with ambient warm backlighting and clean cordless vibe"
     else:
-        env = "aesthetic cozy Japandi room corner with textured beige linen, warm floor lamp glow, and soft natural indoor lighting"
+        env = "aesthetic cozy Japandi room corner with textured beige linen, warm floor lamp glow, and soft natural lighting"
 
     # 1. 6-Panel Storyboard Grid Prompt
     if is_female_creator:
         storyboard_prompt = (
             f"A photorealistic, highly detailed 6-panel AI Video Storyboard Grid (2 rows by 3 columns, vertical 9:16 format) "
-            f"for an Indian D2C viral reel featuring '{title}'. "
-            f"Consistent Creator: {FEMALE_CREATOR_DESCRIPTION} Environment: {env}. "
+            f"for an aesthetic D2C viral reel featuring '{safe_title}'. "
+            f"Consistent Creator: The female creator from your reference start image. Environment: {env}. "
             f"Panel 1 [Hook 0-3s]: Creator looking frustrated or shocked at a common daily problem in the room, holding her phone showing an overpriced competitor product ₹{mrp}. "
-            f"Panel 2 [Price Shock 3-5s]: Creator excitedly unboxing a sleek brown package, pulling out the pristine '{title}', on-screen graphic badge 'ZENLORA ₹{selling_price}'. "
-            f"Panel 3 [Tactile Demo 5-8s]: Close-up of creator's hands actively demonstrating how '{title}' works with instant satisfying utility or light activation. "
-            f"Panel 4 [Anchor Frame 8-11s]: Cinematic macro close-up of '{title}' in pristine aesthetic action, warm golden bokeh highlights, premium finish. "
+            f"Panel 2 [Price Shock 3-5s]: Creator excitedly unboxing a sleek package, pulling out '{safe_title}', on-screen graphic badge 'ZENLORA ₹{selling_price}'. "
+            f"Panel 3 [Tactile Demo 5-8s]: Close-up of creator's hands actively demonstrating '{safe_title}' with instant satisfying utility or warm light glow. "
+            f"Panel 4 [Anchor Frame 8-11s]: Cinematic macro close-up of '{safe_title}' in aesthetic action, warm golden bokeh highlights, premium finish. "
             f"Panel 5 [Room Makeover 11-14s]: Full wide shot of the room completely transformed, creator smiling in sheer delight at the aesthetic upgrade. "
             f"Panel 6 [Auto-DM CTA 14-16s]: Creator smiling at camera, holding the product, pointing down with a clean graphic sticker: 'COMMENT \"{clean_kw}\" FOR SECRET ₹50 OFF LINK 🎁'. "
             f"Hyper-realistic 8k, cinematic color grading, identical character and product across all 6 panels, clean comic grid border lines."
@@ -438,14 +479,14 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
     else:
         storyboard_prompt = (
             f"A photorealistic, highly detailed 6-panel AI Video Storyboard Grid (2 rows by 3 columns, vertical 9:16 format) "
-            f"for an aesthetic ASMR D2C viral reel featuring '{title}'. "
+            f"for an aesthetic ASMR D2C viral reel featuring '{safe_title}'. "
             f"Style: {ASMR_HANDS_DESCRIPTION} Environment: {env}. "
             f"Panel 1 [Hook 0-3s]: Macro shot of the cluttered or dark space with high-contrast moody lighting and an aesthetic question sticker. "
             f"Panel 2 [Unboxing 3-5s]: Sleek minimal packaging being opened by clean hands, peeling protective film in a satisfying ASMR motion. "
-            f"Panel 3 [First Demo 5-8s]: First tactile touch - hands activating or using '{title}', crisp macro texture and immediate visual feedback. "
-            f"Panel 4 [Anchor Frame 8-11s]: Ultra-crisp hero shot of '{title}' standing gracefully in the center, warm ambient glow illuminating the surrounding decor. "
+            f"Panel 3 [First Demo 5-8s]: First tactile touch - hands activating or using '{safe_title}', crisp macro texture and immediate visual feedback. "
+            f"Panel 4 [Anchor Frame 8-11s]: Ultra-crisp hero shot of '{safe_title}' standing gracefully in the center, warm ambient glow illuminating the surrounding decor. "
             f"Panel 5 [Aesthetic Transformation 11-14s]: Slow smooth camera pan across the fully upgraded space, looking like a ₹50,000 Pinterest room makeover. "
-            f"Panel 6 [Auto-DM CTA 14-16s]: Clean minimal end card showing '{title}' with on-screen graphic pill: 'Comment \"{clean_kw}\" for the direct link + ₹50 OFF coupon'. "
+            f"Panel 6 [Auto-DM CTA 14-16s]: Clean minimal end card showing '{safe_title}' with on-screen graphic pill: 'Comment \"{clean_kw}\" for the direct link + ₹50 OFF coupon'. "
             f"Hyper-realistic 8k, cinematic 35mm lens, soft bokeh, warm Japandi aesthetic, identical product across all 6 panels."
         )
 
@@ -453,21 +494,22 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
     if is_female_creator:
         act_1_prompt = (
             f"[ACT 1: 0 to 8 Seconds | Hook & Unboxing] "
-            f"Cinematic vertical 9:16 video. In a {env}, {FEMALE_CREATOR_DESCRIPTION} "
-            f"starts with an expressive 2-second hook looking straight at the camera with genuine curiosity/frustration, "
-            f"then quickly transitions to unboxing '{title}'. Her hands smoothly lift the product, showing its sleek build. "
-            f"At second 5 to 7, she demonstrates the primary satisfying feature or clicks it on. "
+            f"Using the uploaded reference character start frame: "
+            f"In a {env}, the creator starts with an expressive, curious look towards the camera, "
+            f"then smoothly unboxes and presents the '{safe_title}'. "
+            f"Her hands demonstrate the product's primary feature or satisfying aesthetic illumination at second 5 to 7. "
             f"The scene stabilizes and smoothly settles into an ultra-sharp steady ANCHOR FRAME at second 8, "
-            f"focusing cleanly on '{title}' operating in warm ambient light. Smooth handheld camera motion, 24fps, photorealistic 4k."
+            f"focusing cleanly on '{safe_title}' operating in warm ambient light. Smooth handheld camera motion, 24fps, photorealistic 4k."
         )
     else:
         act_1_prompt = (
             f"[ACT 1: 0 to 8 Seconds | ASMR Hook & Tactile Demo] "
-            f"Cinematic vertical 9:16 video. In a {env}, {ASMR_HANDS_DESCRIPTION} "
-            f"starts with a slow macro push-in on an ordinary space, then hands enter the frame holding the sleek '{title}'. "
-            f"Crisp tactile unboxing and immediate activation at second 4 to 6. "
+            f"Using the uploaded reference start frame: "
+            f"Cinematic vertical 9:16 macro shot in a {env}. "
+            f"Aesthetic hands smoothly unbox and present the sleek '{safe_title}'. "
+            f"Crisp tactile product demonstration and ambient activation at second 4 to 6. "
             f"The camera pulls into a steady, perfectly focused ANCHOR FRAME at second 8, "
-            f"capturing the product glowing or working with soft dust motes in warm amber lighting. Smooth dolly-in, 24fps, photorealistic 4k."
+            f"capturing '{safe_title}' in warm amber lighting. Smooth dolly-in, 24fps, photorealistic 4k, zero faces shown."
         )
 
     # 3. Act 2 Video Prompt (8–16s: Continuity + Makeover + CTA)
@@ -475,22 +517,20 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
         act_2_prompt = (
             f"{CONTINUITY_PROMPT} "
             f"[ACT 2: 8 to 16 Seconds | Transformation & CTA] "
-            f"Starting exactly from the steady anchor frame of '{title}' in the {env}, "
-            f"the camera smoothly pulls back to reveal the complete breathtaking room transformation. "
-            f"The Indian female creator steps into the warm golden lighting with an excited, satisfied smile. "
-            f"At second 12 to 14, she holds the product up near camera level, smiles directly into the lens, "
-            f"and gestures pointing downwards with a welcoming smile. A clean graphical on-screen sticker appears reading: "
-            f"'Comment \"{clean_kw}\" to get the link in your DM!'. Cinematic slow-motion, soft bokeh background, 24fps, photorealistic 4k."
+            f"Starting precisely from the steady anchor frame of '{safe_title}' in the {env}: "
+            f"The camera smoothly pans back to reveal the complete aesthetic room transformation. "
+            f"The creator steps into the warm golden lighting with an excited, satisfied smile. "
+            f"At second 12 to 14, the creator holds the product up near camera level and gestures pointing downwards with a welcoming smile for the link. "
+            f"Smooth cinematic slow-motion, soft bokeh background, 24fps, photorealistic 4k."
         )
     else:
         act_2_prompt = (
             f"{CONTINUITY_PROMPT} "
             f"[ACT 2: 8 to 16 Seconds | ASMR Transformation & CTA] "
-            f"Starting exactly from the steady anchor frame of '{title}' in the {env}, "
-            f"the camera glides in a smooth cinematic orbit around the product, showing the full room elevated into luxury Pinterest aesthetic. "
-            f"Warm golden hour rays or cozy ambient LED glow fill the room. "
-            f"At second 13 to 16, the video gently slows down on an elegant close-up with clean graphic text overlay: "
-            f"'Comment \"{clean_kw}\" for instant link & ₹50 discount'. Smooth gimbal pan, 24fps, photorealistic 4k."
+            f"Starting precisely from the steady anchor frame of '{safe_title}' in the {env}: "
+            f"The camera glides in a smooth cinematic orbit around the product, showing the full room elevated into luxury aesthetic decor. "
+            f"Warm golden ambient light fills the room. "
+            f"At second 13 to 16, the video gently slows down on an elegant close-up of '{safe_title}'. Smooth gimbal pan, 24fps, photorealistic 4k."
         )
 
     # 4. 16-Second Timed Voiceover Script (~35-42 words)
@@ -579,6 +619,8 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
         "caption": caption,
         "hashtags": hashtags,
         "recommendation_keywords": rec_keywords,
-        "store_url": product.get("store_url", f"https://zenlora.store/search?q={sku}"),
-        "image_url": product.get("image_url", "")
+        "store_url": product.get("store_url") or f"https://zenlora.store/product/{sku}",
+        "image_url": product.get("image_url", ""),
+        "images": product.get("images") or ([product.get("image_url")] if product.get("image_url") else []),
+        "safe_title": safe_title,
     }

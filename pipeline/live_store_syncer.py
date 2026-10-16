@@ -108,6 +108,16 @@ def _parse_item(item: Dict, source_tag: str = "") -> Optional[Dict]:
         or ""
     )
 
+    all_images = []
+    if details.get("imageUrl"):
+        all_images.append(details.get("imageUrl"))
+    if details.get("secondaryImageUrl") and isinstance(details.get("secondaryImageUrl"), list):
+        for sec in details.get("secondaryImageUrl"):
+            if sec and sec not in all_images:
+                all_images.append(sec)
+    if img_url and img_url not in all_images:
+        all_images.append(img_url)
+
     disc_pct = 0
     if mrp > selling_price > 0:
         disc_pct = round((mrp - selling_price) / mrp * 100)
@@ -124,6 +134,7 @@ def _parse_item(item: Dict, source_tag: str = "") -> Optional[Dict]:
         "category": cat,
         "description": clean_desc[:500],
         "image_url": img_url,
+        "images": all_images,
         "discount_pct": disc_pct,
         "last_updated": details.get("lastUpdatedTime", 0),
         "in_stock": (details.get("buyingOptions", {})
@@ -216,6 +227,39 @@ def _scrape_full_catalog() -> List[Dict]:
                     seen_skus[sku] = item
 
     products = list(seen_skus.values())
+
+    # Enrich with multi-angle photos from catalog_642.json and products_db.json
+    fallback_map = {}
+    for fb_name in ("catalog_642.json", "products_db.json"):
+        fb_path = DATA_DIR / fb_name
+        if fb_path.exists():
+            try:
+                with open(fb_path, "r", encoding="utf-8") as f:
+                    fb_data = json.load(f)
+                    for item in fb_data:
+                        sku_k = (item.get("sku") or "").lower().strip()
+                        title_k = (item.get("title") or item.get("zenlora_title") or "")[:25].lower().strip()
+                        imgs = item.get("images") or ([item.get("image_url")] if item.get("image_url") else [])
+                        if imgs:
+                            if sku_k and sku_k not in fallback_map:
+                                fallback_map[sku_k] = imgs
+                            if title_k and title_k not in fallback_map:
+                                fallback_map[title_k] = imgs
+            except Exception:
+                pass
+
+    for p in products:
+        sku_k = (p.get("sku") or "").lower().strip()
+        title_k = (p.get("title") or "")[:25].lower().strip()
+        extra_imgs = fallback_map.get(sku_k) or fallback_map.get(title_k) or []
+        cur_imgs = list(p.get("images") or [])
+        if p.get("image_url") and p["image_url"] not in cur_imgs:
+            cur_imgs.insert(0, p["image_url"])
+        for im in extra_imgs:
+            if im and im not in cur_imgs:
+                cur_imgs.append(im)
+        p["images"] = cur_imgs or ([p.get("image_url")] if p.get("image_url") else [])
+
     products.sort(key=lambda x: x.get("last_updated", 0), reverse=True)
     return products
 

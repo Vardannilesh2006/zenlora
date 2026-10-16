@@ -224,13 +224,30 @@
                 <!-- Product Body Details -->
                 <div class="p-4 flex-1 flex flex-col justify-between">
                     <div>
-                        <div class="text-[10px] font-mono text-zinc-400 mb-1 truncate" title="{{ p.sku }}">
-                            SKU: {{ p.sku }}
+                        <div class="flex items-center justify-between gap-1 mb-1.5">
+                            <span class="text-[10px] font-mono text-zinc-400 truncate" title="{{ p.sku }}">
+                                SKU: {{ p.sku }}
+                            </span>
+                            <a href="{{ p.store_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 hover:text-emerald-800 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded transition shadow-2xs whitespace-nowrap" onclick="event.stopPropagation()">
+                                <span>See Product</span>
+                                <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
                         </div>
-                        <h3 class="text-xs sm:text-sm font-bold text-zinc-900 line-clamp-2 leading-snug mb-2" title="{{ p.title }}">
+                        <h3 class="text-xs sm:text-sm font-bold text-zinc-900 line-clamp-2 leading-snug mb-2 cursor-pointer hover:text-amber-600 transition" onclick="openReelModal('{{ p.sku }}')" title="{{ p.title }}">
                             {{ p.title }}
                         </h3>
                     </div>
+
+                    {% if p.images and p.images|length > 1 %}
+                    <div class="flex items-center gap-1.5 mb-2 overflow-x-auto pb-1 scrollbar-none" onclick="event.stopPropagation()">
+                        {% for img in p.images[:5] %}
+                        <img src="{{ img }}" alt="angle" class="w-7 h-7 rounded object-cover border border-zinc-200 hover:border-amber-500 hover:scale-110 transition cursor-pointer" onclick="copyImageUrl('{{ img }}', event)" title="Click to copy image link" loading="lazy">
+                        {% endfor %}
+                        {% if p.images|length > 5 %}
+                        <span class="text-[9px] font-semibold text-zinc-400 px-1">+{{ p.images|length - 5 }}</span>
+                        {% endif %}
+                    </div>
+                    {% endif %}
 
                     <!-- Price Row -->
                     <div class="pt-2 border-t border-zinc-100 flex items-baseline justify-between mb-3">
@@ -241,10 +258,7 @@
                             {% endif %}
                         </div>
                         <a href="{{ p.store_url }}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-0.5">
-                            store
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                            </svg>
+                            zenlora.store ↗
                         </a>
                     </div>
 
@@ -309,16 +323,22 @@
         <div class="relative bg-white rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-zinc-200 text-left my-auto">
             
             <!-- Modal Header -->
-            <div class="sticky top-0 bg-white/95 backdrop-blur-md px-5 sm:px-6 py-4 border-b border-zinc-200 flex items-center justify-between z-20">
+            <div class="sticky top-0 bg-white/95 backdrop-blur-md px-5 sm:px-6 py-3.5 border-b border-zinc-200 flex items-center justify-between z-20">
                 <div class="flex items-center gap-3 min-w-0 pr-4">
-                    <img id="modalProductImg" src="/static/favicon.svg" class="w-10 h-10 rounded-lg object-cover border border-zinc-200 flex-shrink-0" alt="Product">
+                    <img id="modalProductImg" src="/static/favicon.svg" class="w-11 h-11 rounded-lg object-cover border border-zinc-200 flex-shrink-0" alt="Product">
                     <div class="min-w-0">
                         <div class="flex items-center gap-2">
                             <span class="text-[10px] font-mono text-zinc-400" id="modalProductSku">SKU</span>
                             <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800" id="modalProductPrice">₹399</span>
                             <span class="text-[10px] font-semibold px-1.5 py-0.2 rounded bg-zinc-100 text-zinc-600" id="modalProductCategory">Category</span>
                         </div>
-                        <h2 class="text-sm sm:text-base font-bold text-zinc-900 truncate" id="modalProductTitle">Product Name</h2>
+                        <div class="flex items-center gap-2 mt-0.5">
+                            <h2 class="text-sm sm:text-base font-bold text-zinc-900 truncate" id="modalProductTitle">Product Name</h2>
+                            <a id="modalProductStoreLink" href="#" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-2.5 py-1 rounded-md transition shadow-xs whitespace-nowrap">
+                                <span>See Product</span>
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -337,6 +357,23 @@
             <!-- Modal Content Body -->
             <div class="p-5 sm:p-6 space-y-6">
 
+                <!-- 🖼️ Product Photos Vault (All Images — Click to Copy Direct Link / Use as Start Frame) -->
+                <div class="bg-zinc-50 rounded-xl p-3.5 border border-zinc-200">
+                    <div class="flex items-center justify-between mb-2.5">
+                        <div class="flex items-center gap-2">
+                            <span class="text-xs font-bold text-zinc-900">🖼️ Product Photos Vault</span>
+                            <span class="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-zinc-200 text-zinc-700" id="modalImageCountBadge">0 images</span>
+                        </div>
+                        <span class="text-[11px] text-zinc-500">
+                            Click any image to <strong class="text-zinc-800">copy link</strong> for Kling / Runway / VideoFX start frame
+                        </span>
+                    </div>
+                    
+                    <div id="modalImagesContainer" class="flex items-center gap-2.5 overflow-x-auto pb-1.5 scrollbar-thin">
+                        <!-- Populated dynamically with all images -->
+                    </div>
+                </div>
+
                 <!-- Mode Switcher: Female Creator vs ASMR Hands-Only -->
                 <div class="bg-zinc-50 rounded-xl p-3.5 border border-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                     <div>
@@ -344,7 +381,7 @@
                             <span>🎭 Character & Visual Direction Mode</span>
                         </div>
                         <div class="text-[11px] text-zinc-500" id="modeDescriptionText">
-                            Toggle between Indian Female Creator vs Aesthetic ASMR Hands-Only
+                            Toggle between Indian Female Creator (Using your custom character start frame) vs Aesthetic ASMR Hands-Only
                         </div>
                     </div>
 
@@ -621,22 +658,36 @@
 
                     <div class="p-4 flex-1 flex flex-col justify-between">
                         <div>
-                            <div class="text-[10px] font-mono text-zinc-400 mb-1 truncate" title="${p.sku}">
-                                SKU: ${p.sku}
+                            <div class="flex items-center justify-between gap-1 mb-1.5">
+                                <span class="text-[10px] font-mono text-zinc-400 truncate" title="${p.sku}">
+                                    SKU: ${p.sku}
+                                </span>
+                                <a href="${p.store_url || ('https://zenlora.store/product/' + p.sku)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-700 hover:text-emerald-800 border border-emerald-200 text-[10px] font-bold px-2 py-0.5 rounded transition shadow-2xs whitespace-nowrap" onclick="event.stopPropagation()">
+                                    <span>See Product</span>
+                                    <svg class="w-2.5 h-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                                </a>
                             </div>
-                            <h3 class="text-xs sm:text-sm font-bold text-zinc-900 line-clamp-2 leading-snug mb-2" title="${p.title}">
+                            <h3 class="text-xs sm:text-sm font-bold text-zinc-900 line-clamp-2 leading-snug mb-2 cursor-pointer hover:text-amber-600 transition" onclick="openReelModal('${p.sku}')" title="${p.title}">
                                 ${p.title}
                             </h3>
                         </div>
+
+                        ${p.images && p.images.length > 1 ? `
+                            <div class="flex items-center gap-1.5 mb-2 overflow-x-auto pb-1 scrollbar-none" onclick="event.stopPropagation()">
+                                ${p.images.slice(0, 5).map((img, i) => `
+                                    <img src="${img}" alt="angle ${i+1}" class="w-7 h-7 rounded object-cover border border-zinc-200 hover:border-amber-500 hover:scale-110 transition cursor-pointer" onclick="copyImageUrl('${img}', event)" title="Click to copy image link" loading="lazy">
+                                `).join('')}
+                                ${p.images.length > 5 ? `<span class="text-[9px] font-semibold text-zinc-400 px-1">+${p.images.length - 5}</span>` : ''}
+                            </div>
+                        ` : ''}
 
                         <div class="pt-2 border-t border-zinc-100 flex items-baseline justify-between mb-3">
                             <div class="flex items-baseline gap-1.5">
                                 <span class="text-base sm:text-lg font-extrabold text-zinc-950">₹${p.selling_price}</span>
                                 ${p.mrp > p.selling_price ? `<span class="text-xs text-zinc-400 line-through">₹${p.mrp}</span>` : ''}
                             </div>
-                            <a href="${p.store_url}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-0.5">
-                                store
-                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            <a href="${p.store_url || ('https://zenlora.store/product/' + p.sku)}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-0.5">
+                                zenlora.store ↗
                             </a>
                         </div>
 
@@ -812,8 +863,41 @@
             document.getElementById("modalProductSku").innerText = "SKU: " + pack.sku;
             document.getElementById("modalProductPrice").innerText = "₹" + pack.selling_price;
             document.getElementById("modalProductCategory").innerText = pack.category;
+            
+            // Wire up See Product link
+            const storeLink = document.getElementById("modalProductStoreLink");
+            if (storeLink) {
+                storeLink.href = pack.store_url || ("https://zenlora.store/product/" + pack.sku);
+            }
+
             if (pack.image_url) {
                 document.getElementById("modalProductImg").src = pack.image_url;
+            }
+
+            // Populate Product Images Vault
+            const imgsContainer = document.getElementById("modalImagesContainer");
+            const imgCountBadge = document.getElementById("modalImageCountBadge");
+            const images = pack.images && pack.images.length > 0 ? pack.images : (pack.image_url ? [pack.image_url] : []);
+            if (imgCountBadge) {
+                imgCountBadge.innerText = `${images.length} photo${images.length !== 1 ? 's' : ''}`;
+            }
+            if (imgsContainer) {
+                if (images.length === 0) {
+                    imgsContainer.innerHTML = `<span class="text-xs text-zinc-400 italic">No image available for this product</span>`;
+                } else {
+                    imgsContainer.innerHTML = images.map((img, idx) => `
+                        <div class="relative group flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-lg overflow-hidden border border-zinc-200 bg-white hover:border-amber-500 hover:shadow-md transition cursor-pointer" onclick="copyImageUrl('${img}', event)" title="Click to copy image URL">
+                            <img src="${img}" alt="Product Photo ${idx+1}" class="w-full h-full object-cover group-hover:scale-105 transition" loading="lazy">
+                            <div class="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition flex flex-col items-center justify-center text-white text-[10px] font-semibold gap-0.5 p-1 text-center">
+                                <span>📋 Copy Link</span>
+                                <a href="${img}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation()" class="text-[9px] underline text-amber-300 hover:text-white mt-0.5">
+                                    Open ↗
+                                </a>
+                            </div>
+                            <span class="absolute bottom-1 right-1 bg-black/75 text-[9px] text-white px-1 py-0.2 rounded font-mono">${idx+1}</span>
+                        </div>
+                    `).join("");
+                }
             }
 
             document.getElementById("storyboardPromptText").innerText = pack.storyboard_grid_prompt;
@@ -905,6 +989,22 @@
         }
 
         // Copy utilities
+        function copyImageUrl(url, event) {
+            if (event) event.stopPropagation();
+            if (!url) return;
+            navigator.clipboard.writeText(url).then(() => {
+                showToast("🖼️ Product image link copied! Paste into Kling / VideoFX");
+            }).catch(() => {
+                const ta = document.createElement("textarea");
+                ta.value = url;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand("copy");
+                document.body.removeChild(ta);
+                showToast("🖼️ Image link copied!");
+            });
+        }
+
         function copyText(elementId, btn) {
             const text = document.getElementById(elementId).innerText;
             navigator.clipboard.writeText(text);
