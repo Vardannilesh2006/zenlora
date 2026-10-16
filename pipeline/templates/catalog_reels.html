@@ -437,8 +437,76 @@
                     </div>
                 </div>
 
-                <!-- 2. Dual-Act Video Prompts (Kling / Runway / Luma / VideoFX) -->
-                <div class="space-y-4">
+                <!-- 🚨 PRO CREATOR SECRETS: WHY AI VIDEOS MORPH & HOW TO FIX IT -->
+                <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-950 shadow-2xs">
+                    <div class="font-bold flex items-center gap-2 mb-1.5 text-amber-900">
+                        <span class="text-base">💡</span>
+                        <span class="text-xs uppercase tracking-wide">Pro Creator Secret: Storyboard-se-Video kaise banayein (Zero Morphing)?</span>
+                    </div>
+                    <p class="text-zinc-600 text-[11px] leading-relaxed mb-2.5">
+                        Kling, Runway, aur VideoFX me jab aap 1 image se 4 alag-alag kaam (unboxing + demo + makeover + CTA) karwane ka lamba prompt dete hain, toh AI character ka chehra aur product morph/distort kar deta hai.
+                        <strong>Instagram / TikTok par Viral D2C Creators ka Asli Formula:</strong> Storyboard ke <strong>har shot ke liye wahi specific panel / image</strong> upload karein aur 3–4 second ka micro-prompt chalayein!
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-[10px]">
+                        <div class="bg-white/90 p-2.5 rounded-lg border border-amber-200">
+                            <span class="font-bold text-amber-900 block mb-0.5">🎯 Method 1 (10/10 Quality):</span>
+                            <span>4 alag micro-shots (3-4s each) generate karein aur CapCut me 60s me stitch karein.</span>
+                        </div>
+                        <div class="bg-white/90 p-2.5 rounded-lg border border-amber-200">
+                            <span class="font-bold text-amber-900 block mb-0.5">⚡ Method 2 (Google Flow / Kling):</span>
+                            <span>Start Frame (Creator) + End Frame (Product Hero) daalein aur Transition Prompt chalayein.</span>
+                        </div>
+                        <div class="bg-white/90 p-2.5 rounded-lg border border-amber-200">
+                            <span class="font-bold text-amber-900 block mb-0.5">🎞️ Method 3 (Fast 2-Clips):</span>
+                            <span>Classic Act 1 (0-8s) aur Act 2 (8-16s) direct generation.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 🎬 WORKFLOW TAB SWITCHER -->
+                <div class="border-b border-zinc-200 flex items-center gap-1 sm:gap-3 overflow-x-auto pb-px">
+                    <button onclick="switchVideoWorkflowTab('shots')" id="tabBtnShots" class="px-3 py-2 text-xs font-bold border-b-2 border-zinc-950 text-zinc-950 transition whitespace-nowrap">
+                        🎯 Method 1: Shot-by-Shot Prompts (Zero Morphing)
+                    </button>
+                    <button onclick="switchVideoWorkflowTab('bridge')" id="tabBtnBridge" class="px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap">
+                        ⚡ Method 2: Start + End Frame Bridge
+                    </button>
+                    <button onclick="switchVideoWorkflowTab('acts')" id="tabBtnActs" class="px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap">
+                        🎞️ Method 3: 2-Act Dual Pack (8s + 8s)
+                    </button>
+                </div>
+
+                <!-- Section 1: Shot-by-Shot Prompts (Zero Morphing) -->
+                <div id="shotsWorkflowSection" class="space-y-3">
+                    <div id="shotsListContainer" class="space-y-3">
+                        <!-- Populated by JS -->
+                    </div>
+                </div>
+
+                <!-- Section 2: Start + End Frame Bridge -->
+                <div id="bridgeWorkflowSection" class="hidden space-y-3">
+                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-xs text-zinc-900">⚡ Google Flow & Kling AI: Start Frame + End Frame Transition</span>
+                                <span class="text-[10px] font-semibold text-purple-800 bg-purple-100 px-2 py-0.5 rounded">Interpolation Mode</span>
+                            </div>
+                            <button onclick="copyText('bridgePromptText', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
+                                Copy Bridge Prompt
+                            </button>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-3 text-[11px] text-zinc-600 bg-zinc-50 p-2.5 rounded-lg border border-zinc-200">
+                            <div><strong class="text-zinc-800">📸 Start Frame (Upload Frame 0):</strong> <span id="bridgeStartFrameText">Storyboard Panel 1 (or Your Custom Character Photo)</span></div>
+                            <div><strong class="text-zinc-800">🏁 End Frame (Upload Final Frame):</strong> <span id="bridgeEndFrameText">Storyboard Panel 4 (Product Hero Photo)</span></div>
+                        </div>
+                        <div class="bg-zinc-950 p-3 rounded-lg border border-zinc-800 font-mono text-xs text-zinc-200 leading-relaxed select-all" id="bridgePromptText">
+                            Loading bridge prompt...
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: 2-Act Video Prompts (Preserved) -->
+                <div id="actsWorkflowSection" class="hidden space-y-4">
                     
                     <!-- Act 1 Prompt -->
                     <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
@@ -900,6 +968,40 @@
                 }
             }
 
+            // Populate Shot-by-Shot Prompts (Zero Morphing Architecture)
+            const shotsContainer = document.getElementById("shotsListContainer");
+            if (shotsContainer && pack.storyboard_shots) {
+                shotsContainer.innerHTML = pack.storyboard_shots.map((shot, idx) => `
+                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="w-5 h-5 rounded-full bg-amber-500 text-zinc-950 font-black text-[11px] flex items-center justify-center">${shot.shot_number}</span>
+                                <span class="font-bold text-xs text-zinc-900">${shot.name}</span>
+                                <span class="text-[10px] font-semibold text-amber-800 bg-amber-100 px-1.5 py-0.2 rounded">${shot.timing}</span>
+                            </div>
+                            <button onclick="copyText('shotPromptText_${idx}', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
+                                Copy Shot ${shot.shot_number}
+                            </button>
+                        </div>
+                        <div class="text-[11px] text-zinc-500 mb-2 flex flex-wrap items-center gap-2 bg-zinc-50 px-2.5 py-1.5 rounded-lg border border-zinc-100">
+                            <span>🖼️ <strong>Start Frame:</strong> ${shot.start_frame_source}</span>
+                            <span class="text-zinc-300">•</span>
+                            <span>🎥 <strong>Camera:</strong> ${shot.camera_motion}</span>
+                        </div>
+                        <div class="bg-zinc-50 p-3 rounded-lg border border-zinc-200 font-mono text-xs text-zinc-800 leading-relaxed select-all" id="shotPromptText_${idx}">
+                            ${shot.video_prompt}
+                        </div>
+                    </div>
+                `).join("");
+            }
+
+            // Populate Start + End Frame Bridge
+            if (pack.start_end_frame_bridge) {
+                document.getElementById("bridgeStartFrameText").innerText = pack.start_end_frame_bridge.start_frame;
+                document.getElementById("bridgeEndFrameText").innerText = pack.start_end_frame_bridge.end_frame;
+                document.getElementById("bridgePromptText").innerText = pack.start_end_frame_bridge.bridge_prompt;
+            }
+
             document.getElementById("storyboardPromptText").innerText = pack.storyboard_grid_prompt;
             document.getElementById("act1PromptText").innerText = pack.acts.act_1.prompt;
             document.getElementById("act2PromptText").innerText = pack.acts.act_2.prompt;
@@ -920,6 +1022,34 @@
                     <span class="text-[10px] text-zinc-400 opacity-60 hover:opacity-100">copy</span>
                 </li>
             `).join("");
+        }
+
+        function switchVideoWorkflowTab(tab) {
+            const btnShots = document.getElementById("tabBtnShots");
+            const btnBridge = document.getElementById("tabBtnBridge");
+            const btnActs = document.getElementById("tabBtnActs");
+            const secShots = document.getElementById("shotsWorkflowSection");
+            const secBridge = document.getElementById("bridgeWorkflowSection");
+            const secActs = document.getElementById("actsWorkflowSection");
+
+            secShots.classList.add("hidden");
+            secBridge.classList.add("hidden");
+            secActs.classList.add("hidden");
+
+            btnShots.className = "px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap";
+            btnBridge.className = "px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap";
+            btnActs.className = "px-3 py-2 text-xs font-medium text-zinc-500 hover:text-zinc-900 border-b-2 border-transparent transition whitespace-nowrap";
+
+            if (tab === "shots") {
+                secShots.classList.remove("hidden");
+                btnShots.className = "px-3 py-2 text-xs font-bold border-b-2 border-zinc-950 text-zinc-950 transition whitespace-nowrap";
+            } else if (tab === "bridge") {
+                secBridge.classList.remove("hidden");
+                btnBridge.className = "px-3 py-2 text-xs font-bold border-b-2 border-purple-600 text-purple-700 transition whitespace-nowrap";
+            } else if (tab === "acts") {
+                secActs.classList.remove("hidden");
+                btnActs.className = "px-3 py-2 text-xs font-bold border-b-2 border-amber-600 text-amber-700 transition whitespace-nowrap";
+            }
         }
 
         function setVoiceoverLang(lang) {

@@ -490,16 +490,116 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
             f"Hyper-realistic 8k, cinematic 35mm lens, soft bokeh, warm Japandi aesthetic, identical product across all 6 panels."
         )
 
-    # 2. Act 1 Video Prompt (0–8s: Hook & Unboxing)
+    # 2. Shot-by-Shot Storyboard-to-Video Engine (Industry Best Practice for Zero Morphing)
+    if is_female_creator:
+        shot_1_prompt = (
+            f"Vertical 9:16 iPhone POV shot. Natural handheld camera with subtle organic micro-jitter. "
+            f"In a {env}, the creator looks directly into the lens with an authentic surprised reaction, "
+            f"smiling warmly. Natural ambient room lighting, authentic social media UGC aesthetic, 24fps, zero plastic morphing."
+        )
+        shot_2_prompt = (
+            f"Vertical 9:16 macro perspective on a clean surface. "
+            f"Clean hands enter the frame, gently unboxing and presenting the sleek {safe_title}. "
+            f"Satisfying tactile ASMR movement, soft natural daylight reflecting off the surface, stable product geometry, 4k 24fps."
+        )
+        shot_3_prompt = (
+            f"Vertical 9:16 slow cinematic push-in focusing on {safe_title} operating on the tabletop. "
+            f"Warm golden ambient light softly illuminates the surrounding room decor, subtle dust motes in the air, "
+            f"stable locked-on product geometry, zero morphing, photorealistic 24fps."
+        )
+        shot_4_prompt = (
+            f"Vertical 9:16 smooth gimbal pullback revealing the fully transformed aesthetic room. "
+            f"The creator holds up {safe_title} near camera level, smiling and pointing downwards for the link. "
+            f"Warm cozy ambient glow, authentic UGC aesthetic, 24fps."
+        )
+        bridge_prompt = (
+            f"Seamless continuous camera glide moving fluidly from the creator's unboxing presentation "
+            f"into the steady, illuminated hero shot of {safe_title} on the table. "
+            f"Natural room lighting transition, stable product geometry, zero distortion, photorealistic 4k 24fps."
+        )
+    else:
+        shot_1_prompt = (
+            f"Vertical 9:16 moody atmospheric macro shot of an uninspired dark room corner. "
+            f"Slow continuous dolly push-in, soft natural shadow play, realistic phone camera texture, 24fps."
+        )
+        shot_2_prompt = (
+            f"Top-down macro perspective. Well-manicured hands enter frame, gently peeling packaging film and lifting {safe_title}. "
+            f"Crisp tactile touch, satisfying ASMR visual triggers, natural window light, stable product geometry, 4k."
+        )
+        shot_3_prompt = (
+            f"Macro product shot, slow continuous 45-degree orbit around {safe_title}. "
+            f"Hands gently activate the product, warm cozy amber illumination softly lights the tabletop, "
+            f"subtle dust particles, ultra-stable product geometry, no morphing."
+        )
+        shot_4_prompt = (
+            f"Slow smooth camera pan across the elevated luxury Japandi aesthetic room. "
+            f"Warm golden hour lighting, clean graphic pill overlay at bottom, ultra-crisp finish, 24fps."
+        )
+        bridge_prompt = (
+            f"Smooth cinematic glide transitioning from the tactile unboxing touch directly into the fully lit aesthetic {safe_title} glowing on the table. "
+            f"Natural lighting progression, stable geometry, 4k 24fps."
+        )
+
+    storyboard_shots = [
+        {
+            "shot_number": 1,
+            "timing": "0-3s",
+            "name": "The Hook & Creator Reaction",
+            "start_frame_source": "Storyboard Panel 1 (or Your Custom Character Photo)",
+            "camera_motion": "Handheld iPhone POV, subtle micro-jitter",
+            "video_prompt": shot_1_prompt,
+        },
+        {
+            "shot_number": 2,
+            "timing": "3-6s",
+            "name": "Tactile Unboxing & First Touch",
+            "start_frame_source": "Storyboard Panel 2/3 (or Product Photo)",
+            "camera_motion": "Top-down / 45-degree macro push-in",
+            "video_prompt": shot_2_prompt,
+        },
+        {
+            "shot_number": 3,
+            "timing": "6-11s",
+            "name": "Anchor Frame Hero Demo",
+            "start_frame_source": "Storyboard Panel 4 (or Glowing Product Angle)",
+            "camera_motion": "Slow smooth cinematic push-in",
+            "video_prompt": shot_3_prompt,
+        },
+        {
+            "shot_number": 4,
+            "timing": "11-16s",
+            "name": "Room Makeover & Auto-DM CTA",
+            "start_frame_source": "Storyboard Panel 5/6 (or Creator holding product)",
+            "camera_motion": "Smooth pullback & warm smile",
+            "video_prompt": shot_4_prompt,
+        }
+    ]
+
+    start_end_frame_bridge = {
+        "start_frame": "Storyboard Panel 1 (or Custom Character Photo)",
+        "end_frame": "Storyboard Panel 4 (Product Hero Anchor Photo)",
+        "bridge_prompt": bridge_prompt,
+    }
+
+    # 3. Dual-Act Video Prompts (Preserved for 2-Clip 8s + 8s Fast Workflow)
     if is_female_creator:
         act_1_prompt = (
             f"[ACT 1: 0 to 8 Seconds | Hook & Unboxing] "
             f"Using the uploaded reference character start frame: "
-            f"In a {env}, the creator starts with an expressive, curious look towards the camera, "
+            f"Natural vertical 9:16 iPhone POV shot in a {env}. The creator starts with an authentic curious hook looking towards camera, "
             f"then smoothly unboxes and presents the '{safe_title}'. "
             f"Her hands demonstrate the product's primary feature or satisfying aesthetic illumination at second 5 to 7. "
             f"The scene stabilizes and smoothly settles into an ultra-sharp steady ANCHOR FRAME at second 8, "
-            f"focusing cleanly on '{safe_title}' operating in warm ambient light. Smooth handheld camera motion, 24fps, photorealistic 4k."
+            f"focusing cleanly on '{safe_title}' operating in warm ambient light. Smooth handheld camera motion, 24fps, authentic UGC aesthetic."
+        )
+        act_2_prompt = (
+            f"{CONTINUITY_PROMPT} "
+            f"[ACT 2: 8 to 16 Seconds | Transformation & CTA] "
+            f"Starting precisely from the steady anchor frame of '{safe_title}' in the {env}: "
+            f"The camera smoothly pans back to reveal the complete aesthetic room transformation. "
+            f"The creator steps into the warm golden lighting with an excited, satisfied smile. "
+            f"At second 12 to 14, the creator holds the product up near camera level and gestures pointing downwards with a welcoming smile for the link. "
+            f"Smooth cinematic slow-motion, soft bokeh background, 24fps, photorealistic 4k."
         )
     else:
         act_1_prompt = (
@@ -511,19 +611,6 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
             f"The camera pulls into a steady, perfectly focused ANCHOR FRAME at second 8, "
             f"capturing '{safe_title}' in warm amber lighting. Smooth dolly-in, 24fps, photorealistic 4k, zero faces shown."
         )
-
-    # 3. Act 2 Video Prompt (8–16s: Continuity + Makeover + CTA)
-    if is_female_creator:
-        act_2_prompt = (
-            f"{CONTINUITY_PROMPT} "
-            f"[ACT 2: 8 to 16 Seconds | Transformation & CTA] "
-            f"Starting precisely from the steady anchor frame of '{safe_title}' in the {env}: "
-            f"The camera smoothly pans back to reveal the complete aesthetic room transformation. "
-            f"The creator steps into the warm golden lighting with an excited, satisfied smile. "
-            f"At second 12 to 14, the creator holds the product up near camera level and gestures pointing downwards with a welcoming smile for the link. "
-            f"Smooth cinematic slow-motion, soft bokeh background, 24fps, photorealistic 4k."
-        )
-    else:
         act_2_prompt = (
             f"{CONTINUITY_PROMPT} "
             f"[ACT 2: 8 to 16 Seconds | ASMR Transformation & CTA] "
@@ -608,6 +695,8 @@ def generate_16s_reel_pack(product: Dict[str, Any], character_mode: str = "auto"
             }
         },
         "storyboard_grid_prompt": storyboard_prompt,
+        "storyboard_shots": storyboard_shots,
+        "start_end_frame_bridge": start_end_frame_bridge,
         "voiceover_script": {
             "hinglish": vo_hinglish,
             "english": vo_english,
