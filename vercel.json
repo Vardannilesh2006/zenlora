@@ -5,7 +5,12 @@
       "src": "api/index.py",
       "use": "@vercel/python",
       "config": {
-        "includeFiles": ["pipeline/templates/**", "pipeline/static/**", "data/**"]
+        "includeFiles": [
+          "pipeline/**",
+          "data/**",
+          "*.xlsx",
+          "*.json"
+        ]
       }
     }
   ],

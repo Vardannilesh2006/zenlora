@@ -17,6 +17,16 @@ except ImportError:
         "and overall visual consistency. The new scene must naturally begin exactly where the previous scene ended."
     )
 
+# Live store syncer (primary source — always fresh)
+try:
+    from live_store_syncer import fetch_live_products, get_live_stats
+    HAS_LIVE_SYNCER = True
+except ImportError:
+    HAS_LIVE_SYNCER = False
+    fetch_live_products = None
+    get_live_stats = None
+
+# ── Static fallback paths (used only when store is unreachable) ──
 EXCEL_CATALOG_NAME = "zenlora_catalog_642_products_FIXED_READY_TO_UPLOAD.xlsx"
 EXCEL_PATH = BASE_DIR / EXCEL_CATALOG_NAME
 RUNTIME_CATALOG_JSON = DATA_DIR / "catalog_642.json"
@@ -29,17 +39,8 @@ _CATALOG_MEM_CACHE: Dict[str, Any] = {"mtime": 0.0, "products": None, "by_sku": 
 _LEDGER_MEM_CACHE: Dict[str, Any] = {"mtime": 0.0, "data": None}
 
 
-def _get_excel_mtime() -> float:
-    if EXCEL_PATH.exists():
-        try:
-            return EXCEL_PATH.stat().st_mtime
-        except Exception:
-            return 0.0
-    return 0.0
-
-
 def _build_json_from_excel() -> List[Dict[str, Any]]:
-    """Parse Excel catalog into structured JSON."""
+    """Fallback: parse Excel catalog when live store is unreachable."""
     if not EXCEL_PATH.exists():
         return []
     try:
@@ -51,55 +52,34 @@ def _build_json_from_excel() -> List[Dict[str, Any]]:
             title = str(row.get("Product Name (Mandatory) Maximum 200 characters") or "").strip()
             if not title or title.lower() == "nan":
                 continue
-            
             try:
                 mrp = int(float(row.get("MRP (Mandatory) Number only") or 0))
             except Exception:
                 mrp = 0
-
             try:
                 selling_price = int(float(row.get("Selling Price (Optional) Number only Should be less than MRP") or 0))
             except Exception:
                 selling_price = mrp or 399
-
             category = str(row.get("Product Category (Mandatory)") or "Home & Kitchen").strip()
             if category.lower() == "nan" or not category:
                 category = "Home & Kitchen"
-
             desc = str(row.get("Product Description (Optional) Maximum 2000 characters") or "").strip()
             if desc.lower() == "nan":
                 desc = ""
-
             images = []
             for i in range(1, 7):
                 img = row.get(f"Product Image{i} (Optional)")
                 if pd.notna(img) and str(img).startswith("http"):
                     images.append(str(img).strip())
-            
             image_url = images[0] if images else ""
             disc_pct = round(((mrp - selling_price) / mrp) * 100) if mrp > selling_price and mrp > 0 else 0
-
-            # Derive clean URL slug / handle
             handle = sku.lower().replace(" ", "-").replace("_", "-")
-
             products.append({
-                "id": f"zen_{idx+1}",
-                "sku": sku,
-                "handle": handle,
-                "title": title,
-                "mrp": mrp,
-                "selling_price": selling_price,
-                "category": category,
-                "description": desc,
-                "image_url": image_url,
-                "images": images,
-                "discount_pct": disc_pct,
-                "seo_title": str(row.get("SEOMeta Title (Optional)") or "") if pd.notna(row.get("SEOMeta Title (Optional)")) else "",
-                "seo_description": str(row.get("SEOMeta Description (Optional)") or "") if pd.notna(row.get("SEOMeta Description (Optional)")) else "",
-                "store_url": f"https://zenlora.store/search?q={sku}",
+                "id": f"zen_{idx+1}", "sku": sku, "handle": handle, "title": title,
+                "mrp": mrp, "selling_price": selling_price, "category": category,
+                "description": desc, "image_url": image_url, "images": images,
+                "discount_pct": disc_pct, "store_url": f"https://zenlora.store/search?q={sku}",
             })
-        
-        # Save to runtime and repo JSON for lightning-fast loads
         for target in (RUNTIME_CATALOG_JSON, REPO_CATALOG_JSON):
             try:
                 target.parent.mkdir(parents=True, exist_ok=True)
@@ -107,55 +87,53 @@ def _build_json_from_excel() -> List[Dict[str, Any]]:
                     json.dump(products, f, ensure_ascii=False, indent=2)
             except Exception:
                 pass
-
         return products
     except Exception as e:
-        print(f"[reels_catalog_engine] Error parsing Excel: {e}")
+        print(f"[reels_catalog_engine] Excel fallback error: {e}")
         return []
 
 
 def load_catalog(force_reload: bool = False) -> List[Dict[str, Any]]:
-    """Loads all catalog products with auto-sync from Excel or fast JSON cache."""
-    excel_mtime = _get_excel_mtime()
-    
-    # Check if in-memory cache is valid
+    """
+    Load products from zenlora.store live (primary) → catalog_642.json (fallback) → Excel (last resort).
+    Products update instantly when you add/delete on your live store.
+    """
+    # 1. In-memory cache (valid for 15 minutes, same as live_store_syncer TTL)
+    now = time.time()
     if (
         not force_reload
         and _CATALOG_MEM_CACHE["products"] is not None
-        and _CATALOG_MEM_CACHE["mtime"] >= excel_mtime
+        and (now - _CATALOG_MEM_CACHE["mtime"]) < 900
     ):
         return _CATALOG_MEM_CACHE["products"]
 
-    # Determine whether we need to parse Excel
-    needs_excel_parse = False
-    json_path_to_use = None
-    for p in (RUNTIME_CATALOG_JSON, REPO_CATALOG_JSON):
-        if p.exists():
-            json_path_to_use = p
-            break
-
-    if EXCEL_PATH.exists():
-        if json_path_to_use is None:
-            needs_excel_parse = True
-        else:
-            try:
-                if excel_mtime > json_path_to_use.stat().st_mtime:
-                    needs_excel_parse = True
-            except Exception:
-                needs_excel_parse = True
-
     products = []
-    if needs_excel_parse:
-        products = _build_json_from_excel()
 
-    if not products and json_path_to_use and json_path_to_use.exists():
+    # 2. Live store scrape (primary source — automatic with 15-min cache)
+    if HAS_LIVE_SYNCER and fetch_live_products:
         try:
-            with open(json_path_to_use, "r", encoding="utf-8") as f:
-                products = json.load(f)
+            live = fetch_live_products(force_refresh=force_reload)
+            if live:
+                products = live
         except Exception:
             products = []
 
-    # Final fallback to products_db.json if nothing else found
+    # 3. catalog_642.json (fast JSON cache)
+    if not products:
+        for p in (RUNTIME_CATALOG_JSON, REPO_CATALOG_JSON):
+            if p.exists():
+                try:
+                    with open(p, "r", encoding="utf-8") as f:
+                        products = json.load(f)
+                    break
+                except Exception:
+                    pass
+
+    # 4. Excel fallback (Vercel doesn't have pandas by default, so this is local-only)
+    if not products:
+        products = _build_json_from_excel()
+
+    # 5. products_db.json final fallback
     if not products:
         fallback_db = DATA_DIR / "products_db.json"
         if fallback_db.exists():
@@ -175,15 +153,13 @@ def load_catalog(force_reload: bool = False) -> List[Dict[str, Any]]:
                             "image_url": p.get("image_url", ""),
                             "images": p.get("images") or ([p.get("image_url")] if p.get("image_url") else []),
                             "discount_pct": p.get("discount_pct", 50),
-                            "seo_title": p.get("seo_title", ""),
-                            "seo_description": p.get("seo_description", ""),
                             "store_url": f"https://zenlora.store/search?q={p.get('sku', '')}",
                         })
             except Exception:
                 pass
 
     by_sku = {p["sku"]: p for p in products if p.get("sku")}
-    _CATALOG_MEM_CACHE["mtime"] = max(excel_mtime, time.time())
+    _CATALOG_MEM_CACHE["mtime"] = time.time()
     _CATALOG_MEM_CACHE["products"] = products
     _CATALOG_MEM_CACHE["by_sku"] = by_sku
     return products
