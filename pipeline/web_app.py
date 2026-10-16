@@ -42,6 +42,15 @@ from winning_engine.export_ledger import (
     reset_export_ledger,
 )
 from ugc_engine import UGCEngine
+from reels_catalog_engine import (
+    load_catalog,
+    query_reels_products,
+    generate_16s_reel_pack,
+    get_catalog_stats,
+    mark_reel_done,
+    unmark_reel_done,
+    get_product_by_sku,
+)
 
 app = Flask(
     __name__,
@@ -883,6 +892,99 @@ def export_excel():
         )
     except Exception as e:
         return jsonify({"success": False, "error": str(e)}), 500
+
+
+@app.route("/reels")
+@app.route("/catalog-reels")
+def reels_studio():
+    category = request.args.get("category", "All")
+    search = request.args.get("search", "")
+    page = int(request.args.get("page", 1))
+    data = query_reels_products(category=category, search=search, page=page, limit=20)
+    stats = get_catalog_stats()
+    return render_template(
+        "catalog_reels.html",
+        products=data["products"],
+        total_count=data["total_count"],
+        current_page=data["current_page"],
+        total_pages=data["total_pages"],
+        stats=stats,
+    )
+
+
+@app.route("/api/reels/products", methods=["GET"])
+def api_reels_products():
+    category = request.args.get("category", "All")
+    search = request.args.get("search", "")
+    page = int(request.args.get("page", 1))
+    limit = int(request.args.get("limit", 20))
+    show_done = request.args.get("show_done", "0") in ("1", "true", "True")
+    shuffle_seed = request.args.get("shuffle")
+    if shuffle_seed:
+        try:
+            shuffle_seed = int(shuffle_seed)
+        except Exception:
+            shuffle_seed = None
+
+    data = query_reels_products(
+        category=category,
+        search=search,
+        page=page,
+        limit=limit,
+        show_done=show_done,
+        shuffle_seed=shuffle_seed,
+    )
+    return jsonify({"success": True, **data})
+
+
+@app.route("/api/reels/generate", methods=["GET", "POST"])
+def api_reels_generate():
+    if request.method == "POST":
+        req_data = request.get_json(silent=True) or {}
+        sku = req_data.get("sku") or req_data.get("handle", "")
+        mode = req_data.get("character_mode", "auto")
+    else:
+        sku = request.args.get("sku") or request.args.get("handle", "")
+        mode = request.args.get("character_mode", "auto")
+
+    product = get_product_by_sku(sku)
+    if not product:
+        # Fallback: check in loaded catalog by title or id
+        all_prods = load_catalog()
+        for p in all_prods:
+            if p.get("sku") == sku or p.get("handle") == sku or p.get("id") == sku:
+                product = p
+                break
+
+    if not product:
+        return jsonify({"success": False, "error": f"Product with SKU '{sku}' not found in catalog"}), 404
+
+    pack = generate_16s_reel_pack(product, character_mode=mode)
+    return jsonify({"success": True, "pack": pack})
+
+
+@app.route("/api/reels/mark-done", methods=["POST"])
+def api_reels_mark_done():
+    data = request.get_json(silent=True) or {}
+    sku = data.get("sku", "").strip()
+    title = data.get("title", "").strip()
+    mode = data.get("character_mode", "auto")
+    if not sku:
+        return jsonify({"success": False, "error": "No SKU provided"}), 400
+
+    res = mark_reel_done(sku=sku, title=title, character_mode=mode)
+    return jsonify({"success": True, **res})
+
+
+@app.route("/api/reels/unmark-done", methods=["POST"])
+def api_reels_unmark_done():
+    data = request.get_json(silent=True) or {}
+    sku = data.get("sku", "").strip()
+    if not sku:
+        return jsonify({"success": False, "error": "No SKU provided"}), 400
+
+    res = unmark_reel_done(sku=sku)
+    return jsonify({"success": True, **res})
 
 
 if __name__ == "__main__":

@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-surface">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenlora Reels Studio — 16s AI Video Blueprint & Store Catalog Hub</title>
+    <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .zen-glass {
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(228, 228, 231, 0.9);
+        }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        .card-enter {
+            animation: fadeInScale 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.97) translateY(6px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .card-exit {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            opacity: 0;
+            transform: scale(0.92) translateY(-10px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="min-h-full flex flex-col bg-zinc-50 text-zinc-900 antialiased selection:bg-emerald-100 selection:text-emerald-900">
+
+    <!-- Top Sticky Header with 3 Nav Tabs -->
+    <header class="sticky top-0 z-40 w-full zen-glass">
+        <div class="max-w-[1550px] mx-auto px-3 sm:px-6 h-14 flex items-center justify-between gap-3">
+            
+            <!-- Left: Brand Logo & Navigation Switcher -->
+            <div class="flex items-center gap-3 flex-shrink-0">
+                <a href="/" class="flex items-center gap-2.5 flex-shrink-0">
+                    <img src="/static/favicon.svg" class="w-7 h-7 rounded-lg shadow-xs hover:scale-105 transition" alt="Zenlora Logo">
+                    <span class="font-bold text-sm tracking-tight text-zinc-900 flex items-center gap-1.5 whitespace-nowrap">
+                        Zenlora
+                        <span class="text-[10px] text-amber-700 font-semibold px-2 py-0.5 rounded-md bg-amber-50 border border-amber-200">Reels Hub</span>
+                    </span>
+                </a>
+
+                <!-- 3 Navigation Tabs -->
+                <nav class="flex items-center gap-1 pl-3 border-l border-zinc-200 whitespace-nowrap">
+                    <a href="/" class="px-2.5 py-1 rounded-md text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 transition">
+                        🎨 Studio & Prompts
+                    </a>
+                    <a href="/radar" class="px-2.5 py-1 rounded-md text-xs font-medium text-zinc-600 hover:text-zinc-900 hover:bg-zinc-100 transition">
+                        ⚡ Winning Radar
+                    </a>
+                    <a href="/reels" class="px-2.5 py-1 rounded-md text-xs font-semibold bg-zinc-900 text-white shadow-xs flex items-center gap-1.5">
+                        🎬 Reels Studio
+                        <span class="text-[9px] px-1 py-0.2 rounded bg-amber-400 text-zinc-950 font-extrabold">16s</span>
+                    </a>
+                </nav>
+            </div>
+
+            <!-- Right: Direct Store Link & Sync Indicator -->
+            <div class="flex items-center gap-2 flex-shrink-0">
+                <a href="https://zenlora.store" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-1.5 text-xs font-semibold text-zinc-700 hover:text-zinc-900 bg-white border border-zinc-200 hover:border-zinc-300 px-3 py-1.5 rounded-lg shadow-xs transition">
+                    <svg class="w-3.5 h-3.5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    zenlora.store
+                </a>
+                <span class="inline-flex items-center gap-1.5 text-[11px] font-medium text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-lg">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Live Catalog Synced (642)
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="flex-1 max-w-[1550px] w-full mx-auto px-3 sm:px-6 py-6">
+
+        <!-- Top Overview Banner & Live Stats -->
+        <div class="bg-gradient-to-r from-zinc-900 via-zinc-800 to-zinc-900 text-white rounded-2xl p-5 sm:p-6 mb-6 shadow-sm border border-zinc-800 relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -left-10 -top-10 w-64 h-64 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full bg-amber-400/20 border border-amber-400/30 text-amber-300 text-xs font-semibold mb-2">
+                        <span>⚡ 16-Second Dual-Act Master Engine</span>
+                        <span>•</span>
+                        <span>Female Creator & ASMR Modes</span>
+                    </div>
+                    <h1 class="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1.5">
+                        Zenlora Reels Studio & Content Director
+                    </h1>
+                    <p class="text-xs sm:text-sm text-zinc-300 max-w-2xl leading-relaxed">
+                        Every single product from your live <span class="text-amber-300 font-semibold">zenlora.store</span> catalog with ready-to-run 16-second AI video prompts (Act 1 0-8s + Act 2 8-16s with seamless continuity), 6-panel storyboard grid, viral Hinglish voiceover, and hashtags. Mark any product done to automatically hide it from your workflow!
+                    </p>
+                </div>
+
+                <!-- Stats Cards Group -->
+                <div class="flex items-center gap-2.5 sm:gap-4 flex-wrap">
+                    <div class="bg-zinc-800/80 border border-zinc-700/60 rounded-xl px-4 py-2.5 min-w-[110px] text-center">
+                        <div class="text-[11px] font-medium text-zinc-400 uppercase tracking-wider">Catalog</div>
+                        <div class="text-xl sm:text-2xl font-extrabold text-white" id="statTotalProducts">{{ stats.total_products }}</div>
+                    </div>
+                    <div class="bg-emerald-950/60 border border-emerald-500/30 rounded-xl px-4 py-2.5 min-w-[110px] text-center">
+                        <div class="text-[11px] font-medium text-emerald-400 uppercase tracking-wider">Reels Made ✅</div>
+                        <div class="text-xl sm:text-2xl font-extrabold text-emerald-300" id="statDoneReels">{{ stats.done_reels }}</div>
+                    </div>
+                    <div class="bg-amber-950/60 border border-amber-500/30 rounded-xl px-4 py-2.5 min-w-[110px] text-center">
+                        <div class="text-[11px] font-medium text-amber-400 uppercase tracking-wider">Remaining</div>
+                        <div class="text-xl sm:text-2xl font-extrabold text-amber-300" id="statRemainingReels">{{ stats.remaining_reels }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Bar: Category Pills, Search, Refresh 20 & Filters -->
+        <div class="bg-white rounded-xl border border-zinc-200 p-3 sm:p-4 mb-6 shadow-xs space-y-3">
+            
+            <!-- Category Pills (Horizontal Scrollable) -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 hide-scrollbar" id="categoryPillsContainer">
+                <button onclick="setCategory('All')" data-category="All" class="cat-pill active px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition bg-zinc-900 text-white shadow-xs">
+                    All Categories <span class="ml-1 px-1.5 py-0.2 rounded-full text-[10px] bg-zinc-700 text-zinc-200" id="badge-All">{{ stats.total_products }}</span>
+                </button>
+                {% for cat_name, cstat in stats.categories.items() %}
+                <button onclick="setCategory('{{ cat_name }}')" data-category="{{ cat_name }}" class="cat-pill px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition bg-zinc-100 text-zinc-700 hover:bg-zinc-200">
+                    {{ cat_name }} <span class="ml-1 px-1.5 py-0.2 rounded-full text-[10px] bg-zinc-200 text-zinc-700" id="badge-{{ cat_name }}">{{ cstat.remaining }}</span>
+                </button>
+                {% endfor %}
+            </div>
+
+            <!-- Search, Refresh 20 Products Button & Toggle -->
+            <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2 border-t border-zinc-100">
+                
+                <!-- Search Box -->
+                <div class="relative flex-1 max-w-md">
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none text-zinc-400">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                        </svg>
+                    </div>
+                    <input type="text" id="searchInput" placeholder="Search product title, SKU, or keyword..." class="w-full pl-9 pr-8 py-2 text-xs sm:text-sm bg-zinc-50 border border-zinc-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-zinc-900 focus:bg-white transition" oninput="handleSearchInput()">
+                    <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute inset-y-0 right-0 pr-2.5 flex items-center text-zinc-400 hover:text-zinc-600">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Right Action Buttons -->
+                <div class="flex items-center gap-2 justify-between sm:justify-end flex-wrap">
+                    
+                    <!-- Hide Done / Show Completed Toggle -->
+                    <label class="inline-flex items-center gap-2 cursor-pointer text-xs font-medium text-zinc-700 select-none bg-zinc-50 hover:bg-zinc-100 border border-zinc-200 px-3 py-2 rounded-lg transition">
+                        <input type="checkbox" id="showDoneCheckbox" onchange="toggleShowDone()" class="rounded border-zinc-300 text-zinc-900 focus:ring-zinc-900 w-3.5 h-3.5">
+                        <span>Show Completed (<span id="doneCountText">{{ stats.done_reels }}</span>)</span>
+                    </label>
+
+                    <!-- REFRESH 20 PRODUCTS BUTTON -->
+                    <button onclick="refresh20Products()" id="refreshBtn" class="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold text-xs px-4 py-2 rounded-lg shadow-sm transition active:scale-95">
+                        <svg class="w-4 h-4 text-zinc-950 transition duration-500" id="refreshIcon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                        <span>🔄 Refresh 20 Products</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Active View Status Banner -->
+        <div class="flex items-center justify-between text-xs text-zinc-500 mb-4 px-1">
+            <div id="viewStatusText">
+                Showing <strong class="text-zinc-800" id="visibleCount">{{ products|length }}</strong> of <strong class="text-zinc-800" id="totalFilteredCount">{{ total_count }}</strong> unmade products in <span class="font-semibold text-zinc-800" id="currentCategoryText">All Categories</span>
+            </div>
+            <div class="text-[11px] text-zinc-400">
+                Click <span class="font-semibold text-zinc-700">🎬 Reel Studio</span> for prompts or <span class="font-semibold text-emerald-600">✓ Tick</span> to mark done
+            </div>
+        </div>
+
+        <!-- Products Grid (20 items per view) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="productsGrid">
+            {% for p in products %}
+            <div class="product-card card-enter bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-xs hover:shadow-md transition duration-200 flex flex-col justify-between" id="card-{{ p.sku }}">
+                
+                <!-- Card Header Image & Badges -->
+                <div class="relative bg-zinc-100 aspect-square overflow-hidden group">
+                    {% if p.image_url %}
+                    <img src="{{ p.image_url }}" alt="{{ p.title }}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.onerror=null; this.src='/static/favicon.svg'; this.classList.add('p-8');">
+                    {% else %}
+                    <div class="w-full h-full flex items-center justify-center bg-zinc-100 text-zinc-400">
+                        <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </div>
+                    {% endif %}
+
+                    <!-- Category Badge -->
+                    <span class="absolute top-2.5 left-2.5 bg-black/75 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded-md">
+                        {{ p.category }}
+                    </span>
+
+                    <!-- Character Mode Recommendation Badge -->
+                    <span class="absolute top-2.5 right-2.5 {% if p.recommended_character_mode == 'female_creator' %}bg-purple-600/90 text-white{% else %}bg-amber-600/90 text-white{% endif %} backdrop-blur-md text-[10px] font-semibold px-2 py-0.5 rounded-md flex items-center gap-1">
+                        {% if p.recommended_character_mode == 'female_creator' %}👩 Creator{% else %}✨ ASMR{% endif %}
+                    </span>
+
+                    <!-- Discount Tag -->
+                    {% if p.discount_pct and p.discount_pct > 0 %}
+                    <span class="absolute bottom-2.5 left-2.5 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-md shadow-xs">
+                        {{ p.discount_pct }}% OFF
+                    </span>
+                    {% endif %}
+                </div>
+
+                <!-- Product Body Details -->
+                <div class="p-4 flex-1 flex flex-col justify-between">
+                    <div>
+                        <div class="text-[10px] font-mono text-zinc-400 mb-1 truncate" title="{{ p.sku }}">
+                            SKU: {{ p.sku }}
+                        </div>
+                        <h3 class="text-xs sm:text-sm font-bold text-zinc-900 line-clamp-2 leading-snug mb-2" title="{{ p.title }}">
+                            {{ p.title }}
+                        </h3>
+                    </div>
+
+                    <!-- Price Row -->
+                    <div class="pt-2 border-t border-zinc-100 flex items-baseline justify-between mb-3">
+                        <div class="flex items-baseline gap-1.5">
+                            <span class="text-base sm:text-lg font-extrabold text-zinc-950">₹{{ p.selling_price }}</span>
+                            {% if p.mrp > p.selling_price %}
+                            <span class="text-xs text-zinc-400 line-through">₹{{ p.mrp }}</span>
+                            {% endif %}
+                        </div>
+                        <a href="{{ p.store_url }}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-0.5">
+                            store
+                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Action Row: Reel Studio Modal & Tick Mark Button -->
+                    <div class="grid grid-cols-4 gap-1.5 pt-1">
+                        <button onclick="openReelModal('{{ p.sku }}')" class="col-span-3 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-xs py-2 px-2.5 rounded-lg flex items-center justify-center gap-1.5 transition active:scale-95 shadow-xs">
+                            <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                            <span>16s Blueprint</span>
+                        </button>
+
+                        <button onclick="toggleMarkDone('{{ p.sku }}', '{{ p.title|escape }}', this)" title="Mark Reel Made (Hides product from views)" class="col-span-1 bg-zinc-100 hover:bg-emerald-50 text-zinc-600 hover:text-emerald-700 border border-zinc-200 hover:border-emerald-300 rounded-lg flex items-center justify-center transition active:scale-90">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Empty State (if no products match or all done) -->
+        <div id="emptyState" class="hidden text-center py-16 bg-white rounded-2xl border border-zinc-200 my-4 p-8">
+            <div class="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+            <h3 class="text-lg font-bold text-zinc-900 mb-1">All Reels Made in this Batch! 🎉</h3>
+            <p class="text-sm text-zinc-500 max-w-md mx-auto mb-5">
+                You've completed the current 20 products for this category. Click below to pull the next 20 unmade products, or view completed reels.
+            </p>
+            <div class="flex items-center justify-center gap-3">
+                <button onclick="refresh20Products()" class="bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold text-xs px-4 py-2.5 rounded-lg shadow-xs transition">
+                    🔄 Load Next 20 Products
+                </button>
+                <button onclick="enableShowDone()" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-semibold text-xs px-4 py-2.5 rounded-lg border border-zinc-200 transition">
+                    View Completed Reels
+                </button>
+            </div>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="flex items-center justify-between pt-6 border-t border-zinc-200 mt-6" id="paginationBar">
+            <button onclick="prevPage()" id="prevBtn" class="px-3.5 py-1.5 rounded-lg border border-zinc-200 bg-white text-xs font-semibold text-zinc-700 hover:bg-zinc-50 disabled:opacity-40 disabled:cursor-not-allowed transition">
+                ← Previous 20
+            </button>
+            <span class="text-xs text-zinc-500 font-medium" id="pageInfoText">
+                Page <strong class="text-zinc-800" id="currentPageDisplay">{{ current_page }}</strong> of <strong class="text-zinc-800" id="totalPagesDisplay">{{ total_pages }}</strong>
+            </span>
+            <button onclick="nextPage()" id="nextBtn" class="px-3.5 py-1.5 rounded-lg border border-zinc-200 bg-white text-xs font-semibold text-zinc-700 hover:bg-zinc-50 disabled:opacity-40 disabled:cursor-not-allowed transition">
+                Next 20 →
+            </button>
+        </div>
+    </main>
+
+    <!-- 16-SECOND REEL BLUEPRINT MODAL -->
+    <div id="reelModal" class="fixed inset-0 z-50 hidden overflow-y-auto bg-black/60 backdrop-blur-sm p-3 sm:p-6 flex items-center justify-center">
+        <div class="relative bg-white rounded-2xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl border border-zinc-200 text-left my-auto">
+            
+            <!-- Modal Header -->
+            <div class="sticky top-0 bg-white/95 backdrop-blur-md px-5 sm:px-6 py-4 border-b border-zinc-200 flex items-center justify-between z-20">
+                <div class="flex items-center gap-3 min-w-0 pr-4">
+                    <img id="modalProductImg" src="/static/favicon.svg" class="w-10 h-10 rounded-lg object-cover border border-zinc-200 flex-shrink-0" alt="Product">
+                    <div class="min-w-0">
+                        <div class="flex items-center gap-2">
+                            <span class="text-[10px] font-mono text-zinc-400" id="modalProductSku">SKU</span>
+                            <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-emerald-100 text-emerald-800" id="modalProductPrice">₹399</span>
+                            <span class="text-[10px] font-semibold px-1.5 py-0.2 rounded bg-zinc-100 text-zinc-600" id="modalProductCategory">Category</span>
+                        </div>
+                        <h2 class="text-sm sm:text-base font-bold text-zinc-900 truncate" id="modalProductTitle">Product Name</h2>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 flex-shrink-0">
+                    <button onclick="copyAllModal()" class="hidden sm:inline-flex items-center gap-1 bg-amber-500 hover:bg-amber-600 text-zinc-950 font-bold text-xs px-3 py-1.5 rounded-lg transition active:scale-95 shadow-xs">
+                        📋 Copy Full Pack
+                    </button>
+                    <button onclick="closeReelModal()" class="w-8 h-8 rounded-lg bg-zinc-100 hover:bg-zinc-200 text-zinc-500 hover:text-zinc-800 flex items-center justify-center transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Modal Content Body -->
+            <div class="p-5 sm:p-6 space-y-6">
+
+                <!-- Mode Switcher: Female Creator vs ASMR Hands-Only -->
+                <div class="bg-zinc-50 rounded-xl p-3.5 border border-zinc-200 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                    <div>
+                        <div class="text-xs font-bold text-zinc-900 flex items-center gap-1.5">
+                            <span>🎭 Character & Visual Direction Mode</span>
+                        </div>
+                        <div class="text-[11px] text-zinc-500" id="modeDescriptionText">
+                            Toggle between Indian Female Creator vs Aesthetic ASMR Hands-Only
+                        </div>
+                    </div>
+
+                    <div class="flex items-center bg-zinc-200/80 p-0.5 rounded-lg">
+                        <button onclick="switchCharacterMode('female_creator')" id="modeBtnCreator" class="px-3 py-1 rounded-md text-xs font-bold transition flex items-center gap-1.5 bg-white text-zinc-900 shadow-xs">
+                            👩 Female Creator
+                        </button>
+                        <button onclick="switchCharacterMode('asmr_hands')" id="modeBtnAsmr" class="px-3 py-1 rounded-md text-xs font-medium text-zinc-600 hover:text-zinc-900 transition flex items-center gap-1.5">
+                            ✨ ASMR Hands-Only
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Timing Blueprint Bar (Exactly 16 Seconds: 8s + 8s) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs">
+                    <div class="bg-amber-50/70 border border-amber-200/80 rounded-xl p-3.5">
+                        <div class="flex items-center justify-between font-bold text-amber-950 mb-1">
+                            <span>⏱️ ACT 1 (0 to 8 Seconds)</span>
+                            <span class="text-[10px] px-1.5 py-0.5 rounded bg-amber-200/70 text-amber-900">CLIP #1</span>
+                        </div>
+                        <p class="text-zinc-600 text-[11px] leading-relaxed">
+                            <strong>Goal:</strong> High-energy Hook (0-2s) + Pain/Price Shock (2-4s) + First Tactile Demo (4-7s) → Settle into a steady, crystal-clear <strong>Anchor Frame</strong> at 8s.
+                        </p>
+                    </div>
+
+                    <div class="bg-emerald-50/70 border border-emerald-200/80 rounded-xl p-3.5">
+                        <div class="flex items-center justify-between font-bold text-emerald-950 mb-1">
+                            <span>⏱️ ACT 2 (8 to 16 Seconds)</span>
+                            <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-200/70 text-emerald-900">CLIP #2</span>
+                        </div>
+                        <p class="text-zinc-600 text-[11px] leading-relaxed">
+                            <strong>Continuity Engine Injected:</strong> Continues seamlessly from the 8s anchor frame → Aesthetic Room Transformation (8-12s) → Auto-DM Call-To-Action (12-16s).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 1. 6-Panel Storyboard Grid Prompt (Midjourney / Ideogram / SDXL) -->
+                <div class="bg-zinc-900 text-white rounded-xl p-4 sm:p-5 border border-zinc-800">
+                    <div class="flex items-center justify-between mb-2">
+                        <div class="flex items-center gap-2">
+                            <span class="text-amber-400 font-bold text-xs uppercase tracking-wider">🖼️ 6-Panel Storyboard Grid Prompt</span>
+                            <span class="text-[10px] px-1.5 py-0.2 rounded bg-zinc-800 text-zinc-300">Midjourney / Ideogram / SDXL</span>
+                        </div>
+                        <button onclick="copyText('storyboardPromptText', this)" class="bg-zinc-800 hover:bg-zinc-700 text-zinc-200 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95 flex items-center gap-1">
+                            <span>Copy Prompt</span>
+                        </button>
+                    </div>
+                    <p class="text-zinc-400 text-[11px] mb-2.5">
+                        Generates a single 2x3 sequential comic grid covering all 6 key story moments (0-3s hook, 3-5s price shock, 5-8s demo, 8-11s anchor, 11-14s makeover, 14-16s CTA) with identical character & product consistency.
+                    </p>
+                    <div class="bg-zinc-950/80 p-3 rounded-lg border border-zinc-800 font-mono text-xs text-zinc-300 leading-relaxed max-h-40 overflow-y-auto selection:bg-amber-500 selection:text-black" id="storyboardPromptText">
+                        Loading...
+                    </div>
+                </div>
+
+                <!-- 2. Dual-Act Video Prompts (Kling / Runway / Luma / VideoFX) -->
+                <div class="space-y-4">
+                    
+                    <!-- Act 1 Prompt -->
+                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-xs text-zinc-900">🎬 Act 1 Video Prompt (0–8s: Hook & Unboxing)</span>
+                                <span class="text-[10px] font-semibold text-amber-800 bg-amber-100 px-2 py-0.5 rounded">First Clip</span>
+                            </div>
+                            <button onclick="copyText('act1PromptText', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
+                                Copy Act 1
+                            </button>
+                        </div>
+                        <div class="bg-zinc-50 p-3 rounded-lg border border-zinc-200 font-mono text-xs text-zinc-800 leading-relaxed select-all" id="act1PromptText">
+                            Loading...
+                        </div>
+                    </div>
+
+                    <!-- Act 2 Prompt (Continuity Injected) -->
+                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-xs text-zinc-900">🎬 Act 2 Video Prompt (8–16s: Continuity + Makeover + CTA)</span>
+                                <span class="text-[10px] font-semibold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">Second Clip</span>
+                            </div>
+                            <button onclick="copyText('act2PromptText', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
+                                Copy Act 2
+                            </button>
+                        </div>
+                        <div class="bg-emerald-50/50 p-3 rounded-lg border border-emerald-200 font-mono text-xs text-zinc-800 leading-relaxed select-all" id="act2PromptText">
+                            Loading...
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- 3. 16-Second Timed Voiceover Script & Viral Hooks -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <!-- Voiceover Script -->
+                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-1.5">
+                                <span class="font-bold text-xs text-zinc-900">🎙️ 16-Second Voiceover Script</span>
+                                <span class="text-[10px] text-zinc-400 font-medium">(~40 words)</span>
+                            </div>
+                            <div class="flex items-center gap-1">
+                                <button onclick="setVoiceoverLang('hinglish')" id="voHinglishBtn" class="text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-900 text-white">Hinglish</button>
+                                <button onclick="setVoiceoverLang('english')" id="voEnglishBtn" class="text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-100 text-zinc-600 hover:text-zinc-900">English</button>
+                                <button onclick="copyText('voScriptText', this)" class="text-[10px] font-semibold px-2 py-0.5 rounded bg-zinc-100 hover:bg-zinc-200 text-zinc-800 ml-1">Copy</button>
+                            </div>
+                        </div>
+                        <div class="bg-zinc-50 p-3 rounded-lg border border-zinc-200 text-xs text-zinc-800 leading-relaxed italic" id="voScriptText">
+                            Loading...
+                        </div>
+                    </div>
+
+                    <!-- On-Screen Hooks -->
+                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-xs text-zinc-900">⚡ Viral 0-3s On-Screen Hooks</span>
+                            <span class="text-[10px] text-amber-700 bg-amber-50 px-2 py-0.5 rounded font-semibold">High CTR</span>
+                        </div>
+                        <ul class="space-y-1.5 text-xs text-zinc-700" id="hooksList">
+                            <!-- Populated via JS -->
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- 4. Viral Caption, Auto-DM Trigger & Hashtags -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    
+                    <!-- Instagram Caption & Auto-DM Keyword -->
+                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
+                        <div class="flex items-center justify-between mb-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-bold text-xs text-zinc-900">💬 Viral Instagram / Shorts Caption</span>
+                                <span class="text-[10px] font-bold px-1.5 py-0.2 rounded bg-amber-100 text-amber-900" id="autoDmBadge">DM: LINK</span>
+                            </div>
+                            <button onclick="copyText('captionText', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
+                                Copy Caption
+                            </button>
+                        </div>
+                        <div class="bg-zinc-50 p-3 rounded-lg border border-zinc-200 text-xs text-zinc-800 leading-relaxed whitespace-pre-line max-h-36 overflow-y-auto" id="captionText">
+                            Loading...
+                        </div>
+                    </div>
+
+                    <!-- Trending Hashtags & Recommendation Algorithm Keywords -->
+                    <div class="bg-white rounded-xl border border-zinc-200 p-4 shadow-xs">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="font-bold text-xs text-zinc-900">🏷️ Hashtags & Algorithm Keywords</span>
+                            <button onclick="copyText('hashtagsText', this)" class="bg-zinc-100 hover:bg-zinc-200 text-zinc-800 text-xs font-semibold px-2.5 py-1 rounded-md transition active:scale-95">
+                                Copy Tags
+                            </button>
+                        </div>
+                        <div class="bg-zinc-50 p-3 rounded-lg border border-zinc-200 text-xs text-zinc-600 leading-relaxed font-mono select-all mb-2 max-h-24 overflow-y-auto" id="hashtagsText">
+                            Loading...
+                        </div>
+                        <div class="text-[11px] text-zinc-500">
+                            <strong>Target SEO Search Keywords:</strong> <span class="italic text-zinc-700" id="recKeywordsText">...</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="sticky bottom-0 bg-zinc-50 px-5 sm:px-6 py-3.5 border-t border-zinc-200 flex items-center justify-between">
+                <div class="text-[11px] text-zinc-500">
+                    Tip: Load Act 1 into Kling/Luma, then use the 8s end frame with Act 2.
+                </div>
+                <div class="flex items-center gap-2">
+                    <button onclick="markCurrentModalDone()" id="modalMarkDoneBtn" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs px-4 py-2 rounded-lg shadow-xs transition active:scale-95 flex items-center gap-1.5">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/>
+                        </svg>
+                        <span>Mark Reel Made & Hide</span>
+                    </button>
+                    <button onclick="closeReelModal()" class="bg-white hover:bg-zinc-100 text-zinc-700 border border-zinc-200 font-semibold text-xs px-3.5 py-2 rounded-lg transition">
+                        Close
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-12 opacity-0 transition duration-300 pointer-events-none bg-zinc-900 text-white text-xs font-semibold px-4 py-2.5 rounded-lg shadow-lg flex items-center gap-2">
+        <span id="toastIcon">📋</span>
+        <span id="toastMsg">Copied to clipboard!</span>
+    </div>
+
+    <!-- Interactive Client Script -->
+    <script>
+        let currentCategory = "All";
+        let currentPage = {{ current_page }};
+        let totalPages = {{ total_pages }};
+        let showDone = false;
+        let activeProductData = null;
+        let activePackData = null;
+        let activeCharacterMode = "female_creator";
+        let searchTimeout = null;
+
+        // Fetch products with category, search, page, show_done
+        async function fetchProducts(page = 1, shuffle = false) {
+            currentPage = page;
+            const searchVal = document.getElementById("searchInput").value.trim();
+            const url = new URL("/api/reels/products", window.location.origin);
+            url.searchParams.set("category", currentCategory);
+            url.searchParams.set("page", page);
+            url.searchParams.set("limit", 20);
+            if (searchVal) url.searchParams.set("search", searchVal);
+            if (showDone) url.searchParams.set("show_done", "1");
+            if (shuffle) url.searchParams.set("shuffle", Date.now());
+
+            try {
+                const res = await fetch(url.toString());
+                const data = await res.json();
+                if (data.products) {
+                    renderProducts(data.products, data.total_count);
+                    updateStatsUI(data.stats, data.total_count, data.current_page, data.total_pages);
+                }
+            } catch (err) {
+                console.error("Error fetching products:", err);
+            }
+        }
+
+        function renderProducts(products, totalCount) {
+            const grid = document.getElementById("productsGrid");
+            const empty = document.getElementById("emptyState");
+
+            if (!products || products.length === 0) {
+                grid.innerHTML = "";
+                empty.classList.remove("hidden");
+                document.getElementById("visibleCount").innerText = "0";
+                return;
+            }
+
+            empty.classList.add("hidden");
+            document.getElementById("visibleCount").innerText = products.length;
+
+            grid.innerHTML = products.map(p => {
+                const isCreator = (p.recommended_character_mode === 'female_creator');
+                const badgeClass = isCreator ? 'bg-purple-600/90 text-white' : 'bg-amber-600/90 text-white';
+                const badgeLabel = isCreator ? '👩 Creator' : '✨ ASMR';
+
+                return `
+                <div class="product-card card-enter bg-white rounded-xl border border-zinc-200 overflow-hidden shadow-xs hover:shadow-md transition duration-200 flex flex-col justify-between" id="card-${p.sku}">
+                    <div class="relative bg-zinc-100 aspect-square overflow-hidden group">
+                        ${p.image_url ? `
+                            <img src="${p.image_url}" alt="${p.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" loading="lazy" onerror="this.onerror=null; this.src='/static/favicon.svg'; this.classList.add('p-8');">
+                        ` : `
+                            <div class="w-full h-full flex items-center justify-center bg-zinc-100 text-zinc-400">
+                                <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+                            </div>
+                        `}
+                        <span class="absolute top-2.5 left-2.5 bg-black/75 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded-md">
+                            ${p.category}
+                        </span>
+                        <span class="absolute top-2.5 right-2.5 ${badgeClass} backdrop-blur-md text-[10px] font-semibold px-2 py-0.5 rounded-md flex items-center gap-1">
+                            ${badgeLabel}
+                        </span>
+                        ${p.discount_pct && p.discount_pct > 0 ? `
+                            <span class="absolute bottom-2.5 left-2.5 bg-emerald-600 text-white text-[10px] font-bold px-2 py-0.5 rounded-md shadow-xs">
+                                ${p.discount_pct}% OFF
+                            </span>
+                        ` : ''}
+                        ${p.is_done ? `
+                            <span class="absolute bottom-2.5 right-2.5 bg-emerald-700 text-white text-[10px] font-bold px-2 py-0.5 rounded-md shadow-xs flex items-center gap-1">
+                                ✓ Made
+                            </span>
+                        ` : ''}
+                    </div>
+
+                    <div class="p-4 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="text-[10px] font-mono text-zinc-400 mb-1 truncate" title="${p.sku}">
+                                SKU: ${p.sku}
+                            </div>
+                            <h3 class="text-xs sm:text-sm font-bold text-zinc-900 line-clamp-2 leading-snug mb-2" title="${p.title}">
+                                ${p.title}
+                            </h3>
+                        </div>
+
+                        <div class="pt-2 border-t border-zinc-100 flex items-baseline justify-between mb-3">
+                            <div class="flex items-baseline gap-1.5">
+                                <span class="text-base sm:text-lg font-extrabold text-zinc-950">₹${p.selling_price}</span>
+                                ${p.mrp > p.selling_price ? `<span class="text-xs text-zinc-400 line-through">₹${p.mrp}</span>` : ''}
+                            </div>
+                            <a href="${p.store_url}" target="_blank" rel="noopener noreferrer" class="text-[11px] font-semibold text-emerald-700 hover:text-emerald-900 flex items-center gap-0.5">
+                                store
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                            </a>
+                        </div>
+
+                        <div class="grid grid-cols-4 gap-1.5 pt-1">
+                            <button onclick="openReelModal('${p.sku}')" class="col-span-3 bg-zinc-900 hover:bg-zinc-800 text-white font-semibold text-xs py-2 px-2.5 rounded-lg flex items-center justify-center gap-1.5 transition active:scale-95 shadow-xs">
+                                <svg class="w-3.5 h-3.5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+                                <span>16s Blueprint</span>
+                            </button>
+
+                            <button onclick="toggleMarkDone('${p.sku}', '${encodeURIComponent(p.title)}', this)" title="${p.is_done ? 'Reel Already Made' : 'Mark Reel Made (Hides product)'}" class="col-span-1 ${p.is_done ? 'bg-emerald-600 text-white border-emerald-600' : 'bg-zinc-100 hover:bg-emerald-50 text-zinc-600 hover:text-emerald-700 border-zinc-200 hover:border-emerald-300'} border rounded-lg flex items-center justify-center transition active:scale-90">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join("");
+        }
+
+        function updateStatsUI(stats, totalFiltered, page, totalPgs) {
+            if (stats) {
+                document.getElementById("statTotalProducts").innerText = stats.total_products;
+                document.getElementById("statDoneReels").innerText = stats.done_reels;
+                document.getElementById("statRemainingReels").innerText = stats.remaining_reels;
+                document.getElementById("doneCountText").innerText = stats.done_reels;
+
+                // Update category badges
+                const allBadge = document.getElementById("badge-All");
+                if (allBadge) allBadge.innerText = stats.total_products;
+
+                if (stats.categories) {
+                    for (const [cname, cstat] of Object.entries(stats.categories)) {
+                        const b = document.getElementById("badge-" + cname);
+                        if (b) b.innerText = cstat.remaining;
+                    }
+                }
+            }
+
+            document.getElementById("totalFilteredCount").innerText = totalFiltered;
+            document.getElementById("currentCategoryText").innerText = currentCategory === "All" ? "All Categories" : currentCategory;
+            document.getElementById("currentPageDisplay").innerText = page;
+            document.getElementById("totalPagesDisplay").innerText = totalPgs;
+
+            document.getElementById("prevBtn").disabled = (page <= 1);
+            document.getElementById("nextBtn").disabled = (page >= totalPgs);
+        }
+
+        // Category Filter Selection
+        function setCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll(".cat-pill").forEach(el => {
+                if (el.getAttribute("data-category") === cat) {
+                    el.className = "cat-pill active px-3.5 py-1.5 rounded-lg text-xs font-semibold whitespace-nowrap transition bg-zinc-900 text-white shadow-xs";
+                } else {
+                    el.className = "cat-pill px-3.5 py-1.5 rounded-lg text-xs font-medium whitespace-nowrap transition bg-zinc-100 text-zinc-700 hover:bg-zinc-200";
+                }
+            });
+            fetchProducts(1);
+        }
+
+        // Search Input Handling with Debounce
+        function handleSearchInput() {
+            const val = document.getElementById("searchInput").value;
+            const clearBtn = document.getElementById("clearSearchBtn");
+            if (val.trim()) {
+                clearBtn.classList.remove("hidden");
+            } else {
+                clearBtn.classList.add("hidden");
+            }
+
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                fetchProducts(1);
+            }, 250);
+        }
+
+        function clearSearch() {
+            document.getElementById("searchInput").value = "";
+            document.getElementById("clearSearchBtn").classList.add("hidden");
+            fetchProducts(1);
+        }
+
+        // Refresh 20 Products Button
+        function refresh20Products() {
+            const icon = document.getElementById("refreshIcon");
+            icon.classList.add("rotate-180");
+            setTimeout(() => icon.classList.remove("rotate-180"), 600);
+            fetchProducts(currentPage, true);
+            showToast("🔄 20 Fresh Products Refreshed!");
+        }
+
+        // Toggle Show Completed Products
+        function toggleShowDone() {
+            showDone = document.getElementById("showDoneCheckbox").checked;
+            fetchProducts(1);
+        }
+
+        function enableShowDone() {
+            document.getElementById("showDoneCheckbox").checked = true;
+            toggleShowDone();
+        }
+
+        // Pagination
+        function prevPage() {
+            if (currentPage > 1) fetchProducts(currentPage - 1);
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages) fetchProducts(currentPage + 1);
+        }
+
+        // Toggle Mark Done on Card
+        async function toggleMarkDone(sku, titleEnc, btn) {
+            const title = decodeURIComponent(titleEnc);
+            const card = document.getElementById("card-" + sku);
+
+            try {
+                const res = await fetch("/api/reels/mark-done", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ sku: sku, title: title, character_mode: activeCharacterMode })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast("✅ Reel marked made! Product saved to ledger.");
+                    
+                    // If not showing done, smoothly animate and hide the card
+                    if (!showDone) {
+                        card.classList.add("card-exit");
+                        setTimeout(() => {
+                            card.remove();
+                            // Update counts
+                            updateStatsUI(data.stats, parseInt(document.getElementById("totalFilteredCount").innerText) - 1, currentPage, totalPages);
+                        }, 300);
+                    } else {
+                        btn.className = "col-span-1 bg-emerald-600 text-white border-emerald-600 border rounded-lg flex items-center justify-center transition";
+                    }
+                }
+            } catch (err) {
+                console.error("Error marking done:", err);
+            }
+        }
+
+        // 16-Second Reel Production Modal
+        async function openReelModal(sku) {
+            const modal = document.getElementById("reelModal");
+            modal.classList.remove("hidden");
+            document.body.style.overflow = "hidden";
+
+            // Set loading text
+            document.getElementById("modalProductSku").innerText = sku;
+            document.getElementById("modalProductTitle").innerText = "Generating 16s AI Reel Pack...";
+            document.getElementById("storyboardPromptText").innerText = "Generating 6-panel storyboard grid prompt...";
+            document.getElementById("act1PromptText").innerText = "Generating Act 1 (0-8s) video prompt...";
+            document.getElementById("act2PromptText").innerText = "Injecting continuity prompt & generating Act 2 (8-16s)...";
+            document.getElementById("voScriptText").innerText = "Generating 16s voiceover script...";
+            document.getElementById("captionText").innerText = "Generating viral caption with Auto-DM keyword...";
+
+            try {
+                const res = await fetch(`/api/reels/generate?sku=${encodeURIComponent(sku)}&character_mode=${activeCharacterMode}`);
+                const data = await res.json();
+                if (data.success && data.pack) {
+                    activePackData = data.pack;
+                    renderModalPack(data.pack);
+                }
+            } catch (err) {
+                console.error("Error generating pack:", err);
+            }
+        }
+
+        function renderModalPack(pack) {
+            document.getElementById("modalProductTitle").innerText = pack.title;
+            document.getElementById("modalProductSku").innerText = "SKU: " + pack.sku;
+            document.getElementById("modalProductPrice").innerText = "₹" + pack.selling_price;
+            document.getElementById("modalProductCategory").innerText = pack.category;
+            if (pack.image_url) {
+                document.getElementById("modalProductImg").src = pack.image_url;
+            }
+
+            document.getElementById("storyboardPromptText").innerText = pack.storyboard_grid_prompt;
+            document.getElementById("act1PromptText").innerText = pack.acts.act_1.prompt;
+            document.getElementById("act2PromptText").innerText = pack.acts.act_2.prompt;
+            document.getElementById("autoDmBadge").innerText = "DM: " + pack.cta_keyword;
+            document.getElementById("captionText").innerText = pack.caption;
+            document.getElementById("hashtagsText").innerText = pack.hashtags;
+            document.getElementById("recKeywordsText").innerText = pack.recommendation_keywords.join(" • ");
+
+            // Voiceover default Hinglish
+            setVoiceoverLang("hinglish");
+
+            // Hooks list
+            const hooksContainer = document.getElementById("hooksList");
+            hooksContainer.innerHTML = pack.hooks.map(h => `
+                <li class="flex items-start gap-1.5 p-1.5 rounded-md hover:bg-zinc-50 cursor-pointer" onclick="copyHook('${h.replace(/'/g, "\\'")}')">
+                    <span class="text-amber-500 font-bold">•</span>
+                    <span class="flex-1">${h}</span>
+                    <span class="text-[10px] text-zinc-400 opacity-60 hover:opacity-100">copy</span>
+                </li>
+            `).join("");
+        }
+
+        function setVoiceoverLang(lang) {
+            if (!activePackData) return;
+            const hBtn = document.getElementById("voHinglishBtn");
+            const eBtn = document.getElementById("voEnglishBtn");
+            const voEl = document.getElementById("voScriptText");
+
+            if (lang === "hinglish") {
+                voEl.innerText = `"${activePackData.voiceover_script.hinglish}"`;
+                hBtn.className = "text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-900 text-white";
+                eBtn.className = "text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-100 text-zinc-600 hover:text-zinc-900";
+            } else {
+                voEl.innerText = `"${activePackData.voiceover_script.english}"`;
+                eBtn.className = "text-[10px] font-bold px-2 py-0.5 rounded bg-zinc-900 text-white";
+                hBtn.className = "text-[10px] font-medium px-2 py-0.5 rounded bg-zinc-100 text-zinc-600 hover:text-zinc-900";
+            }
+        }
+
+        // Switch Character Mode in Modal
+        async function switchCharacterMode(mode) {
+            activeCharacterMode = mode;
+            const cBtn = document.getElementById("modeBtnCreator");
+            const aBtn = document.getElementById("modeBtnAsmr");
+            const desc = document.getElementById("modeDescriptionText");
+
+            if (mode === "female_creator") {
+                cBtn.className = "px-3 py-1 rounded-md text-xs font-bold transition flex items-center gap-1.5 bg-white text-zinc-900 shadow-xs";
+                aBtn.className = "px-3 py-1 rounded-md text-xs font-medium text-zinc-600 hover:text-zinc-900 transition flex items-center gap-1.5";
+                desc.innerText = "Active: Indian Female Creator Mode (Expressive unboxing, relatable reactions & direct CTA)";
+            } else {
+                aBtn.className = "px-3 py-1 rounded-md text-xs font-bold transition flex items-center gap-1.5 bg-white text-zinc-900 shadow-xs";
+                cBtn.className = "px-3 py-1 rounded-md text-xs font-medium text-zinc-600 hover:text-zinc-900 transition flex items-center gap-1.5";
+                desc.innerText = "Active: ASMR Hands-Only Mode (Aesthetic tactile unboxing, Japandi lighting, macro clicks & no face)";
+            }
+
+            if (activePackData && activePackData.sku) {
+                openReelModal(activePackData.sku);
+            }
+        }
+
+        function closeReelModal() {
+            document.getElementById("reelModal").classList.add("hidden");
+            document.body.style.overflow = "auto";
+        }
+
+        async function markCurrentModalDone() {
+            if (!activePackData) return;
+            const sku = activePackData.sku;
+            const title = activePackData.title;
+
+            try {
+                const res = await fetch("/api/reels/mark-done", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ sku: sku, title: title, character_mode: activeCharacterMode })
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast("✅ Reel marked completed and hidden from catalog view!");
+                    closeReelModal();
+                    fetchProducts(currentPage);
+                }
+            } catch (err) {
+                console.error("Error marking done from modal:", err);
+            }
+        }
+
+        // Copy utilities
+        function copyText(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text);
+            showToast("📋 Copied to clipboard!");
+            if (btn) {
+                const orig = btn.innerText;
+                btn.innerText = "✓ Copied";
+                setTimeout(() => btn.innerText = orig, 1500);
+            }
+        }
+
+        function copyHook(hook) {
+            navigator.clipboard.writeText(hook);
+            showToast("🎯 Hook copied to clipboard!");
+        }
+
+        function copyAllModal() {
+            if (!activePackData) return;
+            const fullContent = `
+=== ZENLORA 16-SECOND AI REEL PRODUCTION PACK ===
+Product: ${activePackData.title}
+SKU: ${activePackData.sku}
+Selling Price: ₹${activePackData.selling_price} | MRP: ₹${activePackData.mrp}
+Mode: ${activePackData.character_mode}
+Store URL: ${activePackData.store_url}
+
+[1. 6-PANEL STORYBOARD GRID PROMPT (Midjourney/Ideogram)]
+${activePackData.storyboard_grid_prompt}
+
+[2. ACT 1 VIDEO PROMPT (0-8s | Kling/Runway/Luma)]
+${activePackData.acts.act_1.prompt}
+
+[3. ACT 2 VIDEO PROMPT (8-16s | Continuity Injected)]
+${activePackData.acts.act_2.prompt}
+
+[4. 16-SECOND TIMED VOICEOVER SCRIPT (Hinglish)]
+${activePackData.voiceover_script.hinglish}
+
+[5. VIRAL INSTAGRAM / SHORTS CAPTION]
+${activePackData.caption}
+
+[6. HASHTAGS & ALGORITHM KEYWORDS]
+${activePackData.hashtags}
+SEO Keywords: ${activePackData.recommendation_keywords.join(", ")}
+            `.trim();
+
+            navigator.clipboard.writeText(fullContent);
+            showToast("🚀 Complete 16s Reel Pack Copied!");
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById("toast");
+            document.getElementById("toastMsg").innerText = msg;
+            toast.classList.remove("opacity-0", "translate-y-12");
+            toast.classList.add("opacity-100", "translate-y-0");
+            setTimeout(() => {
+                toast.classList.remove("opacity-100", "translate-y-0");
+                toast.classList.add("opacity-0", "translate-y-12");
+            }, 2200);
+        }
+
+        // Close modal on Escape
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeReelModal();
+        });
+    </script>
+</body>
+</html>
