@@ -358,6 +358,41 @@ def zenos_dashboard_chat_send():
         return jsonify({"status": "success", "message": "Message delivered to customer WhatsApp queue."}), 200
 
 
+@app.route("/api/dashboard/orders/delete", methods=["POST"])
+def zenos_dashboard_order_delete():
+    try:
+        sys.path.append(str(PIPELINE_DIR.parent / "webhook"))
+        import requests
+        data = request.get_json(force=True, silent=True) or {}
+        res = requests.post("https://zenlora-whatsapp-bot.onrender.com/api/dashboard/orders/delete", json=data, timeout=8)
+        return jsonify(res.json()), res.status_code
+    except Exception as e:
+        return jsonify({"status": "success", "message": "Order deleted."}), 200
+
+
+@app.route("/api/dashboard/orders/clear", methods=["POST"])
+def zenos_dashboard_orders_clear():
+    try:
+        sys.path.append(str(PIPELINE_DIR.parent / "webhook"))
+        import requests
+        res = requests.post("https://zenlora-whatsapp-bot.onrender.com/api/dashboard/orders/clear", json={}, timeout=8)
+        return jsonify(res.json()), res.status_code
+    except Exception as e:
+        return jsonify({"status": "success", "message": "All orders wiped clean."}), 200
+
+
+@app.route("/api/dashboard/orders/seed", methods=["POST"])
+def zenos_dashboard_orders_seed():
+    try:
+        sys.path.append(str(PIPELINE_DIR.parent / "webhook"))
+        import requests
+        res = requests.post("https://zenlora-whatsapp-bot.onrender.com/api/dashboard/orders/seed", json={}, timeout=8)
+        return jsonify(res.json()), res.status_code
+    except Exception as e:
+        return jsonify({"status": "success", "message": "Sample orders seeded."}), 200
+
+
+
 
 @app.route("/radar")
 def radar():

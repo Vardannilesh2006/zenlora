@@ -45,12 +45,20 @@
       --color-purple-soft: #f5f3ff;
       --color-purple-border: #ddd6fe;
 
+      --wa-teal: #008069;
+      --wa-dark-teal: #075e54;
+      --wa-bg: #efeae2;
+      --wa-bubble-out: #d9fdd3;
+      --wa-bubble-in: #ffffff;
+      --wa-tick-blue: #53bdeb;
+
       --font-display: 'Space Grotesk', system-ui, sans-serif;
       --font-body: 'Inter', system-ui, sans-serif;
       --font-mono: 'JetBrains Mono', monospace;
 
       --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
       --shadow-card: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+      --shadow-phone: 0 25px 60px -15px rgba(0, 0, 0, 0.22), 0 0 0 1px rgba(0,0,0,0.08);
       --shadow-modal: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
     }
 
@@ -152,7 +160,7 @@
     .header-actions {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 10px;
     }
     .panic-btn {
       font-family: var(--font-mono);
@@ -280,6 +288,7 @@
       align-items: center;
       gap: 8px;
       transition: all 0.15s;
+      white-space: nowrap;
     }
     .vtab:hover {
       color: var(--color-ink);
@@ -329,6 +338,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
+      flex-wrap: wrap;
     }
     .panel-title {
       font-family: var(--font-display);
@@ -347,6 +357,8 @@
       justify-content: space-between;
       gap: 14px;
       flex-wrap: wrap;
+      width: 100%;
+      margin-top: 10px;
     }
     .search-box {
       position: relative;
@@ -394,6 +406,7 @@
       color: var(--color-muted);
       cursor: pointer;
       transition: all 0.12s;
+      white-space: nowrap;
     }
     .fpill:hover {
       background: var(--color-surface);
@@ -536,198 +549,376 @@
     .btn-secondary:hover {
       background: var(--color-surface);
     }
+    .btn-danger {
+      background: var(--color-red-soft);
+      color: var(--color-red);
+      border: 1px solid var(--color-red-border);
+    }
+    .btn-danger:hover {
+      background: var(--color-red);
+      color: #ffffff;
+    }
     .btn-xs {
       font-size: 11px;
       padding: 4px 8px;
       border-radius: 4px;
     }
 
-    /* CHAT CONSOLE LAYOUT */
-    .chat-layout {
+    /* REAL SMARTPHONE WHATSAPP SIMULATOR */
+    .chat-container-split {
       display: grid;
-      grid-template-columns: 340px 1fr;
-      border: 1px solid var(--color-rule);
-      border-radius: 10px;
-      background: #ffffff;
-      box-shadow: var(--shadow-card);
-      overflow: hidden;
-      height: 640px;
+      grid-template-columns: 360px 1fr;
+      gap: 24px;
+      align-items: flex-start;
     }
-    @media (max-width: 900px) {
-      .chat-layout { grid-template-columns: 1fr; height: auto; }
+    @media (max-width: 1024px) {
+      .chat-container-split {
+        grid-template-columns: 1fr;
+      }
     }
 
-    .chat-sidebar {
-      border-right: 1px solid var(--color-rule);
-      background: #fafbfe;
+    /* Phone Device Frame */
+    .phone-mockup-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .phone-chassis {
+      width: 400px;
+      height: 770px;
+      background: #0f172a;
+      border: 11px solid #1e293b;
+      border-radius: 48px;
+      box-shadow: var(--shadow-phone);
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
     }
-    .chat-sidebar-header {
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--color-rule);
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 14px;
+    @media (max-width: 440px) {
+      .phone-chassis {
+        width: 100%;
+        height: 700px;
+        border-width: 6px;
+        border-radius: 36px;
+      }
     }
-    .customer-list {
-      flex: 1;
-      overflow-y: auto;
-    }
-    .customer-item {
-      padding: 12px 16px;
-      border-bottom: 1px solid var(--color-rule);
-      cursor: pointer;
-      transition: background 0.12s;
+
+    /* Dynamic Island */
+    .dynamic-island {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 112px;
+      height: 24px;
+      background: #000000;
+      border-radius: 14px;
+      z-index: 50;
       display: flex;
-      gap: 12px;
-      align-items: flex-start;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
     }
-    .customer-item:hover {
-      background: var(--color-surface);
+    .dynamic-island .camera-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #111e33;
     }
-    .customer-item.active {
-      background: #eff6ff;
-      border-left: 3px solid var(--color-accent);
+    .dynamic-island .sensor-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #0b1220;
     }
-    .avatar {
+
+    /* Mobile Status Bar */
+    .mobile-status-bar {
+      height: 40px;
+      background: var(--wa-teal);
+      color: #ffffff;
+      padding: 10px 24px 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 600;
+      font-family: var(--font-body);
+      user-select: none;
+    }
+
+    /* WhatsApp Mobile App Bar */
+    .wa-app-bar {
+      background: var(--wa-teal);
+      color: #ffffff;
+      padding: 8px 14px 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .wa-profile-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .wa-back-btn {
+      font-size: 18px;
+      color: #ffffff;
+      cursor: pointer;
+    }
+    .wa-avatar {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: var(--color-surface);
-      color: var(--color-accent);
-      border: 1px solid var(--color-rule-strong);
-      font-family: var(--font-display);
+      background: #ffffff;
+      color: var(--wa-teal);
       font-weight: 700;
       font-size: 13px;
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-shrink: 0;
+      border: 1px solid rgba(255,255,255,0.4);
     }
-
-    .chat-pane {
-      display: flex;
-      flex-direction: column;
-      background: #ffffff;
+    .wa-contact-name {
+      font-size: 14px;
+      font-weight: 600;
+      color: #ffffff;
+      line-height: 1.2;
     }
-    .chat-pane-header {
-      padding: 14px 20px;
-      border-bottom: 1px solid var(--color-rule);
-      background: #fafbfe;
+    .wa-contact-status {
+      font-size: 11px;
+      color: #e0f2fe;
+    }
+    .wa-app-icons {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 12px;
+      gap: 16px;
+      font-size: 15px;
     }
-    .chat-stream {
+
+    /* WhatsApp Chat Canvas */
+    .wa-canvas {
       flex: 1;
-      padding: 20px;
+      background-color: var(--wa-bg);
+      background-image: radial-gradient(#d1c7b7 0.75px, transparent 0.75px);
+      background-size: 16px 16px;
+      padding: 14px 12px;
       overflow-y: auto;
       display: flex;
       flex-direction: column;
-      gap: 14px;
+      gap: 10px;
+    }
+
+    .wa-date-pill {
+      align-self: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-size: 10px;
+      font-family: var(--font-mono);
+      color: #54656f;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.08);
+      margin-bottom: 4px;
+    }
+    .wa-encryption-pill {
+      align-self: center;
+      background: #ffeecd;
+      color: #54656f;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 10px;
+      text-align: center;
+      max-width: 90%;
+      line-height: 1.4;
+      box-shadow: 0 1px 1px rgba(0,0,0,0.06);
+    }
+
+    /* Real WhatsApp Bubbles */
+    .wa-bubble {
+      max-width: 84%;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 12.5px;
+      line-height: 1.45;
+      position: relative;
+      box-shadow: 0 1px 1.5px rgba(0,0,0,0.12);
+      word-break: break-word;
+    }
+    .wa-bubble.out {
+      align-self: flex-end;
+      background: var(--wa-bubble-out);
+      border-top-right-radius: 2px;
+    }
+    .wa-bubble.in {
+      align-self: flex-start;
+      background: var(--wa-bubble-in);
+      border-top-left-radius: 2px;
+    }
+    .wa-bubble-meta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 4px;
+      font-size: 10px;
+      color: #667781;
+      margin-top: 4px;
+    }
+    .wa-tick-blue {
+      color: var(--wa-tick-blue);
+      font-weight: 700;
+      font-size: 11px;
+    }
+
+    /* Interactive Message Box on Phone */
+    .wa-interactive-box {
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-top: 6px;
+    }
+    .wa-interactive-header {
+      padding: 8px 10px;
+      font-weight: 700;
+      font-size: 11.5px;
+      color: var(--wa-dark-teal);
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .wa-interactive-btn {
+      padding: 8px 10px;
+      border-top: 1px solid #e2e8f0;
+      text-align: center;
+      font-family: var(--font-body);
+      font-size: 11.5px;
+      font-weight: 600;
+      color: #00a884;
+      background: #ffffff;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.1s;
+    }
+    .wa-interactive-btn:hover {
       background: #f8fafc;
     }
 
-    .msg-bubble {
-      max-width: 80%;
-      padding: 12px 16px;
-      border-radius: 8px;
-      font-size: 13px;
-      line-height: 1.5;
-      position: relative;
-    }
-    .msg-out {
-      align-self: flex-end;
-      background: #eff6ff;
-      border: 1px solid var(--color-accent-border);
-      color: var(--color-ink);
-    }
-    .msg-in {
-      align-self: flex-start;
-      background: #ffffff;
-      border: 1px solid var(--color-rule-strong);
-      color: var(--color-ink);
-    }
-    .msg-meta {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--color-dim);
-      margin-top: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-    .interactive-card {
-      border: 1px solid var(--color-accent-border);
-      background: #ffffff;
-      border-radius: 6px;
-      padding: 10px 12px;
-      margin-top: 8px;
-    }
-    .interactive-btn-preview {
-      display: inline-block;
-      margin-top: 6px;
-      margin-right: 6px;
-      padding: 4px 10px;
-      border-radius: 4px;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      background: var(--color-surface);
-      border: 1px solid var(--color-rule-strong);
-      color: var(--color-ink);
-    }
-
-    .macro-bar {
-      padding: 10px 18px;
-      border-top: 1px solid var(--color-rule);
-      background: #fafbfe;
+    /* WhatsApp Mobile Bottom Input */
+    .wa-composer-bar {
+      background: #f0f2f5;
+      padding: 8px 10px;
       display: flex;
       align-items: center;
       gap: 8px;
-      overflow-x: auto;
     }
-    .macro-btn {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      padding: 4px 10px;
-      border-radius: 4px;
-      border: 1px solid var(--color-rule);
+    .wa-input-capsule {
+      flex: 1;
       background: #ffffff;
-      color: var(--color-muted);
-      cursor: pointer;
-      white-space: nowrap;
-      transition: all 0.12s;
+      border-radius: 22px;
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
     }
-    .macro-btn:hover {
-      background: var(--color-accent-soft);
-      border-color: var(--color-accent-border);
-      color: var(--color-accent);
+    .wa-input-capsule input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 12.5px;
+      color: var(--color-ink);
+      background: transparent;
+    }
+    .wa-icon-btn {
+      color: #54656f;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    .wa-send-circle {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: #00a884;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+      transition: transform 0.1s;
+    }
+    .wa-send-circle:active {
+      transform: scale(0.94);
     }
 
-    .chat-composer {
-      padding: 14px 18px;
-      border-top: 1px solid var(--color-rule);
+    /* Chat Control & Contact List Sidebar */
+    .chat-side-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .contact-card-list {
       background: #ffffff;
+      border: 1px solid var(--color-rule);
+      border-radius: 10px;
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      max-height: 520px;
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-list-header {
+      padding: 14px 16px;
+      background: var(--color-surface);
+      border-bottom: 1px solid var(--color-rule);
+      font-weight: 700;
+      font-family: var(--font-display);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .contact-list-scroll {
+      flex: 1;
+      overflow-y: auto;
+    }
+    .contact-row {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--color-rule);
+      cursor: pointer;
       display: flex;
       align-items: center;
       gap: 12px;
+      transition: background 0.12s;
     }
-    .chat-input {
-      flex: 1;
-      border: 1px solid var(--color-rule-strong);
-      border-radius: 6px;
-      padding: 10px 14px;
-      font-family: var(--font-body);
-      font-size: 13px;
-      outline: none;
+    .contact-row:hover {
+      background: var(--color-surface);
     }
-    .chat-input:focus {
-      border-color: var(--color-accent);
-      box-shadow: 0 0 0 2px var(--color-accent-soft);
+    .contact-row.active {
+      background: var(--color-accent-soft);
+      border-left: 3px solid var(--color-accent);
+    }
+
+    .macro-card {
+      background: #ffffff;
+      border: 1px solid var(--color-rule);
+      border-radius: 10px;
+      padding: 16px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .macro-btn-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
     }
 
     /* SYSTEM CONSOLE TERMINAL */
@@ -817,16 +1008,16 @@
       <a href="/zenos" class="brand-logo">
         🛡️ ZenOS <span class="badge-ver">2.0 LIVE</span>
       </a>
-      <div class="brand-sub">Founder Command Center · zenlora.store</div>
+      <div class="brand-sub">Dedicated Founder Operating System · zenlora.store</div>
     </div>
 
     <!-- Live System Indicators -->
     <div class="health-indicators">
       <div class="chip" title="Meta WhatsApp Cloud API v22.0">
-        <span class="dot pulse"></span> WhatsApp API: Live
+        <span class="dot pulse"></span> WhatsApp API: Connected
       </div>
       <div class="chip" title="Razorpay 15% VIP Checkout">
-        <span class="dot"></span> Razorpay UPI: 15% VIP
+        <span class="dot"></span> Razorpay 1-Tap UPI: Active
       </div>
       <div class="chip" title="Wukusy DeoDap Rajkot Node">
         <span class="dot"></span> DeoDap Hub: Synced
@@ -840,13 +1031,13 @@
       </button>
 
       <button class="btn btn-secondary btn-xs" onclick="sendTestWhatsApp()">
-        ⚡ Test Order to My WhatsApp
+        ⚡ Test WhatsApp Dispatch (+91 96088 37916)
       </button>
 
       <nav class="nav-links">
         <a href="/zenos" class="nav-link active">🛡️ ZenOS</a>
-        <a href="/" class="nav-link">🛍️ Studio</a>
-        <a href="/radar" class="nav-link">🎯 Radar</a>
+        <a href="https://zenlora.store" target="_blank" class="nav-link">🛍️ Storefront ↗</a>
+        <a href="/radar" class="nav-link">🎯 Winning Radar</a>
       </nav>
     </div>
   </header>
@@ -856,7 +1047,7 @@
     <!-- KPI EXECUTIVE RIBBON -->
     <section class="kpi-grid">
       <div class="kpi-card">
-        <div class="kpi-label">Today's Orders</div>
+        <div class="kpi-label">Active Orders</div>
         <div class="kpi-value" id="kpi-orders">10</div>
         <div class="kpi-sub accent" id="kpi-gmv">GMV: ₹3,790</div>
       </div>
@@ -898,7 +1089,7 @@
         📋 Master Orders Workbench <span class="vtab-badge" id="tab-orders-count">10</span>
       </button>
       <button class="vtab" onclick="switchView('chat')">
-        💬 Live WhatsApp Customer Hub <span class="vtab-badge" id="tab-chat-count">5</span>
+        📱 WhatsApp Smartphone Hub <span class="vtab-badge" id="tab-chat-count">5</span>
       </button>
       <button class="vtab" onclick="switchView('wukusy')">
         📦 Wukusy Dropshipping Auto-Bridge <span class="vtab-badge">DeoDap</span>
@@ -915,8 +1106,23 @@
     <section id="view-orders" class="view-section active">
       <div class="panel">
         <div class="panel-header">
-          <div class="panel-title">
-            <span>Live Order Execution & Dispatch Queue</span>
+          <div>
+            <div class="panel-title">
+              <span>Live Order Execution & Dispatch Queue</span>
+            </div>
+            <div style="font-size: 11px; color: var(--color-dim); margin-top: 2px;">
+              Connected to SmartBiz store & Meta WhatsApp Cloud API webhooks.
+            </div>
+          </div>
+
+          <!-- Data Control Actions -->
+          <div style="display: flex; gap: 8px;">
+            <button class="btn btn-secondary btn-xs" onclick="reseedDemoData()" title="Reload sample test data">
+              🔄 Load Sample Orders
+            </button>
+            <button class="btn btn-danger btn-xs" onclick="clearAllDemoData()" title="Delete all demo orders and start with empty clean slate">
+              🗑️ Clear All Demo Data
+            </button>
           </div>
 
           <div class="filter-bar">
@@ -926,13 +1132,13 @@
             </div>
 
             <div class="filter-pills">
-              <button class="fpill active" onclick="setFilter('ALL', this)">All (10)</button>
-              <button class="fpill" onclick="setFilter('PREPAID', this)">⚡ Paid UPI (3)</button>
-              <button class="fpill" onclick="setFilter('CONFIRMED_COD', this)">✅ Confirmed COD (2)</button>
-              <button class="fpill" onclick="setFilter('OFD', this)">🚚 OFD (2)</button>
-              <button class="fpill" onclick="setFilter('RISK', this)">⚠️ High Risk (1)</button>
-              <button class="fpill" onclick="setFilter('RESCHED', this)">🗓️ Rescheduled (1)</button>
-              <button class="fpill" onclick="setFilter('CANCEL', this)">❌ Cancelled (1)</button>
+              <button class="fpill active" onclick="setFilter('ALL', this)">All</button>
+              <button class="fpill" onclick="setFilter('PREPAID', this)">⚡ Paid UPI</button>
+              <button class="fpill" onclick="setFilter('CONFIRMED_COD', this)">✅ Confirmed COD</button>
+              <button class="fpill" onclick="setFilter('OFD', this)">🚚 OFD</button>
+              <button class="fpill" onclick="setFilter('RISK', this)">⚠️ High Risk</button>
+              <button class="fpill" onclick="setFilter('RESCHED', this)">🗓️ Rescheduled</button>
+              <button class="fpill" onclick="setFilter('CANCEL', this)">❌ Cancelled</button>
             </div>
           </div>
         </div>
@@ -959,53 +1165,109 @@
       </div>
     </section>
 
-    <!-- SECTION 2: LIVE WHATSAPP CUSTOMER HUB -->
+    <!-- SECTION 2: REAL SMARTPHONE WHATSAPP HUB -->
     <section id="view-chat" class="view-section">
-      <div class="chat-layout">
+      <div class="chat-container-split">
         
-        <!-- Left: Customer Conversation List -->
-        <div class="chat-sidebar">
-          <div class="chat-sidebar-header">
-            Recent Conversations
+        <!-- Left Side: WhatsApp Contacts Directory & Macros -->
+        <div class="chat-side-controls">
+          
+          <div class="contact-card-list">
+            <div class="contact-list-header">
+              <span>Customer Conversations</span>
+              <span class="vtab-badge" id="chat-active-count">5 Active</span>
+            </div>
+            
+            <div style="padding: 10px 12px; border-bottom: 1px solid var(--color-rule);">
+              <input type="text" id="contact-search" class="search-input" placeholder="Search customer or phone..." oninput="filterContacts()" style="padding: 6px 10px; font-size: 11px;">
+            </div>
+
+            <div class="contact-list-scroll" id="customer-list-pane">
+              <!-- Dynamically Populated -->
+            </div>
           </div>
-          <div class="customer-list" id="customer-list-pane">
-            <!-- Dynamically Populated -->
+
+          <!-- Quick Founder Macros Box -->
+          <div class="macro-card">
+            <div style="font-weight: 700; font-size: 12px; color: var(--color-ink); display: flex; align-items: center; justify-content: space-between;">
+              <span>⚡ Quick Founder WhatsApp Macros</span>
+              <span style="font-size: 10px; color: var(--color-dim);">1-Tap Send</span>
+            </div>
+            <div class="macro-btn-grid">
+              <button class="btn btn-secondary btn-xs" onclick="sendMacro('15% Prepaid Discount Link')">⚡ 15% UPI Link</button>
+              <button class="btn btn-secondary btn-xs" onclick="sendMacro('Out For Delivery Check')">🚚 Send OFD Check</button>
+              <button class="btn btn-secondary btn-xs" onclick="sendMacro('Request House/Landmark')">📍 Request Landmark</button>
+              <button class="btn btn-secondary btn-xs" onclick="sendMacro('Send VIP 10% Voucher')">🎁 VIP10 Voucher</button>
+            </div>
+            <div style="font-size: 10px; color: var(--color-dim); margin-top: 4px;">
+              Fires directly to the customer's phone via Meta Cloud API (+91 97713 70945).
+            </div>
           </div>
+
         </div>
 
-        <!-- Right: Active Chat Stream -->
-        <div class="chat-pane">
-          <div class="chat-pane-header">
-            <div>
-              <div style="font-weight: 700; font-size: 15px;" id="active-chat-name">Nilesh Vardan</div>
-              <div style="font-family: var(--font-mono); font-size: 11px; color: var(--color-dim);" id="active-chat-phone">+91 96088 37916</div>
+        <!-- Right Side: Pixel-Perfect Realistic Smartphone Mockup -->
+        <div class="phone-mockup-wrapper">
+          
+          <div class="phone-chassis">
+            
+            <!-- Dynamic Island -->
+            <div class="dynamic-island">
+              <div class="sensor-dot"></div>
+              <div class="camera-dot"></div>
             </div>
-            <div style="display: flex; gap: 8px; align-items: center;">
-              <span class="badge badge-ofd" id="active-chat-badge">OFD CONFIRMED</span>
-              <button class="btn btn-secondary btn-xs" onclick="openCustomerDossier(activeCustomerPhone)">🔍 View Order Dossier</button>
+
+            <!-- Mobile Status Bar -->
+            <div class="mobile-status-bar">
+              <span id="phone-clock">9:41</span>
+              <span style="display: flex; gap: 4px; align-items: center;">
+                <span>5G</span>
+                <span>📶</span>
+                <span>🔋 100%</span>
+              </span>
             </div>
+
+            <!-- WhatsApp Mobile Header -->
+            <div class="wa-app-bar">
+              <div class="wa-profile-info" onclick="openCustomerDossier(activeCustomerPhone)">
+                <span class="wa-back-btn">←</span>
+                <div class="wa-avatar" id="phone-avatar">NV</div>
+                <div>
+                  <div class="wa-contact-name" id="phone-contact-name">Nilesh Vardan</div>
+                  <div class="wa-contact-status" id="phone-contact-status">online</div>
+                </div>
+              </div>
+              <div class="wa-app-icons">
+                <span title="Video Call">📹</span>
+                <span title="Voice Call">📞</span>
+                <span title="Menu">⋮</span>
+              </div>
+            </div>
+
+            <!-- WhatsApp Chat Stream Canvas -->
+            <div class="wa-canvas" id="phone-chat-canvas">
+              <!-- Message bubbles rendered dynamically -->
+            </div>
+
+            <!-- WhatsApp Mobile Bottom Composer -->
+            <div class="wa-composer-bar">
+              <div class="wa-input-capsule">
+                <span class="wa-icon-btn">😊</span>
+                <input type="text" id="phone-msg-input" placeholder="Message" onkeydown="if(event.key==='Enter') executePhoneSend()">
+                <span class="wa-icon-btn">📎</span>
+                <span class="wa-icon-btn">📷</span>
+              </div>
+              <button class="wa-send-circle" onclick="executePhoneSend()" title="Send WhatsApp Message">
+                ➤
+              </button>
+            </div>
+
           </div>
 
-          <div class="chat-stream" id="chat-stream-pane">
-            <!-- Messages stream here -->
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--color-dim); margin-top: 10px; display: flex; align-items: center; gap: 6px;">
+            <span class="dot" style="background: var(--color-green);"></span> Live Meta WhatsApp Cloud API Stream (+91 97713 70945)
           </div>
 
-          <!-- Quick Action Macros -->
-          <div class="macro-bar">
-            <span style="font-family: var(--font-mono); font-size: 10px; color: var(--color-dim);">QUICK ACTIONS:</span>
-            <button class="macro-btn" onclick="sendMacro('15% Prepaid Discount Link')">⚡ Send 15% UPI Link</button>
-            <button class="macro-btn" onclick="sendMacro('Out For Delivery Check')">🚚 Send OFD Check</button>
-            <button class="macro-btn" onclick="sendMacro('Request House/Landmark')">📍 Request Landmark</button>
-            <button class="macro-btn" onclick="sendMacro('Send VIP 10% Voucher')">🎁 Send 10% Voucher (VIPZEN10)</button>
-          </div>
-
-          <!-- Message Composer -->
-          <div class="chat-composer">
-            <input type="text" id="chat-reply-input" class="chat-input" placeholder="Type WhatsApp message to customer from your PC..." onkeydown="if(event.key==='Enter') sendAdminChat()">
-            <button class="btn btn-primary" onclick="sendAdminChat()">
-              Send WhatsApp 🚀
-            </button>
-          </div>
         </div>
 
       </div>
@@ -1119,7 +1381,7 @@
       </div>
       <div class="modal-footer">
         <button class="btn btn-secondary" onclick="closeDossier()">Close</button>
-        <button class="btn btn-primary" id="modal-chat-btn" onclick="openChatFromModal()">Open WhatsApp Chat 💬</button>
+        <button class="btn btn-primary" id="modal-chat-btn" onclick="openChatFromModal()">Open in WhatsApp Phone 📱</button>
       </div>
     </div>
   </div>
@@ -1163,7 +1425,6 @@
     // Fetch live data from backend
     async function fetchCockpitData() {
       try {
-        // Try local relative endpoint first (works fast on Vercel), fallback to Render
         let res = await fetch('/api/dashboard/data');
         if (!res.ok) {
           res = await fetch(`${BOT_API}/api/dashboard/data`);
@@ -1173,7 +1434,6 @@
           renderCockpit(data);
         }
       } catch (e) {
-        console.warn('Falling back to direct Render bot endpoint:', e);
         try {
           const res = await fetch(`${BOT_API}/api/dashboard/data`);
           if (res.ok) {
@@ -1205,12 +1465,13 @@
       allConversations = data.conversations || {};
       allLogs = data.logs || [];
 
-      document.getElementById('tab-chat-count').innerText = Object.keys(allConversations).length || 5;
+      document.getElementById('tab-chat-count').innerText = Object.keys(allConversations).length;
+      document.getElementById('chat-active-count').innerText = `${Object.keys(allConversations).length} Active`;
 
       renderOrdersTable(allOrders);
       renderWukusyTable(allOrders);
-      renderCustomerList(allConversations);
-      renderChatStream(activeCustomerPhone);
+      renderContactList(allConversations);
+      renderPhoneScreen(activeCustomerPhone);
       renderLogs(allLogs);
     }
 
@@ -1257,7 +1518,15 @@
     function renderOrdersTable(orders) {
       const tbody = document.getElementById('orders-tbody');
       if (!orders.length) {
-        tbody.innerHTML = `<tr><td colspan="8" style="text-align: center; color: var(--color-dim); padding: 40px;">No matching customer orders found.</td></tr>`;
+        tbody.innerHTML = `
+          <tr>
+            <td colspan="8" style="text-align: center; color: var(--color-dim); padding: 50px;">
+              <div style="font-size: 16px; font-weight: 600; color: var(--color-ink); margin-bottom: 6px;">0 Orders in Active Queue</div>
+              <div style="font-size: 12px; margin-bottom: 16px;">Clean slate ready. Waiting for live orders from zenlora.store / WhatsApp bot.</div>
+              <button class="btn btn-secondary btn-xs" onclick="reseedDemoData()">🔄 Load Sample Orders for Testing</button>
+            </td>
+          </tr>
+        `;
         return;
       }
 
@@ -1299,7 +1568,7 @@
               <div style="font-size: 11px; color: var(--color-dim); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${o.address}">📍 ${o.pincode} · ${o.address}</div>
             </td>
             <td>
-              <div style="font-weight: 500; max-width: 220px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${o.product_name}">${o.product_name}</div>
+              <div style="font-weight: 500; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${o.product_name}">${o.product_name}</div>
               <div style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: var(--color-ink);">₹${o.amount}</div>
             </td>
             <td>${statusBadge}</td>
@@ -1312,11 +1581,11 @@
               <div style="font-family: var(--font-mono); font-size: 10px; color: var(--color-accent);">${o.tracking_awb || 'Queued for Dispatch'}</div>
             </td>
             <td>
-              <div style="display: flex; gap: 4px; flex-wrap: wrap;">
-                <button class="btn btn-secondary btn-xs" title="Open Chat" onclick="jumpToCustomerChat('${cleanPhone}')">💬 Chat</button>
+              <div style="display: flex; gap: 4px; align-items: center;">
+                <button class="btn btn-secondary btn-xs" title="Open in Phone WhatsApp" onclick="jumpToPhoneChat('${cleanPhone}')">📱 Chat</button>
                 <button class="btn btn-secondary btn-xs" title="Send 15% UPI Link" onclick="triggerAction('order', '${o.order_ref}')">⚡ 15%</button>
                 <button class="btn btn-secondary btn-xs" title="Send Out For Delivery Check" onclick="triggerAction('ofd', '${o.order_ref}')">🚚 OFD</button>
-                <button class="btn btn-secondary btn-xs" title="Sync Wukusy" onclick="triggerAction('wukusy', '${o.order_ref}')">📦 Sync</button>
+                <button class="btn btn-danger btn-xs" title="Delete This Order" onclick="deleteIndividualOrder('${o.order_ref}')">🗑️</button>
               </div>
             </td>
           </tr>
@@ -1328,7 +1597,7 @@
     function renderWukusyTable(orders) {
       const tbody = document.getElementById('wukusy-tbody');
       tbody.innerHTML = orders.map(o => {
-        const wholesale = Math.round(o.amount * 0.38); // Standard DeoDap wholesale margin
+        const wholesale = Math.round(o.amount * 0.38);
         const margin = o.amount - wholesale;
         return `
           <tr>
@@ -1348,12 +1617,12 @@
       }).join('');
     }
 
-    // Render Customer List in Chat Hub
-    function renderCustomerList(conversations) {
+    // Render Contact List for Chat
+    function renderContactList(conversations) {
       const pane = document.getElementById('customer-list-pane');
       const phones = Object.keys(conversations);
       if (!phones.length) {
-        pane.innerHTML = `<div style="padding: 20px; color: var(--color-dim); text-align: center;">No active chats</div>`;
+        pane.innerHTML = `<div style="padding: 20px; color: var(--color-dim); text-align: center; font-size: 12px;">No active conversations</div>`;
         return;
       }
 
@@ -1362,11 +1631,11 @@
         const initials = (c.customer_name || 'C').split(' ').map(n => n[0]).join('').slice(0, 2);
         const isActive = p === activeCustomerPhone ? 'active' : '';
         return `
-          <div class="customer-item ${isActive}" onclick="selectCustomerChat('${p}')">
+          <div class="contact-row ${isActive}" onclick="selectPhoneCustomer('${p}')">
             <div class="avatar">${initials}</div>
             <div style="flex: 1; min-width: 0;">
               <div style="display: flex; justify-content: space-between; align-items: baseline;">
-                <div style="font-weight: 600; font-size: 13px; color: var(--color-ink);">${c.customer_name}</div>
+                <div style="font-weight: 600; font-size: 12.5px; color: var(--color-ink);">${c.customer_name}</div>
                 <div style="font-family: var(--font-mono); font-size: 10px; color: var(--color-dim);">${(c.last_time || '').slice(11, 16)}</div>
               </div>
               <div style="font-family: var(--font-mono); font-size: 11px; color: var(--color-muted);">+${p}</div>
@@ -1377,83 +1646,86 @@
       }).join('');
     }
 
-    // Switch active customer in Chat
-    function selectCustomerChat(phone) {
+    function selectPhoneCustomer(phone) {
       activeCustomerPhone = phone;
-      renderCustomerList(allConversations);
-      renderChatStream(phone);
+      renderContactList(allConversations);
+      renderPhoneScreen(phone);
     }
 
-    function jumpToCustomerChat(phone) {
+    function jumpToPhoneChat(phone) {
       switchView('chat');
-      selectCustomerChat(phone);
+      selectPhoneCustomer(phone);
     }
 
-    // Render WhatsApp Message Stream
-    function renderChatStream(phone) {
-      const pane = document.getElementById('chat-stream-pane');
+    // Render Screen Inside Smartphone Frame
+    function renderPhoneScreen(phone) {
+      const canvas = document.getElementById('phone-chat-canvas');
       const customer = allConversations[phone] || { customer_name: 'Customer', phone: phone, messages: [] };
       
-      document.getElementById('active-chat-name').innerText = customer.customer_name;
-      document.getElementById('active-chat-phone').innerText = `+${phone}`;
+      const initials = (customer.customer_name || 'C').split(' ').map(n => n[0]).join('').slice(0, 2);
+      document.getElementById('phone-avatar').innerText = initials;
+      document.getElementById('phone-contact-name').innerText = customer.customer_name;
+      document.getElementById('phone-contact-status').innerText = 'online';
 
-      const linkedOrder = allOrders.find(o => (o.phone || '').includes(phone.slice(-10)));
-      if (linkedOrder) {
-        document.getElementById('active-chat-badge').innerText = linkedOrder.status;
-      }
+      let html = `
+        <div class="wa-date-pill">TODAY</div>
+        <div class="wa-encryption-pill">
+          🔒 Messages and calls are end-to-end encrypted. No one outside of this chat can read or listen to them.
+        </div>
+      `;
 
       if (!customer.messages || !customer.messages.length) {
-        pane.innerHTML = `
-          <div style="text-align: center; color: var(--color-dim); margin-top: 40px;">
-            No message history yet. Type a message below to start chatting with ${customer.customer_name} on WhatsApp!
+        html += `
+          <div style="text-align: center; color: #54656f; font-size: 12px; margin-top: 40px; padding: 0 20px;">
+            No messages yet. Use the composer below or quick macros to send a WhatsApp message to ${customer.customer_name}!
           </div>
         `;
-        return;
+      } else {
+        html += customer.messages.map(m => {
+          const isOut = m.direction === 'OUTBOUND';
+          const bubbleClass = isOut ? 'out' : 'in';
+          const time = (m.created_at || '').slice(11, 16) || '12:00';
+
+          let cardHtml = '';
+          if (m.message_type === 'INTERACTIVE_ORDER') {
+            cardHtml = `
+              <div class="wa-interactive-box">
+                <div class="wa-interactive-header">Zenlora Store — Order Confirmed 🛍️</div>
+                <div class="wa-interactive-btn" onclick="executeMacroDirect('15% Prepaid Discount Link')">⚡ Pay & Save 15%</div>
+                <div class="wa-interactive-btn" onclick="executeMacroDirect('Confirm COD')">✅ Confirm COD</div>
+                <div class="wa-interactive-btn" style="color: var(--color-red);" onclick="executeMacroDirect('Cancel Order')">❌ Cancel Order</div>
+              </div>
+            `;
+          } else if (m.message_type === 'INTERACTIVE_OFD') {
+            cardHtml = `
+              <div class="wa-interactive-box">
+                <div class="wa-interactive-header">Availability Check: Order Dispatch</div>
+                <div class="wa-interactive-btn" onclick="executeMacroDirect('I can collect')">📦 I can collect</div>
+                <div class="wa-interactive-btn" onclick="executeMacroDirect('Change the date')">📅 Change the date</div>
+              </div>
+            `;
+          }
+
+          return `
+            <div class="wa-bubble ${bubbleClass}">
+              <div style="white-space: pre-wrap;">${m.body}</div>
+              ${cardHtml}
+              <div class="wa-bubble-meta">
+                <span>${time}</span>
+                ${isOut ? '<span class="wa-tick-blue">✓✓</span>' : ''}
+              </div>
+            </div>
+          `;
+        }).join('');
       }
 
-      pane.innerHTML = customer.messages.map(m => {
-        const isOut = m.direction === 'OUTBOUND';
-        const bubbleClass = isOut ? 'msg-out' : 'msg-in';
-        const sender = isOut ? 'ZENOS ADMIN' : customer.customer_name;
-        
-        let extraCard = '';
-        if (m.message_type === 'INTERACTIVE_ORDER') {
-          extraCard = `
-            <div class="interactive-card">
-              <div style="font-weight: 600; font-size: 11px; color: var(--color-accent);">INTERACTIVE BUTTONS DELIVERED:</div>
-              <div class="interactive-btn-preview">⚡ Pay & Save 15%</div>
-              <div class="interactive-btn-preview">✅ Confirm COD</div>
-              <div class="interactive-btn-preview">❌ Cancel Order</div>
-            </div>
-          `;
-        } else if (m.message_type === 'INTERACTIVE_OFD') {
-          extraCard = `
-            <div class="interactive-card">
-              <div style="font-weight: 600; font-size: 11px; color: var(--color-amber);">AVAILABILITY BUTTONS DELIVERED:</div>
-              <div class="interactive-btn-preview">📦 I can collect</div>
-              <div class="interactive-btn-preview">📅 Change the date</div>
-            </div>
-          `;
-        }
-
-        return `
-          <div class="msg-bubble ${bubbleClass}">
-            <div style="white-space: pre-wrap;">${m.body}</div>
-            ${extraCard}
-            <div class="msg-meta">
-              <span>${sender}</span>
-              <span>${(m.created_at || '').slice(11, 16)}</span>
-            </div>
-          </div>
-        `;
-      }).join('');
-
-      pane.scrollTop = pane.scrollHeight;
+      canvas.innerHTML = html;
+      canvas.scrollTop = canvas.scrollHeight;
     }
 
-    // Send Admin WhatsApp Message
-    async function sendAdminChat() {
-      const input = document.getElementById('chat-reply-input');
+    // Execute Real WhatsApp Send from Smartphone Composer
+    async function executePhoneSend() {
+      const input = document.getElementById('phone-msg-input');
       const text = input.value.trim();
       if (!text) return;
 
@@ -1471,7 +1743,7 @@
             body: JSON.stringify({ phone: phone, message: text })
           });
         }
-        
+
         // Optimistic UI Append
         if (!allConversations[phone]) {
           allConversations[phone] = { customer_name: 'Customer', phone: phone, messages: [] };
@@ -1484,15 +1756,15 @@
         });
 
         input.value = '';
-        renderChatStream(phone);
-        appendLog('SUCCESS', 'LIVE_CHAT', `Founder sent direct WhatsApp message to +${phone}`);
+        renderPhoneScreen(phone);
+        appendLog('SUCCESS', 'META_WHATSAPP', `Direct message delivered to customer +${phone}`);
       } catch (e) {
-        alert('Could not deliver chat message: ' + e.message);
+        alert('Could not deliver WhatsApp message: ' + e.message);
       }
     }
 
     function sendMacro(macroType) {
-      const input = document.getElementById('chat-reply-input');
+      const input = document.getElementById('phone-msg-input');
       if (macroType.includes('15%')) {
         input.value = "Hi! We noticed your order on zenlora.store. If you prefer to pay online via UPI, you can save Flat 15% instantly! Here is your secure 1-tap link: https://rzp.io/rzp/gZgDGKoW 😊 — Team Zenlora";
       } else if (macroType.includes('OFD')) {
@@ -1505,7 +1777,12 @@
       input.focus();
     }
 
-    // Trigger 1-Click Actions
+    function executeMacroDirect(type) {
+      sendMacro(type);
+      executePhoneSend();
+    }
+
+    // Trigger 1-Click Order Actions
     async function triggerAction(actionType, orderRef) {
       try {
         let res = await fetch('/api/dashboard/action', {
@@ -1528,8 +1805,93 @@
       }
     }
 
+    // Delete Individual Order
+    async function deleteIndividualOrder(orderRef) {
+      if (!confirm(`Are you sure you want to permanently delete order #${orderRef}?`)) return;
+      try {
+        let res = await fetch('/api/dashboard/orders/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ order_ref: orderRef })
+        });
+        if (!res.ok) {
+          res = await fetch(`${BOT_API}/api/dashboard/orders/delete`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ order_ref: orderRef })
+          });
+        }
+        // Remove locally immediately
+        allOrders = allOrders.filter(o => o.order_ref !== orderRef);
+        renderOrdersTable(allOrders);
+        appendLog('WARNING', 'DATABASE', `Order #${orderRef} permanently deleted by founder.`);
+        alert(`Order #${orderRef} deleted.`);
+      } catch (e) {
+        alert('Error deleting order: ' + e.message);
+      }
+    }
+
+    // Clear All Demo Data
+    async function clearAllDemoData() {
+      if (!confirm("Are you sure you want to clear ALL demo orders, chats, and logs? This will leave your dashboard completely clean to receive real store orders.")) return;
+      try {
+        let res = await fetch('/api/dashboard/orders/clear', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        if (!res.ok) {
+          res = await fetch(`${BOT_API}/api/dashboard/orders/clear`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }
+        allOrders = [];
+        allConversations = {};
+        allLogs = [];
+        renderCockpit({
+          kpis: {
+            total_orders: 0,
+            prepaid_count: 0,
+            prepaid_ratio: "0%",
+            cod_confirmed: 0,
+            ofd_count: 0,
+            cancelled_count: 0,
+            avg_rto_score: "100/100",
+            saved_rto_loss: "₹0",
+            total_gmv: "₹0"
+          },
+          orders: [],
+          logs: [],
+          conversations: {}
+        });
+        alert("✅ All demo data wiped clean! The dashboard is now 100% clean and listening for real customer orders.");
+      } catch (e) {
+        alert('Error clearing data: ' + e.message);
+      }
+    }
+
+    // Reseed Demo Data
+    async function reseedDemoData() {
+      try {
+        let res = await fetch('/api/dashboard/orders/seed', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' }
+        });
+        if (!res.ok) {
+          res = await fetch(`${BOT_API}/api/dashboard/orders/seed`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' }
+          });
+        }
+        fetchCockpitData();
+        alert("✅ Sample orders loaded for testing.");
+      } catch (e) {
+        alert('Error loading sample data: ' + e.message);
+      }
+    }
+
     function syncAllToWukusy() {
-      alert('🚀 1-Click Wukusy Sync Started! All 10 customer orders are staged for DeoDap Rajkot dispatch.');
+      alert('🚀 1-Click Wukusy Sync Started! Orders staged for DeoDap Rajkot dispatch.');
     }
 
     // Send Test Order WhatsApp
@@ -1565,7 +1927,10 @@
     // Render Logs Console
     function renderLogs(logs) {
       const consoleEl = document.getElementById('console-stream');
-      if (!logs || !logs.length) return;
+      if (!logs || !logs.length) {
+        consoleEl.innerHTML = `<div style="color: var(--color-dim); padding: 10px;">Waiting for real webhook events...</div>`;
+        return;
+      }
       consoleEl.innerHTML = logs.map(l => `
         <div class="log-line ${l.level}">
           <span class="log-time">${(l.created_at || '').slice(11, 19)}</span>
@@ -1652,8 +2017,24 @@
 
     function openChatFromModal() {
       closeDossier();
-      jumpToCustomerChat(activeCustomerPhone);
+      jumpToPhoneChat(activeCustomerPhone);
     }
+
+    // Update Phone Clock
+    function updatePhoneClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      let minutes = now.getMinutes();
+      const ampm = hours >= 12 ? 'PM' : 'AM';
+      hours = hours % 12;
+      hours = hours ? hours : 12;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      const strTime = hours + ':' + minutes;
+      const el = document.getElementById('phone-clock');
+      if (el) el.innerText = strTime;
+    }
+    setInterval(updatePhoneClock, 30000);
+    updatePhoneClock();
 
     // Initialize
     fetchCockpitData();
