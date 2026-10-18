@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Zenlora Auto-Bridge (SmartBiz & Wukusy Sync)",
+  "version": "1.0.0",
+  "description": "Zero-Manual Bridge connecting SmartBiz by Amazon, WhatsApp Confirmation Bot, and Wukusy Dropshipping Portal.",
+  "permissions": [
+    "storage",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://smartbiz.amazon.in/*",
+    "https://wukusy.app/*",
+    "https://*.wukusy.app/*",
+    "https://zenlora-whatsapp-bot.onrender.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Zenlora Auto-Bridge"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://smartbiz.amazon.in/*"],
+      "js": ["content_smartbiz.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://wukusy.app/*", "https://*.wukusy.app/*"],
+      "js": ["content_wukusy.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -98,6 +98,14 @@ def index():
     )
 
 
+@app.route("/cockpit")
+@app.route("/dashboard")
+@app.route("/zenos")
+def zenos_cockpit():
+    """Renders the Hallmark-compliant ZenOS Founder Cockpit"""
+    return render_template("cockpit.html")
+
+
 @app.route("/radar")
 def radar():
     from seo_engine import build_deterministic_seo_title, build_deterministic_seo_description
