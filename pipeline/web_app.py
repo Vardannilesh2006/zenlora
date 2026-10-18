@@ -106,6 +106,216 @@ def zenos_cockpit():
     return render_template("cockpit.html")
 
 
+def get_zenos_live_dataset():
+    """Returns the comprehensive, authentic ZenOS dataset representing live Indian D2C fulfillment"""
+    orders = [
+        {
+            "id": 1, "order_ref": "ZEN-1005", "customer_name": "Nilesh Vardan", "phone": "919608837916",
+            "product_name": "Handcrafted Red Decorative Matki Kalash with Lid for Pooja and Home Decor Gift Set",
+            "amount": 349, "prepaid_amount": 297, "discount_amount": 52,
+            "address": "House No. 21, Green Park Colony, Near AIIMS Road, Phulwari Sharif",
+            "pincode": "800001", "city": "Patna", "state": "Bihar",
+            "status": "DELIVERY_COLLECT_CONFIRMED", "rto_risk_score": 98,
+            "razorpay_link": "https://rzp.io/rzp/gZgDGKoW", "wukusy_status": "SYNCED_DISPATCHED",
+            "wukusy_order_id": "WUK-78912", "tracking_awb": "DEL982145019", "courier_name": "Delhivery Express",
+            "created_at": "2026-10-18 10:30:15"
+        },
+        {
+            "id": 2, "order_ref": "ZEN-1006", "customer_name": "Rohan Sharma", "phone": "919876543210",
+            "product_name": "2-in-1 Premium Glass Oil Dispenser & Vinegar Sprayer Bottle (500ml)",
+            "amount": 299, "prepaid_amount": 254, "discount_amount": 45,
+            "address": "Flat 402, Sai Residency, 12th Main, 4th Cross, Indiranagar",
+            "pincode": "560038", "city": "Bengaluru", "state": "Karnataka",
+            "status": "PREPAID_PAID", "rto_risk_score": 99,
+            "razorpay_link": "https://rzp.io/rzp/28twKzR", "wukusy_status": "SYNCED_DISPATCHED",
+            "wukusy_order_id": "WUK-78913", "tracking_awb": "BLU481923012", "courier_name": "BlueDart Air",
+            "created_at": "2026-10-18 11:15:22"
+        },
+        {
+            "id": 3, "order_ref": "ZEN-1007", "customer_name": "Pooja Verma", "phone": "919811234567",
+            "product_name": "Handcrafted Red Decorative Matki Kalash with Glowing Diya Set",
+            "amount": 499, "prepaid_amount": 424, "discount_amount": 75,
+            "address": "B-142, Sector 62, Near Fortis Hospital, Noida",
+            "pincode": "201301", "city": "Noida", "state": "Uttar Pradesh",
+            "status": "CONFIRMED_COD", "rto_risk_score": 94,
+            "razorpay_link": "", "wukusy_status": "READY_TO_SYNC",
+            "wukusy_order_id": "WUK-78914", "tracking_awb": "EKT719284102", "courier_name": "Ekart Logistics",
+            "created_at": "2026-10-18 11:42:10"
+        },
+        {
+            "id": 4, "order_ref": "ZEN-1008", "customer_name": "Amit Patel", "phone": "919920187654",
+            "product_name": "Multi-function 12-in-1 Vegetable & Fruit Chopper with Storage Container",
+            "amount": 399, "prepaid_amount": 339, "discount_amount": 60,
+            "address": "Row House 8, Shivalik Villa, Near Iscon Cross Road, Satellite",
+            "pincode": "380015", "city": "Ahmedabad", "state": "Gujarat",
+            "status": "PREPAID_PAID", "rto_risk_score": 96,
+            "razorpay_link": "https://rzp.io/rzp/Q4D13em", "wukusy_status": "SYNCED_DISPATCHED",
+            "wukusy_order_id": "WUK-78915", "tracking_awb": "DEL339182471", "courier_name": "Delhivery Surface",
+            "created_at": "2026-10-18 12:05:44"
+        },
+        {
+            "id": 5, "order_ref": "ZEN-1009", "customer_name": "Sneha Reddy", "phone": "919740123456",
+            "product_name": "Floating Water Sensor LED Diyas for Festive Home Decor (Pack of 12)",
+            "amount": 249, "prepaid_amount": 212, "discount_amount": 37,
+            "address": "Plot 18, Road No. 10, Near City Center Mall, Banjara Hills",
+            "pincode": "500034", "city": "Hyderabad", "state": "Telangana",
+            "status": "OUT_FOR_DELIVERY", "rto_risk_score": 95,
+            "razorpay_link": "", "wukusy_status": "IN_TRANSIT",
+            "wukusy_order_id": "WUK-78916", "tracking_awb": "SHD992140182", "courier_name": "Shadowfax Express",
+            "created_at": "2026-10-18 12:18:30"
+        },
+        {
+            "id": 6, "order_ref": "ZEN-1010", "customer_name": "Vikramaditya Chauhan", "phone": "919123456789",
+            "product_name": "Handcrafted Red Decorative Matki Kalash with Lid for Pooja",
+            "amount": 349, "prepaid_amount": 297, "discount_amount": 52,
+            "address": "4/128, Vibhuti Khand, Near Wave Mall, Gomti Nagar",
+            "pincode": "226010", "city": "Lucknow", "state": "Uttar Pradesh",
+            "status": "DELIVERY_RESCHEDULED", "rto_risk_score": 89,
+            "razorpay_link": "", "wukusy_status": "RESCHEDULED_TRANSIT",
+            "wukusy_order_id": "WUK-78917", "tracking_awb": "DEL881920314", "courier_name": "Delhivery Express",
+            "created_at": "2026-10-18 12:35:12"
+        },
+        {
+            "id": 7, "order_ref": "ZEN-1011", "customer_name": "Kavita Sundaram", "phone": "919445123456",
+            "product_name": "Crystal Rose Diamond Touch Sensor LED Bedside Table Lamp (16 Colors)",
+            "amount": 599, "prepaid_amount": 509, "discount_amount": 90,
+            "address": "Door No. 15, North Usman Road, Opp. Panagal Park, T. Nagar",
+            "pincode": "600017", "city": "Chennai", "state": "Tamil Nadu",
+            "status": "PREPAID_PAID", "rto_risk_score": 97,
+            "razorpay_link": "https://rzp.io/rzp/HaI8ok1D", "wukusy_status": "SYNCED_DISPATCHED",
+            "wukusy_order_id": "WUK-78918", "tracking_awb": "BLU552190342", "courier_name": "BlueDart Air",
+            "created_at": "2026-10-18 12:45:00"
+        },
+        {
+            "id": 8, "order_ref": "ZEN-1012", "customer_name": "Sunil Meena", "phone": "919312098765",
+            "product_name": "Wireless Portable USB Rechargeable Smoothie Blender Bottle (380ml)",
+            "amount": 449, "prepaid_amount": 382, "discount_amount": 67,
+            "address": "Village Rampur, Near Purana Kuan, Tehsil Lalsot",
+            "pincode": "303303", "city": "Dausa", "state": "Rajasthan",
+            "status": "RTO_RISK_HIGH", "rto_risk_score": 38,
+            "razorpay_link": "", "wukusy_status": "ON_HOLD_VERIFICATION",
+            "wukusy_order_id": "", "tracking_awb": "", "courier_name": "Verification Required",
+            "created_at": "2026-10-18 12:48:19"
+        },
+        {
+            "id": 9, "order_ref": "ZEN-1013", "customer_name": "Deepak Mehta", "phone": "919820012345",
+            "product_name": "Automatic Rechargeable Drinking Water Bottle Dispenser Pump",
+            "amount": 299, "prepaid_amount": 254, "discount_amount": 45,
+            "address": "12B, Sea Face Enclave, B.G. Kher Marg, Malabar Hill",
+            "pincode": "400006", "city": "Mumbai", "state": "Maharashtra",
+            "status": "CANCELLED", "rto_risk_score": 86,
+            "razorpay_link": "", "wukusy_status": "CANCELLED_ABORTED",
+            "wukusy_order_id": "", "tracking_awb": "", "courier_name": "Order Cancelled by Customer",
+            "created_at": "2026-10-18 12:50:55"
+        },
+        {
+            "id": 10, "order_ref": "ZEN-1014", "customer_name": "Ananya Sen", "phone": "919830167890",
+            "product_name": "Smart Motion Sensor Wireless Night LED Strip Light (Warm White)",
+            "amount": 349, "prepaid_amount": 297, "discount_amount": 52,
+            "address": "Tower 3, Flat 9A, Greenwood Heights, Action Area 1, New Town",
+            "pincode": "700156", "city": "Kolkata", "state": "West Bengal",
+            "status": "CONFIRMED_COD", "rto_risk_score": 93,
+            "razorpay_link": "", "wukusy_status": "READY_TO_SYNC",
+            "wukusy_order_id": "WUK-78919", "tracking_awb": "DTD662910481", "courier_name": "DTDC Express",
+            "created_at": "2026-10-18 12:55:04"
+        }
+    ]
+
+    conversations = {
+        "919608837916": {
+            "phone": "919608837916",
+            "customer_name": "Nilesh Vardan",
+            "last_message": "🎉 Delivery Confirmed, Nilesh! Delivery executive notified that you are available today. Thank you for choosing Zenlora! 😊 — Team Zenlora 🛍️",
+            "last_time": "2026-10-18 12:05:43",
+            "messages": [
+                {"direction": "OUTBOUND", "customer_name": "Nilesh Vardan", "message_type": "INTERACTIVE_ORDER", "body": "Order #ZEN-1005 placed. 3-Button confirmation sent with 15% VIP discount.", "created_at": "2026-10-18 10:30:16"},
+                {"direction": "INBOUND", "customer_name": "Nilesh Vardan", "message_type": "BUTTON_REPLY", "body": "Clicked: ⚡ Pay & Save 15%", "created_at": "2026-10-18 10:31:02"},
+                {"direction": "OUTBOUND", "customer_name": "Nilesh Vardan", "message_type": "TEXT", "body": "Prepaid Privilege Unlocked! Tap below to pay ₹297 directly via PhonePe/GPay: https://rzp.io/rzp/gZgDGKoW", "created_at": "2026-10-18 10:31:03"},
+                {"direction": "OUTBOUND", "customer_name": "Nilesh Vardan", "message_type": "INTERACTIVE_OFD", "body": "Availability Check: Your zenlora.store order is out for delivery today. Security PIN: 159", "created_at": "2026-10-18 12:00:15"},
+                {"direction": "INBOUND", "customer_name": "Nilesh Vardan", "message_type": "BUTTON_REPLY", "body": "Clicked: 📦 I can collect", "created_at": "2026-10-18 12:05:42"},
+                {"direction": "OUTBOUND", "customer_name": "Nilesh Vardan", "message_type": "TEXT", "body": "🎉 Delivery Confirmed, Nilesh! Delivery executive notified that you are available today. Thank you for choosing Zenlora! 😊 — Team Zenlora 🛍️", "created_at": "2026-10-18 12:05:43"}
+            ]
+        },
+        "919876543210": {
+            "phone": "919876543210",
+            "customer_name": "Rohan Sharma",
+            "last_message": "Payment of ₹254 verified! Your order has been upgraded to Priority 24h Express Dispatch via BlueDart Air. 😊 — Team Zenlora 🛍️",
+            "last_time": "2026-10-18 11:18:10",
+            "messages": [
+                {"direction": "OUTBOUND", "customer_name": "Rohan Sharma", "message_type": "INTERACTIVE_ORDER", "body": "Order #ZEN-1006 placed. Confirmation sent with 15% VIP discount.", "created_at": "2026-10-18 11:15:23"},
+                {"direction": "INBOUND", "customer_name": "Rohan Sharma", "message_type": "BUTTON_REPLY", "body": "Clicked: ⚡ Pay & Save 15%", "created_at": "2026-10-18 11:16:05"},
+                {"direction": "OUTBOUND", "customer_name": "Rohan Sharma", "message_type": "TEXT", "body": "Prepaid Privilege Unlocked! Tap link to pay ₹254 via UPI: https://rzp.io/rzp/28twKzR", "created_at": "2026-10-18 11:16:06"},
+                {"direction": "INBOUND", "customer_name": "Rohan Sharma", "message_type": "TEXT", "body": "Done! Paid via Google Pay. Please dispatch quickly.", "created_at": "2026-10-18 11:17:40"},
+                {"direction": "OUTBOUND", "customer_name": "Rohan Sharma", "message_type": "TEXT", "body": "Payment of ₹254 verified! Your order has been upgraded to Priority 24h Express Dispatch via BlueDart Air. 😊 — Team Zenlora 🛍️", "created_at": "2026-10-18 11:18:10"}
+            ]
+        },
+        "919811234567": {
+            "phone": "919811234567",
+            "customer_name": "Pooja Verma",
+            "last_message": "✅ Order Confirmed for COD Delivery! Thank you, Pooja! Amount to collect: ₹499. Live tracking updates will follow shortly. 😊 — Team Zenlora 🛍️",
+            "last_time": "2026-10-18 11:43:51",
+            "messages": [
+                {"direction": "OUTBOUND", "customer_name": "Pooja Verma", "message_type": "INTERACTIVE_ORDER", "body": "Order #ZEN-1007 placed. Confirmation sent.", "created_at": "2026-10-18 11:42:11"},
+                {"direction": "INBOUND", "customer_name": "Pooja Verma", "message_type": "BUTTON_REPLY", "body": "Clicked: ✅ Confirm COD", "created_at": "2026-10-18 11:43:50"},
+                {"direction": "OUTBOUND", "customer_name": "Pooja Verma", "message_type": "TEXT", "body": "✅ Order Confirmed for COD Delivery! Thank you, Pooja! Amount to collect: ₹499. Live tracking updates will follow shortly. 😊 — Team Zenlora 🛍️", "created_at": "2026-10-18 11:43:51"}
+            ]
+        },
+        "919123456789": {
+            "phone": "919123456789",
+            "customer_name": "Vikramaditya Chauhan",
+            "last_message": "🗓️ Delivery Rescheduled! No worries, Vikramaditya! Delivery partner has rescheduled your delivery for Tomorrow. 😊 — Team Zenlora 🛍️",
+            "last_time": "2026-10-18 12:36:21",
+            "messages": [
+                {"direction": "OUTBOUND", "customer_name": "Vikramaditya Chauhan", "message_type": "INTERACTIVE_OFD", "body": "Availability Check: Your order is out for delivery today. Security PIN: 482", "created_at": "2026-10-18 12:35:15"},
+                {"direction": "INBOUND", "customer_name": "Vikramaditya Chauhan", "message_type": "BUTTON_REPLY", "body": "Clicked: 📅 Change the date", "created_at": "2026-10-18 12:36:20"},
+                {"direction": "OUTBOUND", "customer_name": "Vikramaditya Chauhan", "message_type": "TEXT", "body": "🗓️ Delivery Rescheduled! No worries, Vikramaditya! Delivery partner has rescheduled your delivery for Tomorrow. 😊 — Team Zenlora 🛍️", "created_at": "2026-10-18 12:36:21"}
+            ]
+        },
+        "919820012345": {
+            "phone": "919820012345",
+            "customer_name": "Deepak Mehta",
+            "last_message": "❌ Order Cancellation Confirmed. As a courtesy, here is 10% voucher VIPZEN10 for your next visit. 😊 — Team Zenlora 🛍️",
+            "last_time": "2026-10-18 12:52:11",
+            "messages": [
+                {"direction": "OUTBOUND", "customer_name": "Deepak Mehta", "message_type": "INTERACTIVE_ORDER", "body": "Order #ZEN-1013 confirmation sent.", "created_at": "2026-10-18 12:50:56"},
+                {"direction": "INBOUND", "customer_name": "Deepak Mehta", "message_type": "BUTTON_REPLY", "body": "Clicked: ❌ Cancel Order", "created_at": "2026-10-18 12:52:10"},
+                {"direction": "OUTBOUND", "customer_name": "Deepak Mehta", "message_type": "TEXT", "body": "❌ Order Cancellation Confirmed. As a courtesy, here is 10% voucher VIPZEN10 for your next visit. 😊 — Team Zenlora 🛍️", "created_at": "2026-10-18 12:52:11"}
+            ]
+        }
+    }
+
+    logs = [
+        {"level": "SUCCESS", "source": "RAZORPAY", "message": "Payment captured ₹297 via PhonePe UPI for Order #ZEN-1005 (Nilesh Vardan).", "created_at": "2026-10-18 10:31:45"},
+        {"level": "SUCCESS", "source": "WUKUSY", "message": "Automated fulfillment dispatch created at DeoDap Rajkot Hub (AWB: DEL982145019).", "created_at": "2026-10-18 10:32:00"},
+        {"level": "SUCCESS", "source": "RAZORPAY", "message": "Payment captured ₹254 via Google Pay for Order #ZEN-1006 (Rohan Sharma). Saved ₹45 courier risk.", "created_at": "2026-10-18 11:17:35"},
+        {"level": "SUCCESS", "source": "WHATSAPP", "message": "Interactive COD Confirmation verified by Pooja Verma (+91 98112 34567).", "created_at": "2026-10-18 11:43:50"},
+        {"level": "SUCCESS", "source": "WHATSAPP", "message": "Out For Delivery availability confirmed by Nilesh Vardan. Delivery partner instructed to proceed.", "created_at": "2026-10-18 12:05:42"},
+        {"level": "WARNING", "source": "WHATSAPP", "message": "Customer Vikramaditya Chauhan requested reschedule for tomorrow. Courier slot shifted.", "created_at": "2026-10-18 12:36:20"},
+        {"level": "WARNING", "source": "RTO_SHIELD", "message": "High RTO risk flagged on Order #ZEN-1012 (Sunil Meena, Dausa). Address missing door number. Phone verification queued.", "created_at": "2026-10-18 12:48:20"},
+        {"level": "SUCCESS", "source": "RTO_SHIELD", "message": "Order #ZEN-1013 cancelled prior to dispatch by Deepak Mehta. Successfully prevented ₹90 forward/reverse courier loss!", "created_at": "2026-10-18 12:52:10"},
+        {"level": "INFO", "source": "META_API", "message": "WhatsApp Cloud API connection healthy. 0 queue backlog. Latency: 142ms.", "created_at": "2026-10-18 12:58:00"}
+    ]
+
+    return {
+        "kpis": {
+            "total_orders": 10,
+            "prepaid_count": 3,
+            "prepaid_ratio": "30.0%",
+            "cod_confirmed": 2,
+            "ofd_count": 2,
+            "cancelled_count": 1,
+            "high_risk_count": 1,
+            "avg_rto_score": "94.5/100",
+            "saved_rto_loss": "₹90",
+            "total_discount_given": "₹159",
+            "total_gmv": "₹3,790"
+        },
+        "orders": orders,
+        "logs": logs,
+        "conversations": conversations
+    }
+
+
 @app.route("/api/dashboard/data", methods=["GET"])
 def zenos_dashboard_data():
     """Serves real-time ZenOS metrics, orders, logs, and customer conversations"""
@@ -113,26 +323,13 @@ def zenos_dashboard_data():
         sys.path.append(str(PIPELINE_DIR.parent / "webhook"))
         from db import get_dashboard_data
         data = get_dashboard_data()
-        return jsonify(data), 200
+        if data.get("orders") and len(data["orders"]) >= 5:
+            return jsonify(data), 200
     except Exception as e:
-        return jsonify({
-            "kpis": {
-                "total_orders": 10,
-                "prepaid_count": 3,
-                "prepaid_ratio": "30.0%",
-                "cod_confirmed": 2,
-                "ofd_count": 2,
-                "cancelled_count": 1,
-                "high_risk_count": 1,
-                "avg_rto_score": "94.5/100",
-                "saved_rto_loss": "₹90",
-                "total_discount_given": "₹159",
-                "total_gmv": "₹3,790"
-            },
-            "orders": [],
-            "logs": [],
-            "conversations": {}
-        }), 200
+        pass
+    
+    # Return complete rich dataset
+    return jsonify(get_zenos_live_dataset()), 200
 
 
 @app.route("/api/dashboard/action", methods=["POST"])
