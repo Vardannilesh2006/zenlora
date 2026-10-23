@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "ZenOS Bridge — SmartBiz & Wukusy",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "description": "Seamless 1-Click Order Sync from Amazon SmartBiz to ZenOS WhatsApp Automation and 1-Tap Autofill to Wukusy Fulfillment.",
   "icons": {
     "16": "icon16.png",
@@ -27,6 +27,8 @@
     "*://smartbiz.amazon.in/*",
     "*://*.wukusy.com/*",
     "*://wukusy.com/*",
+    "*://*.wukusy.app/*",
+    "*://wukusy.app/*",
     "*://*.deodap.com/*",
     "*://deodap.com/*",
     "*://*.vercel.app/*",
@@ -47,6 +49,8 @@
       "matches": [
         "*://*.wukusy.com/*",
         "*://wukusy.com/*",
+        "*://*.wukusy.app/*",
+        "*://wukusy.app/*",
         "*://*.deodap.com/*",
         "*://deodap.com/*"
       ],

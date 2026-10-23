@@ -168,9 +168,9 @@
     }
     .btn-secondary:hover { background: #f8fafc; }
 
-    /* 5-8 Items Scrollable list */
+    /* Scrollable list */
     .customer-list-box {
-      max-height: 180px;
+      max-height: 200px;
       overflow-y: auto;
       border: 1px solid #e2e8f0;
       border-radius: 9px;
@@ -199,34 +199,35 @@
     /* Sub-tabs */
     .sub-nav {
       display: flex;
+      gap: 4px;
       background: #f1f5f9;
-      padding: 2px;
+      padding: 3px;
       border-radius: 8px;
-      gap: 2px;
       margin-bottom: 10px;
     }
     .sub-btn {
       flex: 1;
       padding: 5px;
       font-size: 11px;
-      font-weight: 700;
-      text-align: center;
-      border: none;
+      font-weight: 600;
+      color: #475569;
       background: transparent;
-      color: #64748b;
+      border: none;
       border-radius: 6px;
       cursor: pointer;
+      text-align: center;
     }
     .sub-btn.active {
       background: #ffffff;
       color: #0f172a;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+      font-weight: 700;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.05);
     }
   </style>
 </head>
 <body>
 
-  <!-- 1. TOP BAR -->
+  <!-- 1. TOP STATUS BAR -->
   <div class="topbar">
     <div style="display:flex; align-items:center; gap:8px;">
       <div class="brand-logo">Z</div>
@@ -244,16 +245,16 @@
   <!-- 2. APPLE-STYLE PLATFORM SEGMENT BAR -->
   <div class="segment-bar">
     <div class="segment-nav">
-      <button type="button" class="segment-btn active" id="btn-tab-smartbiz" onclick="switchTab('smartbiz')">
+      <button type="button" class="segment-btn active" id="btn-tab-smartbiz" data-tab="smartbiz">
         🛍️ SmartBiz
       </button>
-      <button type="button" class="segment-btn" id="btn-tab-wukusy" onclick="switchTab('wukusy')">
+      <button type="button" class="segment-btn" id="btn-tab-wukusy" data-tab="wukusy">
         📦 Wukusy
       </button>
-      <button type="button" class="segment-btn" id="btn-tab-whatsapp" onclick="switchTab('whatsapp')">
+      <button type="button" class="segment-btn" id="btn-tab-whatsapp" data-tab="whatsapp">
         💬 WhatsApp
       </button>
-      <button type="button" class="segment-btn" id="btn-tab-settings" onclick="switchTab('settings')" style="flex:0.5;">
+      <button type="button" class="segment-btn" id="btn-tab-settings" data-tab="settings" style="flex:0.5;">
         ⚙️
       </button>
     </div>
@@ -264,49 +265,29 @@
     
     <div style="background:#ecfdf5; border:1px solid #a7f3d0; border-radius:9px; padding:7px 10px; margin-bottom:10px; display:flex; justify-content:space-between; align-items:center;">
       <span style="font-weight:700; font-size:11.5px; color:#065f46;">Amazon SmartBiz Order Scraper</span>
-      <span style="font-size:10px; font-weight:700; color:#047857; background:#fff; padding:1px 6px; border-radius:4px; border:1px solid #a7f3d0;">+ SKU Parser</span>
+      <span style="font-size:10px; font-weight:700; color:#047857; background:#fff; padding:1px 6px; border-radius:4px; border:1px solid #a7f3d0;">+ Real DOM Parser</span>
     </div>
 
     <button type="button" class="btn btn-emerald" id="btn-scrape-active-tab">
-      ⚡ Scrape Customer &amp; SKU from Page
+      ⚡ Scrape Customer &amp; Orders from Screen
     </button>
-    <div id="scrape-status" class="status-toast" style="color:#64748b;">Open an order page on SmartBiz, then tap Scrape</div>
+    <div id="scrape-status" class="status-toast" style="color:#64748b;">Open SmartBiz Orders page, then tap Scrape</div>
 
-    <!-- SCRAPED PREVIEW CARD -->
-    <div class="card" id="card-scraped-order" style="display:none; margin-top:10px;">
-      <div class="card-header">
-        <span>Order Extraction Preview</span>
-        <span style="color:#008069; font-family:monospace; font-weight:700;" id="scraped-order-ref">#ZN-0000</span>
-      </div>
-
-      <div style="font-size:11.5px; line-height:1.5; color:#1e293b;">
-        <div>👤 <strong id="scraped-name">-</strong> (<span id="scraped-phone" style="font-family:monospace;">-</span>)</div>
-        <div>📦 <span id="scraped-product">-</span></div>
-        <div style="background:#eff6ff; padding:4px 8px; border-radius:6px; margin:4px 0; border:1px solid #bfdbfe; color:#1d4ed8; font-weight:700; font-family:monospace;">
-          🏷️ SKU: <span id="scraped-sku">-</span> • COD: ₹<span id="scraped-amount">-</span>
-        </div>
-        <div style="font-size:10.5px; color:#64748b; background:#f8fafc; padding:5px 8px; border-radius:6px; border:1px solid #e2e8f0; margin-top:3px;" id="scraped-address">-</div>
-      </div>
-
-      <!-- ADDRESS HEALTH PILL -->
-      <div id="scraped-diagnosis" style="margin-top:6px; padding:4px 8px; border-radius:6px; font-size:10.5px; font-weight:600; display:flex; align-items:center; justify-content:space-between; background:#fffbeb; color:#92400e; border:1px solid #fde68a;">
-        <span>📍 Address Check: Verified</span>
-        <span style="background:#fff; padding:1px 5px; border-radius:3px; border:1px solid #fde68a;">Complete</span>
-      </div>
-
-      <button type="button" class="btn btn-dark" id="btn-sync-to-zenos" style="margin-top:8px;">
-        🚀 1-Click Sync to ZenOS Cockpit &amp; WhatsApp
+    <!-- SCRAPED CONTROLS BAR -->
+    <div id="scraped-actions-bar" style="display:none; margin-top:8px; gap:8px;">
+      <button type="button" class="btn btn-dark" id="btn-sync-all-to-zenos" style="background:#0f172a; color:#fff;">
+        ⬆️ Sync All to ZenOS (<span id="sync-all-count">0</span> Orders)
       </button>
     </div>
 
-    <!-- RECENT SCRAPED ORDERS LIST (5-8 SCROLLABLE) -->
+    <!-- RECENT SCRAPED ORDERS LIST -->
     <div style="margin-top:10px;">
       <div class="card-header">
-        <span>Recent Scraped Customers</span>
+        <span>Scraped Customers Queue</span>
         <span id="scraped-count" style="color:#64748b; font-family:monospace;">0 saved</span>
       </div>
       <div class="customer-list-box" id="scraped-orders-list">
-        <div style="text-align:center; color:#94a3b8; font-size:11.5px; padding:22px 10px;">No orders scraped in this session.</div>
+        <div style="text-align:center; color:#94a3b8; font-size:11.5px; padding:22px 10px;">No orders scraped in this session yet.</div>
       </div>
     </div>
   </div>
@@ -315,12 +296,12 @@
   <div id="page-wukusy" class="page-content">
     
     <div style="background:#f5f3ff; border:1px solid #ddd6fe; border-radius:9px; padding:7px 10px; margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;">
-      <span style="font-weight:700; font-size:11.5px; color:#4c1d95;">Wukusy 1-Click Address Importer</span>
+      <span style="font-weight:700; font-size:11.5px; color:#4c1d95;">Wukusy.app 1-Click Address Autofill</span>
       <button type="button" id="btn-refresh-wukusy" style="background:none; border:none; color:#6d28d9; font-size:11px; font-weight:700; cursor:pointer;">🔄 Refresh</button>
     </div>
 
     <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:7px 9px; margin-bottom:10px; font-size:11px; color:#475569; line-height:1.4;">
-      💡 Open Wukusy's <strong>Add Address</strong> page, then tap <strong>[⚡ Fill in Wukusy]</strong> next to any confirmed customer to inject all 8 fields with green highlight.
+      💡 Open <strong>https://wukusy.app/</strong> checkout or address form, then tap <strong>[⚡ Fill in Wukusy]</strong> next to any confirmed customer to inject all 8 fields with green highlight.
     </div>
 
     <div class="card-header">
@@ -328,7 +309,7 @@
       <span id="wukusy-available-count" style="color:#6d28d9; font-family:monospace; font-weight:700;">Loading…</span>
     </div>
 
-    <!-- SERIAL NUMBERED CUSTOMER LIST (5-8 SCROLLABLE) -->
+    <!-- SERIAL NUMBERED CUSTOMER LIST -->
     <div class="customer-list-box" id="wukusy-customers-list" style="max-height:220px;">
       <div style="text-align:center; color:#94a3b8; font-size:11.5px; padding:30px 10px;">⏳ Loading orders from ZenOS…</div>
     </div>
@@ -338,7 +319,7 @@
     <div id="wukusy-feedback-card" class="card" style="display:none; margin-top:8px; background:#f0fdf4; border-color:#86efac;">
       <div style="font-weight:700; font-size:11px; color:#166534; margin-bottom:4px; display:flex; justify-content:space-between;">
         <span>✅ 8/8 Address Fields Injected</span>
-        <span style="font-family:monospace;">0% Hallucination</span>
+        <span style="font-family:monospace;">100% Real DOM</span>
       </div>
       <div style="font-size:10.5px; color:#14532d; font-family:monospace;" id="wukusy-feedback-text">
         First Name, Last Name, Company, Mobile, Address 1, Address 2, City, State, Pincode successfully populated!
@@ -350,12 +331,12 @@
   <!-- ==================== PAGE 3: WHATSAPP & AI STUDIO ==================== -->
   <div id="page-whatsapp" class="page-content">
     
-    <!-- SUB-TABS: ADD CUSTOMER vs AI HINGLISH STUDIO -->
+    <!-- SUB-TABS -->
     <div class="sub-nav">
-      <button type="button" class="sub-btn active" id="wa-btn-reg" onclick="switchWaSub('reg')">
+      <button type="button" class="sub-btn active" id="wa-btn-reg" data-wa-sub="reg">
         ➕ Add Customer (6 Fields)
       </button>
-      <button type="button" class="sub-btn" id="wa-btn-ai" onclick="switchWaSub('ai')">
+      <button type="button" class="sub-btn" id="wa-btn-ai" data-wa-sub="ai">
         ✨ AI Hinglish Studio
       </button>
     </div>
@@ -419,23 +400,19 @@
 
       <!-- PRESET CHIPS -->
       <div style="display:flex; flex-wrap:wrap; gap:4px; margin-bottom:8px;">
-        <button type="button" class="sub-btn" style="background:#f1f5f9; padding:3px 7px; font-size:10px;" onclick="setExtAiPreset('aapka addresh aaduhra hai')">📍 Address Missing</button>
-        <button type="button" class="sub-btn" style="background:#f1f5f9; padding:3px 7px; font-size:10px;" onclick="setExtAiPreset('50 rs flat discount offer on online payment')">⚡ ₹50 Prepay</button>
-        <button type="button" class="sub-btn" style="background:#f1f5f9; padding:3px 7px; font-size:10px;" onclick="setExtAiPreset('cod order confirmation with details')">✅ COD Confirm</button>
+        <button type="button" class="sub-btn" data-preset="address" style="background:#f1f5f9; padding:3px 7px; font-size:10px;">📍 Address Missing</button>
+        <button type="button" class="sub-btn" data-preset="prepay50" style="background:#f1f5f9; padding:3px 7px; font-size:10px;">⚡ ₹50 Prepay</button>
+        <button type="button" class="sub-btn" data-preset="cod" style="background:#f1f5f9; padding:3px 7px; font-size:10px;">✅ COD Confirm</button>
       </div>
 
       <!-- WHATSAPP MESSAGE BUBBLE PREVIEW -->
       <div style="background:#efeae2; border:1px solid #d1d7db; border-radius:8px; padding:9px; margin-bottom:8px;">
-        <div id="ext-ai-preview-box" style="background:#d9fdd3; padding:8px 10px; border-radius:8px 8px 0 8px; font-size:11.5px; color:#111b21; line-height:1.45; white-space:pre-wrap;">
-          <!-- Generated message preview -->
-        </div>
-        <div id="ext-ai-buttons-preview" style="margin-top:6px; display:flex; flex-direction:column; gap:4px;">
-          <!-- Action buttons preview -->
-        </div>
+        <div id="ext-ai-preview-box" style="background:#d9fdd3; padding:8px 10px; border-radius:8px 8px 0 8px; font-size:11.5px; color:#111b21; line-height:1.45; white-space:pre-wrap;"></div>
+        <div id="ext-ai-buttons-preview" style="margin-top:6px; display:flex; flex-direction:column; gap:4px;"></div>
       </div>
 
       <button type="button" class="btn btn-emerald" id="btn-dispatch-ai-whatsapp">
-        🚀 Send via WhatsApp Gateway (+91 97713 70945)
+        🚀 Send via WhatsApp Gateway
       </button>
       <div id="ext-ai-status" class="status-toast" style="color:#047857;"></div>
     </div>
@@ -447,16 +424,20 @@
     <div class="card">
       <div class="card-header">
         <span>Connection &amp; Gateway Settings</span>
-        <span style="color:#047857;">Configured</span>
+        <span style="color:#047857;">Active</span>
       </div>
       
       <div style="margin-bottom:8px;">
         <label for="backend-url" style="font-size:10.5px; font-weight:600; color:#475569; display:block; margin-bottom:2px;">ZenOS Backend URL</label>
-        <input id="backend-url" type="url" value="http://localhost:5000" style="width:100%; padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:11.5px;">
+        <input id="backend-url" type="url" value="https://zenos-nine.vercel.app" style="width:100%; padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:11.5px;">
+        <div style="display:flex; gap:6px; margin-top:4px;">
+          <button type="button" id="btn-url-cloud" style="font-size:10px; padding:2px 6px; background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; border-radius:4px; cursor:pointer;">Live Cloud (Vercel)</button>
+          <button type="button" id="btn-url-local" style="font-size:10px; padding:2px 6px; background:#f1f5f9; color:#475569; border:1px solid #cbd5e1; border-radius:4px; cursor:pointer;">Local (localhost:5000)</button>
+        </div>
       </div>
 
       <div style="margin-bottom:10px;">
-        <label for="extension-key" style="font-size:10.5px; font-weight:600; color:#475569; display:block; margin-bottom:2px;">Extension API Key (Optional for Localhost)</label>
+        <label for="extension-key" style="font-size:10.5px; font-weight:600; color:#475569; display:block; margin-bottom:2px;">Extension API Key (Optional)</label>
         <input id="extension-key" type="password" placeholder="ZENOS_EXTENSION_API_KEY" style="width:100%; padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:11.5px;">
       </div>
 
@@ -466,7 +447,7 @@
 
     <div style="text-align:center; font-size:10.5px; color:#94a3b8; margin-top:14px;">
       ZenOS Universal Bridge · Unified Single Extension v2.2<br>
-      Connected: Baileys Gateway (+91 97713 70945)
+      Live Cockpit: <a href="https://zenos-nine.vercel.app" target="_blank" style="color:#0284c7; text-decoration:none;">zenos-nine.vercel.app</a>
     </div>
   </div>
 

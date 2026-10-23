@@ -24,6 +24,87 @@
       'box-shadow:0 8px 20px rgba(0,0,0,0.28)', 'cursor:pointer',
       'display:flex', 'align-items:center', 'gap:7px', 'white-space:nowrap'
     ].join(';');
+  // --- Draggable Helper ---
+  function makeDraggable(el, storageKey) {
+    let isDragging = false;
+    let startX = 0, startY = 0;
+    let initialLeft = 0, initialTop = 0;
+    let moved = false;
+
+    try {
+      const saved = localStorage.getItem(storageKey);
+      if (saved) {
+        const pos = JSON.parse(saved);
+        if (typeof pos.top === 'number' && typeof pos.left === 'number') {
+          const maxTop = Math.max(10, window.innerHeight - 60);
+          const maxLeft = Math.max(10, window.innerWidth - 180);
+          el.style.top = Math.min(Math.max(10, pos.top), maxTop) + 'px';
+          el.style.left = Math.min(Math.max(10, pos.left), maxLeft) + 'px';
+          el.style.bottom = 'auto';
+          el.style.right = 'auto';
+        }
+      }
+    } catch (e) {}
+
+    el.style.cursor = 'grab';
+    el.style.userSelect = 'none';
+
+    el.addEventListener('mousedown', (e) => {
+      if (e.button !== 0) return;
+      isDragging = true;
+      moved = false;
+      startX = e.clientX;
+      startY = e.clientY;
+      const rect = el.getBoundingClientRect();
+      initialLeft = rect.left;
+      initialTop = rect.top;
+      el.style.cursor = 'grabbing';
+
+      function onMouseMove(moveEvent) {
+        if (!isDragging) return;
+        const dx = moveEvent.clientX - startX;
+        const dy = moveEvent.clientY - startY;
+        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
+
+        let newLeft = initialLeft + dx;
+        let newTop = initialTop + dy;
+        const maxLeft = window.innerWidth - el.offsetWidth - 5;
+        const maxTop = window.innerHeight - el.offsetHeight - 5;
+        newLeft = Math.max(5, Math.min(newLeft, maxLeft));
+        newTop = Math.max(5, Math.min(newTop, maxTop));
+
+        el.style.left = newLeft + 'px';
+        el.style.top = newTop + 'px';
+        el.style.bottom = 'auto';
+        el.style.right = 'auto';
+      }
+
+      function onMouseUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        el.style.cursor = 'grab';
+        document.removeEventListener('mousemove', onMouseMove);
+        document.removeEventListener('mouseup', onMouseUp);
+        if (moved) {
+          const rect = el.getBoundingClientRect();
+          try {
+            localStorage.setItem(storageKey, JSON.stringify({ top: rect.top, left: rect.left }));
+          } catch (e) {}
+        }
+      }
+
+      document.addEventListener('mousemove', onMouseMove);
+      document.addEventListener('mouseup', onMouseUp);
+    });
+
+    el.addEventListener('click', (e) => {
+      if (moved) {
+        e.stopImmediatePropagation();
+        e.preventDefault();
+        moved = false;
+      }
+    }, true);
+  }
     pill.addEventListener('click', () => {
       const pageType = detectPageType();
       if (pageType === 'LIST') openBulkListModal();
@@ -31,6 +112,7 @@
       else showToast('⚠️ Navigate to the SmartBiz Orders page first.', '#b45309');
     });
     document.documentElement.appendChild(pill);
+    makeDraggable(pill, 'zenos_smartbiz_pill_pos');
   }
 
   // ─── Page Type Detection ──────────────────────────────────────────────────
@@ -787,7 +869,7 @@
     return new Promise(resolve => {
       chrome.storage.local.get(['zenos_backend_url', 'zenos_extension_api_key'], values => {
         resolve({
-          backendUrl: (values.zenos_backend_url || 'http://localhost:5000').replace(/\/+$/, ''),
+          backendUrl: (values.zenos_backend_url || 'https://zenos-nine.vercel.app').replace(/\/+$/, ''),
           apiKey: values.zenos_extension_api_key || ''
         });
       });

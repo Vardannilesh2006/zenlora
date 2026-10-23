@@ -2,32 +2,39 @@ document.addEventListener("DOMContentLoaded", () => {
   const backendField = document.getElementById("backend-url");
   const keyField = document.getElementById("extension-key");
   const configStatus = document.getElementById("config-status");
-  const defaultUrl = "http://localhost:5000";
+  const defaultUrl = "https://zenos-nine.vercel.app";
 
   let activeScrapedOrder = null;
   let scrapedOrdersSession = [];
   let confirmedOrdersCache = [];
+  let scrapedOrdersList = [];
   let extPendingAiButtons = [];
 
-  // ==================== 1. MAIN APPLE TAB SWITCHING ====================
-  window.switchTab = function(tabName) {
-    document.querySelectorAll(".segment-btn").forEach(btn => btn.classList.remove("active"));
-    document.querySelectorAll(".page-content").forEach(p => p.classList.remove("active"));
-
-    const targetBtn = document.getElementById(`btn-tab-${tabName}`);
-    const targetPage = document.getElementById(`page-${tabName}`);
-    if (targetBtn) targetBtn.classList.add("active");
-    if (targetPage) targetPage.classList.add("active");
+  // ==================== 1. TAB SWITCHING (MV3 COMPLIANT) ====================
+  function switchTab(tabName) {
+    document.querySelectorAll(".segment-btn").forEach(btn => {
+      btn.classList.toggle("active", btn.getAttribute("data-tab") === tabName);
+    });
+    document.querySelectorAll(".page-content").forEach(p => {
+      p.classList.toggle("active", p.id === `page-${tabName}`);
+    });
 
     if (tabName === "wukusy") {
       loadWukusyOrders();
     } else if (tabName === "whatsapp") {
       renderAiPreview();
     }
-  };
+  }
+
+  document.querySelectorAll("[data-tab]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const tab = btn.getAttribute("data-tab");
+      if (tab) switchTab(tab);
+    });
+  });
 
   // WhatsApp Sub-Tabs
-  window.switchWaSub = function(subName) {
+  function switchWaSub(subName) {
     const btnReg = document.getElementById("wa-btn-reg");
     const btnAi = document.getElementById("wa-btn-ai");
     const viewReg = document.getElementById("wa-view-reg");
@@ -45,7 +52,44 @@ document.addEventListener("DOMContentLoaded", () => {
       viewAi.style.display = "block";
       renderAiPreview();
     }
-  };
+  }
+
+  document.querySelectorAll("[data-wa-sub]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const sub = btn.getAttribute("data-wa-sub");
+      if (sub) switchWaSub(sub);
+    });
+  });
+
+  // Quick Preset Chips for AI Studio
+  document.querySelectorAll("[data-preset]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const p = btn.getAttribute("data-preset");
+      const input = document.getElementById("ext-ai-prompt");
+      if (p === "address") {
+        input.value = "aapka addresh aaduhra hai, kripya pura address landmark ke sath share kare";
+      } else if (p === "prepay50") {
+        input.value = "50 rs flat discount offer on online payment, prepaid confirm kare";
+      } else if (p === "cod") {
+        input.value = "cod order confirmation with details and tracking";
+      }
+      renderAiPreview();
+    });
+  });
+
+  // Settings Quick URL buttons
+  const btnCloud = document.getElementById("btn-url-cloud");
+  if (btnCloud) {
+    btnCloud.addEventListener("click", () => {
+      backendField.value = "https://zenos-nine.vercel.app";
+    });
+  }
+  const btnLocal = document.getElementById("btn-url-local");
+  if (btnLocal) {
+    btnLocal.addEventListener("click", () => {
+      backendField.value = "http://localhost:5000";
+    });
+  }
 
   // Load Saved Configuration
   chrome.storage.local.get(["zenos_backend_url", "zenos_extension_api_key", "zenos_scraped_history"], (config) => {
@@ -58,7 +102,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Save Settings
   document.getElementById("save-config-btn").addEventListener("click", () => {
-    const backendUrl = backendField.value.trim().replace(/\/+$/, "");
+    const backendUrl = backendField.value.trim().replace(/\/+$/, "") || defaultUrl;
     const apiKey = keyField.value.trim();
     chrome.storage.local.set({
       zenos_backend_url: backendUrl,
@@ -85,10 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ==================== PAGE 1: AMAZON SMARTBIZ SCRAPER (MULTI-ORDER LIST) ====================
-  // Scrapes ALL visible orders from the SmartBiz orders list page in one click
-  let scrapedOrdersList = []; // holds all scraped orders from current page
-
+  // ==================== PAGE 1: SMARTBIZ ORDER SCRAPER ====================
   document.getElementById("btn-scrape-active-tab").addEventListener("click", () => {
     const statusMsg = document.getElementById("scrape-status");
     statusMsg.style.color = "#64748b";
@@ -109,17 +150,17 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // First ensure content script is injected (in case it wasn't auto-injected)
+      // Ensure content script is injected
       chrome.scripting.executeScript({
         target: { tabId: tabs[0].id },
         files: ["smartbiz_bridge.js"]
-      }).catch(() => {}); // Already injected = OK, ignore error
+      }).catch(() => {});
 
       setTimeout(() => {
         chrome.tabs.sendMessage(tabs[0].id, { action: "SCRAPE_SMARTBIZ_ORDERS_LIST" }, (response) => {
           if (chrome.runtime.lastError) {
             statusMsg.style.color = "#b91c1c";
-            statusMsg.textContent = "⚠️ Could not connect to SmartBiz page. Try refreshing it.";
+            statusMsg.textContent = "⚠️ Could not connect to SmartBiz page. Refresh the tab and retry.";
             return;
           }
 
@@ -141,20 +182,18 @@ document.addEventListener("DOMContentLoaded", () => {
           statusMsg.style.color = "#047857";
           statusMsg.textContent = `✅ ${count} order${count !== 1 ? "s" : ""} found on screen!`;
 
-          // If single order, also set activeScrapedOrder for legacy compat
           if (count >= 1) activeScrapedOrder = scrapedOrdersList[0];
 
           renderScrapedList();
         });
-      }, 500); // small delay to ensure script injected
+      }, 400);
     });
   });
 
-  // Sync a specific order from the scraped list
-  window.syncScrapedOrderByIndex = async function(idx) {
+  // Sync a single scraped order by index
+  async function syncScrapedOrderByIndex(idx, btn) {
     const order = scrapedOrdersList[idx];
-    if (!order) return;
-    const btn = document.getElementById(`btn-sync-scraped-${idx}`);
+    if (!order) return false;
     const statusMsg = document.getElementById("scrape-status");
     if (btn) { btn.disabled = true; btn.textContent = "⏳…"; }
 
@@ -195,6 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrapedOrdersSession.unshift(payload);
         if (scrapedOrdersSession.length > 30) scrapedOrdersSession.pop();
         chrome.storage.local.set({ zenos_scraped_history: scrapedOrdersSession });
+        return true;
       } else {
         throw new Error(data.message || `Error ${res.status}`);
       }
@@ -202,31 +242,48 @@ document.addEventListener("DOMContentLoaded", () => {
       statusMsg.style.color = "#b91c1c";
       statusMsg.textContent = `❌ ${err.message}`;
       if (btn) { btn.disabled = false; btn.textContent = "Sync"; }
+      return false;
     }
-  };
+  }
 
-  // Legacy single-order sync button (kept for compatibility with popup.html)
-  const legacySyncBtn = document.getElementById("btn-sync-to-zenos");
-  if (legacySyncBtn) {
-    legacySyncBtn.addEventListener("click", async () => {
-      if (!activeScrapedOrder) return;
-      await window.syncScrapedOrderByIndex(0);
+  // Sync All Scraped Orders to ZenOS
+  const btnSyncAll = document.getElementById("btn-sync-all-to-zenos");
+  if (btnSyncAll) {
+    btnSyncAll.addEventListener("click", async () => {
+      if (!scrapedOrdersList.length) return;
+      btnSyncAll.disabled = true;
+      const statusMsg = document.getElementById("scrape-status");
+      let successCount = 0;
+
+      for (let i = 0; i < scrapedOrdersList.length; i++) {
+        btnSyncAll.textContent = `⏳ Syncing ${i + 1}/${scrapedOrdersList.length}…`;
+        const rowBtn = document.querySelector(`[data-sync-idx="${i}"]`);
+        const ok = await syncScrapedOrderByIndex(i, rowBtn);
+        if (ok) successCount++;
+      }
+
+      btnSyncAll.disabled = false;
+      btnSyncAll.textContent = `✅ Synced ${successCount}/${scrapedOrdersList.length} to ZenOS!`;
+      statusMsg.style.color = "#047857";
+      statusMsg.textContent = `🎉 All ${successCount} orders successfully saved to ZenOS!`;
     });
   }
 
   function renderScrapedList() {
     const list = document.getElementById("scraped-orders-list");
     const countBadge = document.getElementById("scraped-count");
+    const actionsBar = document.getElementById("scraped-actions-bar");
+    const syncAllCount = document.getElementById("sync-all-count");
 
-    // Show both newly-scraped and session history
     const displayOrders = scrapedOrdersList.length > 0 ? scrapedOrdersList : scrapedOrdersSession;
     const isLive = scrapedOrdersList.length > 0;
 
     if (countBadge) countBadge.textContent = `${displayOrders.length} ${isLive ? "found" : "saved"}`;
 
-    // Hide old single-order card if it exists
-    const singleCard = document.getElementById("card-scraped-order");
-    if (singleCard) singleCard.style.display = "none";
+    if (actionsBar) {
+      actionsBar.style.display = isLive && displayOrders.length > 0 ? "block" : "none";
+      if (syncAllCount) syncAllCount.textContent = displayOrders.length;
+    }
 
     if (!displayOrders.length) {
       list.innerHTML = `<div style="text-align:center;color:#94a3b8;font-size:11.5px;padding:22px 10px;">No orders scraped in this session yet.</div>`;
@@ -242,28 +299,33 @@ document.addEventListener("DOMContentLoaded", () => {
         : o.order_status_smartbiz === "Pending" ? "#fffbeb" : "#f1f5f9";
 
       return `
-        <div style="border-bottom:1px solid #f1f5f9;padding:9px 12px;display:flex;align-items:flex-start;gap:8px;">
+        <div class="customer-row">
           <div style="flex:1;min-width:0;">
             <div style="display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:2px;">
-              <div style="font-weight:700;font-size:12px;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px;" title="${o.customer_name || ""}">
-                ${idx + 1}. ${o.customer_name || "—"}
+              <div style="font-weight:700;font-size:12px;color:#0f172a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:160px;" title="${escapeHtml(o.customer_name || "")}">
+                ${idx + 1}. ${escapeHtml(o.customer_name || "—")}
               </div>
               <div style="display:flex;align-items:center;gap:4px;flex-shrink:0;">
-                <span style="font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:999px;background:${statusBg};color:${statusColor};">${o.order_status_smartbiz || "Pending"}</span>
+                <span style="font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:999px;background:${statusBg};color:${statusColor};">${escapeHtml(o.order_status_smartbiz || "Pending")}</span>
                 <span style="font-family:monospace;font-size:11px;font-weight:700;color:#059669;">₹${o.amount || "—"}</span>
               </div>
             </div>
-            <div style="font-size:10.5px;color:#475569;font-family:monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">#${o.order_ref || "—"} ${o.sku ? "• SKU: " + o.sku : ""}</div>
-            ${hasPhone ? `<div style="font-size:10.5px;color:#1d4ed8;">📱 +91 ${phone10}</div>` : '<div style="font-size:10.5px;color:#b91c1c;">⚠️ No phone number detected</div>'}
-            ${o.address ? `<div style="font-size:10px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${o.address}">📍 ${o.address}</div>` : ""}
+            <div style="font-size:10.5px;color:#475569;font-family:monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">#${escapeHtml(o.order_ref || "—")} ${o.sku ? "• SKU: " + escapeHtml(o.sku) : ""}</div>
+            ${hasPhone ? `<div style="font-size:10.5px;color:#1d4ed8;">📱 +91 ${phone10}</div>` : '<div style="font-size:10.5px;color:#b91c1c;">⚠️ No phone number</div>'}
+            ${o.address ? `<div style="font-size:10px;color:#64748b;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${escapeHtml(o.address)}">📍 ${escapeHtml(o.address)}</div>` : ""}
           </div>
-          ${isLive ? `<button id="btn-sync-scraped-${idx}" onclick="syncScrapedOrderByIndex(${idx})" 
-            style="flex-shrink:0;padding:4px 9px;background:#008069;color:#fff;border:0;border-radius:5px;font-size:10.5px;font-weight:700;cursor:pointer;white-space:nowrap;">
-            Sync
-          </button>` : `<span style="font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:3px;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;flex-shrink:0;">Done</span>`}
+          ${isLive ? `<button type="button" class="btn-sync-single" data-sync-idx="${idx}" style="flex-shrink:0;padding:4px 9px;background:#008069;color:#fff;border:0;border-radius:5px;font-size:10.5px;font-weight:700;cursor:pointer;white-space:nowrap;">Sync</button>` : `<span style="font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:3px;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;flex-shrink:0;">Done</span>`}
         </div>
       `;
     }).join("");
+
+    // Wire sync buttons via event delegation
+    list.querySelectorAll(".btn-sync-single").forEach(b => {
+      b.addEventListener("click", () => {
+        const idx = parseInt(b.getAttribute("data-sync-idx"), 10);
+        syncScrapedOrderByIndex(idx, b);
+      });
+    });
   }
 
   // ==================== PAGE 2: WUKUSY 1-CLICK IMPORTER ====================
@@ -282,7 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (apiKey) headers["X-ZenOS-Extension-Key"] = apiKey;
 
       const res = await fetch(`${backendUrl}/api/dashboard/data`, { headers });
-      if (!res.ok) throw new Error("Could not reach ZenOS API");
+      if (!res.ok) throw new Error(`Could not reach ZenOS API (${res.status})`);
 
       const data = await res.json();
       const allOrders = data.orders || [];
@@ -310,18 +372,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     list.innerHTML = confirmedOrdersCache.map((o, idx) => {
       const location = [o.city, o.pincode].filter(Boolean).join(", ") || (o.address ? o.address.slice(0, 22) + '…' : 'India');
-      const orderJson = encodeURIComponent(JSON.stringify(o));
       return `
         <div class="customer-row">
           <div style="flex:1; min-width:0;">
             <div style="font-weight:700; font-size:11.5px; color:#0f172a; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-              ${idx + 1}. ${o.customer_name}
+              ${idx + 1}. ${escapeHtml(o.customer_name)}
             </div>
             <div style="font-size:10.5px; color:#64748b; font-family:monospace; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
-              ${o.order_ref} • ${location} • +${o.phone}
+              ${escapeHtml(o.order_ref)} • ${escapeHtml(location)} • +${escapeHtml(o.phone)}
             </div>
           </div>
-          <button type="button" class="btn-wukusy-fill" data-order="${orderJson}" style="padding:4px 9px; background:#6366f1; color:white; border:none; border-radius:6px; font-size:11px; font-weight:700; cursor:pointer; flex-shrink:0;">
+          <button type="button" class="btn-wukusy-fill" data-wukusy-idx="${idx}" style="padding:4px 9px; background:#6366f1; color:white; border:none; border-radius:6px; font-size:11px; font-weight:700; cursor:pointer; flex-shrink:0;">
             ⚡ Fill in Wukusy
           </button>
         </div>
@@ -330,8 +391,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     list.querySelectorAll(".btn-wukusy-fill").forEach(btn => {
       btn.addEventListener("click", () => {
-        const orderData = JSON.parse(decodeURIComponent(btn.getAttribute("data-order")));
-        executeWukusyFill(orderData, btn);
+        const idx = parseInt(btn.getAttribute("data-wukusy-idx"), 10);
+        const orderData = confirmedOrdersCache[idx];
+        if (orderData) executeWukusyFill(orderData, btn);
       });
     });
   }
@@ -344,7 +406,7 @@ document.addEventListener("DOMContentLoaded", () => {
     buttonElement.disabled = true;
     buttonElement.textContent = "⏳ Filling…";
     statusMsg.style.color = "#475569";
-    statusMsg.textContent = `Injecting 8 address fields for ${order.customer_name}…`;
+    statusMsg.textContent = `Injecting address fields for ${order.customer_name}…`;
 
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       if (!tabs || !tabs[0]) {
@@ -355,35 +417,43 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      chrome.tabs.sendMessage(tabs[0].id, { action: "FILL_WUKUSY_FORM", order }, (response) => {
-        buttonElement.disabled = false;
-        buttonElement.textContent = "⚡ Fill in Wukusy";
+      // First ensure wukusy_bridge.js is injected
+      chrome.scripting.executeScript({
+        target: { tabId: tabs[0].id },
+        files: ["wukusy_bridge.js"]
+      }).catch(() => {});
 
-        if (chrome.runtime.lastError || !response) {
-          statusMsg.style.color = "#b91c1c";
-          statusMsg.textContent = "Please make sure Wukusy 'Add Address' modal or page is open.";
-          return;
-        }
+      setTimeout(() => {
+        chrome.tabs.sendMessage(tabs[0].id, { action: "FILL_WUKUSY_FORM", order }, (response) => {
+          buttonElement.disabled = false;
+          buttonElement.textContent = "⚡ Fill in Wukusy";
 
-        if (response.status === "success") {
-          statusMsg.style.color = "#047857";
-          statusMsg.textContent = `✅ Success! ${response.filledCount} fields populated for ${order.customer_name}!`;
-          feedbackCard.style.display = "block";
-          feedbackText.textContent = `First Name, Last Name, Company, Mobile (${order.phone}), Address 1, Address 2, City, Pincode injected with 100% precision.`;
-        } else {
-          statusMsg.style.color = "#b91c1c";
-          statusMsg.textContent = response.message || "Failed to inject fields.";
-        }
-      });
+          if (chrome.runtime.lastError || !response) {
+            statusMsg.style.color = "#b91c1c";
+            statusMsg.textContent = "Please make sure https://wukusy.app/ is open with 'Add Address' visible.";
+            return;
+          }
+
+          if (response.status === "success") {
+            statusMsg.style.color = "#047857";
+            statusMsg.textContent = `✅ Success! ${response.filledCount} fields populated for ${order.customer_name}!`;
+            if (feedbackCard) feedbackCard.style.display = "block";
+            if (feedbackText) {
+              feedbackText.textContent = `First Name, Last Name, Mobile (${order.phone}), Address 1, City, State, Pincode injected with 100% precision.`;
+            }
+          } else {
+            statusMsg.style.color = "#b91c1c";
+            statusMsg.textContent = response.message || "Failed to inject fields.";
+          }
+        });
+      }, 400);
     });
   }
 
-  // ==================== PAGE 3: WHATSAPP & AI STUDIO ====================
-  // Save Customer Form (6 Fields)
+  // ==================== PAGE 3: WHATSAPP QUEUE & AI STUDIO ====================
+  // Register Customer
   document.getElementById("btn-save-customer-queue").addEventListener("click", async () => {
-    const statusEl = document.getElementById("ext-add-status");
-    const btn = document.getElementById("btn-save-customer-queue");
-
+    const status = document.getElementById("ext-add-status");
     const phone = document.getElementById("ext-add-phone").value.trim();
     const name = document.getElementById("ext-add-name").value.trim();
     const ref = document.getElementById("ext-add-ref").value.trim();
@@ -391,155 +461,151 @@ document.addEventListener("DOMContentLoaded", () => {
     const product = document.getElementById("ext-add-product").value.trim();
     const sku = document.getElementById("ext-add-sku").value.trim();
 
-    if (!phone || !name || !ref || !amount || !product || !sku) {
-      statusEl.style.color = "#b91c1c";
-      statusEl.textContent = "Please fill all 6 required fields.";
+    if (!phone || !name || !ref || !amount || !product) {
+      status.style.color = "#b91c1c";
+      status.textContent = "All required fields (*) must be provided!";
       return;
     }
 
-    btn.disabled = true;
-    btn.textContent = "⏳ Saving…";
+    status.style.color = "#64748b";
+    status.textContent = "Saving customer to ZenOS…";
 
     const backendUrl = backendField.value.trim().replace(/\/+$/, "") || defaultUrl;
+    const apiKey = keyField.value.trim();
+
     try {
+      const headers = { "Content-Type": "application/json" };
+      if (apiKey) headers["X-ZenOS-Extension-Key"] = apiKey;
+
+      const payload = {
+        customer_name: name,
+        phone: phone.replace(/\D/g, "").slice(-10),
+        order_ref: ref,
+        amount: parseInt(amount, 10) || 0,
+        product_name: product,
+        sku: sku,
+        whatsapp_opt_in: true,
+        consent_source: "ZenOS Extension Registration"
+      };
+
       const res = await fetch(`${backendUrl}/api/orders/ingest`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          customer_name: name,
-          phone: phone,
-          order_ref: ref,
-          product_name: product,
-          sku: sku,
-          amount: parseInt(amount, 10) || 349,
-          whatsapp_opt_in: true,
-          consent_source: "Extension WhatsApp Queue"
-        })
+        headers,
+        body: JSON.stringify(payload)
       });
-
       const data = await res.json();
+
       if (res.ok && (data.status === "saved" || data.status === "success")) {
-        statusEl.style.color = "#047857";
-        statusEl.textContent = `✅ ${name} registered in WhatsApp Queue!`;
-        btn.textContent = "✅ Saved!";
+        status.style.color = "#047857";
+        status.textContent = `✅ ${name} registered in ZenOS!`;
+        const clean10 = phone.replace(/\D/g, "").slice(-10);
         setTimeout(() => {
-          btn.disabled = false;
-          btn.textContent = "💾 Save Customer & Open WhatsApp Chat";
-        }, 1500);
+          window.open(`https://wa.me/91${clean10}`, "_blank");
+        }, 800);
       } else {
-        throw new Error(data.message || "Failed to save");
+        throw new Error(data.message || `Error ${res.status}`);
       }
     } catch (err) {
-      statusEl.style.color = "#b91c1c";
-      statusEl.textContent = `Error: ${err.message}`;
-      btn.disabled = false;
-      btn.textContent = "💾 Save Customer & Open WhatsApp Chat";
+      status.style.color = "#b91c1c";
+      status.textContent = `❌ ${err.message}`;
     }
   });
 
-  // AI Prompt live generator
-  const promptInput = document.getElementById("ext-ai-prompt");
-  if (promptInput) promptInput.addEventListener("input", renderAiPreview);
-
-  window.setExtAiPreset = function(text) {
-    document.getElementById("ext-ai-prompt").value = text;
-    renderAiPreview();
-  };
+  // AI Prompt live preview
+  const extAiPrompt = document.getElementById("ext-ai-prompt");
+  if (extAiPrompt) {
+    extAiPrompt.addEventListener("input", renderAiPreview);
+  }
 
   function renderAiPreview() {
-    const raw = (document.getElementById("ext-ai-prompt")?.value || "").toLowerCase();
-    const name = document.getElementById("ext-add-name")?.value.trim() || activeScrapedOrder?.customer_name || "Customer";
-    const ref = document.getElementById("ext-add-ref")?.value.trim() || activeScrapedOrder?.order_ref || "";
-    const product = document.getElementById("ext-add-product")?.value.trim() || activeScrapedOrder?.product_name || "your order";
-    const amount = parseInt(document.getElementById("ext-add-amount")?.value.trim(), 10) || parseInt(activeScrapedOrder?.amount, 10) || 0;
-    const prepay50 = Math.max(1, amount - 50);
-
+    const promptInput = document.getElementById("ext-ai-prompt");
     const previewBox = document.getElementById("ext-ai-preview-box");
-    const btnContainer = document.getElementById("ext-ai-buttons-preview");
+    const buttonsBox = document.getElementById("ext-ai-buttons-preview");
     if (!previewBox) return;
 
-    if (!raw && !name) {
-      previewBox.textContent = "💬 Type notes or choose a preset below to preview personalized D2C message.";
-      if (btnContainer) btnContainer.innerHTML = "";
-      return;
-    }
-
+    const raw = (promptInput?.value || "").toLowerCase().trim();
     let text = "";
-    if (raw.includes("aaduhra") || raw.includes("address") || raw.includes("landmark") || raw.includes("pincode")) {
-      text = `Namaste ${name}! 🙏✨\n\nThank you for choosing *Zenlora*! We are preparing your order${ref ? " *" + ref + "*" : ""}${product ? " (" + product + ")" : ""}.\n\n📍 *Delivery Address Verification Needed:*\nYour delivery address appears incomplete (missing house number or landmark). Please reply with your complete address in this format:\n\n• House / Flat No:\n• Street / Landmark:\n• City & State:\n• Pincode:\n\nOnce verified, your parcel will be dispatched immediately. 🚀\n\n━━━━━━━━━━━━━━━━━━━━\n🌟 Team Zenlora | zenlora.store`;
+    extPendingAiButtons = [];
+
+    if (raw.includes("aaduhra") || raw.includes("address") || raw.includes("landmark") || raw.includes("pin")) {
+      text = "Namaste! 🙏✨\n\nThank you for choosing *Zenlora*!\n\n📍 *Delivery Address Verification:*\nYour address appears incomplete. Please reply with:\n• House / Flat No:\n• Street / Landmark:\n• City & Pincode:\n\nOnce verified, your order will be dispatched immediately! 🚀";
       extPendingAiButtons = [
-        { id: "btn_update_addr", text: "📍 Update Address" },
-        { id: "btn_prepay_50", text: `⚡ Pay Online (Save ₹50)` },
-        { id: "btn_cancel_order", text: "❌ Cancel Order" }
+        { id: "btn_update_addr", text: "📍 Send Address" },
+        { id: "btn_confirm_cod", text: "✅ Confirm COD Order" }
       ];
-    } else if (raw.includes("50") || raw.includes("prepay") || raw.includes("discount")) {
-      text = `Namaste ${name}! 🙏✨\n\n⚡ *Exclusive Prepay Privilege — Flat ₹50 Instant Discount:*\nPay online now and get Flat ₹50 Instant Discount!\n${amount ? "Your price drops from ₹" + amount + " → only *₹" + prepay50 + "*!\n\n" : ""}Save ₹50 straight into your pocket + get Free Express Delivery 🎁\n\nTap a button below to confirm:`;
+    } else if (raw.includes("50") || raw.includes("prepay") || raw.includes("discount") || raw.includes("online")) {
+      text = "Namaste! 🙏✨\n\n⚡ *Exclusive Prepaid Privilege — Flat ₹50 OFF!*\nPay online now & save ₹50 instantly on your Zenlora order!\n\nPlease tap below to confirm:";
       extPendingAiButtons = [
-        { id: "btn_prepay_50", text: amount ? `⚡ Pay ₹${prepay50} (Flat ₹50 OFF)` : "⚡ Pay Online (₹50 OFF)" },
-        { id: "btn_confirm_cod", text: amount ? `✅ Confirm COD (₹${amount})` : "✅ Confirm COD" },
+        { id: "btn_prepay_50", text: "⚡ Pay Now (Save ₹50)" },
+        { id: "btn_confirm_cod", text: "✅ Confirm COD Order" },
         { id: "btn_cancel_order", text: "❌ Cancel Order" }
       ];
     } else {
-      text = `Namaste ${name}! 🙏✨\n\n📦 *Order Summary:*\n${ref ? "• Order ID: " + ref + "\n" : ""}• Product: ${product}\n${amount ? "• COD Total: ₹" + amount + "\n" : ""}\nPlease tap below to verify dispatch:`;
+      text = "Namaste! 🙏✨\n\nThank you for choosing *Zenlora*! Your order has been registered.\n\nPlease tap a button below to confirm your delivery preferences:";
       extPendingAiButtons = [
         { id: "btn_confirm_cod", text: "✅ Confirm COD Order" },
-        { id: "btn_prepay_50", text: `⚡ Pay Online (Save ₹50)` },
         { id: "btn_cancel_order", text: "❌ Cancel Order" }
       ];
     }
 
     previewBox.textContent = text;
-    btnContainer.innerHTML = extPendingAiButtons.map(b => `
-      <div style="background:#fff; border:1px solid #10b981; border-radius:5px; padding:4px 6px; font-weight:700; color:#047857; text-align:center; font-size:10.5px;">
-        ${b.text}
-      </div>
-    `).join("");
+    if (buttonsBox) {
+      buttonsBox.innerHTML = extPendingAiButtons.map(b => `
+        <div style="background:#ffffff; border:1px solid #10b981; border-radius:6px; padding:5px; font-weight:700; font-size:10.5px; color:#047857; text-align:center;">
+          ${escapeHtml(b.text)}
+        </div>
+      `).join("");
+    }
   }
 
-  // Dispatch AI WhatsApp via Gateway
+  // Dispatch AI WhatsApp
   document.getElementById("btn-dispatch-ai-whatsapp").addEventListener("click", async () => {
-    const statusEl = document.getElementById("ext-ai-status");
-    const btn = document.getElementById("btn-dispatch-ai-whatsapp");
-    const phone = document.getElementById("ext-add-phone").value.trim();
-    const name = document.getElementById("ext-add-name").value.trim();
-    const message = document.getElementById("ext-ai-preview-box").textContent;
+    const status = document.getElementById("ext-ai-status");
+    const previewBox = document.getElementById("ext-ai-preview-box");
+    const text = previewBox ? previewBox.textContent : "";
+    const phoneInput = document.getElementById("ext-add-phone");
+    const cleanPhone = (phoneInput?.value || "").replace(/\D/g, "").slice(-10);
 
-    btn.disabled = true;
-    btn.textContent = "⏳ Sending via Gateway…";
+    if (!cleanPhone || cleanPhone.length !== 10) {
+      status.style.color = "#b91c1c";
+      status.textContent = "Please enter a valid 10-digit WhatsApp number in the form first!";
+      return;
+    }
 
-    const cleanDigits = phone.replace(/\D/g, "");
+    status.style.color = "#64748b";
+    status.textContent = "Dispatching WhatsApp message…";
+
     const backendUrl = backendField.value.trim().replace(/\/+$/, "") || defaultUrl;
-
     try {
       const res = await fetch(`${backendUrl}/api/crm/send`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          phone: cleanDigits.length === 10 ? `91${cleanDigits}` : cleanDigits,
-          customer_name: name,
-          message: message,
+          phone: `91${cleanPhone}`,
+          customer_name: document.getElementById("ext-add-name")?.value.trim() || "Customer",
+          message: text,
           buttons: extPendingAiButtons
         })
       });
-
       const data = await res.json();
       if (res.ok && data.status === "success") {
-        statusEl.style.color = "#047857";
-        statusEl.textContent = `✅ Dispatched to +91 ${cleanDigits} via WhatsApp Gateway!`;
-        btn.textContent = "✅ Message Delivered!";
-        setTimeout(() => {
-          btn.disabled = false;
-          btn.textContent = "🚀 Send via WhatsApp Gateway (+91 97713 70945)";
-        }, 2000);
+        status.style.color = "#047857";
+        status.textContent = `✅ Message dispatched to +91 ${cleanPhone}!`;
+        if (data.wa_link) {
+          window.open(data.wa_link, "_blank");
+        }
       } else {
-        throw new Error(data.message || "Failed to dispatch");
+        throw new Error(data.message || `Error ${res.status}`);
       }
     } catch (err) {
-      statusEl.style.color = "#b91c1c";
-      statusEl.textContent = `Error: ${err.message}`;
-      btn.disabled = false;
-      btn.textContent = "🚀 Send via WhatsApp Gateway (+91 97713 70945)";
+      status.style.color = "#b91c1c";
+      status.textContent = `❌ ${err.message}`;
     }
   });
 
+  function escapeHtml(str) {
+    return String(str || "").replace(/[&<>"']/g, m => ({
+      "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+    })[m]);
+  }
 });
