@@ -1,31 +1,56 @@
 {
   "manifest_version": 3,
-  "name": "Zenlora Auto-Bridge (SmartBiz & Wukusy Sync)",
-  "version": "1.0.0",
-  "description": "Zero-Manual Bridge connecting SmartBiz by Amazon, WhatsApp Confirmation Bot, and Wukusy Dropshipping Portal.",
-  "permissions": [
-    "storage",
-    "activeTab"
-  ],
-  "host_permissions": [
-    "https://smartbiz.amazon.in/*",
-    "https://wukusy.app/*",
-    "https://*.wukusy.app/*",
-    "https://zenlora-whatsapp-bot.onrender.com/*"
-  ],
+  "name": "ZenOS Bridge — SmartBiz & Wukusy",
+  "version": "2.0.0",
+  "description": "Seamless 1-Click Order Sync from Amazon SmartBiz to ZenOS WhatsApp Automation and 1-Tap Autofill to Wukusy Fulfillment.",
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Zenlora Auto-Bridge"
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "ZenOS Core Bridge"
   },
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.smartbiz.amazon.in/*",
+    "*://smartbiz.amazon.in/*",
+    "*://*.wukusy.com/*",
+    "*://wukusy.com/*",
+    "*://*.deodap.com/*",
+    "*://deodap.com/*",
+    "*://*.vercel.app/*",
+    "*://*.onrender.com/*",
+    "http://localhost:*/*",
+    "http://127.0.0.1:*/*"
+  ],
   "content_scripts": [
     {
-      "matches": ["https://smartbiz.amazon.in/*"],
-      "js": ["content_smartbiz.js"],
+      "matches": [
+        "*://smartbiz.amazon.in/*",
+        "*://*.smartbiz.amazon.in/*"
+      ],
+      "js": ["smartbiz_bridge.js"],
       "run_at": "document_idle"
     },
     {
-      "matches": ["https://wukusy.app/*", "https://*.wukusy.app/*"],
-      "js": ["content_wukusy.js"],
+      "matches": [
+        "*://*.wukusy.com/*",
+        "*://wukusy.com/*",
+        "*://*.deodap.com/*",
+        "*://deodap.com/*"
+      ],
+      "js": ["wukusy_bridge.js"],
       "run_at": "document_idle"
     }
   ]
