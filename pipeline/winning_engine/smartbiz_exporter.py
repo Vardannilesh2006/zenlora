@@ -674,6 +674,10 @@ def select_current_page_products(
     p_filt = str(price_filter or "All").strip().lower()
     if p_filt in ("premium_sweet_spot", "339_499", "sweet_spot"):
         items = [w for w in items if 339 <= float(w.get("selling_price") or 0) <= 499 and float(w.get("gross_profit") or 0) >= 100]
+    elif p_filt in ("349_449", "349-449"):
+        items = [w for w in items if 349 <= float(w.get("selling_price") or 0) <= 449 and float(w.get("gross_profit") or 0) >= 100]
+    elif p_filt in ("399_499", "399-499"):
+        items = [w for w in items if 399 <= float(w.get("selling_price") or 0) <= 499 and float(w.get("gross_profit") or 0) >= 100]
     elif p_filt == "339_399":
         items = [w for w in items if 339 <= float(w.get("selling_price") or 0) <= 399 and float(w.get("gross_profit") or 0) >= 90]
     elif p_filt == "399_449":

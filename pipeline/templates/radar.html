@@ -164,7 +164,7 @@
                     </p>
                 </div>
                 <div class="flex items-center gap-2 flex-wrap">
-                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche|urlencode }}&cost_filter={{ selected_cost_filter or 'All' }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
+                    <a href="/api/radar/smartbiz.xlsx?mode=page&niche={{ selected_niche|urlencode }}&price_filter={{ selected_price_filter or 'All' }}&cost_filter={{ selected_cost_filter or 'All' }}&batch={{ current_batch }}&limit=24&min_score={{ min_score }}&min_margin={{ min_margin }}&confidence={{ selected_confidence }}" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-white text-emerald-900 border border-emerald-300 hover:bg-emerald-100 transition">
                         📊 Page Excel (.xlsx · 24)
                     </a>
                     <a href="/api/radar/smartbiz.xlsx?mode=mix&batch={{ current_batch }}&count=55" onclick="return downloadUniqueSmartBizFile(event, this.href)" class="text-[11px] font-semibold px-2.5 py-1.5 rounded-lg bg-emerald-700 text-white hover:bg-emerald-800 transition">
@@ -340,7 +340,7 @@
         <div class="max-w-[1500px] mx-auto flex flex-wrap items-center justify-between gap-2.5">
             <div class="flex flex-wrap items-center gap-1.5 max-w-full py-0.5">
                 {% for n in niches %}
-                <a href="/radar?niche={{ n|urlencode }}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap {% if selected_niche == n or (n == 'Festive & Lights' and selected_niche in ('Festive & Lights', 'Festive', 'Gifts', 'Gifts & Hampers')) or (n == 'Health & Beauty Accessories' and selected_niche in ('Health & Beauty Accessories', 'Health & Beauty', 'Beauty')) or (n == 'Home & Kitchen' and selected_niche in ('Home & Kitchen', 'Kitchen', 'Kitchen & Dining')) or (n == 'Home Improvement' and selected_niche in ('Home Improvement', 'Home Decor')) or (n == 'Smart Gadgets' and selected_niche in ('Smart Gadgets', 'Gadgets')) or (n == 'Toys & Games' and selected_niche in ('Toys & Games', 'Toys', 'Games')) or (n == 'Under 199 Collection' and selected_niche in ('Under 199 Collection', 'Under 199', 'Under 199-299', '199-299')) %}cat-pill-active{% elif n == 'Under 199 Collection' %}bg-emerald-50 text-emerald-900 border-emerald-300 hover:bg-emerald-100{% else %}bg-white text-textSecondary border-zinc-200/80 hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
+                <a href="/radar?niche={{ n|urlencode }}{% if selected_price_filter and selected_price_filter != 'All' %}&price_filter={{ selected_price_filter }}{% endif %}{% if current_batch %}&batch={{ current_batch }}{% endif %}" class="flex-shrink-0 px-3 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap {% if selected_niche == n or (n == 'Festive & Lights' and selected_niche in ('Festive & Lights', 'Festive', 'Gifts', 'Gifts & Hampers')) or (n == 'Health & Beauty Accessories' and selected_niche in ('Health & Beauty Accessories', 'Health & Beauty', 'Beauty')) or (n == 'Home & Kitchen' and selected_niche in ('Home & Kitchen', 'Kitchen', 'Kitchen & Dining')) or (n == 'Home Improvement' and selected_niche in ('Home Improvement', 'Home Decor')) or (n == 'Smart Gadgets' and selected_niche in ('Smart Gadgets', 'Gadgets')) or (n == 'Toys & Games' and selected_niche in ('Toys & Games', 'Toys', 'Games')) or (n == 'Under 199 Collection' and selected_niche in ('Under 199 Collection', 'Under 199', 'Under 199-299', '199-299')) %}cat-pill-active{% elif n == 'Under 199 Collection' %}bg-emerald-50 text-emerald-900 border-emerald-300 hover:bg-emerald-100{% else %}bg-white text-textSecondary border-zinc-200/80 hover:bg-zinc-100 hover:text-textPrimary{% endif %}">
                     {% if n == 'All' %}🌐 All ({{ total_winners }})
                     {% elif n == 'Festive & Lights' %}🪔 Festive & Lights ({{ niche_counts.get('Festive & Lights', 24) if niche_counts else 24 }})
                     {% elif n == 'Health & Beauty Accessories' %}💄 Health & Beauty Accessories ({{ niche_counts.get('Health & Beauty Accessories', 24) if niche_counts else 24 }})
@@ -401,22 +401,22 @@
                     </span>
                 </a>
 
-                <!-- ₹339 – ₹399 -->
+                <!-- ✨ ₹349 – ₹449 (Bestsellers) -->
+                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=349_449{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter in ('349_449', '349-449') %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
+                    ✨ ₹349 – ₹449 (Bestsellers · ₹100-₹150 Margin)
+                </a>
+
+                <!-- 🔥 ₹399 – ₹499 (High-Worth & Gifts) -->
+                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=399_499{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter in ('399_499', '399-499') %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
+                    🔥 ₹399 – ₹499 (Premium & Gifts · ₹120-₹180 Margin)
+                </a>
+
+                <!-- ⚡ ₹339 – ₹399 -->
                 <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=339_399{% if current_batch %}&batch={{ current_batch }}{% endif %}"
                    class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter == '339_399' %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
-                    ⚡ ₹339 – ₹399 (Margin: ₹100+)
-                </a>
-
-                <!-- ₹399 – ₹449 -->
-                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=399_449{% if current_batch %}&batch={{ current_batch }}{% endif %}"
-                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter == '399_449' %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
-                    🔥 ₹399 – ₹449 (Gifts / Margin: ₹120+)
-                </a>
-
-                <!-- ₹449 – ₹499 -->
-                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=449_499{% if current_batch %}&batch={{ current_batch }}{% endif %}"
-                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter == '449_499' %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
-                    👑 ₹449 – ₹499 (Luxury Decor / Margin: ₹140+)
+                    ⚡ ₹339 – ₹399 (Impulse Premium · ₹100+ Margin)
                 </a>
 
                 <!-- High Margin (₹120+ Profit) -->
@@ -436,9 +436,9 @@
                 <span class="text-textMuted">Active View:</span>
                 <span class="font-bold text-textPrimary px-2 py-0.5 rounded bg-white border border-zinc-200">
                     {% if selected_price_filter in ('premium_sweet_spot', '339_499', 'sweet_spot') %}💎 Premium ₹339–₹499 ({{ winners|length }} items)
+                    {% elif selected_price_filter in ('349_449', '349-449') %}✨ ₹349–₹449 ({{ winners|length }} items)
+                    {% elif selected_price_filter in ('399_499', '399-499') %}🔥 ₹399–₹499 ({{ winners|length }} items)
                     {% elif selected_price_filter == '339_399' %}⚡ ₹339–₹399 ({{ winners|length }} items)
-                    {% elif selected_price_filter == '399_449' %}🔥 ₹399–₹449 ({{ winners|length }} items)
-                    {% elif selected_price_filter == '449_499' %}👑 ₹449–₹499 ({{ winners|length }} items)
                     {% elif selected_price_filter == 'high_margin' %}💰 ₹120+ Profit ({{ winners|length }} items)
                     {% else %}All Prices ({{ winners|length }} items){% endif %}
                 </span>

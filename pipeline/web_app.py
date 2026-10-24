@@ -203,6 +203,18 @@ def radar():
             if 339 <= float(w.get("selling_price") or 0) <= 499
             and float(w.get("gross_profit") or 0) >= 100
         ]
+    elif p_filt in ("349_449", "349-449"):
+        winners = [
+            w for w in winners
+            if 349 <= float(w.get("selling_price") or 0) <= 449
+            and float(w.get("gross_profit") or 0) >= 100
+        ]
+    elif p_filt in ("399_499", "399-499"):
+        winners = [
+            w for w in winners
+            if 399 <= float(w.get("selling_price") or 0) <= 499
+            and float(w.get("gross_profit") or 0) >= 100
+        ]
     elif p_filt == "339_399":
         winners = [
             w for w in winners

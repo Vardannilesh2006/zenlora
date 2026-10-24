@@ -754,12 +754,13 @@ def get_winners(
         for n_name, n_items in by_niche.items():
             if not n_items:
                 continue
-            # Sort base niche pool deterministically by (High confidence, not hard_failed, score, handle)
+            # Sort base niche pool deterministically: Prioritize Worth-It Premium Sweet-Spot (339-499, profit >= 100) FIRST
             n_items_sorted = sorted(
                 n_items,
                 key=lambda x: (
                     not x.get("is_hard_failed", False),
                     x.get("confidence") == "High",
+                    (339 <= float(x.get("selling_price") or 0) <= 499 and float(x.get("gross_profit") or 0) >= 100),
                     x.get("winning_score", 0),
                     x.get("verified_score_pct", 0),
                     x.get("handle", ""),
@@ -797,6 +798,7 @@ def get_winners(
                     key=lambda x: (
                         not x.get("is_hard_failed", False),
                         x.get("confidence") == "High",
+                        (339 <= float(x.get("selling_price") or 0) <= 499 and float(x.get("gross_profit") or 0) >= 100),
                         x.get("winning_score", 0),
                     ),
                     reverse=True,

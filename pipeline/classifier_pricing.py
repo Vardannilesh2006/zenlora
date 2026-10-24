@@ -80,24 +80,22 @@ class ClassifierAndPricingEngine:
             key = str(seed_key or "zenlora").strip().lower()
             seed = sum((idx + 1) * ord(ch) for idx, ch in enumerate(key)) + int(round(float(wholesale_price)))
             selling_price = 179 + (seed % 7)
-        elif 50.0 < wholesale_price <= 100.0:
-            # Budget utilities selling at 249-299 with 100-140 profit
-            target_raw = wholesale_price + 50.0 + 110.0
-            selling_price = 249 if target_raw <= 249 else 299
+        elif wholesale_price <= 85.0:
+            selling_price = 339
+        elif wholesale_price <= 115.0:
+            selling_price = 349
+        elif wholesale_price <= 135.0:
+            selling_price = 369
+        elif wholesale_price <= 155.0:
+            selling_price = 399
+        elif wholesale_price <= 185.0:
+            selling_price = 429
+        elif wholesale_price <= 215.0:
+            selling_price = 449
+        elif wholesale_price <= 245.0:
+            selling_price = 479
         else:
-            # Target Premium Sweet Spot: Wholesale (100-240) + Shipping (50) + Healthy Net Margin (120-160)
-            target_raw = wholesale_price + 50.0 + 135.0
-            
-            # Snap to psychological points (339, 349, 369, 379, 399, 429, 449, 479, 499)
-            sweet_points = [339, 349, 369, 379, 399, 429, 449, 479, 499, 549, 599]
-            selling_price = sweet_points[-1]
-            for pt in sweet_points:
-                if pt >= target_raw:
-                    selling_price = pt
-                    break
-            # Hard bounds: keep worth-it products in the 339-499 sweet spot
-            if 100 <= wholesale_price <= 240 and selling_price > 499:
-                selling_price = 499
+            selling_price = 499
 
         # Realistic D2C Box MRP: 25% - 35% discount perception (believable, authentic, zero inflated fake markup)
         # e.g. Selling 349 -> MRP 499 (30% OFF), Selling 399 -> MRP 569, Selling 449 -> MRP 649, Selling 499 -> MRP 699
