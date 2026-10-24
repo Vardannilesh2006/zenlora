@@ -5,7 +5,7 @@ from config import CATEGORIES, SHIPPING_BUFFER, MIN_MARKUP, TARGET_MARKUP, COMPA
 class ClassifierAndPricingEngine:
     """Classifies products into Zenlora categories and computes psychological pricing."""
 
-    PSYCHOLOGICAL_POINTS = [199, 249, 299, 349, 399, 449, 499, 549, 599, 699, 799, 899, 999, 1199, 1299, 1499, 1999]
+    PSYCHOLOGICAL_POINTS = [199, 249, 299, 339, 349, 369, 379, 399, 429, 449, 479, 499, 549, 599, 699, 799, 899, 999, 1199, 1299, 1499, 1999]
 
     @classmethod
     def classify(cls, title: str, description: str, tags: list, product_type: str) -> dict:

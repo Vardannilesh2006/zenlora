@@ -554,6 +554,7 @@ def select_current_page_products(
     min_margin: float = 0.0,
     confidence: str = "All",
     cost_filter: str = "All",
+    price_filter: str = "All",
     exclude_exported: bool = True,
     extra_excluded_keys: Optional[List[str]] = None,
     commit_to_ledger: bool = False,
@@ -596,6 +597,19 @@ def select_current_page_products(
 
     if str(cost_filter).strip().lower() in ("under_50", "under_199", "under_199_collection"):
         items = [w for w in items if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
+
+    # Filter for target high-perceived-value price sweet spot (339-499 with 100-160 profit)
+    p_filt = str(price_filter or "All").strip().lower()
+    if p_filt in ("premium_sweet_spot", "339_499", "sweet_spot"):
+        items = [w for w in items if 339 <= float(w.get("selling_price") or 0) <= 499 and float(w.get("gross_profit") or 0) >= 100]
+    elif p_filt == "339_399":
+        items = [w for w in items if 339 <= float(w.get("selling_price") or 0) <= 399 and float(w.get("gross_profit") or 0) >= 90]
+    elif p_filt == "399_449":
+        items = [w for w in items if 399 <= float(w.get("selling_price") or 0) <= 449 and float(w.get("gross_profit") or 0) >= 110]
+    elif p_filt == "449_499":
+        items = [w for w in items if 449 <= float(w.get("selling_price") or 0) <= 499 and float(w.get("gross_profit") or 0) >= 120]
+    elif p_filt == "high_margin":
+        items = [w for w in items if float(w.get("gross_profit") or 0) >= 120]
     if min_score > 0:
         items = [w for w in items if float(w.get("winning_score") or 0) >= min_score]
     if min_margin > 0:

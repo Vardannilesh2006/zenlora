@@ -383,6 +383,70 @@
         </div>
     </div>
 
+    <!-- Price & Perceived Value Sweet Spot Filter Bar (₹339 - ₹499 with ₹100-₹160 Margin) -->
+    <div class="border-b border-borderSubtle bg-gradient-to-r from-zinc-50 via-emerald-50/25 to-zinc-50 px-3 sm:px-6 py-2">
+        <div class="max-w-[1500px] mx-auto flex flex-wrap items-center justify-between gap-2.5">
+            <div class="flex items-center gap-2 overflow-x-auto py-0.5 max-w-full scrollbar-none">
+                <span class="text-[11px] font-bold text-textSecondary uppercase tracking-wider flex items-center gap-1.5 pl-1 flex-shrink-0">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Sweet Spot:</span>
+                </span>
+
+                <!-- 💎 Premium Sweet Spot (₹339–₹499) [PRIMARY RECOMMENDED] -->
+                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=premium_sweet_spot{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                   class="px-3 py-1.5 rounded-lg text-xs font-bold border transition whitespace-nowrap flex items-center gap-1.5 flex-shrink-0 {% if selected_price_filter in ('premium_sweet_spot', '339_499', 'sweet_spot') %}bg-emerald-700 text-white border-emerald-700 shadow-sm{% else %}bg-emerald-50 text-emerald-900 border-emerald-300 hover:bg-emerald-100{% endif %}"
+                   title="Recommended: High-perceived value products selling at ₹339 to ₹499 with solid ₹100 to ₹160+ net profit margin">
+                    <span>💎 Premium Sweet Spot (₹339–₹499)</span>
+                    <span class="text-[10px] px-1.5 py-0.5 rounded font-extrabold {% if selected_price_filter in ('premium_sweet_spot', '339_499', 'sweet_spot') %}bg-white text-emerald-800{% else %}bg-emerald-200 text-emerald-900{% endif %}">
+                        {{ premium_sweet_spot_count or 129 }} Worth-It Products
+                    </span>
+                </a>
+
+                <!-- ₹339 – ₹399 -->
+                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=339_399{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter == '339_399' %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
+                    ⚡ ₹339 – ₹399 (Margin: ₹100+)
+                </a>
+
+                <!-- ₹399 – ₹449 -->
+                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=399_449{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter == '399_449' %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
+                    🔥 ₹399 – ₹449 (Gifts / Margin: ₹120+)
+                </a>
+
+                <!-- ₹449 – ₹499 -->
+                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=449_499{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter == '449_499' %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
+                    👑 ₹449 – ₹499 (Luxury Decor / Margin: ₹140+)
+                </a>
+
+                <!-- High Margin (₹120+ Profit) -->
+                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=high_margin{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if selected_price_filter == 'high_margin' %}bg-amber-600 text-white border-amber-600 shadow-xs{% else %}bg-amber-50 text-amber-900 border-amber-300 hover:bg-amber-100{% endif %}">
+                    💰 High Margin (₹120+ Profit)
+                </a>
+
+                <!-- All Prices -->
+                <a href="/radar?niche={{ selected_niche|urlencode }}&price_filter=All{% if current_batch %}&batch={{ current_batch }}{% endif %}"
+                   class="px-2.5 py-1.5 rounded-lg text-xs font-semibold border transition whitespace-nowrap flex-shrink-0 {% if not selected_price_filter or selected_price_filter == 'All' %}bg-zinc-900 text-white border-zinc-900 shadow-xs{% else %}bg-white text-textSecondary border-zinc-200 hover:bg-zinc-100{% endif %}">
+                    All Prices
+                </a>
+            </div>
+
+            <div class="text-[11px] text-textSecondary font-medium flex items-center gap-1.5 flex-shrink-0">
+                <span class="text-textMuted">Active View:</span>
+                <span class="font-bold text-textPrimary px-2 py-0.5 rounded bg-white border border-zinc-200">
+                    {% if selected_price_filter in ('premium_sweet_spot', '339_499', 'sweet_spot') %}💎 Premium ₹339–₹499 ({{ winners|length }} items)
+                    {% elif selected_price_filter == '339_399' %}⚡ ₹339–₹399 ({{ winners|length }} items)
+                    {% elif selected_price_filter == '399_449' %}🔥 ₹399–₹449 ({{ winners|length }} items)
+                    {% elif selected_price_filter == '449_499' %}👑 ₹449–₹499 ({{ winners|length }} items)
+                    {% elif selected_price_filter == 'high_margin' %}💰 ₹120+ Profit ({{ winners|length }} items)
+                    {% else %}All Prices ({{ winners|length }} items){% endif %}
+                </span>
+            </div>
+        </div>
+    </div>
+
     <!-- Main Content Container: Product Grid -->
     <main class="flex-1 max-w-[1500px] w-full mx-auto px-3 sm:px-6 py-5">
 
@@ -472,6 +536,11 @@
                                 {% if w.discount_pct %}
                                 <span class="text-[9px] font-bold text-rose-700 bg-rose-50 px-1.5 py-0.2 rounded border border-rose-200">
                                     {{ w.discount_pct }}% OFF
+                                </span>
+                                {% endif %}
+                                {% if 339 <= w.selling_price <= 499 and w.gross_profit >= 100 %}
+                                <span class="text-[9px] font-bold text-emerald-800 bg-emerald-50 px-1.5 py-0.5 rounded border border-emerald-300 flex items-center gap-1 shadow-2xs" title="Verified Worth-It Value: High perceived quality with solid profit margin">
+                                    💎 Worth-It
                                 </span>
                                 {% endif %}
                                 <span class="text-[9px] font-semibold text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded border border-emerald-100">

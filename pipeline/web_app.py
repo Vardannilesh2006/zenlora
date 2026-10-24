@@ -104,6 +104,7 @@ def radar():
 
     niche = normalize_niche_param(request.args.get("niche", "All"))
     cost_filter = request.args.get("cost_filter", "All").strip()
+    price_filter = request.args.get("price_filter", "All").strip()
     festival_filter = request.args.get("festival", "All")
     status_filter = request.args.get("status", "All")
     confidence_filter = request.args.get("confidence", "All")
@@ -165,6 +166,38 @@ def radar():
             if float(w.get("competitor_pricing", {}).get("net_profit", w.get("gross_profit", 0))) >= min_margin
         ]
 
+    # Filter by target high-perceived-value price sweet spot (339-499 with 100-160 profit)
+    p_filt = str(price_filter or "All").strip().lower()
+    if p_filt in ("premium_sweet_spot", "339_499", "sweet_spot"):
+        winners = [
+            w for w in winners
+            if 339 <= float(w.get("selling_price") or 0) <= 499
+            and float(w.get("gross_profit") or 0) >= 100
+        ]
+    elif p_filt == "339_399":
+        winners = [
+            w for w in winners
+            if 339 <= float(w.get("selling_price") or 0) <= 399
+            and float(w.get("gross_profit") or 0) >= 90
+        ]
+    elif p_filt == "399_449":
+        winners = [
+            w for w in winners
+            if 399 <= float(w.get("selling_price") or 0) <= 449
+            and float(w.get("gross_profit") or 0) >= 110
+        ]
+    elif p_filt == "449_499":
+        winners = [
+            w for w in winners
+            if 449 <= float(w.get("selling_price") or 0) <= 499
+            and float(w.get("gross_profit") or 0) >= 120
+        ]
+    elif p_filt == "high_margin":
+        winners = [
+            w for w in winners
+            if float(w.get("gross_profit") or 0) >= 120
+        ]
+
     active_winners = [w for w in all_winners if not w.get("is_hard_failed", False)]
     hard_failed_count = sum(1 for w in all_winners if w.get("is_hard_failed", False))
     total_winners = len(active_winners)
@@ -213,7 +246,9 @@ def radar():
         winners=winners,
         selected_niche=niche,
         selected_cost_filter=cost_filter,
+        selected_price_filter=price_filter,
         under_50_count=under_50_count,
+        premium_sweet_spot_count=sum(1 for w in full_unexported_pool if 339 <= float(w.get("selling_price") or 0) <= 499 and float(w.get("gross_profit") or 0) >= 100),
         selected_festival=festival_filter,
         selected_status=status_filter,
         selected_confidence=confidence_filter,
@@ -408,6 +443,7 @@ def export_smartbiz_csv():
     mode = request.args.get("mode", "page").strip().lower()
     niche = normalize_niche_param(request.args.get("niche", "All"))
     cost_filter = request.args.get("cost_filter", "All").strip()
+    price_filter = request.args.get("price_filter", "All").strip()
     batch_cursor = int(request.args.get("batch", 0) or 0)
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
@@ -437,6 +473,7 @@ def export_smartbiz_csv():
             min_margin=min_margin,
             confidence=confidence,
             cost_filter=cost_filter,
+            price_filter=price_filter,
             exclude_exported=True,
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
@@ -467,6 +504,7 @@ def export_smartbiz_xlsx():
     mode = request.args.get("mode", "page").strip().lower()
     niche = normalize_niche_param(request.args.get("niche", "All"))
     cost_filter = request.args.get("cost_filter", "All").strip()
+    price_filter = request.args.get("price_filter", "All").strip()
     batch_cursor = int(request.args.get("batch", 0) or 0)
     min_score = float(request.args.get("min_score", 0) or 0)
     min_margin = float(request.args.get("min_margin", 0) or 0)
@@ -496,6 +534,7 @@ def export_smartbiz_xlsx():
             min_margin=min_margin,
             confidence=confidence,
             cost_filter=cost_filter,
+            price_filter=price_filter,
             exclude_exported=True,
             extra_excluded_keys=extra_keys,
             commit_to_ledger=commit_flag,
