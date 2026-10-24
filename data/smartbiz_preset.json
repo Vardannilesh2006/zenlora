@@ -3,7 +3,7 @@
   "preset_name": "Zenlora SmartBiz v10 Store Preset (New High-Score Winners)",
   "version": "10.0",
   "status": "active",
-  "updated_at": "2026-10-12T19:55:00+05:30",
+  "updated_at": "2026-10-24T12:20:00+05:30",
   "listing_mode": "new_products_only",
   "under_50_price_preset": {
     "enabled": true,
@@ -11,16 +11,16 @@
     "selling_price_min_inr": 179,
     "selling_price_max_inr": 185,
     "smartbiz_product_category": "Under 199 Collection",
-    "rule_label": "DeoDap Price ≤ ₹50 → Selling Price ₹179 to ₹185 (Product Category: Under 199 Collection)"
+    "rule_label": "DeoDap Price <= Rs.50 -> Selling Price Rs.179 to Rs.185 (Product Category: Under 199 Collection)"
   },
   "column_rules": {
     "cols_a_to_e_system_ids": "Blank (\"\") — Creates fresh SmartBiz listings without modifying existing store products",
     "col_f_custom_sku": "Real Live DeoDap Variant SKU (<= 40 chars)",
     "col_g_product_name": "Clean Commercial Product Title (<= 200 chars)",
-    "col_h_mrp": "4-Band Cost-Inverse Variable Discount Box MRP (Ends in 9, 5, or 0; Strictly Never 2x Selling Price)",
-    "col_i_selling_price": "DeoDap ≤ Rs.50 -> Fixed Rs.179-Rs.185 Preset | Above Rs.50 -> Market-Anchored Safe Dropship Price",
+    "col_h_mrp": "Realistic D2C Box MRP (Ends in 9, 5, or 0; 25% to 35% discount perception)",
+    "col_i_selling_price": "DeoDap <= Rs.50 -> Fixed Rs.179-Rs.185 Preset | Above Rs.50 -> Sweet Spot Rs.339-Rs.499",
     "col_j_business_category": "GENERAL (Unified across all rows for zero cross-category validation errors)",
-    "col_k_product_category": "100% Category-Matched Storefront Collections (Home Decor, Kitchen & Dining, Smart Gadgets, Festive & Lights, Gifts & Hampers, Health & Beauty, Toys & Games, Under 199 Collection)",
+    "col_k_product_category": "Strict 7 Storefront Categories: Festive & Lights, Health & Beauty Accessories, Home & Kitchen, Home Improvement, Smart Gadgets, Toys & Games, Under 199 Collection",
     "col_l_description": "Clean HTML (<p>...</p>) or natural prose description (<= 2000 chars)",
     "col_u_best_seller": "Selective \"Yes\" (~33% top winners) and \"No\" (~67% others)",
     "cols_w_to_ab_images": "Up to 6 Real DeoDap Gallery Images (.jpg sanitized, query strings stripped)",
@@ -29,53 +29,52 @@
   "discount_bands": [
     {
       "band": "Band A",
-      "label": "Under ₹50 DeoDap Preset (Sell ₹179–₹185)",
+      "label": "Under Rs.50 DeoDap Preset (Sell Rs.179–Rs.185)",
       "cost_range_inr": "Rs.1 - Rs.50 (<= Rs.55)",
       "cost_max": 55,
       "selling_price_preset": "Rs.179 - Rs.185",
-      "discount_range_pct": "53% - 63% OFF",
-      "min_disc": 53,
-      "max_disc": 63,
-      "strategy": "All DeoDap items listed under Rs.40-50 are locked to Rs.179-Rs.185 selling price with 53-63% OFF box MRP"
+      "discount_range_pct": "25% - 35% OFF",
+      "min_disc": 25,
+      "max_disc": 35,
+      "strategy": "Budget utility accessories priced at Rs.179-Rs.185 selling price with believable Box MRP"
     },
     {
       "band": "Band B",
       "label": "Budget Daily Utility",
       "cost_range_inr": "Rs.56 - Rs.95",
       "cost_max": 95,
-      "discount_range_pct": "41% - 49% OFF",
-      "min_disc": 41,
-      "max_disc": 49,
-      "strategy": "Balanced marketplace offer strictly avoiding the flat 50% OFF trap"
+      "discount_range_pct": "25% - 35% OFF",
+      "min_disc": 25,
+      "max_disc": 35,
+      "strategy": "Balanced marketplace offer with credible D2C packaging box MRP"
     },
     {
       "band": "Band C",
       "label": "Worth-It Problem Solvers & Decor",
       "cost_range_inr": "Rs.96 - Rs.150",
       "cost_max": 150,
-      "discount_range_pct": "31% - 39% OFF",
-      "min_disc": 31,
-      "max_disc": 39,
-      "strategy": "Credible mid-tier discount for problem-solving kitchen/home tools and decor lamps"
+      "discount_range_pct": "25% - 35% OFF",
+      "min_disc": 25,
+      "max_disc": 35,
+      "strategy": "Credible sweet-spot discount for problem-solving home/kitchen tools and lamps"
     },
     {
       "band": "Band D",
       "label": "High-Worth Premium Products",
       "cost_range_inr": "Above Rs.150",
       "cost_max": 99999,
-      "discount_range_pct": "21% - 29% OFF",
-      "min_disc": 21,
-      "max_disc": 29,
+      "discount_range_pct": "25% - 35% OFF",
+      "min_disc": 25,
+      "max_disc": 35,
       "strategy": "Subtle, high-trust discount for premium items that command natural price authority"
     }
   ],
   "storefront_categories": [
-    "Home Decor",
-    "Kitchen & Dining",
-    "Smart Gadgets",
     "Festive & Lights",
-    "Gifts & Hampers",
-    "Health & Beauty",
+    "Health & Beauty Accessories",
+    "Home & Kitchen",
+    "Home Improvement",
+    "Smart Gadgets",
     "Toys & Games",
     "Under 199 Collection"
   ]

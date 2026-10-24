@@ -80,30 +80,38 @@ class ClassifierAndPricingEngine:
             key = str(seed_key or "zenlora").strip().lower()
             seed = sum((idx + 1) * ord(ch) for idx, ch in enumerate(key)) + int(round(float(wholesale_price)))
             selling_price = 179 + (seed % 7)
+        elif 50.0 < wholesale_price <= 100.0:
+            # Budget utilities selling at 249-299 with 100-140 profit
+            target_raw = wholesale_price + 50.0 + 110.0
+            selling_price = 249 if target_raw <= 249 else 299
         else:
-            # Target raw retail price
-            raw_target = (wholesale_price * TARGET_MARKUP) + SHIPPING_BUFFER
-
-            # Snap to closest upper psychological price point
-            selling_price = cls.PSYCHOLOGICAL_POINTS[-1]
-            for pt in cls.PSYCHOLOGICAL_POINTS:
-                if pt >= raw_target:
+            # Target Premium Sweet Spot: Wholesale (100-240) + Shipping (50) + Healthy Net Margin (120-160)
+            target_raw = wholesale_price + 50.0 + 135.0
+            
+            # Snap to psychological points (339, 349, 369, 379, 399, 429, 449, 479, 499)
+            sweet_points = [339, 349, 369, 379, 399, 429, 449, 479, 499, 549, 599]
+            selling_price = sweet_points[-1]
+            for pt in sweet_points:
+                if pt >= target_raw:
                     selling_price = pt
                     break
+            # Hard bounds: keep worth-it products in the 339-499 sweet spot
+            if 100 <= wholesale_price <= 240 and selling_price > 499:
+                selling_price = 499
 
-            # Ensure selling price is never below (wholesale * 2.2 + shipping)
-            min_allowed = math.ceil(wholesale_price * MIN_MARKUP + SHIPPING_BUFFER)
-            if selling_price < min_allowed:
-                for pt in cls.PSYCHOLOGICAL_POINTS:
-                    if pt >= min_allowed:
-                        selling_price = pt
-                        break
-
-        # Calculate MRP (Compare-at price) for a visible 50% - 65% discount
-        raw_mrp = selling_price * COMPARE_PRICE_RATIO
-        mrp = math.ceil(raw_mrp / 100.0) * 100 - 1  # e.g., 899, 999, 1299
-        if mrp <= selling_price:
-            mrp = selling_price + 300
+        # Realistic D2C Box MRP: 25% - 35% discount perception (believable, authentic, zero inflated fake markup)
+        # e.g. Selling 349 -> MRP 499 (30% OFF), Selling 399 -> MRP 569, Selling 449 -> MRP 649, Selling 499 -> MRP 699
+        mrp_targets = {
+            179: 249, 184: 249, 199: 299, 239: 349, 249: 349, 299: 449,
+            319: 449, 329: 479, 339: 489, 349: 499, 369: 529, 379: 549,
+            399: 569, 429: 599, 449: 649, 479: 679, 499: 699, 549: 779,
+            599: 849, 699: 999, 799: 1149, 899: 1299, 999: 1399
+        }
+        if int(selling_price) in mrp_targets:
+            mrp = mrp_targets[int(selling_price)]
+        else:
+            raw_mrp = math.ceil((selling_price * 1.42) / 10.0) * 10 - 1
+            mrp = max(raw_mrp, selling_price + 100)
 
         # Gross Margin (after product cost and shipping buffer)
         gross_profit = round(selling_price - landed_cost, 2)

@@ -112,9 +112,9 @@ def enrich_winner_record(item: Dict[str, Any], catalog_pool: Optional[List[Dict[
     """Computes full transparent scoring, provenance, and pipeline status for a single catalog item."""
     handle = item.get("handle", "")
     title = item.get("title", "")
-    raw_niche = item.get("niche", "Home Decor")
+    raw_niche = item.get("niche", "Home Improvement")
     verified_niche = classify_niche(title, preferred_niche=raw_niche)
-    niche = verified_niche or raw_niche
+    niche = normalize_niche_param(verified_niche or raw_niche)
     wholesale_price = float(item.get("wholesale_price") or item.get("wholesale_cost") or 0.0)
 
     meta_signals = item.get("meta_ads") if (isinstance(item.get("meta_ads"), dict) and item.get("meta_ads", {}).get("status") == "done") else analyze_meta_ad_signals(title, niche, handle=handle)
@@ -457,7 +457,7 @@ _ENRICHED_WINNERS_CACHE: Dict[str, Any] = {
 
 
 def normalize_niche_param(niche: Optional[str]) -> str:
-    """Normalizes category query parameters (including partial/unencoded '&' URLs) to canonical niche names."""
+    """Normalizes category query parameters to the strict 7 primary SmartBiz website categories."""
     if not niche:
         return "All"
     raw = str(niche).strip()
@@ -489,44 +489,40 @@ def normalize_niche_param(niche: Optional[str]) -> str:
         "beauty",
         "beauty accessories",
     ) or low.startswith("health"):
-        return "Health & Beauty"
-    if low in ("festive", "festive & lights", "festive and lights") or low.startswith("festive"):
-        return "Festive"
-    if low in ("gifts", "gifts & hampers", "gifts and hampers") or low.startswith("gift"):
-        return "Gifts"
+        return "Health & Beauty Accessories"
+    if low in ("festive", "festive & lights", "festive and lights", "diwali") or low.startswith("festive") or low.startswith("gift"):
+        return "Festive & Lights"
+    if low in ("kitchen", "kitchen & dining", "kitchen and dining", "home & kitchen", "home and kitchen"):
+        return "Home & Kitchen"
+    if low in ("home improvement", "home decor", "home_decor", "home and improvement"):
+        return "Home Improvement"
     if low in ("gadgets", "smart gadgets"):
-        return "Gadgets"
+        return "Smart Gadgets"
     if low in ("toys", "toys & games", "toys and games", "kids toys", "games") or low.startswith("toy"):
         return "Toys & Games"
-    if low in ("home decor", "home_decor"):
-        return "Home Decor"
-    if low in ("kitchen", "kitchen & dining", "kitchen and dining"):
-        return "Kitchen"
     return raw
 
 
 def matches_niche(item_niche: str, query_niche: str) -> bool:
-    """Robust bidirectional matcher for canonical Zenlora / SmartBiz niche categories."""
+    """Robust bidirectional matcher for the strict 7 primary SmartBiz categories."""
     item_n = str(item_niche or "").strip().lower()
     q_n = str(query_niche or "").strip().lower()
     if not q_n or q_n == "all":
         return True
     if item_n == q_n:
         return True
+    if q_n in ("festive & lights", "festive and lights", "festive", "gifts", "gifts & hampers"):
+        return item_n in ("festive & lights", "festive and lights", "festive", "gifts", "gifts & hampers")
+    if q_n in ("health & beauty accessories", "health & beauty", "health and beauty accessories", "beauty", "health"):
+        return item_n in ("health & beauty accessories", "health & beauty", "health and beauty accessories", "beauty", "health")
+    if q_n in ("home & kitchen", "home and kitchen", "kitchen", "kitchen & dining"):
+        return item_n in ("home & kitchen", "home and kitchen", "kitchen", "kitchen & dining")
+    if q_n in ("home improvement", "home and improvement", "home decor", "home_decor"):
+        return item_n in ("home improvement", "home and improvement", "home decor", "home_decor")
+    if q_n in ("smart gadgets", "gadgets"):
+        return item_n in ("smart gadgets", "gadgets")
     if q_n in ("toys & games", "toys and games", "toys", "games", "kids toys"):
         return item_n in ("toys & games", "toys and games", "toys", "games", "kids toys")
-    if q_n in ("health & beauty", "health & beauty accessories", "health and beauty", "beauty", "health"):
-        return item_n in ("health & beauty", "health & beauty accessories", "health and beauty", "beauty", "health")
-    if q_n in ("festive", "festive & lights", "festive and lights"):
-        return item_n in ("festive", "festive & lights", "festive and lights")
-    if q_n in ("gadgets", "smart gadgets"):
-        return item_n in ("gadgets", "smart gadgets")
-    if q_n in ("kitchen", "kitchen & dining"):
-        return item_n in ("kitchen", "kitchen & dining")
-    if q_n in ("gifts", "gifts & hampers"):
-        return item_n in ("gifts", "gifts & hampers")
-    if q_n in ("home decor", "home_decor"):
-        return item_n in ("home decor", "home_decor")
     if q_n in ("under 199 collection", "under 199", "under 199-299", "199-299", "under_50"):
         return item_n in ("under 199 collection", "under 199", "under 199-299", "199-299", "under_50")
     return False
@@ -714,18 +710,22 @@ def get_winners(
 
     # Group by niche to apply batch_cursor rotation and per_niche_display slicing
     if per_niche_display and per_niche_display > 0:
-        niches_order = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories", "Toys & Games"]
+        niches_order = ["Festive & Lights", "Health & Beauty Accessories", "Home & Kitchen", "Home Improvement", "Smart Gadgets", "Toys & Games"]
         by_niche: Dict[str, List[Dict[str, Any]]] = {n: [] for n in niches_order}
         for w in winners:
-            wn = w.get("niche", "Gadgets")
+            wn = w.get("niche", "Smart Gadgets")
             matched = False
             for target_n in niches_order:
                 if matches_niche(wn, target_n):
-                    by_niche[target_n].append(w)
+                    w_copy = dict(w)
+                    w_copy["niche"] = target_n
+                    by_niche[target_n].append(w_copy)
                     matched = True
                     break
             if not matched:
-                by_niche.setdefault(wn, []).append(w)
+                w_copy = dict(w)
+                w_copy["niche"] = normalize_niche_param(wn)
+                by_niche.setdefault(w_copy["niche"], []).append(w_copy)
 
         # Guarantee every category (including Festive & Lights) always has at least per_niche_display (24) items
         for n_name in niches_order:
@@ -739,7 +739,9 @@ def get_winners(
                     and (not w.get("sku") or str(w.get("sku") or "").lower() not in existing_n_skus)
                 ]
                 for fb_item in fallback_pool:
-                    by_niche.setdefault(n_name, []).append(fb_item)
+                    fb_copy = dict(fb_item)
+                    fb_copy["niche"] = n_name
+                    by_niche.setdefault(n_name, []).append(fb_copy)
                     existing_n_handles.add(str(fb_item.get("handle") or "").lower())
                     if fb_item.get("sku"):
                         existing_n_skus.add(str(fb_item.get("sku") or "").lower())

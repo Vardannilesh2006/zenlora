@@ -35,7 +35,7 @@ SCAN_STATE_FILE = RUNTIME_DATA_DIR / "scan_state.json"
 
 # Official DeoDap Category Collections for 100% Category-Authentic Harvesting
 NICHE_COLLECTIONS_MAP = {
-    "Festive": [
+    "Festive & Lights": [
         "deodap-diwali-decoration",
         "diwali-decor",
         "pooja-essentials",
@@ -44,19 +44,21 @@ NICHE_COLLECTIONS_MAP = {
         "decorative-and-string-lights",
         "candles",
         "deodap-diwali",
+        "gift-sets-boxes",
+        "corporate-gifting",
+        "diwali-corporate-gifting",
+        "festival-gift",
+        "birthday-gift",
+        "deodap-diwali-gifting",
     ],
-    "Home Decor": [
+    "Home Improvement": [
         "home-decor",
         "decor-ambience",
-        "desk-lights",
-        "lights",
         "decorative-accessories",
         "specialty-decorative-lighting",
-        "lamps",
-        "night-lights",
         "vases-items-2",
     ],
-    "Kitchen": [
+    "Home & Kitchen": [
         "kitchen-tools",
         "all-kitchen-accessories",
         "kitchen-appliances-utensils",
@@ -65,7 +67,7 @@ NICHE_COLLECTIONS_MAP = {
         "daily-cooking-tools",
         "cookware",
     ],
-    "Gadgets": [
+    "Smart Gadgets": [
         "electronic-gadgets",
         "personal-tech-gadgets",
         "mobile-accessories",
@@ -74,16 +76,10 @@ NICHE_COLLECTIONS_MAP = {
         "electronics",
         "electronics-accessories",
         "computers-electronics",
-    ],
-    "Gifts": [
-        "gift-sets-boxes",
-        "corporate-gifting",
-        "diwali-corporate-gifting",
-        "festival-gift",
-        "birthday-gift",
-        "deodap-diwali-gifting",
-        "gift",
-        "gifts-seasonal",
+        "desk-lights",
+        "lights",
+        "lamps",
+        "night-lights",
     ],
     "Health & Beauty Accessories": [
         "personal-care-appliances",
@@ -163,7 +159,7 @@ GLOBAL_JUNK_KEYWORDS = [
 
 # Strict Title-Only Positive Rules for Each of the 6 Categories
 NICHE_RULES = {
-    "Festive": [
+    "Festive & Lights": [
         "diya", "tealight", "tea light", "pooja thali", "puja thali", "aarti thali",
         "kalash", "pooja chowki", "bajot", "toran", "bandhanwar", "shubh labh",
         "swastik", "lakshmi footprint", "laxmi charan", "rangoli", "kapoor dani",
@@ -176,7 +172,7 @@ NICHE_RULES = {
         "pooja", "puja", "festive", "lotus lamp", "lotus light", "akhand",
         "flameless", "star light", "bottle cork light",
     ],
-    "Home Decor": [
+    "Home Improvement": [
         "night lamp", "table lamp", "desk lamp", "crystal lamp", "crystal ball",
         "crystal globe", "crystal astronaut", "crystal adiyogi", "3d lamp",
         "illusion night light", "illusion lamp", "sunset lamp", "moon lamp",
@@ -192,7 +188,7 @@ NICHE_RULES = {
         "study lamp", "touch lamp", "astronaut", "galaxy projector", "feng shui",
         "evil eye", "wall hanging", "macrame",
     ],
-    "Kitchen": [
+    "Home & Kitchen": [
         "kitchen", "chopper", "vegetable cutter", "clever cutter", "slicer",
         "peeler", "grater", "crusher", "masher", "garlic", "oil dispenser",
         "oil sprayer", "oil bottle", "spice rack", "spice box", "masala box",
@@ -209,7 +205,7 @@ NICHE_RULES = {
         "pizza cutter", "knife sharpener", "bowl", "plate", "dinner", "cookware",
         "pan", "pot", "kettle", "tea strainer", "sprout maker",
     ],
-    "Gadgets": [
+    "Smart Gadgets": [
         "portable fan", "mini fan", "neck fan", "cooling fan", "desk fan",
         "lint remover", "fabric shaver", "mini vacuum", "car vacuum", "vacuum cleaner",
         "electric cleaning brush", "spin scrubber", "portable blender", "bag sealer",
@@ -369,8 +365,15 @@ def classify_niche(
                 # Multi-word exact phrases get higher specificity weight
                 scores[niche] += len(kw.split()) * 4
 
-    if preferred_niche and preferred_niche in scores and scores[preferred_niche] > 0:
-        return preferred_niche
+    # Map aliases for preferred_niche
+    alias_map = {
+        "Festive": "Festive & Lights", "Kitchen": "Home & Kitchen", "Kitchen & Dining": "Home & Kitchen",
+        "Gadgets": "Smart Gadgets", "Health & Beauty": "Health & Beauty Accessories", "Home Decor": "Home Improvement",
+        "Gifts": "Festive & Lights", "Gifts & Hampers": "Festive & Lights", "Toys": "Toys & Games",
+    }
+    pref = alias_map.get(preferred_niche, preferred_niche)
+    if pref and pref in scores and scores[pref] > 0:
+        return pref
 
     best_niche = max(scores, key=scores.get)
     if scores[best_niche] > 0:
@@ -579,10 +582,19 @@ def harvest_deodap_bestsellers(
     live_items: List[Dict[str, Any]] = []
     live_sources_fetched = 0
 
-    # 1. Live Fetch from DeoDap's Official Category Collections (Gifts, Festive & Health/Beauty first so specialized items aren't claimed by broader collections)
-    harvest_order = ["Gifts", "Festive", "Health & Beauty Accessories", "Gadgets", "Home Decor", "Kitchen"]
+    # 1. Live Fetch from DeoDap's Official Category Collections
+    harvest_order = [
+        "Festive & Lights",
+        "Health & Beauty Accessories",
+        "Home & Kitchen",
+        "Home Improvement",
+        "Smart Gadgets",
+        "Toys & Games",
+    ]
     for target_niche in harvest_order:
         cols = NICHE_COLLECTIONS_MAP.get(target_niche, [])
+        if not cols:
+            continue
         col_idx = (page_cursor - 1) % len(cols)
         if is_vercel:
             selected_cols = [cols[col_idx]]

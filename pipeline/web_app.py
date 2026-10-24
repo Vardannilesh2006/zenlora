@@ -14,6 +14,7 @@ from config import EXPORTS_DIR
 from winning_engine.radar_controller import (
     get_winners,
     normalize_niche_param,
+    matches_niche,
     scan_and_update_winners,
     import_to_studio,
     enrich_winner_record,
@@ -98,11 +99,39 @@ def index():
     )
 
 
+def _extract_request_niche() -> str:
+    raw = request.args.get("niche", "All")
+    s_raw = str(raw).strip().lower()
+    if s_raw == "home":
+        if any("kitchen" in k.lower() for k in request.args):
+            raw = "Home & Kitchen"
+        elif any("improvement" in k.lower() for k in request.args):
+            raw = "Home Improvement"
+        else:
+            raw = "Home & Kitchen"
+    elif s_raw == "festive":
+        if any("lights" in k.lower() for k in request.args):
+            raw = "Festive & Lights"
+        else:
+            raw = "Festive & Lights"
+    elif s_raw in ("health", "health & beauty"):
+        if any("accessories" in k.lower() for k in request.args):
+            raw = "Health & Beauty Accessories"
+        else:
+            raw = "Health & Beauty Accessories"
+    elif s_raw == "toys":
+        if any("games" in k.lower() for k in request.args):
+            raw = "Toys & Games"
+        else:
+            raw = "Toys & Games"
+    return normalize_niche_param(raw)
+
+
 @app.route("/radar")
 def radar():
     from seo_engine import build_deterministic_seo_title, build_deterministic_seo_description
 
-    niche = normalize_niche_param(request.args.get("niche", "All"))
+    niche = _extract_request_niche()
     cost_filter = request.args.get("cost_filter", "All").strip()
     price_filter = request.args.get("price_filter", "All").strip()
     festival_filter = request.args.get("festival", "All")
@@ -211,23 +240,18 @@ def radar():
 
     niches = [
         "All",
-        "Home Decor",
-        "Kitchen",
-        "Gadgets",
-        "Festive",
-        "Gifts",
-        "Health & Beauty",
+        "Festive & Lights",
+        "Health & Beauty Accessories",
+        "Home & Kitchen",
+        "Home Improvement",
+        "Smart Gadgets",
         "Toys & Games",
         "Under 199 Collection",
     ]
     niche_counts = {
         n: sum(
             1 for w in active_winners
-            if (
-                w.get("niche") == n
-                or (n == "Health & Beauty" and w.get("niche") in ("Health & Beauty", "Health & Beauty Accessories"))
-                or (n == "Toys & Games" and w.get("niche") in ("Toys & Games", "Toys", "Games"))
-            )
+            if matches_niche(w.get("niche", ""), n)
         )
         for n in niches
         if n not in ("All", "Under 199 Collection")
@@ -441,7 +465,7 @@ def _build_export_headers(filename: str, products: list[dict]) -> dict[str, str]
 @app.route("/api/radar/smartbiz.csv", methods=["GET", "POST"])
 def export_smartbiz_csv():
     mode = request.args.get("mode", "page").strip().lower()
-    niche = normalize_niche_param(request.args.get("niche", "All"))
+    niche = _extract_request_niche()
     cost_filter = request.args.get("cost_filter", "All").strip()
     price_filter = request.args.get("price_filter", "All").strip()
     batch_cursor = int(request.args.get("batch", 0) or 0)
@@ -502,7 +526,7 @@ def export_smartbiz_csv():
 @app.route("/api/radar/smartbiz.xlsx", methods=["GET", "POST"])
 def export_smartbiz_xlsx():
     mode = request.args.get("mode", "page").strip().lower()
-    niche = normalize_niche_param(request.args.get("niche", "All"))
+    niche = _extract_request_niche()
     cost_filter = request.args.get("cost_filter", "All").strip()
     price_filter = request.args.get("price_filter", "All").strip()
     batch_cursor = int(request.args.get("batch", 0) or 0)

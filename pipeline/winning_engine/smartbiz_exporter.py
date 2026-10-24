@@ -123,37 +123,76 @@ NICHE_CODE_MAP = {
     "under_50": "U199",
 }
 
+# Strict 7 Primary Categories matching User's Live SmartBiz Website
+EXACT_STORE_CATEGORIES: List[str] = [
+    "Festive & Lights",
+    "Health & Beauty Accessories",
+    "Home & Kitchen",
+    "Home Improvement",
+    "Smart Gadgets",
+    "Toys & Games",
+    "Under 199 Collection",
+]
+
 HSN_BY_PRODUCT_CATEGORY = {
-    "Home Decor": "392640",
-    "Kitchen & Dining": "392410",
+    "Home & Kitchen": "392410",
+    "Home Improvement": "392640",
     "Smart Gadgets": "850980",
     "Festive & Lights": "830629",
-    "Gifts & Hampers": "960810",
-    "Health & Beauty": "850980",
     "Health & Beauty Accessories": "850980",
     "Toys & Games": "950300",
-    "Toys": "950300",
     "Under 199 Collection": "392640",
+    # Legacy aliases
+    "Home Decor": "392640",
+    "Kitchen & Dining": "392410",
+    "Gifts & Hampers": "830629",
+    "Health & Beauty": "850980",
+    "Toys": "950300",
     "Under 199": "392640",
     "Under 199-299": "392640",
 }
 
 NICHE_TO_SMARTBIZ_CATEGORY = {
-    "Home Decor": ("GENERAL", "Home Decor"),
-    "Kitchen": ("GENERAL", "Kitchen & Dining"),
-    "Kitchen & Dining": ("GENERAL", "Kitchen & Dining"),
-    "Gadgets": ("GENERAL", "Smart Gadgets"),
-    "Smart Gadgets": ("GENERAL", "Smart Gadgets"),
-    "Festive": ("GENERAL", "Festive & Lights"),
+    # 1. Festive & Lights
     "Festive & Lights": ("GENERAL", "Festive & Lights"),
-    "Gifts": ("GENERAL", "Gifts & Hampers"),
-    "Gifts & Hampers": ("GENERAL", "Gifts & Hampers"),
-    "Health & Beauty": ("GENERAL", "Health & Beauty"),
-    "Health & Beauty Accessories": ("GENERAL", "Health & Beauty"),
-    "Beauty": ("GENERAL", "Health & Beauty"),
+    "Festive": ("GENERAL", "Festive & Lights"),
+    "festive": ("GENERAL", "Festive & Lights"),
+    "festive & lights": ("GENERAL", "Festive & Lights"),
+    "diwali": ("GENERAL", "Festive & Lights"),
+    "Gifts": ("GENERAL", "Festive & Lights"),
+    "Gifts & Hampers": ("GENERAL", "Festive & Lights"),
+    "gifts": ("GENERAL", "Festive & Lights"),
+    # 2. Health & Beauty Accessories
+    "Health & Beauty Accessories": ("GENERAL", "Health & Beauty Accessories"),
+    "Health & Beauty": ("GENERAL", "Health & Beauty Accessories"),
+    "Beauty": ("GENERAL", "Health & Beauty Accessories"),
+    "health & beauty": ("GENERAL", "Health & Beauty Accessories"),
+    "health & beauty accessories": ("GENERAL", "Health & Beauty Accessories"),
+    "beauty": ("GENERAL", "Health & Beauty Accessories"),
+    # 3. Home & Kitchen
+    "Home & Kitchen": ("GENERAL", "Home & Kitchen"),
+    "Kitchen": ("GENERAL", "Home & Kitchen"),
+    "Kitchen & Dining": ("GENERAL", "Home & Kitchen"),
+    "kitchen": ("GENERAL", "Home & Kitchen"),
+    "kitchen & dining": ("GENERAL", "Home & Kitchen"),
+    "home & kitchen": ("GENERAL", "Home & Kitchen"),
+    # 4. Home Improvement
+    "Home Improvement": ("GENERAL", "Home Improvement"),
+    "home improvement": ("GENERAL", "Home Improvement"),
+    "Home Decor": ("GENERAL", "Home Improvement"),
+    "home decor": ("GENERAL", "Home Improvement"),
+    # 5. Smart Gadgets
+    "Smart Gadgets": ("GENERAL", "Smart Gadgets"),
+    "Gadgets": ("GENERAL", "Smart Gadgets"),
+    "gadgets": ("GENERAL", "Smart Gadgets"),
+    "smart gadgets": ("GENERAL", "Smart Gadgets"),
+    # 6. Toys & Games
     "Toys & Games": ("GENERAL", "Toys & Games"),
     "Toys": ("GENERAL", "Toys & Games"),
     "Games": ("GENERAL", "Toys & Games"),
+    "toys": ("GENERAL", "Toys & Games"),
+    "toys & games": ("GENERAL", "Toys & Games"),
+    # 7. Under 199 Collection
     "Under 199 Collection": ("GENERAL", "Under 199 Collection"),
     "Under 199": ("GENERAL", "Under 199 Collection"),
     "Under 199-299": ("GENERAL", "Under 199 Collection"),
@@ -218,29 +257,62 @@ def extract_product_images(product: Dict) -> List[str]:
 
 def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
     """
-    Maps a Zenlora product 100% deterministically to its exact Storefront Category:
-    - Column J (Business Category): "GENERAL" (from SmartBiz's 21-item dropdown, ensuring 0% cross-Business-Category collision)
-    - Column K (Product Category): Exact Radar & Storefront category name:
-      * Festive    -> "Festive & Lights"
-      * Home Decor -> "Home Decor"
-      * Kitchen    -> "Kitchen & Dining"
-      * Gadgets    -> "Smart Gadgets"
-      * Gifts      -> "Gifts & Hampers"
+    Maps a Zenlora product 100% deterministically to its exact Storefront Category.
+    Guarantees that Column K is STRICTLY one of the 7 official website categories:
+    1. Festive & Lights
+    2. Health & Beauty Accessories
+    3. Home & Kitchen
+    4. Home Improvement
+    5. Smart Gadgets
+    6. Toys & Games
+    7. Under 199 Collection
     """
     niche = str(product.get("niche") or product.get("primary_category") or "").strip()
+    if niche in EXACT_STORE_CATEGORIES:
+        return ("GENERAL", niche)
     if niche in NICHE_TO_SMARTBIZ_CATEGORY:
         return NICHE_TO_SMARTBIZ_CATEGORY[niche]
 
-    # Title-based fallback if niche is missing
+    # Keyword based classification for legacy/missing niches
+    title = str(product.get("title") or product.get("zenlora_title") or "").lower()
+
+    festive_kws = ["diya", "lamp", "light", "projector", "candle", "ganesh", "laxmi", "pooja", "puja", "mandir", "festive", "diwali", "crystal", "curtain light", "fairy", "star light", "toran", "urli", "dhoop", "diffuser", "sunset", "moon lamp", "night light"]
+    if any(k in title for k in festive_kws):
+        return ("GENERAL", "Festive & Lights")
+
+    kitchen_kws = ["kitchen", "bottle", "cup", "tray", "plate", "bowl", "dining", "chopper", "slicer", "peeler", "masher", "oil", "spice", "spoon", "fork", "cutlery", "utensil", "container", "box", "jar", "lunch", "tiffin", "cookware", "pan", "pot"]
+    if any(k in title for k in kitchen_kws):
+        return ("GENERAL", "Home & Kitchen")
+
+    improvement_kws = ["hook", "adhesive", "hanger", "rail", "rack", "shelf", "mat", "clock", "frame", "tape", "fixture", "wall", "organizer", "holder", "stand", "drain", "faucet", "seal", "repair", "cleaner", "scrub", "sponge", "mop", "wiper", "shower"]
+    if any(k in title for k in improvement_kws):
+        return ("GENERAL", "Home Improvement")
+
+    gadget_kws = ["usb", "smart", "gadget", "rechargeable", "sensor", "bluetooth", "speaker", "vacuum", "electric", "electronic", "digital", "led", "fan", "scale"]
+    if any(k in title for k in gadget_kws):
+        return ("GENERAL", "Smart Gadgets")
+
+    toy_kws = ["toy", "game", "kid", "baby", "child", "drawing", "board", "puzzle", "car", "plush", "doll"]
+    if any(k in title for k in toy_kws):
+        return ("GENERAL", "Toys & Games")
+
+    beauty_kws = ["beauty", "hair", "skin", "face", "roller", "massage", "groom", "trimmer", "makeup", "nail"]
+    if any(k in title for k in beauty_kws):
+        return ("GENERAL", "Health & Beauty Accessories")
+
+    # Inferred fallback via deodap_harvester
     from .deodap_harvester import classify_niche
     inferred = classify_niche(
         str(product.get("title") or ""),
         str(product.get("tags") or ""),
         str(product.get("description") or ""),
     )
+    if inferred and inferred in EXACT_STORE_CATEGORIES:
+        return ("GENERAL", inferred)
     if inferred and inferred in NICHE_TO_SMARTBIZ_CATEGORY:
         return NICHE_TO_SMARTBIZ_CATEGORY[inferred]
-    return ("GENERAL", "Home Decor")
+
+    return ("GENERAL", "Home Improvement")
 
 
 def _clean_text(text: str) -> str:
@@ -655,7 +727,7 @@ def select_smart_mix_products(
 ) -> List[Dict]:
     from .export_ledger import extract_product_fingerprints, record_exported_products
 
-    categories = ["Festive", "Kitchen", "Home Decor", "Gadgets", "Gifts", "Health & Beauty Accessories", "Toys & Games"]
+    categories = ["Festive & Lights", "Health & Beauty Accessories", "Home & Kitchen", "Home Improvement", "Smart Gadgets", "Toys & Games", "Under 199 Collection"]
     per_cat = max(1, total_count // len(categories))
 
     mixed: List[Dict] = []
@@ -733,10 +805,19 @@ def select_smart_mix_products(
 def build_unique_smartbiz_rows(products: List[Dict], niche_override: Optional[str] = None) -> List[List[str]]:
     rows: List[List[str]] = []
     used_skus = set()
+    clean_override = None
+    if niche_override and niche_override != "All":
+        clean_override = NICHE_TO_SMARTBIZ_CATEGORY.get(niche_override, ("GENERAL", niche_override))[1]
+        if clean_override not in EXACT_STORE_CATEGORIES:
+            clean_override = None
+
     for idx, prod in enumerate(products, start=1):
-        if niche_override and niche_override != "All":
-            prod = {**prod, "niche": niche_override}
+        if clean_override:
+            prod = {**prod, "niche": clean_override}
         row = product_to_smartbiz_row(prod, index=idx)
+        # Strictly guarantee Column K is in EXACT_STORE_CATEGORIES
+        if row[10] not in EXACT_STORE_CATEGORIES:
+            row[10] = clean_override or "Home Improvement" 
         sku = row[5]
         if sku in used_skus:
             suffix = f"-{idx}"
