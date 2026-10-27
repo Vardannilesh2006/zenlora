@@ -1,6 +1,82 @@
 {
-  "fetched_at": 1792144470.5053582,
+  "fetched_at": 1793084400.6137214,
   "products": [
+    {
+      "sku": "548ac869-1eb2-4930-8462-4d58e07bebd1",
+      "handle": "handheld-mini-fan-portable-foldable-usb-operated-cooling",
+      "title": "Handheld Mini Fan - Portable, Foldable, USB Operated Cooling",
+      "mrp": 439,
+      "selling_price": 299,
+      "category": "Smart Gadgets",
+      "description": "Experience ultimate cooling convenience with this Handheld Mini Fan , designed to be portable and foldable, perfect for on-the-go comfort. The USB operated fan offers easy charging compatibility and an ultra-light build, making it your ideal personal cooling companion wherever you are. Enjoy a refreshing breeze at your desk, during travel, or outdoors with this versatile gadget. Key features USB Charging: Includes a USB cable compatible with laptops, power banks, and USB chargers for hassle-free",
+      "image_url": "https://m.media-amazon.com/images/X/bxt1/M/Wbxt1hxo12-dX-2.png",
+      "images": [
+        "https://m.media-amazon.com/images/X/bxt1/M/Wbxt1hxo12-dX-2.png"
+      ],
+      "discount_pct": 32,
+      "last_updated": 1793078620000,
+      "in_stock": true,
+      "store_url": "https://www.zenlora.store/product/548ac869-1eb2-4930-8462-4d58e07bebd1",
+      "source": "products_list",
+      "live_verified": true
+    },
+    {
+      "sku": "511d4c3e-d204-4ed2-a480-03f3f8a4150d",
+      "handle": "led-strobe-light-usb-rechargeable-waterproof-racevault",
+      "title": "LED Strobe Light - USB Rechargeable & Waterproof | RaceVault",
+      "mrp": 610,
+      "selling_price": 239,
+      "category": "Smart Gadgets",
+      "description": "Boost your visibility and safety with the ultimate LED Strobe Light from RaceVault. Perfect for bikes, drones, and motorcycles, this compact and versatile light ensures you&#x27;re seen in any condition. Experience enhanced peace of mind on your evening rides or drone flights, knowing you have a reliable anti-collision light. This waterproof, USB rechargeable LED strobe light is designed to keep you safe and add a vibrant touch to your gear. Whether you&#x27;re navigating city streets, exploring",
+      "image_url": "https://m.media-amazon.com/images/X/bxt1/M/Bbxt1hWpYfu0bpR.png",
+      "images": [
+        "https://m.media-amazon.com/images/X/bxt1/M/Bbxt1hWpYfu0bpR.png"
+      ],
+      "discount_pct": 61,
+      "last_updated": 1793078603000,
+      "in_stock": true,
+      "store_url": "https://www.zenlora.store/product/511d4c3e-d204-4ed2-a480-03f3f8a4150d",
+      "source": "products_list",
+      "live_verified": true
+    },
+    {
+      "sku": "a413e995-e8cc-4a0f-8dcb-95a434881a2c",
+      "handle": "lotus-led-flameless-candle-elegant-decorative-flameless-ligh",
+      "title": "Lotus LED Flameless Candle - Elegant Decorative Flameless Light",
+      "mrp": 519,
+      "selling_price": 279,
+      "category": "Festive & Lights",
+      "description": "Enhance your space with our Lotus LED Flameless Candle, a perfect blend of tradition and safety. This elegant lotus-shaped candle offers a warm, flickering light that beautifully complements home décor, temples, meditation areas, and festive celebrations like Diwali. Enjoy the divine ambiance without any smoke, fire hazard, or wax drips, making it a safer alternative to traditional candles. Key features Lotus-shaped LED candle with a realistic flickering flame effect. Comes with a decorative hol",
+      "image_url": "https://m.media-amazon.com/images/X/bxt1/M/Nbxt1RA0SQhYXgO.png",
+      "images": [
+        "https://m.media-amazon.com/images/X/bxt1/M/Nbxt1RA0SQhYXgO.png"
+      ],
+      "discount_pct": 46,
+      "last_updated": 1792306464000,
+      "in_stock": true,
+      "store_url": "https://www.zenlora.store/product/a413e995-e8cc-4a0f-8dcb-95a434881a2c",
+      "source": "products_list",
+      "live_verified": true
+    },
+    {
+      "sku": "dba1b8fe-753c-4e62-82e4-6b26f64bad00",
+      "handle": "antique-brass-panchmukhi-hanuman-idol-decorative-spiritual-s",
+      "title": "Antique Brass Panchmukhi Hanuman Idol Decorative Spiritual Statue",
+      "mrp": 459,
+      "selling_price": 349,
+      "category": "Festive & Lights",
+      "description": "Discover the divine presence of the Antique Brass Panchmukhi Hanuman Idol, a sacred representation embodying strength, protection, and devotion. This beautifully crafted statue features an elegant antique gold finish with intricate detailing, making it a perfect addition to any spiritual space or home décor. Key features Elegant antique gold finish with premium detailing Sacred Panchmukhi (Five-Faced) Hanuman design Symbol of protection, strength, courage, and devotion Intricate traditional craf",
+      "image_url": "https://m.media-amazon.com/images/X/bxt1/M/Vbxt1RnqYpJqOBv.jpg",
+      "images": [
+        "https://m.media-amazon.com/images/X/bxt1/M/Vbxt1RnqYpJqOBv.jpg"
+      ],
+      "discount_pct": 24,
+      "last_updated": 1792306394000,
+      "in_stock": true,
+      "store_url": "https://www.zenlora.store/product/dba1b8fe-753c-4e62-82e4-6b26f64bad00",
+      "source": "products_list",
+      "live_verified": true
+    },
     {
       "sku": "97e74c07-241f-44f1-95c4-d8650e21e0fb",
       "handle": "om-trishul-damru-decorative-idol-antique-copper-finish-for-h",
@@ -264,77 +340,6 @@
       "live_verified": true
     },
     {
-      "sku": "9cc5dc6c-1297-45b8-835b-38df2e3ff644",
-      "handle": "cooling-gel-eye-mask-instant-relief-puffy-eye-reduction",
-      "title": "Cooling Gel Eye Mask - Instant Relief & Puffy Eye Reduction",
-      "mrp": 445,
-      "selling_price": 180,
-      "category": "Health & Beauty Accessories",
-      "description": "The Cooling Gel Eye Mask offers immediate relief from tired, puffy eyes, helping you feel refreshed and revitalized in minutes. Designed for optimal relaxation, this mask is ideal for soothing eye strain after long screen hours, travel, or stressful days. Its reusable, skin-friendly material ensures a comfortable fit, making it a perfect addition to your daily self-care routine. Chill the mask for a cooling effect that reduces swelling and dark circles, providing a quick and effective way to car",
-      "image_url": "https://m.media-amazon.com/images/X/bxt1/M/1bxt1RTJ8ohXAyN.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/X/bxt1/M/1bxt1RTJ8ohXAyN.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/kbxt1Bgz2LKHQ2M.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/0bxt1RLrqs--bbE.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/Nbxt1RbpnnbXny8.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/Wbxt1BSouEHEPgc.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/qbxt1hR2Y8rIO76.jpg"
-      ],
-      "discount_pct": 60,
-      "last_updated": 1791983290000,
-      "in_stock": true,
-      "store_url": "https://www.zenlora.store/product/9cc5dc6c-1297-45b8-835b-38df2e3ff644",
-      "source": "products_list",
-      "live_verified": true
-    },
-    {
-      "sku": "fda143f7-89e0-48dd-9c53-a549e12292e0",
-      "handle": "beauty-ice-roller-for-face-eye-massager-reusable-facial-roll",
-      "title": "Beauty Ice Roller for Face & Eye Massager – Reusable Facial Roller",
-      "mrp": 490,
-      "selling_price": 181,
-      "category": "Health & Beauty Accessories",
-      "description": "Revitalize your skin and refresh your senses with the Beauty Ice Roller for Face Massager &amp; Eye. This facial roller is designed to give you a spa-like experience at home, providing cooling relief for your face, eyes, and neck. With its ice therapy feature, this roller helps to reduce puffiness, soothe tired skin, and promote healthy circulation, leaving your skin feeling refreshed and rejuvenated. The roller can be easily stored in the freezer, allowing it to chill and provide a cooling effe",
-      "image_url": "https://m.media-amazon.com/images/X/bxt1/M/Hbxt1Ri$7XNAmKC.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/X/bxt1/M/Hbxt1Ri$7XNAmKC.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/Ebxt1xqVbQTiuas.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/cbxt1Rdr8STK067.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/qbxt1R2F7MYnufj.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/sbxt1hTbeFz26b6.jpg"
-      ],
-      "discount_pct": 63,
-      "last_updated": 1791983282000,
-      "in_stock": true,
-      "store_url": "https://www.zenlora.store/product/fda143f7-89e0-48dd-9c53-a549e12292e0",
-      "source": "products_list",
-      "live_verified": true
-    },
-    {
-      "sku": "4aa79d5b-eff7-4267-8a18-a388b50b854f",
-      "handle": "2-in-1-usb-rechargeable-led-bike-front-light-with-torch",
-      "title": "2-in-1 USB Rechargeable LED Bike Front Light with Torch",
-      "mrp": 549,
-      "selling_price": 429,
-      "category": "Smart Gadgets",
-      "description": "Ensure your safety and visibility on every ride with our versatile 2-in-1 USB Rechargeable LED Bike Front Light. Designed for cyclists who prioritize safety, this essential accessory illuminates your path and makes you highly visible to traffic, whether you're commuting in the city or exploring unlit trails. Its smart design offers convenience and peace of mind, transforming your night rides into safer, more enjoyable experiences. Maximize Visibility: Projects a powerful LED beam, ensuring you a",
-      "image_url": "https://m.media-amazon.com/images/X/bxt1/M/1bxt1hNuiW4c9Ap.jpg",
-      "images": [
-        "https://m.media-amazon.com/images/X/bxt1/M/1bxt1hNuiW4c9Ap.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/kbxt1RBTIWrKpaO.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/Mbxt1xZTCHesvqS.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/Hbxt1RV-Enz3erH.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/mbxt1x5gLk6prov.jpg",
-        "https://m.media-amazon.com/images/X/bxt1/M/Xbxt1h1iKSjC55y.jpg"
-      ],
-      "discount_pct": 22,
-      "last_updated": 1791983271000,
-      "in_stock": true,
-      "store_url": "https://www.zenlora.store/product/4aa79d5b-eff7-4267-8a18-a388b50b854f",
-      "source": "products_list",
-      "live_verified": true
-    },
-    {
       "sku": "1c83007b-6f4d-4670-99d2-5ef387b8b894",
       "handle": "lotus-led-candle-light-safe-flameless-decorative-glow",
       "title": "Lotus LED Candle Light - Safe Flameless Decorative Glow",
@@ -445,25 +450,6 @@
       "last_updated": 1791971953000,
       "in_stock": true,
       "store_url": "https://www.zenlora.store/product/aec73240-09a8-47f4-95fc-fda9384b52cf",
-      "source": "products_list",
-      "live_verified": true
-    },
-    {
-      "sku": "d1cbbfb3-c1d6-43cf-813e-866fdd628b34",
-      "handle": "tea-lights-holder-elegant-candle-stand-for-dining-decor",
-      "title": "Tea Lights Holder - Elegant Candle Stand for Dining Decor",
-      "mrp": 485,
-      "selling_price": 329,
-      "category": "Festive & Lights",
-      "description": "Enhance your home ambiance with this Tea Lights Holder set, an elegant candle stand that serves as a perfect dining table centerpiece and adds sophistication to any space. This premium quality holder is designed especially for tea light candles, creating a warm and inviting atmosphere for Diwali, weddings, or any special occasion. Each set includes two holders, offering versatile decor options. Key features Elegant Design: Adds a graceful touch to your dining or centre table decor. Perfect for T",
-      "image_url": "https://m.media-amazon.com/images/X/bxt1/M/nbxt1hpU$l6lCCI.png",
-      "images": [
-        "https://m.media-amazon.com/images/X/bxt1/M/nbxt1hpU$l6lCCI.png"
-      ],
-      "discount_pct": 32,
-      "last_updated": 1791971944000,
-      "in_stock": true,
-      "store_url": "https://www.zenlora.store/product/d1cbbfb3-c1d6-43cf-813e-866fdd628b34",
       "source": "products_list",
       "live_verified": true
     }

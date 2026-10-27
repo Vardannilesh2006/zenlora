@@ -78,5 +78,37 @@
     "ai_powered": false,
     "ai_model": "deterministic-high-ctr-rules",
     "handle": "tea-lights-holder-candle-stand-elegant-centrepiece-for-dining-table-amp-home-decor-2-pc"
+  },
+  "whl146_19384_black_round_metal_keychain_1pc_cpr": {
+    "seo_title": "Sleek Minimalist Metal Keychain | Zenlora",
+    "seo_description": "Upgrade your keys with our durable black round metal keychain. Sleek minimal design. Just Rs.180! Free Pan-India Delivery & COD. Buy now!",
+    "title_len": 41,
+    "desc_len": 137,
+    "keywords": [
+      "black metal keychain",
+      "minimalist key holder",
+      "mens metal keychain India",
+      "stylish keychain online",
+      "Zenlora keychains"
+    ],
+    "ai_powered": true,
+    "ai_model": "gemini-3.5-flash-lite",
+    "handle": "whl146_19384_black_round_metal_keychain_1pc_cpr"
+  },
+  "royal-traditional-dry-fruit-box-with-decorative-design-for-mukhwas-nuts-festive-gifts": {
+    "seo_title": "Royal Decorative Dry Fruit Box | Zenlora",
+    "seo_description": "Upgrade festive gifting at Rs.349! Elegant dry fruit box for sweets & nuts. Enjoy Free Pan-India Delivery & COD. Buy now!",
+    "title_len": 40,
+    "desc_len": 121,
+    "keywords": [
+      "decorative dry fruit box",
+      "festive gifting box online",
+      "royal dry fruit tray",
+      "diwali gift box India",
+      "zenlora festive collection"
+    ],
+    "ai_powered": true,
+    "ai_model": "gemini-3.5-flash-lite",
+    "handle": "royal-traditional-dry-fruit-box-with-decorative-design-for-mukhwas-nuts-festive-gifts"
   }
 }
