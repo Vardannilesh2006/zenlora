@@ -315,14 +315,32 @@ def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
     return ("GENERAL", "Home Improvement")
 
 
-def _clean_text(text: str) -> str:
+def strip_html_to_plain_text(text: Optional[str]) -> str:
+    """
+    Strips all HTML tags (<p>, </p>, <br>, <b>, <div>, <span>, etc.),
+    decodes HTML entities (&amp;, &nbsp;, &lt;, &gt;, &quot;, &#39;), collapses whitespace,
+    and returns 100% clean plain text safe for SmartBiz Column AE (SEOMeta Description)
+    and Column AD (SEOMeta Title).
+    """
     if not text:
         return ""
-    no_tags = re.sub(r"<[^>]+>", " ", str(text))
-    unescaped = html.unescape(no_tags)
-    # Sanitize broken unicode characters or garbled replacement characters
+    cleaned = str(text)
+    # Decode HTML entities first so escaped tags like &lt;p&gt; turn into <p> before tag stripping
+    for _ in range(2):
+        cleaned = html.unescape(cleaned)
+    # Strip script and style blocks including their contents
+    cleaned = re.sub(r"<(script|style)[^>]*>[\s\S]*?</\1>", " ", cleaned, flags=re.IGNORECASE)
+    # Strip all HTML tags
+    cleaned = re.sub(r"<[^>]+>", " ", cleaned)
+    # Decode any remaining entities (e.g. &amp; -> &)
+    for _ in range(2):
+        cleaned = html.unescape(cleaned)
+    # Strip any remaining angle brackets or stray tags
+    cleaned = cleaned.replace("<", "").replace(">", "")
+    cleaned = cleaned.replace("\xa0", " ")
+    # Normalize broken unicode characters or garbled replacement characters
     cleaned = (
-        unescaped.replace("\ufffd", "-")
+        cleaned.replace("\ufffd", "-")
         .replace("\u2013", "-")
         .replace("\u2014", "-")
         .replace("\u2018", "'")
@@ -331,6 +349,10 @@ def _clean_text(text: str) -> str:
         .replace("\u201d", '"')
     )
     return re.sub(r"\s+", " ", cleaned).strip()
+
+
+def _clean_text(text: str) -> str:
+    return strip_html_to_plain_text(text)
 
 
 def build_smartbiz_custom_sku(product: Dict, index: int) -> str:
@@ -467,11 +489,12 @@ def build_smartbiz_html_description(product: Dict) -> str:
     return full_desc[:2000]
 
 
-def build_seo_metadata(product: Dict, primary_image_url: str) -> Tuple[str, str, str]:
+def build_seo_metadata(product: Dict, primary_image_url: str = "") -> Tuple[str, str, str]:
     """
     Generates (SEOMeta Title <= 60 chars, SEOMeta Description <= 160 chars, SEOMeta ImageUrl).
+    Strictly pure plain text without ANY HTML tags (<p>, </p>, <br>, etc.) or HTML formatting.
     """
-    name = build_smartbiz_product_name(product)
+    name = strip_html_to_plain_text(build_smartbiz_product_name(product))
     mrp, sp = calculate_smartbiz_prices(product)
 
     suffix = " | Zenlora"
@@ -480,10 +503,10 @@ def build_seo_metadata(product: Dict, primary_image_url: str) -> Tuple[str, str,
     else:
         seo_title = name[:60].strip()
 
-    raw_desc = _clean_text(str(product.get("description") or ""))
+    raw_desc = strip_html_to_plain_text(str(product.get("description") or ""))
     base_snippet = raw_desc[:75].strip() if raw_desc else f"Shop {name[:55]} online at Zenlora."
     seo_desc = f"Buy {name[:48]} at Rs.{sp} (MRP Rs.{mrp}). {base_snippet} Free Pan-India Delivery."
-    seo_desc = re.sub(r"\s+", " ", seo_desc).strip()[:160]
+    seo_desc = strip_html_to_plain_text(seo_desc)[:160].strip()
 
     return (seo_title[:60], seo_desc[:160], primary_image_url)
 
@@ -497,12 +520,31 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
     product_name = build_smartbiz_product_name(product)
     mrp, selling_price = calculate_smartbiz_prices(product)
     business_cat, product_cat = map_smartbiz_categories(product)
+    if product_cat not in EXACT_STORE_CATEGORIES:
+        product_cat = "Home Improvement"
     html_description = build_smartbiz_html_description(product)
 
     # Selective Best Seller ("Yes" for ~33% of rows, "No" for ~67% — matching user's SmartBiz preset)
     best_seller = "Yes" if (index % 3 == 1) else "No"
 
     images = extract_product_images(product)
+
+    # Column AD (30): SEOMeta Title (Optional) -> Max 60 chars (100% plain text, no HTML)
+    raw_seo_title = product.get("seo_title") or build_smartbiz_product_name(product)
+    clean_seo_title = strip_html_to_plain_text(raw_seo_title)[:60].strip()
+
+    # Column AE (31): SEOMeta Description (Optional) -> Max 160 chars (100% pure plain text, strictly ZERO HTML tags like <p>, </p>, <br>)
+    raw_seo_desc = product.get("seo_description")
+    if raw_seo_desc and strip_html_to_plain_text(raw_seo_desc):
+        clean_seo_desc = strip_html_to_plain_text(raw_seo_desc)[:160].strip()
+    else:
+        # Generate high-converting, clean plain text description with zero HTML formatting
+        _, clean_seo_desc, _ = build_seo_metadata(product, images[0] if images else "")
+        clean_seo_desc = strip_html_to_plain_text(clean_seo_desc)[:160].strip()
+
+    # Ultimate fallback to ensure description is never empty or contaminated with HTML
+    if not clean_seo_desc:
+        clean_seo_desc = strip_html_to_plain_text(product.get("description") or product_name)[:160].strip()
 
     row = [
         "",                     # 1. A: SKU ID (Not to be Edited) -> Blank for new product bulk upload
@@ -534,8 +576,8 @@ def product_to_smartbiz_row(product: Dict, index: int = 1) -> List[str]:
         images[4],              # 27. AA: Product Image5 (Optional) -> DeoDap Image 5
         images[5],              # 28. AB: Product Image6 (Optional) -> DeoDap Image 6
         "",                     # 29. AC: Size Guide (Optional)
-        (product.get("seo_title") or build_smartbiz_product_name(product))[:60], # 30. AD: SEOMeta Title (Optional) -> Max 60 chars
-        (product.get("seo_description") or html_description)[:160],              # 31. AE: SEOMeta Description (Optional) -> Max 160 chars
+        clean_seo_title[:60],   # 30. AD: SEOMeta Title (Optional) -> Max 60 chars (100% plain text)
+        clean_seo_desc[:160],   # 31. AE: SEOMeta Description (Optional) -> Max 160 chars (100% pure plain text, 0 HTML tags)
         images[0] if images else "", # 32. AF: SEOMeta ImageUrl (Optional)
         "",                     # 33. AG: Custom Attribute Key 1 (Optional)
         "",                     # 34. AH: Custom Attribute Value 1 (Optional)
@@ -821,7 +863,12 @@ def build_unique_smartbiz_rows(products: List[Dict], niche_override: Optional[st
         row = product_to_smartbiz_row(prod, index=idx)
         # Strictly guarantee Column K is in EXACT_STORE_CATEGORIES
         if row[10] not in EXACT_STORE_CATEGORIES:
-            row[10] = clean_override or "Home Improvement" 
+            row[10] = clean_override or "Home Improvement"
+        # Strictly guarantee Column AD & Column AE are pure plain text without any HTML tags
+        row[29] = strip_html_to_plain_text(row[29])[:60].strip()
+        row[30] = strip_html_to_plain_text(row[30])[:160].strip()
+        if "<" in row[30] or ">" in row[30]:
+            row[30] = re.sub(r"<[^>]+>", " ", row[30]).replace("<", "").replace(">", "").strip()[:160]
         sku = row[5]
         if sku in used_skus:
             suffix = f"-{idx}"
@@ -887,6 +934,17 @@ def generate_smartbiz_xlsx_bytes(products: List[Dict], niche_override: Optional[
         for c_idx, val in enumerate(row_vals, start=1):
             if c_idx in (8, 9) and (isinstance(val, (int, float)) or str(val).isdigit()):
                 ws.cell(row=r_idx, column=c_idx, value=int(val))
+            elif c_idx == 31:  # Column AE: SEOMeta Description (Strictly pure plain text, 0 HTML tags, <= 160 chars)
+                clean_desc = strip_html_to_plain_text(val)[:160].strip() if val else None
+                ws.cell(row=r_idx, column=c_idx, value=clean_desc)
+            elif c_idx == 30:  # Column AD: SEOMeta Title (Strictly pure plain text, 0 HTML tags, <= 60 chars)
+                clean_title = strip_html_to_plain_text(val)[:60].strip() if val else None
+                ws.cell(row=r_idx, column=c_idx, value=clean_title)
+            elif c_idx == 11:  # Column K: Product Category (Strictly one of 7 official storefront categories)
+                clean_cat = str(val or "").strip()
+                if clean_cat not in EXACT_STORE_CATEGORIES:
+                    clean_cat = niche_override if (niche_override and niche_override in EXACT_STORE_CATEGORIES) else "Home Improvement"
+                ws.cell(row=r_idx, column=c_idx, value=clean_cat)
             else:
                 ws.cell(row=r_idx, column=c_idx, value=val if val != "" else None)
 

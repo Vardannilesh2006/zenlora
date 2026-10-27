@@ -18,7 +18,11 @@ import openpyxl
 ROOT_DIR = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT_DIR / "pipeline"))
 
-from winning_engine.smartbiz_exporter import calculate_smartbiz_prices, EXACT_SMARTBIZ_HEADERS
+from winning_engine.smartbiz_exporter import (
+    calculate_smartbiz_prices,
+    strip_html_to_plain_text,
+    EXACT_SMARTBIZ_HEADERS,
+)
 
 def fix_smartbiz_catalog_file(input_path: str, output_path: str = None) -> dict:
     in_file = Path(input_path)
@@ -56,10 +60,13 @@ def fix_smartbiz_catalog_file(input_path: str, output_path: str = None) -> dict:
     c_desc = col_map.get("Product Description (Optional)", 12)
     c_sku = col_map.get("Custom SKU (Optional)", 6)
     c_title = col_map.get("Product Name (Mandatory)", 7)
+    c_seo_title = col_map.get("SEOMeta Title (Optional)", 30)
+    c_seo_desc = col_map.get("SEOMeta Description (Optional)", 31)
 
     fixed_count = 0
     total_products = 0
     updated_descriptions = 0
+    cleaned_seo_count = 0
 
     offer_block = (
         "\n\nAvailable offers:\n"
@@ -124,6 +131,20 @@ def fix_smartbiz_catalog_file(input_path: str, output_path: str = None) -> dict:
         target_sheet.cell(row=r, column=c_desc, value=full_desc)
         updated_descriptions += 1
 
+        # Strictly clean Column AE (SEOMeta Description) to pure plain text <= 160 chars
+        raw_seo_desc = target_sheet.cell(row=r, column=c_seo_desc).value
+        if raw_seo_desc:
+            clean_seo_desc = strip_html_to_plain_text(str(raw_seo_desc))[:160].strip()
+            if clean_seo_desc != str(raw_seo_desc):
+                target_sheet.cell(row=r, column=c_seo_desc, value=clean_seo_desc)
+                cleaned_seo_count += 1
+
+        # Strictly clean Column AD (SEOMeta Title) to pure plain text <= 60 chars
+        raw_seo_title = target_sheet.cell(row=r, column=c_seo_title).value
+        if raw_seo_title:
+            clean_seo_title = strip_html_to_plain_text(str(raw_seo_title))[:60].strip()
+            target_sheet.cell(row=r, column=c_seo_title, value=clean_seo_title)
+
     wb.save(output_path)
     wb.close()
 
@@ -134,6 +155,7 @@ def fix_smartbiz_catalog_file(input_path: str, output_path: str = None) -> dict:
         "total_products": total_products,
         "mrp_discounts_fixed": fixed_count,
         "descriptions_updated": updated_descriptions,
+        "seo_meta_descriptions_cleaned": cleaned_seo_count,
     }
 
 if __name__ == "__main__":

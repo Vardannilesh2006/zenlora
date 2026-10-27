@@ -682,3 +682,117 @@ def test_toys_and_games_radar_page_and_excel_export():
         assert ws.cell(r_idx, 11).value == "Toys & Games"
     wb.close()
 
+
+def test_column_ae_seo_meta_description_strictly_pure_plain_text():
+    """
+    Permanently verifies that Column AE (SEOMeta Description) in all exported SmartBiz files:
+    1. Strictly contains NO HTML tags (<p>, </p>, <br>, <b>, <div>, etc.).
+    2. Strictly contains NO '<' or '>' characters.
+    3. Contains clean, unescaped plain text <= 160 characters.
+    4. Column AD (SEOMeta Title) contains NO HTML tags and is <= 60 characters.
+    5. Column K (Product Category) strictly contains only the 7 official storefront categories.
+    """
+    import openpyxl
+    from pipeline.winning_engine.smartbiz_exporter import (
+        product_to_smartbiz_row,
+        strip_html_to_plain_text,
+        EXACT_STORE_CATEGORIES,
+    )
+
+    # 1. Test unit-level cleaning on filthy HTML descriptions (including entity-escaped HTML)
+    dirty_html = "<p><strong>Awesome Lamp</strong><br>Bring light to home! &amp; Enjoy &quot;festive&quot; vibes.</p>"
+    clean = strip_html_to_plain_text(dirty_html)
+    assert "<" not in clean and ">" not in clean
+    assert "<p>" not in clean and "</p>" not in clean
+    assert "&amp;" not in clean
+    assert "&quot;" not in clean
+    assert "Awesome Lamp Bring light to home! & Enjoy" in clean
+
+    # Test entity-escaped & double-escaped HTML
+    escaped_html = "&lt;p&gt;Clean &lt;b&gt;Product&lt;/b&gt; Description&lt;/p&gt;"
+    clean_escaped = strip_html_to_plain_text(escaped_html)
+    assert clean_escaped == "Clean Product Description"
+    assert "<" not in clean_escaped and ">" not in clean_escaped
+
+    # Test script and style tag elimination
+    script_html = "<style>.x{color:red}</style><script>alert('xss')</script><p>Safe text</p>"
+    clean_script = strip_html_to_plain_text(script_html)
+    assert clean_script == "Safe text"
+
+    # 2. Test product_to_smartbiz_row with a product having dirty HTML
+    sample_prod = {
+        "title": "<b>Crystal Rose Diamond Lamp</b>",
+        "handle": "crystal-rose-diamond-lamp",
+        "sku": "12345_lamp",
+        "niche": "Festive & Lights",
+        "wholesale_price": 120.0,
+        "winning_score": 95.0,  # Triggers score >= 89 HTML description
+        "seo_description": "<p>Best Selling <i>Crystal Rose</i> Diamond Lamp for Diwali!</p>",
+    }
+    row = product_to_smartbiz_row(sample_prod)
+    col_ad_title = row[29]
+    col_ae_desc = row[30]
+    col_k_cat = row[10]
+
+    assert "<" not in col_ad_title and ">" not in col_ad_title
+    assert len(col_ad_title) <= 60
+
+    assert "<" not in col_ae_desc and ">" not in col_ae_desc
+    assert "<p>" not in col_ae_desc and "</p>" not in col_ae_desc
+    assert len(col_ae_desc) <= 160
+    assert col_k_cat in EXACT_STORE_CATEGORIES
+
+    # 3. Test actual Excel export from Winning Radar page (/api/radar/smartbiz.xlsx) for 24 products per category
+    client = app.test_client()
+    for cat in EXACT_STORE_CATEGORIES:
+        res = client.get(f"/api/radar/smartbiz.xlsx?mode=page&niche={cat}&limit=24&commit=0")
+        assert res.status_code == 200
+        wb = openpyxl.load_workbook(io.BytesIO(res.data), data_only=True)
+        ws = wb["bulk_upload_template"]
+        assert ws.max_row >= 2
+        for r_idx in range(2, ws.max_row + 1):
+            cat_val = ws.cell(r_idx, 11).value  # Col K
+            assert cat_val == cat, f"Row {r_idx} Category mismatch: {cat_val} != {cat}"
+            assert cat_val in EXACT_STORE_CATEGORIES
+
+            # Col AD: SEOMeta Title (Col 30)
+            seo_t = str(ws.cell(r_idx, 30).value or "")
+            assert "<" not in seo_t and ">" not in seo_t
+            assert len(seo_t) <= 60
+
+            # Col AE: SEOMeta Description (Col 31)
+            seo_d = str(ws.cell(r_idx, 31).value or "")
+            assert "<p>" not in seo_d and "</p>" not in seo_d, f"Row {r_idx} Column AE contains <p> tags: {seo_d}"
+            assert "<" not in seo_d and ">" not in seo_d, f"Row {r_idx} Column AE contains HTML brackets: {seo_d}"
+            assert len(seo_d) <= 160, f"Row {r_idx} Column AE exceeds 160 chars ({len(seo_d)}): {seo_d}"
+        wb.close()
+
+    # 4. Test actual Excel export for mode=mix (SmartBiz Mix 55 Excel)
+    res_mix = client.get("/api/radar/smartbiz.xlsx?mode=mix&count=55&commit=0")
+    assert res_mix.status_code == 200
+    wb_mix = openpyxl.load_workbook(io.BytesIO(res_mix.data), data_only=True)
+    ws_mix = wb_mix["bulk_upload_template"]
+    assert ws_mix.max_row >= 2
+    for r_idx in range(2, ws_mix.max_row + 1):
+        cat_val = ws_mix.cell(r_idx, 11).value
+        assert cat_val in EXACT_STORE_CATEGORIES, f"Mix Row {r_idx} category {cat_val} not in exact store categories"
+        seo_t = str(ws_mix.cell(r_idx, 30).value or "")
+        assert "<" not in seo_t and ">" not in seo_t
+        assert len(seo_t) <= 60
+        seo_d = str(ws_mix.cell(r_idx, 31).value or "")
+        assert "<p>" not in seo_d and "</p>" not in seo_d
+        assert "<" not in seo_d and ">" not in seo_d
+        assert len(seo_d) <= 160
+    wb_mix.close()
+
+    # 5. Verify data/winning_products.json has zero legacy Gifts niches
+    import json
+    from pathlib import Path
+    wp_path = Path(__file__).resolve().parent.parent / "data" / "winning_products.json"
+    with open(wp_path, "r", encoding="utf-8") as f:
+        prods = json.load(f)
+    for p in prods:
+        assert p.get("niche") != "Gifts", f"Product {p.get('id')} still has legacy niche Gifts"
+        assert p.get("niche") in EXACT_STORE_CATEGORIES, f"Product {p.get('id')} has invalid niche {p.get('niche')}"
+
+

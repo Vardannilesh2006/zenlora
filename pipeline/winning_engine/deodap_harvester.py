@@ -170,7 +170,9 @@ NICHE_RULES = {
         "curtain light", "rice light", "jhalar", "festive light", "diwali",
         "urli", "deepak", "samai", "pooja bell", "shankh", "dry fruit box",
         "pooja", "puja", "festive", "lotus lamp", "lotus light", "akhand",
-        "flameless", "star light", "bottle cork light",
+        "flameless", "star light", "bottle cork light", "gold foil rose", "24k gold",
+        "eternal rose", "golden rose", "dashboard idol", "idol throne", "scented candle",
+        "aroma gift",
     ],
     "Home Improvement": [
         "night lamp", "table lamp", "desk lamp", "crystal lamp", "crystal ball",
@@ -186,7 +188,10 @@ NICHE_RULES = {
         "rug", "carpet", "cushion", "wall hook", "adhesive hook", "coat hook",
         "floating shelf", "wall shelf", "home decor", "night light", "led lamp",
         "study lamp", "touch lamp", "astronaut", "galaxy projector", "feng shui",
-        "evil eye", "wall hanging", "macrame",
+        "evil eye", "wall hanging", "macrame", "gift set", "gift box", "gift boxes",
+        "hamper", "diary", "notebook", "pen set", "pen holder", "desk organizer",
+        "keychain", "key chain", "organizer box", "music box", "snow globe",
+        "cruiser ship", "sand art", "baby buddha", "trophy", "medal",
     ],
     "Home & Kitchen": [
         "kitchen", "chopper", "vegetable cutter", "clever cutter", "slicer",
@@ -203,7 +208,10 @@ NICHE_RULES = {
         "baking", "air fryer", "coaster", "serving tray", "fruit basket",
         "cutlery", "utensil", "bottle cleaning brush", "mortar", "pestle",
         "pizza cutter", "knife sharpener", "bowl", "plate", "dinner", "cookware",
-        "pan", "pot", "kettle", "tea strainer", "sprout maker",
+        "pan", "pot", "kettle", "tea strainer", "sprout maker", "coffee mug",
+        "ceramic mug", "insulated mug", "office mug", "cat mug", "glass coffee mug",
+        "cup set", "ceramic cups", "tea set", "vacuum flask set", "thermos flask",
+        "dry fruit box",
     ],
     "Smart Gadgets": [
         "portable fan", "mini fan", "neck fan", "cooling fan", "desk fan",
@@ -229,22 +237,9 @@ NICHE_RULES = {
         "smart gadget", "bluetooth", "power bank", "car charger", "fm transmitter",
         "endoscope", "magnifying", "stylus", "mouse pad", "wrist support",
     ],
-    "Gifts": [
-        "gift set", "gift box", "gift boxes", "hamper", "corporate gift",
-        "gold foil rose", "24k gold", "eternal rose", "golden rose", "rose bear",
-        "teddy bear", "couple", "anniversary", "birthday", "valentine", "diary",
-        "notebook", "pen set", "pen holder", "desk organizer", "executive",
-        "wallet combo", "wallet set", "wallet", "keychain", "key chain",
-        "perfume", "fragrance", "scented candle", "aroma gift", "coffee mug",
-        "ceramic mug", "insulated mug", "office mug", "cat mug", "glass coffee mug",
-        "cup set", "ceramic cups", "tea set", "vacuum flask set", "thermos flask",
-        "jewelry box", "jewellery box", "jewelry organizer", "jewellery organizer",
-        "organizer box", "music box", "snow globe", "keepsake", "return gift",
-        "dry fruit box", "gift combo", "men's gift", "women's gift", "gift",
-        "cruiser ship", "sand art", "baby buddha", "dashboard idol", "idol throne",
-        "pocket mirror", "coin pouch", "handbag",
-    ],
     "Health & Beauty Accessories": [
+        "jewelry box", "jewellery box", "jewelry organizer", "jewellery organizer",
+        "pocket mirror", "coin pouch", "handbag", "perfume", "fragrance",
         "gua sha", "facial roller", "jade roller", "ice roller", "face roller",
         "face massager", "3d roller", "body massager", "neck massager",
         "foot massager", "scalp massager", "cellulite roller", "acupressure",
@@ -678,7 +673,14 @@ def harvest_deodap_bestsellers(
             pass
 
     # 3. Group by Niche, enforce Concept-Stem Diversity (max 2 per concept), and Rotate
-    niches = ["Home Decor", "Kitchen", "Gadgets", "Festive", "Gifts", "Health & Beauty Accessories"]
+    niches = [
+        "Festive & Lights",
+        "Health & Beauty Accessories",
+        "Home & Kitchen",
+        "Home Improvement",
+        "Smart Gadgets",
+        "Toys & Games",
+    ]
     by_niche: Dict[str, List[Dict[str, Any]]] = {n: [] for n in niches}
     for item in all_candidates:
         n = item.get("niche")
