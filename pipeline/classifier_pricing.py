@@ -68,60 +68,89 @@ class ClassifierAndPricingEngine:
         return f"Zenlora™ {clean}"
 
     @classmethod
-    def calculate_pricing(cls, wholesale_price: float, seed_key: str = "") -> dict:
-        """Calculates realistic D2C psychological selling price, MRP, and gross profit margins."""
-        if wholesale_price <= 0:
-            wholesale_price = 100.0
+    def calculate_pricing(cls, wholesale_price: float, seed_key: str = "", is_under_199_rack: bool = False) -> dict:
+        """
+        Calculates realistic D2C psychological selling price, MRP, and net in-hand profit margins.
+        Accounts for full Landed Cost:
+        - DeoDap wholesale cost
+        - 18% GST on wholesale
+        - Rs.60 Courier Delivery Shipping
+        - Rs.25 COD Collection & Expected RTO Loss Buffer (Rs.10 COD + Rs.15 RTO)
+        - Rs.10 Packaging, Bubble Wrap, Label & Box
+        Smart 3-Tier Net Profit:
+        - Low Cost (< Rs.70): Rs.90 to Rs.100 Net Profit
+        - Mid Cost (Rs.70 to Rs.150): Rs.110 to Rs.120 Net Profit
+        - Premium Cost (> Rs.150): Rs.125 to Rs.135 Net Profit
+        """
+        cost = max(1.0, float(wholesale_price or 100.0))
+        gst_tax = round(cost * 0.18, 2)
+        shipping_cost = 60.0
+        cod_rto_buffer = 25.0
+        packaging_cost = 10.0
+        total_expenses = round(gst_tax + shipping_cost + cod_rto_buffer + packaging_cost, 2)
+        landed_cost = round(cost + total_expenses, 2)
 
-        # Estimated bare-minimum breakeven (Wholesale + absorbed shipping)
-        landed_cost = wholesale_price + SHIPPING_BUFFER
-
-        if 0 < wholesale_price <= 50.0:
+        if 0 < cost <= 50.0:
             key = str(seed_key or "zenlora").strip().lower()
-            seed = sum((idx + 1) * ord(ch) for idx, ch in enumerate(key)) + int(round(float(wholesale_price)))
+            seed = sum((idx + 1) * ord(ch) for idx, ch in enumerate(key)) + int(round(float(cost)))
             selling_price = 179 + (seed % 7)
-        elif wholesale_price <= 85.0:
-            selling_price = 339
-        elif wholesale_price <= 115.0:
-            selling_price = 349
-        elif wholesale_price <= 135.0:
-            selling_price = 369
-        elif wholesale_price <= 155.0:
-            selling_price = 399
-        elif wholesale_price <= 185.0:
-            selling_price = 429
-        elif wholesale_price <= 215.0:
-            selling_price = 449
-        elif wholesale_price <= 245.0:
-            selling_price = 479
         else:
-            selling_price = 499
+            if cost < 70.0:
+                target_profit = 95.0
+                p_min, p_max = 85.0, 115.0
+            elif cost <= 150.0:
+                target_profit = 115.0
+                p_min, p_max = 105.0, 135.0
+            else:
+                target_profit = 130.0
+                p_min, p_max = 120.0, 150.0
 
-        # Realistic D2C Box MRP: 25% - 35% discount perception (believable, authentic, zero inflated fake markup)
-        # e.g. Selling 349 -> MRP 499 (30% OFF), Selling 399 -> MRP 569, Selling 449 -> MRP 649, Selling 499 -> MRP 699
+            raw_target = landed_cost + target_profit
+            points = [179, 189, 199, 219, 229, 239, 249, 279, 299, 319, 329, 339, 349, 369, 379, 399, 429, 449, 479, 499, 549, 599, 649, 699, 799, 899, 999]
+            
+            chosen = None
+            for pt in points:
+                prof = pt - landed_cost
+                if p_min <= prof <= p_max:
+                    chosen = pt
+                    break
+            if chosen is None:
+                for pt in points:
+                    if pt >= raw_target:
+                        chosen = pt
+                        break
+            selling_price = chosen or int(round(raw_target // 10) * 10 + 9)
+
+        # Realistic D2C Box MRP: 25% - 35% discount perception
         mrp_targets = {
-            179: 249, 184: 249, 199: 299, 239: 349, 249: 349, 299: 449,
+            179: 249, 189: 269, 199: 299, 219: 319, 229: 329, 239: 349, 249: 349, 279: 399, 299: 449,
             319: 449, 329: 479, 339: 489, 349: 499, 369: 529, 379: 549,
             399: 569, 429: 599, 449: 649, 479: 679, 499: 699, 549: 779,
-            599: 849, 699: 999, 799: 1149, 899: 1299, 999: 1399
+            599: 849, 649: 899, 699: 999, 799: 1149, 899: 1299, 999: 1399
         }
         if int(selling_price) in mrp_targets:
             mrp = mrp_targets[int(selling_price)]
         else:
             raw_mrp = math.ceil((selling_price * 1.42) / 10.0) * 10 - 1
-            mrp = max(raw_mrp, selling_price + 100)
+            mrp = max(raw_mrp, selling_price + 70)
 
-        # Gross Margin (after product cost and shipping buffer)
+        # In-hand Net Profit (after product cost, GST, shipping, COD/RTO buffer, and packaging)
         gross_profit = round(selling_price - landed_cost, 2)
         profit_margin_pct = round((gross_profit / selling_price) * 100, 1)
         discount_pct = round(((mrp - selling_price) / mrp) * 100)
 
         return {
-            "wholesale_price": round(wholesale_price, 2),
+            "wholesale_price": round(cost, 2),
+            "gst_tax": gst_tax,
+            "shipping_cost": shipping_cost,
+            "cod_rto_buffer": cod_rto_buffer,
+            "packaging_cost": packaging_cost,
+            "total_expenses": total_expenses,
+            "landed_cost": landed_cost,
             "selling_price": int(selling_price),
             "mrp": int(mrp),
             "discount_pct": int(discount_pct),
-            "shipping_buffer": int(SHIPPING_BUFFER),
+            "shipping_buffer": int(shipping_cost),
             "gross_profit": gross_profit,
             "profit_margin_pct": profit_margin_pct,
             "badge": f"Save {discount_pct}%"

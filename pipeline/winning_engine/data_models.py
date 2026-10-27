@@ -82,18 +82,22 @@ def make_data_point(
 DEFAULT_SETTINGS: Dict[str, Any] = {
     "cost_assumptions": {
         "_label": "My Assumptions (User-configurable inputs, not external facts)",
+        "gst_rate": 0.18,
         "shipping_cost": 60.0,
-        "cod_fee": 0.0,
-        "packaging_cost": 0.0,
+        "cod_fee": 10.0,
+        "packaging_cost": 10.0,
         "expected_rto_loss": 15.0,
-        "min_net_profit": 60.0,
-        "min_markup_multiple": 1.8,
-        "target_markup_multiple": 2.2,
-        "ideal_price_min": 169,
+        "min_net_profit": 90.0,
+        "target_net_profit_low": 95.0,
+        "target_net_profit_mid": 115.0,
+        "target_net_profit_high": 130.0,
+        "min_markup_multiple": 1.6,
+        "target_markup_multiple": 2.0,
+        "ideal_price_min": 179,
         "ideal_price_max": 599,
         "under_50_cost_threshold": 50.0,
         "under_50_sell_min": 179,
-        "under_50_sell_max": 185
+        "under_50_sell_max": 199
     },
     "general": {
         "stale_days_limit": 7,

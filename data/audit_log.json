@@ -1,5 +1,59 @@
 [
   {
+    "timestamp": "2026-10-27T14:33:44+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-27T14:33:42+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-27T14:32:23+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-27T14:32:21+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-27T14:30:30+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
+    "timestamp": "2026-10-27T14:30:28+05:30",
+    "action": "deodap_live_ingest",
+    "target": "0 products",
+    "source": "DeoDap Category Collections API",
+    "source_url": "https://www.deodap.in/collections.json",
+    "method": "api",
+    "details": "Fetched 0 pure category-verified items across 12 collection requests."
+  },
+  {
     "timestamp": "2026-10-27T13:05:00+05:30",
     "action": "deodap_live_ingest",
     "target": "0 products",

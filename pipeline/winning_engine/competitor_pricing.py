@@ -358,13 +358,17 @@ def get_competitor_price_intelligence(
     assumptions = settings.get("cost_assumptions", {})
     stale_days = int(settings.get("general", {}).get("stale_days_limit", 7))
 
+    gst_rate = float(assumptions.get("gst_rate", 0.18))
     shipping_cost = float(assumptions.get("shipping_cost", 60.0))
-    cod_fee = float(assumptions.get("cod_fee", 0.0))
-    packaging_cost = float(assumptions.get("packaging_cost", 0.0))
+    cod_fee = float(assumptions.get("cod_fee", 10.0))
+    packaging_cost = float(assumptions.get("packaging_cost", 10.0))
     expected_rto_loss = float(assumptions.get("expected_rto_loss", 15.0))
-    min_net_profit = float(assumptions.get("min_net_profit", 60.0))
-    min_markup = float(assumptions.get("min_markup_multiple", 1.8))
+    min_net_profit = float(assumptions.get("min_net_profit", 90.0))
+    min_markup = float(assumptions.get("min_markup_multiple", 1.6))
     ideal_max = int(assumptions.get("ideal_price_max", 599))
+    target_profit_low = float(assumptions.get("target_net_profit_low", 95.0))
+    target_profit_mid = float(assumptions.get("target_net_profit_mid", 115.0))
+    target_profit_high = float(assumptions.get("target_net_profit_high", 130.0))
 
     clean_keyword = extract_clean_product_name(title)
     encoded_kw = urllib.parse.quote_plus(clean_keyword)
@@ -458,42 +462,53 @@ def get_competitor_price_intelligence(
     fk_entry = _build_mkt_entry("flipkart", "Flipkart", flipkart_url, "flipkart_price")
     msh_entry = _build_mkt_entry("meesho", "Meesho", meesho_url, "meesho_price")
 
-    # Landed Cost = Supplier Cost + Shipping + COD Fee + Packaging + Expected RTO Loss ("My Assumptions")
-    total_fees_and_rto = round(shipping_cost + cod_fee + packaging_cost + expected_rto_loss, 2)
+    # Landed Cost = Supplier Cost + 18% GST + Shipping + COD Fee + Packaging + Expected RTO Loss ("My Assumptions")
+    gst_tax = round(effective_cost * gst_rate, 2)
+    total_fees_and_rto = round(gst_tax + shipping_cost + cod_fee + packaging_cost + expected_rto_loss, 2)
     landed_cost = round(effective_cost + total_fees_and_rto, 2)
 
-    # 3-Tier Perceived-Value & Meesho-Anchored Smart Pricing
     tier_info = classify_pricing_tier(title, niche)
-    meesho_delta = float(tier_info["meesho_delta"])
-    tier_min_profit = max(float(tier_info["min_profit_target"]), min_net_profit)
-    no_loss_floor = max(landed_cost + tier_min_profit, effective_cost * min_markup)
 
-    msh_val = msh_entry["price_numeric"]
-    amz_val = amz_entry["price_numeric"]
+    # Smart 3-Tier Net Profit Allocation (Low: Rs.90-Rs.100, Mid: Rs.110-Rs.120, Premium: Rs.125-Rs.135)
+    if effective_cost < 70.0:
+        target_net_profit = target_profit_low
+        profit_window = (85.0, 115.0)
+    elif effective_cost <= 150.0:
+        target_net_profit = target_profit_mid
+        profit_window = (105.0, 135.0)
+    else:
+        target_net_profit = target_profit_high
+        profit_window = (120.0, 150.0)
+
+    no_loss_floor = landed_cost + target_net_profit
 
     if 0 < effective_cost <= 50.0:
         suggested_sell_price = compute_under_50_preset_price(effective_cost, handle or title)
         bundle_rule_triggered = "Preset Rule: DeoDap Cost ≤ ₹50 → Fixed Selling Price ₹179–₹185"
         bundle_label = f"Under ₹50 DeoDap Preset (Cost: ₹{effective_cost:.0f} → Sell: ₹{suggested_sell_price})"
     else:
-        if msh_val is not None and msh_val > 0:
-            meesho_anchored = msh_val + meesho_delta
-            # Cap excessive Meesho outliers while respecting the no-loss safety floor
-            raw_target = max(no_loss_floor, min(meesho_anchored, no_loss_floor + 50))
-            if amz_val is not None and amz_val > no_loss_floor + 20:
-                raw_target = min(raw_target, amz_val - 20)
-        else:
-            raw_target = no_loss_floor
-
-        suggested_sell_price = snap_to_impulse_price(raw_target, max_cap=ideal_max)
-        if suggested_sell_price < no_loss_floor:
-            suggested_sell_price = int(round(no_loss_floor // 10) * 10 + 9)
+        points = [
+            179, 189, 199, 219, 229, 239, 249, 279, 299, 319, 329, 339, 349,
+            369, 379, 399, 429, 449, 479, 499, 549, 599, 649, 699, 799, 899, 999
+        ]
+        chosen = None
+        for pt in points:
+            prof = pt - landed_cost
+            if profit_window[0] <= prof <= profit_window[1]:
+                chosen = pt
+                break
+        if chosen is None:
+            for pt in points:
+                if pt >= no_loss_floor:
+                    chosen = pt
+                    break
+        suggested_sell_price = chosen or int(round(no_loss_floor // 10) * 10 + 9)
 
     net_profit = round(suggested_sell_price - landed_cost, 2)
-    gross_profit_after_ship = round(suggested_sell_price - effective_cost - shipping_cost, 2)
-    profit_margin_pct = round((gross_profit_after_ship / suggested_sell_price) * 100, 1) if suggested_sell_price > 0 else 0.0
+    gross_profit_after_ship = net_profit
+    profit_margin_pct = round((net_profit / suggested_sell_price) * 100, 1) if suggested_sell_price > 0 else 0.0
     markup_multiple = round(suggested_sell_price / effective_cost, 2) if effective_cost > 0 else 0.0
-    passes_2_5x_rule = (0 < effective_cost <= 50.0) or (markup_multiple >= min_markup and net_profit >= min_net_profit)
+    passes_2_5x_rule = net_profit >= min_net_profit
 
     real_prices = [
         e["price_numeric"] for e in (amz_entry, fk_entry, msh_entry)

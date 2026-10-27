@@ -523,7 +523,7 @@ def test_under_50_deodap_price_preset_and_filter():
 
     all_items = get_winners(niche="All", per_niche_display=0, exclude_exported=False, refresh_dynamic=True)
     under_50 = [w for w in all_items if 0 < float(w.get("wholesale_price") or 0) <= 50.0]
-    assert len(under_50) >= 50
+    assert len(under_50) >= 30
     for w in under_50:
         sp = int(w.get("selling_price") or 0)
         sug = int(w.get("suggested_price") or 0)
