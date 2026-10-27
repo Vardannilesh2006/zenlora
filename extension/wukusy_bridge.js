@@ -408,10 +408,16 @@
         field: "State",
         value: order.state || "",
         selectors: [
-          'input[placeholder*="State" i]',
           'select[name*="state" i]',
+          'select#state',
+          'select[id*="state" i]',
+          'input[placeholder*="State" i]',
           'input[name*="state" i]',
-          '#state'
+          '#state',
+          '[aria-label*="State" i]',
+          '.ant-select-selection-search-input',
+          '[role="combobox"]',
+          '.ant-select-selector'
         ]
       },
       {
@@ -434,7 +440,7 @@
 
     for (const def of fieldDefinitions) {
       if (!def.value) continue;
-      const element = findElementBySelectors(def.selectors);
+      const element = findElementBySelectors(def.selectors, def.field);
       if (element) {
         setNativeValue(element, def.value);
         filledCount++;
@@ -445,10 +451,72 @@
     return { filledCount, filledFields };
   }
 
-  function findElementBySelectors(selectors) {
-    for (const sel of selectors) {
-      const el = document.querySelector(sel);
-      if (el && isElementVisible(el)) return el;
+    function findElementByLabel(labelText) {
+    if (!labelText) return null;
+    const target = labelText.trim().toLowerCase();
+
+    // 1. Direct label element search
+    const labels = Array.from(document.querySelectorAll('label, .ant-form-item-label, [class*="label"], .form-label'));
+    for (const label of labels) {
+      const text = label.innerText.trim().toLowerCase();
+      if (text === target || text.startsWith(target) || text.replace(/[:*]/g, '').trim() === target) {
+        if (label.htmlFor) {
+          const el = document.getElementById(label.htmlFor);
+          if (el && isElementVisible(el)) return el;
+        }
+        const inner = label.querySelector('input, select, textarea, [role="combobox"]');
+        if (inner && isElementVisible(inner)) return inner;
+        const parent = label.closest('.ant-form-item, .form-group, .form-item, .field, div');
+        if (parent) {
+          const input = parent.querySelector('input:not([type="hidden"]), select, textarea, [role="combobox"]');
+          if (input && isElementVisible(input)) return input;
+        }
+        const next = label.nextElementSibling;
+        if (next) {
+          const input = (next.tagName === 'INPUT' || next.tagName === 'SELECT' || next.tagName === 'TEXTAREA') ? next : next.querySelector('input, select, textarea, [role="combobox"]');
+          if (input && isElementVisible(input)) return input;
+        }
+      }
+    }
+
+    // 2. Direct placeholder matching as fallback
+    const placeholderInputs = Array.from(document.querySelectorAll('input, textarea'));
+    for (const inp of placeholderInputs) {
+      const ph = (inp.placeholder || '').toLowerCase();
+      if (ph.includes(target) && isElementVisible(inp)) return inp;
+    }
+
+    // 3. Text node headings / containers preceding an input
+    const textNodes = Array.from(document.querySelectorAll('div, span, p, h4, h5, h6'));
+    for (const node of textNodes) {
+      if (node.children.length === 0 && node.innerText.trim().toLowerCase() === target) {
+        const parent = node.closest('.form-group, .form-item, .field, [class*="item"], div');
+        if (parent) {
+          const input = parent.querySelector('input:not([type="hidden"]), select, textarea, [role="combobox"]');
+          if (input && isElementVisible(input)) return input;
+        }
+        const next = node.nextElementSibling;
+        if (next) {
+          const input = (next.tagName === 'INPUT' || next.tagName === 'SELECT' || next.tagName === 'TEXTAREA') ? next : next.querySelector('input, select, textarea, [role="combobox"]');
+          if (input && isElementVisible(input)) return input;
+        }
+      }
+    }
+    return null;
+  }
+
+  function findElementBySelectors(selectors, fieldName) {
+    if (selectors && Array.isArray(selectors)) {
+      for (const sel of selectors) {
+        try {
+          const el = document.querySelector(sel);
+          if (el && isElementVisible(el)) return el;
+        } catch (_) {}
+      }
+    }
+    if (fieldName) {
+      const byLabel = findElementByLabel(fieldName);
+      if (byLabel) return byLabel;
     }
     return null;
   }
@@ -461,6 +529,54 @@
 
   function setNativeValue(element, value) {
     if (!element) return;
+
+    // Handle HTML <select> dropdowns (standard and styled)
+    if (element.tagName === 'SELECT') {
+      const normVal = String(value || '').trim().toLowerCase();
+      const options = Array.from(element.options || []);
+      let matched = options.find(opt => 
+        opt.value.trim().toLowerCase() === normVal || 
+        opt.text.trim().toLowerCase() === normVal
+      );
+      if (!matched) {
+        matched = options.find(opt => 
+          normVal && (opt.text.trim().toLowerCase().includes(normVal) || normVal.includes(opt.text.trim().toLowerCase()))
+        );
+      }
+      if (matched) {
+        element.selectedIndex = matched.index;
+        element.value = matched.value;
+      }
+      element.dispatchEvent(new Event('input', { bubbles: true }));
+      element.dispatchEvent(new Event('change', { bubbles: true }));
+      element.dispatchEvent(new Event('blur', { bubbles: true }));
+      element.style.setProperty('border', '2px solid #10b981', 'important');
+      element.style.setProperty('background-color', '#ecfdf5', 'important');
+      return;
+    }
+
+    // Handle Ant Design / Combobox wrappers
+    if (element.classList && (element.classList.contains('ant-select-selector') || element.getAttribute('role') === 'combobox')) {
+      const searchInput = element.querySelector('input') || element;
+      if (searchInput && searchInput.tagName === 'INPUT') {
+        searchInput.focus();
+        const proto = Object.getPrototypeOf(searchInput);
+        const desc = Object.getOwnPropertyDescriptor(proto, 'value');
+        if (desc && desc.set) {
+          desc.set.call(searchInput, value);
+        } else {
+          searchInput.value = value;
+        }
+        searchInput.dispatchEvent(new Event('input', { bubbles: true }));
+        searchInput.dispatchEvent(new Event('change', { bubbles: true }));
+        searchInput.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', code: 'Enter', bubbles: true }));
+      }
+      element.style.setProperty('border', '2px solid #10b981', 'important');
+      element.style.setProperty('background-color', '#ecfdf5', 'important');
+      return;
+    }
+
+    // Standard input / textarea with React synthetic binding support
     const prototype = Object.getPrototypeOf(element);
     const descriptor = Object.getOwnPropertyDescriptor(prototype, 'value');
 

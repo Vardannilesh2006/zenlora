@@ -318,17 +318,17 @@
     <!-- 8-FIELD INJECTION FEEDBACK CARD -->
     <div id="wukusy-feedback-card" class="card" style="display:none; margin-top:8px; background:#f0fdf4; border-color:#86efac;">
       <div style="font-weight:700; font-size:11px; color:#166534; margin-bottom:4px; display:flex; justify-content:space-between;">
-        <span>✅ 8/8 Address Fields Injected</span>
-        <span style="font-family:monospace;">100% Real DOM</span>
+        <span>Fields populated</span>
+        <span style="font-family:monospace;">Review before saving</span>
       </div>
       <div style="font-size:10.5px; color:#14532d; font-family:monospace;" id="wukusy-feedback-text">
-        First Name, Last Name, Company, Mobile, Address 1, Address 2, City, State, Pincode successfully populated!
+        Check all values in Wukusy. The extension does not submit the courier booking.
       </div>
     </div>
 
   </div>
 
-  <!-- ==================== PAGE 3: WHATSAPP & AI STUDIO ==================== -->
+  <!-- ==================== PAGE 3: WHATSAPP & MESSAGE DRAFT ==================== -->
   <div id="page-whatsapp" class="page-content">
     
     <!-- SUB-TABS -->
@@ -337,7 +337,7 @@
         ➕ Add Customer (6 Fields)
       </button>
       <button type="button" class="sub-btn" id="wa-btn-ai" data-wa-sub="ai">
-        ✨ AI Hinglish Studio
+        ✨ Message Draft
       </button>
     </div>
 
@@ -380,17 +380,29 @@
         <input type="text" id="ext-add-sku" placeholder="SKU code" value="" style="width:100%; padding:6px 8px; border:1px solid #93c5fd; background:#eff6ff; border-radius:6px; font-family:monospace; font-weight:700; font-size:12px; color:#1e40af;">
       </div>
 
+      <div style="padding:8px; margin-bottom:9px; background:#f8faf8; border:1px solid #dce7df; border-radius:7px;">
+        <label style="display:flex; align-items:flex-start; gap:6px; font-size:10.5px; color:#334155;">
+          <input type="checkbox" id="ext-add-wa-opt-in" style="margin-top:2px;">
+          <span>Customer explicitly agreed to WhatsApp order updates.</span>
+        </label>
+        <label style="display:flex; align-items:flex-start; gap:6px; margin-top:6px; font-size:10.5px; color:#334155;">
+          <input type="checkbox" id="ext-add-marketing-opt-in" style="margin-top:2px;">
+          <span>Customer separately agreed to marketing/discount offers.</span>
+        </label>
+        <input type="text" id="ext-add-consent-source" placeholder="Consent record/source (required if checked)" style="width:100%; margin-top:6px; padding:6px 8px; border:1px solid #cbd5e1; border-radius:6px; font-size:11px;">
+      </div>
+
       <button type="button" class="btn btn-emerald" id="btn-save-customer-queue">
         💾 Save Customer &amp; Open WhatsApp Chat
       </button>
       <div id="ext-add-status" class="status-toast" style="color:#047857;"></div>
     </div>
 
-    <!-- SUB-PAGE 2: AI HINGLISH TO D2C STUDIO -->
+    <!-- SUB-PAGE 2: MESSAGE DRAFT -->
     <div id="wa-view-ai" class="card" style="display:none; margin-bottom:0;">
       <div class="card-header">
-        <span>Hinglish → D2C Store Copy</span>
-        <span style="color:#7c3aed;">AI Engine Active</span>
+        <span>Customer message preview</span>
+        <span style="color:#008069;">Review before sending</span>
       </div>
 
       <div style="margin-bottom:8px;">
@@ -412,7 +424,7 @@
       </div>
 
       <button type="button" class="btn btn-emerald" id="btn-dispatch-ai-whatsapp">
-        🚀 Send via WhatsApp Gateway
+        🚀 Send with configured WhatsApp provider
       </button>
       <div id="ext-ai-status" class="status-toast" style="color:#047857;"></div>
     </div>

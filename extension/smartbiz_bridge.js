@@ -16,7 +16,7 @@
     const pill = document.createElement('button');
     pill.id = PILL_ID;
     pill.type = 'button';
-    pill.innerHTML = '🛡️ ZenOS: Sync Orders';
+    pill.innerHTML = '⬆️ Sync All to ZenOS';
     pill.style.cssText = [
       'position:fixed', 'right:20px', 'bottom:20px', 'z-index:2147483646',
       'padding:10px 16px', 'border:0', 'border-radius:999px',
@@ -36,10 +36,8 @@
       if (saved) {
         const pos = JSON.parse(saved);
         if (typeof pos.top === 'number' && typeof pos.left === 'number') {
-          const maxTop = Math.max(10, window.innerHeight - 60);
-          const maxLeft = Math.max(10, window.innerWidth - 180);
-          el.style.top = Math.min(Math.max(10, pos.top), maxTop) + 'px';
-          el.style.left = Math.min(Math.max(10, pos.left), maxLeft) + 'px';
+          el.style.top = Math.max(10, Math.min(pos.top, window.innerHeight - 60)) + 'px';
+          el.style.left = Math.max(10, Math.min(pos.left, window.innerWidth - 180)) + 'px';
           el.style.bottom = 'auto';
           el.style.right = 'auto';
         }
@@ -48,8 +46,9 @@
 
     el.style.cursor = 'grab';
     el.style.userSelect = 'none';
+    el.style.touchAction = 'none';
 
-    el.addEventListener('mousedown', (e) => {
+    el.addEventListener('pointerdown', (e) => {
       if (e.button !== 0) return;
       isDragging = true;
       moved = false;
@@ -58,44 +57,42 @@
       const rect = el.getBoundingClientRect();
       initialLeft = rect.left;
       initialTop = rect.top;
+      try { el.setPointerCapture(e.pointerId); } catch(err){}
       el.style.cursor = 'grabbing';
-
-      function onMouseMove(moveEvent) {
-        if (!isDragging) return;
-        const dx = moveEvent.clientX - startX;
-        const dy = moveEvent.clientY - startY;
-        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
-
-        let newLeft = initialLeft + dx;
-        let newTop = initialTop + dy;
-        const maxLeft = window.innerWidth - el.offsetWidth - 5;
-        const maxTop = window.innerHeight - el.offsetHeight - 5;
-        newLeft = Math.max(5, Math.min(newLeft, maxLeft));
-        newTop = Math.max(5, Math.min(newTop, maxTop));
-
-        el.style.left = newLeft + 'px';
-        el.style.top = newTop + 'px';
-        el.style.bottom = 'auto';
-        el.style.right = 'auto';
-      }
-
-      function onMouseUp() {
-        if (!isDragging) return;
-        isDragging = false;
-        el.style.cursor = 'grab';
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-        if (moved) {
-          const rect = el.getBoundingClientRect();
-          try {
-            localStorage.setItem(storageKey, JSON.stringify({ top: rect.top, left: rect.left }));
-          } catch (e) {}
-        }
-      }
-
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseup', onMouseUp);
     });
+
+    el.addEventListener('pointermove', (e) => {
+      if (!isDragging) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+
+      let newLeft = initialLeft + dx;
+      let newTop = initialTop + dy;
+      newLeft = Math.max(5, Math.min(newLeft, window.innerWidth - el.offsetWidth - 5));
+      newTop = Math.max(5, Math.min(newTop, window.innerHeight - el.offsetHeight - 5));
+
+      el.style.left = newLeft + 'px';
+      el.style.top = newTop + 'px';
+      el.style.bottom = 'auto';
+      el.style.right = 'auto';
+    });
+
+    function endDrag(e) {
+      if (!isDragging) return;
+      isDragging = false;
+      el.style.cursor = 'grab';
+      try { el.releasePointerCapture(e.pointerId); } catch(err){}
+      if (moved) {
+        const rect = el.getBoundingClientRect();
+        try {
+          localStorage.setItem(storageKey, JSON.stringify({ top: rect.top, left: rect.left }));
+        } catch (err) {}
+      }
+    }
+
+    el.addEventListener('pointerup', endDrag);
+    el.addEventListener('pointercancel', endDrag);
 
     el.addEventListener('click', (e) => {
       if (moved) {
@@ -170,14 +167,36 @@
   // ─── UTILITY: Extract city from address lines ──────────────────────────────
   function extractCity(addressLines) {
     if (!addressLines || !addressLines.length) return '';
-    // City is usually second-to-last line before pincode/state
+    // Look for "City, State" line pattern (e.g. "AURAD, Karnataka" or "GHAZIABAD, Uttar Pradesh")
     for (let i = addressLines.length - 1; i >= 0; i--) {
       const line = addressLines[i].trim();
       if (/^[1-9]\d{5}$/.test(line)) continue; // skip pincode
+      if (line.includes(',')) {
+        const parts = line.split(',').map(p => p.trim()).filter(Boolean);
+        if (parts.length >= 2) {
+          const potentialState = extractStateFromAddress(parts[parts.length - 1]);
+          if (potentialState) {
+            return parts[0];
+          }
+        }
+      }
       if (extractStateFromAddress(line)) continue; // skip state-only lines
       if (line.length > 2 && !/^\d+$/.test(line)) return line;
     }
     return '';
+  }
+
+  // ─── UTILITY: Extract payment mode ────────────────────────────────────────
+  function extractPaymentMode(text) {
+    if (!text) return 'COD';
+    const clean = String(text);
+    if (/\b(?:prepaid|online|upi|net\s*banking|card|wallet|paid\s*online)\b/i.test(clean)) {
+      return 'PREPAID';
+    }
+    if (/\b(?:cod|cash\s*on\s*delivery|cash)\b/i.test(clean)) {
+      return 'COD';
+    }
+    return 'COD';
   }
 
   // ─── Address health evaluation ────────────────────────────────────────────
@@ -250,6 +269,7 @@
             const paymentCell = cells[2].innerText;
             const amtMatch = paymentCell.match(/Total[:\s]+₹?([\d,]+)/i);
             amount = amtMatch ? amtMatch[1].replace(/,/g, '') : extractAmount(paymentCell);
+            const paymentMode = extractPaymentMode(paymentCell || rowText);
 
             // Column 3: Customer
             const customerCell = cells[3].innerText;
@@ -271,6 +291,7 @@
             amount = amtMatch ? amtMatch[1].replace(/,/g, '') : '';
             const skuMatch = rowText.match(/SKU[:\s]+([A-Za-z0-9_\-\.]+)/i);
             sku = skuMatch ? skuMatch[1] : '';
+            var paymentMode = extractPaymentMode(rowText);
           }
 
           const pincode = extractPincode(addressText);
@@ -288,6 +309,7 @@
               product_name: productName,
               sku: sku,
               amount: amount,
+              payment_mode: paymentMode,
               address: addressText,
               city: city,
               state: state,
@@ -318,6 +340,7 @@
           product_name: '',
           sku: '',
           amount: '',
+          payment_mode: 'COD',
           address: '',
           city: '',
           state: '',
@@ -412,6 +435,15 @@
           city = extractCity(addrLines);
         }
 
+        // Payment mode
+        let paymentMode = 'COD';
+        if (cells.length >= 3) {
+          const payCell = cells[2];
+          paymentMode = extractPaymentMode(payCell?.innerText || rowText);
+        } else {
+          paymentMode = extractPaymentMode(rowText);
+        }
+
         orders.push({
           order_ref: orderId,
           customer_name: customerName,
@@ -419,6 +451,7 @@
           product_name: productName,
           sku: sku,
           amount: amount,
+          payment_mode: paymentMode,
           address: addressText,
           city: city,
           state: state,
@@ -489,13 +522,19 @@
     const skuMatch = fullText.match(/SKU[:\s]+([A-Za-z0-9_\-\.]+)/i);
     const sku = skuMatch ? skuMatch[1] : '';
 
+    // Payment mode
+    const paymentMatch = fullText.match(/(?:Payment\s*Method|Payment\s*Mode|Payment)[:\s]*([A-Za-z\s]+)/i);
+    const paymentMode = extractPaymentMode(paymentMatch ? paymentMatch[1] : fullText);
+
     // Customer name — first line of address block, or from Customer field
     const customerName = addressLines[0] || fullText.match(/Customer(?:\s+Name)?[:\s]+([A-Za-z\s]{3,})/i)?.[1]?.trim() || '';
 
     // Address text (skip first line = customer name)
-    const addressText = addressLines.slice(1).join(', ');
+    const actualAddrLines = addressLines.slice(1);
+    const addressText = actualAddrLines.join(', ');
     const pincode = extractPincode(addressText || fullText);
     const state = extractStateFromAddress(addressText || fullText);
+    const city = extractCity(actualAddrLines) || extractCity(addressText.split(',').map(l => l.trim()).filter(Boolean));
 
     return {
       order_ref: orderIdFromText,
@@ -504,8 +543,9 @@
       product_name: productName,
       sku: sku,
       amount: amount,
+      payment_mode: paymentMode,
       address: addressText,
-      city: '',
+      city: city,
       state: state,
       pincode: pincode,
       order_status_smartbiz: 'Accepted',
@@ -534,6 +574,7 @@
           const addrHealth = evaluateAddressHealth(o.address);
           const healthColor = addrHealth.rtoRisk === 'LOW' ? '#047857' : addrHealth.rtoRisk === 'MEDIUM' ? '#b45309' : '#b91c1c';
           const healthBg = addrHealth.rtoRisk === 'LOW' ? '#ecfdf5' : addrHealth.rtoRisk === 'MEDIUM' ? '#fffbeb' : '#fef2f2';
+          const isWeakAddress = addrHealth.rtoRisk !== 'LOW';
           return `
             <div id="zenos-order-row-${i}" style="border-bottom:1px solid #f1f5f9;padding:10px 16px;display:flex;align-items:flex-start;gap:10px;cursor:pointer;transition:background 0.1s;" 
                  onmouseover="this.style.background='#f8fafc'" onmouseout="this.style.background=''"
@@ -548,6 +589,9 @@
                   <div style="display:flex;align-items:center;gap:5px;flex-shrink:0;">
                     <span style="font-size:10px;font-weight:600;padding:2px 7px;border-radius:999px;background:${o.order_status_smartbiz === 'Accepted' ? '#dcfce7' : o.order_status_smartbiz === 'Pending' ? '#fef3c7' : '#f1f5f9'};color:${o.order_status_smartbiz === 'Accepted' ? '#166534' : o.order_status_smartbiz === 'Pending' ? '#92400e' : '#475569'};">
                       ${escHtml(o.order_status_smartbiz || 'Pending')}
+                    </span>
+                    <span style="font-size:10px;font-weight:700;padding:2px 7px;border-radius:999px;background:${o.payment_mode === 'PREPAID' ? '#eff6ff' : '#fef3c7'};color:${o.payment_mode === 'PREPAID' ? '#1d4ed8' : '#92400e'};">
+                      ${escHtml(o.payment_mode || 'COD')}
                     </span>
                     <span style="font-family:monospace;font-size:10px;font-weight:700;color:#059669;">₹${escHtml(o.amount || '—')}</span>
                   </div>
@@ -564,10 +608,20 @@
                   <span style="font-size:10px;font-weight:600;padding:1px 6px;border-radius:999px;background:${healthBg};color:${healthColor};">${addrHealth.message}</span>
                 </div>
               </div>
-              <button onclick="event.stopPropagation(); zenosSyncOrder(${i})" 
-                      style="flex-shrink:0;padding:5px 10px;background:#008069;color:#fff;border:0;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">
-                ⚡ Sync
-              </button>
+              <div style="display:flex;flex-direction:column;gap:5px;align-items:flex-end;flex-shrink:0;">
+                <button onclick="event.stopPropagation(); zenosSyncOrder(${i})" 
+                        id="zenos-sync-btn-${i}"
+                        style="padding:5px 10px;background:#008069;color:#fff;border:0;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;">
+                  ⚡ Sync
+                </button>
+                ${isWeakAddress ? `
+                <button onclick="event.stopPropagation(); zenosRequestLandmarkOrder(${i})" 
+                        id="zenos-landmark-btn-${i}"
+                        style="padding:5px 10px;background:#d97706;color:#fff;border:0;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;white-space:nowrap;display:inline-flex;align-items:center;gap:3px;"
+                        title="Sync order & send 4-point address correction WhatsApp request">
+                  📍 Request Landmark
+                </button>` : ''}
+              </div>
             </div>`;
         }).join('');
 
@@ -582,10 +636,25 @@
             </div>
           </div>
           <div style="display:flex;align-items:center;gap:8px;">
-            ${orders.length > 0 ? `<button onclick="zenosSyncAllChecked()" style="padding:6px 12px;background:#0f172a;color:#fff;border:0;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;">⬆️ Sync Selected</button>` : ''}
-            <button onclick="document.getElementById('zenos-bulk-modal').remove()" style="border:0;background:none;font-size:20px;cursor:pointer;color:#64748b;line-height:1;">×</button>
+            <button onclick="document.getElementById('zenos-bulk-modal').remove()" style="border:0;background:none;font-size:22px;cursor:pointer;color:#64748b;line-height:1;padding:0 4px;" title="Close">×</button>
           </div>
         </header>
+        ${orders.length > 0 ? `
+        <!-- BATCH SYNC TOOLBAR WITH SELECT ALL & 1-CLICK SYNC ALL -->
+        <div style="background:#f1f5f9;border-bottom:1px solid #e2e8f0;padding:9px 16px;display:flex;align-items:center;justify-content:space-between;gap:10px;flex-shrink:0;flex-wrap:wrap;">
+          <label style="display:flex;align-items:center;gap:7px;cursor:pointer;font-size:12.5px;font-weight:700;color:#1e293b;user-select:none;">
+            <input type="checkbox" id="zenos-select-all-chk" onchange="zenosToggleSelectAll(this.checked)" style="width:16px;height:16px;cursor:pointer;accent-color:#059669;">
+            <span>Select All (${orders.length} Orders)</span>
+          </label>
+          <div style="display:flex;align-items:center;gap:8px;">
+            <button type="button" onclick="zenosSyncAllChecked()" style="padding:6px 12px;background:#0f172a;color:#fff;border:0;border-radius:6px;font-size:11.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:4px;box-shadow:0 1px 3px rgba(15,23,42,0.2);">
+              ⬆️ Sync Selected
+            </button>
+            <button type="button" onclick="zenosSyncAllOrders()" style="padding:6px 14px;background:linear-gradient(135deg,#059669,#047857);color:#fff;border:0;border-radius:6px;font-size:11.5px;font-weight:700;cursor:pointer;display:inline-flex;align-items:center;gap:5px;box-shadow:0 2px 6px rgba(5,150,105,0.3);">
+              ⚡ Sync All (${orders.length}) in 1-Click
+            </button>
+          </div>
+        </div>` : ''}
         <div style="overflow-y:auto;flex:1;">
           ${orderRows}
         </div>
@@ -615,26 +684,31 @@
     if (!order) return;
 
     const statusEl = document.getElementById('zenos-bulk-status');
+    const syncBtn = document.getElementById(`zenos-sync-btn-${idx}`);
+    if (syncBtn) { syncBtn.disabled = true; syncBtn.textContent = '⏳...'; }
     if (statusEl) { statusEl.textContent = `Syncing ${order.customer_name || 'order'}...`; statusEl.style.color = '#64748b'; }
 
     const config = await readConfig();
     try {
+      const cleanPhone = (order.phone || '').replace(/\D/g, '').slice(-10);
       const res = await fetch(`${config.backendUrl}/api/orders/ingest`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', 'X-ZenOS-Extension-Key': config.apiKey },
         body: JSON.stringify({
           customer_name: order.customer_name,
-          phone: order.phone,
+          phone: cleanPhone,
           order_ref: order.order_ref,
           product_name: order.product_name,
-          sku: order.sku,
-          amount: order.amount,
+          sku: order.sku || '',
+          amount: parseInt(order.amount, 10) || 0,
+          payment_mode: order.payment_mode || 'COD',
           address: order.address,
-          city: order.city,
-          state: order.state,
-          pincode: order.pincode,
-          consent_source: 'SmartBiz Order List',
-          whatsapp_opt_in: true
+          city: order.city || '',
+          state: order.state || '',
+          pincode: order.pincode || '',
+          whatsapp_opt_in: true,
+          marketing_opt_in: true,
+          consent_source: 'SmartBiz Order Sync'
         })
       });
       const data = await res.json();
@@ -642,18 +716,159 @@
         if (statusEl) { statusEl.textContent = `✅ ${order.customer_name || 'Order'} synced!`; statusEl.style.color = '#047857'; }
         const row = document.getElementById(`zenos-order-row-${idx}`);
         if (row) row.style.background = '#ecfdf5';
+        if (syncBtn) { syncBtn.textContent = '✅ Synced'; syncBtn.style.background = '#047857'; }
         showToast(`✅ ${order.customer_name} synced to ZenOS!`, '#008069');
       } else {
         throw new Error(data.message || `Error ${res.status}`);
       }
     } catch (err) {
+      if (syncBtn) { syncBtn.disabled = false; syncBtn.textContent = '⚡ Sync'; }
       if (statusEl) { statusEl.textContent = `❌ ${err.message}`; statusEl.style.color = '#b91c1c'; }
+    }
+  };
+
+  // 1-Click Request Landmark action (syncs order & triggers address correction WhatsApp message)
+  window.zenosRequestLandmarkOrder = async function(idx) {
+    const modal = document.getElementById('zenos-bulk-modal');
+    if (!modal || !modal._orders) return;
+    const order = modal._orders[idx];
+    if (!order) return;
+
+    const statusEl = document.getElementById('zenos-bulk-status');
+    const syncBtn = document.getElementById(`zenos-sync-btn-${idx}`);
+    const lmBtn = document.getElementById(`zenos-landmark-btn-${idx}`);
+    if (lmBtn) { lmBtn.disabled = true; lmBtn.textContent = '⏳ Requesting...'; }
+    if (syncBtn) { syncBtn.disabled = true; }
+    if (statusEl) { statusEl.textContent = `Syncing & requesting landmark for ${order.customer_name || 'order'}...`; statusEl.style.color = '#d97706'; }
+
+    const config = await readConfig();
+    try {
+      const cleanPhone = (order.phone || '').replace(/\D/g, '').slice(-10);
+      const res = await fetch(`${config.backendUrl}/api/orders/ingest`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'X-ZenOS-Extension-Key': config.apiKey },
+        body: JSON.stringify({
+          customer_name: order.customer_name,
+          phone: cleanPhone,
+          order_ref: order.order_ref,
+          product_name: order.product_name,
+          sku: order.sku || '',
+          amount: parseInt(order.amount, 10) || 0,
+          payment_mode: order.payment_mode || 'COD',
+          address: order.address,
+          city: order.city || '',
+          state: order.state || '',
+          pincode: order.pincode || '',
+          whatsapp_opt_in: true,
+          marketing_opt_in: true,
+          consent_source: 'SmartBiz Order Sync'
+        })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data.message || `Sync failed (${res.status})`);
+      }
+
+      // Dispatch address correction template via quick-dispatch
+      const dispatchRes = await fetch(`${config.backendUrl}/api/whatsapp/quick-dispatch`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          phone: cleanPhone,
+          customer_name: order.customer_name,
+          order_ref: order.order_ref,
+          product_name: order.product_name,
+          amount: parseInt(order.amount, 10) || 0,
+          template_type: 'request_landmark'
+        })
+      });
+      const dispatchData = await dispatchRes.json();
+
+      const row = document.getElementById(`zenos-order-row-${idx}`);
+      if (row) row.style.background = '#fef3c7';
+      if (lmBtn) {
+        lmBtn.textContent = '✅ Requested';
+        lmBtn.style.background = '#059669';
+      }
+      if (syncBtn) {
+        syncBtn.textContent = '✅ Synced';
+        syncBtn.style.background = '#059669';
+      }
+
+      if (dispatchRes.ok) {
+        if (statusEl) {
+          statusEl.textContent = `✅ Order #${order.order_ref} synced & Landmark requested on WhatsApp!`;
+          statusEl.style.color = '#047857';
+        }
+        showToast(`✅ Landmark requested for ${order.customer_name}!`, '#008069');
+      } else {
+        if (statusEl) {
+          statusEl.textContent = `⚠️ Order synced, WhatsApp: ${dispatchData.message || dispatchRes.status}`;
+          statusEl.style.color = '#d97706';
+        }
+        showToast(`⚠️ Synced, WhatsApp note: ${dispatchData.message || 'Check config'}`, '#d97706');
+      }
+    } catch (err) {
+      if (lmBtn) { lmBtn.disabled = false; lmBtn.textContent = '📍 Request Landmark'; }
+      if (syncBtn) { syncBtn.disabled = false; syncBtn.textContent = '⚡ Sync'; }
+      if (statusEl) { statusEl.textContent = `❌ ${err.message}`; statusEl.style.color = '#b91c1c'; }
+      showToast(`❌ ${err.message}`, '#b91c1c');
     }
   };
 
   window.zenosToggleCheck = function(idx) {
     const chk = document.getElementById(`zenos-chk-${idx}`);
     if (chk) chk.checked = !chk.checked;
+    // Update select-all checkbox state
+    const modal = document.getElementById('zenos-bulk-modal');
+    if (modal && modal._orders) {
+      const allChecked = modal._orders.every((_, i) => document.getElementById(`zenos-chk-${i}`)?.checked);
+      const selectAllChk = document.getElementById('zenos-select-all-chk');
+      if (selectAllChk) selectAllChk.checked = allChecked;
+    }
+  };
+
+  window.zenosToggleSelectAll = function(checked) {
+    const modal = document.getElementById('zenos-bulk-modal');
+    if (!modal || !modal._orders) return;
+    modal._orders.forEach((_, i) => {
+      const chk = document.getElementById(`zenos-chk-${i}`);
+      if (chk) chk.checked = checked;
+    });
+  };
+
+  window.zenosSyncAllOrders = async function() {
+    const modal = document.getElementById('zenos-bulk-modal');
+    if (!modal || !modal._orders || modal._orders.length === 0) return;
+    const statusEl = document.getElementById('zenos-bulk-status');
+    const total = modal._orders.length;
+
+    // Check all checkboxes visually
+    window.zenosToggleSelectAll(true);
+    const selectAllChk = document.getElementById('zenos-select-all-chk');
+    if (selectAllChk) selectAllChk.checked = true;
+
+    if (statusEl) {
+      statusEl.textContent = `Syncing all ${total} orders to ZenOS...`;
+      statusEl.style.color = '#2563eb';
+    }
+
+    let successCount = 0;
+    for (let i = 0; i < total; i++) {
+      if (statusEl) {
+        statusEl.textContent = `Syncing order ${i + 1} of ${total} (${modal._orders[i].customer_name || 'Customer'})...`;
+      }
+      try {
+        await window.zenosSyncOrder(i);
+        successCount++;
+      } catch (e) {}
+    }
+
+    if (statusEl) {
+      statusEl.textContent = `✅ All ${successCount} orders successfully synced to ZenOS!`;
+      statusEl.style.color = '#047857';
+    }
+    showToast(`✅ ZenOS: All ${successCount} orders successfully synced!`, '#008069');
   };
 
   window.zenosSyncAllChecked = async function() {
@@ -719,14 +934,21 @@
               <input name="phone" inputmode="tel" placeholder="10-digit number" style="display:block;width:100%;margin-top:4px;padding:7px 10px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;font-family:monospace;" required>
             </label>
           </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
             <label style="display:block;font-size:12px;font-weight:600;color:#334155;">
               Order ID *
               <input name="order_ref" style="display:block;width:100%;margin-top:4px;padding:7px 10px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;font-family:monospace;" required>
             </label>
             <label style="display:block;font-size:12px;font-weight:600;color:#334155;">
-              COD Amount (₹) *
+              Amount (₹) *
               <input name="amount" type="number" min="1" style="display:block;width:100%;margin-top:4px;padding:7px 10px;border:1px solid #cbd5e1;border-radius:6px;font-size:13px;" required>
+            </label>
+            <label style="display:block;font-size:12px;font-weight:600;color:#334155;">
+              Payment Mode
+              <select name="payment_mode" style="display:block;width:100%;margin-top:4px;padding:7px 8px;border:1px solid #cbd5e1;border-radius:6px;font-size:12px;background:#fff;">
+                <option value="COD">COD</option>
+                <option value="PREPAID">PREPAID</option>
+              </select>
             </label>
           </div>
           <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:10px;">
@@ -809,13 +1031,15 @@
         order_ref: form.order_ref.value.trim(),
         product_name: form.product_name.value.trim(),
         sku: form.sku.value.trim(),
-        amount: form.amount.value,
+        amount: parseInt(form.amount.value, 10) || 0,
+        payment_mode: form.elements.namedItem('payment_mode')?.value || detected.payment_mode || 'COD',
         address: form.address.value.trim(),
         city: form.city.value.trim(),
         state: form.state.value.trim(),
         pincode: form.pincode.value.trim(),
-        consent_source: 'SmartBiz Detail Page',
-        whatsapp_opt_in: true
+        whatsapp_opt_in: true,
+        marketing_opt_in: true,
+        consent_source: 'SmartBiz Order Sync'
       };
 
       if (!payload.customer_name || !payload.phone || !payload.order_ref || !payload.amount) {

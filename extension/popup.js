@@ -211,12 +211,14 @@ document.addEventListener("DOMContentLoaded", () => {
         product_name: order.product_name,
         sku: order.sku || "",
         amount: parseInt(order.amount, 10) || 0,
+        payment_mode: order.payment_mode || "COD",
         address: order.address,
         pincode: order.pincode || "",
         city: order.city || "",
         state: order.state || "",
         whatsapp_opt_in: true,
-        consent_source: "SmartBiz Extension List Scrape"
+        marketing_opt_in: true,
+        consent_source: "SmartBiz Popup Sync"
       };
 
       const res = await fetch(`${backendUrl}/api/orders/ingest`, {
@@ -307,6 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>
               <div style="display:flex;align-items:center;gap:4px;flex-shrink:0;">
                 <span style="font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:999px;background:${statusBg};color:${statusColor};">${escapeHtml(o.order_status_smartbiz || "Pending")}</span>
+                <span style="font-size:9.5px;font-weight:700;padding:1px 5px;border-radius:999px;background:${o.payment_mode === 'PREPAID' ? '#eff6ff' : '#fef3c7'};color:${o.payment_mode === 'PREPAID' ? '#1d4ed8' : '#92400e'};">${escapeHtml(o.payment_mode || "COD")}</span>
                 <span style="font-family:monospace;font-size:11px;font-weight:700;color:#059669;">₹${o.amount || "—"}</span>
               </div>
             </div>
@@ -343,19 +346,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const headers = {};
       if (apiKey) headers["X-ZenOS-Extension-Key"] = apiKey;
 
-      const res = await fetch(`${backendUrl}/api/dashboard/data`, { headers });
+      const res = await fetch(`${backendUrl}/api/orders/pending-wukusy`, { headers });
       if (!res.ok) throw new Error(`Could not reach ZenOS API (${res.status})`);
 
       const data = await res.json();
-      const allOrders = data.orders || [];
-
-      let confirmed = allOrders.filter(o => 
-        ["CONFIRMED_COD", "PREPAID_PAID", "DELIVERY_COLLECT_CONFIRMED"].includes(o.status)
-      );
-      if (!confirmed.length) confirmed = allOrders;
-
-      confirmedOrdersCache = confirmed;
-      countBadge.textContent = `${confirmed.length} Available`;
+      if (data.status !== "success" || !Array.isArray(data.orders)) {
+        throw new Error(data.message || "ZenOS returned an invalid fulfillment queue.");
+      }
+      confirmedOrdersCache = data.orders;
+      countBadge.textContent = `${data.orders.length} Available`;
       renderWukusyList();
     } catch (err) {
       list.innerHTML = `<div style="text-align:center;color:#b91c1c;font-size:11.5px;padding:28px 10px;">❌ Error: ${err.message}</div>`;
@@ -439,7 +438,7 @@ document.addEventListener("DOMContentLoaded", () => {
             statusMsg.textContent = `✅ Success! ${response.filledCount} fields populated for ${order.customer_name}!`;
             if (feedbackCard) feedbackCard.style.display = "block";
             if (feedbackText) {
-              feedbackText.textContent = `First Name, Last Name, Mobile (${order.phone}), Address 1, City, State, Pincode injected with 100% precision.`;
+              feedbackText.textContent = `${response.filledCount} fields populated. Verify every value in Wukusy; the extension does not submit the booking.`;
             }
           } else {
             statusMsg.style.color = "#b91c1c";
@@ -460,10 +459,23 @@ document.addEventListener("DOMContentLoaded", () => {
     const amount = document.getElementById("ext-add-amount").value.trim();
     const product = document.getElementById("ext-add-product").value.trim();
     const sku = document.getElementById("ext-add-sku").value.trim();
+    const whatsappOptIn = document.getElementById("ext-add-wa-opt-in").checked;
+    const marketingOptIn = document.getElementById("ext-add-marketing-opt-in").checked;
+    const consentSource = document.getElementById("ext-add-consent-source").value.trim();
 
     if (!phone || !name || !ref || !amount || !product) {
       status.style.color = "#b91c1c";
       status.textContent = "All required fields (*) must be provided!";
+      return;
+    }
+    if (marketingOptIn && !whatsappOptIn) {
+      status.style.color = "#b91c1c";
+      status.textContent = "Marketing consent requires WhatsApp order-update consent too.";
+      return;
+    }
+    if ((whatsappOptIn || marketingOptIn) && !consentSource) {
+      status.style.color = "#b91c1c";
+      status.textContent = "Record where the customer gave consent before saving.";
       return;
     }
 
@@ -484,8 +496,9 @@ document.addEventListener("DOMContentLoaded", () => {
         amount: parseInt(amount, 10) || 0,
         product_name: product,
         sku: sku,
-        whatsapp_opt_in: true,
-        consent_source: "ZenOS Extension Registration"
+        whatsapp_opt_in: whatsappOptIn,
+        marketing_opt_in: marketingOptIn,
+        consent_source: whatsappOptIn ? consentSource : ""
       };
 
       const res = await fetch(`${backendUrl}/api/orders/ingest`, {
@@ -498,6 +511,9 @@ document.addEventListener("DOMContentLoaded", () => {
       if (res.ok && (data.status === "saved" || data.status === "success")) {
         status.style.color = "#047857";
         status.textContent = `✅ ${name} registered in ZenOS!`;
+        document.getElementById("ext-add-wa-opt-in").checked = false;
+        document.getElementById("ext-add-marketing-opt-in").checked = false;
+        document.getElementById("ext-add-consent-source").value = "";
         const clean10 = phone.replace(/\D/g, "").slice(-10);
         setTimeout(() => {
           window.open(`https://wa.me/91${clean10}`, "_blank");
@@ -516,6 +532,10 @@ document.addEventListener("DOMContentLoaded", () => {
   if (extAiPrompt) {
     extAiPrompt.addEventListener("input", renderAiPreview);
   }
+  ["ext-add-ref", "ext-add-name", "ext-add-product", "ext-add-amount", "ext-add-marketing-opt-in"].forEach(id => {
+    document.getElementById(id).addEventListener("input", renderAiPreview);
+    document.getElementById(id).addEventListener("change", renderAiPreview);
+  });
 
   function renderAiPreview() {
     const promptInput = document.getElementById("ext-ai-prompt");
@@ -524,27 +544,39 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!previewBox) return;
 
     const raw = (promptInput?.value || "").toLowerCase().trim();
+    const orderRef = document.getElementById("ext-add-ref").value.trim().replace(/^#/, "");
+    const customerName = document.getElementById("ext-add-name").value.trim() || "Customer";
+    const productName = document.getElementById("ext-add-product").value.trim() || "your order";
+    const amount = Number.parseInt(document.getElementById("ext-add-amount").value, 10);
     let text = "";
     extPendingAiButtons = [];
 
+    if (!orderRef) {
+      previewBox.textContent = "Enter a saved order reference in Add Customer before creating a customer-specific message.";
+      if (buttonsBox) buttonsBox.replaceChildren();
+      return;
+    }
+
     if (raw.includes("aaduhra") || raw.includes("address") || raw.includes("landmark") || raw.includes("pin")) {
-      text = "Namaste! 🙏✨\n\nThank you for choosing *Zenlora*!\n\n📍 *Delivery Address Verification:*\nYour address appears incomplete. Please reply with:\n• House / Flat No:\n• Street / Landmark:\n• City & Pincode:\n\nOnce verified, your order will be dispatched immediately! 🚀";
-      extPendingAiButtons = [
-        { id: "btn_update_addr", text: "📍 Send Address" },
-        { id: "btn_confirm_cod", text: "✅ Confirm COD Order" }
-      ];
+      text = `Namaste ${customerName},\n\nWe are checking the delivery details for order *#${orderRef}*. Please reply in this format so our team can review the address:\n\nHouse / Flat No:\nStreet / Landmark:\nCity & State:\nPincode:`;
     } else if (raw.includes("50") || raw.includes("prepay") || raw.includes("discount") || raw.includes("online")) {
-      text = "Namaste! 🙏✨\n\n⚡ *Exclusive Prepaid Privilege — Flat ₹50 OFF!*\nPay online now & save ₹50 instantly on your Zenlora order!\n\nPlease tap below to confirm:";
-      extPendingAiButtons = [
-        { id: "btn_prepay_50", text: "⚡ Pay Now (Save ₹50)" },
-        { id: "btn_confirm_cod", text: "✅ Confirm COD Order" },
-        { id: "btn_cancel_order", text: "❌ Cancel Order" }
-      ];
+      const marketingOptIn = document.getElementById("ext-add-marketing-opt-in").checked;
+      if (!marketingOptIn || !Number.isInteger(amount) || amount < 2) {
+        text = "A prepaid discount message requires a valid order amount and separately recorded marketing consent.";
+      } else {
+        const savings = Math.min(50, amount - 1);
+        text = `Namaste ${customerName},\n\nFor order *#${orderRef}* (${productName}), choose the prepaid option if you would like a secure payment link. Pay ₹${amount - savings} and save ₹${savings}.`;
+        extPendingAiButtons = [
+          { id: `btn_pay50_${orderRef}_${amount}`, text: `Pay ₹${amount - savings} (₹${savings} off)` },
+          { id: `btn_cod_${orderRef}`, text: `Confirm COD (₹${amount})` },
+          { id: `btn_cancel_${orderRef}`, text: "Request cancellation" }
+        ];
+      }
     } else {
-      text = "Namaste! 🙏✨\n\nThank you for choosing *Zenlora*! Your order has been registered.\n\nPlease tap a button below to confirm your delivery preferences:";
+      text = `Namaste ${customerName},\n\nWe received order *#${orderRef}* for *${productName}* (₹${Number.isInteger(amount) ? amount : "amount"}). Please confirm the COD order or request cancellation below.`;
       extPendingAiButtons = [
-        { id: "btn_confirm_cod", text: "✅ Confirm COD Order" },
-        { id: "btn_cancel_order", text: "❌ Cancel Order" }
+        { id: `btn_cod_${orderRef}`, text: "Confirm COD" },
+        { id: `btn_cancel_${orderRef}`, text: "Request cancellation" }
       ];
     }
 
@@ -565,6 +597,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const text = previewBox ? previewBox.textContent : "";
     const phoneInput = document.getElementById("ext-add-phone");
     const cleanPhone = (phoneInput?.value || "").replace(/\D/g, "").slice(-10);
+    const orderRef = document.getElementById("ext-add-ref").value.trim().replace(/^#/, "");
+    const customerName = document.getElementById("ext-add-name").value.trim();
 
     if (!cleanPhone || cleanPhone.length !== 10) {
       status.style.color = "#b91c1c";
@@ -572,17 +606,25 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
+    if (!orderRef || !customerName || !text || text.startsWith("A prepaid discount message requires")) {
+      status.style.color = "#b91c1c";
+      status.textContent = "Complete the order details and required consent before sending.";
+      return;
+    }
+
     status.style.color = "#64748b";
-    status.textContent = "Dispatching WhatsApp message…";
+    status.textContent = "Sending through the configured provider…";
 
     const backendUrl = backendField.value.trim().replace(/\/+$/, "") || defaultUrl;
+    const apiKey = keyField.value.trim();
     try {
-      const res = await fetch(`${backendUrl}/api/crm/send`, {
+      const res = await fetch(`${backendUrl}/api/extension/crm/send`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-ZenOS-Extension-Key": apiKey },
         body: JSON.stringify({
           phone: `91${cleanPhone}`,
-          customer_name: document.getElementById("ext-add-name")?.value.trim() || "Customer",
+          customer_name: customerName,
+          order_ref: orderRef,
           message: text,
           buttons: extPendingAiButtons
         })
@@ -590,10 +632,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const data = await res.json();
       if (res.ok && data.status === "success") {
         status.style.color = "#047857";
-        status.textContent = `✅ Message dispatched to +91 ${cleanPhone}!`;
-        if (data.wa_link) {
-          window.open(data.wa_link, "_blank");
-        }
+        status.textContent = `Provider accepted the message for +91 ${cleanPhone}; recipient delivery is not confirmed.`;
+      } else if (data.delivery_method === "MANUAL_LINK_REQUIRED" && (data.web_wa_link || data.wa_link)) {
+        status.style.color = "#b91c1c";
+        status.textContent = "Automated sending failed. Opening WhatsApp for you to review and send manually.";
+        window.open(data.web_wa_link || data.wa_link, "_blank", "noopener");
       } else {
         throw new Error(data.message || `Error ${res.status}`);
       }
