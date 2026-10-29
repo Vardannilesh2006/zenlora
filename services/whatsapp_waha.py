@@ -13,9 +13,13 @@ from typing import Dict, List, Optional, Any
 
 logger = logging.getLogger(__name__)
 
-DEFAULT_WAHA_URL = os.environ.get("WAHA_GATEWAY_URL", "http://localhost:3000")
+DEFAULT_WAHA_URL = (
+    os.environ.get("OPENWA_GATEWAY_URL")
+    or os.environ.get("WAHA_GATEWAY_URL")
+    or "https://easily-bidding-ones-race.trycloudflare.com"
+)
 WAHA_API_KEY = os.environ.get("WAHA_API_KEY", "")
-WAHA_SESSION = os.environ.get("WAHA_SESSION", "default")
+WAHA_SESSION = os.environ.get("OPENWA_SESSION") or os.environ.get("WAHA_SESSION", "zenos")
 
 
 def normalize_phone(raw_phone: str) -> str:
@@ -44,34 +48,77 @@ def get_headers() -> Dict[str, str]:
 
 def check_gateway_health(base_url: Optional[str] = None) -> Dict[str, Any]:
     url = (base_url or DEFAULT_WAHA_URL).rstrip("/")
+    # 1. Try OpenWA session
     try:
-        resp = requests.get(f"{url}/api/sessions", headers=get_headers(), timeout=5)
+        resp = requests.get(f"{url}/api/sessions/zenos", headers=get_headers(), timeout=4)
+        if resp.ok:
+            data = resp.json()
+            is_active = data.get("status") in ("WORKING", "CONNECTED")
+            return {
+                "online": True,
+                "active_session": is_active,
+                "status": "CONNECTED" if is_active else data.get("status", "SCAN_QR"),
+                "phone": data.get("phone", "919771370945"),
+                "gateway_url": url,
+                "sessions": [data]
+            }
+    except Exception:
+        pass
+    # 2. Try WAHA sessions list
+    try:
+        resp = requests.get(f"{url}/api/sessions", headers=get_headers(), timeout=4)
         if resp.ok:
             sessions = resp.json() if isinstance(resp.json(), list) else []
             active = any(s.get("status") == "WORKING" for s in sessions) if sessions else False
-            return {"online": True, "active_session": active, "sessions": sessions}
+            return {"online": True, "active_session": active, "status": "CONNECTED" if active else "DISCONNECTED", "phone": "919771370945", "sessions": sessions}
+    except Exception:
+        pass
+    # 3. Localhost fallback
+    try:
+        resp = requests.get("http://localhost:2785/api/sessions/zenos", timeout=2)
+        if resp.ok:
+            data = resp.json()
+            is_active = data.get("status") in ("WORKING", "CONNECTED")
+            return {
+                "online": True,
+                "active_session": is_active,
+                "status": "CONNECTED" if is_active else data.get("status", "SCAN_QR"),
+                "phone": data.get("phone", "919771370945"),
+                "gateway_url": "http://localhost:2785",
+                "sessions": [data]
+            }
     except Exception as e:
-        logger.debug("WAHA health check failed: %s", e)
-    return {"online": False, "active_session": False, "sessions": []}
+        logger.debug("Gateway health check failed: %s", e)
+    return {"online": False, "active_session": False, "status": "DISCONNECTED", "phone": None, "sessions": []}
 
 
 def send_waha_text(phone: str, text: str, base_url: Optional[str] = None) -> Dict[str, Any]:
     url = (base_url or DEFAULT_WAHA_URL).rstrip("/")
-    chat_id = to_chat_id(phone)
+    clean_phone = normalize_phone(phone)
+    chat_id = f"{clean_phone}@s.whatsapp.net"
     payload = {
         "chatId": chat_id,
+        "phone": clean_phone,
         "text": text,
+        "message": text,
         "session": WAHA_SESSION,
     }
-    resp = requests.post(
+    endpoints = [
+        f"{url}/api/sessions/zenos/messages/send-text",
         f"{url}/api/sendText",
-        headers=get_headers(),
-        json=payload,
-        timeout=15,
-    )
-    if resp.ok:
-        return resp.json()
-    raise RuntimeError(f"WAHA sendText returned {resp.status_code}: {resp.text}")
+        "http://localhost:2785/api/sessions/zenos/messages/send-text",
+        "http://localhost:2785/api/sendText",
+    ]
+    last_err = None
+    for ep in endpoints:
+        try:
+            resp = requests.post(ep, headers=get_headers(), json=payload, timeout=12)
+            if resp.ok:
+                return resp.json()
+            last_err = f"Endpoint {ep} returned {resp.status_code}: {resp.text}"
+        except Exception as ex:
+            last_err = str(ex)
+    raise RuntimeError(f"OpenWA gateway send failed: {last_err}")
 
 
 def send_waha_buttons(
