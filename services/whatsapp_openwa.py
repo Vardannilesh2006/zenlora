@@ -97,6 +97,42 @@ def send_openwa_image(phone: str, image_url: str, caption: str = "", base_url: O
         return {"status": "error", "delivered": False, "message": str(ex)}
 
 
+def check_phone_exists(phone: str, base_url: Optional[str] = None) -> Dict[str, Any]:
+    """Checks if a phone number is registered on WhatsApp using OpenWA"""
+    url = (base_url or OPENWA_GATEWAY_URL).rstrip("/")
+    norm_phone = normalize_phone(phone)
+    endpoint = f"{url}/api/sessions/{OPENWA_SESSION}/check-number"
+    try:
+        resp = requests.post(endpoint, json={"phone": norm_phone}, timeout=5)
+        if resp.ok:
+            data = resp.json()
+            return {"status": "ok", "phone": norm_phone, "exists": data.get("exists", False), "jid": data.get("jid")}
+        return {"status": "error", "exists": False, "message": resp.text}
+    except Exception as ex:
+        return {"status": "error", "exists": False, "message": str(ex)}
+
+
+def dispatch_pdf_document(phone: str, doc_url: str, file_name: str = "invoice.pdf", caption: str = "", base_url: Optional[str] = None) -> Dict[str, Any]:
+    """Sends a PDF document/invoice via OpenWA"""
+    url = (base_url or OPENWA_GATEWAY_URL).rstrip("/")
+    norm_phone = normalize_phone(phone)
+    endpoint = f"{url}/api/sessions/{OPENWA_SESSION}/messages/send-document"
+    payload = {
+        "phone": norm_phone,
+        "url": doc_url,
+        "fileName": file_name,
+        "caption": caption,
+        "mimetype": "application/pdf"
+    }
+    try:
+        resp = requests.post(endpoint, json=payload, timeout=15)
+        if resp.ok:
+            return {"status": "ok", "delivered": True, "raw": resp.json()}
+        return {"status": "error", "delivered": False, "message": resp.text}
+    except Exception as ex:
+        return {"status": "error", "delivered": False, "message": str(ex)}
+
+
 # ─── QUICK TEMPLATE AUTOMATIONS ───────────────────────────────────────────────
 
 def dispatch_order_confirmation(order: Dict[str, Any]) -> Dict[str, Any]:

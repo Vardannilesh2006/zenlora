@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ZenOS Admin Login</title>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0f172a; font: 16px system-ui, -apple-system, sans-serif; color: #0f172a; }
+    main { width: min(380px, calc(100% - 40px)); padding: 32px; background: white; border: 1px solid #e2e8f0; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
+    h1 { margin: 0 0 8px; font-size: 24px; color: #0f172a; font-weight: 800; }
+    p { color: #64748b; line-height: 1.5; font-size: 14px; margin: 0 0 16px; }
+    label { display: block; margin: 18px 0 6px; font-weight: 700; font-size: 13px; color: #334155; }
+    input, button { width: 100%; box-sizing: border-box; padding: 12px 14px; border-radius: 10px; font: inherit; }
+    input { border: 1.5px solid #cbd5e1; outline: none; transition: border-color 0.2s; font-size: 14px; }
+    input:focus { border-color: #0f766e; }
+    button { margin-top: 18px; color: white; background: #0f766e; border: 0; cursor: pointer; font-weight: 700; font-size: 14px; transition: background 0.2s; box-shadow: 0 4px 14px rgba(15,118,110,0.3); }
+    button:hover { background: #0d9488; }
+    .error { color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; padding: 10px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; margin-bottom: 14px; }
+    .lockout { color: #991b1b; background: #fee2e2; border: 1.5px solid #ef4444; padding: 12px 14px; border-radius: 10px; font-size: 13px; font-weight: 700; margin-bottom: 14px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>ZenOS Founder Login</h1>
+    {% if configuration_error %}
+      <p class="error">Admin login is unavailable until <code>ZENOS_ADMIN_PASSWORD</code> and <code>ZENOS_SESSION_SECRET</code> are configured in the server environment.</p>
+    {% else %}
+      <p>Sign in to access private order CRM & WhatsApp management.</p>
+      {% if locked_error %}
+        <div class="lockout">🔒 {{ locked_error }}</div>
+      {% elif login_error %}
+        <div class="error">❌ Password was not accepted. Please try again.</div>
+      {% endif %}
+      <form method="post" action="{{ url_for('admin_login', next=request.args.get('next')) }}">
+        <label for="password">Admin Password</label>
+        <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter Nilesh@2006" required autofocus>
+        <button type="submit">Sign in to Cockpit</button>
+      </form>
+    {% endif %}
+  </main>
+</body>
+</html>
