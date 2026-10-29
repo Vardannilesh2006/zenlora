@@ -252,6 +252,15 @@ def save_or_update_order(order_data):
         conn.close()
         log_event("SUCCESS", "SMARTBIZ", f"Order {order_ref} synced to ZenOS.")
         try:
+            phone_val = str(order_data.get("phone", "")).strip()
+            name_val = str(order_data.get("customer_name", "Customer")).strip()
+            prod_val = str(order_data.get("product_name", "Zenlora Order")).strip()
+            amt_val = order_data.get("amount", 349)
+            if phone_val:
+                record_message(phone_val, name_val, "SYSTEM", "TEXT", f"📦 Order #{order_ref} ({prod_val}) placed • ₹{amt_val} COD")
+        except Exception as msg_err:
+            logger.debug("Failed recording initial order message: %s", msg_err)
+        try:
             mark_cart_recovered(phone=order_data.get("phone"))
         except Exception as err:
             logger.debug("Failed auto-recovering cart for order %s: %s", order_ref, err)
