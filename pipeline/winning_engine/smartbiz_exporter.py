@@ -108,6 +108,8 @@ NICHE_CODE_MAP = {
     "Kitchen & Dining": "KITC",
     "Gadgets": "GADG",
     "Smart Gadgets": "GADG",
+    "Car & Vehicle Accessories": "AUTO",
+    "Car Accessories": "AUTO",
     "Festive": "FEST",
     "Festive & Lights": "FEST",
     "Gifts": "GIFT",
@@ -131,6 +133,7 @@ EXACT_STORE_CATEGORIES: List[str] = [
     "Home Improvement",
     "Smart Gadgets",
     "Toys & Games",
+    "Car & Vehicle Accessories",
     "Under 199 Collection",
 ]
 
@@ -141,6 +144,7 @@ HSN_BY_PRODUCT_CATEGORY = {
     "Festive & Lights": "830629",
     "Health & Beauty Accessories": "850980",
     "Toys & Games": "950300",
+    "Car & Vehicle Accessories": "870829",
     "Under 199 Collection": "392640",
     # Legacy aliases
     "Home Decor": "392640",
@@ -192,7 +196,16 @@ NICHE_TO_SMARTBIZ_CATEGORY = {
     "Games": ("GENERAL", "Toys & Games"),
     "toys": ("GENERAL", "Toys & Games"),
     "toys & games": ("GENERAL", "Toys & Games"),
-    # 7. Under 199 Collection
+    # 7. Car & Vehicle Accessories
+    "Car & Vehicle Accessories": ("GENERAL", "Car & Vehicle Accessories"),
+    "Car Accessories": ("GENERAL", "Car & Vehicle Accessories"),
+    "Automotive": ("GENERAL", "Car & Vehicle Accessories"),
+    "car-interior": ("GENERAL", "Car & Vehicle Accessories"),
+    "car & vehicle accessories": ("GENERAL", "Car & Vehicle Accessories"),
+    "car and vehicle accessories": ("GENERAL", "Car & Vehicle Accessories"),
+    "car accessories": ("GENERAL", "Car & Vehicle Accessories"),
+    "car": ("GENERAL", "Car & Vehicle Accessories"),
+    # 8. Under 199 Collection
     "Under 199 Collection": ("GENERAL", "Under 199 Collection"),
     "Under 199": ("GENERAL", "Under 199 Collection"),
     "Under 199-299": ("GENERAL", "Under 199 Collection"),
@@ -292,7 +305,11 @@ def map_smartbiz_categories(product: Dict) -> Tuple[str, str]:
     if any(k in title for k in gadget_kws):
         return ("GENERAL", "Smart Gadgets")
 
-    toy_kws = ["toy", "game", "kid", "baby", "child", "drawing", "board", "puzzle", "car", "plush", "doll"]
+    car_kws = ["car", "vehicle", "dashboard", "windshield", "wiper", "automotive", "rearview", "tyre", "tire", "car seat", "seat back", "car phone", "car holder", "car mount", "car charger", "car bluetooth", "car aroma", "car fragrance", "car diffuser", "car air freshener", "car perfume", "car vacuum", "car washer", "anti fog", "car shade", "sunshade", "car duster", "car trash", "car organizer", "car cleaning", "car polish", "car repair", "car dent", "car led", "car atmosphere"]
+    if any(k in title for k in car_kws) and not any(toy in title for toy in ["toy car", "rc car", "remote control car", "diecast"]):
+        return ("GENERAL", "Car & Vehicle Accessories")
+
+    toy_kws = ["toy", "game", "kid", "baby", "child", "drawing", "board", "puzzle", "rc car", "plush", "doll"]
     if any(k in title for k in toy_kws):
         return ("GENERAL", "Toys & Games")
 
@@ -773,7 +790,7 @@ def select_smart_mix_products(
 ) -> List[Dict]:
     from .export_ledger import extract_product_fingerprints, record_exported_products
 
-    categories = ["Festive & Lights", "Health & Beauty Accessories", "Home & Kitchen", "Home Improvement", "Smart Gadgets", "Toys & Games", "Under 199 Collection"]
+    categories = ["Festive & Lights", "Health & Beauty Accessories", "Home & Kitchen", "Home Improvement", "Smart Gadgets", "Toys & Games", "Car & Vehicle Accessories", "Under 199 Collection"]
     per_cat = max(1, total_count // len(categories))
 
     mixed: List[Dict] = []

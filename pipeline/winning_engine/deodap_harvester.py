@@ -67,6 +67,19 @@ NICHE_COLLECTIONS_MAP = {
         "daily-cooking-tools",
         "cookware",
     ],
+    "Car & Vehicle Accessories": [
+        "car", "vehicle", "automobile", "automotive", "bike", "motorbike", "motorcycle",
+        "car mount", "car holder", "phone mount", "dashboard", "car charger", "car bluetooth",
+        "car air freshener", "car perfume", "car aroma", "car fragrance", "car diffuser",
+        "car vacuum", "car cleaning", "car washer", "car foam", "windshield", "car wiper",
+        "anti fog film", "rearview mirror", "car mirror", "car seat hook", "seat back hook",
+        "car organizer", "car storage", "car trash bin", "car duster", "car cushion",
+        "sunshade", "car shade", "tyre inflator", "tire inflator", "tyre pressure",
+        "car repair", "scratch remover", "car dent", "car led", "car atmosphere light",
+        "car interior", "car gap filler", "steering wheel", "seatbelt", "car coaster",
+        "car cup holder", "car tissue", "visor clip", "blind spot mirror", "parking card",
+        "car wash", "chamois", "microfiber car", "car polishing", "car wax", "fastag",
+    ],
     "Smart Gadgets": [
         "electronic-gadgets",
         "personal-tech-gadgets",
@@ -96,6 +109,17 @@ NICHE_COLLECTIONS_MAP = {
     "Toys & Games": [
         "toys-games",
         "kids-toys",
+    ],
+    "Car & Vehicle Accessories": [
+        "car-interior",
+        "car-accessories",
+        "automotive",
+        "car-motorbike",
+        "car-accessories-general",
+        "car-fragrances",
+        "car-perfume",
+        "automotive-parts-tools",
+        "bike-accessories",
     ],
 }
 
@@ -274,6 +298,22 @@ NICHE_RULES = {
         "dough", "mind game", "shape sorter", "spinning bead", "puzzle card",
         "craft puzzle", "clay", "magnetic puzzle",
     ],
+    "Car & Vehicle Accessories": [
+        "car", "vehicle", "automobile", "automotive", "bike", "motorbike", "motorcycle",
+        "car mount", "car holder", "phone mount", "dashboard", "car charger", "car bluetooth",
+        "car air freshener", "car perfume", "car aroma", "car fragrance", "car diffuser",
+        "car vacuum", "car cleaning", "car washer", "car foam", "windshield", "car wiper",
+        "anti fog film", "rearview mirror", "car mirror", "car seat hook", "seat back hook",
+        "car organizer", "car storage", "car trash bin", "car duster", "car cushion",
+        "sunshade", "car shade", "tyre inflator", "tire inflator", "tyre pressure",
+        "car repair", "scratch remover", "car dent", "car led", "car atmosphere light",
+        "car interior", "car gap filler", "steering wheel", "seatbelt", "car coaster",
+        "car cup holder", "car tissue", "visor clip", "blind spot mirror", "parking card",
+        "car wash", "chamois", "microfiber car", "car polishing", "car wax", "fastag",
+        "valve caps", "start button cover", "car fastag", "push start button", "funnel",
+        "polishing kit", "cleaning cloth", "wash mitt", "wash glove", "cleaning brush",
+        "wiper", "glass wiper", "cable organizer", "keychain", "air freshener", "towel", "microfiber",
+    ],
 }
 
 
@@ -292,7 +332,14 @@ def is_junk_or_mismatched_product(title: str, tags: str = "", description: str =
         return True
     if is_jewelry_item(title):
         return True
-    return any(j in tl for j in GLOBAL_JUNK_KEYWORDS)
+    # Do not falsely flag legitimate automotive accessories as hardware junk
+    is_automotive = any(k in tl for k in ("car", "vehicle", "dashboard", "windshield", "rearview", "fastag", "sunshade", "wiper"))
+    for j in GLOBAL_JUNK_KEYWORDS:
+        if j in tl:
+            if is_automotive and j in ("safety hammer", "window breaker", "polishing wheel", "buffing wheel", "cleaner"):
+                continue
+            return True
+    return False
 
 
 def get_concept_stem(title: str) -> str:
@@ -365,6 +412,8 @@ def classify_niche(
         "Festive": "Festive & Lights", "Kitchen": "Home & Kitchen", "Kitchen & Dining": "Home & Kitchen",
         "Gadgets": "Smart Gadgets", "Health & Beauty": "Health & Beauty Accessories", "Home Decor": "Home Improvement",
         "Gifts": "Festive & Lights", "Gifts & Hampers": "Festive & Lights", "Toys": "Toys & Games",
+        "Car": "Car & Vehicle Accessories", "Car Accessories": "Car & Vehicle Accessories",
+        "Automotive": "Car & Vehicle Accessories", "Vehicle": "Car & Vehicle Accessories",
     }
     pref = alias_map.get(preferred_niche, preferred_niche)
     if pref and pref in scores and scores[pref] > 0:

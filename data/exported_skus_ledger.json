@@ -1,8 +1,8 @@
 {
-  "updated_at": "2026-10-27T14:33:45.963483",
+  "updated_at": "2026-10-29T10:28:52.145884",
   "last_harvested_deodap_page": 7,
-  "total_export_batches": 0,
-  "total_blocked_products": 90,
+  "total_export_batches": 1,
+  "total_blocked_products": 114,
   "entries": [
     {
       "sku": "12111_2in1_glass_oil_dispenser_bottle",
@@ -993,6 +993,270 @@
       "mrp": 460.0,
       "source": "store_baseline_39",
       "exported_at": "2026-10-12T10:25:00+05:30"
+    },
+    {
+      "sku": "23591_car_mobile_phone_holder_1pc",
+      "handle": "adjustable-car-mobile-phone-holder-with-telescopic-arm-and-rotating-mount-1-pc",
+      "variant_id": "54371402875190",
+      "title_fp": "adjustable_car_mobile_phone_holder",
+      "title": "Adjustable Car Mobile Phone Holder with Telescopic Arm and Rotating Mount",
+      "selling_price": 180,
+      "mrp": 465,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "15977_car_motorcycle_decoration_wind_flying_bird",
+      "handle": "wind-flying-bird-dashboard-decoration-1-pc",
+      "variant_id": "53496232018230",
+      "title_fp": "wind_flying_bird_dashboard_decoration",
+      "title": "Wind Flying Bird Dashboard Decoration Lifelike Wing Motion",
+      "selling_price": 183,
+      "mrp": 435,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "15268_tire_valve_stem_caps",
+      "handle": "tire-valve-stem-caps-fit-for-genesis-cars-air-valve-caps-suit-for-most-car-truck-suv-wheel-accessories-4pcs-silver",
+      "variant_id": "51592397783350",
+      "title_fp": "silver_aluminium_valve_caps_cars",
+      "title": "Silver Aluminium Valve Caps Durable Set of 4 for Cars",
+      "selling_price": 181,
+      "mrp": 459,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "17705_metal_lion_head_keychain_1pc",
+      "handle": "stylish-metal-lion-head-keychain-1-pc",
+      "variant_id": "53240630411574",
+      "title_fp": "lion_head_keychain_stainless_steel",
+      "title": "Lion Head Keychain Stainless Steel Durable Crown Design",
+      "selling_price": 184,
+      "mrp": 405,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "22297_cleaning_cloth_towel_38x30cm_1pc",
+      "handle": "soft-absorbent-reusable-cleaning-cloth-towel-for-kitchen-car-glass-and-home-use",
+      "variant_id": "54529975386422",
+      "title_fp": "soft_absorbent_reusable_cleaning_cloth",
+      "title": "Soft Absorbent Reusable Cleaning Cloth Towel for Kitchen Car Glass and Home Use",
+      "selling_price": 184,
+      "mrp": 485,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "19770_lion_car_dashboard_toy_1pc",
+      "handle": "premium-oranje-plak-leeuw-lion-car-dashboard-toy-1-pc",
+      "variant_id": "53224606269750",
+      "title_fp": "lion_car_dashboard_toy_majestic",
+      "title": "Lion Car Dashboard Toy Majestic Orange-Gold Ornament with Adhesive Base",
+      "selling_price": 179,
+      "mrp": 465,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "19641_cleaning_cloth_towel_40x30cm",
+      "handle": "premium-microfiber-cleaning-cloth-towel-40x30-cm-1-pc",
+      "variant_id": "52899786752310",
+      "title_fp": "microfiber_cleaning_cloth_40x30_cm",
+      "title": "Microfiber Cleaning Cloth 40x30 cm (Multicolor)",
+      "selling_price": 179,
+      "mrp": 455,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "21463_paradise_air_freshener_gel_pouch_10g",
+      "handle": "paradise-hanging-air-freshener-gel-1-pc-10gm",
+      "variant_id": "53740793069878",
+      "title_fp": "hanging_air_freshener_gel_long",
+      "title": "Hanging Air Freshener Gel Long-lasting Exotic Floral Fragrance",
+      "selling_price": 182,
+      "mrp": 409,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "17727_bell_om_mix_keychain_1pc",
+      "handle": "om-symbol-temple-bell-metal-keychain-1-pc",
+      "variant_id": "53247331172662",
+      "title_fp": "om_symbol_keychain_antique_brass",
+      "title": "Om Symbol Keychain Antique Brass Temple Bell Design",
+      "selling_price": 182,
+      "mrp": 419,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "19082_large_car_dashboard_mat_1pc",
+      "handle": "non-slip-silicone-dashboard-mat-large-size-grip",
+      "variant_id": "52245147681078",
+      "title_fp": "non_slip_silicone_dashboard_mat",
+      "title": "Non-Slip Silicone Dashboard Mat - Large Size Grip (1 Pc Mix Color)",
+      "selling_price": 183,
+      "mrp": 449,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "21974_cleaning_cloth_towel_40x40cm_1pc",
+      "handle": "multipurpose-cleaning-cloth-towel-40x40cm-microfiber-duster-for-kitchen-home-1-pc",
+      "variant_id": "54018510291254",
+      "title_fp": "microfiber_cleaning_cloth_soft_highly",
+      "title": "Microfiber Cleaning Cloth Soft, Highly Absorbent & Reusable (1 Pc, 40x40 Cm)",
+      "selling_price": 183,
+      "mrp": 479,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "15437_multi_plastic_cleaning_brush_1pc",
+      "handle": "multi-purpose-short-handle-plastic-cleaning-brush-1-pc",
+      "variant_id": "52196387291446",
+      "title_fp": "short_handle_plastic_cleaning_brush",
+      "title": "Short Handle Plastic Cleaning Brush Durable Multi-Purpose Scrubber",
+      "selling_price": 184,
+      "mrp": 405,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "17107_multi_plastic_flexible_funnel",
+      "handle": "multi-purpose-flexible-plastic-funnel-with-bottle-clip-for-car-oil-fuel-1-pc",
+      "variant_id": "54134631072054",
+      "title_fp": "flexible_plastic_funnel_spill_free",
+      "title": "Flexible Plastic Funnel Spill-Free Car Oil Fuel Filling",
+      "selling_price": 183,
+      "mrp": 455,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "0669_multipurpose_cleaning_gloves_1pc",
+      "handle": "microfiber-wash-mitt-multipurpose-cleaning-glove",
+      "variant_id": "53086343463222",
+      "title_fp": "microfiber_wash_mitt_super_absorbent",
+      "title": "Microfiber Wash Mitt Super Absorbent, Scratch-Safe Cleaning Glove",
+      "selling_price": 185,
+      "mrp": 479,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "4098_microfiber_cleaning_brush",
+      "handle": "microfiber-car-wash-brush-streak-free-cleaning",
+      "variant_id": "45643365253430",
+      "title_fp": "microfiber_car_wash_brush_streak",
+      "title": "Microfiber Car Wash Brush Streak-Free Cleaning Velvet Wipe",
+      "selling_price": 183,
+      "mrp": 485,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "15043_adhesive_car_fastag_stand_2pc",
+      "handle": "fastag-holder-car-transparent-windscreen-card-stand",
+      "variant_id": "50244568580406",
+      "title_fp": "fastag_holder_car_transparent_windscreen",
+      "title": "Fastag Holder for Car Transparent Windscreen Card Stand (2 Pack) Velvet Wheels",
+      "selling_price": 181,
+      "mrp": 409,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "19443_oval_shape_metal_keychain_1pc",
+      "handle": "elegant-oval-shape-metal-keychain-for-personal-use",
+      "variant_id": "52396597018934",
+      "title_fp": "oval_shape_metal_keychain_chrome",
+      "title": "Oval Shape Metal Keychain Durable Stylish Chrome Finish",
+      "selling_price": 180,
+      "mrp": 399,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "17703_metal_feather_keychain_1pc",
+      "handle": "elegant-metal-peacock-feather-keychain-1-pc",
+      "variant_id": "53234827755830",
+      "title_fp": "peacock_feather_keychain_elegant_metal",
+      "title": "Peacock Feather Keychain Elegant Metal with Blue Gem Accent",
+      "selling_price": 183,
+      "mrp": 455,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "15119_drum_polishing_kit_10pc_no19",
+      "handle": "drum-polishing-kit-10-pc-sanding-sleeves",
+      "variant_id": "49454432780598",
+      "title_fp": "drum_polishing_kit_sanding_sleeves",
+      "title": "Drum Polishing Kit 10 Pc Sanding Sleeves Set ToolMate Pro",
+      "selling_price": 183,
+      "mrp": 429,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "21062_plastic_small_cable_holder_1pc",
+      "handle": "compact-plastic-cable-organizer-case-1-pc",
+      "variant_id": "53794317435190",
+      "title_fp": "cable_organizer_case_tangle_free",
+      "title": "Cable Organizer Case Portable & Tangle-Free Wire Storage",
+      "selling_price": 185,
+      "mrp": 419,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "15682_car_windshield_n_glass_cleaner_tablet_1pc",
+      "handle": "car-windshield-glass-cleaning-effervescent-tablet-1-pc",
+      "variant_id": "53769569075510",
+      "title_fp": "car_windshield_cleaning_tablet_effective",
+      "title": "Car Windshield Cleaning Tablet Effective Streak-Free Glass Cleaning",
+      "selling_price": 181,
+      "mrp": 415,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "15033_car_wheel_reflective_stickers_20pc",
+      "handle": "car-wheel-hub-reflective-car-stickers-night-warning-20-pcs-set-multicolored",
+      "variant_id": "49433583157558",
+      "title_fp": "reflective_car_wheel_stickers_multicolored",
+      "title": "Reflective Car Wheel Stickers Multicolored 20 Pcs for Night Safety Velvet Wheels",
+      "selling_price": 184,
+      "mrp": 479,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "23582_car_sun_shade_protector",
+      "handle": "car-side-window-sun-shade-protector-with-suction-cups-for-summer-travel-1-pc",
+      "variant_id": "54460475441462",
+      "title_fp": "car_side_window_sun_shade",
+      "title": "Car Side Window Sun Shade Protector with Suction Cups for Summer Travel",
+      "selling_price": 185,
+      "mrp": 409,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
+    },
+    {
+      "sku": "9393_car_safety_hammer_1pc",
+      "handle": "car-safety-hammer-emergency-window-breaker-cutter",
+      "variant_id": "47355625931062",
+      "title_fp": "car_safety_hammer_emergency_window",
+      "title": "Car Safety Hammer Emergency Window Breaker & Cutter Safora",
+      "selling_price": 183,
+      "mrp": 495,
+      "source": "smartbiz_page_car & vehicle accessories",
+      "exported_at": "2026-10-29T10:28:52.144570"
     }
   ]
 }

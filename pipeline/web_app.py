@@ -124,6 +124,8 @@ def _extract_request_niche() -> str:
             raw = "Toys & Games"
         else:
             raw = "Toys & Games"
+    elif s_raw in ("car", "vehicle", "car & vehicle", "car and vehicle", "car & vehicle accessories", "car and vehicle accessories", "car accessories", "automotive"):
+        raw = "Car & Vehicle Accessories"
     return normalize_niche_param(raw)
 
 
@@ -258,6 +260,7 @@ def radar():
         "Home Improvement",
         "Smart Gadgets",
         "Toys & Games",
+        "Car & Vehicle Accessories",
         "Under 199 Collection",
     ]
     niche_counts = {

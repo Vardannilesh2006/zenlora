@@ -500,6 +500,8 @@ def normalize_niche_param(niche: Optional[str]) -> str:
         return "Smart Gadgets"
     if low in ("toys", "toys & games", "toys and games", "kids toys", "games") or low.startswith("toy"):
         return "Toys & Games"
+    if low in ("car", "vehicle", "car & vehicle", "car and vehicle", "car & vehicle accessories", "car and vehicle accessories", "car accessories", "car-accessories", "car_accessories", "car-interior", "automotive", "auto") or low.startswith("car ") or low.startswith("vehicle"):
+        return "Car & Vehicle Accessories"
     return raw
 
 
@@ -525,6 +527,8 @@ def matches_niche(item_niche: str, query_niche: str) -> bool:
         return item_n in ("toys & games", "toys and games", "toys", "games", "kids toys")
     if q_n in ("under 199 collection", "under 199", "under 199-299", "199-299", "under_50"):
         return item_n in ("under 199 collection", "under 199", "under 199-299", "199-299", "under_50")
+    if q_n in ("car & vehicle accessories", "car & vehicle", "car and vehicle accessories", "car accessories", "automotive", "car"):
+        return item_n in ("car & vehicle accessories", "car & vehicle", "car and vehicle accessories", "car accessories", "automotive", "car", "car-interior")
     return False
 
 
@@ -710,7 +714,7 @@ def get_winners(
 
     # Group by niche to apply batch_cursor rotation and per_niche_display slicing
     if per_niche_display and per_niche_display > 0:
-        niches_order = ["Festive & Lights", "Health & Beauty Accessories", "Home & Kitchen", "Home Improvement", "Smart Gadgets", "Toys & Games"]
+        niches_order = ["Festive & Lights", "Health & Beauty Accessories", "Home & Kitchen", "Home Improvement", "Smart Gadgets", "Toys & Games", "Car & Vehicle Accessories"]
         by_niche: Dict[str, List[Dict[str, Any]]] = {n: [] for n in niches_order}
         for w in winners:
             wn = w.get("niche", "Smart Gadgets")

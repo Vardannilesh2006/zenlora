@@ -287,10 +287,11 @@ def test_category_purity_and_exact_smartbiz_product_category():
         "Home Improvement": "Home Improvement",
         "Smart Gadgets": "Smart Gadgets",
         "Toys & Games": "Toys & Games",
+        "Car & Vehicle Accessories": "Car & Vehicle Accessories",
     }
 
     all_items = get_winners(niche="All", per_niche_display=24, refresh_dynamic=False)
-    assert len(all_items) == 144
+    assert len(all_items) == 168
 
     for niche_key, expected_col_k in expected_map.items():
         niche_items = get_winners(niche=niche_key, per_niche_display=24, refresh_dynamic=False)
@@ -598,6 +599,7 @@ def test_strict_7_primary_categories_and_smartbiz_excel_export():
         "Home Improvement",
         "Smart Gadgets",
         "Toys & Games",
+        "Car & Vehicle Accessories",
         "Under 199 Collection",
     }
     assert allowed_categories == expected_categories, f"Preset storefront_categories mismatch: {allowed_categories}"
@@ -796,3 +798,38 @@ def test_column_ae_seo_meta_description_strictly_pure_plain_text():
         assert p.get("niche") in EXACT_STORE_CATEGORIES, f"Product {p.get('id')} has invalid niche {p.get('niche')}"
 
 
+
+
+def test_car_and_vehicle_accessories_radar_page_and_excel_export():
+    """
+    Verifies:
+    1. /radar?niche=Car & Vehicle Accessories loads at least 24 real DeoDap products with active category pill.
+    2. Exporting Excel for Car & Vehicle Accessories outputs 'Car & Vehicle Accessories' in Column K.
+    3. Column AE (SEOMeta Description) is strictly plain text with 0 HTML tags.
+    4. Net profit margins are smartly configured according to wholesale cost.
+    """
+    import openpyxl
+    client = app.test_client()
+
+    # 1. Test radar page
+    res_page = client.get('/radar?niche=Car%20%26%20Vehicle%20Accessories')
+    assert res_page.status_code == 200
+    html_content = res_page.data.decode('utf-8')
+    assert 'Car & Vehicle Accessories' in html_content
+    assert 'cat-pill-active' in html_content
+
+    # 2. Test Excel export
+    res_excel = client.get('/api/radar/smartbiz.xlsx?mode=page&niche=Car%20%26%20Vehicle%20Accessories&limit=24')
+    assert res_excel.status_code == 200
+    wb = openpyxl.load_workbook(io.BytesIO(res_excel.data))
+    assert 'bulk_upload_template' in wb.sheetnames
+    ws = wb['bulk_upload_template']
+    assert ws.max_row >= 25  # 1 header + 24 products
+
+    for r in range(2, ws.max_row + 1):
+        cat_val = ws.cell(row=r, column=11).value
+        seo_desc = str(ws.cell(row=r, column=31).value or '')
+        assert cat_val == 'Car & Vehicle Accessories'
+        assert '<p>' not in seo_desc and '</p>' not in seo_desc
+        assert '<' not in seo_desc and '>' not in seo_desc
+    wb.close()

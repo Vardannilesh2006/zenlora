@@ -14,13 +14,13 @@
     "rule_label": "DeoDap Price <= Rs.50 -> Selling Price Rs.179 to Rs.185 (Product Category: Under 199 Collection)"
   },
   "column_rules": {
-    "cols_a_to_e_system_ids": "Blank (\"\") — Creates fresh SmartBiz listings without modifying existing store products",
+    "cols_a_to_e_system_ids": "Blank (\"\") \u2014 Creates fresh SmartBiz listings without modifying existing store products",
     "col_f_custom_sku": "Real Live DeoDap Variant SKU (<= 40 chars)",
     "col_g_product_name": "Clean Commercial Product Title (<= 200 chars)",
     "col_h_mrp": "Realistic D2C Box MRP (Ends in 9, 5, or 0; 25% to 35% discount perception)",
     "col_i_selling_price": "DeoDap <= Rs.50 -> Fixed Rs.179-Rs.185 Preset | Above Rs.50 -> Sweet Spot Rs.339-Rs.499",
     "col_j_business_category": "GENERAL (Unified across all rows for zero cross-category validation errors)",
-    "col_k_product_category": "Strict 7 Storefront Categories: Festive & Lights, Health & Beauty Accessories, Home & Kitchen, Home Improvement, Smart Gadgets, Toys & Games, Under 199 Collection",
+    "col_k_product_category": "Strict Storefront Categories: Festive & Lights, Health & Beauty Accessories, Home & Kitchen, Home Improvement, Smart Gadgets, Toys & Games, Car & Vehicle Accessories, Under 199 Collection",
     "col_l_description": "Clean HTML (<p>...</p>) or natural prose description (<= 2000 chars)",
     "col_u_best_seller": "Selective \"Yes\" (~33% top winners) and \"No\" (~67% others)",
     "cols_w_to_ab_images": "Up to 6 Real DeoDap Gallery Images (.jpg sanitized, query strings stripped)",
@@ -29,7 +29,7 @@
   "discount_bands": [
     {
       "band": "Band A",
-      "label": "Under Rs.50 DeoDap Preset (Sell Rs.179–Rs.185)",
+      "label": "Under Rs.50 DeoDap Preset (Sell Rs.179\u2013Rs.185)",
       "cost_range_inr": "Rs.1 - Rs.50 (<= Rs.55)",
       "cost_max": 55,
       "selling_price_preset": "Rs.179 - Rs.185",
@@ -76,6 +76,7 @@
     "Home Improvement",
     "Smart Gadgets",
     "Toys & Games",
+    "Car & Vehicle Accessories",
     "Under 199 Collection"
   ]
 }
