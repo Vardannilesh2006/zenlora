@@ -10,106 +10,150 @@
  */
 
 (() => {
-  // ─── Pill Button (injected once) ─────────────────────────────────────────
-  const PILL_ID = 'zenos-smartbiz-pill';
-  if (!document.getElementById(PILL_ID)) {
-    const pill = document.createElement('button');
-    pill.id = PILL_ID;
-    pill.type = 'button';
-    pill.innerHTML = '⬆️ Sync All to ZenOS';
-    pill.style.cssText = [
-      'position:fixed', 'right:20px', 'bottom:20px', 'z-index:2147483646',
-      'padding:10px 16px', 'border:0', 'border-radius:999px',
-      'background:#0f172a', 'color:#fff', 'font:700 13px system-ui,-apple-system,sans-serif',
-      'box-shadow:0 8px 20px rgba(0,0,0,0.28)', 'cursor:pointer',
-      'display:flex', 'align-items:center', 'gap:7px', 'white-space:nowrap'
-    ].join(';');
-  // --- Draggable Helper ---
-  function makeDraggable(el, storageKey) {
-    let isDragging = false;
-    let startX = 0, startY = 0;
-    let initialLeft = 0, initialTop = 0;
-    let moved = false;
+  // ─── Floating Widget with Drag & Drop and Close Icon ───────────────────────
+  const CONTAINER_ID = 'zenos-smartbiz-container';
+  if (!document.getElementById(CONTAINER_ID)) {
+    if (sessionStorage.getItem('zenos_smartbiz_pill_closed') !== '1') {
+      const container = document.createElement('div');
+      container.id = CONTAINER_ID;
+      container.style.cssText = [
+        'position:fixed', 'right:20px', 'bottom:20px', 'z-index:2147483646',
+        'display:inline-flex', 'align-items:center',
+        'background:#0f172a', 'color:#fff', 'border-radius:999px',
+        'box-shadow:0 10px 28px rgba(0,0,0,0.38)', 'border:1px solid rgba(255,255,255,0.18)',
+        'padding:4px 6px 4px 12px', 'gap:8px',
+        'font:700 13px system-ui,-apple-system,sans-serif',
+        'user-select:none', 'touch-action:none', 'cursor:grab'
+      ].join(';');
 
-    try {
-      const saved = localStorage.getItem(storageKey);
-      if (saved) {
-        const pos = JSON.parse(saved);
-        if (typeof pos.top === 'number' && typeof pos.left === 'number') {
-          el.style.top = Math.max(10, Math.min(pos.top, window.innerHeight - 60)) + 'px';
-          el.style.left = Math.max(10, Math.min(pos.left, window.innerWidth - 180)) + 'px';
+      const pill = document.createElement('div');
+      pill.id = 'zenos-smartbiz-pill';
+      pill.style.cssText = 'display:inline-flex;align-items:center;gap:7px;cursor:pointer;white-space:nowrap;padding:4px 0;';
+      pill.innerHTML = '<span style="opacity:0.5;font-size:14px;cursor:grab;" title="Drag to move anywhere">⠿</span><span>⬆️ Sync All to ZenOS</span>';
+
+      const divider = document.createElement('span');
+      divider.style.cssText = 'width:1px;height:18px;background:rgba(255,255,255,0.22);';
+
+      const closeBtn = document.createElement('button');
+      closeBtn.id = 'zenos-smartbiz-close-btn';
+      closeBtn.type = 'button';
+      closeBtn.title = 'Dismiss floating widget for this tab';
+      closeBtn.innerHTML = '✕';
+      closeBtn.style.cssText = [
+        'background:rgba(255,255,255,0.15)', 'border:0', 'color:#cbd5e1',
+        'width:22px', 'height:22px', 'border-radius:50%',
+        'display:inline-flex', 'align-items:center', 'justify-content:center',
+        'font-size:12px', 'font-weight:700', 'cursor:pointer', 'padding:0',
+        'transition:all 0.15s ease', 'outline:none', 'line-height:1'
+      ].join(';');
+
+      closeBtn.addEventListener('mouseenter', () => {
+        closeBtn.style.background = '#ef4444';
+        closeBtn.style.color = '#fff';
+      });
+      closeBtn.addEventListener('mouseleave', () => {
+        closeBtn.style.background = 'rgba(255,255,255,0.15)';
+        closeBtn.style.color = '#cbd5e1';
+      });
+
+      closeBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        try { sessionStorage.setItem('zenos_smartbiz_pill_closed', '1'); } catch (err) {}
+        container.style.transition = 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)';
+        container.style.opacity = '0';
+        container.style.transform = 'scale(0.85)';
+        setTimeout(() => container.remove(), 200);
+      });
+
+      container.appendChild(pill);
+      container.appendChild(divider);
+      container.appendChild(closeBtn);
+      document.documentElement.appendChild(container);
+
+      // --- Draggable Helper ---
+      function makeDraggable(el, storageKey) {
+        let isDragging = false;
+        let startX = 0, startY = 0;
+        let initialLeft = 0, initialTop = 0;
+        let moved = false;
+
+        try {
+          const saved = localStorage.getItem(storageKey);
+          if (saved) {
+            const pos = JSON.parse(saved);
+            if (typeof pos.top === 'number' && typeof pos.left === 'number') {
+              el.style.top = Math.max(10, Math.min(pos.top, window.innerHeight - 60)) + 'px';
+              el.style.left = Math.max(10, Math.min(pos.left, window.innerWidth - 220)) + 'px';
+              el.style.bottom = 'auto';
+              el.style.right = 'auto';
+            }
+          }
+        } catch (e) {}
+
+        el.addEventListener('pointerdown', (e) => {
+          if (e.button !== 0) return;
+          if (e.target.closest('#zenos-smartbiz-close-btn')) return;
+          isDragging = true;
+          moved = false;
+          startX = e.clientX;
+          startY = e.clientY;
+          const rect = el.getBoundingClientRect();
+          initialLeft = rect.left;
+          initialTop = rect.top;
+          try { el.setPointerCapture(e.pointerId); } catch(err){}
+          el.style.cursor = 'grabbing';
+        });
+
+        el.addEventListener('pointermove', (e) => {
+          if (!isDragging) return;
+          const dx = e.clientX - startX;
+          const dy = e.clientY - startY;
+          if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
+
+          let newLeft = initialLeft + dx;
+          let newTop = initialTop + dy;
+          newLeft = Math.max(5, Math.min(newLeft, window.innerWidth - el.offsetWidth - 5));
+          newTop = Math.max(5, Math.min(newTop, window.innerHeight - el.offsetHeight - 5));
+
+          el.style.left = newLeft + 'px';
+          el.style.top = newTop + 'px';
           el.style.bottom = 'auto';
           el.style.right = 'auto';
+        });
+
+        function endDrag(e) {
+          if (!isDragging) return;
+          isDragging = false;
+          el.style.cursor = 'grab';
+          try { el.releasePointerCapture(e.pointerId); } catch(err){}
+          if (moved) {
+            const rect = el.getBoundingClientRect();
+            try {
+              localStorage.setItem(storageKey, JSON.stringify({ top: rect.top, left: rect.left }));
+            } catch (err) {}
+          }
         }
+
+        el.addEventListener('pointerup', endDrag);
+        el.addEventListener('pointercancel', endDrag);
+
+        pill.addEventListener('click', (e) => {
+          if (moved) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            moved = false;
+            return;
+          }
+          const pageType = detectPageType();
+          if (pageType === 'LIST') openBulkListModal();
+          else if (pageType === 'DETAIL') openSingleOrderModal();
+          else showToast('⚠️ Navigate to the SmartBiz Orders page first.', '#b45309');
+        });
       }
-    } catch (e) {}
 
-    el.style.cursor = 'grab';
-    el.style.userSelect = 'none';
-    el.style.touchAction = 'none';
-
-    el.addEventListener('pointerdown', (e) => {
-      if (e.button !== 0) return;
-      isDragging = true;
-      moved = false;
-      startX = e.clientX;
-      startY = e.clientY;
-      const rect = el.getBoundingClientRect();
-      initialLeft = rect.left;
-      initialTop = rect.top;
-      try { el.setPointerCapture(e.pointerId); } catch(err){}
-      el.style.cursor = 'grabbing';
-    });
-
-    el.addEventListener('pointermove', (e) => {
-      if (!isDragging) return;
-      const dx = e.clientX - startX;
-      const dy = e.clientY - startY;
-      if (Math.abs(dx) > 4 || Math.abs(dy) > 4) moved = true;
-
-      let newLeft = initialLeft + dx;
-      let newTop = initialTop + dy;
-      newLeft = Math.max(5, Math.min(newLeft, window.innerWidth - el.offsetWidth - 5));
-      newTop = Math.max(5, Math.min(newTop, window.innerHeight - el.offsetHeight - 5));
-
-      el.style.left = newLeft + 'px';
-      el.style.top = newTop + 'px';
-      el.style.bottom = 'auto';
-      el.style.right = 'auto';
-    });
-
-    function endDrag(e) {
-      if (!isDragging) return;
-      isDragging = false;
-      el.style.cursor = 'grab';
-      try { el.releasePointerCapture(e.pointerId); } catch(err){}
-      if (moved) {
-        const rect = el.getBoundingClientRect();
-        try {
-          localStorage.setItem(storageKey, JSON.stringify({ top: rect.top, left: rect.left }));
-        } catch (err) {}
-      }
+      makeDraggable(container, 'zenos_smartbiz_pill_pos');
     }
-
-    el.addEventListener('pointerup', endDrag);
-    el.addEventListener('pointercancel', endDrag);
-
-    el.addEventListener('click', (e) => {
-      if (moved) {
-        e.stopImmediatePropagation();
-        e.preventDefault();
-        moved = false;
-      }
-    }, true);
-  }
-    pill.addEventListener('click', () => {
-      const pageType = detectPageType();
-      if (pageType === 'LIST') openBulkListModal();
-      else if (pageType === 'DETAIL') openSingleOrderModal();
-      else showToast('⚠️ Navigate to the SmartBiz Orders page first.', '#b45309');
-    });
-    document.documentElement.appendChild(pill);
-    makeDraggable(pill, 'zenos_smartbiz_pill_pos');
   }
 
   // ─── Page Type Detection ──────────────────────────────────────────────────

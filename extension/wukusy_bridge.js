@@ -1,104 +1,151 @@
 (() => {
-  const pillId = "zenos-wukusy-pill";
-  if (document.getElementById(pillId)) return;
+  // ─── Floating Widget with Drag & Drop and Close Icon ───────────────────────
+  const CONTAINER_ID = "zenos-wukusy-container";
+  if (!document.getElementById(CONTAINER_ID)) {
+    if (sessionStorage.getItem("zenos_wukusy_pill_closed") !== "1") {
+      const container = document.createElement("div");
+      container.id = CONTAINER_ID;
+      container.style.cssText = [
+        "position:fixed", "left:24px", "bottom:24px", "z-index:2147483646",
+        "display:inline-flex", "align-items:center",
+        "background:linear-gradient(135deg, #4f46e5, #7c3aed)", "color:#fff",
+        "border-radius:999px", "box-shadow:0 10px 30px rgba(109,40,217,0.45)",
+        "border:1px solid rgba(255,255,255,0.25)",
+        "font:700 13px system-ui,-apple-system,sans-serif",
+        "user-select:none", "touch-action:none", "cursor:grab",
+        "padding:4px 6px 4px 12px", "gap:8px"
+      ].join(";");
 
-  const pill = document.createElement("button");
-  pill.id = pillId;
-  pill.type = "button";
-  pill.textContent = "📦 ZenOS: Load Confirmed Orders";
-  pill.style.cssText = [
-    "position:fixed", "left:24px", "bottom:24px", "z-index:2147483646",
-    "padding:12px 18px", "border:0", "border-radius:999px",
-    "background:#6d28d9", "color:#fff", "font:700 13px system-ui,-apple-system,sans-serif",
-    "box-shadow:0 10px 25px rgba(109,40,217,0.35)", "cursor:pointer",
-    "display:flex", "align-items:center", "gap:8px"
-  ].join(";");
-  // --- Draggable Helper ---
-  function makeDraggable(el, storageKey) {
-    let isDragging = false;
-    let startX = 0, startY = 0;
-    let initialLeft = 0, initialTop = 0;
-    let moved = false;
+      const pill = document.createElement("div");
+      pill.id = "zenos-wukusy-pill";
+      pill.style.cssText = "display:inline-flex;align-items:center;gap:7px;cursor:pointer;white-space:nowrap;padding:4px 0;";
+      pill.innerHTML = `<span style="opacity:0.6;font-size:14px;cursor:grab;" title="Drag to move anywhere">⠿</span><span id="zenos-wukusy-label">🚚 ZenOS: 1-Click Autofill Address</span>`;
 
-    try {
-      const saved = localStorage.getItem(storageKey);
-      if (saved) {
-        const pos = JSON.parse(saved);
-        if (typeof pos.top === 'number' && typeof pos.left === 'number') {
-          const maxTop = Math.max(10, window.innerHeight - 60);
-          const maxLeft = Math.max(10, window.innerWidth - 220);
-          el.style.top = Math.min(Math.max(10, pos.top), maxTop) + 'px';
-          el.style.left = Math.min(Math.max(10, pos.left), maxLeft) + 'px';
+      const divider = document.createElement("span");
+      divider.style.cssText = "width:1px;height:18px;background:rgba(255,255,255,0.25);";
+
+      const closeBtn = document.createElement("button");
+      closeBtn.id = "zenos-wukusy-close-btn";
+      closeBtn.type = "button";
+      closeBtn.title = "Dismiss floating widget for this tab";
+      closeBtn.innerHTML = "✕";
+      closeBtn.style.cssText = [
+        "background:rgba(255,255,255,0.2)", "border:0", "color:#fff",
+        "width:22px", "height:22px", "border-radius:50%",
+        "display:inline-flex", "align-items:center", "justify-content:center",
+        "font-size:12px", "font-weight:700", "cursor:pointer", "padding:0",
+        "transition:all 0.15s ease", "outline:none", "line-height:1"
+      ].join(";");
+
+      closeBtn.addEventListener("mouseenter", () => {
+        closeBtn.style.background = "#ef4444";
+        closeBtn.style.color = "#fff";
+      });
+      closeBtn.addEventListener("mouseleave", () => {
+        closeBtn.style.background = "rgba(255,255,255,0.2)";
+        closeBtn.style.color = "#fff";
+      });
+
+      closeBtn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        try { sessionStorage.setItem("zenos_wukusy_pill_closed", "1"); } catch(err) {}
+        container.style.transition = "all 0.2s cubic-bezier(0.16, 1, 0.3, 1)";
+        container.style.opacity = "0";
+        container.style.transform = "scale(0.85)";
+        setTimeout(() => container.remove(), 200);
+      });
+
+      container.appendChild(pill);
+      container.appendChild(divider);
+      container.appendChild(closeBtn);
+      document.documentElement.appendChild(container);
+
+      // --- Draggable Helper ---
+      function makeDraggable(el, storageKey) {
+        let isDragging = false;
+        let startX = 0, startY = 0;
+        let initialLeft = 0, initialTop = 0;
+        let moved = false;
+
+        try {
+          const saved = localStorage.getItem(storageKey);
+          if (saved) {
+            const pos = JSON.parse(saved);
+            if (typeof pos.top === 'number' && typeof pos.left === 'number') {
+              const maxTop = Math.max(10, window.innerHeight - 60);
+              const maxLeft = Math.max(10, window.innerWidth - 240);
+              el.style.top = Math.min(Math.max(10, pos.top), maxTop) + 'px';
+              el.style.left = Math.min(Math.max(10, pos.left), maxLeft) + 'px';
+              el.style.bottom = 'auto';
+              el.style.right = 'auto';
+            }
+          }
+        } catch (e) {}
+
+        el.addEventListener('pointerdown', (e) => {
+          if (e.button !== 0) return;
+          if (e.target.closest('#zenos-wukusy-close-btn')) return;
+          isDragging = true;
+          moved = false;
+          startX = e.clientX;
+          startY = e.clientY;
+          const rect = el.getBoundingClientRect();
+          initialLeft = rect.left;
+          initialTop = rect.top;
+          try { el.setPointerCapture(e.pointerId); } catch(err){}
+          el.style.cursor = 'grabbing';
+        });
+
+        el.addEventListener('pointermove', (e) => {
+          if (!isDragging) return;
+          const dx = e.clientX - startX;
+          const dy = e.clientY - startY;
+          if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
+
+          let newLeft = initialLeft + dx;
+          let newTop = initialTop + dy;
+          const maxLeft = window.innerWidth - el.offsetWidth - 5;
+          const maxTop = window.innerHeight - el.offsetHeight - 5;
+          newLeft = Math.max(5, Math.min(newLeft, maxLeft));
+          newTop = Math.max(5, Math.min(newTop, maxTop));
+
+          el.style.left = newLeft + 'px';
+          el.style.top = newTop + 'px';
           el.style.bottom = 'auto';
           el.style.right = 'auto';
+        });
+
+        function endDrag(e) {
+          if (!isDragging) return;
+          isDragging = false;
+          el.style.cursor = 'grab';
+          try { el.releasePointerCapture(e.pointerId); } catch(err){}
+          if (moved) {
+            const rect = el.getBoundingClientRect();
+            try {
+              localStorage.setItem(storageKey, JSON.stringify({ top: rect.top, left: rect.left }));
+            } catch (e) {}
+          }
         }
-      }
-    } catch (e) {}
 
-    el.style.cursor = 'grab';
-    el.style.userSelect = 'none';
+        el.addEventListener('pointerup', endDrag);
+        el.addEventListener('pointercancel', endDrag);
 
-    el.addEventListener('mousedown', (e) => {
-      if (e.button !== 0) return;
-      isDragging = true;
-      moved = false;
-      startX = e.clientX;
-      startY = e.clientY;
-      const rect = el.getBoundingClientRect();
-      initialLeft = rect.left;
-      initialTop = rect.top;
-      el.style.cursor = 'grabbing';
-
-      function onMouseMove(moveEvent) {
-        if (!isDragging) return;
-        const dx = moveEvent.clientX - startX;
-        const dy = moveEvent.clientY - startY;
-        if (Math.abs(dx) > 3 || Math.abs(dy) > 3) moved = true;
-
-        let newLeft = initialLeft + dx;
-        let newTop = initialTop + dy;
-        const maxLeft = window.innerWidth - el.offsetWidth - 5;
-        const maxTop = window.innerHeight - el.offsetHeight - 5;
-        newLeft = Math.max(5, Math.min(newLeft, maxLeft));
-        newTop = Math.max(5, Math.min(newTop, maxTop));
-
-        el.style.left = newLeft + 'px';
-        el.style.top = newTop + 'px';
-        el.style.bottom = 'auto';
-        el.style.right = 'auto';
+        pill.addEventListener('click', (e) => {
+          if (moved) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+            moved = false;
+            return;
+          }
+          openOrderPanel();
+        });
       }
 
-      function onMouseUp() {
-        if (!isDragging) return;
-        isDragging = false;
-        el.style.cursor = 'grab';
-        document.removeEventListener('mousemove', onMouseMove);
-        document.removeEventListener('mouseup', onMouseUp);
-        if (moved) {
-          const rect = el.getBoundingClientRect();
-          try {
-            localStorage.setItem(storageKey, JSON.stringify({ top: rect.top, left: rect.left }));
-          } catch (e) {}
-        }
-      }
-
-      document.addEventListener('mousemove', onMouseMove);
-      document.addEventListener('mouseup', onMouseUp);
-    });
-
-    el.addEventListener('click', (e) => {
-      if (moved) {
-        e.stopImmediatePropagation();
-        e.preventDefault();
-        moved = false;
-      }
-    }, true);
+      makeDraggable(container, "zenos_wukusy_pill_pos");
+    }
   }
-  pill.textContent = "🚚 ZenOS: 1-Click Autofill Address";
-  pill.style.background = "linear-gradient(135deg, #4f46e5, #7c3aed)";
-  pill.addEventListener("click", openOrderPanel);
-  document.documentElement.appendChild(pill);
-  makeDraggable(pill, "zenos_wukusy_pill_pos");
 
   function splitName(fullName) {
     const parts = (fullName || "").trim().split(/\s+/).filter(Boolean);
@@ -142,8 +189,8 @@
     if (document.getElementById("zenos-wukusy-modal")) return;
     const config = await readConfig();
 
-    pill.disabled = true;
-    pill.textContent = "⏳ Fetching Confirmed Orders…";
+    const labelEl = document.getElementById("zenos-wukusy-label");
+    if (labelEl) labelEl.textContent = "⏳ Fetching Confirmed Orders…";
 
     try {
       let orders = [];
@@ -168,8 +215,8 @@
     } catch (error) {
       showToast("Could not load orders: " + (error.message || "Network error. Check ZenOS is running on port 5000."));
     } finally {
-      pill.disabled = false;
-      pill.textContent = "📦 ZenOS: Load Confirmed Orders";
+      const labelEl = document.getElementById("zenos-wukusy-label");
+      if (labelEl) labelEl.textContent = "🚚 ZenOS: 1-Click Autofill Address";
     }
   }
 
