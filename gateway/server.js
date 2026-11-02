@@ -526,7 +526,30 @@ app.post(['/api/sessions/:sessionId/messages/send-image', '/api/sendImage'], asy
   }
 });
 
-// 5. Test Send from Dashboard form
+// 5. Contact Profile Picture / Avatar (OpenWA Standard Spec)
+app.get(['/api/sessions/:sessionId/contacts/:contactId/profile-picture', '/api/avatar/:phone'], async (req, res) => {
+  try {
+    if (connectionStatus !== 'CONNECTED' || !sock) {
+      return res.status(503).json({ status: 'error', message: 'Gateway not connected', url: null });
+    }
+    const target = req.params.contactId || req.params.phone;
+    if (!target) {
+      return res.status(400).json({ status: 'error', message: 'Missing phone/contactId', url: null });
+    }
+    const jid = phoneToJid(target);
+    try {
+      const url = await sock.profilePictureUrl(jid, 'image');
+      return res.json({ status: 'success', url });
+    } catch (picErr) {
+      // Return neutral avatar if user has privacy settings or no DP
+      return res.json({ status: 'not_found', url: null });
+    }
+  } catch (err) {
+    return res.status(500).json({ status: 'error', message: err.message, url: null });
+  }
+});
+
+// 6. Test Send from Dashboard form
 app.post('/api/test-send', async (req, res) => {
   const { phone, text } = req.body;
   if (connectionStatus !== 'CONNECTED') {
